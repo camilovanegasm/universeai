@@ -87,7 +87,7 @@ Se priorizó: gratis o barato para empezar, fácil de mantener, con mucha docume
 ### Fase 1 — MVP: 1 nivel jugable completo
 - ✅ 1.1 Registro / inicio de sesión de usuario (Firebase Authentication: correo/contraseña + Google). Páginas `/login`, `/registro` y `/inicio` (placeholder protegido). Perfil de usuario creado automáticamente en Firestore (`usuarios/{uid}`) con XP, corazones y racha en cero. Reglas de seguridad de Firestore desplegadas (cada usuario solo lee/escribe su propio perfil). Probado en local y verificado en producción (https://universeai-eight.vercel.app/login).
 - ✅ 1.2 Estructura de datos: usuario, XP, corazones/vidas, racha, progreso por lección (`src/lib/progreso.ts`). Combustible (1-3, según errores) en vez de estrellas, XP con bono de velocidad, corazones con reset diario, racha que se rompe tras un día sin actividad. Probado con botones temporales en `/inicio`. Se definió también la **identidad visual definitiva** del proyecto: mascota **Cache** (astronauta-robot retro) + paleta verde Matrix sobre fondo espacial oscuro + tipografías Orbitron/VT323/Rajdhani/Press Start 2P/Inter — ver detalle en `DOCUMENTACION.md`.
-- 1.3 Pantalla de "mapa de niveles" con el Nivel 1 desbloqueado y los siguientes en gris ("próximamente").
+- ✅ 1.3 Pantalla de "mapa de niveles" (ahora es lo que se ve en `/inicio`): 7 planetas (uno por tema de la ruta de aprendizaje, `src/lib/niveles.ts`) conectados por un camino curvo asimétrico. Nivel 1 ("Qué es la IA") desbloqueado con Cache al lado; los otros 6 en gris con candado, "Próximamente". Al hacer clic en el Nivel 1 lleva a `/leccion/[id]`, una página temporal (la lección real es la 1.4).
 - 1.4 Pantalla de lección con los 5 tipos de ejercicio, usando contenido del tema "Qué es la IA".
 - 1.5 Gamificación básica visible: contador de XP, corazones que se pierden si fallas, racha del día.
 - 1.6 Prueba completa en celular (de principio a fin) antes de dar la fase por terminada.
@@ -113,7 +113,8 @@ Se priorizó: gratis o barato para empezar, fácil de mantener, con mucha docume
 - ✅ **Fase 0 completa**: proyecto en `C:\Proyectos\UniverseAI`, en GitHub, publicado en Vercel, y con Firebase (Auth + Firestore) conectado.
 - ✅ **Fase 1.1 completa**: registro/login con Firebase Authentication (correo/contraseña + Google), perfil de usuario en Firestore, página protegida `/inicio` (placeholder). Probado por el usuario en local y publicado en Vercel.
 - ✅ **Fase 1.2 completa**: lógica de combustible/XP/corazones/racha (`src/lib/progreso.ts`) + identidad visual definitiva (mascota Cache, paleta verde Matrix, tipografías del sistema). Probado por el usuario en local y publicado en Vercel.
-- ⏳ **Esperando aprobación del usuario para iniciar la Fase 1.3** (pantalla de "mapa de niveles").
+- ✅ **Fase 1.3 completa**: mapa de niveles con camino curvo de planetas en `/inicio`. Probado por el usuario en local y publicado en Vercel.
+- ⏳ **Esperando aprobación del usuario para iniciar la Fase 1.4** (pantalla de lección con los 5 tipos de ejercicio, contenido del tema "Qué es la IA").
 
 ## 6. Cómo trabajar en este proyecto (recordatorio para Claude)
 

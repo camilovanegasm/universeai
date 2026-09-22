@@ -83,3 +83,11 @@ Cada vez que se guarda ("commit") un cambio en el código y se sube a GitHub, Ve
 - Se actualizó el fondo global (`src/components/FondoEspacial.tsx` + `globals.css`) a un estilo "polvo cósmico": azul noche casi negro, neutro, para no competir visualmente con Cache ni con el contenido.
 - Verificado: `npm run build` y `npm run lint` sin errores; probado por el usuario en local y confirmado en producción tras el despliegue automático a Vercel.
 - **Resultado:** UniverseAI ya tiene su identidad de marca definitiva (Cache + paleta + tipografías) aplicada a las 4 pantallas existentes, y la lógica de juego (XP/combustible/corazones/racha) queda lista para conectarse a la lección real en la fase 1.4.
+
+### 2026-09-22 — Fase 1.3: Mapa de niveles (completa)
+- Se creó `src/lib/niveles.ts` con los 7 temas de la ruta de aprendizaje (uno por "planeta"): Qué es la IA, Modelos de lenguaje, Prompts, Herramientas de IA, Imágenes y video, Ética y seguridad, Automatizaciones. Cada uno tiene un campo `disponible` — en el MVP solo el primero es `true`.
+- La pantalla `/inicio` pasó de ser un placeholder de bienvenida a ser el **mapa de niveles** real: los 7 planetas se dibujan en un camino curvo y asimétrico (una curva SVG, no una línea recta), cada uno en una posición horizontal distinta para que se sienta más orgánico, como flotando en el espacio.
+- El Nivel 1 se ve desbloqueado (brillante, con su número, y Cache flotando al lado); los niveles 2 a 7 se ven apagados/grises, con un candado 🔒 y la etiqueta "Próximamente", y no se pueden clickear todavía.
+- Al hacer clic en el Nivel 1 se navega a `/leccion/[id]` (ej. `/leccion/que-es-la-ia`), una página temporal que confirma que la navegación funciona y avisa que la lección real (con los 5 tipos de ejercicio) llega en la fase 1.4.
+- Verificado: `npm run build` y `npm run lint` sin errores; probado por el usuario en local (dos rondas: primero con un layout en zigzag simple, después ajustado a curvas asimétricas por pedido del usuario) y confirmado en producción tras el despliegue a Vercel.
+- **Resultado:** cualquier usuario logueado ve ahora un mapa de niveles real y navegable, con un único nivel jugable (todavía sin lección) y el resto de la ruta de aprendizaje visible como "Próximamente".
