@@ -4,13 +4,23 @@ import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import type { User } from "firebase/auth";
 import { db } from "./firebase";
 
+export type ProgresoLeccion = {
+  completada: boolean;
+  combustible: 1 | 2 | 3;
+  xpGanado: number;
+  tiempoSegundos: number;
+};
+
 export type PerfilUsuario = {
   nombre: string;
   email: string;
   xp: number;
   corazones: number;
   racha: number;
-  progreso: Record<string, unknown>;
+  // Última fecha (formato "YYYY-MM-DD") en la que el usuario completó una lección o falló un
+  // ejercicio. Se usa para saber si hay que resetear los corazones del día y si la racha sigue viva.
+  ultimaActividad?: string;
+  progreso: Record<string, ProgresoLeccion>;
 };
 
 const VIDAS_INICIALES = 5;

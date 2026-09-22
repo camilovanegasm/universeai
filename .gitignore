@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# imágenes de referencia visual (no forman parte de la app)
+/referencias
+/personaje-cache
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050510;
+  --foreground: #e8f4e8;
+  --color-panel: rgba(0, 255, 65, 0.04);
+  --color-panel-border: rgba(0, 255, 65, 0.25);
+  --matrix: #00ff41;
+  --matrix-dim: #00cc33;
+  --purple: #b400ff;
+  --pink: #ff006e;
+  --gold: #ffe600;
+  --cyan: #00f5ff;
+  --muted: #8090a0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-orbitron);
+  --font-terminal: var(--font-vt323);
+  --font-ui: var(--font-rajdhani);
+  --font-pixel: var(--font-press-start);
+  --font-sans: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+/* Fondo espacial "Cosmic Dust": azul noche casi negro, neutro, no compite con el contenido. */
+.fondo-espacial {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 40%, #0c0c22 0%, #07071a 55%, #030310 100%);
+}
+
+.fondo-espacial::before,
+.fondo-espacial::after {
+  content: "";
+  position: absolute;
+  width: 55vmax;
+  height: 55vmax;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.12;
+}
+
+.fondo-espacial::before {
+  top: -10vmax;
+  left: -12vmax;
+  background: var(--purple);
+}
+
+.fondo-espacial::after {
+  bottom: -18vmax;
+  right: -10vmax;
+  background: var(--matrix);
+}
+
+.fondo-espacial .estrellas {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.4px 1.4px at 20px 30px, white, transparent),
+    radial-gradient(1px 1px at 90px 80px, white, transparent),
+    radial-gradient(1.6px 1.6px at 150px 20px, white, transparent),
+    radial-gradient(1px 1px at 60px 130px, white, transparent),
+    radial-gradient(1.2px 1.2px at 180px 150px, white, transparent),
+    radial-gradient(1px 1px at 120px 100px, white, transparent);
+  background-repeat: repeat;
+  background-size: 220px 220px;
+  opacity: 0.4;
+}
+
+/* Tarjeta estilo "terminal" flotando en el espacio: borde verde Matrix tenue. */
+.tarjeta-espacial {
+  background: rgba(8, 14, 8, 0.55);
+  border: 1px solid var(--color-panel-border);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 40px -12px rgba(0, 255, 65, 0.15);
+}
+
+.boton-matrix {
+  background: rgba(0, 255, 65, 0.1);
+  border: 1px solid var(--matrix);
+  color: var(--matrix);
+  text-shadow: 0 0 12px rgba(0, 255, 65, 0.5);
+  box-shadow: 0 0 24px -8px rgba(0, 255, 65, 0.5);
+}
+
+.boton-matrix:hover {
+  background: rgba(0, 255, 65, 0.18);
+}
+
+/* Cache flotando: nunca toca el suelo. */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.cache-flotando {
+  animation: flotar 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 12px 20px rgba(0, 255, 65, 0.15));
 }
