@@ -74,12 +74,15 @@ Se priorizó: gratis o barato para empezar, fácil de mantener, con mucha docume
 
 **Regla:** cada fase (y sub-fase marcada) requiere aprobación explícita antes de empezar la siguiente.
 
-### Fase 0 — Preparación del entorno (🔄 en curso)
+### Fase 0 — Preparación del entorno (✅ COMPLETA)
 - ✅ Esqueleto del proyecto creado (Next.js + TypeScript + Tailwind).
 - ✅ Cuenta y repositorio de GitHub creados, código subido (`camilovanegasm/universeai`).
-- ✅ Cuenta de Vercel conectada, proyecto importado y publicado: https://universeai-eight.vercel.app/ (se confirmó que muestra la página de bienvenida de Next.js — el circuito código → GitHub → Vercel → internet funciona).
-- ⏳ Crear cuenta/proyecto en Firebase y habilitar Authentication + Firestore.
-- ⏳ Conectar Firebase al proyecto (variables de entorno).
+- ✅ Cuenta de Vercel conectada, proyecto importado y publicado: https://universeai-eight.vercel.app/
+- ✅ Proyecto Firebase creado (`universeai-e4e9c`), región de Firestore: São Paulo (southamerica-east1).
+- ✅ Firebase Authentication habilitado con **Correo/contraseña + Google Sign-In**.
+- ✅ Firestore Database creada (modo producción).
+- ✅ Firebase conectado al código (`src/lib/firebase.ts` + variables de entorno en `.env.local` y en Vercel → Settings → Environment Variables).
+- ✅ Verificado en producción: la app publicada sigue funcionando sin errores tras conectar Firebase.
 
 ### Fase 1 — MVP: 1 nivel jugable completo
 - 1.1 Registro / inicio de sesión de usuario (Supabase Auth).
@@ -104,10 +107,11 @@ Se priorizó: gratis o barato para empezar, fácil de mantener, con mucha docume
 ## 5. Estado actual
 
 - ✅ Preguntas iniciales respondidas por el usuario.
-- ✅ Stack tecnológico definido.
+- ✅ Stack tecnológico definido (con un cambio: Firebase en vez de Supabase, ver nota en sección 3).
 - ✅ Plan por fases definido.
 - ✅ Este archivo CLAUDE.md creado.
-- ⏳ **Esperando aprobación del usuario para iniciar la Fase 0.**
+- ✅ **Fase 0 completa**: proyecto en `C:\Proyectos\UniverseAI`, en GitHub, publicado en Vercel, y con Firebase (Auth + Firestore) conectado.
+- ⏳ **Esperando aprobación del usuario para iniciar la Fase 1** (MVP: 1 nivel jugable).
 
 ## 6. Cómo trabajar en este proyecto (recordatorio para Claude)
 
