@@ -68,3 +68,18 @@ Cada vez que se guarda ("commit") un cambio en el código y se sube a GitHub, Ve
 - Se actualizó la página principal (`/`) para mostrar botones de "Crear cuenta gratis" / "Iniciar sesión" (o "Continuar aprendiendo" si ya se inició sesión).
 - Verificado: `npm run build` y `npm run lint` sin errores; probado por el usuario en `http://localhost:3000` (registro, login y Google Sign-In funcionando); confirmado también en producción tras el despliegue automático a Vercel.
 - **Resultado:** cualquier persona ya puede crear una cuenta real y quedar identificada en la app, con su progreso guardado de forma segura en la nube desde el primer momento.
+
+### 2026-09-22 — Fase 1.2: XP/combustible/corazones/racha + identidad visual "Cache" (completa)
+- Se creó `src/lib/progreso.ts` con la lógica de juego:
+  - **Combustible** (reemplaza el concepto de "estrellas" de Duolingo): 3/3 si completas la lección sin errores, 2/3 con 1-2 errores, 1/3 con 3 o más.
+  - **XP**: 15 XP (combustible 3), 10 XP (combustible 2) o 5 XP (combustible 1), más un bono de +5 XP si terminas dentro del "tiempo objetivo" de la lección.
+  - **Corazones**: se resetean automáticamente a 5 cada día (comparando la fecha de la última actividad).
+  - **Racha**: sube 1 si hay actividad en días consecutivos, se mantiene si ya contaste hoy, y se rompe (vuelve a 1) si pasó más de un día sin actividad.
+- Se agregaron botones temporales en `/inicio` para probar esta lógica sin tener que esperar a la lección real (que llega en la fase 1.4).
+- **Identidad visual definitiva del proyecto** (reemplaza el tema morado genérico usado en un primer intento dentro de esta misma sesión): mascota oficial **Cache** (UNIT-001), un astronauta-robot retro-futurista que flota en el espacio, con visor rectangular tipo casco de iPhone, parches de NASA y SpaceX, y personalidad "gamer retro" (sarcástico con cariño, celebra los logros a lo grande). El usuario diseñó a Cache y aportó una hoja de personaje completa (10 estados posibles: Boot, Online, Level Up, Loading, Glitch, Hype, Low Battery, Encrypted, Signal Lost, God Mode) más las imágenes finales; por ahora hay arte exportado para 6 de esos 10 estados (boot, online, loading, levelup, battery, hype), copiados a `public/cache/`.
+- Paleta de colores: verde Matrix `#00FF41` (dominante), morado `#B400FF`, rosa `#FF006E`, amarillo `#FFE600` (XP/logros), cian `#00F5FF` (UI), fondo casi negro `#050510`.
+- Tipografías (Google Fonts, cargadas en `src/app/layout.tsx`): Orbitron (títulos épicos), VT323 (la "voz" de Cache y mensajes de sistema), Rajdhani (navegación y encabezados), Press Start 2P (solo para logros puntuales), Inter (todo el texto de lectura).
+- Se creó el componente reutilizable `src/components/Cache.tsx`: recibe un "estado" y muestra la imagen correspondiente flotando con una animación suave. En `/inicio`, Cache reacciona automáticamente a lo que pasa (se pone en "loading" mientras se guarda algo, "hype"/"level up" al completar una lección, "battery" al fallar) y vuelve solo a su estado normal después de unos segundos.
+- Se actualizó el fondo global (`src/components/FondoEspacial.tsx` + `globals.css`) a un estilo "polvo cósmico": azul noche casi negro, neutro, para no competir visualmente con Cache ni con el contenido.
+- Verificado: `npm run build` y `npm run lint` sin errores; probado por el usuario en local y confirmado en producción tras el despliegue automático a Vercel.
+- **Resultado:** UniverseAI ya tiene su identidad de marca definitiva (Cache + paleta + tipografías) aplicada a las 4 pantallas existentes, y la lógica de juego (XP/combustible/corazones/racha) queda lista para conectarse a la lección real en la fase 1.4.
