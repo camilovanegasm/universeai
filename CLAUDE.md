@@ -4,6 +4,10 @@
 
 **Ubicación del proyecto en el computador:** `C:\Proyectos\UniverseAI`
 
+**Enlaces del proyecto:**
+- Repositorio en GitHub: https://github.com/camilovanegasm/universeai
+- App publicada (Vercel): https://universeai-eight.vercel.app/
+
 ## 1. Visión del proyecto
 
 App web gratuita e interactiva para aprender Inteligencia Artificial, con el mismo estilo que Duolingo:
@@ -41,6 +45,7 @@ App web gratuita e interactiva para aprender Inteligencia Artificial, con el mis
 | ¿El MVP tiene cuentas de usuario? | **Sí, desde el inicio.** El MVP ya incluye registro/login y guarda el progreso en una base de datos en la nube (no solo en el navegador). |
 | ¿Quién escribe el contenido educativo? | Claude redacta el borrador de lecciones/ejercicios; el usuario los revisa y ajusta. |
 | Idioma de comunicación | Español, lenguaje simple, evitando jerga técnica sin explicarla. |
+| Métodos de login (Firebase Authentication) | **Correo/contraseña + Google Sign-In**, ambos habilitados desde el MVP (facilita el registro a los usuarios). |
 | Regla de avance | **No pasar a la siguiente fase (ni sub-fase) sin aprobación explícita del usuario.** |
 
 ## 3. Stack tecnológico elegido y por qué
@@ -69,11 +74,12 @@ Se priorizó: gratis o barato para empezar, fácil de mantener, con mucha docume
 
 **Regla:** cada fase (y sub-fase marcada) requiere aprobación explícita antes de empezar la siguiente.
 
-### Fase 0 — Preparación del entorno (⏳ pendiente de aprobación)
-- Crear cuentas gratuitas: GitHub, Vercel, Firebase.
-- Crear el esqueleto del proyecto (Next.js + Tailwind) en este mismo folder.
-- Conectar el proyecto a Firebase y a Vercel.
-- Publicar una primera página de "Hola Mundo" para confirmar que todo el circuito funciona (código → GitHub → Vercel → se ve en internet).
+### Fase 0 — Preparación del entorno (🔄 en curso)
+- ✅ Esqueleto del proyecto creado (Next.js + TypeScript + Tailwind).
+- ✅ Cuenta y repositorio de GitHub creados, código subido (`camilovanegasm/universeai`).
+- ✅ Cuenta de Vercel conectada, proyecto importado y publicado: https://universeai-eight.vercel.app/ (se confirmó que muestra la página de bienvenida de Next.js — el circuito código → GitHub → Vercel → internet funciona).
+- ⏳ Crear cuenta/proyecto en Firebase y habilitar Authentication + Firestore.
+- ⏳ Conectar Firebase al proyecto (variables de entorno).
 
 ### Fase 1 — MVP: 1 nivel jugable completo
 - 1.1 Registro / inicio de sesión de usuario (Supabase Auth).
