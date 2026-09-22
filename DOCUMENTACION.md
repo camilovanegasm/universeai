@@ -58,3 +58,13 @@ Cada vez que se guarda ("commit") un cambio en el código y se sube a GitHub, Ve
 - Se conectó Firebase al código (`src/lib/firebase.ts`), usando variables de entorno (`.env.local` en local, y configuradas también en Vercel → Settings → Environment Variables).
 - Se verificó que la app publicada sigue funcionando correctamente después de conectar Firebase.
 - **Resultado:** circuito completo funcionando (código → GitHub → Vercel → internet) con login y base de datos ya disponibles, listo para empezar a construir funcionalidad real en la Fase 1.
+
+### 2026-09-22 — Fase 1.1: Registro e inicio de sesión (completa)
+- Se creó el contexto de autenticación (`src/lib/AuthContext.tsx`) que le permite a toda la app saber en todo momento si hay un usuario logueado.
+- Se crearon las páginas `/login` y `/registro`, con dos formas de entrar: correo/contraseña o el botón "Continuar con Google".
+- Al registrarse (por cualquiera de los dos métodos), se crea automáticamente un documento de perfil en Firestore (colección `usuarios`, un documento por persona) con: nombre, correo, 0 XP, 5 corazones y racha en 0.
+- Se creó `/inicio`, una página protegida (si no has iniciado sesión te manda a `/login`) que por ahora es un placeholder de bienvenida mostrando XP/corazones/racha y un botón de "Cerrar sesión". Esta página se convertirá en el mapa de niveles en la sub-fase 1.3.
+- Se configuraron y desplegaron las **reglas de seguridad de Firestore** (`firestore.rules`, con `firebase.json` y `.firebaserc`) usando el Firebase CLI (ya estaba conectado en este computador): cada usuario únicamente puede leer y escribir su propio documento de perfil, nunca el de otra persona.
+- Se actualizó la página principal (`/`) para mostrar botones de "Crear cuenta gratis" / "Iniciar sesión" (o "Continuar aprendiendo" si ya se inició sesión).
+- Verificado: `npm run build` y `npm run lint` sin errores; probado por el usuario en `http://localhost:3000` (registro, login y Google Sign-In funcionando); confirmado también en producción tras el despliegue automático a Vercel.
+- **Resultado:** cualquier persona ya puede crear una cuenta real y quedar identificada en la app, con su progreso guardado de forma segura en la nube desde el primer momento.
