@@ -41,6 +41,15 @@ export type AjustesJuego = {
   xpRango10: number;
   /** Horas de gasolina ilimitada al subir de rango. 0 = sin premio. */
   horasPremioRango: number;
+  /** Gasolina que da ganar un minijuego (en pasos de 0,5). 0 = los juegos no recargan. */
+  gasolinaPorJuego: number;
+  /** Cuántas veces al día se puede recargar jugando. */
+  recargasJuegoDia: number;
+  /**
+   * Segundos mínimos entre dos recargas. Lo comprueban las reglas con el reloj
+   * del servidor: frena a quien quiera recargar con un programa en bucle.
+   */
+  segundosEntreRecargas: number;
   /**
    * Lo máximo que una lección puede sumar de una vez. Se calcula al guardar
    * (la mejor nota + el bono) y lo usan las reglas de Firestore.
@@ -95,6 +104,9 @@ export const AJUSTES_POR_DEFECTO: Ajustes = {
     xpRango9: 1900,
     xpRango10: 2600,
     horasPremioRango: 6,
+    gasolinaPorJuego: 1,
+    recargasJuegoDia: 3,
+    segundosEntreRecargas: 30,
     xpMaximo: 20,
   },
   anuncio: { activo: false, tono: "info", texto: { es: "", en: "" } },
@@ -193,6 +205,12 @@ export function validarJuego(j: AjustesJuego): string[] {
     p.push("El XP tiene que ir de mayor a menor: sin errores ≥ 1-2 errores ≥ 3 o más");
   if (!entero(j.horasPremioRango) || j.horasPremioRango < 0 || j.horasPremioRango > 72)
     p.push("Premio al subir de rango: horas enteras entre 0 y 72");
+  if (!mitades(j.gasolinaPorJuego) || j.gasolinaPorJuego < 0 || j.gasolinaPorJuego > j.gasolinaMaxima)
+    p.push("Gasolina por minijuego: 0 o más, en pasos de 0,5 y no más que el tanque");
+  if (!entero(j.recargasJuegoDia) || j.recargasJuegoDia < 0 || j.recargasJuegoDia > 20)
+    p.push("Recargas con minijuegos al día: un número entero entre 0 y 20");
+  if (!entero(j.segundosEntreRecargas) || j.segundosEntreRecargas < 0 || j.segundosEntreRecargas > 3600)
+    p.push("Segundos entre recargas: un número entero entre 0 y 3600");
   let anterior = 0;
   for (let n = 2; n <= 10; n++) {
     const v = j[`xpRango${n}` as keyof AjustesJuego];

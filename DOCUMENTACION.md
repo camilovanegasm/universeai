@@ -13,7 +13,7 @@
 >
 > (Ver también `CLAUDE.md` en esta misma carpeta: contexto operativo para Claude Code.)
 
-**Última actualización:** 2026-09-23 (tarde) · **Fase actual:** 6.0 — preparar el lanzamiento (ver sección 11)
+**Última actualización:** 2026-09-23 (noche) · **Fase actual:** 6.0 — preparar el lanzamiento (ver sección 11)
 
 > Para el detalle de qué se tocó en cada sesión, ver `CAMBIOS.md`.
 
@@ -896,6 +896,60 @@ El informe completo, con precios comparados, pasarelas de pago y fuentes, está 
 - **Por verificar:** el precio actual de Codédex Club en su propia página (las fuentes no
   coinciden: USD 19,99 o 9,99 al mes) y si cada pasarela acepta persona natural.
 
+### 6.10 Minijuegos que recargan gasolina (2026-09-23)
+
+**Decidido con Cami:**
+- Varios juegos, cada uno con una mecánica distinta, sobre un marco común (`MarcoJuego`).
+- Ganar da +1 de gasolina, con un máximo de 3 al día.
+- Los juegos no dan XP: el XP y los rangos salen de las lecciones.
+- Primera tanda: los cuatro juegos propuestos.
+
+**Cómo se eligieron:** se revisaron juegos web de GitHub que enganchan. Lo que tienen en común:
+- partidas de menos de un minuto;
+- la dificultad sube;
+- combos;
+- sonido y temblor en cada acierto o error;
+- un récord que superar;
+- algo nuevo cada día.
+
+| Referencia | Qué se tomó | Licencia |
+|---|---|---|
+| 2048 (gabrielecirulli) | Récord a la vista y "otra vez" en un toque | MIT |
+| FlappyLearning (xviniette) | Ver a una IA aprender a jugar, generación tras generación | MIT (idea; código propio) |
+| Wordle y sus clones en React | Un reto al día, igual para todos, para compartir con cuadritos | MIT |
+| Flexbox Froggy, Grid Garden, k8sgames | Aprender jugando, con niveles cortos | MIT / Apache |
+| Gandalf / tensor-trust | Engañar a una IA para sacarle una clave | Queda para el Club: necesita una IA real y cuesta por uso |
+
+**Descartados:**
+- react-tetris y hextris, porque no tienen licencia clara.
+- clumsy-bird, porque es GPL y obligaría a publicar el código de Punti.
+- Phaser y otros motores, porque pesan más de 1 MB. Punti ya dibuja en canvas.
+
+**Los juegos:**
+
+| Juego | Mundo | Mecánica | Se gana con | Enseña |
+|---|---|---|---|---|
+| Punti Flap | Origen | Volar entre portales; modo IA con neuroevolución | 10 portales | Cómo aprende una máquina |
+| Caza la estafa | Brújula | Chat cada vez más rápido: tocar señales, combos | 70 % de las señales y 3 errores o menos | Voces clonadas, deepfakes, urgencia |
+| Caza el glitch | Prisma | Buscar errores en escenas pixel art, contra reloj | 6 de 9 | Pistas de una imagen hecha con IA |
+| Palabra IA del día | Todos | Wordle de palabras de IA, para compartir | Adivinar en 6 intentos | Una palabra de IA al día |
+
+**Seguridad:** la recarga la valida `recargaJuegoValida()` en las reglas, siempre con el reloj del servidor. Comprueba:
+- el tope diario;
+- que el día no vuelva atrás;
+- el tiempo mínimo entre recargas;
+- que la gasolina no pase del tanque.
+
+**Límite conocido:** alguien con conocimientos puede decir "gané" sin jugar, pero no puede pasar del tope diario. Cerrarlo del todo exige un servidor (Cloud Functions, plan de pago).
+
+**Contenido:** está en el código, en `src/lib/juegos/` (estafas, escenas, palabras), en español y en inglés, con la voz de Punti. Es una excepción a "configurable antes que fijo", y está anotado como pendiente.
+
+**Pendiente:**
+- Probar con sesión en localhost.
+- Juegos para los otros mundos.
+- Pasar las palabras y los mensajes al admin o a la hoja.
+- Un Gandalf de Punti para el Club.
+
 ## 11. Guía de ruta
 
 Dónde estamos y qué sigue. Se actualiza cada vez que se cierra una fase.
@@ -973,6 +1027,8 @@ es lo que no puede faltar el día uno; lo demás puede llegar después.
 
 ### Tarea aparte: minijuegos para recargar gasolina (idea de Cami, 2026-09-23)
 
+> **Hecho el 2026-09-23 (noche): ver 6.10.** Lo de abajo queda como el punto de partida.
+
 Se trabaja en una tarea nueva del proyecto, para no cargar esta conversación. Punto de partida:
 - **Objetivo:** minijuegos cortos sobre IA que recarguen gasolina, fáciles de construir entre Cami y Claude.
 - **Ya existe y se puede reutilizar:**
@@ -1028,6 +1084,13 @@ tenía otra sesión abierta. **Sigue sin explicación.** De ahí salió `CAMBIOS
 ---
 
 ## 13. Bitácora
+
+### 2026-09-23 (noche) — Minijuegos que recargan gasolina
+
+- Cuatro juegos con mecánicas distintas: Punti Flap (con modo IA), Caza la estafa, Caza el glitch y Palabra IA del día. Ver 6.10.
+- Ganar da +1 de gasolina, máximo 3 al día, validado en las reglas con la hora del servidor.
+- Se cerró un hueco viejo de las reglas: alternar la fecha cerca de la medianoche llenaba el tanque sin límite.
+- Hay que publicar las reglas nuevas antes del push.
 
 ### 2026-09-23 (tarde) — Fases 2.2 a 4.2: de la portada al admin completo
 

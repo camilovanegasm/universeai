@@ -32,6 +32,16 @@ export function fechaDeHoy(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
+/**
+ * La fecha a guardar: hoy, salvo que la guardada sea más nueva (otro
+ * dispositivo con el reloj un poco adelantado cerca de la medianoche). Las
+ * reglas de Firestore no dejan que una fecha vuelva atrás, así que escribir
+ * la del reloj de este teléfono haría fallar la escritura entera.
+ */
+function fechaQueAvanza(hoy: string, guardada: string | undefined): string {
+  return guardada && guardada > hoy ? guardada : hoy;
+}
+
 function esDiaAnterior(fecha: string, hoy: string): boolean {
   const ayer = new Date(hoy);
   ayer.setUTCDate(ayer.getUTCDate() - 1);
@@ -126,10 +136,14 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
     tx.update(referencia, {
       ...premio,
       xp: xpAntes + xp,
-      racha: proximaRacha(datos.ultimaLeccion ?? datos.ultimaActividad, hoy, datos.racha ?? 0),
+      racha: proximaRacha(
+        datos.ultimaLeccion ?? datos.ultimaActividad,
+        fechaQueAvanza(hoy, datos.ultimaLeccion),
+        datos.racha ?? 0,
+      ),
       corazones: gasolinaEfectiva(datos),
-      ultimaActividad: hoy,
-      ultimaLeccion: hoy,
+      ultimaActividad: fechaQueAvanza(hoy, datos.ultimaActividad),
+      ultimaLeccion: fechaQueAvanza(hoy, datos.ultimaLeccion),
       // Le dice a las reglas de Firestore qué lección cambió (ver firestore.rules).
       ultimaLeccionId: idLeccion,
       [`progreso.${idLeccion}`]: {
@@ -167,7 +181,7 @@ async function descontarGasolina(uid: string, cantidad: number): Promise<number>
     if (!snap.exists()) return 0;
     const datos = snap.data() as PerfilUsuario;
     const queda = Math.max(0, gasolinaEfectiva(datos) - cantidad);
-    tx.update(referencia, { corazones: queda, ultimaActividad: hoy });
+    tx.update(referencia, { corazones: queda, ultimaActividad: fechaQueAvanza(hoy, datos.ultimaActividad) });
     return queda;
   });
 }
@@ -180,4 +194,69 @@ export function gastarGasolina(uid: string): Promise<number> {
 /** Ver una pista. Devuelve la gasolina que queda. */
 export function pagarPista(uid: string): Promise<number> {
   return descontarGasolina(uid, ajustesVigentes().juego.costoPista);
+}
+
+/* ---------------------------------------------- recarga con minijuegos */
+
+/** Cuántas recargas con minijuegos le quedan hoy. */
+export function recargasRestantes(perfil: PerfilUsuario | null): number {
+  const max = ajustesVigentes().juego.recargasJuegoDia;
+  if (!perfil) return max;
+  const usadas = perfil.recargaJuegoDia === fechaDeHoy() ? (perfil.recargasJuego ?? 0) : 0;
+  return Math.max(0, max - usadas);
+}
+
+export type EstadoRecarga =
+  | "recargada" // se sumó gasolina
+  | "lleno" // el tanque ya estaba lleno (no gasta una recarga)
+  | "ilimitada" // Club o premio de rango: no le hace falta
+  | "tope" // ya usó las recargas de hoy
+  | "espera" // la anterior fue hace muy poco
+  | "apagado" // el admin dejó los juegos sin recarga
+  | "error"; // Firebase no respondió o rechazó la escritura
+
+export type ResultadoRecarga = { estado: EstadoRecarga; gasolina: number; restantes: number };
+
+/**
+ * Suma la gasolina de un minijuego ganado. Todo pasa en una transacción y las
+ * reglas de Firestore vuelven a comprobar cada límite con el reloj del
+ * servidor (tope diario, tiempo entre recargas, no pasar del tanque). Lo de
+ * aquí solo evita intentar escrituras que las reglas van a rechazar.
+ * Devuelve la gasolina que queda, para no releer el perfil.
+ */
+export async function recargarConJuego(uid: string): Promise<ResultadoRecarga> {
+  const j = ajustesVigentes().juego;
+  const referencia = doc(db, "usuarios", uid);
+  const hoy = fechaDeHoy();
+  try {
+    return await runTransaction(db, async (tx): Promise<ResultadoRecarga> => {
+      const snap = await tx.get(referencia);
+      if (!snap.exists()) return { estado: "error", gasolina: 0, restantes: 0 };
+      const datos = snap.data() as PerfilUsuario;
+      const actual = gasolinaEfectiva(datos);
+      const restantes = recargasRestantes(datos);
+      const base = { gasolina: actual, restantes };
+      if (gasolinaIlimitada(datos).activa) return { estado: "ilimitada", ...base };
+      if (j.gasolinaPorJuego <= 0 || j.recargasJuegoDia <= 0) return { estado: "apagado", ...base };
+      // Día nuevo o tanque lleno: la recarga no hace falta y no se gasta.
+      if (datos.ultimaActividad !== hoy || actual >= j.gasolinaMaxima) return { estado: "lleno", ...base };
+      if (restantes <= 0) return { estado: "tope", ...base };
+      const ultima = datos.ultimaRecargaJuego?.toMillis?.();
+      if (ultima && Date.now() - ultima < j.segundosEntreRecargas * 1000) return { estado: "espera", ...base };
+
+      const nueva = Math.min(actual + j.gasolinaPorJuego, j.gasolinaMaxima);
+      const mismoDia = datos.recargaJuegoDia === hoy;
+      tx.update(referencia, {
+        corazones: nueva,
+        recargasJuego: mismoDia ? (datos.recargasJuego ?? 0) + 1 : 1,
+        recargaJuegoDia: hoy,
+        ultimaRecargaJuego: serverTimestamp(),
+      });
+      return { estado: "recargada", gasolina: nueva, restantes: restantes - 1 };
+    });
+  } catch {
+    // Reglas que dicen que no (por ejemplo, el reloj del teléfono está
+    // corrido) o sin conexión: el juego no se rompe, solo no recarga.
+    return { estado: "error", gasolina: 0, restantes: 0 };
+  }
 }

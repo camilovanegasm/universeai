@@ -42,6 +42,8 @@ const TX: Record<Idioma, Record<string, string>> = {
     primera: "¿Primera vez por aquí?",
     primeraTexto: "Punti te explica en cinco pasos cómo funciona el universo, la gasolina y los rangos.",
     manual: "VER MANUAL",
+    juegos: "MINIJUEGOS",
+    juegosTexto: "Recarga gasolina jugando. Uno nuevo cada día: la Palabra IA.",
   },
   en: {
     perfil: "My profile",
@@ -61,6 +63,8 @@ const TX: Record<Idioma, Record<string, string>> = {
     primera: "First time here?",
     primeraTexto: "Punti walks you through the universe, fuel and ranks in five steps.",
     manual: "SEE MANUAL",
+    juegos: "MINIGAMES",
+    juegosTexto: "Refill your fuel by playing. A new one every day: the AI Word.",
   },
 };
 
@@ -249,6 +253,19 @@ export default function InicioPage() {
           {t.elige}
         </h2>
         <p className="mt-3 max-w-[58ch] text-[15px] text-[var(--muted)]">{t.intro.replace("{n}", String(mundos.length))}</p>
+
+        <Link
+          href="/juegos"
+          transitionTypes={["adelante"]}
+          className="tarjeta-juego mt-5 flex max-w-xl items-center gap-3 border-2 border-[var(--gold)] bg-[rgba(40,34,6,0.45)] px-4 py-3 transition-transform"
+        >
+          <PuntiPixel estado="hype" recorte="cabeza" ancho={44} flotando={false} className="shrink-0" />
+          <span className="min-w-0 flex-1">
+            <span className="block font-[family-name:var(--font-pixel)] text-[10px] leading-[1.7] text-[var(--gold)]">{t.juegos}</span>
+            <span className="block text-[14px] leading-[1.45] text-white">{t.juegosTexto}</span>
+          </span>
+          <span aria-hidden="true" className="font-[family-name:var(--font-pixel)] text-[12px] text-[var(--gold)]">▸</span>
+        </Link>
 
         <div className="mt-6">
           <FiltroRuta valor={filtro} alCambiar={setFiltro} conteos={conteos} idioma={idioma} />

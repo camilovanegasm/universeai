@@ -152,6 +152,7 @@ function oculta(ruta: string) {
     ruta === "/registro" ||
     ruta === "/bienvenida" ||
     ruta.startsWith("/leccion") ||
+    ruta.startsWith("/juego/") ||
     ruta.startsWith("/admin")
   );
 }

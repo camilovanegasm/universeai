@@ -90,12 +90,47 @@ service cloud.firestore {
     // ---------- Reglas del juego ----------
 
     // La gasolina se llama `corazones` en la base de datos por compatibilidad.
-    // El mismo día solo puede bajar. En un día nuevo se recarga, hasta el tanque.
+    // El mismo día solo puede bajar, salvo con una recarga de minijuego válida.
+    // En un día nuevo se recarga, hasta el tanque.
     function gasolinaValida(antes, despues) {
       let mismoDia = despues.get('ultimaActividad', '') == antes.get('ultimaActividad', '');
       return despues.corazones is number
         && despues.corazones >= 0
-        && (mismoDia ? despues.corazones <= antes.corazones : despues.corazones <= tanque());
+        && (mismoDia
+            ? (despues.corazones <= antes.corazones || recargaJuegoValida(antes, despues))
+            : despues.corazones <= tanque());
+    }
+
+    // Recarga por ganar un minijuego (ver recargarConJuego en progreso.ts).
+    // Todo se comprueba con el reloj del servidor y los números de Ajustes:
+    //  - el contador del día sube de a 1 (o arranca en 1 en un día nuevo) y
+    //    no pasa del tope diario;
+    //  - el día del contador es hoy y nunca vuelve atrás (si pudiera ir y
+    //    venir entre dos fechas, el contador se reiniciaría sin fin);
+    //  - pasó el tiempo mínimo desde la recarga anterior;
+    //  - la gasolina sube como mucho lo que da un juego, sin pasar del tanque,
+    //    y solo en el mismo día de actividad.
+    function recargaJuegoValida(antes, despues) {
+      let j = juego();
+      let tope = j.get('recargasJuegoDia', 3);
+      let diaAntes = antes.get('recargaJuegoDia', '');
+      let dia = despues.get('recargaJuegoDia', '');
+      let n = despues.get('recargasJuego', -1);
+      let ultima = antes.get('ultimaRecargaJuego', null);
+      return tope > 0
+        && dia is string && esHoy(dia) && dia >= diaAntes
+        && n is int
+        && (dia == diaAntes ? n == antes.get('recargasJuego', 0) + 1 : n == 1)
+        && n <= tope
+        && despues.get('ultimaRecargaJuego', null) == request.time
+        && (ultima == null
+            || request.time > ultima + duration.value(int(j.get('segundosEntreRecargas', 30)), 's'))
+        && despues.get('ultimaActividad', '') == antes.get('ultimaActividad', '')
+        && despues.corazones is number
+        && antes.corazones is number
+        && despues.corazones > antes.corazones
+        && despues.corazones <= antes.corazones + j.get('gasolinaPorJuego', 1)
+        && despues.corazones <= tanque();
     }
 
     // Lo que guarda la app al completar una lección (ver completarLeccion).
@@ -124,8 +159,13 @@ service cloud.firestore {
       let cambios = despues.diff(antes).affectedKeys();
       return cambios.hasOnly([
           'xp', 'racha', 'corazones', 'ultimaActividad', 'ultimaLeccion',
-          'ultimaLeccionId', 'progreso', 'idioma', 'bienvenidaVista', 'premioRangoDesde'
+          'ultimaLeccionId', 'progreso', 'idioma', 'bienvenidaVista', 'premioRangoDesde',
+          'recargasJuego', 'recargaJuegoDia', 'ultimaRecargaJuego'
         ])
+        // Los campos de la recarga con minijuegos solo cambian juntos, en una
+        // recarga válida (que además exige que la gasolina suba).
+        && (!cambios.hasAny(['recargasJuego', 'recargaJuegoDia', 'ultimaRecargaJuego'])
+            || (cambios.hasAny(['corazones']) && recargaJuegoValida(antes, despues)))
         // Premio de subir de rango (gasolina ilimitada unas horas): solo con la
         // hora del servidor y solo si en esta misma escritura el XP cruzó el
         // umbral de un rango. Nadie se lo puede regalar.
@@ -141,8 +181,15 @@ service cloud.firestore {
         && (!cambios.hasAny(['xp'])
             || (despues.xp is int && despues.xp > antes.xp && despues.xp <= antes.xp + xpMaximo()))
         // La fecha de actividad siempre es la de hoy según el servidor.
-        && (!cambios.hasAny(['ultimaActividad']) || esHoy(despues.ultimaActividad))
-        && (!cambios.hasAny(['ultimaLeccion']) || esHoy(despues.ultimaLeccion))
+        // y solo avanza: si pudiera ir y volver entre dos fechas (el margen de
+        // 2 horas deja dos fechas válidas cerca de la medianoche), cada cambio
+        // de "día" llenaría el tanque sin límite.
+        && (!cambios.hasAny(['ultimaActividad'])
+            || (despues.ultimaActividad is string && esHoy(despues.ultimaActividad)
+                && despues.ultimaActividad > antes.get('ultimaActividad', '')))
+        && (!cambios.hasAny(['ultimaLeccion'])
+            || (despues.ultimaLeccion is string && esHoy(despues.ultimaLeccion)
+                && despues.ultimaLeccion > antes.get('ultimaLeccion', '')))
         && (!cambios.hasAny(['corazones']) || gasolinaValida(antes, despues))
         // La racha solo cambia con la primera lección completada de un día
         // nuevo: sube 1 o vuelve a empezar en 1.

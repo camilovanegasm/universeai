@@ -243,6 +243,19 @@ const SONIDOS = {
     [N.C5, N.C5, N.G5].forEach((f, i) => nota(f, t + i * 0.1, 0.07, { vol: 0.12 }));
     nota(N.C6, t + 0.32, 0.35, { tipo: "triangle", vol: 0.2 });
   },
+  /** Minijuegos: impulso del hoverboard. Cortísimo, porque se repite mucho. */
+  aleteo(t: number) {
+    nota(420, t, 0.06, { tipo: "triangle", vol: 0.1, hasta: 760 });
+  },
+  /** Minijuegos: combo que sube. */
+  combo(t: number) {
+    [N.C6, N.E6, N.G6].forEach((f, i) => nota(f, t + i * 0.04, 0.06, { vol: 0.12 }));
+  },
+  /** Minijuegos: choque. */
+  choque(t: number) {
+    ruido(t, 0.25, { vol: 0.12, desde: 1800, hasta: 120 });
+    nota(140, t, 0.3, { vol: 0.12, hasta: 50 });
+  },
   /** Una letra de la voz de Punti: robot. */
   voz(t: number) {
     const tonos = [392, 440, 523, 587];
@@ -254,7 +267,7 @@ export type Sonido = keyof typeof SONIDOS;
 
 // Cuántos milisegundos deben pasar antes de repetir el mismo sonido. Sin esto,
 // dos toques rápidos o dos eventos seguidos suenan encimados y crujen.
-const ENFRIAMIENTO: Partial<Record<Sonido, number>> = { toque: 40, voz: 30, pantalla: 120 };
+const ENFRIAMIENTO: Partial<Record<Sonido, number>> = { toque: 40, voz: 30, pantalla: 120, aleteo: 60 };
 const ultimaVez: Partial<Record<Sonido, number>> = {};
 
 /** Toca un sonido. Si hay silencio, no crea ni un nodo de audio. */

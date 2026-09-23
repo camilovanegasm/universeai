@@ -16,6 +16,7 @@ import PuntiPixel from "@/components/PuntiPixel";
 import Cargando from "@/components/Cargando";
 import PlanetaPixel from "@/components/PlanetaPixel";
 import RutaTema, { type SubtemaEnPlaneta } from "@/components/RutaTema";
+import { juegoDelMundo } from "@/lib/juegos/catalogo";
 
 // Mismos colores y mismo orden que la pantalla de mundos, para que el planeta
 // al que entraste sea del color de la tarjeta que tocaste.
@@ -32,6 +33,9 @@ const TX: Record<Idioma, Record<string, string>> = {
     clubTitulo: "Mundo del Club",
     clubTexto: "Sus lecciones son para miembros de Punti Club. Mira qué incluye y anótate.",
     clubBoton: "VER PUNTI CLUB",
+    minijuego: "MINIJUEGO",
+    recarga: "Gana y recarga gasolina",
+    jugar: "JUGAR",
   },
   en: {
     noEncontrado: "We couldn't find that world.",
@@ -42,6 +46,9 @@ const TX: Record<Idioma, Record<string, string>> = {
     clubTitulo: "Club world",
     clubTexto: "Its lessons are for Punti Club members. See what's included and join.",
     clubBoton: "SEE PUNTI CLUB",
+    minijuego: "MINIGAME",
+    recarga: "Win to refill your fuel",
+    jugar: "PLAY",
   },
 };
 
@@ -110,6 +117,7 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
   // lección lleva a /club. Las reglas de Firestore igual bloquean la lección.
   const bloqueado = tema.club === true && perfil?.premium !== true && !esAdmin(usuario);
   const hechas = subtemas.filter((s) => s.completado).length;
+  const juego = juegoDelMundo(tema.id);
   const completo = hechas === subtemas.length && subtemas.length > 0;
 
   return (
@@ -154,6 +162,26 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
             {t.clubBoton}
           </Link>
         </div>
+      )}
+
+      {juego && (
+        <Link
+          href={`/juego/${juego.id}`}
+          transitionTypes={["adelante"]}
+          className="tarjeta-juego mx-auto mt-4 flex w-[calc(100%-2rem)] max-w-2xl items-center gap-3 border-2 bg-[rgba(10,10,30,0.88)] px-4 py-3 transition-transform"
+          style={{ borderColor: juego.color }}
+        >
+          <span aria-hidden="true" className="grid h-10 w-10 shrink-0 place-items-center border-2 font-[family-name:var(--font-pixel)] text-[14px]" style={{ borderColor: juego.color, color: juego.color }}>
+            ▸
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-[family-name:var(--font-pixel)] text-[9px] leading-[1.7]" style={{ color: juego.color }}>
+              {t.minijuego} · {textoPixel(juego.nombre[idioma])}
+            </span>
+            <span className="block text-[14px] text-white">⛽ {t.recarga}</span>
+          </span>
+          <span className="font-[family-name:var(--font-pixel)] text-[9px]" style={{ color: juego.color }}>{t.jugar}</span>
+        </Link>
       )}
 
       <RutaTema

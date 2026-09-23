@@ -28,6 +28,7 @@ import Cargando from "@/components/Cargando";
 import BarraGasolina from "@/components/BarraGasolina";
 import Ejercicio from "@/components/Ejercicio";
 import GraficoExplicacion from "@/components/GraficoExplicacion";
+import { juegoDelMundo } from "@/lib/juegos/catalogo";
 
 type Fase = "cargando" | "explicacion" | "ejercicios" | "sin-gasolina" | "resultado";
 
@@ -51,6 +52,8 @@ const TX: Record<Idioma, Record<string, string>> = {
     gasolina: "Gasolina",
     sinGasTitulo: "Te quedaste sin gasolina",
     sinGasTexto: "Tu gasolina se recarga mañana. Vuelve entonces para seguir con esta lección.",
+    sinGasJuego: "O recarga ahora ganando un minijuego.",
+    recargaJugando: "RECARGA JUGANDO",
     completada: "¡Lección completada!",
     combustible: "Combustible",
     tarea: "Tu tarea",
@@ -84,6 +87,8 @@ const TX: Record<Idioma, Record<string, string>> = {
     gasolina: "Fuel",
     sinGasTitulo: "You're out of fuel",
     sinGasTexto: "Your fuel refills tomorrow. Come back then to keep going with this lesson.",
+    sinGasJuego: "Or refill right now by winning a minigame.",
+    recargaJugando: "REFILL BY PLAYING",
     completada: "Lesson complete!",
     // "Fuel" ya es la gasolina; la nota de la lección se llama distinto en
     // inglés para no confundir las dos cosas.
@@ -437,10 +442,30 @@ export default function LeccionPage({
         <PuntiPixel estado="battery" ancho={144} />
         <h2 className="font-[family-name:var(--font-display)] text-2xl font-black text-white">{t.sinGasTitulo}</h2>
         <BarraGasolina gasolina={0} maximo={gasolinaMaxima()} etiqueta={`${t.gasolina}: 0 / ${gasolinaMaxima()}`} alto={20} />
-        <p className="max-w-md text-[15px] leading-[1.6] text-[var(--muted)]">{t.sinGasTexto}</p>
-        <Link href={volverAlTema} transitionTypes={["atras"]} className="boton-pixel">
-          {t.volverMundo}
-        </Link>
+        <p className="max-w-md text-[15px] leading-[1.6] text-[var(--muted)]">
+          {t.sinGasTexto}
+          {catalogo.ajustes.juego.gasolinaPorJuego > 0 && catalogo.ajustes.juego.recargasJuegoDia > 0 && <> {t.sinGasJuego}</>}
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {catalogo.ajustes.juego.gasolinaPorJuego > 0 && catalogo.ajustes.juego.recargasJuegoDia > 0 && (
+            <Link
+              // El juego de este mundo si tiene; si no, la lista de juegos.
+              // Al ganar, "volver" trae de regreso a esta misma lección.
+              href={
+                juegoDelMundo(temaId)
+                  ? `/juego/${juegoDelMundo(temaId)!.id}?volver=/leccion/${temaId}/${subtemaId}`
+                  : `/juegos`
+              }
+              transitionTypes={["adelante"]}
+              className="boton-pixel boton-pixel-oro"
+            >
+              ⛽ {t.recargaJugando}
+            </Link>
+          )}
+          <Link href={volverAlTema} transitionTypes={["atras"]} className="boton-pixel">
+            {t.volverMundo}
+          </Link>
+        </div>
       </div>
     );
   }

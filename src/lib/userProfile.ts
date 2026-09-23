@@ -44,6 +44,15 @@ export type PerfilUsuario = {
    */
   premioRangoDesde?: Timestamp;
   /**
+   * Recargas de gasolina ganadas con minijuegos. `recargaJuegoDia` es el día
+   * ("YYYY-MM-DD", UTC) al que corresponde el contador; al cambiar de día el
+   * contador vuelve a 1. `ultimaRecargaJuego` es la hora del servidor de la
+   * última recarga. Las reglas de Firestore validan los tres campos juntos.
+   */
+  recargasJuego?: number;
+  recargaJuegoDia?: string;
+  ultimaRecargaJuego?: Timestamp;
+  /**
    * Premium. Solo el admin lo puede escribir (lo impiden las reglas de
    * Firestore). Todavía no cambia nada en la app: qué incluye se decide con
    * la página de precios.

@@ -1189,3 +1189,41 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
   - El agujero de gusano sigue al mouse (o al dedo) con suavidad.
   - El centro se va hacia el puntero y los anillos cercanos se corren al lado contrario, un efecto de paralaje que da profundidad.
   - Al sacar el mouse de la ventana vuelve al centro. Con "reducir movimiento" no se mueve.
+
+### Minijuegos que recargan gasolina (2026-09-23, pedido de Cami)
+- **Hay que volver a publicar las reglas de Firestore** (`firestore.rules`) en Firebase → Firestore → Reglas → Publicar, **antes del push**. Sin las reglas nuevas, ganar un juego no recarga: la app muestra "No se pudo recargar" y todo lo demás sigue funcionando.
+- **Cuatro juegos, cada uno con una mecánica distinta.** Se eligieron después de revisar juegos web de GitHub que enganchan (ver DOCUMENTACION §6.10):
+  - **Punti Flap** (mundo Origen, `/juego/punti-flap`): vuelas entre portales y pasar 10 gana. Tiene un **modo IA**: 40 Puntis aprenden a jugar solos con neuroevolución, a velocidad x1, x4 o x16, con un texto que explica lo que pasa. La idea viene de FlappyLearning (licencia MIT); el código se escribió de nuevo.
+  - **Caza la estafa** (Brújula): 6 mensajes de chat, cada uno con menos tiempo. Se tocan las frases sospechosas y los aciertos seguidos dan combo x2 o x3. Después de cada mensaje, Punti explica cada señal. Trae 7 estafas y 4 mensajes normales, con remitentes genéricos y sin marcas reales.
+  - **Caza el glitch** (Prisma): 3 escenas en pixel art dibujadas en código (parque, café, calle), cada una con 3 errores típicos de imágenes hechas con IA. Hay 25 s por escena y tocar en falso quita 2 s. Se gana con 6 de 9.
+  - **Palabra IA del día** (todos los mundos): un Wordle con 24 palabras en español y 23 en inglés, más una pista. Es la misma palabra para todos cada día y el resultado se comparte con cuadritos por WhatsApp. Los intentos se guardan en el navegador, así que recargar la página no regala otra partida.
+- **Recarga:** ganar da +1 de gasolina, con un máximo de 3 al día y 30 s entre una recarga y otra. Si el tanque está lleno, ganar no gasta recarga. Los juegos **no dan XP**.
+  - Configurable en Admin → Ajustes → MINIJUEGOS (`gasolinaPorJuego`, `recargasJuegoDia`, `segundosEntreRecargas`).
+  - `recargarConJuego()` en `progreso.ts` devuelve la gasolina nueva, así no hay que releer el perfil.
+- **Campos nuevos en el perfil:** `recargasJuego`, `recargaJuegoDia` y `ultimaRecargaJuego`, que lleva la hora del servidor.
+- **Reglas:**
+  - `recargaJuegoValida()` comprueba lo siguiente:
+    - el contador sube de a 1 y no pasa del tope;
+    - el día es hoy y no vuelve atrás;
+    - pasó el tiempo mínimo, contado con el reloj del servidor;
+    - la gasolina sube como mucho lo que da un juego, sin pasar del tanque.
+  - **Hueco viejo cerrado:** cerca de la medianoche UTC se podía alternar `ultimaActividad` entre dos fechas y llenar el tanque sin límite. Ahora `ultimaActividad` y `ultimaLeccion` solo avanzan. La app ya no intenta guardar una fecha anterior (`fechaQueAvanza` en `progreso.ts`).
+  - Revisadas por un revisor independiente. El emulador de Firebase no se pudo descargar en el entorno de Claude.
+- **Dónde aparecen:**
+  - Tarjeta MINIJUEGOS en /inicio.
+  - Página nueva `/juegos`.
+  - Tarjeta del juego en la ruta de Origen, Prisma y Brújula.
+  - Botón "⛽ RECARGA JUGANDO" en la pantalla de sin gasolina, que al ganar devuelve a la misma lección (`?volver=` solo acepta rutas internas).
+  - La barra de abajo se oculta dentro de un juego.
+- **Archivos nuevos:**
+  - `src/lib/juegos/`: catalogo, flap, estafas, escenas, palabras, records, utiles.
+  - `src/components/juegos/`: MarcoJuego, PuntiFlap, CazaEstafa, CazaGlitch, PalabraDelDia.
+  - `src/app/juegos/` y `src/app/juego/[id]/`.
+- **Tocados:** `ajustes.ts`, `progreso.ts`, `userProfile.ts`, `sonido.ts` (sonidos `aleteo`, `combo` y `choque`), `globals.css` (temblor, avisos, reloj, letras que giran), admin/ajustes, inicio, tema, lección y NavPunti.
+- **Sin dependencias nuevas.** El récord personal vive en el navegador porque no da ventaja y así no gasta lecturas de Firebase.
+- **Verificado:**
+  - Tipos, lint y `next build` completo (con las fuentes simuladas, porque el entorno no llega a Google Fonts).
+  - Los 4 juegos jugados en Chromium a 375 px y a 1280 px, sin scroll horizontal.
+  - La IA de Punti Flap supera 10 portales hacia la generación 9.
+  - Se arregló un error de celular: el puntaje hacía saltar el título a dos líneas y corría la escena justo cuando se iba a tocar.
+- **Sin probar:** las pantallas con sesión iniciada (el marco del juego, /juegos, la recarga real contra Firebase). Hay que probarlas en localhost.

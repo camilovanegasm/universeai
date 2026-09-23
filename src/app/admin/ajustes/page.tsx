@@ -277,6 +277,18 @@ function BloqueJuego({
       </fieldset>
 
       <fieldset className="flex flex-col gap-3">
+        <legend className="mb-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--gold)]">MINIJUEGOS</legend>
+        <div className="flex flex-wrap gap-5">
+          <Numero id="gasolinaPorJuego" etiqueta="Gasolina por juego ganado" ayuda="En pasos de 0,5. 0 = los juegos no recargan." paso={0.5} valor={juego.gasolinaPorJuego} alCambiar={campo("gasolinaPorJuego")} />
+          <Numero id="recargasJuegoDia" etiqueta="Recargas al día" ayuda="Cuántas veces al día se puede recargar jugando." valor={juego.recargasJuegoDia} alCambiar={campo("recargasJuegoDia")} />
+          <Numero id="segundosEntreRecargas" etiqueta="Segundos entre recargas" ayuda="Frena a quien intente recargar con un programa." valor={juego.segundosEntreRecargas} alCambiar={campo("segundosEntreRecargas")} />
+        </div>
+        <p className="text-[13px] text-[var(--muted)]">
+          Los juegos no dan XP: el XP y los rangos salen solo de las lecciones. Con el tanque lleno, ganar un juego no gasta recarga.
+        </p>
+      </fieldset>
+
+      <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--gold)]">XP POR LECCION</legend>
         <div className="flex flex-wrap gap-5">
           <Numero id="xpPerfecta" etiqueta="Sin errores" valor={juego.xpPerfecta} alCambiar={campo("xpPerfecta")} />
