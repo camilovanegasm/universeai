@@ -14,7 +14,9 @@ import PuntiPixel from "@/components/PuntiPixel";
  * El túnel se dibuja en un canvas pequeño (240 × 135) que se amplía con
  * image-rendering: pixelated, así queda en pixel art como Punti. Son anillos
  * de pixeles que vienen del fondo y se agrandan al acercarse, con un giro
- * suave y estrellas que salen disparadas del centro.
+ * suave y estrellas que salen disparadas del centro. El centro del túnel
+ * sigue al mouse (o al dedo) con suavidad, y los anillos cercanos se corren al
+ * lado contrario: eso da la sensación de profundidad (paralaje).
  *
  * Con prefers-reduced-motion se pinta un solo cuadro quieto. La animación se
  * detiene sola cuando la pestaña no se ve (requestAnimationFrame).
@@ -58,16 +60,36 @@ function Agujero() {
     // Estrellas: salen del centro y se aceleran al acercarse.
     const estrellas = Array.from({ length: 70 }, () => ({ a: Math.random() * Math.PI * 2, d: Math.random() }));
 
+    // Hacia dónde apunta el mouse, de -1 a 1 en cada eje. `obj` es donde está
+    // el puntero; `pos` lo persigue un poco cada cuadro, así el túnel se mueve
+    // con suavidad y no a saltos.
+    const obj = { x: 0, y: 0 };
+    const pos = { x: 0, y: 0 };
+    const mover = (e: PointerEvent) => {
+      obj.x = (e.clientX / window.innerWidth) * 2 - 1;
+      obj.y = (e.clientY / window.innerHeight) * 2 - 1;
+    };
+    const soltar = () => {
+      obj.x = 0;
+      obj.y = 0;
+    };
+    if (!quieto) {
+      window.addEventListener("pointermove", mover, { passive: true });
+      document.addEventListener("pointerleave", soltar);
+    }
+
     let cuadro = 0;
     const dibujar = (ms: number) => {
       const t = ms / 1000;
+      pos.x += (obj.x - pos.x) * 0.06;
+      pos.y += (obj.y - pos.y) * 0.06;
       ctx.fillStyle = "#05050f";
       ctx.fillRect(0, 0, W, H);
 
       // El centro del túnel se mece un poco: da la sensación de caer girando.
-      const cx = W / 2 + Math.sin(t * 0.6) * 6;
+      const cx = W / 2 + Math.sin(t * 0.6) * 6 + pos.x * W * 0.22;
       // Un poco arriba del centro: el infinito queda justo detrás de Punti.
-      const cy = H * 0.33 + Math.cos(t * 0.45) * 4;
+      const cy = H * 0.33 + Math.cos(t * 0.45) * 4 + pos.y * H * 0.22;
 
       // Brillo del fondo: el "infinito".
       for (let r = 10; r > 0; r--) {
@@ -83,8 +105,9 @@ function Agujero() {
         const radio = 5 / prof;
         if (radio > W) continue;
         // Cada anillo está un poco corrido según su profundidad: el túnel se tuerce.
-        const ox = cx + Math.sin(t * 0.8 + prof * 5) * (1 - prof) * 18;
-        const oy = cy + Math.cos(t * 0.7 + prof * 4) * (1 - prof) * 10;
+        // Los anillos cercanos se van al lado contrario del mouse (paralaje).
+        const ox = cx + Math.sin(t * 0.8 + prof * 5) * (1 - prof) * 18 - pos.x * (1 - prof) * 70;
+        const oy = cy + Math.cos(t * 0.7 + prof * 4) * (1 - prof) * 10 - pos.y * (1 - prof) * 40;
         const color = COLORES[(j + Math.floor(t * 0.35)) % COLORES.length];
         const opacidad = Math.min(1, (1 - prof) * 1.6) * (prof < 0.12 ? prof / 0.12 : 1);
         ctx.fillStyle = color;
@@ -123,7 +146,11 @@ function Agujero() {
     };
 
     cuadro = requestAnimationFrame(dibujar);
-    return () => cancelAnimationFrame(cuadro);
+    return () => {
+      cancelAnimationFrame(cuadro);
+      window.removeEventListener("pointermove", mover);
+      document.removeEventListener("pointerleave", soltar);
+    };
   }, []);
 
   return (

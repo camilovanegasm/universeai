@@ -1185,3 +1185,7 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
 - Botón a los mundos, o a la portada si no hay sesión.
 - Con prefers-reduced-motion queda un cuadro quieto; la animación se pausa sola cuando la pestaña no se ve.
 - Revisado en computador y en celular (375 px, sin scroll horizontal).
+- **404, ajuste:**
+  - El agujero de gusano sigue al mouse (o al dedo) con suavidad.
+  - El centro se va hacia el puntero y los anillos cercanos se corren al lado contrario, un efecto de paralaje que da profundidad.
+  - Al sacar el mouse de la ventana vuelve al centro. Con "reducir movimiento" no se mueve.
