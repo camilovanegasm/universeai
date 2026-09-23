@@ -26,10 +26,19 @@ export type AjustesJuego = {
   xpBasica: number;
   /** XP extra si termina antes del tiempo objetivo. */
   bonoVelocidad: number;
-  /** XP para ser Capitán de estación. */
-  xpCapitan: number;
-  /** XP para ser Arquitecto galáctico. */
-  xpArquitecto: number;
+  /**
+   * XP desde el que empieza cada rango del escalafón (ver rangos.ts).
+   * El rango 1, Cadete, empieza en 0.
+   */
+  xpRango2: number;
+  xpRango3: number;
+  xpRango4: number;
+  xpRango5: number;
+  xpRango6: number;
+  xpRango7: number;
+  xpRango8: number;
+  xpRango9: number;
+  xpRango10: number;
   /**
    * Lo máximo que una lección puede sumar de una vez. Se calcula al guardar
    * (la mejor nota + el bono) y lo usan las reglas de Firestore.
@@ -56,8 +65,17 @@ export const AJUSTES_POR_DEFECTO: Ajustes = {
     xpBuena: 10,
     xpBasica: 5,
     bonoVelocidad: 5,
-    xpCapitan: 100,
-    xpArquitecto: 300,
+    // Una pasada completa por la escuela da unos 400-500 XP (Piloto o
+    // Capitán). Los rangos altos se ganan repitiendo y practicando.
+    xpRango2: 40,
+    xpRango3: 120,
+    xpRango4: 250,
+    xpRango5: 450,
+    xpRango6: 700,
+    xpRango7: 1000,
+    xpRango8: 1400,
+    xpRango9: 1900,
+    xpRango10: 2600,
     xpMaximo: 20,
   },
   anuncio: { activo: false, tono: "info", texto: { es: "", en: "" } },
@@ -116,8 +134,15 @@ export function validarJuego(j: AjustesJuego): string[] {
   }
   if (!(j.xpPerfecta >= j.xpBuena && j.xpBuena >= j.xpBasica))
     p.push("El XP tiene que ir de mayor a menor: sin errores ≥ 1-2 errores ≥ 3 o más");
-  if (!entero(j.xpCapitan) || j.xpCapitan < 1) p.push("XP para Capitán: un número entero mayor que 0");
-  if (!entero(j.xpArquitecto) || j.xpArquitecto <= j.xpCapitan) p.push("XP para Arquitecto: mayor que el de Capitán");
+  let anterior = 0;
+  for (let n = 2; n <= 10; n++) {
+    const v = j[`xpRango${n}` as keyof AjustesJuego];
+    if (!entero(v) || v <= anterior) {
+      p.push(`XP del rango ${n}: un número entero mayor que el del rango ${n - 1}`);
+      break;
+    }
+    anterior = v;
+  }
   return p;
 }
 

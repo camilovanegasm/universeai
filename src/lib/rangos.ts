@@ -43,42 +43,74 @@ export const RANGOS: Record<
 /* ------------------------------------------------------ rango de la persona */
 
 /**
- * XP mínima para cada rango de la PERSONA (no del mundo).
+ * El escalafón: los 10 rangos de la PERSONA, de Cadete a Leyenda cósmica.
  *
- * Por qué estos números: una lección perfecta da 20 XP (15 + 5 de bono), y una
- * normal unas 10-15. Con los 26 subtemas escritos hay unos 300-400 XP en total.
- * Capitán llega hacia la cuarta parte del universo, Arquitecto cerca del final.
+ * No es lo mismo que el rango de un mundo (arriba), que dice su dificultad.
+ * Los nombres coinciden a propósito: un mundo "Capitán" es el que se
+ * recomienda a quien ya llegó a Capitán.
  *
- * DECISIÓN ABIERTA: también podría subirse de rango por mundos completados en
- * vez de por XP. Se eligió XP porque premia la constancia y no solo el avance.
+ * Se sube por XP. Como las lecciones se pueden repetir, los rangos altos
+ * premian la constancia: con una pasada por toda la escuela se llega más o
+ * menos a Piloto o Capitán; lo demás es práctica.
  */
+export type Escalon = {
+  id: string;
+  /** 1 a 10. Decide el diseño de la insignia. */
+  n: number;
+  titulo: string;
+  tituloEn: string;
+  color: string;
+};
+
+export const ESCALAFON: Escalon[] = [
+  { id: "cadete", n: 1, titulo: "Cadete", tituloEn: "Cadet", color: "#9aa3b8" },
+  { id: "explorador", n: 2, titulo: "Explorador espacial", tituloEn: "Space Explorer", color: "#00ff41" },
+  { id: "navegante", n: 3, titulo: "Navegante", tituloEn: "Navigator", color: "#c6ff00" },
+  { id: "piloto", n: 4, titulo: "Piloto", tituloEn: "Pilot", color: "#ffe600" },
+  { id: "capitan", n: 5, titulo: "Capitán de estación", tituloEn: "Station Captain", color: "#00f5ff" },
+  { id: "comandante", n: 6, titulo: "Comandante", tituloEn: "Commander", color: "#4d8dff" },
+  { id: "almirante", n: 7, titulo: "Almirante", tituloEn: "Admiral", color: "#ff8a00" },
+  { id: "arquitecto", n: 8, titulo: "Arquitecto de galaxias", tituloEn: "Galaxy Architect", color: "#b400ff" },
+  { id: "guardian", n: 9, titulo: "Guardián estelar", tituloEn: "Star Guardian", color: "#ff006e" },
+  { id: "leyenda", n: 10, titulo: "Leyenda cósmica", tituloEn: "Cosmic Legend", color: "#ffcc33" },
+];
+
+/** Clave en los ajustes del XP que pide cada rango (el 1 empieza en 0). */
+export type ClaveXpRango =
+  | "xpRango2" | "xpRango3" | "xpRango4" | "xpRango5" | "xpRango6"
+  | "xpRango7" | "xpRango8" | "xpRango9" | "xpRango10";
+
+export const clavesXpRango = (): ClaveXpRango[] =>
+  ESCALAFON.slice(1).map((e) => `xpRango${e.n}` as ClaveXpRango);
+
 /** Desde cuánto XP empieza cada rango. Se cambia en el admin (Ajustes). */
-export function xpDeRango(r: Rango): number {
-  const j = ajustesVigentes().juego;
-  return r === "explorador" ? 0 : r === "capitan" ? j.xpCapitan : j.xpArquitecto;
+export function xpDeEscalon(e: Escalon): number {
+  if (e.n === 1) return 0;
+  return ajustesVigentes().juego[`xpRango${e.n}` as ClaveXpRango];
 }
 
-const ORDEN: Rango[] = ["explorador", "capitan", "arquitecto"];
+export function escalonPorId(id: string | null | undefined): Escalon | null {
+  return ESCALAFON.find((e) => e.id === id) ?? null;
+}
 
 /** El rango actual, el siguiente, y cuánto falta, para una XP dada. */
 export function rangoPorXp(xp: number): {
-  actual: Rango;
-  siguiente: Rango | null;
+  actual: Escalon;
+  siguiente: Escalon | null;
   /** 0 a 1: qué tanto del camino al siguiente rango está recorrido. */
   avance: number;
   faltan: number;
 } {
-  let actual: Rango = "explorador";
-  for (const r of ORDEN) if (xp >= xpDeRango(r)) actual = r;
-  const i = ORDEN.indexOf(actual);
-  const siguiente = ORDEN[i + 1] ?? null;
+  let actual = ESCALAFON[0];
+  for (const e of ESCALAFON) if (xp >= xpDeEscalon(e)) actual = e;
+  const siguiente = ESCALAFON[actual.n] ?? null;
   if (!siguiente) return { actual, siguiente: null, avance: 1, faltan: 0 };
-  const desde = xpDeRango(actual);
-  const hasta = xpDeRango(siguiente);
+  const desde = xpDeEscalon(actual);
+  const hasta = xpDeEscalon(siguiente);
   return {
     actual,
     siguiente,
-    avance: Math.max(0, Math.min(1, (xp - desde) / (hasta - desde))),
+    avance: Math.max(0, Math.min(1, (xp - desde) / Math.max(1, hasta - desde))),
     faltan: Math.max(0, hasta - xp),
   };
 }

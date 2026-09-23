@@ -1039,3 +1039,37 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
 - Ordenar pasos:
   - Un paso elegido se quita tocándolo; tiene una ✕ y un aviso "Toca un paso elegido para quitarlo".
   - Ya no se comprueba solo al poner el último paso: aparece el botón COMPROBAR.
+
+### Escalafón de 10 rangos con insignias (2026-09-23, pedido de Cami)
+- Los rangos de la persona pasan de 3 a 10:
+  1. Cadete
+  2. Explorador espacial
+  3. Navegante
+  4. Piloto
+  5. Capitán de estación
+  6. Comandante
+  7. Almirante
+  8. Arquitecto de galaxias
+  9. Guardián estelar
+  10. Leyenda cósmica
+- `rangos.ts`: `ESCALAFON`, `rangoPorXp` devuelve un `Escalon`, y `xpDeEscalon`.
+  - El rango de los MUNDOS (explorador/capitán/arquitecto = dificultad) no cambia.
+  - Los nombres coinciden a propósito.
+- XP por rango, configurable en Admin → Ajustes → RANGOS (`xpRango2`…`xpRango10`):
+  - Valores: 40, 120, 250, 450, 700, 1000, 1400, 1900 y 2600.
+  - Una pasada por toda la escuela deja a la persona en Piloto o Capitán; los rangos altos se ganan practicando, porque las lecciones se pueden repetir.
+  - Ya no se usan `xpCapitan` ni `xpArquitecto`.
+- Insignias en pixel art:
+  - `src/lib/insigniaSprite.ts` hace el dibujo y `src/components/InsigniaRango.tsx` es el SVG.
+  - Rangos 1 a 3: escudo con galones.
+  - Rangos 4 a 6: escudo con estrellas.
+  - Rangos 7 y 8: con alas.
+  - Rango 9: con corona.
+  - Rango 10: escudo tornasol, alas doradas, corona, destellos y brillo animado (se apaga con prefers-reduced-motion).
+- Dónde se ven:
+  - Paso 04 de Cómo funciona / bienvenida, con las 10 insignias y el texto nuevo.
+  - Perfil: insignia, "n/10" y la fila de los 10 rangos, con los que faltan apagados.
+  - Pantalla de "nuevo rango" al terminar una lección.
+  - Lista de pilotos del admin.
+- Verificado en el navegador en computador y en celular (375 px, sin scroll horizontal).
+- Aviso: alguien con 100-119 XP antes era Capitán y ahora queda en Explorador espacial, porque cambiaron las escalas. Todavía no hay usuarios reales, así que no afecta a nadie.

@@ -19,7 +19,8 @@ import { useIdioma } from "@/lib/useIdioma";
 import type { Idioma } from "@/lib/i18n";
 import type { EstadoPunti } from "@/lib/puntiSprite";
 import { sonar } from "@/lib/sonido";
-import { RANGOS, rangoPorXp, type Rango } from "@/lib/rangos";
+import { rangoPorXp, type Escalon } from "@/lib/rangos";
+import InsigniaRango from "@/components/InsigniaRango";
 import BotonSonido from "@/components/BotonSonido";
 import PuntiPixel from "@/components/PuntiPixel";
 import Cargando from "@/components/Cargando";
@@ -119,7 +120,7 @@ export default function LeccionPage({
   const [errores, setErrores] = useState(0);
   const [gasolina, setGasolina] = useState(0);
   const [estadoPunti, setEstadoPunti] = useState<EstadoPunti>("online");
-  const [resultado, setResultado] = useState<{ xp: number; combustible: 1 | 2 | 3; rangoNuevo: Rango | null } | null>(null);
+  const [resultado, setResultado] = useState<{ xp: number; combustible: 1 | 2 | 3; rangoNuevo: Escalon | null } | null>(null);
   const xpInicial = useRef(0);
   const inicioEjerciciosRef = useRef<number>(0);
   const relojPunti = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -254,7 +255,7 @@ export default function LeccionPage({
     // de después, a partir de la XP que tenía al abrir la lección.
     const antes = rangoPorXp(xpInicial.current).actual;
     const despues = rangoPorXp(xpInicial.current + xp).actual;
-    const rangoNuevo = antes !== despues ? despues : null;
+    const rangoNuevo = antes.id !== despues.id ? despues : null;
 
     sonar("completa");
     // El ascenso va después de la victoria, no encima: dos fanfarrias a la
@@ -387,11 +388,12 @@ export default function LeccionPage({
         {resultado.rangoNuevo && (
           <div
             className="rango-nuevo border-2 px-5 py-3 text-center"
-            style={{ borderColor: RANGOS[resultado.rangoNuevo].color, color: RANGOS[resultado.rangoNuevo].color }}
+            style={{ borderColor: resultado.rangoNuevo.color, color: resultado.rangoNuevo.color }}
           >
             <p className="font-[family-name:var(--font-pixel)] text-[9px]">{t.nuevoRango}</p>
+            <InsigniaRango escalon={resultado.rangoNuevo} ancho={120} className="mx-auto mt-3" />
             <p className="mt-2 font-[family-name:var(--font-display)] text-[19px] font-black">
-              {idioma === "en" ? RANGOS[resultado.rangoNuevo].tituloEn : RANGOS[resultado.rangoNuevo].titulo}
+              {idioma === "en" ? resultado.rangoNuevo.tituloEn : resultado.rangoNuevo.titulo}
             </p>
           </div>
         )}

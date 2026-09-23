@@ -965,3 +965,26 @@ textarea.campo-admin { resize: vertical; }
   .nav-punti-item { transition: none; }
   .nav-punti-activo svg { animation: none; }
 }
+
+/* ---------------------------------------------------------------- insignias de rango */
+.insignia-rango {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--ic) 55%, transparent));
+}
+.insignia-apagada {
+  filter: grayscale(1) brightness(0.45);
+  opacity: 0.55;
+}
+.insignia-leyenda {
+  animation: insignia-brillo 2.4s ease-in-out infinite;
+}
+@keyframes insignia-brillo {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 204, 51, 0.55)); }
+  50% { filter: drop-shadow(0 0 14px rgba(255, 0, 110, 0.75)) drop-shadow(0 0 4px rgba(0, 245, 255, 0.6)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .insignia-leyenda { animation: none; }
+}

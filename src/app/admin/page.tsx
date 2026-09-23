@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/lib/AuthContext";
 import { cambiarPremium, esAdmin, listarUsuarios, llenarTanque, type UsuarioAdmin } from "@/lib/admin";
 import { gasolinaMaxima } from "@/lib/progreso";
-import { RANGOS, rangoPorXp } from "@/lib/rangos";
+import { rangoPorXp } from "@/lib/rangos";
 import PuntiPixel from "@/components/PuntiPixel";
 import BarraGasolina from "@/components/BarraGasolina";
 import MarcoAdmin from "@/components/admin/MarcoAdmin";
@@ -251,7 +251,7 @@ export default function AdminPage() {
             </p>
             <ol className="flex flex-col gap-3">
               {visibles.map((u, i) => {
-                const rango = RANGOS[rangoPorXp(u.xp).actual];
+                const rango = rangoPorXp(u.xp).actual;
                 const lleno = u.gasolina >= gasolinaMaxima();
                 const trabajando = ocupado === u.uid;
                 return (
@@ -279,7 +279,7 @@ export default function AdminPage() {
                         <p className="truncate text-[13px] text-[var(--muted)]">{u.email}</p>
                         <div className="mt-1.5 flex flex-wrap gap-1.5 font-[family-name:var(--font-terminal)] text-[13px] uppercase tracking-[0.08em]">
                           <span className="border px-1.5" style={{ borderColor: rango.color, color: rango.color }}>
-                            {rango.etiqueta}
+                            {rango.titulo}
                           </span>
                           <span className="border border-[var(--color-panel-border)] px-1.5 text-[var(--muted)]">
                             {u.idioma}

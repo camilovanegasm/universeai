@@ -6,7 +6,8 @@ import type { PerfilUsuario } from "@/lib/userProfile";
 import { gasolinaEfectiva, rachaEfectiva, gasolinaMaxima } from "@/lib/progreso";
 import { textoTema, textoSubtema } from "@/lib/temas";
 import { useCatalogo } from "@/lib/contenido";
-import { RANGOS, rangoPorXp } from "@/lib/rangos";
+import { ESCALAFON, rangoPorXp } from "@/lib/rangos";
+import InsigniaRango from "@/components/InsigniaRango";
 import { textoPixel, type Idioma } from "@/lib/i18n";
 import PuntiPixel from "@/components/PuntiPixel";
 import PlanetaPixel from "@/components/PlanetaPixel";
@@ -34,6 +35,7 @@ const TX: Record<Idioma, Record<string, string>> = {
     siguiente: "Próximo rango",
     faltan: "XP para",
     maximo: "Llegaste al rango más alto del universo.",
+    escalafon: "Los 10 rangos",
     xp: "XP total",
     racha: "Racha",
     dias: "días",
@@ -61,6 +63,7 @@ const TX: Record<Idioma, Record<string, string>> = {
     siguiente: "Next rank",
     faltan: "XP to",
     maximo: "You've reached the highest rank in the universe.",
+    escalafon: "The 10 ranks",
     xp: "Total XP",
     racha: "Streak",
     dias: "days",
@@ -143,8 +146,8 @@ export default function PanelPerfil({ perfil, idioma, alSalir, selectorIdioma }:
   const racha = rachaEfectiva(perfil);
   const gasolina = gasolinaEfectiva(perfil);
   const r = rangoPorXp(xp);
-  const rango = RANGOS[r.actual];
-  const siguiente = r.siguiente ? RANGOS[r.siguiente] : null;
+  const rango = r.actual;
+  const siguiente = r.siguiente;
 
   const mundos = catalogo.temas.map((tema, i) => {
     const hechas = tema.subtemas.filter((s) => perfil.progreso?.[s.id]?.completada).length;
@@ -187,8 +190,14 @@ export default function PanelPerfil({ perfil, idioma, alSalir, selectorIdioma }:
             <h1 className="font-[family-name:var(--font-pixel)] text-[16px] leading-[1.5] text-white sm:text-[20px]">
               {textoPixel(perfil.nombre || (en ? "Pilot" : "Piloto"))}
             </h1>
-            <p className="mt-2 font-[family-name:var(--font-display)] text-[17px] font-black" style={{ color: rango.color }}>
-              {en ? rango.tituloEn : rango.titulo}
+            <p className="mt-2 flex items-center justify-center gap-2 font-[family-name:var(--font-display)] text-[17px] font-black sm:justify-start" style={{ color: rango.color }}>
+              <InsigniaRango escalon={rango} ancho={48} />
+              <span>
+                {en ? rango.tituloEn : rango.titulo}
+                <span className="ml-2 font-[family-name:var(--font-terminal)] text-[15px] font-normal tracking-[0.08em] text-[var(--muted)]">
+                  {rango.n}/{ESCALAFON.length}
+                </span>
+              </span>
             </p>
 
             {/* Barra al siguiente rango. Se llena con scaleX desde 0, que va
@@ -211,6 +220,21 @@ export default function PanelPerfil({ perfil, idioma, alSalir, selectorIdioma }:
                 <p className="font-[family-name:var(--font-terminal)] text-[17px] text-[var(--muted)]">{t.maximo}</p>
               )}
             </div>
+
+            {/* El escalafón completo: los rangos alcanzados encendidos, los
+                que faltan apagados. Da una meta a la vista. */}
+            <ol className="mt-4 flex flex-wrap items-end justify-center gap-1 sm:justify-start" aria-label={t.escalafon}>
+              {ESCALAFON.map((e) => (
+                <li key={e.id} title={en ? e.tituloEn : e.titulo}>
+                  <InsigniaRango
+                    escalon={e}
+                    ancho={e.id === rango.id ? 40 : 28}
+                    apagada={e.n > rango.n}
+                    etiqueta={`${e.n}. ${en ? e.tituloEn : e.titulo}${e.n > rango.n ? (en ? " (locked)" : " (por alcanzar)") : ""}`}
+                  />
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
 

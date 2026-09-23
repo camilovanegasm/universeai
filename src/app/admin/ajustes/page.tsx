@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import MarcoAdmin from "@/components/admin/MarcoAdmin";
+import { ESCALAFON, type ClaveXpRango } from "@/lib/rangos";
 import { BotonBorrar, BotonIcono, CampoBilingue, ListaProblemas, cambiar, mover, quitar } from "@/components/admin/Campos";
 import PuntiPixel from "@/components/PuntiPixel";
 import { PREGUNTAS_CODIGO } from "@/components/PreguntasFrecuentes";
@@ -279,9 +280,16 @@ function BloqueJuego({
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--gold)]">RANGOS</legend>
         <div className="flex flex-wrap gap-5">
-          <Numero id="xpCapitan" etiqueta="XP para Capitán" valor={juego.xpCapitan} alCambiar={campo("xpCapitan")} />
-          <Numero id="xpArquitecto" etiqueta="XP para Arquitecto" valor={juego.xpArquitecto} alCambiar={campo("xpArquitecto")} />
+          {ESCALAFON.slice(1).map((e) => {
+            const clave = `xpRango${e.n}` as ClaveXpRango;
+            return (
+              <Numero key={clave} id={clave} etiqueta={`${e.n}. ${e.titulo}`} valor={juego[clave]} alCambiar={campo(clave)} />
+            );
+          })}
         </div>
+        <p className="text-[13px] text-[var(--muted)]">
+          XP desde el que empieza cada rango; el 1, Cadete, empieza en 0. Cada número tiene que ser mayor que el anterior. Como las lecciones se pueden repetir, los rangos altos premian la práctica.
+        </p>
         <p className="text-[13px] text-[var(--muted)]">
           Si cambias el tanque, revisa también las preguntas frecuentes: una de ellas dice cuánta gasolina hay.
         </p>

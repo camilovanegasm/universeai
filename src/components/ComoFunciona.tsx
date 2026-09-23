@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import PuntiPixel from "@/components/PuntiPixel";
 import PlanetaPixel from "@/components/PlanetaPixel";
-import { RANGOS } from "@/lib/rangos";
+import { ESCALAFON } from "@/lib/rangos";
+import InsigniaRango from "@/components/InsigniaRango";
 import type { EstadoPunti } from "@/lib/puntiSprite";
 import type { Idioma } from "@/lib/i18n";
 import { sonar } from "@/lib/sonido";
@@ -73,8 +74,8 @@ const PASOS: Paso[] = [
     estado: "levelup",
     titulo: { es: "Subes de rango", en: "You rank up" },
     texto: {
-      es: "Terminar da XP, y terminar rápido y sin errores da más. Con eso pasas de explorador a capitán, y de capitán a arquitecto.",
-      en: "Finishing earns XP, and finishing fast with no mistakes earns more. That's how you go from explorer to captain, and from captain to architect.",
+      es: "Terminar da XP, y terminar rápido y sin errores da más. Hay 10 rangos: empiezas de Cadete y, lección a lección, subes hasta Leyenda cósmica. ¿Hasta dónde llegas tú?",
+      en: "Finishing earns XP, and finishing fast with no mistakes earns more. There are 10 ranks: you start as a Cadet and, lesson by lesson, climb all the way to Cosmic Legend. How far will you go?",
     },
     color: "#ffe600",
     maqueta: "rangos",
@@ -164,20 +165,16 @@ export function Maqueta({ tipo, idioma = "es" }: { tipo: TipoMaqueta; idioma?: I
 
   if (tipo === "rangos") {
     return (
-      <div className="flex flex-wrap items-center justify-center gap-2">
-        {(["explorador", "capitan", "arquitecto"] as const).map((r, k) => (
-          <div key={r} className="flex items-center gap-2">
-            {k > 0 && <span className="text-[var(--muted)]">→</span>}
-            <span
-              className="flex items-center gap-1.5 border-2 px-3 py-2 font-[family-name:var(--font-terminal)] text-[16px] uppercase tracking-[0.12em]"
-              style={{ color: RANGOS[r].color, borderColor: RANGOS[r].color }}
-            >
-              <i className="block h-2.5 w-2.5" style={{ background: RANGOS[r].color }} />
-              {en ? RANGOS[r].etiquetaEn : RANGOS[r].etiqueta}
+      <ol className="mx-auto grid max-w-[520px] grid-cols-5 gap-x-1 gap-y-4">
+        {ESCALAFON.map((e) => (
+          <li key={e.id} className="flex flex-col items-center gap-1 text-center">
+            <InsigniaRango escalon={e} ancho={96} etiqueta={`${e.n}. ${en ? e.tituloEn : e.titulo}`} />
+            <span className="font-[family-name:var(--font-terminal)] text-[13px] leading-[1.1] tracking-[0.04em]" style={{ color: e.color }}>
+              {en ? e.tituloEn : e.titulo}
             </span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
     );
   }
 
