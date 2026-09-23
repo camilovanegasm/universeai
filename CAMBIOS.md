@@ -950,3 +950,27 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
 - Documentación: DOCUMENTACION.md 6.1.0 (Arena), 6.6 (equipo de contenido y Radar),
   6.7 (archivos en Drive), ruta 6.1 y 7.2, decisiones abiertas, regla de documentar
   todo; CLAUDE.md apunta a las guías.
+
+---
+
+## 2026-09-23 · "Pegar desde la hoja" en el admin
+
+- `src/lib/importarHoja.ts`: convierte filas copiadas de Google Sheets (texto separado
+  por tabulaciones, con celdas entre comillas si tienen saltos de línea) en lecciones
+  bilingües. Usa el encabezado si viene; si no, el orden de columnas de la hoja.
+  Ignora PLAN; arma pantallas con sus gráficos (tabla con sus FILAs, diagrama),
+  ejercicios (la hoja cuenta la opción correcta desde 1; verdadero/falso acepta
+  VERDADERO/TRUE) y tarea. Valida con las mismas reglas del editor. Cada fila rara se
+  reporta con su número en vez de romper todo. Tope de 800 mil caracteres por pegada.
+- `src/components/admin/PegarDesdeHoja.tsx`, en /admin/contenido: pegar → LEER FILAS →
+  lista de lecciones con dónde están, cuántas pantallas y ejercicios tienen y si están
+  listas para publicar → CREAR BORRADORES. Las lecciones nuevas piden elegir mundo. Los
+  títulos y descripciones de la fila LECCION actualizan el catálogo (borrador).
+  **No publica nada**: después se revisa con la vista previa y se publica.
+- Probado con Node usando las 4 lecciones del Mundo 01 en el formato exacto que copia
+  Google Sheets (sin espacios iniciales, celdas con comillas): 4 lecciones, gráficos y
+  respuestas correctas en su lugar, 0 faltas; filas con ID inválido o sin ID reportadas.
+- La pantalla no se pudo ver: exige la cuenta del admin.
+- Sobre WhatsApp/Telegram (pregunta de Cami): no hace falta. Desde la app de Claude en
+  el celular se piden las mismas cosas y el Radar se puede lanzar cuando se quiera. Un
+  bot tendría sentido más adelante para los estudiantes (recordatorios de racha).

@@ -586,6 +586,16 @@ computador de Cami.
 - Si las ejecuciones se detienen pidiendo aprobación, en los ajustes de la tarea se puede
   activar "aprobar automáticamente".
 
+#### Cómo pasa una lección de la hoja a la app
+
+1. Claude (o Cami) escribe la lección en la hoja, en el formato de la pestaña Instrucciones.
+2. En /admin/contenido → **PEGAR DESDE LA HOJA**: se copian las filas en Sheets, se pegan,
+   LEER FILAS, y CREAR BORRADORES (las lecciones nuevas piden elegir su mundo).
+3. Cada lección se abre con EDITAR LECCION → VISTA PREVIA → PUBLICAR.
+
+Pedirle cosas a Claude desde el celular: la app de Claude basta (no hace falta un bot de
+WhatsApp o Telegram). El Radar IA también se puede lanzar cuando se quiera, pidiéndoselo.
+
 ### 6.7 Archivos de contenido en el Drive de Cami
 
 | Archivo (Google Sheets) | Id | Qué es |
@@ -796,8 +806,6 @@ Lo técnico que no bloquea pero no se debe olvidar:
 
 - **Nombre definitivo del planeta Arena** y su lugar exacto en el orden (propuesto: justo
   después de Lexia).
-- **Importador de la hoja al admin** ("Pegar desde la hoja"): propuesto, pendiente de
-  construir. Hoy pasar una lección de la hoja a la app es copiar unos 60 textos a mano.
 
 - **¿Qué pasa al pulsar "Empezar" en una lección?** Hoy va al quiz existente.
   Falta definir si esa es la experiencia final.

@@ -16,6 +16,7 @@ import {
 } from "@/components/admin/Campos";
 import PuntiPixel from "@/components/PuntiPixel";
 import PlanetaPixel from "@/components/PlanetaPixel";
+import PegarDesdeHoja from "@/components/admin/PegarDesdeHoja";
 import {
   firma,
   guardarBorradorCatalogo,
@@ -208,6 +209,27 @@ export default function ContenidoAdmin() {
               </p>
             )}
             <ListaProblemas problemas={problemas} titulo="FALTA ESTO PARA PUBLICAR" />
+
+            <PegarDesdeHoja
+              temas={temas}
+              alImportar={(nuevos, ids) => {
+                // El catálogo se guarda solo (autoguardado) como borrador.
+                setTemas(nuevos);
+                setPanorama((x) =>
+                  x
+                    ? {
+                        ...x,
+                        lecciones: {
+                          ...x.lecciones,
+                          ...Object.fromEntries(
+                            ids.map((id) => [id, x.lecciones[id] === "publicada" || x.lecciones[id] === "cambios" ? "cambios" : "borrador"]),
+                          ),
+                        },
+                      }
+                    : x,
+                );
+              }}
+            />
 
             <ol className="flex flex-col gap-3">
               {temas.map((m, i) => {
