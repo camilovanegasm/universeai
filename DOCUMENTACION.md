@@ -369,7 +369,8 @@ C:\Proyectos\UniverseAI          (la carpeta sigue llamándose así por dentro)
       ├─ ajustes.ts             números del juego y anuncio: valores por defecto y validación
       ├─ admin.ts               quién es admin, lista de pilotos, tanque, premium
       ├─ progreso.ts            XP, combustible, gasolina, racha
-      ├─ rangos.ts              Explorador, Capitán, Arquitecto
+      ├─ rangos.ts              Dificultad de los mundos y escalafón de 10 rangos
+      ├─ insigniaSprite.ts      Dibujo pixel de las 10 insignias
       ├─ userProfile.ts         perfil en Firestore
       ├─ temas.ts · lecciones.ts   contenido semilla (respaldo si Firebase no responde)
       ├─ puntiSprite.ts · planetaSprite.ts   dibujos puros, sin React
@@ -425,7 +426,11 @@ de una pantalla **viva** con versiones y precios, que es lo único que el Radar 
 semana. Neutralidad: mismos criterios para todas las marcas; quien escribe es Claude (de
 Anthropic), por eso Cami revisa esa parte con ojo neutral.
 
-### 6.1.1 Los tres rangos — `rangos.ts`
+### 6.1.1 Rangos — `rangos.ts`
+
+Hay dos cosas distintas con nombres parecidos:
+
+**a) La dificultad de cada MUNDO** (tres niveles, se elige en el admin):
 
 | Rango | Nombre completo | En el chip | Color |
 |---|---|---|---|
@@ -436,6 +441,27 @@ Anthropic), por eso Cami revisa esa parte con ojo neutral.
 Cada rango guarda dos formas del nombre a propósito: el largo va en el perfil,
 el corto va en la tarjeta. "Capitán de estación espacial" no cabe en un chip
 sin partirse en dos renglones.
+
+**b) El escalafón de la PERSONA** (10 rangos por XP, `ESCALAFON`). Cada rango tiene una
+insignia en pixel art (`InsigniaRango.tsx` + `insigniaSprite.ts`). Los rangos del 2 al 10
+empiezan en el XP que se fija en Admin → Ajustes → RANGOS.
+
+| # | Rango | XP por defecto | Insignia |
+|---|---|---|---|
+| 1 | Cadete | 0 | escudo gris, 1 galón |
+| 2 | Explorador espacial | 40 | verde, 2 galones |
+| 3 | Navegante | 120 | lima, 3 galones |
+| 4 | Piloto | 250 | amarillo, 1 estrella |
+| 5 | Capitán de estación | 450 | cian, 2 estrellas |
+| 6 | Comandante | 700 | azul, 3 estrellas |
+| 7 | Almirante | 1000 | naranja, 1 estrella y alas |
+| 8 | Arquitecto de galaxias | 1400 | violeta, 2 estrellas y alas |
+| 9 | Guardián estelar | 1900 | rosa, 3 estrellas, alas y corona |
+| 10 | Leyenda cósmica | 2600 | tornasol, alas doradas, corona, destellos y brillo |
+
+Una pasada completa por la escuela da unos 400 a 500 XP (Piloto o Capitán). Los
+rangos altos se ganan repitiendo lecciones: premian la práctica. Un mundo marcado
+"Capitán" es el que se recomienda a quien ya llegó a ese rango.
 
 ### 6.2 DECISIÓN DE PRODUCTO — sin candados secuenciales
 
@@ -637,7 +663,7 @@ defecto (`src/lib/ajustes.ts`). Las reglas de Firestore leen los mismos números
 - **Combustible de la lección** (la nota, no la gasolina): 3/3 sin errores, 2/3
   con 1 o 2, 1/3 con 3 o más.
 - **XP**: 15 / 10 / 5 según la nota, **+5** si termina dentro del tiempo objetivo.
-- **Rangos**: Explorador desde 0 XP, Capitán desde 100, Arquitecto desde 300.
+- **Rangos**: 10, de Cadete (0 XP) a Leyenda cósmica (2600 XP). Tabla en 6.1.1.
 - **Racha**: cuenta días seguidos con al menos una lección completada (fecha
   `ultimaLeccion`). Fallar o recibir gasolina del admin no la mueve.
 
