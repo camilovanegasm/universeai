@@ -26,6 +26,13 @@ const TX: Record<Idioma, Record<string, string>> = {
     enviar: "ENVIAR",
     pista: "Pedirle una pista a Punti",
     etiquetaPista: "Pista",
+    comprobar: "COMPROBAR",
+    quitarPaso: "Toca un paso elegido para quitarlo.",
+    "opcion-multiple": "Elige la respuesta correcta",
+    "verdadero-falso": "¿Verdadero o falso?",
+    "completar-frase": "Completa la frase",
+    "ordenar-pasos": "Toca los pasos en orden",
+    "escribir-prompt": "Escribe tu prompt",
   },
   en: {
     verdadero: "True",
@@ -35,6 +42,13 @@ const TX: Record<Idioma, Record<string, string>> = {
     enviar: "SEND",
     pista: "Ask Punti for a hint",
     etiquetaPista: "Hint",
+    comprobar: "CHECK",
+    quitarPaso: "Tap a chosen step to remove it.",
+    "opcion-multiple": "Pick the right answer",
+    "verdadero-falso": "True or false?",
+    "completar-frase": "Fill in the blank",
+    "ordenar-pasos": "Tap the steps in order",
+    "escribir-prompt": "Write your prompt",
   },
 };
 
@@ -46,6 +60,10 @@ function mezclar<T>(items: T[]): T[] {
   }
   return copia;
 }
+
+// La pregunta va en cian para que no se confunda con las opciones (blancas)
+// ni con la pista (dorada).
+const CLASE_ENUNCIADO = "font-[family-name:var(--font-ui)] text-lg font-bold text-[var(--cyan)]";
 
 const ESTILO_OPCION = {
   base: "w-full border-2 px-4 py-3 text-left font-[family-name:var(--font-ui)] font-semibold transition-colors",
@@ -122,7 +140,7 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
   if (ejercicio.tipo === "opcion-multiple") {
     contenido = (
       <div className="flex flex-col gap-3">
-        <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-white">
+        <p className={CLASE_ENUNCIADO}>
           {ejercicio.pregunta}
         </p>
         {ordenOpciones.map((indice) => (
@@ -143,7 +161,7 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
   } else if (ejercicio.tipo === "verdadero-falso") {
     contenido = (
       <div className="flex flex-col gap-3">
-        <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-white">
+        <p className={CLASE_ENUNCIADO}>
           {ejercicio.enunciado}
         </p>
         <div className="flex gap-3">
@@ -166,7 +184,7 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
   } else if (ejercicio.tipo === "completar-frase") {
     contenido = (
       <div className="flex flex-col gap-3">
-        <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-white">
+        <p className={CLASE_ENUNCIADO}>
           {ejercicio.antes} <span className="text-[var(--matrix)]">____</span>
           {/* Google Sheets borra el espacio inicial de "de esos datos.": si lo que
               sigue empieza por letra o número, el espacio se pone aquí. */}
@@ -194,35 +212,52 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
 
     const elegirPaso = (paso: string) => {
       if (comprobado) return;
-      const nuevoOrden = [...ordenElegido, paso];
-      setOrdenElegido(nuevoOrden);
-      if (nuevoOrden.length === pasosCorrectos.length) {
-        const correcto = nuevoOrden.every((p, i) => p === pasosCorrectos[i]);
-        comprobar(correcto);
-      }
+      setOrdenElegido([...ordenElegido, paso]);
     };
+    // Antes, al poner el último paso se comprobaba solo y no había forma de
+    // corregirse. Ahora un paso elegido se quita tocándolo, y se comprueba
+    // con un botón cuando están todos.
+    const quitarPaso = (paso: string) => {
+      if (comprobado) return;
+      setOrdenElegido(ordenElegido.filter((p) => p !== paso));
+    };
+    const completo = ordenElegido.length === pasosCorrectos.length;
 
     contenido = (
       <div className="flex flex-col gap-4">
-        <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-white">
+        <p className={CLASE_ENUNCIADO}>
           {ejercicio.instruccion}
         </p>
         <ol className="flex flex-col gap-2">
           {ordenElegido.map((paso, indice) => (
-            <li
-              key={paso}
-              className={`${ESTILO_OPCION.base} ${
-                comprobado
-                  ? paso === pasosCorrectos[indice]
-                    ? ESTILO_OPCION.correcta
-                    : ESTILO_OPCION.incorrecta
-                  : "border-[var(--matrix)] bg-[var(--matrix)]/10 text-white"
-              }`}
-            >
-              {indice + 1}. {paso}
+            <li key={paso}>
+              <button
+                onClick={() => quitarPaso(paso)}
+                disabled={comprobado}
+                aria-label={`${indice + 1}. ${paso}. ${t.quitarPaso}`}
+                className={`${ESTILO_OPCION.base} flex items-center gap-3 ${
+                  comprobado
+                    ? paso === pasosCorrectos[indice]
+                      ? ESTILO_OPCION.correcta
+                      : ESTILO_OPCION.incorrecta
+                    : "border-[var(--matrix)] bg-[var(--matrix)]/10 text-white hover:border-[var(--pink)]"
+                }`}
+              >
+                <span className="flex-1">
+                  {indice + 1}. {paso}
+                </span>
+                {!comprobado && (
+                  <span aria-hidden="true" className="text-[var(--muted)]">
+                    ✕
+                  </span>
+                )}
+              </button>
             </li>
           ))}
         </ol>
+        {ordenElegido.length > 0 && !comprobado && (
+          <p className="font-[family-name:var(--font-terminal)] text-[15px] tracking-[0.04em] text-[var(--muted)]">{t.quitarPaso}</p>
+        )}
         <div className="flex flex-col gap-2">
           {disponibles.map((paso) => (
             <button
@@ -234,13 +269,21 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
             </button>
           ))}
         </div>
+        {completo && !comprobado && (
+          <button
+            onClick={() => comprobar(ordenElegido.every((p, i) => p === pasosCorrectos[i]))}
+            className="boton-pixel boton-pixel-lleno self-start"
+          >
+            {t.comprobar}
+          </button>
+        )}
       </div>
     );
   } else {
     // escribir-prompt
     contenido = (
       <div className="flex flex-col gap-3">
-        <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-white">
+        <p className={CLASE_ENUNCIADO}>
           {ejercicio.instruccion}
         </p>
         <textarea
@@ -279,6 +322,9 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
 
   return (
     <div className="flex flex-col gap-4">
+      <p className="font-[family-name:var(--font-terminal)] text-[15px] uppercase tracking-[0.12em] text-[var(--muted)]">
+        {t[ejercicio.tipo]}
+      </p>
       {contenido}
       {feedback && (
         <p

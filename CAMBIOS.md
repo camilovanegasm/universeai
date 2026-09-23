@@ -1032,3 +1032,10 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
 - Las incompletas no se publican y aparecen en la lista "FALTA ESTO PARA PUBLICAR".
 - Solo toma lecciones que están en algún mundo.
 - Escribe en lotes de 200, porque Firestore permite hasta 500 escrituras por lote.
+
+### Ejercicios más claros (2026-09-23, pedido de Cami)
+- Arriba de cada ejercicio sale el tipo en letra pequeña: "Elige la respuesta correcta", "¿Verdadero o falso?", "Completa la frase", "Toca los pasos en orden" o "Escribe tu prompt". También en inglés.
+- La pregunta o instrucción va en cian (`CLASE_ENUNCIADO`), para diferenciarla de las opciones (blancas) y de la pista (dorada).
+- Ordenar pasos:
+  - Un paso elegido se quita tocándolo; tiene una ✕ y un aviso "Toca un paso elegido para quitarlo".
+  - Ya no se comprueba solo al poner el último paso: aparece el botón COMPROBAR.
