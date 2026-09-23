@@ -680,3 +680,92 @@ galaxia vieja.
 - Borrada `src/app/vista-previa/` (las pantallas de prueba sin login).
 - Cami probó en localhost con su cuenta: lección completa, fallo con segundo
   intento, pista, idioma y la ruta nueva. Todo guarda con las reglas nuevas.
+
+---
+
+## 2026-09-23 · Fase 4.0, paso 2: la Estación de control (/admin)
+
+- `src/lib/admin.ts`: `CORREO_ADMIN`, `esAdmin()`, `listarUsuarios()`,
+  `llenarTanque()`, `cambiarPremium()`. El correo coincide con el de
+  `firestore.rules`; si se cambia uno, hay que cambiar el otro.
+- `src/app/admin/page.tsx`:
+  - Cifras arriba: pilotos, jugaron hoy, premium, lecciones hechas.
+  - Buscar por nombre o correo; filtros (todos, jugaron hoy, premium, sin
+    gasolina); orden (recientes, más XP, mejor racha).
+  - Cada piloto: inicial con el color de su rango, correo, rango, idioma,
+    XP, racha, lecciones, barra de gasolina, última lección y fecha de
+    registro. Los premium llevan borde dorado.
+  - Botones "LLENAR TANQUE" y "HACER/QUITAR PREMIUM"; el cambio se ve al
+    instante y un aviso abajo lo confirma.
+  - Quien no es admin ve "ZONA RESTRINGIDA". No es la seguridad (esa son las
+    reglas); es para no mostrar una pantalla que no le funcionaría.
+  - Si Firebase niega la lista, el panel lo dice en claro y sugiere revisar
+    que las reglas estén publicadas.
+- En `/perfil`, solo para el admin: botón "ESTACION DE CONTROL".
+- Premium: por ahora es solo una marca (`premium: true`). Qué incluye se
+  decide con la página de precios (4.1).
+
+### La racha tiene su propia fecha (`ultimaLeccion`)
+Llenar el tanque obliga a guardar la fecha de hoy en `ultimaActividad`, que
+era también la fecha de la racha: llenarle el tanque a alguien le habría
+quitado el +1 de racha de ese día. Es el mismo error que ya pasaba al fallar
+un ejercicio antes de completar una lección.
+- Nuevo campo `ultimaLeccion`: se escribe solo al completar una lección, y la
+  racha se cuenta con él. Los perfiles viejos usan `ultimaActividad` hasta
+  su próxima lección.
+- `firestore.rules`: admite `ultimaLeccion` (solo con la fecha de hoy) y la
+  racha solo cambia cuando cambia `ultimaLeccion`. **Hay que volver a
+  publicar las reglas.**
+
+### Salir del quiz
+Cami: "no hay forma de salirse del quiz". Las pantallas de explicación tenían
+SALIR, pero en los ejercicios no había ningún botón de salida.
+- Botón SALIR a la izquierda de la gasolina durante los ejercicios.
+- Pide confirmación en un panel de la app (no un `confirm()` del navegador),
+  con Punti sin batería: "¿Salir de la lección? Tu avance en esta lección no
+  se guarda. La gasolina que ya gastaste no vuelve."
+- El botón grande es SEGUIR JUGANDO y tiene el foco: la opción que no pierde
+  nada es la fácil. Escape o tocar fuera del panel = seguir jugando.
+
+---
+
+## 2026-09-23 · Fase 5.1: editor de contenido en el admin (adelantada)
+
+Cami: "en el admin también quiero controlar la carga de las preguntas, quiz y
+todo lo relacionado con el aprendizaje". Se adelantó antes de los precios: de
+~26 lecciones solo existía una, y cada lección nueva dependía de escribirla en
+código.
+
+- **El contenido pasa a Firebase** (`src/lib/contenido.ts`). Catálogo en
+  `contenido/catalogo`, lecciones en `lecciones/{id}`, borradores en
+  `borradores/`. La app usa el código mientras no se importe o si Firebase no
+  responde.
+- **La app lee de ahí**: portada, mundos, ruta del mundo, lección y perfil usan
+  `useCatalogo()` y `cargarLeccion()`. /inicio y /tema esperan el catálogo con
+  el esqueleto, para que los mundos no salten al llegar.
+- **Formato bilingüe** `{ es, en }` para editar lado a lado; `aLeccion()` entrega
+  la lección en un idioma, así que el quiz no cambió.
+- **Admin con pestañas** PILOTOS / CONTENIDO (`MarcoAdmin.tsx`).
+- **/admin/contenido**: botón para importar lo del código la primera vez; los
+  mundos (nombre, título, descripción, rango, orden, agregar, quitar) y sus
+  lecciones (títulos, orden, agregar, quitar) con el estado de cada una.
+  "PUBLICAR MUNDOS".
+- **/admin/contenido/[id]**: editor de la lección. Pantallas de explicación (qué
+  dice Punti, cómo se ve, con vista del sprite, tabla o diagrama opcional), los
+  5 tipos de ejercicio (marcar la correcta, verdadero/falso, frase con espacio,
+  pasos en orden, prompt), pista, tarea y tiempo objetivo. Todo ES/EN lado a lado.
+- **Autoguardado** del borrador 1,2 s después del último cambio, con indicador; si
+  se cierra la pestaña con algo sin guardar, el navegador pregunta.
+- **Validación antes de publicar** con lista de faltas y campos vacíos en rosa.
+- **Vista previa jugable** en los dos idiomas.
+- Borrar pide un segundo toque ("¿Borrar?") en el mismo botón.
+- `firestore.rules`: contenido y lecciones públicos de lectura, escritura solo
+  admin; borradores solo admin. **Hay que volver a publicar las reglas.**
+
+### Verificado
+Con una página de prueba temporal (ya borrada): la lección actual convertida a
+bilingüe y de vuelta sale idéntica en español y en inglés; no quedan listas
+dentro de listas; la lección y el catálogo del código pasan la validación sin
+faltas; una lección vacía da 7 faltas. La vista previa se probó con clics: en
+inglés, acertar la opción múltiple pasa al verdadero/falso. La portada sigue
+mostrando los 7 mundos. **No se pudo ver el editor**: exige la cuenta del admin.

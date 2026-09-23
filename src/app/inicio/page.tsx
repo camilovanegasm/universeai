@@ -8,8 +8,8 @@ import { auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthContext";
 import { guardarIdioma, obtenerPerfil, type PerfilUsuario } from "@/lib/userProfile";
 import { gasolinaEfectiva, rachaEfectiva, GASOLINA_MAXIMA } from "@/lib/progreso";
-import { TEMAS, textoTema } from "@/lib/temas";
-import { LECCIONES } from "@/lib/lecciones";
+import { textoTema } from "@/lib/temas";
+import { useCatalogo } from "@/lib/contenido";
 import { useIdioma, cambiarIdioma } from "@/lib/useIdioma";
 import type { Idioma } from "@/lib/i18n";
 import MundosPunti, { type MundoEnLista } from "@/components/MundosPunti";
@@ -61,6 +61,7 @@ const TX: Record<Idioma, Record<string, string>> = {
 export default function InicioPage() {
   const router = useRouter();
   const idioma = useIdioma();
+  const catalogo = useCatalogo();
   const t = TX[idioma];
   const { usuario, cargando } = useAuth();
   const [perfil, setPerfil] = useState<PerfilUsuario | null>(null);
@@ -105,7 +106,7 @@ export default function InicioPage() {
   // que se pueda desincronizar.
   const mundos = useMemo<MundoEnLista[]>(
     () =>
-      TEMAS.map((tema) => {
+      catalogo.temas.map((tema) => {
         const tx = textoTema(tema, idioma);
         return {
           id: tema.id,
@@ -116,15 +117,17 @@ export default function InicioPage() {
           rango: tema.rango,
           total: tema.subtemas.length,
           hechas: tema.subtemas.filter((s) => perfil?.progreso?.[s.id]?.completada).length,
-          disponibles: tema.subtemas.filter((s) => Boolean(LECCIONES[s.id])).length,
+          disponibles: tema.subtemas.filter((s) => catalogo.conLeccion.has(s.id)).length,
         };
       }),
-    [perfil, idioma],
+    [perfil, idioma, catalogo],
   );
 
   if (cargando || !usuario) return <Cargando />;
 
-  if (!perfilListo) {
+  // El esqueleto espera también al catálogo: si no, se verían un instante los
+  // mundos del código y después saltarían a los de Firebase.
+  if (!perfilListo || !catalogo.listo) {
     return (
       <ViewTransition exit="esqueleto-sale" default="none">
         <EsqueletoMundos />
@@ -134,7 +137,7 @@ export default function InicioPage() {
 
   const gasolina = perfil ? gasolinaEfectiva(perfil) : 0;
   const racha = perfil ? rachaEfectiva(perfil) : 0;
-  const totalSubtemas = TEMAS.reduce((suma, x) => suma + x.subtemas.length, 0);
+  const totalSubtemas = catalogo.temas.reduce((suma, x) => suma + x.subtemas.length, 0);
   const totalHechas = mundos.reduce((suma, x) => suma + x.hechas, 0);
 
   return (

@@ -13,15 +13,14 @@ import SelectorIdioma from "@/components/SelectorIdioma";
 import BotonSonido from "@/components/BotonSonido";
 import BotonMusica from "@/components/BotonMusica";
 import { Maqueta, type TipoMaqueta } from "@/components/ComoFunciona";
-import { TEMAS, textoTema } from "@/lib/temas";
+import { textoTema } from "@/lib/temas";
+import { useCatalogo } from "@/lib/contenido";
 import { RANGOS } from "@/lib/rangos";
-import { LECCIONES } from "@/lib/lecciones";
 
 const COLORES = ["#00ff41", "#00f5ff", "#b400ff", "#ff006e", "#ffe600"];
 
 // Cifras del producto, no de la audiencia. Son verificables contando los
 // archivos del proyecto, y no hay que inventarse usuarios que todavía no hay.
-const SUBTEMAS = TEMAS.reduce((n, t) => n + t.subtemas.length, 0);
 
 type Textos = {
   eyebrow: string;
@@ -105,7 +104,6 @@ const TX: Record<Idioma, Textos> = {
   },
 };
 
-const VALORES_CIFRAS = [String(TEMAS.length), String(SUBTEMAS), "5", "0"];
 const COLORES_CIFRAS = ["#00ff41", "#00f5ff", "#b400ff", "#ffe600"];
 
 const BLOQUES_MAQUETA: { maqueta: TipoMaqueta; color: string }[] = [
@@ -117,6 +115,15 @@ const BLOQUES_MAQUETA: { maqueta: TipoMaqueta; color: string }[] = [
 export default function Home() {
   const { usuario, cargando } = useAuth();
   const idioma = useIdioma();
+  // Los mundos salen de Firebase si ya se importaron; mientras llegan (y en
+  // el servidor) se muestran los del código, así la portada no espera.
+  const { temas: TEMAS, conLeccion } = useCatalogo();
+  const VALORES_CIFRAS = [
+    String(TEMAS.length),
+    String(TEMAS.reduce((n, t) => n + t.subtemas.length, 0)),
+    "5",
+    "0",
+  ];
   const t = TX[idioma];
   const dentro = !cargando && usuario;
 
@@ -204,7 +211,7 @@ export default function Home() {
             const color = COLORES[i % COLORES.length];
             const rango = RANGOS[tema.rango];
             const tx = textoTema(tema, idioma);
-            const listas = tema.subtemas.filter((s) => Boolean(LECCIONES[s.id])).length;
+            const listas = tema.subtemas.filter((s) => conLeccion.has(s.id)).length;
             return (
               <li
                 key={tema.id}

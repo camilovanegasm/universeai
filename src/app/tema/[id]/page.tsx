@@ -6,8 +6,8 @@ import { use, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/AuthContext";
-import { TEMAS, textoSubtema, textoTema } from "@/lib/temas";
-import { LECCIONES } from "@/lib/lecciones";
+import { textoSubtema, textoTema } from "@/lib/temas";
+import { useCatalogo } from "@/lib/contenido";
 import { obtenerPerfil, type PerfilUsuario } from "@/lib/userProfile";
 import { useIdioma } from "@/lib/useIdioma";
 import { textoPixel, type Idioma } from "@/lib/i18n";
@@ -46,8 +46,9 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
   const { usuario, cargando } = useAuth();
   const [perfil, setPerfil] = useState<PerfilUsuario | null>(null);
 
-  const indice = TEMAS.findIndex((x) => x.id === id);
-  const tema = indice === -1 ? undefined : TEMAS[indice];
+  const catalogo = useCatalogo();
+  const indice = catalogo.temas.findIndex((x) => x.id === id);
+  const tema = indice === -1 ? undefined : catalogo.temas[indice];
   const color = COLORES[(indice === -1 ? 0 : indice) % COLORES.length];
 
   useEffect(() => {
@@ -75,13 +76,13 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
           titulo: tx.titulo,
           descripcion: tx.descripcion,
           completado: Boolean(perfil?.progreso?.[s.id]?.completada),
-          disponible: Boolean(LECCIONES[s.id]),
+          disponible: catalogo.conLeccion.has(s.id),
         };
       }),
-    [tema, perfil, idioma],
+    [tema, perfil, idioma, catalogo],
   );
 
-  if (cargando || !usuario) {
+  if (cargando || !usuario || !catalogo.listo) {
     return <Cargando />;
   }
 

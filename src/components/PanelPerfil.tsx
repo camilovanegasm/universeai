@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { PerfilUsuario } from "@/lib/userProfile";
 import { gasolinaEfectiva, rachaEfectiva, GASOLINA_MAXIMA } from "@/lib/progreso";
-import { TEMAS, textoTema, textoSubtema } from "@/lib/temas";
-import { LECCIONES } from "@/lib/lecciones";
+import { textoTema, textoSubtema } from "@/lib/temas";
+import { useCatalogo } from "@/lib/contenido";
 import { RANGOS, rangoPorXp } from "@/lib/rangos";
 import { textoPixel, type Idioma } from "@/lib/i18n";
 import PuntiPixel from "@/components/PuntiPixel";
@@ -135,6 +135,7 @@ type Props = {
 };
 
 export default function PanelPerfil({ perfil, idioma, alSalir, selectorIdioma }: Props) {
+  const catalogo = useCatalogo();
   const t = TX[idioma];
   const en = idioma === "en";
 
@@ -145,7 +146,7 @@ export default function PanelPerfil({ perfil, idioma, alSalir, selectorIdioma }:
   const rango = RANGOS[r.actual];
   const siguiente = r.siguiente ? RANGOS[r.siguiente] : null;
 
-  const mundos = TEMAS.map((tema, i) => {
+  const mundos = catalogo.temas.map((tema, i) => {
     const hechas = tema.subtemas.filter((s) => perfil.progreso?.[s.id]?.completada).length;
     const proxima = tema.subtemas.find((s) => !perfil.progreso?.[s.id]?.completada);
     return {
@@ -155,7 +156,7 @@ export default function PanelPerfil({ perfil, idioma, alSalir, selectorIdioma }:
       hechas,
       total: tema.subtemas.length,
       proxima,
-      proximaLista: proxima ? Boolean(LECCIONES[proxima.id]) : false,
+      proximaLista: proxima ? catalogo.conLeccion.has(proxima.id) : false,
     };
   });
 

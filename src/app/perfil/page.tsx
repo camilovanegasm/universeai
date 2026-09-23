@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthContext";
+import { esAdmin } from "@/lib/admin";
 import { guardarIdioma, obtenerPerfil, type PerfilUsuario } from "@/lib/userProfile";
 import { useIdioma, cambiarIdioma } from "@/lib/useIdioma";
 import PuntiPixel from "@/components/PuntiPixel";
@@ -76,7 +77,17 @@ export default function PerfilPage() {
           >
             ← {idioma === "en" ? "WORLDS" : "MUNDOS"}
           </Link>
-          <span className="font-[family-name:var(--font-pixel)] text-[11px] text-white">PUNTI</span>
+          {esAdmin(usuario) ? (
+            <Link
+              href="/admin"
+              transitionTypes={["adelante"]}
+              className="border-2 border-[var(--gold)] px-3 py-2 font-[family-name:var(--font-pixel)] text-[8px] text-[var(--gold)] transition-colors hover:bg-[var(--gold)]/15"
+            >
+              ESTACION DE CONTROL
+            </Link>
+          ) : (
+            <span className="font-[family-name:var(--font-pixel)] text-[11px] text-white">PUNTI</span>
+          )}
         </div>
       </header>
 

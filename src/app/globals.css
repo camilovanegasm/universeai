@@ -893,3 +893,55 @@ body {
   .estacion-entra { animation: none; }
   .estacion { transition: none; }
 }
+
+/* ---------- Admin: botones y campos compactos ---------- */
+.btn-admin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  border: 2px solid var(--color-panel-border);
+  padding: 0.45rem 0.8rem;
+  font-family: var(--font-press-start), monospace;
+  font-size: 8px;
+  line-height: 1.4;
+  color: var(--matrix);
+  background: rgba(0, 255, 65, 0.06);
+  transition: background-color 120ms, border-color 120ms, transform 90ms steps(2);
+  white-space: nowrap;
+}
+.btn-admin:hover:not(:disabled),
+.btn-admin:focus-visible {
+  border-color: var(--matrix);
+  background: rgba(0, 255, 65, 0.16);
+}
+.btn-admin:active:not(:disabled) { transform: translateY(2px); }
+.btn-admin:disabled { cursor: not-allowed; opacity: 0.4; }
+.btn-admin-lleno {
+  border-color: var(--matrix);
+  background: var(--matrix);
+  color: #05050f;
+}
+.btn-admin-lleno:hover:not(:disabled),
+.btn-admin-lleno:focus-visible { background: #6bff96; color: #05050f; }
+
+.campo-admin {
+  width: 100%;
+  min-width: 0;
+  border: 2px solid var(--color-panel-border);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.55rem 2.2rem 0.55rem 0.7rem;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #fff;
+  outline: none;
+  transition: border-color 120ms;
+}
+select.campo-admin { padding-right: 0.7rem; background: #0b0b1d; }
+textarea.campo-admin { resize: vertical; }
+.campo-admin::placeholder { color: var(--muted); }
+.campo-admin:focus { border-color: var(--matrix); }
+.campo-admin-falta { border-color: var(--pink); background: rgba(255, 0, 110, 0.08); }
+@media (prefers-reduced-motion: reduce) {
+  .btn-admin { transition: none; }
+}

@@ -60,7 +60,7 @@ service cloud.firestore {
     function cambioDelJuego(antes, despues) {
       let cambios = despues.diff(antes).affectedKeys();
       return cambios.hasOnly([
-          'xp', 'racha', 'corazones', 'ultimaActividad',
+          'xp', 'racha', 'corazones', 'ultimaActividad', 'ultimaLeccion',
           'progreso', 'idioma', 'bienvenidaVista'
         ])
         // Idioma: solo los dos que existen.
@@ -72,10 +72,12 @@ service cloud.firestore {
             || (despues.xp is int && despues.xp > antes.xp && despues.xp <= antes.xp + 20))
         // La fecha de actividad siempre es la de hoy según el servidor.
         && (!cambios.hasAny(['ultimaActividad']) || esHoy(despues.ultimaActividad))
+        && (!cambios.hasAny(['ultimaLeccion']) || esHoy(despues.ultimaLeccion))
         && (!cambios.hasAny(['corazones']) || gasolinaValida(antes, despues))
-        // La racha solo cambia al pasar a un día nuevo: sube 1 o vuelve a empezar en 1.
+        // La racha solo cambia con la primera lección completada de un día
+        // nuevo: sube 1 o vuelve a empezar en 1.
         && (!cambios.hasAny(['racha'])
-            || (cambios.hasAny(['ultimaActividad'])
+            || (cambios.hasAny(['ultimaLeccion'])
                 && (despues.racha == antes.racha + 1 || despues.racha == 1)))
         // Progreso: como mucho una lección nueva por escritura.
         && (!cambios.hasAny(['progreso'])
@@ -111,6 +113,22 @@ service cloud.firestore {
       // Nadie borra perfiles desde la app: borrar y volver a crear serviría
       // para reiniciar la gasolina.
       allow delete: if false;
+    }
+
+    // ---------- Contenido (mundos y lecciones) ----------
+    // Lo publicado lo lee cualquiera, incluso sin cuenta: la portada muestra
+    // los mundos antes de registrarse. Solo el admin lo cambia.
+    match /contenido/{documento} {
+      allow read: if true;
+      allow write: if esAdmin();
+    }
+    match /lecciones/{leccionId} {
+      allow read: if true;
+      allow write: if esAdmin();
+    }
+    // Los borradores del editor: solo el admin los ve.
+    match /borradores/{documento} {
+      allow read, write: if esAdmin();
     }
   }
 }

@@ -21,7 +21,7 @@ export type ResultadoLeccion = {
 // El día se identifica con la fecha en UTC ("YYYY-MM-DD"), no con la hora local del usuario.
 // Es una simplificación válida para el MVP: la racha y la recarga de gasolina cambian a la
 // medianoche UTC en vez de a la medianoche de cada usuario.
-function fechaDeHoy(): string {
+export function fechaDeHoy(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
@@ -59,8 +59,9 @@ export function gasolinaEfectiva(perfil: PerfilUsuario): number {
 // Firestore todavía tenga guardado el número anterior.
 export function rachaEfectiva(perfil: PerfilUsuario): number {
   const hoy = fechaDeHoy();
-  if (!perfil.ultimaActividad) return 0;
-  if (perfil.ultimaActividad === hoy || esDiaAnterior(perfil.ultimaActividad, hoy)) {
+  const ultima = perfil.ultimaLeccion ?? perfil.ultimaActividad;
+  if (!ultima) return 0;
+  if (ultima === hoy || esDiaAnterior(ultima, hoy)) {
     return perfil.racha;
   }
   return 0;
@@ -86,9 +87,10 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
 
     tx.update(referencia, {
       xp: (datos.xp ?? 0) + xp,
-      racha: proximaRacha(datos.ultimaActividad, hoy, datos.racha ?? 0),
+      racha: proximaRacha(datos.ultimaLeccion ?? datos.ultimaActividad, hoy, datos.racha ?? 0),
       corazones: gasolinaEfectiva(datos),
       ultimaActividad: hoy,
+      ultimaLeccion: hoy,
       [`progreso.${idLeccion}`]: {
         completada: true,
         combustible,

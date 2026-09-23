@@ -23,11 +23,22 @@ export type PerfilUsuario = {
   // Última fecha (formato "YYYY-MM-DD") en la que el usuario completó una lección o falló un
   // ejercicio. Se usa para saber si hay que recargar la gasolina del día y si la racha sigue viva.
   ultimaActividad?: string;
+  // Última fecha en la que completó una lección. La racha se cuenta con esta,
+  // no con `ultimaActividad`: fallar un ejercicio o que el admin llene el
+  // tanque también tocan `ultimaActividad`, y no deben contar como "jugó hoy".
+  // Los perfiles viejos no la tienen; mientras falte se usa `ultimaActividad`.
+  ultimaLeccion?: string;
   progreso: Record<string, ProgresoLeccion>;
   /** Idioma elegido en la bienvenida. Si falta, la persona todavía no lo eligió. */
   idioma?: Idioma;
   /** true cuando ya pasó por la bienvenida (idioma + manual). */
   bienvenidaVista?: boolean;
+  /**
+   * Premium. Solo el admin lo puede escribir (lo impiden las reglas de
+   * Firestore). Todavía no cambia nada en la app: qué incluye se decide con
+   * la página de precios.
+   */
+  premium?: boolean;
 };
 
 const VIDAS_INICIALES = 5;

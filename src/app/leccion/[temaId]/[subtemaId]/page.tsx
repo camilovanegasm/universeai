@@ -1,11 +1,11 @@
 "use client";
 
-import { use, useEffect, useRef, useState } from "react";
+import { use, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/AuthContext";
-import { TEMAS, textoSubtema } from "@/lib/temas";
-import { LECCIONES } from "@/lib/lecciones";
+import { textoSubtema } from "@/lib/temas";
+import { aLeccion, cargarLeccion, useCatalogo, type LeccionB } from "@/lib/contenido";
 import {
   calcularXp,
   completarLeccion,
@@ -37,6 +37,9 @@ const TX: Record<Idioma, Record<string, string>> = {
     volverMundo: "VOLVER AL MUNDO",
     enObra: "Esta lección todavía está en construcción. Vuelve pronto.",
     salir: "SALIR",
+    salirTitulo: "¿Salir de la lección?",
+    salirTexto: "Tu avance en esta lección no se guarda. La gasolina que ya gastaste no vuelve.",
+    seguir: "SEGUIR JUGANDO",
     transmision: "TRANSMISIÓN · PUNTI",
     pantalla: "PANTALLA",
     de: "DE",
@@ -58,6 +61,9 @@ const TX: Record<Idioma, Record<string, string>> = {
     volverMundo: "BACK TO THE WORLD",
     enObra: "This lesson is still under construction. Come back soon.",
     salir: "EXIT",
+    salirTitulo: "Leave this lesson?",
+    salirTexto: "Your progress in this lesson won't be saved. Fuel you already used doesn't come back.",
+    seguir: "KEEP PLAYING",
     transmision: "TRANSMISSION · PUNTI",
     pantalla: "SCREEN",
     de: "OF",
@@ -88,14 +94,28 @@ export default function LeccionPage({
   const t = TX[idioma];
   const { usuario, cargando } = useAuth();
 
-  const tema = TEMAS.find((x) => x.id === temaId);
+  const catalogo = useCatalogo();
+  const tema = catalogo.temas.find((x) => x.id === temaId);
   const subtema = tema?.subtemas.find((s) => s.id === subtemaId);
-  const leccion = LECCIONES[subtemaId]?.[idioma];
+  // La lección llega de Firebase (o del código, si aún no se importó).
+  // undefined = todavía cargando; null = no existe (en construcción).
+  const [leccionB, setLeccionB] = useState<LeccionB | null | undefined>(undefined);
+  useEffect(() => {
+    let vigente = true;
+    cargarLeccion(subtemaId).then((l) => {
+      if (vigente) setLeccionB(l);
+    });
+    return () => {
+      vigente = false;
+    };
+  }, [subtemaId]);
+  const leccion = useMemo(() => (leccionB ? aLeccion(leccionB, idioma) : undefined), [leccionB, idioma]);
   const volverAlTema = `/tema/${temaId}`;
 
   const [fase, setFase] = useState<Fase>("cargando");
   const [indiceExplicacion, setIndiceExplicacion] = useState(0);
   const [indiceEjercicio, setIndiceEjercicio] = useState(0);
+  const [confirmarSalida, setConfirmarSalida] = useState(false);
   const [errores, setErrores] = useState(0);
   const [gasolina, setGasolina] = useState(0);
   const [estadoPunti, setEstadoPunti] = useState<EstadoPunti>("online");
@@ -129,7 +149,7 @@ export default function LeccionPage({
     relojPunti.current = setTimeout(() => setEstadoPunti("online"), ms);
   }
 
-  if (cargando || !usuario) {
+  if (cargando || !usuario || !catalogo.listo || leccionB === undefined) {
     return <Cargando />;
   }
 
@@ -422,9 +442,16 @@ export default function LeccionPage({
   const ejercicioActual = leccion.ejercicios[indiceEjercicio];
   return (
     <div className="flex flex-1 flex-col items-center px-4 py-8 sm:px-6">
-      <div className="mb-6 flex w-full max-w-md items-center justify-between">
+      <div className="mb-6 flex w-full max-w-md items-center justify-between gap-3">
+        {/* Antes no había forma de salir del quiz sin cerrar la pestaña. */}
+        <button
+          onClick={() => setConfirmarSalida(true)}
+          className="shrink-0 border-2 border-[var(--color-panel-border)] px-3 py-2 font-[family-name:var(--font-pixel)] text-[8px] text-[var(--muted)] transition-colors hover:border-[var(--pink)] hover:text-[var(--pink)]"
+        >
+          {t.salir}
+        </button>
         <BarraGasolina gasolina={gasolina} maximo={GASOLINA_MAXIMA} etiqueta={etiquetaGasolina} />
-        <span className="flex items-center gap-3">
+        <span className="ml-auto flex items-center gap-3">
           <span className="font-[family-name:var(--font-terminal)] text-[17px] uppercase tracking-[0.14em] text-[var(--muted)]">
             {t.ejercicio} {indiceEjercicio + 1} / {leccion.ejercicios.length}
           </span>
@@ -443,6 +470,85 @@ export default function LeccionPage({
           onUsarPista={usarPista}
           idioma={idioma}
         />
+      </div>
+      {confirmarSalida && (
+        <ConfirmarSalida
+          titulo={t.salirTitulo}
+          texto={t.salirTexto}
+          seguir={t.seguir}
+          salir={t.salir}
+          alSeguir={() => setConfirmarSalida(false)}
+          alSalir={() => router.push(volverAlTema, { transitionTypes: ["atras"] })}
+        />
+      )}
+    </div>
+  );
+}
+
+/**
+ * Confirmación para salir del quiz. Es un panel de la app, no un
+ * confirm() del navegador: se ve como el resto y no congela la página.
+ * Escape o tocar fuera = seguir jugando (lo que no pierde nada).
+ */
+function ConfirmarSalida({
+  titulo,
+  texto,
+  seguir,
+  salir,
+  alSeguir,
+  alSalir,
+}: {
+  titulo: string;
+  texto: string;
+  seguir: string;
+  salir: string;
+  alSeguir: () => void;
+  alSalir: () => void;
+}) {
+  const seguirRef = useRef<HTMLButtonElement>(null);
+
+  // El foco va a "seguir jugando" una sola vez, al abrir.
+  useEffect(() => {
+    seguirRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    const alTeclear = (e: KeyboardEvent) => {
+      if (e.key === "Escape") alSeguir();
+    };
+    window.addEventListener("keydown", alTeclear);
+    return () => window.removeEventListener("keydown", alTeclear);
+  }, [alSeguir]);
+
+  return (
+    <div
+      className="cargando-entra fixed inset-0 z-40 grid place-items-center bg-black/70 px-4 backdrop-blur-sm"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) alSeguir();
+      }}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="salir-titulo"
+        className="flex w-full max-w-sm flex-col items-center gap-4 border-2 border-[var(--pink)] bg-[#0a0a1e] p-6 text-center"
+      >
+        <PuntiPixel estado="battery" ancho={80} />
+        <h2 id="salir-titulo" className="font-[family-name:var(--font-display)] text-xl font-black text-white">
+          {titulo}
+        </h2>
+        <p className="text-[15px] text-[var(--muted)]">{texto}</p>
+        <div className="flex w-full flex-col gap-2">
+          <button ref={seguirRef} onClick={alSeguir} className="boton-pixel boton-pixel-lleno">
+            {seguir}
+          </button>
+          <button
+            onClick={alSalir}
+            className="px-3 py-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--pink)] hover:underline"
+          >
+            {salir}
+          </button>
+        </div>
       </div>
     </div>
   );

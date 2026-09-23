@@ -134,7 +134,7 @@ que nadie tenga que ilustrarlo.
 - **La luz del borde es del color complementario, no blanca.** Eso es lo que
   hace que se lean como neón y no como planetas de libro de ciencias.
 
-### 3.3 El planeta por dentro — `PlanetaTema.tsx`
+### 3.3 El mundo por dentro — `RutaTema.tsx` (antes el globo `PlanetaTema.tsx`)
 
 Globo girable en canvas, con las lecciones repartidas en espiral sobre la
 esfera. Tiene un interruptor GLOBO / LISTA, y la preferencia se recuerda en
@@ -363,7 +363,8 @@ los campos del juego, y con límites:
 | `xp` | Solo subir, máximo 20 por escritura |
 | `corazones` (gasolina) | El mismo día solo bajar; en un día nuevo, recargar hasta 5 |
 | `ultimaActividad` | Solo la fecha de hoy según el reloj del servidor (margen de 2 h) |
-| `racha` | Solo al cambiar de día: +1 o volver a 1 |
+| `ultimaLeccion` | Solo la fecha de hoy. Es la fecha de la racha |
+| `racha` | Solo con la primera lección completada de un día nuevo: +1 o volver a 1 |
 | `progreso` | Como mucho una lección nueva por escritura |
 | `idioma` | `es` o `en` |
 | `bienvenidaVista` | Solo pasar a `true` |
@@ -379,6 +380,42 @@ los campos del juego, y con límites:
 - La versión anterior de las reglas está en `referencias/firestore.rules.anterior`.
 
 ---
+
+### 6.5 De dónde sale el contenido — el editor (fase 5.1)
+
+Desde la fase 5.1 el contenido (mundos, lecciones, ejercicios) vive en Firebase
+y se edita en **/admin/contenido**, sin tocar código.
+
+| En Firebase | Qué es | Quién lo lee | Quién lo escribe |
+|---|---|---|---|
+| `contenido/catalogo` | Los mundos publicados, su orden y sus lecciones | Cualquiera (también sin cuenta) | Admin |
+| `lecciones/{id}` | Cada lección publicada | Cualquiera | Admin |
+| `borradores/catalogo` | Los mundos como los está editando el admin | Admin | Admin |
+| `borradores/leccion-{id}` | Cada lección en edición | Admin | Admin |
+
+- **Borrador y publicado.** Todo se guarda solo como borrador (1,2 s después del
+  último cambio). Los estudiantes no ven nada hasta que se toca PUBLICAR. Los
+  mundos se publican desde la lista; cada lección, desde su editor.
+- **Antes de publicar se valida**: los dos idiomas llenos, una respuesta correcta
+  marcada, al menos 2 opciones o pasos… La lista de faltas dice dónde está cada
+  una y los campos vacíos se marcan en rosa.
+- **Vista previa jugable** en español e inglés, sin gastar gasolina.
+- **Mientras no se importe**, la app usa lo escrito en `temas.ts` y
+  `lecciones.ts`. También si Firebase no responde. Después de importar, Firebase
+  manda y esos dos archivos quedan solo como respaldo y semilla.
+- **Formato**: cada texto se guarda con sus dos idiomas juntos (`{ es, en }`). La
+  app sigue recibiendo una lección por idioma (`aLeccion` en `contenido.ts`), así
+  que el quiz no cambió. Firebase no admite listas dentro de listas: las filas de
+  las tablas se guardan como `{ a, b }`.
+- **Los ids no cambian nunca.** El progreso de cada estudiante se guarda con el id
+  de la lección; cambiar el título no cambia el id. Se generan del título al
+  crear la lección y no se repiten.
+- Quitar una lección o un mundo de la lista no borra la lección publicada de
+  Firebase: solo deja de aparecer.
+- Archivos: `src/lib/contenido.ts` (lectura, tipos, conversiones),
+  `src/lib/contenidoAdmin.ts` (borradores, validación, publicar),
+  `src/app/admin/contenido/` (pantallas), `src/components/admin/` (marco, campos,
+  vista previa).
 
 ## 7. Reglas del juego
 
@@ -518,10 +555,10 @@ Dónde estamos y qué sigue. Se actualiza cada vez que se cierra una fase.
 | Fase | Qué incluye | Por qué en ese orden |
 |---|---|---|
 
-| **4.0** | **Panel de administración** (`/admin`) — ver usuarios, cargar gasolina, marcar premium | Necesita reglas de Firestore blindadas: que seas el único admin no puede depender de esconder la URL. **Y hoy cada usuario puede escribir cualquier campo de su propio perfil**: antes de que exista premium hay que cerrar eso, o cualquiera se lo activa solo |
+| **4.0** | **Panel de administración** (`/admin`, "Estación de control") — **construido, falta que Cami lo pruebe con su cuenta**: ver usuarios con cifras, buscar, filtrar, llenar el tanque, marcar premium. Reglas cerradas | El premium todavía no cambia nada en la app: qué incluye se decide en la 4.1 |
 | **4.1** | **Precios** — planes mensual y anual, sin pasarela todavía | La página puede existir antes que el cobro |
-| **5.0** | **Contenido** — escribir los 25 subtemas que faltan, cada uno en los dos idiomas (la estructura obliga a escribir las dos versiones) | Lo más largo de todo, y lo único que no se puede acelerar con código |
-| **5.1** | **Editor de cursos en el panel** — mover el contenido a la base de datos | Solo vale la pena cuando escribir contenido sea el cuello de botella |
+| **5.0** | **Contenido** — escribir los 25 subtemas que faltan, cada uno en los dos idiomas, ahora desde el editor | Lo más largo de todo, y lo único que no se puede acelerar con código |
+| **5.1** | **Editor de contenido en el panel** — **construido antes que los precios** (Cami, 2026-09-23): el contenido pasa a Firebase y se edita en /admin/contenido. Falta que Cami lo pruebe e importe | Adelantado porque sin él cada lección nueva dependía de escribirla en código |
 
 ### Fuera de la ruta por ahora
 
@@ -534,9 +571,7 @@ Dónde estamos y qué sigue. Se actualiza cada vez que se cierra una fase.
 
 ## 12. Pendientes
 
-- **Racha y fallos (error del juego, anterior a las reglas):** fallar un ejercicio marca el día
-  como activo. Si el primer movimiento del día es un fallo, completar la lección después ya no
-  sube la racha ese día. Arreglo: guardar aparte la fecha de la última lección completada.
+- ~~Racha y fallos~~: arreglado en la fase 4.0 con el campo `ultimaLeccion`.
 
 ### Acciones de Cami
 
