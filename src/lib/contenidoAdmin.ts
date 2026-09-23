@@ -272,6 +272,54 @@ export async function publicarCatalogo(temas: TemaC[]) {
   return final;
 }
 
+export type ResultadoPublicarTodo = {
+  publicadas: string[];
+  incompletas: { id: string; problemas: string[] }[];
+  temas: TemaC[];
+};
+
+/**
+ * Publica de una sola vez todos los borradores de lección que están listos y
+ * después publica los mundos. Aplica las mismas reglas del editor
+ * (validarLeccion): una lección incompleta no se publica y se reporta.
+ * Solo toma lecciones que existen en los mundos, y se salta las que ya están
+ * publicadas sin cambios.
+ */
+export async function publicarTodo(temas: TemaC[]): Promise<ResultadoPublicarTodo> {
+  const enMundos = new Set(temas.flatMap((m) => m.subtemas.map((s) => s.id)));
+  const [borradores, publicadas] = await Promise.all([
+    getDocs(collection(db, "borradores")),
+    getDocs(collection(db, "lecciones")),
+  ]);
+  const firmasPub = new Map(publicadas.docs.map((d) => [d.id, firma(d.data().leccion)]));
+
+  const listas: LeccionB[] = [];
+  const incompletas: ResultadoPublicarTodo["incompletas"] = [];
+  for (const d of borradores.docs) {
+    if (!d.id.startsWith("leccion-")) continue;
+    const id = d.id.slice("leccion-".length);
+    const l = d.data().leccion as LeccionB | undefined;
+    if (!l || l.id !== id || !enMundos.has(id)) continue;
+    if (firmasPub.get(id) === firma(l)) continue;
+    const problemas = validarLeccion(l);
+    if (problemas.length) incompletas.push({ id, problemas });
+    else listas.push(l);
+  }
+
+  // Firestore acepta hasta 500 escrituras por lote: se parte en grupos.
+  const cuando = serverTimestamp();
+  for (let i = 0; i < listas.length; i += 200) {
+    const lote = writeBatch(db);
+    for (const l of listas.slice(i, i + 200)) lote.set(doc(db, "lecciones", l.id), { leccion: l, publicadoEn: cuando });
+    await lote.commit();
+  }
+
+  // Los mundos se publican al final: así marcan como disponibles justo las
+  // lecciones que ya quedaron publicadas.
+  const final = await publicarCatalogo(temas);
+  return { publicadas: listas.map((l) => l.id), incompletas, temas: final };
+}
+
 export async function guardarBorradorLeccion(l: LeccionB) {
   await setDoc(doc(db, "borradores", `leccion-${l.id}`), { leccion: l, guardadoEn: serverTimestamp() });
 }

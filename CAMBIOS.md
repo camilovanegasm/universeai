@@ -1023,3 +1023,12 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
 - **Ejercicio.tsx:** las opciones de opción múltiple y completar-frase salen en orden aleatorio.
   - Antes, la correcta quedaba casi siempre en el mismo lugar.
   - Se mezclan índices, así que "correcta" y las opciones tachadas del segundo intento siguen funcionando.
+
+### Admin: PUBLICAR TODO (2026-09-23)
+- Nuevo botón en /admin/contenido, al lado de PUBLICAR MUNDOS. Pide confirmación ("SÍ, PUBLICAR TODO").
+- Qué hace (`publicarTodo` en `contenidoAdmin.ts`):
+  1. Publica de una vez todas las lecciones en borrador o con cambios que estén completas. Usa las mismas reglas del editor.
+  2. Al final publica los mundos.
+- Las incompletas no se publican y aparecen en la lista "FALTA ESTO PARA PUBLICAR".
+- Solo toma lecciones que están en algún mundo.
+- Escribe en lotes de 200, porque Firestore permite hasta 500 escrituras por lote.

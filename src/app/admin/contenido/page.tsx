@@ -24,6 +24,7 @@ import {
   importarDesdeCodigo,
   leerPanorama,
   publicarCatalogo,
+  publicarTodo,
   vacio,
   validarCatalogo,
   type PanoramaContenido,
@@ -53,7 +54,8 @@ export default function ContenidoAdmin() {
   const [temas, setTemas] = useState<TemaC[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [abierto, setAbierto] = useState<string | null>(null);
-  const [trabajando, setTrabajando] = useState<"importar" | "publicar" | null>(null);
+  const [trabajando, setTrabajando] = useState<"importar" | "publicar" | "todo" | null>(null);
+  const [confirmarTodo, setConfirmarTodo] = useState(false);
   const [problemas, setProblemas] = useState<string[]>([]);
   const [aviso, setAviso] = useState<string | null>(null);
   const [nuevoMundo, setNuevoMundo] = useState("");
@@ -144,6 +146,31 @@ export default function ContenidoAdmin() {
     }
   }
 
+  async function publicarTodoAhora() {
+    if (!temas) return;
+    setConfirmarTodo(false);
+    const p = validarCatalogo(temas);
+    setProblemas(p);
+    if (p.length) return;
+    setTrabajando("todo");
+    try {
+      const r = await publicarTodo(temas);
+      setTemas(r.temas);
+      marcarGuardado(r.temas);
+      await cargar();
+      setProblemas(r.incompletas.map((x) => `${x.id}: ${x.problemas[0]}`));
+      setAviso(
+        r.incompletas.length
+          ? `${r.publicadas.length} lecciones publicadas. ${r.incompletas.length} quedaron sin publicar porque les falta algo (mira la lista).`
+          : `Listo: ${r.publicadas.length} lecciones y los mundos publicados.`,
+      );
+    } catch {
+      setAviso("No se pudo publicar todo. Intenta de nuevo.");
+    } finally {
+      setTrabajando(null);
+    }
+  }
+
   function cambiarMundo(i: number, m: TemaC) {
     setTemas((x) => (x ? cambiar(x, i, m) : x));
   }
@@ -170,6 +197,25 @@ export default function ContenidoAdmin() {
       >
         {trabajando === "publicar" ? "PUBLICANDO…" : "PUBLICAR MUNDOS"}
       </button>
+      {confirmarTodo ? (
+        <>
+          <button onClick={publicarTodoAhora} className="btn-admin btn-admin-lleno">
+            SÍ, PUBLICAR TODO
+          </button>
+          <button onClick={() => setConfirmarTodo(false)} className="btn-admin">
+            CANCELAR
+          </button>
+        </>
+      ) : (
+        <button
+          onClick={() => setConfirmarTodo(true)}
+          disabled={trabajando !== null || estado !== "guardado"}
+          className="btn-admin"
+          title="Publica todas las lecciones en borrador que estén completas y los mundos"
+        >
+          {trabajando === "todo" ? "PUBLICANDO TODO…" : "PUBLICAR TODO"}
+        </button>
+      )}
     </>
   ) : null;
 
@@ -201,7 +247,7 @@ export default function ContenidoAdmin() {
           <>
             <p className="max-w-[70ch] text-[14px] text-[var(--muted)]">
               Todo se guarda solo como borrador. Los estudiantes no ven los cambios de mundos hasta que tocas{" "}
-              <b className="text-white">PUBLICAR MUNDOS</b>; cada lección se publica desde su propio editor.
+              <b className="text-white">PUBLICAR MUNDOS</b>. Cada lección se publica desde su propio editor, o todas juntas con <b className="text-white">PUBLICAR TODO</b> (solo las que estén completas).
             </p>
             {hayCambios && (
               <p className="font-[family-name:var(--font-terminal)] text-[15px] tracking-[0.06em] text-[var(--gold)]">

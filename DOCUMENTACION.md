@@ -594,6 +594,7 @@ computador de Cami.
 2. En /admin/contenido → **PEGAR DESDE LA HOJA**: se copian las filas en Sheets, se pegan,
    LEER FILAS, y CREAR BORRADORES (las lecciones nuevas piden elegir su mundo).
 3. Cada lección se abre con EDITAR LECCION → VISTA PREVIA → PUBLICAR.
+   O todas juntas con **PUBLICAR TODO** en la lista de contenido: publica las lecciones completas y los mundos, y lista las que les falta algo.
 
 Pedirle cosas a Claude desde el celular: la app de Claude basta (no hace falta un bot de
 WhatsApp o Telegram). El Radar IA también se puede lanzar cuando se quiera, pidiéndoselo.
