@@ -1073,3 +1073,24 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
   - Lista de pilotos del admin.
 - Verificado en el navegador en computador y en celular (375 px, sin scroll horizontal).
 - Aviso: alguien con 100-119 XP antes era Capitán y ahora queda en Explorador espacial, porque cambiaron las escalas. Todavía no hay usuarios reales, así que no afecta a nadie.
+
+### Fases A, B y C del temario: 44 lecciones nuevas y 5 mundos (2026-09-23)
+- 44 lecciones escritas en paralelo por 7 escritores, con la voz de Punti, ES/EN y datos verificados en la web.
+- Cada lección pasó por:
+  - `revisar.py`: reglas de formato y estilo.
+  - 3 revisores independientes, que encontraron 14 problemas; todos se corrigieron.
+  - El lector real del importador: 0 faltas, 0 avisos.
+- Mundos nuevos: Órbita (IA en tu día a día), Nexo (Agentes de IA), Taller (Crea con IA sin programar), Horizonte (El futuro de la IA) y Núcleo (Cómo se construye la IA).
+- Lecciones nuevas en mundos que ya existían:
+  - **Origen:** 2.
+  - **Lexia:** 2.
+  - **Eco:** 2.
+  - **Forja:** 4.
+  - **Prisma:** 2.
+  - **Brújula:** 3 (deepfakes, detectar contenido IA, IA en el estudio).
+  - **Arena:** 4 (Meta, Copilot, Mistral, Perplexity).
+- Archivos:
+  - `contenido/punti-44-lecciones-nuevas.tsv` para pegar en el admin, con la versión `.csv` para Sheets.
+  - `contenido/fuentes-44-lecciones.md` con las fuentes.
+- **Importador**: nuevas filas MUNDO, que crean el mundo, y la columna Tipo / Punti de LECCION, que preselecciona el mundo. Un solo pegado carga todo.
+- **Suscripción**: informe en `estrategia/suscripcion-informe.md` y resumen en DOCUMENTACION 6.9.

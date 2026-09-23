@@ -536,6 +536,17 @@ Cami (una pestaña por mundo, una fila por pieza; las reglas están en su pesta�
 Instrucciones). De ahí pasan a la app por el editor del admin (y, más adelante, con
 un importador). La app sigue leyendo de Firebase.
 
+**Filas que entiende PEGAR DESDE LA HOJA** (además de las de la pestaña Instrucciones):
+- **MUNDO** crea un mundo si todavía no existe:
+  - ID lección = id del mundo.
+  - Tipo / Punti = dificultad (explorador, capitan o arquitecto).
+  - Texto = nombre.
+  - Texto 2 = qué enseña.
+  - Opción 1 = descripción.
+  Los mundos nuevos quedan al final de la lista.
+- **LECCION** con la columna Tipo / Punti llena (el id de un mundo): la lección nueva
+  queda preseleccionada en ese mundo. Si está vacía, se elige a mano como antes.
+
 ### 6.5 De dónde sale el contenido — el editor (fase 4.1)
 
 Desde la fase 4.1 el contenido (mundos, lecciones, ejercicios) vive en Firebase
@@ -652,6 +663,13 @@ cobro de Zapier/Make/n8n y la definición de deepfake. Pantallas vivas (las revi
 `novedades-de-la-semana`.
 
 ### 6.8 Revisión del temario: lo que falta (2026-09-23)
+
+**Estado:** las tres fases quedaron escritas el mismo día, 44 lecciones en total. Están en
+`contenido/punti-44-lecciones-nuevas.tsv` (con las filas MUNDO de los 5 mundos nuevos)
+y las fuentes en `contenido/fuentes-44-lecciones.md`. La escuela queda en 13 mundos y
+78 lecciones. Mundos nuevos: Órbita (`ia-en-tu-dia`), Nexo (`agentes`), Taller
+(`crea-sin-programar`), Horizonte (`futuro-de-la-ia`) y Núcleo (`como-se-construye`).
+
 
 Hoy hay 8 mundos y 34 lecciones. Cubren bien lo básico: qué es la IA, cómo funciona
 un modelo, prompts, las marcas, trabajo, imagen y video, ética y automatizaciones.
@@ -801,6 +819,45 @@ credenciales de GitHub están guardadas en Windows y no son visibles desde el en
 trabaja Claude.
 
 ---
+
+### 6.9 Suscripción: Punti Club (propuesta, 2026-09-23)
+
+El informe completo, con precios comparados, pasarelas de pago y fuentes, está en
+`estrategia/suscripcion-informe.md`. Resumen de la propuesta (Cami decide):
+
+- **Principio:** aprender IA es gratis; el Club es para ir más rápido, más profundo y
+  demostrarlo. **La ética y la seguridad nunca se cobran.** No hay anuncios.
+- **Gratis para siempre:**
+  - Los mundos básicos.
+  - 5 de gasolina al día.
+  - XP, los 10 rangos y la racha.
+  - La lección semanal de novedades.
+  - La comunidad, después de ganar un poco de XP.
+- **Punti Club:**
+  - Gasolina ilimitada y pistas gratis.
+  - Reparar la racha.
+  - Certificado verificable por mundo.
+  - Rol y sesión en vivo mensual en Discord.
+  - Novedades antes que nadie.
+  - Mundos avanzados.
+  - Retos de proyecto revisados.
+  - Más adelante, el tutor de IA "Pregúntale a Punti", con un límite diario.
+- **Precio recomendado:**
+  - Colombia: 19.900 COP/mes o 149.900 COP/año.
+  - Resto del mundo: USD 6,99/mes o USD 49,99/año.
+  - Extras: plan Fundador de 99.900 COP el primer año, 50 % para estudiantes, becas para docentes y 7 días de prueba.
+- **Cobros:**
+  - Stripe no está disponible para Colombia.
+  - En pesos: Mercado Pago Suscripciones, con cobro automático.
+  - En dólares: Lemon Squeezy, que cobra y paga los impuestos de cada país.
+  - Se puede empezar como persona natural con RUT. Antes de lanzar hay que hablar con un contador.
+- **Fases:**
+  0. Preparación: RUT, cuentas, términos y lista de espera.
+  1. Lo que ya permite la marca premium.
+  2. Certificados, un mundo avanzado y venta en USD.
+  3. Tutor de IA y planes para colegios.
+- **Por verificar:** el precio actual de Codédex Club en su propia página (las fuentes no
+  coinciden: USD 19,99 o 9,99 al mes) y si cada pasarela acepta persona natural.
 
 ## 11. Guía de ruta
 

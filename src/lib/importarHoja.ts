@@ -11,6 +11,7 @@
 import type { EjercicioB, GraficoB, LeccionB, PantallaB, Texto } from "./contenido";
 import type { EstadoPunti } from "./puntiSprite";
 import { validarLeccion } from "./contenidoAdmin";
+import type { Rango } from "./rangos";
 
 export const COLUMNAS_HOJA = [
   "ID lección", "Bloque", "#", "Tipo / Punti", "Texto ES", "Texto EN", "Texto 2 ES", "Texto 2 EN",
@@ -116,8 +117,23 @@ function booleano(valor: string): boolean | null {
   return null;
 }
 
+/**
+ * Fila MUNDO: crea un mundo si todavía no existe.
+ * ID lección = id del mundo · Tipo / Punti = rango (explorador, capitan,
+ * arquitecto) · Texto = nombre · Texto 2 = qué enseña · Opción 1 = descripción.
+ */
+export type MundoLeido = {
+  id: string;
+  nombre: Texto;
+  titulo: Texto;
+  descripcion: Texto;
+  rango: Rango;
+};
+
 export type LeccionLeida = {
   id: string;
+  /** Mundo sugerido por la hoja (columna Tipo / Punti de la fila LECCION). */
+  mundo?: string;
   titulo: Texto;
   descripcion: Texto;
   leccion: LeccionB;
@@ -129,22 +145,39 @@ export type LeccionLeida = {
 
 export type ResultadoLectura = {
   lecciones: LeccionLeida[];
+  mundos: MundoLeido[];
   avisosGenerales: string[];
 };
 
 export function leerHoja(texto: string): ResultadoLectura {
   if (texto.length > MAXIMO_CARACTERES) {
-    return { lecciones: [], avisosGenerales: ["El texto pegado es demasiado largo. Pega una pestaña o unas lecciones a la vez."] };
+    return { lecciones: [], mundos: [], avisosGenerales: ["El texto pegado es demasiado largo. Pega una pestaña o unas lecciones a la vez."] };
   }
   const { filas, avisos: avisosGenerales } = aFilas(partirTSV(texto));
   if (filas.length === 0) {
-    return { lecciones: [], avisosGenerales: [...avisosGenerales, "No se encontró ninguna fila. Copia las filas desde la hoja (con o sin el encabezado) y pégalas aquí."] };
+    return { lecciones: [], mundos: [], avisosGenerales: [...avisosGenerales, "No se encontró ninguna fila. Copia las filas desde la hoja (con o sin el encabezado) y pégalas aquí."] };
   }
 
   // Agrupar por lección, respetando el orden en que aparecen.
   const grupos = new Map<string, Fila[]>();
+  const mundos: MundoLeido[] = [];
   for (const f of filas) {
     const id = f["ID lección"];
+    if (f["Bloque"].toUpperCase() === "MUNDO") {
+      const rango = f["Tipo / Punti"] as Rango;
+      if (!/^[a-z0-9-]{1,60}$/.test(id)) {
+        avisosGenerales.push(`Fila ${f._linea}: el id de mundo "${id}" no es válido.`);
+      } else if (!mundos.some((m) => m.id === id)) {
+        mundos.push({
+          id,
+          nombre: t(f["Texto ES"], f["Texto EN"]),
+          titulo: t(f["Texto 2 ES"], f["Texto 2 EN"]),
+          descripcion: t(f["Opción 1 ES"], f["Opción 1 EN"]),
+          rango: ["explorador", "capitan", "arquitecto"].includes(rango) ? rango : "explorador",
+        });
+      }
+      continue;
+    }
     if (!id) {
       avisosGenerales.push(`Fila ${f._linea}: no tiene ID de lección; se ignoró.`);
       continue;
@@ -161,6 +194,7 @@ export function leerHoja(texto: string): ResultadoLectura {
   for (const [id, grupo] of grupos) {
     const avisos: string[] = [];
     let titulo = t("", "");
+    let mundo: string | undefined;
     let descripcion = t("", "");
     let tiempo = 180;
     let tarea = t("", "");
@@ -175,6 +209,7 @@ export function leerHoja(texto: string): ResultadoLectura {
       switch (bloque) {
         case "LECCION": {
           titulo = t(f["Texto ES"], f["Texto EN"]);
+          mundo = f["Tipo / Punti"] || undefined;
           descripcion = t(f["Texto 2 ES"], f["Texto 2 EN"]);
           const s = Number(f["Tiempo (s)"]);
           if (f["Tiempo (s)"] && (!Number.isFinite(s) || s <= 0)) avisos.push(`${donde}: tiempo "${f["Tiempo (s)"]}" no es un número; se usó 180.`);
@@ -248,7 +283,7 @@ export function leerHoja(texto: string): ResultadoLectura {
     }
 
     const leccion: LeccionB = { id, tiempoObjetivoSegundos: tiempo, tarea, explicacion, ejercicios };
-    lecciones.push({ id, titulo, descripcion, leccion, avisos, faltas: validarLeccion(leccion) });
+    lecciones.push({ id, mundo, titulo, descripcion, leccion, avisos, faltas: validarLeccion(leccion) });
   }
-  return { lecciones, avisosGenerales };
+  return { lecciones, mundos, avisosGenerales };
 }

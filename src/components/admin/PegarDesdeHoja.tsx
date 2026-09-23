@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { leerHoja, type LeccionLeida } from "@/lib/importarHoja";
+import { leerHoja, type LeccionLeida, type MundoLeido } from "@/lib/importarHoja";
 import { guardarBorradorLeccion } from "@/lib/contenidoAdmin";
 import type { TemaC } from "@/lib/contenido";
 
@@ -26,6 +26,8 @@ export default function PegarDesdeHoja({
   const [texto, setTexto] = useState("");
   const [leidas, setLeidas] = useState<LeccionLeida[] | null>(null);
   const [generales, setGenerales] = useState<string[]>([]);
+  // Mundos que trae la hoja (filas MUNDO) y que todavía no existen.
+  const [mundosNuevos, setMundosNuevos] = useState<MundoLeido[]>([]);
   const [elegidas, setElegidas] = useState<Record<string, boolean>>({});
   const [mundoDe, setMundoDe] = useState<Record<string, string>>({});
   const [trabajando, setTrabajando] = useState(false);
@@ -43,7 +45,16 @@ export default function PegarDesdeHoja({
     setLeidas(r.lecciones);
     setGenerales(r.avisosGenerales);
     setElegidas(Object.fromEntries(r.lecciones.map((l) => [l.id, true])));
-    setMundoDe({});
+    const existentes = new Set(temas.map((t) => t.id));
+    const nuevos = r.mundos.filter((m) => !existentes.has(m.id));
+    setMundosNuevos(nuevos);
+    // Si la hoja dice a qué mundo va cada lección nueva, queda preseleccionado.
+    const validos = new Set([...existentes, ...nuevos.map((m) => m.id)]);
+    setMundoDe(
+      Object.fromEntries(
+        r.lecciones.filter((l) => !ubicacion.has(l.id) && l.mundo && validos.has(l.mundo)).map((l) => [l.id, l.mundo as string]),
+      ),
+    );
     setResultado(null);
   }
 
@@ -64,7 +75,10 @@ export default function PegarDesdeHoja({
       }
     }
     // Catálogo: títulos de la hoja y lecciones nuevas en el mundo elegido.
-    const siguiente = temas.map((t) => ({ ...t, subtemas: t.subtemas.map((s) => ({ ...s })) }));
+    const siguiente = [
+      ...temas.map((t) => ({ ...t, subtemas: t.subtemas.map((s) => ({ ...s })) })),
+      ...mundosNuevos.map((m) => ({ ...m, subtemas: [] as TemaC["subtemas"] })),
+    ];
     for (const l of aCrear.filter((x) => bien.includes(x.id))) {
       const tieneTitulos = l.titulo.es && l.titulo.en;
       const u = ubicacion.get(l.id);
@@ -85,6 +99,7 @@ export default function PegarDesdeHoja({
     if (mal.length === 0) {
       setTexto("");
       setLeidas(null);
+      setMundosNuevos([]);
     }
   }
 
@@ -136,6 +151,13 @@ export default function PegarDesdeHoja({
         </ul>
       )}
 
+      {leidas && mundosNuevos.length > 0 && (
+        <p className="text-[14px] text-[var(--cyan)]">
+          Se van a crear {mundosNuevos.length} mundo{mundosNuevos.length === 1 ? "" : "s"} nuevo{mundosNuevos.length === 1 ? "" : "s"}:{" "}
+          {mundosNuevos.map((m) => m.nombre.es).join(", ")}. Quedan al final de la lista; los puedes reordenar con las flechas.
+        </p>
+      )}
+
       {leidas && leidas.length > 0 && (
         <>
           <ol className="flex flex-col gap-2">
@@ -180,6 +202,11 @@ export default function PegarDesdeHoja({
                         {temas.map((t, i) => (
                           <option key={t.id} value={t.id}>
                             {String(i + 1).padStart(2, "0")} · {t.nombre.es}
+                          </option>
+                        ))}
+                        {mundosNuevos.map((m) => (
+                          <option key={m.id} value={m.id}>
+                            Nuevo · {m.nombre.es}
                           </option>
                         ))}
                       </select>
