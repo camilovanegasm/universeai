@@ -301,6 +301,7 @@ export default function ContenidoAdmin() {
                           </span>
                           <span className="block font-[family-name:var(--font-terminal)] text-[14px] tracking-[0.08em] text-[var(--muted)]">
                             {m.subtemas.length} LECCIONES · {publicadas} PUBLICADAS · {RANGOS[m.rango].etiqueta.toUpperCase()}
+                            {m.club && <span className="text-[var(--gold)]"> · CLUB</span>}
                           </span>
                         </span>
                         <span className="ml-auto font-[family-name:var(--font-terminal)] text-[18px] text-[var(--muted)]" aria-hidden="true">
@@ -337,6 +338,21 @@ export default function ContenidoAdmin() {
                               </option>
                             ))}
                           </select>
+                        </label>
+                        <label htmlFor={`${m.id}-club`} className="flex w-fit cursor-pointer items-center gap-3">
+                          <input
+                            id={`${m.id}-club`}
+                            type="checkbox"
+                            checked={m.club === true}
+                            onChange={(e) => cambiarMundo(i, { ...m, club: e.target.checked })}
+                            className="h-5 w-5 accent-[var(--gold)]"
+                          />
+                          <span className="text-[15px] text-white">
+                            Solo Punti Club{" "}
+                            <span className="text-[13px] text-[var(--muted)]">
+                              (sus lecciones solo las ven los miembros; se aplica al tocar PUBLICAR MUNDOS)
+                            </span>
+                          </span>
                         </label>
 
                         <Lecciones

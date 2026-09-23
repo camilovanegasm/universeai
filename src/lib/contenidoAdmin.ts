@@ -12,7 +12,7 @@
 import { collection, doc, getDoc, getDocs, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
 import { db } from "./firebase";
 import { LECCIONES } from "./lecciones";
-import { calcularXpMaximo, normalizarAjustes, validarJuego, type Ajustes, type AjustesJuego, type Anuncio } from "./ajustes";
+import { calcularXpMaximo, normalizarAjustes, validarClub, validarJuego, type Ajustes, type AjustesClub, type AjustesJuego, type Anuncio } from "./ajustes";
 import {
   firma,
   catalogoDesdeCodigo,
@@ -249,6 +249,11 @@ export async function importarDesdeCodigo() {
   await recargarCatalogo();
 }
 
+/** Los ids de las lecciones que están en mundos del Club. */
+export function idsClub(temas: TemaC[]): Set<string> {
+  return new Set(temas.filter((m) => m.club === true).flatMap((m) => m.subtemas.map((s) => s.id)));
+}
+
 export async function guardarBorradorCatalogo(temas: TemaC[]) {
   await setDoc(doc(db, "borradores", "catalogo"), { temas, guardadoEn: serverTimestamp() });
 }
@@ -258,7 +263,9 @@ export async function guardarBorradorCatalogo(temas: TemaC[]) {
  * está publicado de verdad, para no anunciar una lección que no existe.
  */
 export async function publicarCatalogo(temas: TemaC[]) {
-  const publicadas = new Set((await getDocs(collection(db, "lecciones"))).docs.map((d) => d.id));
+  const docsPublicados = (await getDocs(collection(db, "lecciones"))).docs;
+  const publicadas = new Set(docsPublicados.map((d) => d.id));
+  const club = idsClub(temas);
   const final = temas.map((m) => ({
     ...m,
     subtemas: m.subtemas.map((s) => ({ ...s, tieneLeccion: publicadas.has(s.id) })),
@@ -267,6 +274,12 @@ export async function publicarCatalogo(temas: TemaC[]) {
   const cuando = serverTimestamp();
   lote.set(doc(db, "contenido", "catalogo"), { temas: final, publicadoEn: cuando });
   lote.set(doc(db, "borradores", "catalogo"), { temas: final, guardadoEn: cuando });
+  // Si un mundo entró o salió del Club, sus lecciones publicadas cambian de
+  // marca: es lo que leen las reglas de Firestore para dejar pasar o no.
+  for (const d of docsPublicados) {
+    const quiere = club.has(d.id);
+    if ((d.data().club === true) !== quiere) lote.update(d.ref, { club: quiere });
+  }
   await lote.commit();
   await recargarCatalogo();
   return final;
@@ -308,9 +321,10 @@ export async function publicarTodo(temas: TemaC[]): Promise<ResultadoPublicarTod
 
   // Firestore acepta hasta 500 escrituras por lote: se parte en grupos.
   const cuando = serverTimestamp();
+  const club = idsClub(temas);
   for (let i = 0; i < listas.length; i += 200) {
     const lote = writeBatch(db);
-    for (const l of listas.slice(i, i + 200)) lote.set(doc(db, "lecciones", l.id), { leccion: l, publicadoEn: cuando });
+    for (const l of listas.slice(i, i + 200)) lote.set(doc(db, "lecciones", l.id), { leccion: l, publicadoEn: cuando, club: club.has(l.id) });
     await lote.commit();
   }
 
@@ -342,9 +356,12 @@ export async function publicarLeccion(l: LeccionB) {
       subtemas: m.subtemas.map((s) => (s.id === l.id ? { ...s, tieneLeccion: true } : s)),
     }));
 
+  const catalogoActual = ((bor.exists() ? bor.data().temas : pub.exists() ? pub.data().temas : []) ?? []) as TemaC[];
+  const club = idsClub(catalogoActual).has(l.id);
+
   const lote = writeBatch(db);
   const cuando = serverTimestamp();
-  lote.set(doc(db, "lecciones", l.id), { leccion: l, publicadoEn: cuando });
+  lote.set(doc(db, "lecciones", l.id), { leccion: l, publicadoEn: cuando, club });
   lote.set(doc(db, "borradores", `leccion-${l.id}`), { leccion: l, guardadoEn: cuando });
   if (pub.exists()) lote.update(doc(db, "contenido", "catalogo"), { temas: marcar(pub.data().temas as TemaC[]) });
   if (bor.exists()) lote.update(doc(db, "borradores", "catalogo"), { temas: marcar(bor.data().temas as TemaC[]) });
@@ -364,6 +381,30 @@ export async function leerAjustesAdmin(): Promise<{ ajustes: Ajustes; faq: Pregu
     ajustes: normalizarAjustes(a.exists() ? a.data() : null),
     faq: Array.isArray(lista) && lista.length ? lista : null,
   };
+}
+
+export async function guardarClub(club: AjustesClub) {
+  const problemas = validarClub(club);
+  if (problemas.length) throw new Error(problemas[0]);
+  await setDoc(doc(db, "contenido", "ajustes"), { club, actualizadoEn: serverTimestamp() }, { merge: true });
+  await recargarCatalogo();
+}
+
+/** La lista de espera del Club (solo el admin la puede leer). */
+export async function leerListaEspera(): Promise<{ uid: string; email: string; plan: string; moneda: string; creadoEn: Date | null }[]> {
+  const snap = await getDocs(collection(db, "listaEspera"));
+  return snap.docs
+    .map((d) => {
+      const x = d.data();
+      return {
+        uid: d.id,
+        email: String(x.email ?? ""),
+        plan: String(x.plan ?? ""),
+        moneda: String(x.moneda ?? ""),
+        creadoEn: typeof x.creadoEn?.toDate === "function" ? (x.creadoEn.toDate() as Date) : null,
+      };
+    })
+    .sort((a, b) => (b.creadoEn?.getTime() ?? 0) - (a.creadoEn?.getTime() ?? 0));
 }
 
 export async function guardarJuego(juego: AjustesJuego) {

@@ -26,6 +26,13 @@ service cloud.firestore {
       return request.auth != null && request.auth.uid == uid;
     }
 
+    // Miembro de Punti Club: solo el admin pone `premium` en el perfil (el
+    // usuario no puede tocar ese campo, ver cambioDelJuego).
+    function esPremium() {
+      return request.auth != null
+        && get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.get('premium', false) == true;
+    }
+
     // ---------- Fechas ----------
     // La app guarda el día como "YYYY-MM-DD" en hora UTC. Aquí se arma la misma
     // fecha con el reloj del servidor, que el usuario no puede adelantar.
@@ -165,9 +172,32 @@ service cloud.firestore {
       allow read: if true;
       allow write: if esAdmin();
     }
+    // Las lecciones de los mundos del Club se guardan con `club: true` y solo
+    // las leen los miembros del Club y el admin. Las demás, cualquiera.
     match /lecciones/{leccionId} {
-      allow read: if true;
+      allow read: if resource == null
+        || resource.data.get('club', false) != true
+        || esAdmin()
+        || esPremium();
       allow write: if esAdmin();
+    }
+
+    // ---------- Punti Club: lista de espera ----------
+    // Cada persona con cuenta se anota una vez (el id es su uid) con su propio
+    // correo. Nadie más ve la lista, salvo el admin.
+    function anotacionValida(d) {
+      return d.keys().hasOnly(['email', 'plan', 'moneda', 'idioma', 'creadoEn'])
+        && d.email == request.auth.token.get('email', '')
+        && d.email is string && d.email.size() <= 200
+        && d.plan in ['mensual', 'anual', 'fundador']
+        && d.moneda in ['COP', 'USD']
+        && d.idioma in ['es', 'en']
+        && d.creadoEn == request.time;
+    }
+    match /listaEspera/{usuarioId} {
+      allow read: if esDueno(usuarioId) || esAdmin();
+      allow create, update: if esDueno(usuarioId) && anotacionValida(request.resource.data);
+      allow delete: if esDueno(usuarioId) || esAdmin();
     }
     // Los borradores del editor: solo el admin los ve.
     match /borradores/{documento} {

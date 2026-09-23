@@ -1094,3 +1094,29 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
   - `contenido/fuentes-44-lecciones.md` con las fuentes.
 - **Importador**: nuevas filas MUNDO, que crean el mundo, y la columna Tipo / Punti de LECCION, que preselecciona el mundo. Un solo pegado carga todo.
 - **Suscripción**: informe en `estrategia/suscripcion-informe.md` y resumen en DOCUMENTACION 6.9.
+
+### Punti Club, fase 1 (2026-09-23)
+- **Página nueva `/club`** (ES/EN):
+  - Muestra la promesa, los precios (mensual o anual, en COP o USD) y la oferta Fundador.
+  - Incluye la tabla gratis vs Club, al estilo Codédex, la lista de espera y preguntas frecuentes.
+  - Revisada en el navegador en computador y en celular (sin scroll horizontal).
+- **`src/lib/club.ts`:** anotarse o salir de la lista de espera (`listaEspera/{uid}`).
+- **`ajustes.ts`:**
+  - `AjustesClub`, con los precios recomendados por defecto.
+  - `validarClub` y `textoPrecio`.
+- **Admin → Ajustes → PUNTI CLUB:**
+  - Precios, cupos Fundador y "valores recomendados".
+  - Lista de espera: conteo por plan, tabla y "copiar correos".
+- **Admin → Contenido:**
+  - Casilla "Solo Punti Club" por mundo y etiqueta CLUB en la lista.
+  - Publicar (lección, todo o mundos) guarda `club: true/false` en cada lección publicada y la sincroniza cuando un mundo entra o sale del Club.
+- **Reglas de Firestore** (copia anterior en `referencias/firestore.rules.antes-club`):
+  - `esPremium()`.
+  - Las lecciones con `club: true` solo las leen premium y admin.
+  - `listaEspera` solo acepta una anotación propia con correo verificado por el token, plan y moneda válidos y fecha del servidor.
+- **Estudiantes:**
+  - Etiqueta CLUB en las tarjetas de mundo.
+  - Aviso del Club en la ruta del mundo; las lecciones llevan a /club.
+  - Pantalla "Esta lección es del Club".
+  - Los premium tienen gasolina ilimitada y pistas gratis, y su perfil muestra "Miembro de Punti Club".
+- **El admin** puede entrar a los mundos del Club aunque no sea premium.

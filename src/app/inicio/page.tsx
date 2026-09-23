@@ -116,6 +116,7 @@ export default function InicioPage() {
           titulo: tx.titulo,
           descripcion: tx.descripcion,
           rango: tema.rango,
+          club: tema.club === true,
           total: tema.subtemas.length,
           hechas: tema.subtemas.filter((s) => perfil?.progreso?.[s.id]?.completada).length,
           disponibles: tema.subtemas.filter((s) => catalogo.conLeccion.has(s.id)).length,

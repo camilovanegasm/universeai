@@ -6,6 +6,7 @@ import { use, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/AuthContext";
+import { esAdmin } from "@/lib/admin";
 import { textoSubtema, textoTema } from "@/lib/temas";
 import { useCatalogo } from "@/lib/contenido";
 import { obtenerPerfil, type PerfilUsuario } from "@/lib/userProfile";
@@ -28,6 +29,9 @@ const TX: Record<Idioma, Record<string, string>> = {
     volverLargo: "VOLVER A LOS MUNDOS",
     completados: "completados",
     de: "de",
+    clubTitulo: "Mundo del Club",
+    clubTexto: "Sus lecciones son para miembros de Punti Club. Mira qué incluye y anótate.",
+    clubBoton: "VER PUNTI CLUB",
   },
   en: {
     noEncontrado: "We couldn't find that world.",
@@ -35,6 +39,9 @@ const TX: Record<Idioma, Record<string, string>> = {
     volverLargo: "BACK TO THE WORLDS",
     completados: "completed",
     de: "of",
+    clubTitulo: "Club world",
+    clubTexto: "Its lessons are for Punti Club members. See what's included and join.",
+    clubBoton: "SEE PUNTI CLUB",
   },
 };
 
@@ -99,6 +106,9 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
   }
 
   const txTema = textoTema(tema, idioma);
+  // Mundo del Club y la persona no es miembro: la ruta se ve, pero cada
+  // lección lleva a /club. Las reglas de Firestore igual bloquean la lección.
+  const bloqueado = tema.club === true && perfil?.premium !== true && !esAdmin(usuario);
   const hechas = subtemas.filter((s) => s.completado).length;
   const completo = hechas === subtemas.length && subtemas.length > 0;
 
@@ -134,11 +144,25 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
         </div>
       </header>
 
+      {bloqueado && (
+        <div className="mx-auto mt-4 flex w-full max-w-2xl flex-wrap items-center gap-3 border-2 border-[var(--gold)] bg-[rgba(40,34,6,0.55)] px-4 py-3">
+          <div className="min-w-0 flex-1">
+            <p className="font-[family-name:var(--font-pixel)] text-[9px] leading-[1.7] text-[var(--gold)]">{t.clubTitulo.toUpperCase()}</p>
+            <p className="text-[14px] leading-[1.5] text-white">{t.clubTexto}</p>
+          </div>
+          <Link href="/club" className="boton-pixel" style={{ borderColor: "var(--gold)", color: "var(--gold)" }}>
+            {t.clubBoton}
+          </Link>
+        </div>
+      )}
+
       <RutaTema
         color={color}
         subtemas={subtemas}
         idioma={idioma}
-        onAbrir={(subtemaId) => router.push(`/leccion/${tema.id}/${subtemaId}`, { transitionTypes: ["adelante"] })}
+        onAbrir={(subtemaId) =>
+          router.push(bloqueado ? "/club" : `/leccion/${tema.id}/${subtemaId}`, { transitionTypes: ["adelante"] })
+        }
       />
     </div>
   );

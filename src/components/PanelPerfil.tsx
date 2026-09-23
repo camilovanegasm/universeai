@@ -36,6 +36,8 @@ const TX: Record<Idioma, Record<string, string>> = {
     faltan: "XP para",
     maximo: "Llegaste al rango más alto del universo.",
     escalafon: "Los 10 rangos",
+    miembro: "Miembro de Punti Club",
+    conoceClub: "Conoce Punti Club",
     xp: "XP total",
     racha: "Racha",
     dias: "días",
@@ -64,6 +66,8 @@ const TX: Record<Idioma, Record<string, string>> = {
     faltan: "XP to",
     maximo: "You've reached the highest rank in the universe.",
     escalafon: "The 10 ranks",
+    miembro: "Punti Club member",
+    conoceClub: "Discover Punti Club",
     xp: "Total XP",
     racha: "Streak",
     dias: "days",
@@ -235,6 +239,16 @@ export default function PanelPerfil({ perfil, idioma, alSalir, selectorIdioma }:
                 </li>
               ))}
             </ol>
+
+            {perfil.premium ? (
+              <p className="mt-4 inline-block border-2 border-[var(--gold)] bg-[rgba(255,230,0,0.1)] px-3 py-1.5 font-[family-name:var(--font-terminal)] text-[16px] uppercase tracking-[0.14em] text-[var(--gold)]">
+                ★ {t.miembro}
+              </p>
+            ) : (
+              <Link href="/club" className="mt-4 inline-block font-[family-name:var(--font-terminal)] text-[16px] uppercase tracking-[0.14em] text-[var(--gold)] underline-offset-4 hover:underline">
+                {t.conoceClub} →
+              </Link>
+            )}
           </div>
         </div>
 

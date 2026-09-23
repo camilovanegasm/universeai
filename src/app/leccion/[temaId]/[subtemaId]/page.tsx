@@ -55,6 +55,10 @@ const TX: Record<Idioma, Record<string, string>> = {
     tarea: "Tu tarea",
     ejercicio: "Ejercicio",
     nuevoRango: "NUEVO RANGO",
+    clubTitulo: "Esta lección es del Club",
+    clubTexto: "Está en un mundo de Punti Club. Todo lo esencial de la IA sigue gratis en los demás mundos.",
+    clubBoton: "VER PUNTI CLUB",
+    ilimitada: "Gasolina ilimitada · Club",
   },
   en: {
     noEncontrado: "We couldn't find that lesson.",
@@ -81,6 +85,10 @@ const TX: Record<Idioma, Record<string, string>> = {
     tarea: "Your mission",
     ejercicio: "Exercise",
     nuevoRango: "NEW RANK",
+    clubTitulo: "This lesson is for the Club",
+    clubTexto: "It's in a Punti Club world. Everything essential about AI is still free in the other worlds.",
+    clubBoton: "SEE PUNTI CLUB",
+    ilimitada: "Unlimited fuel · Club",
   },
 };
 
@@ -119,6 +127,8 @@ export default function LeccionPage({
   const [confirmarSalida, setConfirmarSalida] = useState(false);
   const [errores, setErrores] = useState(0);
   const [gasolina, setGasolina] = useState(0);
+  // Miembro del Club: gasolina ilimitada y pistas gratis. null = aún no se sabe.
+  const [premium, setPremium] = useState<boolean | null>(null);
   const [estadoPunti, setEstadoPunti] = useState<EstadoPunti>("online");
   const [resultado, setResultado] = useState<{ xp: number; combustible: 1 | 2 | 3; rangoNuevo: Escalon | null } | null>(null);
   const xpInicial = useRef(0);
@@ -134,10 +144,25 @@ export default function LeccionPage({
     if (!usuario || !hayLeccion) return;
     obtenerPerfil(usuario.uid).then((perfil) => {
       setGasolina(perfil ? gasolinaEfectiva(perfil) : 0);
+      setPremium(perfil?.premium === true);
       xpInicial.current = perfil?.xp ?? 0;
       setFase("explicacion");
     });
   }, [usuario, hayLeccion]);
+
+  // Si la lección es de un mundo del Club y no llegó, hay que saber si la
+  // persona es miembro para mostrar la explicación del Club.
+  const esMundoClub = catalogo.temas.find((x) => x.id === temaId)?.club === true;
+  useEffect(() => {
+    if (!usuario || !esMundoClub || leccionB !== null) return;
+    let vigente = true;
+    obtenerPerfil(usuario.uid).then((p) => {
+      if (vigente) setPremium(p?.premium === true);
+    });
+    return () => {
+      vigente = false;
+    };
+  }, [usuario, esMundoClub, leccionB]);
 
   useEffect(() => () => {
     if (relojPunti.current) clearTimeout(relojPunti.current);
@@ -150,8 +175,31 @@ export default function LeccionPage({
     relojPunti.current = setTimeout(() => setEstadoPunti("online"), ms);
   }
 
-  if (cargando || !usuario || !catalogo.listo || leccionB === undefined) {
+  // En un mundo del Club, la lección de Firebase solo llega si la persona es
+  // miembro (lo deciden las reglas). Si no llega, se explica el Club en vez
+  // de decir "en construcción".
+  const esClub = tema?.club === true;
+
+  if (cargando || !usuario || !catalogo.listo || leccionB === undefined || (esClub && leccionB === null && premium === null)) {
     return <Cargando />;
+  }
+
+  if (esClub && premium !== true && !leccionB) {
+    return (
+      <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-12 text-center">
+        <PuntiPixel estado="info" ancho={128} />
+        <h2 className="font-[family-name:var(--font-display)] text-xl font-black text-[var(--gold)]">{t.clubTitulo}</h2>
+        <p className="max-w-md text-[15px] leading-[1.6] text-[var(--muted)]">{t.clubTexto}</p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <Link href="/club" className="boton-pixel" style={{ borderColor: "var(--gold)", background: "var(--gold)", color: "#05050f" }}>
+            {t.clubBoton}
+          </Link>
+          <Link href={volverAlTema} transitionTypes={["atras"]} className="boton-pixel">
+            {t.volverMundo}
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   if (!tema || !subtema) {
@@ -181,7 +229,7 @@ export default function LeccionPage({
     );
   }
 
-  const etiquetaGasolina = `${t.gasolina}: ${gasolina} / ${gasolinaMaxima()}`;
+  const etiquetaGasolina = premium ? t.ilimitada : `${t.gasolina}: ${gasolina} / ${gasolinaMaxima()}`;
 
   function siguienteExplicacion() {
     if (!leccion) return;
@@ -203,6 +251,11 @@ export default function LeccionPage({
 
     setErrores((e) => e + 1);
     if (!usuario) return;
+    if (premium) {
+      // Club: fallar no gasta gasolina.
+      reaccionar("error");
+      return;
+    }
     // gastarGasolina devuelve lo que queda: no hace falta releer el perfil.
     const gasolinaRestante = await gastarGasolina(usuario.uid);
     setGasolina(gasolinaRestante);
@@ -227,6 +280,7 @@ export default function LeccionPage({
     if (!usuario) return;
     sonar("pista");
     reaccionar("info", 2200);
+    if (premium) return; // Club: las pistas son gratis.
     setGasolina(await pagarPista(usuario.uid));
   }
 
@@ -308,7 +362,7 @@ export default function LeccionPage({
             </div>
           </div>
 
-          <BarraGasolina gasolina={gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} alto={14} />
+          <BarraGasolina gasolina={premium ? gasolinaMaxima() : gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} alto={14} />
           <BotonSonido className="shrink-0" />
         </header>
 
@@ -449,7 +503,7 @@ export default function LeccionPage({
         >
           {t.salir}
         </button>
-        <BarraGasolina gasolina={gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} />
+        <BarraGasolina gasolina={premium ? gasolinaMaxima() : gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} />
         <span className="ml-auto flex items-center gap-3">
           <span className="font-[family-name:var(--font-terminal)] text-[17px] uppercase tracking-[0.14em] text-[var(--muted)]">
             {t.ejercicio} {indiceEjercicio + 1} / {leccion.ejercicios.length}
@@ -464,8 +518,8 @@ export default function LeccionPage({
         <Ejercicio
           key={`${idioma}-${indiceEjercicio}`}
           ejercicio={ejercicioActual}
-          gasolinaDisponible={gasolina}
-          costoPista={catalogo.ajustes.juego.costoPista}
+          gasolinaDisponible={premium ? gasolinaMaxima() : gasolina}
+          costoPista={premium ? 0 : catalogo.ajustes.juego.costoPista}
           onResultado={manejarResultadoEjercicio}
           onUsarPista={usarPista}
           idioma={idioma}

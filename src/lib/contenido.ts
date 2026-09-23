@@ -72,6 +72,11 @@ export type TemaC = {
   titulo: Texto;
   descripcion: Texto;
   rango: Rango;
+  /**
+   * Mundo solo para miembros de Punti Club. Sus lecciones se guardan con
+   * `club: true` y las reglas de Firestore solo dejan leerlas a premium/admin.
+   */
+  club?: boolean;
   subtemas: SubtemaC[];
 };
 
@@ -214,6 +219,7 @@ export function aTemas(catalogo: TemaC[]): Tema[] {
     titulo: c.titulo.es,
     descripcion: c.descripcion.es,
     rango: c.rango,
+    club: c.club === true,
     en: { nombre: c.nombre.en, titulo: c.titulo.en, descripcion: c.descripcion.en },
     abierto: true,
     subtemas: c.subtemas.map((s, j) => ({

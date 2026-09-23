@@ -13,6 +13,7 @@ export type MundoEnLista = {
   titulo: string;       // qué enseña
   descripcion: string;
   rango: Rango;
+  club?: boolean;       // mundo solo para Punti Club
   total: number;        // subtemas del tema
   hechas: number;       // subtemas completados
   disponibles: number;  // subtemas que ya tienen lección escrita
@@ -73,10 +74,17 @@ export default function MundosPunti({ mundos, onEntrar, idioma = "es" }: Props) 
               <span className="font-[family-name:var(--font-pixel)] text-[9px] leading-[1.6] text-[var(--pc)]">
                 {String(m.numero).padStart(2, "0")} · {textoPixel(m.nombre)}
               </span>
-              <span
-                className={`shrink-0 border px-2 py-0.5 font-[family-name:var(--font-terminal)] text-[15px] uppercase tracking-[0.13em] ${insignia.clase}`}
-              >
-                {insignia.texto}
+              <span className="flex shrink-0 gap-1">
+                {m.club && (
+                  <span className="border border-[var(--gold)] bg-[rgba(255,230,0,0.12)] px-2 py-0.5 font-[family-name:var(--font-terminal)] text-[15px] uppercase tracking-[0.13em] text-[var(--gold)]">
+                    Club
+                  </span>
+                )}
+                <span
+                  className={`border px-2 py-0.5 font-[family-name:var(--font-terminal)] text-[15px] uppercase tracking-[0.13em] ${insignia.clase}`}
+                >
+                  {insignia.texto}
+                </span>
               </span>
             </div>
 

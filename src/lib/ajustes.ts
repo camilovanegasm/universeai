@@ -54,7 +54,23 @@ export type Anuncio = {
   texto: Texto;
 };
 
-export type Ajustes = { juego: AjustesJuego; anuncio: Anuncio };
+/**
+ * Punti Club: precios y estado de la venta. Se cambia en Admin → Ajustes.
+ * Mientras `ventasAbiertas` sea false, /club muestra la lista de espera.
+ */
+export type AjustesClub = {
+  ventasAbiertas: boolean;
+  precioCopMes: number;
+  precioCopAnio: number;
+  precioUsdMes: number;
+  precioUsdAnio: number;
+  /** Precio del primer año para los primeros miembros (Fundador). */
+  precioFundadorCop: number;
+  precioFundadorUsd: number;
+  cuposFundador: number;
+};
+
+export type Ajustes = { juego: AjustesJuego; anuncio: Anuncio; club: AjustesClub };
 
 export const AJUSTES_POR_DEFECTO: Ajustes = {
   juego: {
@@ -79,6 +95,17 @@ export const AJUSTES_POR_DEFECTO: Ajustes = {
     xpMaximo: 20,
   },
   anuncio: { activo: false, tono: "info", texto: { es: "", en: "" } },
+  // Opción "recomendada" del informe estrategia/suscripcion-informe.md.
+  club: {
+    ventasAbiertas: false,
+    precioCopMes: 19900,
+    precioCopAnio: 149900,
+    precioUsdMes: 6.99,
+    precioUsdAnio: 49.99,
+    precioFundadorCop: 99900,
+    precioFundadorUsd: 34.99,
+    cuposFundador: 200,
+  },
 };
 
 /** La mejor nota posible de una lección: lo que las reglas dejan sumar. */
@@ -107,7 +134,34 @@ export function normalizarAjustes(datos: unknown): Ajustes {
       en: typeof a?.texto?.en === "string" ? a.texto.en : "",
     },
   };
-  return { juego, anuncio };
+  const c = (d as { club?: Partial<AjustesClub> }).club;
+  const club = { ...AJUSTES_POR_DEFECTO.club };
+  for (const clave of Object.keys(club) as (keyof AjustesClub)[]) {
+    const v = c?.[clave];
+    if (clave === "ventasAbiertas") club.ventasAbiertas = v === true;
+    else if (typeof v === "number" && Number.isFinite(v) && v >= 0) club[clave] = v;
+  }
+  return { juego, anuncio, club };
+}
+
+/** Validación de los ajustes del Club en el admin. */
+export function validarClub(c: AjustesClub): string[] {
+  const p: string[] = [];
+  const cop = (v: number) => Number.isInteger(v) && v >= 1000;
+  const usd = (v: number) => Number.isFinite(v) && v >= 0.5 && Number.isInteger(Math.round(v * 100)) && Math.abs(v * 100 - Math.round(v * 100)) < 1e-6;
+  if (!cop(c.precioCopMes) || !cop(c.precioCopAnio) || !cop(c.precioFundadorCop)) p.push("Precios en COP: números enteros de 1.000 o más");
+  if (!usd(c.precioUsdMes) || !usd(c.precioUsdAnio) || !usd(c.precioFundadorUsd)) p.push("Precios en USD: 0,50 o más, con máximo 2 decimales");
+  if (c.precioCopAnio >= c.precioCopMes * 12) p.push("El año en COP debería costar menos que 12 meses");
+  if (c.precioUsdAnio >= c.precioUsdMes * 12) p.push("El año en USD debería costar menos que 12 meses");
+  if (!Number.isInteger(c.cuposFundador) || c.cuposFundador < 0 || c.cuposFundador > 100000) p.push("Cupos Fundador: un número entero de 0 en adelante");
+  return p;
+}
+
+/** "19.900 COP" o "USD 6.99". */
+export function textoPrecio(valor: number, moneda: "COP" | "USD"): string {
+  return moneda === "COP"
+    ? `${valor.toLocaleString("es-CO", { maximumFractionDigits: 0 })} COP`
+    : `USD ${valor.toFixed(2)}`;
 }
 
 /**

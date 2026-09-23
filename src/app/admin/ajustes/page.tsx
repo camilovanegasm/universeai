@@ -9,7 +9,9 @@ import { PREGUNTAS_CODIGO } from "@/components/PreguntasFrecuentes";
 import {
   firma,
   guardarAnuncio,
+  guardarClub,
   guardarFaq,
+  leerListaEspera,
   guardarJuego,
   leerAjustesAdmin,
   vacio,
@@ -18,8 +20,11 @@ import {
 import {
   AJUSTES_POR_DEFECTO,
   calcularXpMaximo,
+  textoPrecio,
+  validarClub,
   validarJuego,
   type Ajustes,
+  type AjustesClub,
   type AjustesJuego,
   type Anuncio,
   type TonoAnuncio,
@@ -42,6 +47,7 @@ export default function AjustesAdmin() {
   const [original, setOriginal] = useState<{ ajustes: Ajustes; faq: PreguntaFaq[] | null } | null>(null);
   const [juego, setJuego] = useState<AjustesJuego | null>(null);
   const [anuncio, setAnuncio] = useState<Anuncio | null>(null);
+  const [club, setClub] = useState<AjustesClub | null>(null);
   const [faq, setFaq] = useState<PreguntaFaq[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [aviso, setAviso] = useState<Aviso>(null);
@@ -54,6 +60,7 @@ export default function AjustesAdmin() {
         setOriginal(datos);
         setJuego(datos.ajustes.juego);
         setAnuncio(datos.ajustes.anuncio);
+        setClub(datos.ajustes.club);
         setFaq(datos.faq ?? PREGUNTAS_CODIGO);
       })
       .catch((e) => {
@@ -83,7 +90,7 @@ export default function AjustesAdmin() {
             <PuntiPixel estado="error" ancho={96} />
             <p className="max-w-[56ch] text-[15px] text-[var(--muted)]">{error}</p>
           </div>
-        ) : !original || !juego || !anuncio || !faq ? (
+        ) : !original || !juego || !anuncio || !club || !faq ? (
           <div className="flex flex-col gap-3" aria-hidden="true">
             {[0, 1, 2].map((i) => (
               <div key={i} className="esqueleto h-[160px]" />
@@ -99,6 +106,13 @@ export default function AjustesAdmin() {
                 setOriginal((o) => (o ? { ...o, ajustes: { ...o.ajustes, juego: j } } : o));
                 setJuego(j);
               }}
+              avisar={setAviso}
+            />
+            <BloqueClub
+              club={club}
+              original={original.ajustes.club}
+              alCambiar={setClub}
+              alGuardado={(c) => setOriginal((o) => (o ? { ...o, ajustes: { ...o.ajustes, club: c } } : o))}
               avisar={setAviso}
             />
             <BloqueAnuncio
@@ -293,6 +307,155 @@ function BloqueJuego({
         <p className="text-[13px] text-[var(--muted)]">
           Si cambias el tanque, revisa también las preguntas frecuentes: una de ellas dice cuánta gasolina hay.
         </p>
+      </fieldset>
+    </Bloque>
+  );
+}
+
+/* ------------------------------------------------------ club */
+
+type Anotado = Awaited<ReturnType<typeof leerListaEspera>>[number];
+
+function BloqueClub({
+  club,
+  original,
+  alCambiar,
+  alGuardado,
+  avisar,
+}: {
+  club: AjustesClub;
+  original: AjustesClub;
+  alCambiar: (c: AjustesClub) => void;
+  alGuardado: (c: AjustesClub) => void;
+  avisar: (a: Aviso) => void;
+}) {
+  const [guardando, setGuardando] = useState(false);
+  const [intento, setIntento] = useState(false);
+  const [lista, setLista] = useState<Anotado[] | null>(null);
+  const [errorLista, setErrorLista] = useState(false);
+  const problemas = validarClub(club);
+  const cambiado = firma(club) !== firma(original);
+  const campo = (clave: Exclude<keyof AjustesClub, "ventasAbiertas">) => (v: number) => alCambiar({ ...club, [clave]: v });
+
+  useEffect(() => {
+    let vigente = true;
+    leerListaEspera()
+      .then((l) => vigente && setLista(l))
+      .catch(() => vigente && setErrorLista(true));
+    return () => {
+      vigente = false;
+    };
+  }, []);
+
+  const porPlan = useMemo(() => {
+    const c: Record<string, number> = {};
+    for (const a of lista ?? []) c[a.plan] = (c[a.plan] ?? 0) + 1;
+    return c;
+  }, [lista]);
+
+  async function guardar() {
+    setIntento(true);
+    if (problemas.length) return;
+    setGuardando(true);
+    try {
+      await guardarClub(club);
+      alGuardado(club);
+      setIntento(false);
+      avisar({ texto: "Precios del Club guardados. Ya se ven en /club." });
+    } catch {
+      avisar({ texto: "No se pudieron guardar los precios.", malo: true });
+    } finally {
+      setGuardando(false);
+    }
+  }
+
+  async function copiarCorreos() {
+    if (!lista?.length) return;
+    try {
+      await navigator.clipboard.writeText(lista.map((a) => a.email).join(", "));
+      avisar({ texto: `${lista.length} correos copiados.` });
+    } catch {
+      avisar({ texto: "No se pudieron copiar los correos.", malo: true });
+    }
+  }
+
+  return (
+    <Bloque
+      titulo="PUNTI CLUB"
+      ayuda="Precios que se muestran en /club y la lista de espera. Los miembros se marcan como premium en PILOTOS; los mundos del Club se eligen en CONTENIDO."
+      pie={
+        <>
+          <EstadoCambios cambiado={cambiado} />
+          <span className="flex-1" />
+          <button onClick={() => alCambiar(AJUSTES_POR_DEFECTO.club)} className="btn-admin">
+            VALORES RECOMENDADOS
+          </button>
+          <button onClick={guardar} disabled={!cambiado || guardando} className="btn-admin btn-admin-lleno">
+            {guardando ? "GUARDANDO…" : "GUARDAR PRECIOS"}
+          </button>
+        </>
+      }
+    >
+      {intento && <ListaProblemas problemas={problemas} titulo="REVISA ESTO" />}
+
+      <fieldset className="flex flex-col gap-3">
+        <legend className="mb-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--gold)]">PRECIOS</legend>
+        <div className="flex flex-wrap gap-5">
+          <Numero id="precioCopMes" etiqueta="COP al mes" valor={club.precioCopMes} paso={100} alCambiar={campo("precioCopMes")} />
+          <Numero id="precioCopAnio" etiqueta="COP al año" valor={club.precioCopAnio} paso={100} alCambiar={campo("precioCopAnio")} />
+          <Numero id="precioUsdMes" etiqueta="USD al mes" valor={club.precioUsdMes} paso={0.01} alCambiar={campo("precioUsdMes")} />
+          <Numero id="precioUsdAnio" etiqueta="USD al año" valor={club.precioUsdAnio} paso={0.01} alCambiar={campo("precioUsdAnio")} />
+        </div>
+      </fieldset>
+
+      <fieldset className="flex flex-col gap-3">
+        <legend className="mb-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--gold)]">FUNDADOR</legend>
+        <div className="flex flex-wrap gap-5">
+          <Numero id="precioFundadorCop" etiqueta="COP primer año" valor={club.precioFundadorCop} paso={100} alCambiar={campo("precioFundadorCop")} />
+          <Numero id="precioFundadorUsd" etiqueta="USD primer año" valor={club.precioFundadorUsd} paso={0.01} alCambiar={campo("precioFundadorUsd")} />
+          <Numero id="cuposFundador" etiqueta="Cupos" ayuda="0 = sin oferta Fundador." valor={club.cuposFundador} alCambiar={campo("cuposFundador")} />
+        </div>
+        {problemas.length === 0 && (
+          <p className="text-[14px] text-[var(--muted)]">
+            En /club se ve: <b className="text-white">{textoPrecio(club.precioCopMes, "COP")}</b> al mes o{" "}
+            <b className="text-white">{textoPrecio(club.precioCopAnio, "COP")}</b> al año (
+            {Math.round((1 - club.precioCopAnio / (club.precioCopMes * 12)) * 100)}% de ahorro).
+          </p>
+        )}
+      </fieldset>
+
+      <fieldset className="flex flex-col gap-3">
+        <legend className="mb-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--gold)]">LISTA DE ESPERA</legend>
+        {errorLista ? (
+          <p className="text-[14px] text-[var(--pink)]">No se pudo leer la lista. ¿Publicaste las reglas nuevas de Firebase?</p>
+        ) : !lista ? (
+          <div className="esqueleto h-10" aria-hidden="true" />
+        ) : lista.length === 0 ? (
+          <p className="text-[14px] text-[var(--muted)]">Todavía nadie se ha anotado.</p>
+        ) : (
+          <>
+            <p className="text-[15px] text-white">
+              <b>{lista.length}</b> anotados · Fundador {porPlan.fundador ?? 0} · Anual {porPlan.anual ?? 0} · Mensual {porPlan.mensual ?? 0}
+            </p>
+            <button onClick={copiarCorreos} className="btn-admin w-fit">
+              COPIAR CORREOS
+            </button>
+            <div className="max-h-[260px] overflow-auto border-2 border-[var(--color-panel-border)]">
+              <table className="w-full text-left text-[14px]">
+                <tbody>
+                  {lista.map((a) => (
+                    <tr key={a.uid} className="border-b border-[var(--color-panel-border)]">
+                      <td className="px-3 py-2 text-white">{a.email}</td>
+                      <td className="px-3 py-2 text-[var(--muted)]">{a.plan}</td>
+                      <td className="px-3 py-2 text-[var(--muted)]">{a.moneda}</td>
+                      <td className="px-3 py-2 text-[var(--muted)] tabular-nums">{a.creadoEn?.toLocaleDateString("es-CO") ?? ""}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )}
       </fieldset>
     </Bloque>
   );

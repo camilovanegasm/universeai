@@ -820,7 +820,32 @@ trabaja Claude.
 
 ---
 
-### 6.9 Suscripción: Punti Club (propuesta, 2026-09-23)
+### 6.9 Suscripción: Punti Club
+
+**Decidido por Cami (2026-09-23):**
+- **Precio:** el recomendado.
+- **Mundos del Club:** Taller, Horizonte y Núcleo. Brújula (ética y seguridad) es siempre gratis.
+- **Lanzamiento:** con lista de espera; los cobros se conectan después.
+
+**Construido (fase 1):**
+- **`/club`:** promesa ("Aprender IA es gratis. Siempre."), precios mensual/anual en COP o USD,
+  oferta Fundador, comparación gratis vs Club (lo que falta dice PRONTO), lista de espera y
+  preguntas.
+- **Lista de espera:**
+  - Colección `listaEspera/{uid}`: una anotación por persona, con su correo, plan y moneda.
+  - Solo el dueño y el admin la leen. El admin la ve, con conteo por plan y un botón para copiar los correos, en Admin → Ajustes → PUNTI CLUB.
+- **Precios:** en `contenido/ajustes.club`, editables en Admin → Ajustes → PUNTI CLUB.
+- **Mundos del Club:**
+  - Se marcan en Admin → Contenido con la casilla "Solo Punti Club" y se aplican al tocar PUBLICAR MUNDOS.
+  - Las lecciones de esos mundos se guardan con `club: true`. **Las reglas de Firestore solo dejan leerlas a miembros (premium) y al admin**, así que no basta con saltarse la pantalla.
+  - Quien no es miembro ve la ruta con un aviso del Club; al tocar una lección va a /club.
+  - Las tarjetas de mundo llevan la etiqueta CLUB.
+- **Beneficios activos para premium:** gasolina ilimitada (fallar no gasta) y pistas gratis.
+  El perfil muestra "★ Miembro de Punti Club"; a los demás, un enlace al Club.
+- **Miembros:** por ahora se marcan a mano en Admin → PILOTOS (premium). Cuando se conecten
+  Mercado Pago y Lemon Squeezy, un webhook lo hará solo.
+
+**Resumen del informe** (completo en `estrategia/suscripcion-informe.md`):
 
 El informe completo, con precios comparados, pasarelas de pago y fuentes, está en
 `estrategia/suscripcion-informe.md`. Resumen de la propuesta (Cami decide):

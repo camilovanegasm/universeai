@@ -29,6 +29,8 @@ export type Tema = {
   descripcion: string;
   en: { nombre: string; titulo: string; descripcion: string };
   abierto: boolean;
+  /** Solo para miembros de Punti Club (se marca en el admin). */
+  club?: boolean;
   subtemas: Subtema[];
 };
 
