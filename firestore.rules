@@ -1,11 +1,116 @@
 rules_version = '2';
 
+// Reglas de seguridad de Punti.
+//
+// La idea: cada persona solo toca su propio perfil, y dentro de él solo los
+// campos que el juego necesita, con límites. Todo lo que no esté en la lista
+// (premium, rol, lo que se agregue después) queda cerrado para el usuario.
+// Solo el admin puede leer a todos y cambiar cualquier campo.
+//
+// Si algo se rompe, la versión anterior está en referencias/firestore.rules.anterior.
+
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Cada usuario solo puede leer y escribir su propio documento de perfil
-    // (XP, corazones, racha, progreso), identificado por su ID de Firebase Auth.
+
+    // ---------- Quién es quién ----------
+
+    // El admin se reconoce por su correo, y solo si Google/Firebase lo verificó:
+    // alguien que se registre con ese correo sin poder abrirlo no pasa.
+    function esAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'camilovanegasm@gmail.com'
+        && request.auth.token.email_verified == true;
+    }
+
+    function esDueno(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // ---------- Fechas ----------
+    // La app guarda el día como "YYYY-MM-DD" en hora UTC. Aquí se arma la misma
+    // fecha con el reloj del servidor, que el usuario no puede adelantar.
+
+    function dosCifras(n) {
+      return n < 10 ? '0' + string(n) : string(n);
+    }
+
+    function fecha(t) {
+      return string(t.year()) + '-' + dosCifras(t.month()) + '-' + dosCifras(t.day());
+    }
+
+    // Margen de 2 horas por si el reloj del teléfono está un poco corrido
+    // justo alrededor de la medianoche UTC.
+    function esHoy(f) {
+      return f == fecha(request.time)
+        || f == fecha(request.time - duration.value(2, 'h'))
+        || f == fecha(request.time + duration.value(2, 'h'));
+    }
+
+    // ---------- Reglas del juego ----------
+
+    // La gasolina se llama `corazones` en la base de datos por compatibilidad.
+    // El mismo día solo puede bajar. En un día nuevo se recarga, hasta 5.
+    function gasolinaValida(antes, despues) {
+      let mismoDia = despues.get('ultimaActividad', '') == antes.get('ultimaActividad', '');
+      return despues.corazones is number
+        && despues.corazones >= 0
+        && (mismoDia ? despues.corazones <= antes.corazones : despues.corazones <= 5);
+    }
+
+    function cambioDelJuego(antes, despues) {
+      let cambios = despues.diff(antes).affectedKeys();
+      return cambios.hasOnly([
+          'xp', 'racha', 'corazones', 'ultimaActividad',
+          'progreso', 'idioma', 'bienvenidaVista'
+        ])
+        // Idioma: solo los dos que existen.
+        && (!cambios.hasAny(['idioma']) || despues.idioma in ['es', 'en'])
+        // La bienvenida se marca una vez y no se desmarca.
+        && (!cambios.hasAny(['bienvenidaVista']) || despues.bienvenidaVista == true)
+        // XP: solo sube, y como mucho lo que da la mejor lección (15 + 5 de velocidad).
+        && (!cambios.hasAny(['xp'])
+            || (despues.xp is int && despues.xp > antes.xp && despues.xp <= antes.xp + 20))
+        // La fecha de actividad siempre es la de hoy según el servidor.
+        && (!cambios.hasAny(['ultimaActividad']) || esHoy(despues.ultimaActividad))
+        && (!cambios.hasAny(['corazones']) || gasolinaValida(antes, despues))
+        // La racha solo cambia al pasar a un día nuevo: sube 1 o vuelve a empezar en 1.
+        && (!cambios.hasAny(['racha'])
+            || (cambios.hasAny(['ultimaActividad'])
+                && (despues.racha == antes.racha + 1 || despues.racha == 1)))
+        // Progreso: como mucho una lección nueva por escritura.
+        && (!cambios.hasAny(['progreso'])
+            || (despues.progreso is map
+                && despues.progreso.size() <= antes.progreso.size() + 1));
+    }
+
+    // Un perfil nuevo tiene que empezar en cero, sin campos extra.
+    function perfilNuevoValido(d) {
+      return d.keys().hasOnly(['nombre', 'email', 'xp', 'corazones', 'racha', 'progreso', 'creadoEn'])
+        && d.nombre is string
+        && d.email is string
+        && d.xp == 0
+        && d.corazones == 5
+        && d.racha == 0
+        && d.progreso == {}
+        && d.creadoEn == request.time;
+    }
+
+    // ---------- Perfiles ----------
+
     match /usuarios/{usuarioId} {
-      allow read, write: if request.auth != null && request.auth.uid == usuarioId;
+      // Leer: el dueño su propio perfil; el admin, todos (incluida la lista).
+      allow read: if esDueno(usuarioId) || esAdmin();
+
+      allow create: if esDueno(usuarioId) && perfilNuevoValido(request.resource.data);
+
+      // El admin puede cambiar cualquier campo (gasolina, premium...).
+      // El dueño, solo lo que el juego necesita, con los límites de arriba.
+      allow update: if esAdmin()
+        || (esDueno(usuarioId) && cambioDelJuego(resource.data, request.resource.data));
+
+      // Nadie borra perfiles desde la app: borrar y volver a crear serviría
+      // para reiniciar la gasolina.
+      allow delete: if false;
     }
   }
 }

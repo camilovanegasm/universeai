@@ -10,7 +10,7 @@ export default function BotonGoogle({ onClick, deshabilitado, texto }: Props) {
       type="button"
       onClick={onClick}
       disabled={deshabilitado}
-      className="flex w-full items-center justify-center gap-3 rounded-2xl border-2 border-zinc-200 bg-white px-5 py-3 font-semibold text-zinc-700 transition-colors hover:bg-zinc-50 disabled:opacity-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:bg-zinc-800"
+      className="flex w-full items-center justify-center gap-3 border-2 border-[#8e918f] bg-[#131314] px-5 py-3 text-[15px] font-semibold text-[#e3e3e3] transition-colors hover:bg-[#1f1f22] disabled:opacity-50"
     >
       <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
         <path

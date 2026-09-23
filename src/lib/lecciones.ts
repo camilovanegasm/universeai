@@ -1,6 +1,16 @@
 // Contenido educativo de cada lección: la explicación de Punti (lectura, con gráficos)
-// seguida de los 5 tipos de ejercicio. Por ahora solo existe la lección del Nivel 1.
-import type { EstadoPunti } from "@/components/Punti";
+// seguida de los 5 tipos de ejercicio.
+//
+// CADA LECCIÓN SE ESCRIBE DOS VECES, COMPLETA: una en español y otra en inglés.
+// No se traduce frase por frase a propósito: así es como se traduce contenido de
+// verdad — alguien toma la lección entera y la reescribe —, y evita que una pista
+// en inglés termine pegada a un ejercicio en español. Cada versión tiene sus
+// propias respuestas correctas y su propio orden, así que las dos se califican
+// por separado sin mezclarse.
+//
+// Por ahora solo existe la lección del Nivel 1.
+import type { EstadoPunti } from "@/lib/puntiSprite";
+import type { Idioma } from "@/lib/i18n";
 
 export type GraficoTabla = {
   tipo: "tabla";
@@ -73,8 +83,7 @@ export type Leccion = {
   tarea: string;
 };
 
-export const LECCIONES: Record<string, Leccion> = {
-  definicion: {
+const DEFINICION_ES: Leccion = {
     id: "definicion",
     tiempoObjetivoSegundos: 180,
     tarea:
@@ -166,5 +175,108 @@ export const LECCIONES: Record<string, Leccion> = {
           "Sé específico: dile a quién va dirigido (un niño de 10 años) y qué tono quieres (simple, con ejemplos).",
       },
     ],
-  },
 };
+
+const DEFINICION_EN: Leccion = {
+  id: "definicion",
+  tiempoObjetivoSegundos: 180,
+  tarea:
+    "This week, write 3 different prompts to an AI (like ChatGPT or Gemini) asking for help with something real in your day-to-day: work, study, or something you're simply curious about. Note down how good each answer was.",
+  explicacion: [
+    {
+      texto:
+        "Hello, astronaut. I'm Punti, and I built this universe myself, planet by planet, so you can learn AI without getting dizzy. Before we take off, let's be clear: what on earth IS Artificial Intelligence?",
+      estadoPunti: "boot",
+    },
+    {
+      texto:
+        "Forget robots that want to take over the world. AI is simply a program that LEARNS by looking at tons of examples, instead of a human programming every step by hand.",
+      estadoPunti: "online",
+      grafico: {
+        tipo: "tabla",
+        encabezados: ["Traditional programming", "Artificial Intelligence"],
+        filas: [
+          ["A human writes the rules step by step", "The program learns by seeing thousands of examples"],
+          ["If something changes, the code has to be rewritten", "It adjusts on its own as it sees more data"],
+        ],
+      },
+    },
+    {
+      texto:
+        "Tools like ChatGPT read an enormous amount of text and learned the patterns of language. That's why they can answer questions, write code or make up a poem about tacos. Here's how they put an answer together:",
+      estadoPunti: "loading",
+      grafico: {
+        tipo: "flujo",
+        pasos: [
+          "You send a question (a prompt)",
+          "The AI analyzes the text and looks for patterns",
+          "It generates an answer word by word",
+          "You see the answer on screen",
+        ],
+      },
+    },
+    {
+      texto:
+        "And the way you talk to an AI is called a 'prompt'. The clearer you are about what you want, the better it answers. Let's practice all of this. Ready? Level started.",
+      estadoPunti: "hype",
+    },
+  ],
+  ejercicios: [
+    {
+      tipo: "opcion-multiple",
+      pregunta: "What is Artificial Intelligence?",
+      opciones: [
+        "A humanoid robot that thinks exactly like a person",
+        "Computer programs that learn from data to do tasks that normally require human intelligence",
+        "An app that only works with super-fast internet",
+        "A kind of video game",
+      ],
+      correcta: 1,
+      pista: "Think about the table we saw: AI doesn't follow fixed rules, it learns by looking at examples.",
+    },
+    {
+      tipo: "verdadero-falso",
+      enunciado:
+        "Artificial Intelligence can learn from examples, instead of a programmer telling it step by step what to do.",
+      correcta: true,
+      pista: "That's exactly the difference we pointed out between traditional programming and AI.",
+    },
+    {
+      tipo: "completar-frase",
+      antes: "ChatGPT is an example of AI that can understand and generate",
+      despues: ".",
+      opciones: ["text", "electricity", "gasoline"],
+      correcta: 0,
+      pista: "ChatGPT works with language: words, sentences, conversations.",
+    },
+    {
+      tipo: "ordenar-pasos",
+      instruccion: "Put in order how an AI like ChatGPT generates an answer:",
+      pasos: [
+        "You send a question (a prompt)",
+        "The AI analyzes the text and looks for patterns it learned",
+        "The AI generates an answer word by word",
+        "You see the answer on screen",
+      ],
+      pista: "It's the same order as the diagram I showed you before we started.",
+    },
+    {
+      tipo: "escribir-prompt",
+      instruccion:
+        "Write an instruction (a prompt) asking an AI to explain what photosynthesis is as if you were 10 years old.",
+      pista: "Be specific: tell it who it's for (a 10-year-old) and what tone you want (simple, with examples).",
+    },
+  ],
+};
+
+/**
+ * Todas las lecciones, cada una en sus dos idiomas. Las dos versiones son
+ * obligatorias: una lección no se publica a medias.
+ */
+export const LECCIONES: Record<string, Record<Idioma, Leccion>> = {
+  definicion: { es: DEFINICION_ES, en: DEFINICION_EN },
+};
+
+export function obtenerLeccion(id: string, idioma: Idioma): Leccion | undefined {
+  return LECCIONES[id]?.[idioma];
+}

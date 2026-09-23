@@ -4,21 +4,78 @@ import { use, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/AuthContext";
-import { TEMAS } from "@/lib/temas";
+import { TEMAS, textoSubtema } from "@/lib/temas";
 import { LECCIONES } from "@/lib/lecciones";
 import {
   calcularXp,
   completarLeccion,
-  corazonesEfectivos,
-  gastarMedioCorazon,
-  restarCorazon,
+  gasolinaEfectiva,
+  gastarMediaGasolina,
+  gastarGasolina,
+  GASOLINA_MAXIMA,
 } from "@/lib/progreso";
 import { obtenerPerfil } from "@/lib/userProfile";
-import Punti, { type EstadoPunti } from "@/components/Punti";
+import { useIdioma } from "@/lib/useIdioma";
+import type { Idioma } from "@/lib/i18n";
+import type { EstadoPunti } from "@/lib/puntiSprite";
+import { sonar } from "@/lib/sonido";
+import { RANGOS, rangoPorXp, type Rango } from "@/lib/rangos";
+import BotonSonido from "@/components/BotonSonido";
+import PuntiPixel from "@/components/PuntiPixel";
+import Cargando from "@/components/Cargando";
+import BarraGasolina from "@/components/BarraGasolina";
 import Ejercicio from "@/components/Ejercicio";
 import GraficoExplicacion from "@/components/GraficoExplicacion";
 
-type Fase = "cargando" | "explicacion" | "ejercicios" | "sin-corazones" | "resultado";
+type Fase = "cargando" | "explicacion" | "ejercicios" | "sin-gasolina" | "resultado";
+
+// Etiquetas en fuente pixel sin tildes: Press Start 2P no las trae.
+const TX: Record<Idioma, Record<string, string>> = {
+  es: {
+    noEncontrado: "No encontramos esa lección.",
+    volverMundos: "VOLVER A LOS MUNDOS",
+    volverMundo: "VOLVER AL MUNDO",
+    enObra: "Esta lección todavía está en construcción. Vuelve pronto.",
+    salir: "SALIR",
+    transmision: "TRANSMISIÓN · PUNTI",
+    pantalla: "PANTALLA",
+    de: "DE",
+    fin: "FIN DE LA TRANSMISIÓN",
+    siguiente: "SIGUIENTE",
+    empezar: "EMPEZAR EJERCICIOS",
+    gasolina: "Gasolina",
+    sinGasTitulo: "Te quedaste sin gasolina",
+    sinGasTexto: "Tu gasolina se recarga mañana. Vuelve entonces para seguir con esta lección.",
+    completada: "¡Lección completada!",
+    combustible: "Combustible",
+    tarea: "Tu tarea",
+    ejercicio: "Ejercicio",
+    nuevoRango: "NUEVO RANGO",
+  },
+  en: {
+    noEncontrado: "We couldn't find that lesson.",
+    volverMundos: "BACK TO THE WORLDS",
+    volverMundo: "BACK TO THE WORLD",
+    enObra: "This lesson is still under construction. Come back soon.",
+    salir: "EXIT",
+    transmision: "TRANSMISSION · PUNTI",
+    pantalla: "SCREEN",
+    de: "OF",
+    fin: "END OF TRANSMISSION",
+    siguiente: "NEXT",
+    empezar: "START EXERCISES",
+    gasolina: "Fuel",
+    sinGasTitulo: "You're out of fuel",
+    sinGasTexto: "Your fuel refills tomorrow. Come back then to keep going with this lesson.",
+    completada: "Lesson complete!",
+    // "Fuel" ya es la gasolina; la nota de la lección se llama distinto en
+    // inglés para no confundir las dos cosas.
+    combustible: "Thrust",
+    tarea: "Your mission",
+    ejercicio: "Exercise",
+    nuevoRango: "NEW RANK",
+  },
+};
 
 export default function LeccionPage({
   params,
@@ -27,76 +84,87 @@ export default function LeccionPage({
 }) {
   const { temaId, subtemaId } = use(params);
   const router = useRouter();
+  const idioma = useIdioma();
+  const t = TX[idioma];
   const { usuario, cargando } = useAuth();
 
-  const tema = TEMAS.find((t) => t.id === temaId);
+  const tema = TEMAS.find((x) => x.id === temaId);
   const subtema = tema?.subtemas.find((s) => s.id === subtemaId);
-  const leccion = LECCIONES[subtemaId];
+  const leccion = LECCIONES[subtemaId]?.[idioma];
   const volverAlTema = `/tema/${temaId}`;
 
   const [fase, setFase] = useState<Fase>("cargando");
   const [indiceExplicacion, setIndiceExplicacion] = useState(0);
   const [indiceEjercicio, setIndiceEjercicio] = useState(0);
   const [errores, setErrores] = useState(0);
-  const [corazones, setCorazones] = useState(0);
+  const [gasolina, setGasolina] = useState(0);
   const [estadoPunti, setEstadoPunti] = useState<EstadoPunti>("online");
-  const [resultado, setResultado] = useState<{ xp: number; combustible: 1 | 2 | 3 } | null>(null);
+  const [resultado, setResultado] = useState<{ xp: number; combustible: 1 | 2 | 3; rangoNuevo: Rango | null } | null>(null);
+  const xpInicial = useRef(0);
   const inicioEjerciciosRef = useRef<number>(0);
+  const relojPunti = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (!cargando && !usuario) {
-      router.push("/login");
-    }
+    if (!cargando && !usuario) router.push("/login");
   }, [cargando, usuario, router]);
 
+  const hayLeccion = Boolean(leccion);
   useEffect(() => {
-    if (!usuario || !leccion) return;
+    if (!usuario || !hayLeccion) return;
     obtenerPerfil(usuario.uid).then((perfil) => {
-      setCorazones(perfil ? corazonesEfectivos(perfil) : 0);
+      setGasolina(perfil ? gasolinaEfectiva(perfil) : 0);
+      xpInicial.current = perfil?.xp ?? 0;
       setFase("explicacion");
     });
-  }, [usuario, leccion]);
+  }, [usuario, hayLeccion]);
 
+  useEffect(() => () => {
+    if (relojPunti.current) clearTimeout(relojPunti.current);
+  }, []);
+
+  /** Punti reacciona un momento y vuelve a su estado de reposo. */
+  function reaccionar(estado: EstadoPunti, ms = 1500) {
+    if (relojPunti.current) clearTimeout(relojPunti.current);
+    setEstadoPunti(estado);
+    relojPunti.current = setTimeout(() => setEstadoPunti("online"), ms);
+  }
 
   if (cargando || !usuario) {
-    return (
-      <div className="flex flex-1 items-center justify-center">
-        <p className="font-[family-name:var(--font-terminal)] text-xl text-[var(--matrix)]">
-          Cargando...
-        </p>
-      </div>
-    );
+    return <Cargando />;
   }
 
   if (!tema || !subtema) {
     return (
-      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
-        <p className="font-[family-name:var(--font-ui)] text-white">Subtema no encontrado.</p>
-        <Link href="/inicio" className="boton-matrix rounded-xl px-6 py-2.5 text-sm font-bold uppercase">
-          Volver al mapa
+      <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 text-center">
+        <PuntiPixel estado="error" ancho={112} />
+        <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-white">{t.noEncontrado}</p>
+        <Link href="/inicio" transitionTypes={["atras"]} className="boton-pixel">
+          {t.volverMundos}
         </Link>
       </div>
     );
   }
+
+  const txSubtema = textoSubtema(subtema, idioma);
 
   if (!leccion) {
     return (
-      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-12 text-center">
-        <Punti estado="loading" tamano={120} />
-        <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-white">
-          {subtema.titulo}
-        </h2>
-        <p className="max-w-md font-[family-name:var(--font-ui)] text-[var(--muted)]">
-          Este subtema todavía está en construcción. ¡Vuelve pronto!
-        </p>
-        <Link href={volverAlTema} className="boton-matrix rounded-xl px-6 py-2.5 text-sm font-bold uppercase">
-          Volver a {tema.titulo}
+      <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-12 text-center">
+        <PuntiPixel estado="loading" ancho={128} />
+        <h2 className="font-[family-name:var(--font-display)] text-xl font-black text-white">{txSubtema.titulo}</h2>
+        <p className="max-w-md text-[15px] leading-[1.6] text-[var(--muted)]">{t.enObra}</p>
+        <Link href={volverAlTema} transitionTypes={["atras"]} className="boton-pixel">
+          {t.volverMundo}
         </Link>
       </div>
     );
   }
 
+  const etiquetaGasolina = `${t.gasolina}: ${gasolina} / ${GASOLINA_MAXIMA}`;
+
   function siguienteExplicacion() {
+    if (!leccion) return;
+    sonar("pantalla");
     if (indiceExplicacion + 1 < leccion.explicacion.length) {
       setIndiceExplicacion((i) => i + 1);
     } else {
@@ -107,38 +175,45 @@ export default function LeccionPage({
 
   async function manejarResultadoEjercicio(correcto: boolean) {
     if (correcto) {
-      setEstadoPunti("levelup");
-      setTimeout(() => setEstadoPunti("online"), 1500);
+      reaccionar("levelup");
       avanzarEjercicio();
       return;
     }
 
     setErrores((e) => e + 1);
     if (!usuario) return;
-    await restarCorazon(usuario.uid);
+    await gastarGasolina(usuario.uid);
     const perfil = await obtenerPerfil(usuario.uid);
-    const corazonesRestantes = perfil ? corazonesEfectivos(perfil) : 0;
-    setCorazones(corazonesRestantes);
+    const gasolinaRestante = perfil ? gasolinaEfectiva(perfil) : 0;
+    setGasolina(gasolinaRestante);
 
-    if (corazonesRestantes <= 0) {
+    if (gasolinaRestante <= 0) {
+      // "Sin batería" queda reservado para quedarse de verdad sin gasolina.
+      if (relojPunti.current) clearTimeout(relojPunti.current);
+      // Espera a que termine el zumbido del error, para no encimar los dos.
+      setTimeout(() => sonar("sinGasolina"), 380);
       setEstadoPunti("battery");
-      setFase("sin-corazones");
+      setFase("sin-gasolina");
       return;
     }
 
-    setEstadoPunti("battery");
-    setTimeout(() => setEstadoPunti("online"), 1500);
-    // Se queda en el mismo ejercicio para que el usuario lo intente de nuevo.
+    // Fallar un ejercicio es un error, no quedarse sin batería: antes Punti
+    // usaba el mismo estado para las dos cosas y no se distinguían.
+    reaccionar("error");
+    // Se queda en el mismo ejercicio para que la persona lo intente de nuevo.
   }
 
   async function usarPista() {
     if (!usuario) return;
-    await gastarMedioCorazon(usuario.uid);
+    sonar("pista");
+    reaccionar("info", 2200);
+    await gastarMediaGasolina(usuario.uid);
     const perfil = await obtenerPerfil(usuario.uid);
-    setCorazones(perfil ? corazonesEfectivos(perfil) : 0);
+    setGasolina(perfil ? gasolinaEfectiva(perfil) : 0);
   }
 
   function avanzarEjercicio() {
+    if (!leccion) return;
     if (indiceEjercicio + 1 < leccion.ejercicios.length) {
       setIndiceEjercicio((i) => i + 1);
     } else {
@@ -147,7 +222,7 @@ export default function LeccionPage({
   }
 
   async function terminarLeccion() {
-    if (!usuario) return;
+    if (!usuario || !leccion) return;
     const tiempoSegundos = Math.round((Date.now() - inicioEjerciciosRef.current) / 1000);
     const datosResultado = {
       errores,
@@ -156,17 +231,26 @@ export default function LeccionPage({
     };
     const { xp, combustible } = calcularXp(datosResultado);
     await completarLeccion(usuario.uid, leccion.id, datosResultado);
-    setResultado({ xp, combustible });
+    if (relojPunti.current) clearTimeout(relojPunti.current);
+
+    // ¿Esta lección lo hizo subir de rango? Se compara el rango de antes con el
+    // de después, a partir de la XP que tenía al abrir la lección.
+    const antes = rangoPorXp(xpInicial.current).actual;
+    const despues = rangoPorXp(xpInicial.current + xp).actual;
+    const rangoNuevo = antes !== despues ? despues : null;
+
+    sonar("completa");
+    // El ascenso va después de la victoria, no encima: dos fanfarrias a la
+    // vez se tapan y ninguna se entiende.
+    if (rangoNuevo) setTimeout(() => sonar("nivel"), 1500);
+
+    setResultado({ xp, combustible, rangoNuevo });
     setEstadoPunti(combustible === 3 ? "hype" : "levelup");
     setFase("resultado");
   }
 
   if (fase === "cargando") {
-    return (
-      <div className="flex flex-1 items-center justify-center">
-        <Punti estado="loading" tamano={100} />
-      </div>
-    );
+    return <Cargando />;
   }
 
   if (fase === "explicacion") {
@@ -176,42 +260,42 @@ export default function LeccionPage({
 
     return (
       <div className="flex flex-1 flex-col">
-        {/* HUD: salir, progreso por segmentos y corazones */}
-        <header className="flex items-center gap-3 border-b border-[var(--color-panel-border)] bg-gradient-to-b from-[rgba(5,5,16,0.94)] to-[rgba(5,5,16,0.6)] px-4 py-3">
+        {/* HUD: salir, progreso por segmentos y gasolina */}
+        <header className="flex items-center gap-3 border-b-2 border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.94)] px-4 py-3">
           <Link
             href={volverAlTema}
-            className="shrink-0 rounded-lg border border-white/15 px-3 py-1.5 font-[family-name:var(--font-ui)] text-[13px] font-semibold tracking-wide text-[var(--muted)] transition-colors hover:border-[var(--pink)] hover:text-[var(--pink)]"
+            transitionTypes={["atras"]}
+            className="shrink-0 border-2 border-[var(--color-panel-border)] px-3 py-2 font-[family-name:var(--font-pixel)] text-[8px] text-[var(--muted)] transition-colors hover:border-[var(--pink)] hover:text-[var(--pink)]"
           >
-            ← Salir
+            {t.salir}
           </Link>
 
           <div className="min-w-0 flex-1">
-            <p className="truncate font-[family-name:var(--font-ui)] text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
-              {tema.titulo} · {subtema.titulo}
+            <p className="truncate font-[family-name:var(--font-terminal)] text-[15px] uppercase tracking-[0.1em] text-[var(--muted)]">
+              {txSubtema.titulo}
             </p>
-            <div className="mt-1.5 flex gap-1.5">
+            <div className="mt-1.5 flex gap-1">
               {leccion.explicacion.map((_, indice) => (
                 <span
                   key={indice}
                   className={
                     indice < indiceExplicacion
-                      ? "h-1 flex-1 rounded-full bg-[var(--matrix)] shadow-[0_0_8px_rgba(0,255,65,0.5)]"
+                      ? "h-1.5 flex-1 bg-[var(--matrix)] shadow-[0_0_8px_rgba(0,255,65,0.5)]"
                       : indice === indiceExplicacion
-                        ? "h-1 flex-1 rounded-full bg-[var(--cyan)] shadow-[0_0_10px_var(--cyan)]"
-                        : "h-1 flex-1 rounded-full bg-white/10"
+                        ? "h-1.5 flex-1 bg-[var(--cyan)] shadow-[0_0_10px_var(--cyan)]"
+                        : "h-1.5 flex-1 bg-white/10"
                   }
                 />
               ))}
             </div>
           </div>
 
-          <span className="shrink-0 font-[family-name:var(--font-ui)] text-[15px] font-bold text-white">
-            ❤️ {corazones}
-          </span>
+          <BarraGasolina gasolina={gasolina} maximo={GASOLINA_MAXIMA} etiqueta={etiquetaGasolina} alto={14} />
+          <BotonSonido className="shrink-0" />
         </header>
 
         {/* Consola de transmisión */}
-        <div className="flex-1 overflow-y-auto px-4 pt-5 pb-6">
+        <div className="flex-1 overflow-y-auto px-4 pb-6 pt-5">
           <div className="consola-leccion mx-auto w-full max-w-3xl">
             <span className="consola-esquina consola-esquina-tl" />
             <span className="consola-esquina consola-esquina-tr" />
@@ -219,51 +303,41 @@ export default function LeccionPage({
             <span className="consola-esquina consola-esquina-br" />
 
             <div className="flex items-center gap-2.5 border-b border-[var(--color-panel-border)] px-4 py-2.5 font-[family-name:var(--font-terminal)] text-base tracking-wider text-[var(--matrix)]">
-              <span className="punto-transmision h-[7px] w-[7px] rounded-full bg-[var(--matrix)] shadow-[0_0_9px_var(--matrix)]" />
-              <span>TRANSMISIÓN · PUNTI</span>
+              <span className="punto-transmision h-[7px] w-[7px] bg-[var(--matrix)] shadow-[0_0_9px_var(--matrix)]" />
+              <span>{t.transmision}</span>
               <span className="ml-auto text-[15px] tracking-[0.14em] text-[var(--muted)]">
-                {String(indiceExplicacion + 1).padStart(2, "0")} /{" "}
-                {String(total).padStart(2, "0")}
+                {String(indiceExplicacion + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
               </span>
             </div>
 
             <div className="flex flex-col items-center gap-3 p-4 sm:flex-row sm:items-start sm:gap-5 sm:p-5">
               <div className="shrink-0 text-center">
-                <Punti estado={pantalla.estadoPunti} tamano={104} />
-                <p className="mt-1 font-[family-name:var(--font-terminal)] text-sm tracking-[0.16em] text-[var(--matrix)] opacity-70">
-                  PUNTI
-                </p>
+                <PuntiPixel estado={pantalla.estadoPunti} ancho={104} recorte="busto" />
               </div>
               <p className="min-w-0 flex-1 text-center font-[family-name:var(--font-terminal)] text-xl leading-snug text-[var(--cyan)] sm:text-left sm:text-[25px]">
-                <TextoTecleado key={indiceExplicacion} texto={pantalla.texto} />
+                <TextoTecleado key={`${idioma}-${indiceExplicacion}`} texto={pantalla.texto} />
               </p>
             </div>
 
             {pantalla.grafico && (
               <div className="px-4 pb-5 sm:px-5">
-                <GraficoExplicacion grafico={pantalla.grafico} />
+                <GraficoExplicacion grafico={pantalla.grafico} idioma={idioma} />
               </div>
             )}
           </div>
         </div>
 
         {/* Pie con el avance y el botón */}
-        <footer className="border-t border-[var(--color-panel-border)] bg-gradient-to-t from-[rgba(5,5,16,0.96)] to-[rgba(5,5,16,0.55)] px-4 py-3.5">
+        <footer className="border-t-2 border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.96)] px-4 py-3.5">
           <div className="mx-auto flex w-full max-w-3xl flex-col-reverse items-stretch gap-2.5 sm:flex-row sm:items-center sm:gap-3">
             <p className="text-center font-[family-name:var(--font-terminal)] text-base tracking-[0.12em] text-[var(--muted)] sm:text-left">
-              {ultima
-                ? "FIN DE LA TRANSMISIÓN"
-                : `PANTALLA ${indiceExplicacion + 1} DE ${total}`}
+              {ultima ? t.fin : `${t.pantalla} ${indiceExplicacion + 1} ${t.de} ${total}`}
             </p>
             <button
               onClick={siguienteExplicacion}
-              className={
-                ultima
-                  ? "rounded-xl border border-[var(--gold)] bg-[rgba(255,230,0,0.1)] px-6 py-3 font-[family-name:var(--font-ui)] text-sm font-bold uppercase tracking-wide text-[var(--gold)] transition-colors hover:bg-[rgba(255,230,0,0.2)] sm:ml-auto"
-                  : "boton-matrix rounded-xl px-6 py-3 font-[family-name:var(--font-ui)] text-sm font-bold uppercase tracking-wide sm:ml-auto"
-              }
+              className={`boton-pixel sm:ml-auto ${ultima ? "boton-pixel-oro" : "boton-pixel-lleno"}`}
             >
-              {ultima ? "Empezar ejercicios" : "Siguiente"}
+              {ultima ? t.empezar : t.siguiente}
             </button>
           </div>
         </footer>
@@ -271,19 +345,15 @@ export default function LeccionPage({
     );
   }
 
-  if (fase === "sin-corazones") {
+  if (fase === "sin-gasolina") {
     return (
-      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-12 text-center">
-        <Punti estado="battery" tamano={130} />
-        <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-white">
-          Te quedaste sin corazones
-        </h2>
-        <p className="max-w-md font-[family-name:var(--font-ui)] text-[var(--muted)]">
-          Tus corazones se recargan mañana. Vuelve entonces para seguir con
-          esta lección.
-        </p>
-        <Link href={volverAlTema} className="boton-matrix rounded-xl px-6 py-2.5 text-sm font-bold uppercase">
-          Volver a {tema.titulo}
+      <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-12 text-center">
+        <PuntiPixel estado="battery" ancho={144} />
+        <h2 className="font-[family-name:var(--font-display)] text-2xl font-black text-white">{t.sinGasTitulo}</h2>
+        <BarraGasolina gasolina={0} maximo={GASOLINA_MAXIMA} etiqueta={`${t.gasolina}: 0 / ${GASOLINA_MAXIMA}`} alto={20} />
+        <p className="max-w-md text-[15px] leading-[1.6] text-[var(--muted)]">{t.sinGasTexto}</p>
+        <Link href={volverAlTema} transitionTypes={["atras"]} className="boton-pixel">
+          {t.volverMundo}
         </Link>
       </div>
     );
@@ -291,28 +361,58 @@ export default function LeccionPage({
 
   if (fase === "resultado" && resultado) {
     return (
-      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-12 text-center">
-        <Punti estado={estadoPunti} tamano={150} />
-        <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--matrix)]">
-          ¡Lección completada!
+      <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-12 text-center">
+        <PuntiPixel estado={estadoPunti} ancho={176} />
+        <h2 className="font-[family-name:var(--font-pixel)] text-[16px] leading-[1.5] text-[var(--matrix)] sm:text-[20px]">
+          {t.completada}
         </h2>
-        <p className="font-[family-name:var(--font-ui)] text-lg text-white">
-          Combustible: {"⛽".repeat(resultado.combustible)}
-          {"·".repeat(3 - resultado.combustible)}
-        </p>
-        <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-[var(--gold)]">
-          +{resultado.xp} XP
-        </p>
 
-        <div className="tarjeta-espacial w-full max-w-md rounded-2xl p-5 text-left">
-          <p className="mb-2 font-[family-name:var(--font-ui)] text-xs font-bold uppercase tracking-wide text-[var(--matrix)]">
-            🎯 Tu tarea
-          </p>
-          <p className="font-[family-name:var(--font-ui)] text-sm text-white">{leccion.tarea}</p>
+        {resultado.rangoNuevo && (
+          <div
+            className="rango-nuevo border-2 px-5 py-3 text-center"
+            style={{ borderColor: RANGOS[resultado.rangoNuevo].color, color: RANGOS[resultado.rangoNuevo].color }}
+          >
+            <p className="font-[family-name:var(--font-pixel)] text-[9px]">{t.nuevoRango}</p>
+            <p className="mt-2 font-[family-name:var(--font-display)] text-[19px] font-black">
+              {idioma === "en" ? RANGOS[resultado.rangoNuevo].tituloEn : RANGOS[resultado.rangoNuevo].titulo}
+            </p>
+          </div>
+        )}
+
+        <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="text-center">
+            <span className="flex justify-center gap-1" role="img" aria-label={`${t.combustible}: ${resultado.combustible} / 3`}>
+              {[0, 1, 2].map((k) => (
+                <i
+                  key={k}
+                  className={`block h-6 w-4 ${
+                    k < resultado.combustible ? "bg-[var(--cyan)] shadow-[0_0_8px_var(--cyan)]" : "bg-white/10"
+                  }`}
+                />
+              ))}
+            </span>
+            <p className="mt-2 font-[family-name:var(--font-terminal)] text-[16px] uppercase tracking-[0.14em] text-[var(--muted)]">
+              {t.combustible}
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="font-[family-name:var(--font-pixel)] text-[22px] text-[var(--gold)]">+{resultado.xp}</p>
+            <p className="mt-2 font-[family-name:var(--font-terminal)] text-[16px] uppercase tracking-[0.14em] text-[var(--muted)]">
+              XP
+            </p>
+          </div>
         </div>
 
-        <Link href={volverAlTema} className="boton-matrix rounded-xl px-6 py-2.5 text-sm font-bold uppercase">
-          Volver a {tema.titulo}
+        <div className="w-full max-w-md border-2 border-[var(--color-panel-border)] bg-[rgba(16,16,40,0.6)] p-5 text-left">
+          <p className="mb-2 font-[family-name:var(--font-terminal)] text-[17px] uppercase tracking-[0.16em] text-[var(--matrix)]">
+            {"// "}
+            {t.tarea}
+          </p>
+          <p className="text-[14.5px] leading-[1.6] text-white">{leccion.tarea}</p>
+        </div>
+
+        <Link href={volverAlTema} transitionTypes={["atras"]} className="boton-pixel boton-pixel-lleno">
+          {t.volverMundo}
         </Link>
       </div>
     );
@@ -321,23 +421,27 @@ export default function LeccionPage({
   // fase === "ejercicios"
   const ejercicioActual = leccion.ejercicios[indiceEjercicio];
   return (
-    <div className="flex flex-1 flex-col items-center px-6 py-10">
-      <div className="mb-8 flex w-full max-w-md items-center justify-between font-[family-name:var(--font-ui)] text-sm font-bold text-white">
-        <span>❤️ {corazones}</span>
-        <span className="text-[var(--muted)]">
-          {indiceEjercicio + 1} / {leccion.ejercicios.length}
+    <div className="flex flex-1 flex-col items-center px-4 py-8 sm:px-6">
+      <div className="mb-6 flex w-full max-w-md items-center justify-between">
+        <BarraGasolina gasolina={gasolina} maximo={GASOLINA_MAXIMA} etiqueta={etiquetaGasolina} />
+        <span className="flex items-center gap-3">
+          <span className="font-[family-name:var(--font-terminal)] text-[17px] uppercase tracking-[0.14em] text-[var(--muted)]">
+            {t.ejercicio} {indiceEjercicio + 1} / {leccion.ejercicios.length}
+          </span>
+          <BotonSonido />
         </span>
       </div>
-      <div className="mb-6">
-        <Punti estado={estadoPunti} tamano={90} />
+      <div className="mb-5">
+        <PuntiPixel estado={estadoPunti} ancho={96} />
       </div>
-      <div className="tarjeta-espacial w-full max-w-md rounded-2xl p-6">
+      <div className="w-full max-w-md border-2 border-[var(--color-panel-border)] bg-[rgba(10,10,30,0.88)] p-5 sm:p-6">
         <Ejercicio
-          key={indiceEjercicio}
+          key={`${idioma}-${indiceEjercicio}`}
           ejercicio={ejercicioActual}
-          corazonesDisponibles={corazones}
+          gasolinaDisponible={gasolina}
           onResultado={manejarResultadoEjercicio}
           onUsarPista={usarPista}
+          idioma={idioma}
         />
       </div>
     </div>
@@ -347,12 +451,12 @@ export default function LeccionPage({
 /**
  * Escribe el texto letra por letra, como una transmisión entrante.
  * Se monta de nuevo en cada pantalla (por el `key`), así no hace falta
- * reiniciar el contador a mano. Si el usuario pidió menos movimiento,
+ * reiniciar el contador a mano. Si la persona pidió menos movimiento,
  * muestra el texto completo de una vez.
  */
 function TextoTecleado({ texto }: { texto: string }) {
   const [sinMovimiento] = useState(
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
   const [letras, setLetras] = useState(0);
 
@@ -361,6 +465,7 @@ function TextoTecleado({ texto }: { texto: string }) {
     let cuantas = 0;
     const id = setInterval(() => {
       cuantas += 2;
+      if (texto[cuantas - 1] && texto[cuantas - 1] !== " ") sonar("voz");
       if (cuantas >= texto.length) {
         setLetras(texto.length);
         clearInterval(id);

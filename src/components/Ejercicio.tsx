@@ -3,12 +3,36 @@
 import { useState } from "react";
 import type { Ejercicio as TipoEjercicio } from "@/lib/lecciones";
 import { fraseAleatoria } from "@/lib/frasesFeedback";
+import type { Idioma } from "@/lib/i18n";
+import { sonar } from "@/lib/sonido";
 
 type Props = {
   ejercicio: TipoEjercicio;
-  corazonesDisponibles: number;
+  gasolinaDisponible: number;
   onResultado: (correcto: boolean) => void;
   onUsarPista: () => Promise<void>;
+  idioma?: Idioma;
+};
+
+const TX: Record<Idioma, Record<string, string>> = {
+  es: {
+    verdadero: "Verdadero",
+    falso: "Falso",
+    placeholder: "Escribe tu prompt aquí...",
+    corto: "Escribe un poco más de detalle antes de enviar.",
+    enviar: "ENVIAR",
+    pista: "Pedirle una pista a Punti · cuesta media gasolina",
+    etiquetaPista: "Pista",
+  },
+  en: {
+    verdadero: "True",
+    falso: "False",
+    placeholder: "Write your prompt here...",
+    corto: "Add a bit more detail before you send it.",
+    enviar: "SEND",
+    pista: "Ask Punti for a hint · costs half a fuel",
+    etiquetaPista: "Hint",
+  },
 };
 
 function mezclar<T>(items: T[]): T[] {
@@ -21,13 +45,17 @@ function mezclar<T>(items: T[]): T[] {
 }
 
 const ESTILO_OPCION = {
-  base: "w-full rounded-xl border-2 px-4 py-3 text-left font-[family-name:var(--font-ui)] font-semibold transition-colors",
+  base: "w-full border-2 px-4 py-3 text-left font-[family-name:var(--font-ui)] font-semibold transition-colors",
   neutral: "border-[var(--color-panel-border)] bg-black/20 text-white hover:border-[var(--matrix)]",
   correcta: "border-[var(--matrix)] bg-[var(--matrix)]/15 text-[var(--matrix)]",
   incorrecta: "border-[var(--pink)] bg-[var(--pink)]/15 text-[var(--pink)]",
+  // Una opción que ya se probó y estaba mal: queda marcada y apagada para
+  // que el segundo intento sea entre las que quedan.
+  descartada: "border-[var(--pink)]/40 bg-transparent text-[var(--pink)]/50 line-through cursor-not-allowed",
 };
 
-export default function Ejercicio({ ejercicio, corazonesDisponibles, onResultado, onUsarPista }: Props) {
+export default function Ejercicio({ ejercicio, gasolinaDisponible, onResultado, onUsarPista, idioma = "es" }: Props) {
+  const t = TX[idioma];
   const [seleccion, setSeleccion] = useState<number | boolean | null>(null);
   const [comprobado, setComprobado] = useState(false);
   const [ordenElegido, setOrdenElegido] = useState<string[]>([]);
@@ -39,20 +67,38 @@ export default function Ejercicio({ ejercicio, corazonesDisponibles, onResultado
   const [pistaRevelada, setPistaRevelada] = useState(false);
   const [pidiendoPista, setPidiendoPista] = useState(false);
   const [feedback, setFeedback] = useState<{ texto: string; correcto: boolean } | null>(null);
+  // Respuestas que ya se probaron y estaban mal (índices o verdadero/falso).
+  const [descartadas, setDescartadas] = useState<(number | boolean)[]>([]);
 
-  function estiloDe(esEstaLaCorrecta: boolean, esLaElegida: boolean) {
+  function estiloDe(esEstaLaCorrecta: boolean, esLaElegida: boolean, valor: number | boolean) {
+    if (descartadas.includes(valor)) return `${ESTILO_OPCION.base} ${ESTILO_OPCION.descartada}`;
     if (!comprobado || !esLaElegida) return `${ESTILO_OPCION.base} ${ESTILO_OPCION.neutral}`;
     return `${ESTILO_OPCION.base} ${esEstaLaCorrecta ? ESTILO_OPCION.correcta : ESTILO_OPCION.incorrecta}`;
   }
 
-  function comprobar(esCorrecto: boolean) {
+  function comprobar(esCorrecto: boolean, valor?: number | boolean) {
+    sonar(esCorrecto ? "acierto" : "error");
     setComprobado(true);
-    setFeedback({ texto: fraseAleatoria(esCorrecto), correcto: esCorrecto });
-    setTimeout(() => onResultado(esCorrecto), esCorrecto ? 1300 : 1900);
+    setFeedback({ texto: fraseAleatoria(esCorrecto, idioma), correcto: esCorrecto });
+    if (esCorrecto) {
+      setTimeout(() => onResultado(true), 1300);
+      return;
+    }
+    setTimeout(() => {
+      onResultado(false);
+      // Antes el ejercicio se quedaba bloqueado después de fallar: la lección
+      // no avanza (hay que acertar), pero los botones seguían apagados.
+      // Ahora se abre un segundo intento, con la opción fallada tachada.
+      if (valor !== undefined) setDescartadas((d) => [...d, valor]);
+      setOrdenElegido([]);
+      setSeleccion(null);
+      setFeedback(null);
+      setComprobado(false);
+    }, 1900);
   }
 
   async function pedirPista() {
-    if (pistaRevelada || pidiendoPista || corazonesDisponibles < 0.5) return;
+    if (pistaRevelada || pidiendoPista || gasolinaDisponible < 0.5) return;
     setPidiendoPista(true);
     await onUsarPista();
     setPistaRevelada(true);
@@ -70,12 +116,12 @@ export default function Ejercicio({ ejercicio, corazonesDisponibles, onResultado
         {ejercicio.opciones.map((opcion, indice) => (
           <button
             key={opcion}
-            disabled={comprobado}
+            disabled={comprobado || descartadas.includes(indice)}
             onClick={() => {
               setSeleccion(indice);
-              comprobar(indice === ejercicio.correcta);
+              comprobar(indice === ejercicio.correcta, indice);
             }}
-            className={estiloDe(indice === ejercicio.correcta, seleccion === indice)}
+            className={estiloDe(indice === ejercicio.correcta, seleccion === indice, indice)}
           >
             {opcion}
           </button>
@@ -92,14 +138,14 @@ export default function Ejercicio({ ejercicio, corazonesDisponibles, onResultado
           {[true, false].map((valor) => (
             <button
               key={String(valor)}
-              disabled={comprobado}
+              disabled={comprobado || descartadas.includes(valor)}
               onClick={() => {
                 setSeleccion(valor);
-                comprobar(valor === ejercicio.correcta);
+                comprobar(valor === ejercicio.correcta, valor);
               }}
-              className={estiloDe(valor === ejercicio.correcta, seleccion === valor)}
+              className={estiloDe(valor === ejercicio.correcta, seleccion === valor, valor)}
             >
-              {valor ? "Verdadero" : "Falso"}
+              {valor ? t.verdadero : t.falso}
             </button>
           ))}
         </div>
@@ -115,12 +161,12 @@ export default function Ejercicio({ ejercicio, corazonesDisponibles, onResultado
         {ejercicio.opciones.map((opcion, indice) => (
           <button
             key={opcion}
-            disabled={comprobado}
+            disabled={comprobado || descartadas.includes(indice)}
             onClick={() => {
               setSeleccion(indice);
-              comprobar(indice === ejercicio.correcta);
+              comprobar(indice === ejercicio.correcta, indice);
             }}
-            className={estiloDe(indice === ejercicio.correcta, seleccion === indice)}
+            className={estiloDe(indice === ejercicio.correcta, seleccion === indice, indice)}
           >
             {opcion}
           </button>
@@ -190,12 +236,12 @@ export default function Ejercicio({ ejercicio, corazonesDisponibles, onResultado
           }}
           disabled={comprobado}
           rows={3}
-          placeholder="Escribe tu prompt aquí..."
-          className="rounded-xl border-2 border-[var(--color-panel-border)] bg-black/20 px-4 py-3 text-white placeholder-[var(--muted)] outline-none focus:border-[var(--matrix)]"
+          placeholder={t.placeholder}
+          className="border-2 border-[var(--color-panel-border)] bg-black/20 px-4 py-3 text-white placeholder-[var(--muted)] outline-none focus:border-[var(--matrix)]"
         />
         {avisoTextoCorto && (
           <p className="text-sm text-[var(--gold)]">
-            Escribe un poco más de detalle antes de enviar.
+            {t.corto}
           </p>
         )}
         {!comprobado && (
@@ -207,9 +253,9 @@ export default function Ejercicio({ ejercicio, corazonesDisponibles, onResultado
               }
               comprobar(true);
             }}
-            className="boton-matrix self-start rounded-xl px-5 py-2.5 font-[family-name:var(--font-ui)] font-bold uppercase tracking-wide"
+            className="boton-pixel boton-pixel-lleno self-start"
           >
-            Enviar
+            {t.enviar}
           </button>
         )}
       </div>
@@ -235,16 +281,17 @@ export default function Ejercicio({ ejercicio, corazonesDisponibles, onResultado
       )}
       <div className="border-t border-[var(--color-panel-border)] pt-3">
         {pistaRevelada ? (
-          <p className="font-[family-name:var(--font-terminal)] text-base text-[var(--gold)]">
-            💡 {ejercicio.pista}
+          <p className="font-[family-name:var(--font-terminal)] text-[18px] leading-[1.35] text-[var(--gold)]">
+            <span className="mr-2 border border-[var(--gold)] px-1.5 text-[14px] uppercase tracking-[0.12em]">{t.etiquetaPista}</span>
+            {ejercicio.pista}
           </p>
         ) : (
           <button
             onClick={pedirPista}
-            disabled={pidiendoPista || corazonesDisponibles < 0.5}
+            disabled={pidiendoPista || gasolinaDisponible < 0.5}
             className="font-[family-name:var(--font-ui)] text-xs font-bold uppercase tracking-wide text-[var(--muted)] hover:text-[var(--gold)] disabled:cursor-not-allowed disabled:opacity-40"
           >
-            💡 Ver pista (cuesta medio corazón)
+            {t.pista}
           </button>
         )}
       </div>

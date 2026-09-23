@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Orbitron, VT323, Rajdhani, Press_Start_2P, Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/lib/AuthContext";
+import LangDocumento from "@/components/LangDocumento";
+import SonidoGlobal from "@/components/SonidoGlobal";
 import FondoEspacial from "@/components/FondoEspacial";
 
 // Sistema tipográfico de Punti: Orbitron para títulos épicos, VT323 para la voz de
@@ -35,6 +37,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <FondoEspacial />
+        <LangDocumento />
+        <SonidoGlobal />
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

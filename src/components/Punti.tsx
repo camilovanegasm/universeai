@@ -1,16 +1,25 @@
 import Image from "next/image";
+import { type EstadoPunti, DESCRIPCION_PUNTI } from "@/lib/puntiSprite";
 
-// Los 10 estados de Punti tienen un propósito narrativo definido en la hoja de
-// personaje; solo estos 6 ya tienen arte exportado (public/punti/*.png).
-export type EstadoPunti = "boot" | "online" | "loading" | "levelup" | "battery" | "hype";
+export type { EstadoPunti };
 
-const DESCRIPCION: Record<EstadoPunti, string> = {
-  boot: "Punti iniciando sesión",
-  online: "Punti saludando",
-  loading: "Punti procesando",
-  levelup: "Punti celebrando una subida de nivel",
-  battery: "Punti con batería baja",
-  hype: "Punti en celebración épica",
+/**
+ * La versión ilustrada de Punti (PNG), para la portada y los momentos grandes,
+ * donde hay espacio para el detalle. Dentro del juego se usa <PuntiPixel />.
+ *
+ * Hay 9 estados y solo 6 PNG exportados, así que los tres nuevos caen al PNG
+ * más cercano en vez de romperse.
+ */
+const ARCHIVO: Record<EstadoPunti, string> = {
+  boot: "boot",
+  online: "online",
+  leyendo: "loading",
+  loading: "loading",
+  levelup: "levelup",
+  hype: "hype",
+  battery: "battery",
+  error: "battery",
+  info: "online",
 };
 
 type Props = {
@@ -23,8 +32,8 @@ type Props = {
 export default function Punti({ estado, tamano = 140, flotando = true, className = "" }: Props) {
   return (
     <Image
-      src={`/punti/punti-${estado}.png`}
-      alt={DESCRIPCION[estado]}
+      src={`/punti/punti-${ARCHIVO[estado]}.png`}
+      alt={DESCRIPCION_PUNTI[estado]}
       width={tamano}
       height={tamano}
       className={`${flotando ? "punti-flotando" : ""} ${className}`}

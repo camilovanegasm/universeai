@@ -13,7 +13,9 @@
 >
 > (Ver también `CLAUDE.md` en esta misma carpeta: contexto operativo para Claude Code.)
 
-**Última actualización:** 2026-09-22 · **Fase actual:** 1.4 completa
+**Última actualización:** 2026-09-23 · **Fase actual:** 2.1 en curso
+
+> Para el detalle de qué se tocó en cada sesión, ver `CAMBIOS.md`.
 
 ---
 
@@ -98,57 +100,67 @@ por detrás de un nombre, el nombre desaparece.
 
 ## 3. Cómo se navega
 
-Este es el corazón del producto. La app tiene cuatro niveles de zoom conceptual, y cada uno
-usa la forma de navegación que le corresponde.
+Tres niveles, y cada uno usa la forma que le corresponde.
 
 ```
-GALAXIA  →  PLANETA  →  LECCIÓN  →  EJERCICIOS
-/inicio     /tema/[id]  /leccion/[temaId]/[subtemaId]
+MUNDOS  →  PLANETA  →  LECCIÓN + EJERCICIOS
+/inicio    /tema/[id]   /leccion/[temaId]/[subtemaId]
 ```
 
-### 3.1 La galaxia — `MapaGalaxia.tsx`
+### 3.1 Los mundos — `MundosPunti.tsx`
 
-- **Punti en el centro.** No hay sol. Punti es la fuente del conocimiento: aura verde radial,
-  tres anillos girando en direcciones opuestas, flotación suave.
-- **Cada tema es un planeta** en una órbita elíptica inclinada. El achatamiento es
-  `ACHATE = 0.52`, que es lo que da la sensación de estar viendo un plano en ángulo y no un
-  círculo plano.
-- **El tamaño del planeta es información, no decoración:** sale del número de lecciones
-  (`radio = 22 + total * 5.5`). De un vistazo sabes qué tan grande es cada mundo.
-- **Cada planeta se genera proceduralmente** con una semilla fija derivada de su `id`
-  (`hashId`). Mismo tema → mismo planeta, siempre. De ahí salen las bandas, los cráteres, los
-  anillos y las lunas.
-- **Navegación:** arrastrar para desplazarse, rueda o pellizco para zoom centrado en el cursor,
-  botón para encuadrar toda la galaxia.
-- **Entrar a un planeta es un acercamiento**, no un cambio de página seco: la cámara vuela
-  hacia el planeta mientras el resto de la galaxia se desvanece.
+La pantalla principal. Una tarjeta por tema, en una columna en celular, dos en
+tablet y tres en escritorio. Cada tarjeta lleva su planeta dibujado, el nombre
+propio del mundo, el rango al que corresponde y el avance en porcentaje.
 
-### 3.2 El planeta — `PlanetaTema.tsx`
+**Aquí no hay nada que arrastrar.** Se toca y se entra.
 
-- **Globo girable dibujado en canvas.** Las lecciones viven en coordenadas `(lat, lon)` sobre
-  una esfera y se proyectan a pantalla. Girar es cambiar un ángulo real, no una animación
-  fingida.
-- Las lecciones se reparten **en espiral** alrededor del mundo y se unen con una ruta: avanzar
-  por el temario es darle la vuelta al planeta.
-- Arrastrar horizontal gira; vertical inclina el eje. Al soltar sigue girando solo. Al tocar un
-  nodo, el globo gira para traerlo al frente.
-- Hay un interruptor **GLOBO / LISTA**. La preferencia se guarda en `localStorage` con la clave
-  `punti-vista-tema`.
+> **Esto reemplazó a un mapa galáctico** que se arrastraba y se acercaba con
+> los dedos (`MapaGalaxia.tsx`, 702 líneas, eliminado). Funcionaba en un
+> monitor y se rompía en un celular: apuntarle a un planeta que se mueve es
+> una interacción de escritorio disfrazada de app. Si alguien propone volver a
+> ese mapa, esta es la razón por la que se fue.
 
-### 3.3 La lección — la consola de transmisión
+### 3.2 Los planetas — `PlanetaPixel.tsx` + `planetaSprite.ts`
 
-La explicación no es un bloque de texto: es un HUD con marco de esquinas, barra de progreso
-segmentada, Punti al costado reaccionando, y el texto apareciendo **tecleado** como una
-transmisión que llega. Puede incluir gráficos (`GraficoExplicacion.tsx`): tablas comparativas
-enfrentadas con divisor VS, o flujos numerados tipo pipeline.
+Un planeta no es un archivo de imagen: **se genera a partir del `id` del
+tema**. Mismo tema, mismo mundo, siempre — y un tema nuevo trae su mundo sin
+que nadie tenga que ilustrarlo.
 
-### 3.4 Los ejercicios
+- Se dibuja a 76 px reales y se amplía con `image-rendering: pixelated`. Por
+  eso se ve igual de nítido en un celular que en un monitor.
+- Cinco familias: rocoso, gaseoso, oceánico, volcánico y helado. De la semilla
+  salen también los anillos, las lunas, los cráteres y la inclinación del eje.
+- **La luz del borde es del color complementario, no blanca.** Eso es lo que
+  hace que se lean como neón y no como planetas de libro de ciencias.
 
-Cinco tipos de ejercicio en `Ejercicio.tsx`. La lección pasa por cuatro fases:
-`cargando → explicacion → ejercicios → resultado`, con una quinta salida si te quedas sin
-corazones (`sin-corazones`).
+### 3.3 El planeta por dentro — `PlanetaTema.tsx`
 
----
+Globo girable en canvas, con las lecciones repartidas en espiral sobre la
+esfera. Tiene un interruptor GLOBO / LISTA, y la preferencia se recuerda en
+`localStorage` con la clave `punti-vista-tema`.
+
+### 3.4 La lección — la consola de transmisión
+
+La explicación no es un bloque de texto: es un HUD con marco de esquinas,
+barra de progreso segmentada, Punti al costado reaccionando, y el texto
+apareciendo tecleado como una transmisión que llega.
+
+### 3.5 Los ejercicios
+
+Cinco tipos en `Ejercicio.tsx`. La lección pasa por cuatro fases:
+`cargando → explicacion → ejercicios → resultado`, con una quinta salida si te
+quedas sin gasolina (`sin-gasolina`).
+
+### 3.6 El manual de vuelo — `ComoFunciona.tsx`
+
+Cinco pantallas completas, una por paso, con Punti grande en el estado que
+corresponde. **Cada paso muestra lo que explica** en vez de solo contarlo:
+planetas reales, una consola con su cursor, un ejercicio con su respuesta
+marcada, los tres rangos encadenados, la gasolina y la racha.
+
+Es componente y no página a propósito, porque se muestra en dos sitios: en
+`/como-funciona` y en el registro de gente nueva. Un solo texto, dos lugares.
 
 ## 4. Arquitectura
 
@@ -222,31 +234,40 @@ Las órbitas y los anillos usan `vector-effect="non-scaling-stroke"`. Sin eso, c
 ```
 C:\Proyectos\UniverseAI          (la carpeta sigue llamándose así por dentro)
 ├─ CLAUDE.md                     memoria de contexto para Claude Code
-├─ DOCUMENTACION.md              este documento
+├─ DOCUMENTACION.md              este documento: el porqué de cada cosa
+├─ CAMBIOS.md                    qué se tocó en cada sesión
 ├─ .env.local                    claves de Firebase — NUNCA se sube a GitHub
 ├─ firestore.rules               reglas de seguridad de la base de datos
-├─ public/punti/                 los 6 PNG de Punti
+├─ public/punti/                 los 6 PNG de Punti (portada y momentos grandes)
 └─ src/
    ├─ app/
    │  ├─ page.tsx                portada pública
    │  ├─ login/ · registro/      entrar y crear cuenta
-   │  ├─ inicio/page.tsx         la galaxia
-   │  ├─ tema/[id]/page.tsx      el planeta
+   │  ├─ inicio/page.tsx         los mundos, el manual y las preguntas
+   │  ├─ como-funciona/          el manual de vuelo
+   │  ├─ tema/[id]/page.tsx      el planeta por dentro
    │  ├─ leccion/[temaId]/[subtemaId]/page.tsx   la lección + quiz
    │  ├─ layout.tsx              fuentes, metadatos, envoltura global
-   │  └─ globals.css             variables de color y animaciones
+   │  └─ globals.css             variables de color, clases y animaciones
    ├─ components/
-   │  ├─ MapaGalaxia.tsx         702 líneas · el mapa galáctico
-   │  ├─ PlanetaTema.tsx         469 líneas · el globo girable
-   │  ├─ Ejercicio.tsx           253 líneas · los 5 tipos de ejercicio
-   │  ├─ GraficoExplicacion.tsx  111 líneas · tablas y flujos
-   │  ├─ Punti.tsx                34 líneas · la mascota
-   │  ├─ BotonGoogle.tsx          36 líneas
-   │  └─ FondoEspacial.tsx         9 líneas · el polvo cósmico
+   │  ├─ MundosPunti.tsx         la pantalla de mundos
+   │  ├─ PlanetaPixel.tsx        un planeta en canvas
+   │  ├─ PuntiPixel.tsx          Punti en pixel art
+   │  ├─ Punti.tsx               Punti ilustrado (los PNG)
+   │  ├─ ComoFunciona.tsx        el manual en cinco pantallas
+   │  ├─ PreguntasFrecuentes.tsx el acordeón de FAQ
+   │  ├─ PlanetaTema.tsx         el globo girable
+   │  ├─ Ejercicio.tsx           los 5 tipos de ejercicio
+   │  ├─ GraficoExplicacion.tsx  tablas y flujos
+   │  ├─ BotonGoogle.tsx
+   │  └─ FondoEspacial.tsx       el polvo cósmico
    └─ lib/
-      ├─ temas.ts               los 7 temas y sus subtemas
+      ├─ puntiSprite.ts         Punti dibujado con rectángulos (9 estados)
+      ├─ planetaSprite.ts       los mundos, generados desde el id del tema
+      ├─ rangos.ts              Explorador, Capitán, Arquitecto
+      ├─ temas.ts               los 7 mundos y sus subtemas
       ├─ lecciones.ts           el contenido de las lecciones
-      ├─ progreso.ts            XP, combustible, corazones, racha
+      ├─ progreso.ts            XP, combustible, gasolina, racha
       ├─ userProfile.ts         leer y escribir el perfil en Firestore
       ├─ AuthContext.tsx        quién está logueado, en toda la app
       ├─ authErrors.ts          traducir errores de Firebase al español
@@ -254,28 +275,45 @@ C:\Proyectos\UniverseAI          (la carpeta sigue llamándose así por dentro)
       └─ firebase.ts            la conexión
 ```
 
-Son unas **2.590 líneas** de código propio. Los dos archivos grandes (`MapaGalaxia` y
-`PlanetaTema`) concentran casi la mitad, porque ahí vive toda la parte de animación y
-matemáticas.
-
----
+**Los dos archivos de sprite (`puntiSprite.ts` y `planetaSprite.ts`) no saben
+nada de React a propósito.** Son funciones puras que dibujan sobre un canvas,
+así que se pueden compilar y probar solas, sin navegador.
 
 ## 6. Contenido y datos
 
-### 6.1 Los 7 temas
+### 6.1 Los 7 mundos
 
-| # | Tema | Subtemas | Contenido escrito |
+Cada mundo tiene **nombre propio** (lo que se ve grande), **tema** (lo que
+enseña) y **rango** (para quién es).
+
+| # | Mundo | Tema | Rango | Subtemas |
+|---|---|---|---|---|
+| 01 | **Origen** | Qué es la IA | Explorador | 5 |
+| 02 | **Lexia** | Modelos de lenguaje | Explorador | 4 |
+| 03 | **Eco** | Prompts | Explorador | 4 |
+| 04 | **Forja** | Herramientas de IA para el trabajo | Capitán | 3 |
+| 05 | **Prisma** | Crear imágenes y video con IA | Capitán | 4 |
+| 06 | **Brújula** | Ética y seguridad | Capitán | 3 |
+| 07 | **Autómata** | Automatizaciones | Arquitecto | 3 |
+
+Los nombres no son decorativos: **Eco** porque hablas y te responde, **Forja**
+porque ahí se trabaja, **Prisma** porque la luz se descompone en imagen y
+video, **Brújula** porque la ética dice por dónde sí y por dónde no.
+
+Son **26 subtemas**. Hoy solo `que-es-la-ia / definicion` tiene lección
+escrita; el resto aparece como "en obra".
+
+### 6.1.1 Los tres rangos — `rangos.ts`
+
+| Rango | Nombre completo | En el chip | Color |
 |---|---|---|---|
-| 1 | Qué es la IA | 5 | 1 de 5 |
-| 2 | Modelos de lenguaje | 4 | Pendiente |
-| 3 | Prompts | 4 | Pendiente |
-| 4 | Herramientas de IA para el trabajo | 3 | Pendiente |
-| 5 | Crear imágenes y video con IA | 4 | Pendiente |
-| 6 | Ética y seguridad | 3 | Pendiente |
-| 7 | Automatizaciones | 3 | Pendiente |
+| `explorador` | Explorador espacial | EXPLORADOR | verde |
+| `capitan` | Capitán de estación | CAPITÁN | cian |
+| `arquitecto` | Arquitecto de galaxias | ARQUITECTO | morado |
 
-Son **26 subtemas** en total. Hoy solo `que-es-la-ia / definicion` tiene lección escrita; el
-resto aparece como "en construcción".
+Cada rango guarda dos formas del nombre a propósito: el largo va en el perfil,
+el corto va en la tarjeta. "Capitán de estación espacial" no cabe en un chip
+sin partirse en dos renglones.
 
 ### 6.2 DECISIÓN DE PRODUCTO — sin candados secuenciales
 
@@ -317,23 +355,49 @@ Colección `usuarios`, un documento por persona, con: nombre, correo, XP acumula
 racha y fecha de última actividad. Las reglas de seguridad (`firestore.rules`) garantizan que
 **cada usuario solo puede leer y escribir su propio documento**, nunca el de otra persona.
 
+Desde la fase 4.0 (paso 1), además, dentro de su propio perfil cada persona solo puede cambiar
+los campos del juego, y con límites:
+
+| Campo | Qué puede hacer el usuario |
+|---|---|
+| `xp` | Solo subir, máximo 20 por escritura |
+| `corazones` (gasolina) | El mismo día solo bajar; en un día nuevo, recargar hasta 5 |
+| `ultimaActividad` | Solo la fecha de hoy según el reloj del servidor (margen de 2 h) |
+| `racha` | Solo al cambiar de día: +1 o volver a 1 |
+| `progreso` | Como mucho una lección nueva por escritura |
+| `idioma` | `es` o `en` |
+| `bienvenidaVista` | Solo pasar a `true` |
+| todo lo demás (premium, rol…) | Nada. Solo el admin |
+
+- **Admin**: `camilovanegasm@gmail.com`, y solo con el correo verificado (entrar con Google lo
+  verifica). Puede leer todos los perfiles y cambiar cualquier campo.
+- Un perfil nuevo tiene que nacer en cero (0 XP, 5 de gasolina, racha 0, sin progreso).
+- Nadie puede borrar perfiles desde la app.
+- **Lo que las reglas no pueden impedir**: que alguien con conocimientos repita escrituras
+  válidas (por ejemplo, sumar 20 XP varias veces sin hacer la lección). Cerrar eso del todo exige
+  que el servidor calcule el XP. Para el tamaño actual alcanza; se revisa si aparece un ranking.
+- La versión anterior de las reglas está en `referencias/firestore.rules.anterior`.
+
 ---
 
 ## 7. Reglas del juego
 
-Toda esta lógica vive en `src/lib/progreso.ts`, separada de la interfaz. Eso significa que se
+Toda esta lógica vive en `src/lib/progreso.ts`, separada de la interfaz. Se
 puede ajustar el balance del juego sin tocar ni una pantalla.
 
-- **Combustible** (reemplaza las estrellas de Duolingo): 3/3 si completas la lección sin
-  errores · 2/3 con 1 o 2 errores · 1/3 con 3 o más.
-- **XP**: 15 XP con combustible 3 · 10 XP con 2 · 5 XP con 1. Más **+5 XP** de bono si terminas
-  dentro del tiempo objetivo de la lección.
-- **Corazones**: arrancas con 5. Se resetean automáticamente a 5 cada día, comparando con la
-  fecha de la última actividad.
-- **Racha**: sube 1 con actividad en días consecutivos. Se mantiene si ya contaste hoy. Vuelve
-  a 1 si pasó más de un día sin actividad.
+- **Gasolina** (antes "corazones"): arrancas con 5. Fallar un ejercicio cuesta
+  una; pedir una pista cuesta media. Si se acaba, el viaje se pausa hasta el
+  día siguiente. Se recarga sola cada día.
+- **Combustible de la lección** (no es lo mismo que la gasolina): 3/3 si la
+  completas sin errores, 2/3 con 1 o 2, 1/3 con 3 o más.
+- **XP**: 15 con combustible 3, 10 con 2, 5 con 1. Más **+5** de bono si
+  terminas dentro del tiempo objetivo.
+- **Racha**: sube 1 con actividad en días consecutivos, se mantiene si ya
+  contaste hoy, y vuelve a 1 si pasó más de un día.
 
----
+> **El campo guardado en Firestore se sigue llamando `corazones`.** Renombrarlo
+> obligaría a migrar los datos de las cuentas que ya existen, y ese nombre no lo
+> ve nadie. En toda la interfaz y en todas las funciones se llama gasolina.
 
 ## 8. Decisiones y porqués
 
@@ -352,6 +416,14 @@ pregunta "¿por qué está así?", la respuesta debería estar aquí.
 | **Sin candados secuenciales** | El contenido no es acumulativo. Bloquear el tema 5 porque no terminaste el 3 sería una fricción inventada. |
 | **El nombre Punti** | La mascota se llamaba *Cache*. Todos los dominios estaban ocupados, incluso escribiéndolo *KCHE*. Se renombró todo a Punti — mascota y producto — y se compró `punti.space`, que además refuerza el concepto espacial. |
 | **El proyecto de Firebase sigue siendo `universeai-e4e9c`** | Deliberado. Es un identificador interno que nadie ve, y renombrarlo obligaría a migrar los datos. No vale el riesgo. |
+| **Pixel art generado en código, no ilustraciones** | Un tema nuevo trae su mundo sin que nadie lo dibuje, se ve nítido en cualquier pantalla y no hay archivos de imagen que cargar. El techo visual es más bajo que una ilustración hecha a mano; a cambio, el sistema crece solo. |
+| **Sólido arcade para Punti** | Se probaron seis direcciones. Esta invierte el peso del original: el cuerpo se llena de verde y el contorno se vuelve oscuro. Es la única que aguanta el tamaño de ícono sin deshacerse. |
+| **Press Start 2P deja de ser solo para logros** | La documentación decía "con mucha moderación". El estilo 8-bits obliga a romper esa regla: ahora se usa en etiquetas y botones. Los títulos largos siguen en Orbitron, porque en pixel a 12px no se leen. |
+| **Fuera el mapa galáctico** | Arrastrar, hacer zoom y acertarle a un planeta que se mueve es una interacción de escritorio. En celular no funcionaba. Se reemplazó por tarjetas: se toca y se entra. |
+| **Los mundos tienen nombre propio** | "Origen" dice más que "Tema 1" y se recuerda mejor que "Qué es la IA". El tema queda como subtítulo. |
+| **Cada rango tiene nombre largo y corto** | "Capitán de estación espacial" no cabe en un chip sin partirse en dos renglones. El largo va en el perfil, el corto en la tarjeta. |
+| **El acordeón de preguntas es `<details>` nativo** | Abre sin JavaScript, funciona con teclado y con lector de pantalla sin programar nada, y no se rompe si el JS falla al cargar. |
+| **El manual es componente, no página** | Se muestra en `/como-funciona` y en el registro. Un solo texto, dos lugares, imposible que se desincronicen. |
 | **Móvil: reencuadrar, no encoger el texto** | Las etiquetas se chocaban en pantalla angosta. El problema era de encuadre, no de tamaño de letra: en móvil el mapa abre junto al mundo actual en vez de mostrar toda la galaxia, las etiquetas se ocultan bajo zoom 0.26, y los controles suben por encima del panel inferior. |
 
 ### 8.1 Errores que ya costaron caro — no repetir
@@ -363,6 +435,15 @@ pregunta "¿por qué está así?", la respuesta debería estar aquí.
   llegaba. Hay que probar con interacciones reales de mouse y de táctil.
 - **`var(--color)22` no concatena en CSS.** La opacidad hay que calcularla en JS y pasarla como
   su propia variable.
+- **Un elemento en línea no acepta `transform`.** Si algo no rota o no se
+  escala, revisar primero su `display`.
+- **Para medir una animación hay que quitarle la transición antes.** Si no, se
+  mide el primer fotograma. Y si la pestaña del navegador no está visible, el
+  navegador congela las animaciones y todo se mide como si no hubiera pasado
+  nada — eso ya causó una falsa alarma.
+- **Un bloque CSS duplicado sin su selector de estado** deja el componente
+  pegado en ese estado. Pasó con el botón de la tarjeta: se veía presionado
+  todo el tiempo.
 - **El `.env.local` nunca se sube.** Está en `.gitignore` y se verifica antes de cada commit.
 
 ---
@@ -405,46 +486,108 @@ trabaja Claude.
 
 ---
 
-## 11. Estado por fases
+## 11. Guía de ruta
 
-| Fase | Qué incluye | Estado |
+Dónde estamos y qué sigue. Se actualiza cada vez que se cierra una fase.
+
+### Terminado
+
+| Fase | Qué incluye |
+|---|---|
+| **0** | Entorno: Next.js + GitHub + Vercel + Firebase conectados |
+| **1.1** | Registro e inicio de sesión (correo + Google) |
+| **1.2** | XP, combustible, corazones, racha + identidad visual |
+| **1.3** | Mapa de niveles — *reemplazada por la 1.4* |
+| **1.4** | Galaxia navegable + planetas girables + lección real + renombre a Punti + dominio propio |
+| **2.0** | **Sistema visual pixel art**: Punti en 9 estados, mundos generados por código, la galaxia eliminada, corazones pasan a gasolina |
+| **2.1** | **Inicio completo**: nombres de mundo, rangos, preguntas frecuentes y manual de vuelo en cinco pantallas |
+| **2.2** | **Portada 8-bits**: campo de estrellas animado, cifras del producto, sección "por dentro", preguntas frecuentes y pie de página |
+| **2.3** | **Bienvenida**: elegir español o inglés y recorrer el manual al crear la cuenta |
+| **2.4** | **La app en dos idiomas**: toda la interfaz, los 7 mundos, los 26 subtemas y la primera lección completa |
+| **2.5** | **Perfil**: ficha de piloto con rango por XP, retomar donde lo dejaste, mundos a medias y conquistados, ajustes |
+| **3.0** | **Sonido**: chip de sonido sintetizado en código, silencio recordado, voz de Punti, música solo en la portada |
+| **3.1** | **Transiciones y carga**: dirección al navegar, el planeta que viaja de la tarjeta al mundo, cargador único con retraso, esqueleto en /inicio |
+
+### En curso
+
+| Fase | Qué incluye |
+|---|---|
+
+### Lo que sigue, en orden
+
+| Fase | Qué incluye | Por qué en ese orden |
 |---|---|---|
-| **Fase 0** | Entorno: Next.js + GitHub + Vercel + Firebase conectados | Completa |
-| **Fase 1.1** | Registro e inicio de sesión (correo + Google) | Completa |
-| **Fase 1.2** | XP, combustible, corazones, racha + identidad visual | Completa |
-| **Fase 1.3** | Mapa de niveles (camino curvo de planetas) | Reemplazada por 1.4 |
-| **Fase 1.4** | Galaxia navegable + planetas girables + lección real + renombre a Punti + dominio propio | Completa |
-| **Fase 1.5** | Ajuste de la experiencia móvil | Siguiente |
-| **Fase 2** | Escribir el contenido de los 25 subtemas restantes | Pendiente |
+
+| **4.0** | **Panel de administración** (`/admin`) — ver usuarios, cargar gasolina, marcar premium | Necesita reglas de Firestore blindadas: que seas el único admin no puede depender de esconder la URL. **Y hoy cada usuario puede escribir cualquier campo de su propio perfil**: antes de que exista premium hay que cerrar eso, o cualquiera se lo activa solo |
+| **4.1** | **Precios** — planes mensual y anual, sin pasarela todavía | La página puede existir antes que el cobro |
+| **5.0** | **Contenido** — escribir los 25 subtemas que faltan, cada uno en los dos idiomas (la estructura obliga a escribir las dos versiones) | Lo más largo de todo, y lo único que no se puede acelerar con código |
+| **5.1** | **Editor de cursos en el panel** — mover el contenido a la base de datos | Solo vale la pena cuando escribir contenido sea el cuello de botella |
+
+### Fuera de la ruta por ahora
+
+- Pasarela de pagos real.
+- Aplicación instalable para celular. La web ya funciona bien en el celular.
+- Los 4 estados de Punti sin exportar (Glitch, Encrypted, Signal Lost, God
+  Mode). Están diseñados pero sin un momento en la app que los justifique.
 
 ---
 
 ## 12. Pendientes
 
+- **Racha y fallos (error del juego, anterior a las reglas):** fallar un ejercicio marca el día
+  como activo. Si el primer movimiento del día es un fallo, completar la lección después ya no
+  sube la racha ese día. Arreglo: guardar aparte la fecha de la última lección completada.
+
 ### Acciones de Cami
 
-- [ ] **Autorizar los dominios en Firebase.** Console → Authentication → Settings → Authorized
-      domains. Agregar `punti.space`, `www.punti.space` y `universeai-eight.vercel.app`.
-      Hasta que esto pase, el login con Google no funciona en producción.
-- [ ] **Hacer `git push`** del commit `79fdb28` (traducción de errores de autenticación).
-- [ ] **Pasar la referencia de móvil** para hacer el ajuste de diseño.
+- [x] ~~Borrar `src/app/vista-previa/`~~ — borrada el 2026-09-23 antes del commit.
+- [ ] Renombrar el repositorio de GitHub y el proyecto de Vercel de
+      `universeai` a `punti`. Cosmético, no afecta nada.
 
 ### Decisiones abiertas
 
-- **¿Qué pasa al pulsar "Empezar" en una lección?** Hoy va al quiz existente. Falta definir si
-  esa es la experiencia final.
-- **¿Se exportan los 4 estados restantes de Punti?** Glitch, Encrypted, Signal Lost y God Mode
-  están diseñados pero sin uso asignado en la app.
+- **¿Qué pasa al pulsar "Empezar" en una lección?** Hoy va al quiz existente.
+  Falta definir si esa es la experiencia final.
+- **¿El manual de vuelo se puede saltar en el registro, o es obligatorio la
+  primera vez?**
+- **Rangos de la persona por XP** (Capitán desde 100, Arquitecto desde 300).
+  Decidido para construir el perfil; se puede cambiar a mundos completados.
 
-### Cosméticos, sin urgencia
+### Anomalía sin resolver
 
-- Renombrar el repositorio de GitHub y el proyecto de Vercel de `universeai` a `punti`.
-  No afecta nada funcional.
-- Reemplazar el `README.md`, que sigue siendo el genérico de Next.js.
+El 2026-09-23, entre las 04:06 y las 05:11, aparecieron archivos y rutas que
+nadie creó a propósito, y tres archivos recién escritos amanecieron
+modificados. Los cambios eran de buena calidad, no basura — uno de ellos,
+`PlanetaPixel.tsx`, resultó ser una mejora y se adoptó. Cami confirmó que no
+tenía otra sesión abierta. **Sigue sin explicación.** De ahí salió `CAMBIOS.md`.
 
 ---
 
 ## 13. Bitácora
+
+### 2026-09-23 — Fases 2.0 y 2.1: sistema visual pixel art e inicio completo
+
+- **Punti pasó a pixel art.** Se armó con rectángulos sobre una rejilla de
+  32x36, en la dirección "Sólido arcade", elegida entre seis propuestas. Nueve
+  estados (se sumaron `leyendo`, `error` e `info`) y tres recortes: cuerpo
+  entero, busto y cabeza. Los PNG siguen sirviendo para la portada.
+- **Los mundos se generan por código** a partir del `id` del tema, con cinco
+  familias de planeta, anillos, lunas y luz de borde en el complementario.
+- **Se eliminó el mapa galáctico** (702 líneas) y con él el arrastre, el zoom,
+  la captura de puntero y el bucle de animación. Lo reemplazó una pantalla de
+  tarjetas pensada primero para celular.
+- **Corazones pasaron a ser gasolina** en toda la interfaz. El campo guardado
+  en Firestore conserva el nombre viejo para no migrar cuentas existentes.
+- **Los mundos ganaron nombre propio y rango**: Origen, Lexia, Eco, Forja,
+  Prisma, Brújula y Autómata, repartidos entre Explorador, Capitán y
+  Arquitecto.
+- **Preguntas frecuentes** con el acordeón nativo del navegador, y **manual de
+  vuelo** en cinco pantallas completas donde cada paso muestra lo que explica.
+- **Se creó `CAMBIOS.md`** a raíz de una anomalía: archivos que aparecieron
+  modificados sin que nadie los tocara.
+- Verificado recorriéndolo en el navegador a 375px con clics reales.
+- **Resultado:** la app ya se puede usar en un celular sin pelear con ella, y
+  el sistema visual está fijado para todo lo que venga.
 
 ### 2026-09-22 — Fase 1.4: Rediseño completo de la navegación + renombre a Punti (completa)
 

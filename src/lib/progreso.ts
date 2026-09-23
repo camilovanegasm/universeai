@@ -1,10 +1,13 @@
 // Lógica de juego: cuánto combustible/XP se gana por lección, cuándo se resetean los
-// corazones del día, y cuándo la racha sube, se mantiene o se rompe.
+// gasolina del día, y cuándo la racha sube, se mantiene o se rompe.
 import { doc, runTransaction, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase";
 import type { PerfilUsuario } from "./userProfile";
 
-const CORAZONES_MAX = 5;
+// Tope de gasolina. El campo en Firestore se sigue llamando `corazones`
+// a propósito: renombrarlo obligaría a migrar los datos de quienes ya
+// tienen cuenta, y el nombre guardado no lo ve nadie.
+export const GASOLINA_MAXIMA = 5;
 const XP_POR_COMBUSTIBLE: Record<1 | 2 | 3, number> = { 1: 5, 2: 10, 3: 15 };
 const BONO_VELOCIDAD = 5;
 
@@ -16,7 +19,7 @@ export type ResultadoLeccion = {
 };
 
 // El día se identifica con la fecha en UTC ("YYYY-MM-DD"), no con la hora local del usuario.
-// Es una simplificación válida para el MVP: la racha y el reset de corazones cambian a la
+// Es una simplificación válida para el MVP: la racha y la recarga de gasolina cambian a la
 // medianoche UTC en vez de a la medianoche de cada usuario.
 function fechaDeHoy(): string {
   return new Date().toISOString().slice(0, 10);
@@ -43,11 +46,11 @@ export function calcularXp(resultado: ResultadoLeccion) {
   return { combustible, xp, rapido };
 }
 
-// Corazones "de verdad" en este momento: si la última actividad no fue hoy, ya se resetearon
-// a 5 aunque Firestore todavía tenga guardado el número de ayer.
-export function corazonesEfectivos(perfil: PerfilUsuario): number {
+// Gasolina "de verdad" en este momento: si la última actividad no fue hoy, ya se
+// recargó al tope aunque Firestore todavía tenga guardado el número de ayer.
+export function gasolinaEfectiva(perfil: PerfilUsuario): number {
   if (perfil.ultimaActividad !== fechaDeHoy()) {
-    return CORAZONES_MAX;
+    return GASOLINA_MAXIMA;
   }
   return perfil.corazones;
 }
@@ -70,7 +73,7 @@ function proximaRacha(ultimaActividad: string | undefined, hoy: string, rachaGua
 }
 
 // Se llama cuando el usuario termina una lección: suma XP, guarda el combustible ganado,
-// actualiza la racha y aplica el reset diario de corazones si corresponde.
+// actualiza la racha y aplica la recarga diaria de gasolina si corresponde.
 export async function completarLeccion(uid: string, idLeccion: string, resultado: ResultadoLeccion) {
   const referencia = doc(db, "usuarios", uid);
   const { combustible, xp } = calcularXp(resultado);
@@ -84,7 +87,7 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
     tx.update(referencia, {
       xp: (datos.xp ?? 0) + xp,
       racha: proximaRacha(datos.ultimaActividad, hoy, datos.racha ?? 0),
-      corazones: corazonesEfectivos(datos),
+      corazones: gasolinaEfectiva(datos),
       ultimaActividad: hoy,
       [`progreso.${idLeccion}`]: {
         completada: true,
@@ -97,7 +100,7 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
   });
 }
 
-async function descontarCorazones(uid: string, cantidad: number) {
+async function descontarGasolina(uid: string, cantidad: number) {
   const referencia = doc(db, "usuarios", uid);
   const hoy = fechaDeHoy();
 
@@ -107,20 +110,19 @@ async function descontarCorazones(uid: string, cantidad: number) {
     const datos = snap.data() as PerfilUsuario;
 
     tx.update(referencia, {
-      corazones: Math.max(0, corazonesEfectivos(datos) - cantidad),
+      corazones: Math.max(0, gasolinaEfectiva(datos) - cantidad),
       ultimaActividad: hoy,
     });
   });
 }
 
-// Se llama cuando el usuario falla un ejercicio dentro de una lección: resta un corazón
-// completo (sin bajar de 0), aplicando primero el reset diario si es un día nuevo.
-export async function restarCorazon(uid: string) {
-  await descontarCorazones(uid, 1);
+// Se llama cuando el usuario falla un ejercicio: gasta una unidad de gasolina
+// (sin bajar de 0), aplicando primero la recarga diaria si es un día nuevo.
+export async function gastarGasolina(uid: string) {
+  await descontarGasolina(uid, 1);
 }
 
-// Se llama cuando el usuario decide desbloquear la pista de un ejercicio: cuesta
-// medio corazón en vez de uno completo.
-export async function gastarMedioCorazon(uid: string) {
-  await descontarCorazones(uid, 0.5);
+// Desbloquear la pista de un ejercicio cuesta media unidad en vez de una entera.
+export async function gastarMediaGasolina(uid: string) {
+  await descontarGasolina(uid, 0.5);
 }

@@ -1,4 +1,5 @@
 import { Fragment, type ReactNode } from "react";
+import type { Idioma } from "@/lib/i18n";
 import type { Grafico } from "@/lib/lecciones";
 
 // Los gráficos de la explicación no son adornos sueltos: cada uno es un "módulo"
@@ -36,11 +37,19 @@ function Punto({ color }: { color: string }) {
   );
 }
 
-export default function GraficoExplicacion({ grafico }: { grafico: Grafico }) {
+// Los títulos de los módulos son de la interfaz, no del contenido: el
+// contenido de la lección ya llega en su idioma, pero estos dos rótulos no.
+const TITULOS: Record<Idioma, { comparacion: string; pasos: string }> = {
+  es: { comparacion: "Comparación", pasos: "Cómo funciona, paso a paso" },
+  en: { comparacion: "Comparison", pasos: "How it works, step by step" },
+};
+
+export default function GraficoExplicacion({ grafico, idioma = "es" }: { grafico: Grafico; idioma?: Idioma }) {
+  const t = TITULOS[idioma];
   if (grafico.tipo === "tabla") {
     // Comparación enfrentada: rosa el "antes", verde Matrix la IA.
     return (
-      <Modulo icono="⇄" titulo="Comparación">
+      <Modulo icono="⇄" titulo={t.comparacion}>
         <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr]">
           <div className="p-3.5">
             <p className="mb-3 font-[family-name:var(--font-ui)] text-xs font-bold uppercase tracking-[0.09em] text-[var(--pink)]">
@@ -83,7 +92,7 @@ export default function GraficoExplicacion({ grafico }: { grafico: Grafico }) {
 
   // Flujo: tubería numerada. En celular se apila y las flechas giran.
   return (
-    <Modulo icono="⟶" titulo="Cómo funciona, paso a paso">
+    <Modulo icono="⟶" titulo={t.pasos}>
       <ol className="flex flex-col p-3.5 sm:flex-row sm:items-stretch">
         {grafico.pasos.map((paso, i) => (
           <Fragment key={paso}>
