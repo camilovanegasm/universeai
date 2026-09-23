@@ -7,13 +7,13 @@
 > una entrada nueva al final de la bitácora. **Nunca se borra ni se reescribe lo anterior** —
 > una decisión que cambió se marca como reemplazada, no se elimina.
 >
-> Hay una versión visual de este mismo documento publicada como artifact, para leerla
-> cómodo desde cualquier dispositivo. Las dos deben mantenerse en sintonía; si solo se
-> actualiza una, que sea esta.
+> Hay una versión visual de este mismo documento publicada como artifact ("Manual del
+> Universo"), para leerla cómodo desde cualquier dispositivo. **Esta es la fuente de
+> verdad**: si las dos no coinciden, manda este archivo.
 >
 > (Ver también `CLAUDE.md` en esta misma carpeta: contexto operativo para Claude Code.)
 
-**Última actualización:** 2026-09-23 · **Fase actual:** 2.1 en curso
+**Última actualización:** 2026-09-23 (tarde) · **Fase actual:** 6.0 — preparar el lanzamiento (ver sección 11)
 
 > Para el detalle de qué se tocó en cada sesión, ver `CAMBIOS.md`.
 
@@ -108,9 +108,24 @@ admin.
 Tres niveles, y cada uno usa la forma que le corresponde.
 
 ```
-MUNDOS  →  PLANETA  →  LECCIÓN + EJERCICIOS
-/inicio    /tema/[id]   /leccion/[temaId]/[subtemaId]
+MUNDOS  →  RUTA DEL MUNDO  →  LECCIÓN + EJERCICIOS
+/inicio    /tema/[id]          /leccion/[temaId]/[subtemaId]
 ```
+
+Todas las rutas de la app:
+
+| Ruta | Qué es | Quién |
+|---|---|---|
+| `/` | Portada (música opcional, FAQ, cifras) | Público |
+| `/login` · `/registro` | Entrar y crear cuenta (correo o Google) | Público |
+| `/bienvenida` | Elegir idioma + manual, la primera vez | Con cuenta |
+| `/inicio` | Los mundos + anuncio del admin | Con cuenta |
+| `/tema/[id]` | La ruta de estaciones de un mundo | Con cuenta |
+| `/leccion/[temaId]/[subtemaId]` | Explicación de Punti + quiz | Con cuenta |
+| `/seguir` | Lleva directo a la próxima lección pendiente | Con cuenta |
+| `/como-funciona` | Manual de vuelo | Cualquiera |
+| `/perfil` | Ficha del piloto, progreso, ajustes | Con cuenta |
+| `/admin` · `/admin/contenido` · `/admin/contenido/[id]` · `/admin/ajustes` | Estación de control | Solo el admin |
 
 ### 3.1 Los mundos — `MundosPunti.tsx`
 
@@ -139,11 +154,14 @@ que nadie tenga que ilustrarlo.
 - **La luz del borde es del color complementario, no blanca.** Eso es lo que
   hace que se lean como neón y no como planetas de libro de ciencias.
 
-### 3.3 El mundo por dentro — `RutaTema.tsx` (antes el globo `PlanetaTema.tsx`)
+### 3.3 El mundo por dentro — `RutaTema.tsx`
 
-Globo girable en canvas, con las lecciones repartidas en espiral sobre la
-esfera. Tiene un interruptor GLOBO / LISTA, y la preferencia se recuerda en
-`localStorage` con la clave `punti-vista-tema`.
+Una ruta de estaciones cuadradas en pixel art que zigzaguea de arriba hacia
+abajo, unidas por un camino (sólido lo recorrido, punteado lo que falta). La
+siguiente lección lleva la etiqueta "SIGUE AQUÍ", un anillo que late y a Punti
+al lado. Reemplazó al globo girable (`PlanetaTema.tsx`, guardado en
+`referencias/`) porque el globo escondía la mitad de las lecciones detrás de la
+esfera y había que girarlo a ciegas.
 
 ### 3.4 La lección — la consola de transmisión
 
@@ -156,6 +174,10 @@ apareciendo tecleado como una transmisión que llega.
 Cinco tipos en `Ejercicio.tsx`. La lección pasa por cuatro fases:
 `cargando → explicacion → ejercicios → resultado`, con una quinta salida si te
 quedas sin gasolina (`sin-gasolina`).
+
+- Al fallar se abre un segundo intento con la opción fallada tachada.
+- En los ejercicios hay un botón SALIR que pide confirmación en un panel propio.
+- El texto de la pista dice lo que cuesta según los Ajustes del admin.
 
 ### 3.6 El manual de vuelo — `ComoFunciona.tsx`
 
@@ -187,6 +209,10 @@ y Firebase es la base de datos con el sistema de usuarios ya incluido.
 ### 4.1 Reglas técnicas que no se pueden romper
 
 Estas están calibradas. Cambiarlas rompe cosas que ya costó arreglar una vez.
+
+> **Histórico:** la proyección del globo y la curva de entrada al planeta eran de
+> la galaxia y del globo girable, que ya no están en la app (se guardan en
+> `referencias/`). Se dejan aquí por si vuelven.
 
 **La proyección esférica del globo**
 
@@ -293,46 +319,64 @@ responde. Antes de escribir un número fijo nuevo, preguntarse si va en Ajustes.
 
 ```
 C:\Proyectos\UniverseAI          (la carpeta sigue llamándose así por dentro)
-├─ CLAUDE.md                     memoria de contexto para Claude Code
+├─ CLAUDE.md                     memoria de contexto para Claude (léela primero)
 ├─ DOCUMENTACION.md              este documento: el porqué de cada cosa
-├─ CAMBIOS.md                    qué se tocó en cada sesión
+├─ CAMBIOS.md                    qué se tocó en cada sesión, en detalle
 ├─ .env.local                    claves de Firebase — NUNCA se sube a GitHub
-├─ firestore.rules               reglas de seguridad de la base de datos
-├─ public/punti/                 los 6 PNG de Punti (portada y momentos grandes)
+├─ firestore.rules               reglas de seguridad (se PUBLICAN a mano en la consola)
+├─ next.config.ts                cabeceras de seguridad
+├─ referencias/                  (no se sube) imágenes de referencia, reglas y globo viejos
+├─ public/punti/                 los PNG de Punti (portada y momentos grandes)
 └─ src/
    ├─ app/
    │  ├─ page.tsx                portada pública
+   │  ├─ layout.tsx              fuentes, metadatos, sonido global, barra de abajo
+   │  ├─ template.tsx            transiciones entre pantallas
+   │  ├─ globals.css             colores, clases y animaciones
    │  ├─ login/ · registro/      entrar y crear cuenta
-   │  ├─ inicio/page.tsx         los mundos, el manual y las preguntas
+   │  ├─ bienvenida/             idioma + manual la primera vez
+   │  ├─ inicio/                 los mundos
+   │  ├─ tema/[id]/              la ruta de un mundo
+   │  ├─ leccion/[temaId]/[subtemaId]/   la lección + quiz
+   │  ├─ seguir/                 salto a la próxima lección
    │  ├─ como-funciona/          el manual de vuelo
-   │  ├─ tema/[id]/page.tsx      el planeta por dentro
-   │  ├─ leccion/[temaId]/[subtemaId]/page.tsx   la lección + quiz
-   │  ├─ layout.tsx              fuentes, metadatos, envoltura global
-   │  └─ globals.css             variables de color, clases y animaciones
+   │  ├─ perfil/                 ficha del piloto
+   │  └─ admin/                  Estación de control (no se indexa)
+   │     ├─ page.tsx             PILOTOS: usuarios, tanque, premium
+   │     ├─ contenido/           CONTENIDO: mundos y lista de lecciones
+   │     │  └─ [subtemaId]/      editor de una lección
+   │     └─ ajustes/             AJUSTES: reglas del juego, anuncio, FAQ
    ├─ components/
-   │  ├─ MundosPunti.tsx         la pantalla de mundos
-   │  ├─ PlanetaPixel.tsx        un planeta en canvas
-   │  ├─ PuntiPixel.tsx          Punti en pixel art
-   │  ├─ Punti.tsx               Punti ilustrado (los PNG)
-   │  ├─ ComoFunciona.tsx        el manual en cinco pantallas
-   │  ├─ PreguntasFrecuentes.tsx el acordeón de FAQ
-   │  ├─ PlanetaTema.tsx         el globo girable
+   │  ├─ NavPunti.tsx            barra de navegación de abajo (íconos pixel)
+   │  ├─ MundosPunti.tsx         tarjetas de mundos
+   │  ├─ RutaTema.tsx            ruta de estaciones dentro de un mundo
    │  ├─ Ejercicio.tsx           los 5 tipos de ejercicio
-   │  ├─ GraficoExplicacion.tsx  tablas y flujos
-   │  ├─ BotonGoogle.tsx
-   │  └─ FondoEspacial.tsx       el polvo cósmico
+   │  ├─ GraficoExplicacion.tsx  tablas y diagramas
+   │  ├─ ComoFunciona.tsx        el manual en cinco pantallas
+   │  ├─ PreguntasFrecuentes.tsx FAQ (Firebase o las del código)
+   │  ├─ AnuncioGlobal.tsx       el aviso del admin en /inicio
+   │  ├─ PanelPerfil.tsx         el contenido del perfil
+   │  ├─ PuntiPixel.tsx · PlanetaPixel.tsx   sprites en canvas
+   │  ├─ Cargando.tsx · EsqueletoMundos.tsx  estados de carga
+   │  ├─ BarraGasolina.tsx       la gasolina en segmentos
+   │  ├─ SonidoGlobal · BotonSonido · BotonMusica   sonido
+   │  ├─ SelectorIdioma · ElegirIdioma · LangDocumento   idioma
+   │  ├─ CampoEstelar · FondoEspacial · PieDePagina · MarcoCuenta
+   │  └─ admin/                  MarcoAdmin (pestañas), Campos, VistaPrevia
    └─ lib/
-      ├─ puntiSprite.ts         Punti dibujado con rectángulos (9 estados)
-      ├─ planetaSprite.ts       los mundos, generados desde el id del tema
-      ├─ rangos.ts              Explorador, Capitán, Arquitecto
-      ├─ temas.ts               los 7 mundos y sus subtemas
-      ├─ lecciones.ts           el contenido de las lecciones
+      ├─ contenido.ts           catálogo, lecciones, ajustes y FAQ desde Firebase (con respaldo al código)
+      ├─ contenidoAdmin.ts      borradores, validación y publicación (solo admin)
+      ├─ ajustes.ts             números del juego y anuncio: valores por defecto y validación
+      ├─ admin.ts               quién es admin, lista de pilotos, tanque, premium
       ├─ progreso.ts            XP, combustible, gasolina, racha
-      ├─ userProfile.ts         leer y escribir el perfil en Firestore
-      ├─ AuthContext.tsx        quién está logueado, en toda la app
-      ├─ authErrors.ts          traducir errores de Firebase al español
-      ├─ frasesFeedback.ts      lo que dice Punti al acertar o fallar
-      └─ firebase.ts            la conexión
+      ├─ rangos.ts              Explorador, Capitán, Arquitecto
+      ├─ userProfile.ts         perfil en Firestore
+      ├─ temas.ts · lecciones.ts   contenido semilla (respaldo si Firebase no responde)
+      ├─ puntiSprite.ts · planetaSprite.ts   dibujos puros, sin React
+      ├─ sonido.ts              sintetizador chiptune
+      ├─ i18n.ts · useIdioma.ts idiomas
+      ├─ AuthContext.tsx · authErrors.ts · firebase.ts
+      └─ frasesFeedback.ts      lo que dice Punti al acertar o fallar
 ```
 
 **Los dos archivos de sprite (`puntiSprite.ts` y `planetaSprite.ts`) no saben
@@ -441,9 +485,9 @@ los campos del juego, y con límites:
 
 ---
 
-### 6.5 De dónde sale el contenido — el editor (fase 5.1)
+### 6.5 De dónde sale el contenido — el editor (fase 4.1)
 
-Desde la fase 5.1 el contenido (mundos, lecciones, ejercicios) vive en Firebase
+Desde la fase 4.1 el contenido (mundos, lecciones, ejercicios) vive en Firebase
 y se edita en **/admin/contenido**, sin tocar código.
 
 | En Firebase | Qué es | Quién lo lee | Quién lo escribe |
@@ -481,18 +525,19 @@ y se edita en **/admin/contenido**, sin tocar código.
 
 ## 7. Reglas del juego
 
-Toda esta lógica vive en `src/lib/progreso.ts`, separada de la interfaz. Se
-puede ajustar el balance del juego sin tocar ni una pantalla.
+Toda esta lógica vive en `src/lib/progreso.ts`, separada de la interfaz. **Los
+números se cambian desde el admin (Ajustes)**; abajo están los valores por
+defecto (`src/lib/ajustes.ts`). Las reglas de Firestore leen los mismos números.
 
-- **Gasolina** (antes "corazones"): arrancas con 5. Fallar un ejercicio cuesta
-  una; pedir una pista cuesta media. Si se acaba, el viaje se pausa hasta el
-  día siguiente. Se recarga sola cada día.
-- **Combustible de la lección** (no es lo mismo que la gasolina): 3/3 si la
-  completas sin errores, 2/3 con 1 o 2, 1/3 con 3 o más.
-- **XP**: 15 con combustible 3, 10 con 2, 5 con 1. Más **+5** de bono si
-  terminas dentro del tiempo objetivo.
-- **Racha**: sube 1 con actividad en días consecutivos, se mantiene si ya
-  contaste hoy, y vuelve a 1 si pasó más de un día.
+- **Gasolina** (antes "corazones"): tanque de 5. Fallar cuesta 1; ver una pista
+  cuesta 0,5. Si se acaba, el viaje se pausa hasta el día siguiente. Se recarga
+  sola cada día (a medianoche UTC).
+- **Combustible de la lección** (la nota, no la gasolina): 3/3 sin errores, 2/3
+  con 1 o 2, 1/3 con 3 o más.
+- **XP**: 15 / 10 / 5 según la nota, **+5** si termina dentro del tiempo objetivo.
+- **Rangos**: Explorador desde 0 XP, Capitán desde 100, Arquitecto desde 300.
+- **Racha**: cuenta días seguidos con al menos una lección completada (fecha
+  `ultimaLeccion`). Fallar o recibir gasolina del admin no la mueve.
 
 > **El campo guardado en Firestore se sigue llamando `corazones`.** Renombrarlo
 > obligaría a migrar los datos de las cuentas que ya existen, y ese nombre no lo
@@ -576,8 +621,12 @@ esconder la clave.
 3. Vercel lo detecta automáticamente.
 4. En 1-2 minutos está en vivo.
 
-Antes de cada commit se corre `npm run build` y `npm run lint`. Si alguno falla, Vercel también
-va a fallar — mejor enterarse antes.
+Antes de cada commit se corre `npx tsc --noEmit` (tipos) y `npm run lint`. El `npm run build`
+completo no corre en el entorno de Claude (falta un binario de Linux); Vercel lo corre al
+publicar, y si falla, la versión anterior sigue en línea.
+
+**Las reglas de Firestore no se publican con el push.** Cuando cambian, Cami copia
+`firestore.rules` en Firebase → Firestore → Reglas → Publicar. CAMBIOS.md lo avisa cada vez.
 
 **Limitación conocida:** el `git push` hay que hacerlo desde el computador de Cami. Las
 credenciales de GitHub están guardadas en Windows y no son visibles desde el entorno donde
@@ -597,62 +646,87 @@ Dónde estamos y qué sigue. Se actualiza cada vez que se cierra una fase.
 | **1.1** | Registro e inicio de sesión (correo + Google) |
 | **1.2** | XP, combustible, corazones, racha + identidad visual |
 | **1.3** | Mapa de niveles — *reemplazada por la 1.4* |
-| **1.4** | Galaxia navegable + planetas girables + lección real + renombre a Punti + dominio propio |
-| **2.0** | **Sistema visual pixel art**: Punti en 9 estados, mundos generados por código, la galaxia eliminada, corazones pasan a gasolina |
-| **2.1** | **Inicio completo**: nombres de mundo, rangos, preguntas frecuentes y manual de vuelo en cinco pantallas |
-| **2.2** | **Portada 8-bits**: campo de estrellas animado, cifras del producto, sección "por dentro", preguntas frecuentes y pie de página |
-| **2.3** | **Bienvenida**: elegir español o inglés y recorrer el manual al crear la cuenta |
-| **2.4** | **La app en dos idiomas**: toda la interfaz, los 7 mundos, los 26 subtemas y la primera lección completa |
-| **2.5** | **Perfil**: ficha de piloto con rango por XP, retomar donde lo dejaste, mundos a medias y conquistados, ajustes |
-| **3.0** | **Sonido**: chip de sonido sintetizado en código, silencio recordado, voz de Punti, música solo en la portada |
-| **3.1** | **Transiciones y carga**: dirección al navegar, el planeta que viaja de la tarjeta al mundo, cargador único con retraso, esqueleto en /inicio |
+| **1.4** | Galaxia navegable + lección real + renombre a Punti + dominio propio — *la galaxia se reemplazó en la 2.0* |
+| **2.0** | **Sistema visual pixel art**: Punti en 9 estados, mundos generados por código, corazones pasan a gasolina |
+| **2.1** | **Inicio completo**: nombres de mundo, rangos, preguntas frecuentes, manual en cinco pantallas |
+| **2.2** | **Portada 8-bits**: campo de estrellas, cifras, "por dentro", FAQ, pie de página |
+| **2.3** | **Bienvenida**: elegir idioma y recorrer el manual al crear la cuenta |
+| **2.4** | **Dos idiomas**: toda la interfaz, los 7 mundos, los 26 subtemas y la primera lección |
+| **2.5** | **Perfil**: rango por XP, retomar, mundos a medias y conquistados, ajustes |
+| **3.0** | **Sonido**: chiptune sintetizado, silencio recordado, voz de Punti, música solo en la portada |
+| **3.1** | **Transiciones y carga**: dirección al navegar, el planeta que viaja, cargador sin parpadeo, esqueleto |
+| **3.2** | **Navegación**: ruta de estaciones en vez del globo, segundo intento al fallar, salir del quiz, barra de abajo con SEGUIR |
+| **4.0** | **Estación de control** (`/admin`): pilotos, llenar tanque, premium; reglas de Firestore cerradas campo por campo |
+| **4.1** | **Editor de contenido** (`/admin/contenido`): mundos y lecciones en Firebase, borrador/publicado, validación, vista previa |
+| **4.2** | **Ajustes** (`/admin/ajustes`): números del juego, anuncio, FAQ; seguridad por defecto (cabeceras, noindex, prácticas escritas) |
 
-### En curso
+> Nota: la numeración cambió el 2026-09-23. Lo que antes era "5.1 editor" se
+> construyó como 4.1, y los precios pasan a después del lanzamiento.
 
-| Fase | Qué incluye |
-|---|---|
+### Cómo se trabaja cada fase
 
-### Lo que sigue, en orden
+1. **Acordar el alcance.** Claude propone qué entra y qué no; Cami aprueba o ajusta.
+2. **Construir con seguridad y eficiencia desde el inicio** (ver 4.2), sin que haga
+   falta pedirlo.
+3. **Verificar** antes de entregar: tipos, lint, navegador en celular y escritorio,
+   y pruebas de la lógica. Lo que no se pudo ver se dice.
+4. **Cami prueba en localhost** con una lista corta de qué tocar.
+5. **Commit** (Claude) y **push** (Cami). Si cambiaron las reglas, Cami las publica
+   en la consola **antes** del push.
+6. **Documentar**: CAMBIOS.md con el detalle y este documento con el estado.
 
-| Fase | Qué incluye | Por qué en ese orden |
+### Camino al lanzamiento
+
+Lanzar = abrir punti.space al público y empezar a invitar gente. Lo **bloqueante**
+es lo que no puede faltar el día uno; lo demás puede llegar después.
+
+| Fase | Qué incluye | ¿Bloquea el lanzamiento? |
 |---|---|---|
-
-| **4.0** | **Panel de administración** (`/admin`, "Estación de control") — **construido, falta que Cami lo pruebe con su cuenta**: ver usuarios con cifras, buscar, filtrar, llenar el tanque, marcar premium. Reglas cerradas | El premium todavía no cambia nada en la app: qué incluye se decide en la 4.1 |
-| **4.1** | **Precios** — planes mensual y anual, sin pasarela todavía | La página puede existir antes que el cobro |
-| **5.0** | **Contenido** — escribir los 25 subtemas que faltan, cada uno en los dos idiomas, ahora desde el editor | Lo más largo de todo, y lo único que no se puede acelerar con código |
-| **5.1** | **Editor de contenido en el panel** — **construido antes que los precios** (Cami, 2026-09-23): el contenido pasa a Firebase y se edita en /admin/contenido. Falta que Cami lo pruebe e importe | Adelantado porque sin él cada lección nueva dependía de escribirla en código |
+| **6.0 Cuenta y privacidad** | Recuperar contraseña; eliminar mi cuenta (con sus datos); política de privacidad y términos (páginas bilingües, enlazadas en el registro y el pie); un canal de contacto (correo de soporte) | **Sí.** Se piden correos: la ley colombiana (1581 de 2012) exige política de datos y poder borrarlos, y Google la pide para mostrar "Punti" en la ventana de login |
+| **6.1 Contenido mínimo** | El **Mundo 01 · Origen completo** (5 lecciones en ES y EN) escrito en el editor. Claude puede redactar borradores para que Cami los revise y publique | **Sí.** Hoy hay 1 lección de 26: alguien que entra la termina en 5 minutos y no tiene a qué volver |
+| **6.2 Presentación** | Ícono de Punti en la pestaña (favicon) y al instalar en el celular; imagen para compartir en WhatsApp/redes (Open Graph); robots y sitemap; quitar los archivos de ejemplo de Next | **Sí** (es barato y es la primera impresión al compartir el enlace) |
+| **6.3 Protección y medición** | Firebase App Check (Cami crea una clave de reCAPTCHA); analítica respetuosa de la privacidad (Vercel Analytics) para saber cuánta gente entra y dónde se va; respaldo del contenido descargable desde el admin | App Check y respaldo: **sí**. Analítica: muy recomendada |
+| **6.4 Prueba general** | Recorrido completo en iPhone y Android reales, en los dos idiomas: registro → bienvenida → lección → perfil → admin. Revisión de accesibilidad y velocidad. Arreglos de lo que aparezca | **Sí** |
+| **🚀 Lanzamiento** | Beta pública gratuita. Anuncio en la app, invitaciones | — |
+| **7.0 Precios** | Página mensual/anual y qué incluye premium (el admin ya marca premium) | No |
+| **7.1 Pagos** | Pasarela real (Wompi, Stripe o similar) conectada al premium | No |
+| **7.2 Más contenido** | Los mundos 02 a 07, a medida que se escriben | No |
+| **7.3 Seguridad avanzada** | Content-Security-Policy completa; XP calculado en el servidor si aparece un ranking | No |
 
 ### Fuera de la ruta por ahora
 
-- Pasarela de pagos real.
-- Aplicación instalable para celular. La web ya funciona bien en el celular.
-- Los 4 estados de Punti sin exportar (Glitch, Encrypted, Signal Lost, God
-  Mode). Están diseñados pero sin un momento en la app que los justifique.
+- Aplicación instalable de tienda (App Store / Play Store). La web funciona en el celular.
+- Los 4 estados de Punti sin exportar (Glitch, Encrypted, Signal Lost, God Mode).
+- Subir imágenes propias a las lecciones (hoy: tablas y diagramas).
 
 ---
 
 ## 12. Pendientes
 
-- ~~Racha y fallos~~: arreglado en la fase 4.0 con el campo `ultimaLeccion`.
+Lo técnico que no bloquea pero no se debe olvidar:
 
-- **Content-Security-Policy completa** (seguridad): falta. Hay que probarla con el
-  login de Google y los scripts de Next antes de activarla.
-- **Firebase App Check** (seguridad): evita que alguien use la base de datos con
-  scripts propios en vez de la app. Requiere que Cami cree una clave de reCAPTCHA
-  en la consola de Firebase; después se activa en el código.
-- **Lista de pilotos paginada** (eficiencia): hoy el admin lee todos los usuarios de
-  una vez. Revisar al llegar a ~500.
+- **Content-Security-Policy completa**: probarla con el login de Google antes de activarla (fase 7.3).
+- **Lista de pilotos paginada**: hoy el admin lee todos los usuarios; revisar al llegar a ~500.
+- **Recarga de gasolina a medianoche UTC** (7 p. m. en Colombia), no a la medianoche de cada persona.
+- **README.md** del repositorio sigue siendo el de ejemplo de Next.
+- ~~Racha y fallos~~: arreglado con el campo `ultimaLeccion`.
 
 ### Acciones de Cami
 
 - [x] ~~Borrar `src/app/vista-previa/`~~ — borrada el 2026-09-23 antes del commit.
 - [ ] Renombrar el repositorio de GitHub y el proyecto de Vercel de
       `universeai` a `punti`. Cosmético, no afecta nada.
+- [ ] Crear un correo de soporte (por ejemplo soporte@punti.space) para la fase 6.0.
+- [ ] Crear la clave de reCAPTCHA en Firebase para App Check (fase 6.3), con guía.
+- [ ] Configurar la pantalla de consentimiento de Google (nombre Punti, logo,
+      correo de soporte, enlace a la política) cuando exista la política (6.0).
 
 ### Decisiones abiertas
 
 - **¿Qué pasa al pulsar "Empezar" en una lección?** Hoy va al quiz existente.
   Falta definir si esa es la experiencia final.
+- **¿Qué incluye premium?** El admin ya lo marca, pero no cambia nada (fase 7.0).
+- **"Thrust"** como nombre en inglés de la nota de la lección: pendiente de confirmar.
 - **¿El manual de vuelo se puede saltar en el registro, o es obligatorio la
   primera vez?**
 - **Rangos de la persona por XP** (Capitán desde 100, Arquitecto desde 300).
@@ -669,6 +743,25 @@ tenía otra sesión abierta. **Sigue sin explicación.** De ahí salió `CAMBIOS
 ---
 
 ## 13. Bitácora
+
+### 2026-09-23 (tarde) — Fases 2.2 a 4.2: de la portada al admin completo
+
+Resumen; el detalle está en CAMBIOS.md.
+
+- Portada 8-bits, bienvenida con idioma, app entera en español e inglés, perfil.
+- Sonido sintetizado y transiciones con dirección; el planeta viaja de la tarjeta
+  al mundo.
+- Navegación rehecha: ruta de estaciones en vez del globo, segundo intento al
+  fallar, salir del quiz, barra de abajo con SEGUIR.
+- Estación de control: pilotos (tanque, premium), editor de contenido con
+  borrador y vista previa, ajustes del juego, anuncio y FAQ sin tocar código.
+- Reglas de Firestore cerradas campo por campo y atadas a los ajustes; cabeceras
+  de seguridad; prácticas de seguridad y eficiencia escritas (4.2).
+- Todo publicado en punti.space; reglas publicadas; contenido importado a Firebase.
+- Decidido con Cami: el editor se adelantó a los precios; los precios pasan a
+  después del lanzamiento; la seguridad y la eficiencia se aplican siempre sin
+  pedirlas.
+
 
 ### 2026-09-23 — Fases 2.0 y 2.1: sistema visual pixel art e inicio completo
 

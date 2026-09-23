@@ -103,6 +103,11 @@ Se priorizó: gratis o barato para empezar, fácil de mantener, con mucha docume
 
 **Regla:** cada fase (y sub-fase marcada) requiere aprobación explícita antes de empezar la siguiente.
 
+> **Esta lista de fases es el plan original (2026-09-21) y quedó desactualizada.**
+> La guía de ruta vigente, con lo terminado, cómo se trabaja cada fase y el
+> camino al lanzamiento (fases 6.0 a 6.4), está en `DOCUMENTACION.md` → sección 11.
+> Lo de abajo se conserva como historia.
+
 ### Fase 0 — Preparación del entorno (✅ COMPLETA)
 - ✅ Esqueleto del proyecto creado (Next.js + TypeScript + Tailwind).
 - ✅ Cuenta y repositorio de GitHub creados, código subido (`camilovanegasm/universeai`).

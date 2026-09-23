@@ -860,3 +860,18 @@ cualquier parte.
   activos, textos alineados a la misma altura. El círculo con "N" que tapa una
   esquina en localhost es el indicador de desarrollo de Next y no sale en
   punti.space.
+
+---
+
+## 2026-09-23 · Documentación al día + plan de lanzamiento
+
+- `DOCUMENTACION.md`: tabla de todas las rutas; mapa de archivos completo (admin,
+  contenido, ajustes, barra, seguir); reglas del juego configurables; cómo se
+  publica (las reglas van aparte); guía de ruta renumerada (terminado hasta 4.2),
+  **cómo se trabaja cada fase** y **camino al lanzamiento** (6.0 cuenta y
+  privacidad, 6.1 contenido mínimo, 6.2 presentación, 6.3 protección y medición,
+  6.4 prueba general; después 7.x precios, pagos, contenido, seguridad avanzada);
+  pendientes y acciones de Cami al día; bitácora de la tarde. Notas del globo y la
+  galaxia marcadas como históricas.
+- `CLAUDE.md`: aviso de que el plan de fases original quedó desactualizado y la
+  guía vigente está en DOCUMENTACION.md, sección 11.
