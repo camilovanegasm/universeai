@@ -24,6 +24,10 @@ const TX: Record<Idioma, Record<string, string>> = {
     o: "o",
     google: "Registrarse con Google",
     conCuenta: "¿Ya tienes cuenta?",
+    aceptas: "Al crear tu cuenta aceptas los",
+    terminos: "Términos de uso",
+    y: "y la",
+    privacidad: "Política de privacidad",
     entrar: "Entra aquí",
   },
   en: {
@@ -37,6 +41,10 @@ const TX: Record<Idioma, Record<string, string>> = {
     o: "or",
     google: "Sign up with Google",
     conCuenta: "Already have an account?",
+    aceptas: "By creating an account you accept the",
+    terminos: "Terms of use",
+    y: "and the",
+    privacidad: "Privacy policy",
     entrar: "Sign in",
   },
 };
@@ -130,6 +138,18 @@ export default function RegistroPage() {
       <SeparadorCuenta texto={t.o} />
 
       <BotonGoogle onClick={registrarseConGoogle} deshabilitado={cargando} texto={t.google} />
+
+      <p className="mt-5 text-center text-[13px] leading-[1.6] text-[var(--muted)]">
+        {t.aceptas}{" "}
+        <Link href="/terminos" className="text-white underline underline-offset-4">
+          {t.terminos}
+        </Link>{" "}
+        {t.y}{" "}
+        <Link href="/privacidad" className="text-white underline underline-offset-4">
+          {t.privacidad}
+        </Link>
+        .
+      </p>
 
       <p className="mt-6 text-center text-[14px] text-[var(--muted)]">
         {t.conCuenta}{" "}

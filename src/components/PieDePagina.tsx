@@ -18,7 +18,8 @@ const TX: Record<Idioma, { lema: string; hecho: string; columnas: { titulo: stri
     hecho: "Hecho en Colombia",
     columnas: [
       { titulo: "El universo", enlaces: [{ t: "Los mundos", h: "/inicio" }, { t: "Cómo funciona", h: "/como-funciona" }] },
-      { titulo: "Tu cuenta", enlaces: [{ t: "Crear cuenta gratis", h: "/registro" }, { t: "Entrar", h: "/login" }] },
+      { titulo: "Tu cuenta", enlaces: [{ t: "Crear cuenta gratis", h: "/registro" }, { t: "Entrar", h: "/login" }, { t: "Punti Club", h: "/club" }] },
+      { titulo: "Legal", enlaces: [{ t: "Privacidad", h: "/privacidad" }, { t: "Términos de uso", h: "/terminos" }] },
     ],
   },
   en: {
@@ -26,7 +27,8 @@ const TX: Record<Idioma, { lema: string; hecho: string; columnas: { titulo: stri
     hecho: "Made in Colombia",
     columnas: [
       { titulo: "The universe", enlaces: [{ t: "The worlds", h: "/inicio" }, { t: "How it works", h: "/como-funciona" }] },
-      { titulo: "Your account", enlaces: [{ t: "Create a free account", h: "/registro" }, { t: "Sign in", h: "/login" }] },
+      { titulo: "Your account", enlaces: [{ t: "Create a free account", h: "/registro" }, { t: "Sign in", h: "/login" }, { t: "Punti Club", h: "/club" }] },
+      { titulo: "Legal", enlaces: [{ t: "Privacy", h: "/privacidad" }, { t: "Terms of use", h: "/terminos" }] },
     ],
   },
 };
@@ -36,7 +38,7 @@ export default function PieDePagina() {
 
   return (
     <footer className="border-t-2 border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.6)]">
-      <div className="mx-auto grid w-full max-w-[1120px] gap-8 px-4 py-12 sm:grid-cols-[1.4fr_1fr_1fr] sm:px-6">
+      <div className="mx-auto grid w-full max-w-[1120px] gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] sm:px-6">
         <div>
           <div className="flex items-center gap-3">
             <PuntiPixel estado="online" recorte="cabeza" ancho={44} flotando={false} />

@@ -962,6 +962,12 @@ es lo que no puede faltar el día uno; lo demás puede llegar después.
 
 ## 12. Pendientes
 
+### Privacidad y términos (hecho el 2026-09-23, parte de la fase 6.0)
+
+- /privacidad y /terminos están publicados (ver CAMBIOS). Antes de cobrar Punti Club hay que agregar las condiciones de pago y que un abogado revise ambos textos.
+- La pantalla de consentimiento de Google (Google Cloud → Branding) usa esos enlaces. El logo está en `contenido/marca/`; subirlo activa la verificación de marca de Google, que pide el dominio verificado en Search Console.
+- Lo que falta de la fase 6.0: recuperar contraseña y borrar la cuenta desde la app. Hoy se borra a pedido por correo, como dice la política.
+
 ### Tarea aparte: minijuegos para recargar gasolina (idea de Cami, 2026-09-23)
 
 Se trabaja en una tarea nueva del proyecto, para no cargar esta conversación. Punto de partida:

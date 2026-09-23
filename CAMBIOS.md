@@ -1141,3 +1141,20 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
 - **Pantalla de subir de rango rediseñada** (inspirada en juegos): "★ SUBISTE DE RANGO ★", insignia grande que entra girando, rango n/10 y la tarjeta del premio "∞ 6 horas de gasolina ilimitada".
 - **Manual paso 04:** menciona el premio.
 - **Minijuegos para recargar gasolina:** anotados en DOCUMENTACION §12 para una tarea aparte.
+
+### Privacidad, términos y logo (2026-09-23)
+- **Páginas nuevas `/privacidad` y `/terminos`** (ES/EN), escritas en lenguaje simple con lo que Punti hace de verdad con los datos:
+  - Qué datos guarda: cuenta, avance y lista de espera. Lo que se escribe en los prompts no se guarda. No hay publicidad ni venta de datos.
+  - Con quién los comparte: Firebase y Vercel.
+  - Derechos según la Ley 1581 de 2012: consultas en 10 días hábiles, reclamos en 15 y quejas ante la SIC.
+  - Menores de 13 años no; de 13 a 17 años, con permiso.
+  - Punti Club: todavía no cobra; sus condiciones se publican antes de cobrar.
+  - Plantilla común en `PaginaLegal.tsx`.
+- **Pie de página:** columna Legal y enlace a Punti Club. **Registro:** "Al crear tu cuenta aceptas los Términos y la Política de privacidad".
+- **Logo de Punti para Google:** cabeza pixel art en `contenido/marca/`, en 120 px y 512 px.
+- **Pantalla de consentimiento de Google:**
+  - Nombre: Punti.
+  - Enlaces: /privacidad y /terminos.
+  - Dominio autorizado: punti.space.
+  - El logo se sube cuando se pida la verificación de marca.
+- **Pendiente:** que un abogado revise los textos antes de cobrar el Club. Considerar un correo de soporte propio (hola@punti.space).
