@@ -651,6 +651,46 @@ cobro de Zapier/Make/n8n y la definición de deepfake. Pantallas vivas (las revi
 `generadores-de-imagenes` 4, `video-con-ia` 3, `derechos-de-autor` 3 y toda
 `novedades-de-la-semana`.
 
+### 6.8 Revisión del temario: lo que falta (2026-09-23)
+
+Hoy hay 8 mundos y 34 lecciones. Cubren bien lo básico: qué es la IA, cómo funciona
+un modelo, prompts, las marcas, trabajo, imagen y video, ética y automatizaciones.
+Para enseñar "todo el mundo de la IA" faltan seis áreas grandes. Están ordenadas por
+importancia para quien empieza. Todo esto es propuesta: Cami decide y después se escribe.
+
+**Fase A: lo que más falta (hace falta para salir al aire)**
+
+| Dónde | Lección nueva | Por qué hace falta |
+|---|---|---|
+| Mundo nuevo **Nexo · Agentes de IA** | Qué es un agente · Agentes que usan el navegador y el computador · Conectores (apps, MCP) · Cómo supervisar a un agente · Riesgos: permisos e instrucciones escondidas | Es el tema más grande de 2025 y 2026, y hoy solo sale de pasada en Autómata |
+| Brújula | Deepfakes y estafas con voz clonada · Cómo detectar contenido hecho con IA · IA en el colegio y la universidad (honestidad académica) | Protege a la gente de riesgos reales de hoy |
+| Prisma | Voz, audio y música con IA · Editar fotos con IA | Falta todo el audio (voces, podcasts, canciones) |
+| Forja | Buscar e investigar con IA (buscadores con IA e investigación profunda) · Presentaciones y documentos con IA | Son los usos más comunes después de escribir |
+
+**Fase B: IA en la vida y en el trabajo**
+
+| Dónde | Lecciones |
+|---|---|
+| Mundo nuevo **Órbita · IA en tu día a día** | Estudiar y aprender con IA · Salud y bienestar (con límites claros) · Dinero y trámites · Viajes, cocina y hogar · Niños, familia e IA |
+| Mundo nuevo **Taller · Crea con IA sin programar** | Qué es programar con IA (vibe coding) · Tu primera página web con IA · De la idea a la app · Publicar y cuidar la seguridad |
+| Forja | IA para emprender y vender (redes, atención al cliente, marketing) · IA dentro de Office y Google Workspace |
+| Lexia | Contexto y memoria del asistente · Multimodal: ver, oír y hablar |
+| Eco | Instrucciones personalizadas, proyectos y plantillas de prompts |
+
+**Fase C: para ir más profundo y mirar el futuro**
+
+| Dónde | Lecciones |
+|---|---|
+| Origen | Cómo aprende una máquina (supervisado, no supervisado, por refuerzo) · Redes neuronales sin fórmulas |
+| Mundo nuevo **Núcleo · Cómo se construye la IA** (rango Arquitecto) | APIs y cuánto cuesta usarlas · RAG: IA que consulta tus documentos · Ajuste fino (fine-tuning) · Modelos abiertos y en tu computador · Cómo se evalúa un modelo |
+| Mundo nuevo **Horizonte · El futuro de la IA** | IA y empleo · IA en la ciencia y la medicina · Robots e IA física · AGI y seguridad de la IA · Energía y medio ambiente · Leyes de IA en el mundo y en Colombia (lección viva) |
+| Arena | Meta y Llama · Microsoft Copilot · Mistral (Europa) · Perplexity |
+
+Total propuesto: unas 45 lecciones más, en 4 mundos nuevos y en los 8 que ya
+existen. Con eso la escuela quedaría en unos 12 mundos y unas 80 lecciones.
+Cada lección se escribe igual que las actuales: voz de Punti, ES/EN, lector del
+importador y revisor independiente. Los datos que envejecen van en pantallas vivas.
+
 ## 7. Reglas del juego
 
 Toda esta lógica vive en `src/lib/progreso.ts`, separada de la interfaz. **Los
