@@ -159,7 +159,10 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
       <div className="flex flex-col gap-3">
         <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-white">
           {ejercicio.antes} <span className="text-[var(--matrix)]">____</span>
-          {ejercicio.despues}
+          {/* Google Sheets borra el espacio inicial de "de esos datos.": si lo que
+              sigue empieza por letra o número, el espacio se pone aquí. */}
+          {/^[\p{L}\p{N}]/u.test(ejercicio.despues.trim()) ? " " : ""}
+          {ejercicio.despues.trim()}
         </p>
         {ejercicio.opciones.map((opcion, indice) => (
           <button

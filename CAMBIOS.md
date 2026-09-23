@@ -875,3 +875,78 @@ cualquier parte.
   galaxia marcadas como históricas.
 - `CLAUDE.md`: aviso de que el plan de fases original quedó desactualizado y la
   guía vigente está en DOCUMENTACION.md, sección 11.
+
+---
+
+## 2026-09-23 · Hoja de contenido (Sheets) para escribir las lecciones
+
+Cami: "trabajemos el contenido: un Excel con cada planeta por pestañas y que se
+desglose todo; que sea Sheets para poder automatizarlo".
+
+- `referencias/Punti-Contenido.xlsx` (no se sube a git; la versión de trabajo vive
+  en el Google Drive de Cami, convertida a Google Sheets).
+- Pestañas: Instrucciones · Mundos (con conteos automáticos de lecciones,
+  publicadas y por escribir) · una por mundo (01 Origen … 07 Autómata) · Valores
+  (listas desplegables).
+- **Formato fijo, una fila por pieza**, pensado para importarlo a la app más
+  adelante: LECCION, PLAN, PANTALLA, GRAFICO_TABLA, FILA, GRAFICO_FLUJO, EJERCICIO,
+  TAREA. Columnas iguales en todas las pestañas; qué usa cada bloque está en
+  Instrucciones.
+- Partió del contenido publicado en Firebase (se comprobó con una huella que es
+  idéntico al del código).
+- "Qué es la IA" va entera como ejemplo. Las otras 25 tienen su **PLAN** (objetivo,
+  ideas clave, práctica sugerida) y un esqueleto de 4 pantallas, los 5 tipos de
+  ejercicio y la tarea, en estado "Por escribir".
+- Siguiente paso posible: un botón en el admin para importar la hoja (o un CSV de
+  una pestaña) directo a borradores.
+- **La hoja oficial es la de Google Sheets** (en el Drive de Cami, "Punti-Contenido",
+  id `181wQyGETx1UfL2HUBVSUqXm3vYzvG9V_AF2K-Eb_YXA`). El .xlsx de `referencias/` es
+  solo la copia de origen. Claude puede leer la hoja online; no puede escribir
+  celdas directamente con sus herramientas.
+
+### Mundo 01 · Origen escrito completo (por Claude)
+- Las 4 lecciones que faltaban (Orígenes, Breve historia, Tipos de IA, Mitos y
+  verdades) escritas en ES y EN: 4 pantallas con gráficos, los 5 tipos de
+  ejercicio, pistas y tarea. Validadas con las reglas de publicación.
+- Entregadas en una hoja aparte del Drive de Cami: "Punti · Mundo 01 Origen
+  (lecciones escritas por Claude)", id `14zqgaGAtGpBcCweZcIJWzMxu-4_hVt7TN5dapt5oSgk`,
+  mismas columnas que la hoja principal, estado Borrador.
+- Datos históricos usados: Turing 1950, Dartmouth 1956, ELIZA 1966, inviernos de
+  la IA (años 70 y finales de los 80), Deep Blue 1997, aprendizaje profundo 2012,
+  AlphaGo 2016, ChatGPT 2022.
+- `Ejercicio.tsx`: en "completar la frase" se pone el espacio antes del texto final
+  si empieza por letra o número (Sheets borra los espacios iniciales).
+
+---
+
+## 2026-09-23 · Voz de Punti, Especialista en IA, Radar semanal y planeta Arena
+
+Cami: buscar el repo de copy creativo más valorado, sumar un "AI specialist" que nos
+mantenga al día (con actualización al menos semanal), y un planeta que enseñe las
+diferencias entre OpenAI, Grok, Gemini, Anthropic y algún modelo chino. Luego: "revisa
+que marketing skills no sea tan serio y rígido: Punti es un robot amigable experto en
+IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documentación".
+
+- **Investigación:** marketingskills (coreyhaines31) es el repo de copy más valorado
+  (~51 mil estrellas, MIT, varias versiones por semana en julio de 2026). humanizer
+  (blader) es el skill de escritura más valorado (~34 mil estrellas, MIT).
+- **Decisión:** no se adoptan tal cual. marketingskills es para ventas de software
+  (sin exclamaciones, testimonios, "prueba gratis"): Punti quedaría rígido. humanizer
+  deja plano el texto informativo. Se escribió una guía propia que manda sobre las dos.
+- `guias/voz-de-punti.md`: personalidad y reglas de escritura de Punti.
+- `guias/especialista-ia.md`: perfil del Especialista en IA y formato del Radar.
+- `guias/terceros/`: copias de copywriting (marketingskills 2.0.2) y humanizer (3.0.0)
+  con su licencia MIT y un ORIGEN.md (versión, fecha, cómo se usa).
+- `.claude/` está protegida en el computador de Cami; por eso `guias/`.
+- **Tarea programada "Radar IA semanal de Punti"** (`trig_0131UUMvfP2KBTvkZuPKj2dv`):
+  lunes 7:00 a. m. Colombia, en la nube, notifica por push y correo. Investiga la
+  semana, revisa la hoja de contenido, mira versiones nuevas de las guías y propone la
+  lección "Novedades de la semana". Entrega un Doc y una hoja en el Drive. No publica
+  nada.
+- **Planeta Arena** (por crear en la app): 8 lecciones, plan en el Drive ("Punti ·
+  Planeta Arena (plan de lecciones)"). Una primera versión de esa hoja salió con
+  columnas corridas por comas sin comillas; se regeneró con un programa y la rota se
+  mandó a la papelera de Drive.
+- Documentación: DOCUMENTACION.md 6.1.0 (Arena), 6.6 (equipo de contenido y Radar),
+  6.7 (archivos en Drive), ruta 6.1 y 7.2, decisiones abiertas, regla de documentar
+  todo; CLAUDE.md apunta a las guías.

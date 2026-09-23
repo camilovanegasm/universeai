@@ -29,6 +29,14 @@
 > todo número o texto que Cami quiera cambiar va en el admin (Ajustes), no fijo en
 > el código. Si cambian las reglas, avisar a Cami que las publique.
 
+> **Contenido y textos:** antes de escribir cualquier texto que vea un estudiante,
+> lee `guias/voz-de-punti.md` (manda sobre todo) y, para datos de IA, sigue
+> `guias/especialista-ia.md`. Claude escribe el contenido; Cami revisa y publica. La
+> hoja oficial del contenido es "Punti-Contenido" en el Google Drive de Cami (ver
+> DOCUMENTACION.md 6.6 y 6.7). Cada lunes corre el Radar IA semanal.
+>
+> **Todo lo que se hable y se decida se anota en DOCUMENTACION.md y CAMBIOS.md.**
+
 > Este archivo es la "memoria" del proyecto. Antes de empezar cualquier sesión de trabajo futura, léelo completo para recordar el contexto, las decisiones ya tomadas y en qué fase vamos.
 
 **Ubicación del proyecto en el computador:** `C:\Proyectos\UniverseAI` (la carpeta conserva el nombre viejo; el proyecto se llama Punti)

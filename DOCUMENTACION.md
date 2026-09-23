@@ -407,6 +407,22 @@ video, **Brújula** porque la ética dice por dónde sí y por dónde no.
 Son **26 subtemas**. Hoy solo `que-es-la-ia / definicion` tiene lección
 escrita; el resto aparece como "en obra".
 
+### 6.1.0 Planeta nuevo: Arena (decidido 2026-09-23, por crear)
+
+Un planeta dedicado a **las marcas de IA y en qué se diferencian**, justo después de
+Lexia. Lexia sigue explicando cómo funciona un modelo de lenguaje; Arena enseña quién es
+quién y cuál usar para qué.
+
+Lecciones (ids): `el-mapa-de-los-modelos` · `openai-chatgpt` · `google-gemini` ·
+`anthropic-claude` · `xai-grok` · `modelos-chinos` (DeepSeek, Qwen, Kimi) ·
+`cual-uso-para-que` · `novedades-de-la-semana` (viva, la alimenta el Radar IA y
+reemplaza a `modelos-recientes` de Lexia).
+
+Regla de diseño: cada lección separa lo que dura (quién es la empresa, en qué es fuerte)
+de una pantalla **viva** con versiones y precios, que es lo único que el Radar toca cada
+semana. Neutralidad: mismos criterios para todas las marcas; quien escribe es Claude (de
+Anthropic), por eso Cami revisa esa parte con ojo neutral.
+
 ### 6.1.1 Los tres rangos — `rangos.ts`
 
 | Rango | Nombre completo | En el chip | Color |
@@ -485,6 +501,13 @@ los campos del juego, y con límites:
 
 ---
 
+### 6.4.1 Dónde se escribe el contenido — Google Sheets
+
+Las lecciones se escriben y revisan en la hoja **Punti-Contenido** del Google Drive de
+Cami (una pestaña por mundo, una fila por pieza; las reglas están en su pestaña
+Instrucciones). De ahí pasan a la app por el editor del admin (y, más adelante, con
+un importador). La app sigue leyendo de Firebase.
+
 ### 6.5 De dónde sale el contenido — el editor (fase 4.1)
 
 Desde la fase 4.1 el contenido (mundos, lecciones, ejercicios) vive en Firebase
@@ -522,6 +545,54 @@ y se edita en **/admin/contenido**, sin tocar código.
   `src/lib/contenidoAdmin.ts` (borradores, validación, publicar),
   `src/app/admin/contenido/` (pantallas), `src/components/admin/` (marco, campos,
   vista previa).
+
+### 6.6 El equipo de contenido: la voz de Punti y el Especialista en IA
+
+Decidido con Cami el 2026-09-23: **Claude escribe todo el contenido** de la escuela
+("tú eres el especialista en IA") y Cami revisa y publica. Para que los textos suenen
+siempre a Punti y estén al día, hay tres piezas en la carpeta `guias/`:
+
+| Pieza | Archivo | Qué hace |
+|---|---|---|
+| **La voz de Punti** | `guias/voz-de-punti.md` | Cómo escribe Punti: robot amigable experto en IA, de tú, humor ligero, ejemplos latinos, frases cortas, sin relleno de IA, neutral entre marcas. **Manda sobre las guías de terceros.** |
+| **Especialista en IA** | `guias/especialista-ia.md` | Perfil del que investiga: qué vigila (OpenAI, Google, Anthropic, xAI, Meta, DeepSeek, Qwen, Kimi…), reglas (siempre con fuente y fecha, sin rumores, neutral), y el formato del Radar IA |
+| Copy comercial (referencia) | `guias/terceros/copywriting/` | De [marketingskills](https://github.com/coreyhaines31/marketingskills) (MIT, ~51 mil estrellas, v2.0.2). Solo para portada, precios, anuncios y correos |
+| Quitar "tono de IA" (referencia) | `guias/terceros/humanizer/` | De [humanizer](https://github.com/blader/humanizer) (MIT, ~34 mil estrellas, v3.0.0). Filtro final de todo texto |
+
+**Por qué no se usó marketingskills tal cual:** está hecho para páginas de venta de
+software (prohíbe los signos de exclamación, pide testimonios, botones de "prueba
+gratis"). Punti quedaba serio y rígido. Se tomaron sus principios buenos (claridad antes
+que ingenio, ser específico, palabras de la gente) y la voz de Punti los ajusta. Humanizer
+tampoco se usa tal cual: pide tono neutro en textos informativos y las lecciones de Punti
+llevan calidez.
+
+Se guardaron en `guias/` y no en `.claude/` porque esa carpeta está protegida en el
+computador de Cami.
+
+#### Radar IA semanal (tarea programada)
+
+- **Cuándo:** cada lunes a las 7:00 a. m. de Colombia (12:00 UTC). Primera vez:
+  28 de septiembre de 2026. Id de la tarea: `trig_0131UUMvfP2KBTvkZuPKj2dv`.
+- **Dónde corre:** en la nube; no necesita el computador de Cami prendido.
+- **Qué hace:** investiga lo que pasó en IA en los últimos 7 días (con fuentes y fechas),
+  lee la hoja Punti-Contenido para encontrar lecciones desactualizadas, revisa si
+  marketingskills o humanizer sacaron versión nueva, y escribe la lección viva "Novedades
+  de la semana" en ES/EN.
+- **Qué entrega en el Drive de Cami:** un Google Doc "Radar IA · fecha" y una hoja
+  "Radar IA · fecha · Novedades de la semana (propuesta)" con el formato de la hoja de
+  contenido. Avisa por notificación y correo.
+- **Nada se publica solo.** Cami revisa y decide qué pasa a la app. Las guías de terceros
+  tampoco se actualizan solas: el Radar lo propone.
+- Si las ejecuciones se detienen pidiendo aprobación, en los ajustes de la tarea se puede
+  activar "aprobar automáticamente".
+
+### 6.7 Archivos de contenido en el Drive de Cami
+
+| Archivo (Google Sheets) | Id | Qué es |
+|---|---|---|
+| Punti-Contenido | `181wQyGETx1UfL2HUBVSUqXm3vYzvG9V_AF2K-Eb_YXA` | **La hoja oficial**: una pestaña por mundo |
+| Punti · Mundo 01 Origen (lecciones escritas por Claude) | `14zqgaGAtGpBcCweZcIJWzMxu-4_hVt7TN5dapt5oSgk` | Las 4 lecciones que faltaban del Mundo 01, para pegar en la oficial |
+| Punti · Planeta Arena (plan de lecciones) | `1elBy-ZiCPWRxMpTkECJZO-2MHu-KjEdjjecNLX0bov0` | Plan de las 8 lecciones del planeta nuevo |
 
 ## 7. Reglas del juego
 
@@ -683,14 +754,14 @@ es lo que no puede faltar el día uno; lo demás puede llegar después.
 | Fase | Qué incluye | ¿Bloquea el lanzamiento? |
 |---|---|---|
 | **6.0 Cuenta y privacidad** | Recuperar contraseña; eliminar mi cuenta (con sus datos); política de privacidad y términos (páginas bilingües, enlazadas en el registro y el pie); un canal de contacto (correo de soporte) | **Sí.** Se piden correos: la ley colombiana (1581 de 2012) exige política de datos y poder borrarlos, y Google la pide para mostrar "Punti" en la ventana de login |
-| **6.1 Contenido mínimo** | El **Mundo 01 · Origen completo** (5 lecciones en ES y EN) escrito en el editor. Claude puede redactar borradores para que Cami los revise y publique | **Sí.** Hoy hay 1 lección de 26: alguien que entra la termina en 5 minutos y no tiene a qué volver |
+| **6.1 Contenido mínimo** | El **Mundo 01 · Origen completo** (5 lecciones en ES y EN). **Escrito por Claude el 2026-09-23**, falta que Cami lo revise, lo pase a la hoja oficial y lo publique. Después: el planeta Arena y el resto de mundos, con la voz de Punti y el Especialista en IA | **Sí.** Hoy hay 1 lección de 26: alguien que entra la termina en 5 minutos y no tiene a qué volver |
 | **6.2 Presentación** | Ícono de Punti en la pestaña (favicon) y al instalar en el celular; imagen para compartir en WhatsApp/redes (Open Graph); robots y sitemap; quitar los archivos de ejemplo de Next | **Sí** (es barato y es la primera impresión al compartir el enlace) |
 | **6.3 Protección y medición** | Firebase App Check (Cami crea una clave de reCAPTCHA); analítica respetuosa de la privacidad (Vercel Analytics) para saber cuánta gente entra y dónde se va; respaldo del contenido descargable desde el admin | App Check y respaldo: **sí**. Analítica: muy recomendada |
 | **6.4 Prueba general** | Recorrido completo en iPhone y Android reales, en los dos idiomas: registro → bienvenida → lección → perfil → admin. Revisión de accesibilidad y velocidad. Arreglos de lo que aparezca | **Sí** |
 | **🚀 Lanzamiento** | Beta pública gratuita. Anuncio en la app, invitaciones | — |
 | **7.0 Precios** | Página mensual/anual y qué incluye premium (el admin ya marca premium) | No |
 | **7.1 Pagos** | Pasarela real (Wompi, Stripe o similar) conectada al premium | No |
-| **7.2 Más contenido** | Los mundos 02 a 07, a medida que se escriben | No |
+| **7.2 Más contenido** | Los mundos 02 a 07 y el planeta Arena, a medida que se escriben. Radar IA cada lunes | No |
 | **7.3 Seguridad avanzada** | Content-Security-Policy completa; XP calculado en el servidor si aparece un ranking | No |
 
 ### Fuera de la ruta por ahora
@@ -722,6 +793,11 @@ Lo técnico que no bloquea pero no se debe olvidar:
       correo de soporte, enlace a la política) cuando exista la política (6.0).
 
 ### Decisiones abiertas
+
+- **Nombre definitivo del planeta Arena** y su lugar exacto en el orden (propuesto: justo
+  después de Lexia).
+- **Importador de la hoja al admin** ("Pegar desde la hoja"): propuesto, pendiente de
+  construir. Hoy pasar una lección de la hoja a la app es copiar unos 60 textos a mano.
 
 - **¿Qué pasa al pulsar "Empezar" en una lección?** Hoy va al quiz existente.
   Falta definir si esa es la experiencia final.
@@ -864,6 +940,11 @@ Este documento vive en dos lugares y los dos importan:
 - **El artifact** — la versión visual y compartible, con su propio enlace.
 
 ### La regla
+
+**Pedido de Cami (2026-09-23): todo lo que se hable y se decida se va anotando en la
+documentación**, no solo el código. Decisiones de producto, cambios de plan, archivos
+creados fuera del proyecto (Drive, tareas programadas) y el porqué de cada cosa.
+
 
 1. **Se actualiza por tandas.** Cada vez que se completa un bloque de trabajo, se agrega una
    entrada nueva a la bitácora.
