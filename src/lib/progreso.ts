@@ -28,7 +28,7 @@ function esDiaAnterior(fecha: string, hoy: string): boolean {
   return ayer.toISOString().slice(0, 10) === fecha;
 }
 
-export function calcularCombustible(errores: number): 1 | 2 | 3 {
+function calcularCombustible(errores: number): 1 | 2 | 3 {
   if (errores <= 0) return 3;
   if (errores <= 2) return 2;
   return 1;
@@ -97,9 +97,7 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
   });
 }
 
-// Se llama cuando el usuario falla un ejercicio dentro de una lección: resta un corazón
-// (sin bajar de 0), aplicando primero el reset diario si es un día nuevo.
-export async function restarCorazon(uid: string) {
+async function descontarCorazones(uid: string, cantidad: number) {
   const referencia = doc(db, "usuarios", uid);
   const hoy = fechaDeHoy();
 
@@ -109,8 +107,20 @@ export async function restarCorazon(uid: string) {
     const datos = snap.data() as PerfilUsuario;
 
     tx.update(referencia, {
-      corazones: Math.max(0, corazonesEfectivos(datos) - 1),
+      corazones: Math.max(0, corazonesEfectivos(datos) - cantidad),
       ultimaActividad: hoy,
     });
   });
+}
+
+// Se llama cuando el usuario falla un ejercicio dentro de una lección: resta un corazón
+// completo (sin bajar de 0), aplicando primero el reset diario si es un día nuevo.
+export async function restarCorazon(uid: string) {
+  await descontarCorazones(uid, 1);
+}
+
+// Se llama cuando el usuario decide desbloquear la pista de un ejercicio: cuesta
+// medio corazón en vez de uno completo.
+export async function gastarMedioCorazon(uid: string) {
+  await descontarCorazones(uid, 0.5);
 }

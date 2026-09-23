@@ -97,13 +97,65 @@ body {
   background: rgba(0, 255, 65, 0.18);
 }
 
-/* Cache flotando: nunca toca el suelo. */
+/* Punti flotando: nunca toca el suelo. */
 @keyframes flotar {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
-.cache-flotando {
+.punti-flotando {
   animation: flotar 3.2s ease-in-out infinite;
   filter: drop-shadow(0 12px 20px rgba(0, 255, 65, 0.15));
+}
+
+/* ── Consola de transmisión (fase de explicación de la lección) ──
+   Marco tipo HUD con esquinas recortadas: hace que la explicación se
+   sienta una transmisión de Punti y no una pantalla de texto. */
+.consola-leccion {
+  position: relative;
+  border: 1px solid var(--color-panel-border);
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(0, 255, 65, 0.045), rgba(5, 5, 16, 0.7) 60%);
+  box-shadow: 0 0 50px rgba(0, 255, 65, 0.06), inset 0 0 60px rgba(0, 255, 65, 0.02);
+}
+
+.consola-esquina {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--matrix);
+  opacity: 0.75;
+  pointer-events: none;
+}
+.consola-esquina-tl { top: -1px; left: -1px; border-right: 0; border-bottom: 0; border-radius: 16px 0 0 0; }
+.consola-esquina-tr { top: -1px; right: -1px; border-left: 0; border-bottom: 0; border-radius: 0 16px 0 0; }
+.consola-esquina-bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; border-radius: 0 0 0 16px; }
+.consola-esquina-br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; border-radius: 0 0 16px 0; }
+
+@keyframes latido-transmision {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+.punto-transmision { animation: latido-transmision 2s ease-in-out infinite; }
+
+@keyframes cursor-parpadeo {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.cursor-terminal {
+  display: inline-block;
+  width: 9px;
+  height: 1em;
+  background: var(--cyan);
+  vertical-align: -2px;
+  margin-left: 3px;
+  animation: cursor-parpadeo 0.9s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .punto-transmision,
+  .cursor-terminal,
+  .punti-flotando {
+    animation: none;
+  }
 }

@@ -1,43 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthContext";
 import { obtenerPerfil, type PerfilUsuario } from "@/lib/userProfile";
 import { corazonesEfectivos, rachaEfectiva } from "@/lib/progreso";
-import { NIVELES } from "@/lib/niveles";
-import Cache from "@/components/Cache";
-
-// Un color distinto por nivel para que el "planeta" se sienta variado en el mapa.
-const COLOR_POR_NIVEL = [
-  "#00ff41", // 1 · verde Matrix
-  "#00f5ff", // 2 · cian
-  "#b400ff", // 3 · morado
-  "#ff006e", // 4 · rosa
-  "#ffe600", // 5 · amarillo
-  "#4ade80", // 6 · verde suave
-  "#818cf8", // 7 · índigo
-];
-
-// Posición horizontal (0-100, % del ancho) de cada planeta: un patrón asimétrico,
-// no un zigzag parejo, para que el camino se sienta más orgánico/espacial.
-const POSICION_X = [50, 74, 32, 62, 22, 80, 44];
-const ESPACIADO_Y = 150; // separación vertical entre planetas, en px
-
-function generarCurva(puntos: { x: number; y: number }[]): string {
-  if (puntos.length === 0) return "";
-  let d = `M ${puntos[0].x} ${puntos[0].y}`;
-  for (let i = 1; i < puntos.length; i++) {
-    const anterior = puntos[i - 1];
-    const actual = puntos[i];
-    const midY = (anterior.y + actual.y) / 2;
-    d += ` C ${anterior.x} ${midY}, ${actual.x} ${midY}, ${actual.x} ${actual.y}`;
-  }
-  return d;
-}
+import { TEMAS } from "@/lib/temas";
+import { LECCIONES } from "@/lib/lecciones";
+import MapaGalaxia, { type TemaEnMapa } from "@/components/MapaGalaxia";
 
 export default function InicioPage() {
   const router = useRouter();
@@ -61,6 +33,22 @@ export default function InicioPage() {
     };
   }, [usuario]);
 
+  // Cada tema se convierte en un planeta. El avance se deriva del progreso
+  // guardado: no se guarda un "estado" aparte que se pueda desincronizar.
+  const temasDelMapa = useMemo<TemaEnMapa[]>(
+    () =>
+      TEMAS.map((tema) => ({
+        id: tema.id,
+        numero: tema.numero,
+        titulo: tema.titulo,
+        descripcion: tema.descripcion,
+        total: tema.subtemas.length,
+        hechas: tema.subtemas.filter((s) => perfil?.progreso?.[s.id]?.completada).length,
+        disponibles: tema.subtemas.filter((s) => Boolean(LECCIONES[s.id])).length,
+      })),
+    [perfil]
+  );
+
   if (cargando || !usuario) {
     return (
       <div className="flex flex-1 items-center justify-center">
@@ -73,131 +61,43 @@ export default function InicioPage() {
 
   const corazones = perfil ? corazonesEfectivos(perfil) : 0;
   const racha = perfil ? rachaEfectiva(perfil) : 0;
+  const totalSubtemas = TEMAS.reduce((suma, t) => suma + t.subtemas.length, 0);
+  const totalHechas = temasDelMapa.reduce((suma, t) => suma + t.hechas, 0);
 
   return (
-    <div className="flex flex-1 flex-col">
-      <header className="tarjeta-espacial mx-4 mt-4 flex items-center justify-between rounded-2xl px-6 py-4 sm:mx-6">
-        <h1 className="font-[family-name:var(--font-display)] text-lg font-bold text-[var(--matrix)]">
-          UniverseAI
-        </h1>
-        <div className="flex items-center gap-4 font-[family-name:var(--font-ui)] text-sm font-bold text-white">
-          <span title="XP" className="text-[var(--gold)]">⭐ {perfil?.xp ?? 0} XP</span>
+    <div className="flex flex-1 flex-col overflow-hidden">
+      <header className="flex items-center gap-3 border-b border-[var(--color-panel-border)] bg-gradient-to-b from-[rgba(5,5,16,0.94)] to-[rgba(5,5,16,0.6)] px-4 py-2.5 sm:px-6 sm:py-3">
+        <div className="min-w-0 flex-1">
+          <p className="hidden font-[family-name:var(--font-terminal)] text-xs uppercase tracking-[0.24em] text-[var(--matrix)] sm:block">
+            {"// El universo de Punti"}
+          </p>
+          <h1 className="truncate font-[family-name:var(--font-display)] text-base font-black text-white sm:text-xl">
+            {perfil?.nombre ? `Elige tu mundo, ${perfil.nombre}` : "Elige tu mundo"}
+          </h1>
+          <p className="font-[family-name:var(--font-terminal)] text-xs text-[var(--muted)] sm:mt-0.5">
+            <span className="text-[var(--matrix)]">{totalHechas}</span>/{totalSubtemas} subtemas
+          </p>
+        </div>
+
+        <div className="flex shrink-0 items-center gap-2.5 font-[family-name:var(--font-ui)] text-sm font-bold text-white sm:gap-3">
+          <span title="XP" className="text-[var(--gold)]">⭐ {perfil?.xp ?? 0}</span>
           <span title="Corazones">❤️ {corazones}</span>
           <span title="Racha">🔥 {racha}</span>
           <button
             onClick={() => signOut(auth)}
-            className="rounded-lg border border-white/20 px-3 py-1.5 text-white hover:bg-white/10"
+            aria-label="Cerrar sesión"
+            className="rounded-lg border border-white/20 px-2.5 py-1.5 text-xs text-white transition-colors hover:bg-white/10 sm:px-3"
           >
-            Cerrar sesión
+            Salir
           </button>
         </div>
       </header>
 
-      <main className="flex flex-1 flex-col items-center px-6 py-10">
-        <div className="mb-2 text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-white">
-            ¡Bienvenido{perfil?.nombre ? `, ${perfil.nombre}` : ""}!
-          </h2>
-          <p className="mt-1 font-[family-name:var(--font-ui)] text-[var(--muted)]">
-            Elige un planeta para empezar tu viaje.
-          </p>
-        </div>
+      <MapaGalaxia temas={temasDelMapa} onEntrar={(id) => router.push(`/tema/${id}`)} />
 
-        <div
-          className="relative w-full max-w-sm"
-          style={{ height: NIVELES.length * ESPACIADO_Y }}
-        >
-          <svg
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full"
-            viewBox={`0 0 100 ${NIVELES.length * ESPACIADO_Y}`}
-            preserveAspectRatio="none"
-          >
-            <path
-              d={generarCurva(
-                NIVELES.map((_, indice) => ({
-                  x: POSICION_X[indice % POSICION_X.length],
-                  y: indice * ESPACIADO_Y + ESPACIADO_Y / 2,
-                }))
-              )}
-              fill="none"
-              stroke="var(--color-panel-border)"
-              strokeWidth="2"
-              strokeDasharray="4 6"
-              vectorEffect="non-scaling-stroke"
-            />
-          </svg>
-
-          {NIVELES.map((nivel, indice) => {
-            const desbloqueado = nivel.disponible;
-            const color = COLOR_POR_NIVEL[indice % COLOR_POR_NIVEL.length];
-            const x = POSICION_X[indice % POSICION_X.length];
-            const y = indice * ESPACIADO_Y + ESPACIADO_Y / 2;
-
-            const nodo = (
-              <div className="flex flex-col items-center gap-2">
-                <div className="relative flex items-center justify-center">
-                  {indice === 0 && (
-                    <Cache
-                      estado="online"
-                      tamano={56}
-                      className="absolute -right-14 -top-6 hidden sm:block"
-                    />
-                  )}
-                  <div
-                    className="flex h-20 w-20 items-center justify-center rounded-full font-[family-name:var(--font-display)] text-2xl font-bold"
-                    style={
-                      desbloqueado
-                        ? {
-                            background: `radial-gradient(circle at 35% 30%, ${color}55, #050510 75%)`,
-                            border: `2px solid ${color}`,
-                            boxShadow: `0 0 24px -4px ${color}aa`,
-                            color: "white",
-                          }
-                        : {
-                            background: "radial-gradient(circle at 35% 30%, #1a1a2e, #050510 75%)",
-                            border: "2px solid rgba(255,255,255,0.12)",
-                            color: "rgba(255,255,255,0.35)",
-                          }
-                    }
-                  >
-                    {desbloqueado ? nivel.numero : "🔒"}
-                  </div>
-                </div>
-                <div className="max-w-[9rem] text-center">
-                  <p
-                    className="font-[family-name:var(--font-ui)] text-sm font-bold"
-                    style={{ color: desbloqueado ? "white" : "rgba(255,255,255,0.4)" }}
-                  >
-                    {nivel.titulo}
-                  </p>
-                  {!desbloqueado && (
-                    <p className="mt-0.5 font-[family-name:var(--font-terminal)] text-xs text-[var(--muted)]">
-                      Próximamente
-                    </p>
-                  )}
-                </div>
-              </div>
-            );
-
-            return (
-              <div
-                key={nivel.id}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{ left: `${x}%`, top: y }}
-              >
-                {desbloqueado ? (
-                  <Link href={`/leccion/${nivel.id}`} className="block transition-transform hover:scale-105">
-                    {nodo}
-                  </Link>
-                ) : (
-                  <div className="cursor-not-allowed opacity-90">{nodo}</div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </main>
+      <p className="hidden border-t border-[var(--color-panel-border)] px-6 py-2 font-[family-name:var(--font-terminal)] text-[11px] tracking-[0.14em] text-[#4b5a4b] sm:block">
+        ARRASTRA PARA MOVERTE · RUEDA O PELLIZCA PARA ACERCAR · CLIC EN UN PLANETA
+      </p>
     </div>
   );
 }

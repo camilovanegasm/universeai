@@ -12,7 +12,7 @@ import { auth } from "@/lib/firebase";
 import { crearPerfilSiNoExiste } from "@/lib/userProfile";
 import { traducirErrorAuth } from "@/lib/authErrors";
 import BotonGoogle from "@/components/BotonGoogle";
-import Cache from "@/components/Cache";
+import Punti from "@/components/Punti";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -55,10 +55,10 @@ export default function LoginPage() {
     <div className="flex flex-1 items-center justify-center px-6 py-12">
       <div className="tarjeta-espacial w-full max-w-sm rounded-2xl p-8">
         <div className="flex justify-center">
-          <Cache estado="boot" tamano={90} />
+          <Punti estado="boot" tamano={90} />
         </div>
         <h1 className="mt-2 text-center font-[family-name:var(--font-display)] text-xl font-bold text-[var(--matrix)]">
-          UniverseAI
+          Punti
         </h1>
         <p className="mt-2 text-center font-[family-name:var(--font-terminal)] text-lg text-[var(--cyan)] opacity-80">
           Inicia sesión para continuar tu viaje_

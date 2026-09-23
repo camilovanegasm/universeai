@@ -4,8 +4,8 @@ import "./globals.css";
 import { AuthProvider } from "@/lib/AuthContext";
 import FondoEspacial from "@/components/FondoEspacial";
 
-// Sistema tipográfico de Cache: Orbitron para títulos épicos, VT323 para la voz de
-// Cache/HUD, Rajdhani para navegación y UI, Press Start 2P (con moderación) para
+// Sistema tipográfico de Punti: Orbitron para títulos épicos, VT323 para la voz de
+// Punti/HUD, Rajdhani para navegación y UI, Press Start 2P (con moderación) para
 // logros puntuales, e Inter para todo el texto de lectura.
 const orbitron = Orbitron({ variable: "--font-orbitron", subsets: ["latin"] });
 const vt323 = VT323({ variable: "--font-vt323", weight: "400", subsets: ["latin"] });
@@ -22,9 +22,9 @@ const pressStart = Press_Start_2P({
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "UniverseAI — Aprende Inteligencia Artificial",
+  title: "Punti — Aprende IA jugando",
   description:
-    "App gratuita e interactiva para aprender Inteligencia Artificial paso a paso, con lecciones cortas y gamificación.",
+    "Un universo construido por Punti para aprender Inteligencia Artificial gratis: lecciones cortas, planetas por explorar y una racha que cuidar.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
