@@ -5,10 +5,13 @@ import type { Ejercicio as TipoEjercicio } from "@/lib/lecciones";
 import { fraseAleatoria } from "@/lib/frasesFeedback";
 import type { Idioma } from "@/lib/i18n";
 import { sonar } from "@/lib/sonido";
+import { textoCosto } from "@/lib/ajustes";
 
 type Props = {
   ejercicio: TipoEjercicio;
   gasolinaDisponible: number;
+  /** Lo que cuesta la pista (se cambia en el admin). */
+  costoPista?: number;
   onResultado: (correcto: boolean) => void;
   onUsarPista: () => Promise<void>;
   idioma?: Idioma;
@@ -21,7 +24,7 @@ const TX: Record<Idioma, Record<string, string>> = {
     placeholder: "Escribe tu prompt aquí...",
     corto: "Escribe un poco más de detalle antes de enviar.",
     enviar: "ENVIAR",
-    pista: "Pedirle una pista a Punti · cuesta media gasolina",
+    pista: "Pedirle una pista a Punti",
     etiquetaPista: "Pista",
   },
   en: {
@@ -30,7 +33,7 @@ const TX: Record<Idioma, Record<string, string>> = {
     placeholder: "Write your prompt here...",
     corto: "Add a bit more detail before you send it.",
     enviar: "SEND",
-    pista: "Ask Punti for a hint · costs half a fuel",
+    pista: "Ask Punti for a hint",
     etiquetaPista: "Hint",
   },
 };
@@ -54,7 +57,7 @@ const ESTILO_OPCION = {
   descartada: "border-[var(--pink)]/40 bg-transparent text-[var(--pink)]/50 line-through cursor-not-allowed",
 };
 
-export default function Ejercicio({ ejercicio, gasolinaDisponible, onResultado, onUsarPista, idioma = "es" }: Props) {
+export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 0.5, onResultado, onUsarPista, idioma = "es" }: Props) {
   const t = TX[idioma];
   const [seleccion, setSeleccion] = useState<number | boolean | null>(null);
   const [comprobado, setComprobado] = useState(false);
@@ -98,7 +101,7 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, onResultado, 
   }
 
   async function pedirPista() {
-    if (pistaRevelada || pidiendoPista || gasolinaDisponible < 0.5) return;
+    if (pistaRevelada || pidiendoPista || gasolinaDisponible < costoPista) return;
     setPidiendoPista(true);
     await onUsarPista();
     setPistaRevelada(true);
@@ -288,10 +291,10 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, onResultado, 
         ) : (
           <button
             onClick={pedirPista}
-            disabled={pidiendoPista || gasolinaDisponible < 0.5}
+            disabled={pidiendoPista || gasolinaDisponible < costoPista}
             className="font-[family-name:var(--font-ui)] text-xs font-bold uppercase tracking-wide text-[var(--muted)] hover:text-[var(--gold)] disabled:cursor-not-allowed disabled:opacity-40"
           >
-            {t.pista}
+            {t.pista} · {textoCosto(costoPista, idioma)}
           </button>
         )}
       </div>

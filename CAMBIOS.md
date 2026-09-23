@@ -769,3 +769,64 @@ dentro de listas; la lección y el catálogo del código pasan la validación si
 faltas; una lección vacía da 7 faltas. La vista previa se probó con clics: en
 inglés, acertar la opción múltiple pasa al verdadero/falso. La portada sigue
 mostrando los 7 mundos. **No se pudo ver el editor**: exige la cuenta del admin.
+
+---
+
+## 2026-09-23 · Ajustes en el admin + seguridad y eficiencia por defecto
+
+Cami: "todo lo que consideres en el admin para no modificar el código principal.
+Aplica las prácticas desde el inicio en términos de eficiencia y seguridad, para no
+estar repitiendo".
+
+### Pestaña AJUSTES (/admin/ajustes)
+- **Reglas del juego**: tanque de gasolina, costo de fallar, costo de la pista, XP
+  por nota (sin errores / 1-2 / 3 o más), bono de velocidad y XP para cada rango.
+  Validación (enteros, pasos de 0,5, XP de mayor a menor, Arquitecto > Capitán) y
+  botón "valores de siempre". Aplican de inmediato.
+- **Anuncio**: un aviso arriba de los mundos (novedad, aviso importante o
+  celebración), en ES/EN, con vista previa. Cada persona lo puede cerrar; si cambia
+  el texto, vuelve a salir.
+- **Preguntas frecuentes** de la portada: editar, reordenar, agregar, quitar. La
+  primera vez salen las del código; al guardar pasan a Firebase.
+- `src/lib/ajustes.ts` (valores por defecto, validación, normalización);
+  `contenido/ajustes` y `contenido/faq` en Firebase.
+- `progreso.ts` y `rangos.ts` leen los ajustes. El texto de la pista dice lo que
+  cuesta de verdad ("cuesta 1 gasolina", "gratis"…).
+- Las pantallas que muestran números del juego (mundos, lección, perfil, admin)
+  esperan a que lleguen los ajustes; se piden junto con el catálogo, en una sola
+  espera.
+
+### Reglas de Firestore
+- Leen `contenido/ajustes`: el tanque y el XP máximo por lección ya no están fijos.
+- El progreso de cada lección se valida campo por campo (completada, nota 1-3, XP,
+  tiempo, fecha del servidor). La app indica qué lección cambió en
+  `ultimaLeccionId`, porque las reglas no pueden recorrer listas.
+- Perfil nuevo: nombre de hasta 80 letras, correo de hasta 200 e igual al de la
+  cuenta.
+- **Hay que volver a publicar las reglas.**
+
+### Seguridad
+- Cabeceras en `next.config.ts`: nosniff, anti-iframe, Referrer-Policy, permisos de
+  cámara/micrófono/ubicación/pagos apagados, COOP compatible con el login de Google,
+  HSTS; ya no se anuncia "Next.js". Verificadas en localhost.
+- El admin no se indexa en buscadores (`src/app/admin/layout.tsx`).
+- `firma()` se movió a `contenido.ts`: ninguna pantalla pública carga código del
+  admin.
+
+### Eficiencia
+- Fallar o pedir pista ya no relee el perfil: la función devuelve la gasolina que
+  queda (una lectura menos por cada error).
+- Si Firebase no responde al cargar el catálogo, se juega con lo del código y se
+  reintenta en la siguiente pantalla (antes se quedaba con el fallo toda la visita).
+
+### Prácticas escritas
+- `DOCUMENTACION.md` → 4.2 "Prácticas obligatorias en cada cambio" y un resumen en
+  `CLAUDE.md`, para que se apliquen en cada sesión sin tener que pedirlas.
+
+### Verificado
+- tsc y lint limpios. Portada: 7 mundos y 10 preguntas. Cabeceras presentes.
+- Ajustes con Node: los valores de siempre pasan la validación y dan 20 XP máximo;
+  datos raros se reemplazan por los de siempre; números inválidos dan 5 mensajes
+  claros; los textos de costo salen bien en los dos idiomas.
+- **No se pudo ver** la pestaña Ajustes ni probar las reglas nuevas: exigen la cuenta
+  del admin y publicar las reglas.

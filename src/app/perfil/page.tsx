@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthContext";
 import { esAdmin } from "@/lib/admin";
+import { useCatalogo } from "@/lib/contenido";
 import { guardarIdioma, obtenerPerfil, type PerfilUsuario } from "@/lib/userProfile";
 import { useIdioma, cambiarIdioma } from "@/lib/useIdioma";
 import PuntiPixel from "@/components/PuntiPixel";
@@ -21,6 +22,8 @@ export default function PerfilPage() {
   const { usuario, cargando } = useAuth();
   const [perfil, setPerfil] = useState<PerfilUsuario | null>(null);
   const [fallo, setFallo] = useState(false);
+  // Rangos y tanque dependen de los ajustes: se espera a que lleguen.
+  const { listo } = useCatalogo();
 
   useEffect(() => {
     if (!cargando && !usuario) router.replace("/login");
@@ -61,7 +64,7 @@ export default function PerfilPage() {
     );
   }
 
-  if (cargando || !usuario || !perfil) {
+  if (cargando || !usuario || !perfil || !listo) {
     return <Cargando />;
   }
 

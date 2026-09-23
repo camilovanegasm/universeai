@@ -3,13 +3,19 @@
 import { doc, runTransaction, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase";
 import type { PerfilUsuario } from "./userProfile";
+import { ajustesVigentes } from "./ajustes";
 
-// Tope de gasolina. El campo en Firestore se sigue llamando `corazones`
-// a propósito: renombrarlo obligaría a migrar los datos de quienes ya
-// tienen cuenta, y el nombre guardado no lo ve nadie.
-export const GASOLINA_MAXIMA = 5;
-const XP_POR_COMBUSTIBLE: Record<1 | 2 | 3, number> = { 1: 5, 2: 10, 3: 15 };
-const BONO_VELOCIDAD = 5;
+// Los números del juego (tanque, costos, XP) se cambian desde el admin, en
+// Ajustes. Aquí se leen de `ajustesVigentes()`; ver ajustes.ts.
+//
+// El campo de la gasolina en Firestore se sigue llamando `corazones` a
+// propósito: renombrarlo obligaría a migrar los datos de quienes ya tienen
+// cuenta, y el nombre guardado no lo ve nadie.
+
+/** Tanque lleno (y recarga diaria), según los ajustes vigentes. */
+export function gasolinaMaxima(): number {
+  return ajustesVigentes().juego.gasolinaMaxima;
+}
 
 export type ResultadoLeccion = {
   errores: number;
@@ -38,21 +44,25 @@ function calcularCombustible(errores: number): 1 | 2 | 3 {
 }
 
 export function calcularXp(resultado: ResultadoLeccion) {
+  const j = ajustesVigentes().juego;
   const combustible = calcularCombustible(resultado.errores);
   const rapido =
     resultado.tiempoObjetivoSegundos != null &&
     resultado.tiempoSegundos <= resultado.tiempoObjetivoSegundos;
-  const xp = XP_POR_COMBUSTIBLE[combustible] + (rapido ? BONO_VELOCIDAD : 0);
+  const porNota = { 3: j.xpPerfecta, 2: j.xpBuena, 1: j.xpBasica }[combustible];
+  const xp = porNota + (rapido ? j.bonoVelocidad : 0);
   return { combustible, xp, rapido };
 }
 
 // Gasolina "de verdad" en este momento: si la última actividad no fue hoy, ya se
 // recargó al tope aunque Firestore todavía tenga guardado el número de ayer.
 export function gasolinaEfectiva(perfil: PerfilUsuario): number {
+  const maxima = gasolinaMaxima();
   if (perfil.ultimaActividad !== fechaDeHoy()) {
-    return GASOLINA_MAXIMA;
+    return maxima;
   }
-  return perfil.corazones;
+  // Si el admin bajó el tanque, nadie se queda con más de lo que cabe.
+  return Math.min(perfil.corazones, maxima);
 }
 
 // Racha "de verdad": si pasó más de un día completo sin actividad, ya se rompió aunque
@@ -91,6 +101,8 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
       corazones: gasolinaEfectiva(datos),
       ultimaActividad: hoy,
       ultimaLeccion: hoy,
+      // Le dice a las reglas de Firestore qué lección cambió (ver firestore.rules).
+      ultimaLeccionId: idLeccion,
       [`progreso.${idLeccion}`]: {
         completada: true,
         combustible,
@@ -102,29 +114,31 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
   });
 }
 
-async function descontarGasolina(uid: string, cantidad: number) {
+/**
+ * Descuenta gasolina y devuelve cuánta queda. Devolverla evita que la
+ * pantalla tenga que volver a leer el perfil después (una lectura menos
+ * por cada error o pista).
+ */
+async function descontarGasolina(uid: string, cantidad: number): Promise<number> {
   const referencia = doc(db, "usuarios", uid);
   const hoy = fechaDeHoy();
 
-  await runTransaction(db, async (tx) => {
+  return runTransaction(db, async (tx) => {
     const snap = await tx.get(referencia);
-    if (!snap.exists()) return;
+    if (!snap.exists()) return 0;
     const datos = snap.data() as PerfilUsuario;
-
-    tx.update(referencia, {
-      corazones: Math.max(0, gasolinaEfectiva(datos) - cantidad),
-      ultimaActividad: hoy,
-    });
+    const queda = Math.max(0, gasolinaEfectiva(datos) - cantidad);
+    tx.update(referencia, { corazones: queda, ultimaActividad: hoy });
+    return queda;
   });
 }
 
-// Se llama cuando el usuario falla un ejercicio: gasta una unidad de gasolina
-// (sin bajar de 0), aplicando primero la recarga diaria si es un día nuevo.
-export async function gastarGasolina(uid: string) {
-  await descontarGasolina(uid, 1);
+/** Fallar un ejercicio. Devuelve la gasolina que queda. */
+export function gastarGasolina(uid: string): Promise<number> {
+  return descontarGasolina(uid, ajustesVigentes().juego.costoError);
 }
 
-// Desbloquear la pista de un ejercicio cuesta media unidad en vez de una entera.
-export async function gastarMediaGasolina(uid: string) {
-  await descontarGasolina(uid, 0.5);
+/** Ver una pista. Devuelve la gasolina que queda. */
+export function pagarPista(uid: string): Promise<number> {
+  return descontarGasolina(uid, ajustesVigentes().juego.costoPista);
 }

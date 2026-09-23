@@ -8,7 +8,8 @@
 import { collection, doc, getDocs, serverTimestamp, updateDoc, type Timestamp } from "firebase/firestore";
 import type { User } from "firebase/auth";
 import { db } from "./firebase";
-import { fechaDeHoy, GASOLINA_MAXIMA, gasolinaEfectiva, rachaEfectiva } from "./progreso";
+import { cargarCatalogo } from "./contenido";
+import { fechaDeHoy, gasolinaMaxima, gasolinaEfectiva, rachaEfectiva } from "./progreso";
 import type { PerfilUsuario } from "./userProfile";
 
 /** Tiene que coincidir con el correo de `esAdmin()` en firestore.rules. */
@@ -37,6 +38,8 @@ export type UsuarioAdmin = {
 type Documento = PerfilUsuario & { creadoEn?: Timestamp };
 
 export async function listarUsuarios(): Promise<UsuarioAdmin[]> {
+  // La gasolina "efectiva" depende del tanque configurado en Ajustes.
+  await cargarCatalogo();
   const hoy = fechaDeHoy();
   const snap = await getDocs(collection(db, "usuarios"));
   return snap.docs.map((d) => {
@@ -63,8 +66,9 @@ export async function listarUsuarios(): Promise<UsuarioAdmin[]> {
  * pensaría que la gasolina guardada es de otro día y la ignoraría.
  */
 export async function llenarTanque(uid: string) {
+  await cargarCatalogo();
   await updateDoc(doc(db, "usuarios", uid), {
-    corazones: GASOLINA_MAXIMA,
+    corazones: gasolinaMaxima(),
     ultimaActividad: fechaDeHoy(),
   });
 }

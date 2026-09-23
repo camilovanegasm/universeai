@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { PerfilUsuario } from "@/lib/userProfile";
-import { gasolinaEfectiva, rachaEfectiva, GASOLINA_MAXIMA } from "@/lib/progreso";
+import { gasolinaEfectiva, rachaEfectiva, gasolinaMaxima } from "@/lib/progreso";
 import { textoTema, textoSubtema } from "@/lib/temas";
 import { useCatalogo } from "@/lib/contenido";
 import { RANGOS, rangoPorXp } from "@/lib/rangos";
@@ -231,7 +231,7 @@ export default function PanelPerfil({ perfil, idioma, alSalir, selectorIdioma }:
           </div>
           <div className="border-2 border-[var(--color-panel-border)] p-3 text-center">
             <dd className="flex h-[27px] items-center justify-center">
-              <BarraGasolina gasolina={gasolina} maximo={GASOLINA_MAXIMA} etiqueta={`${t.gasolina}: ${gasolina} / ${GASOLINA_MAXIMA}`} alto={18} />
+              <BarraGasolina gasolina={gasolina} maximo={gasolinaMaxima()} etiqueta={`${t.gasolina}: ${gasolina} / ${gasolinaMaxima()}`} alto={18} />
             </dd>
             <dt className="mt-2 font-[family-name:var(--font-terminal)] text-[15px] uppercase tracking-[0.14em] text-[var(--muted)]">{t.gasolina}</dt>
           </div>

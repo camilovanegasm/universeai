@@ -7,9 +7,10 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthContext";
 import { guardarIdioma, obtenerPerfil, type PerfilUsuario } from "@/lib/userProfile";
-import { gasolinaEfectiva, rachaEfectiva, GASOLINA_MAXIMA } from "@/lib/progreso";
+import { gasolinaEfectiva, rachaEfectiva, gasolinaMaxima } from "@/lib/progreso";
 import { textoTema } from "@/lib/temas";
 import { useCatalogo } from "@/lib/contenido";
+import AnuncioGlobal from "@/components/AnuncioGlobal";
 import { useIdioma, cambiarIdioma } from "@/lib/useIdioma";
 import type { Idioma } from "@/lib/i18n";
 import MundosPunti, { type MundoEnLista } from "@/components/MundosPunti";
@@ -168,14 +169,14 @@ export default function InicioPage() {
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             {/* Gasolina. La barra dice de un vistazo cuánto queda, que un
                 número no logra. */}
-            <div className="flex items-center gap-1.5" title={`${t.gasolina}: ${gasolina} ${t.de} ${GASOLINA_MAXIMA}`}>
+            <div className="flex items-center gap-1.5" title={`${t.gasolina}: ${gasolina} ${t.de} ${gasolinaMaxima()}`}>
               <span className="hidden font-[family-name:var(--font-terminal)] text-[15px] uppercase tracking-[0.14em] text-[var(--muted)] sm:inline">
                 {t.gasolina}
               </span>
               <BarraGasolina
                 gasolina={gasolina}
-                maximo={GASOLINA_MAXIMA}
-                etiqueta={`${t.gasolina}: ${gasolina} ${t.de} ${GASOLINA_MAXIMA}`}
+                maximo={gasolinaMaxima()}
+                etiqueta={`${t.gasolina}: ${gasolina} ${t.de} ${gasolinaMaxima()}`}
               />
             </div>
 
@@ -199,6 +200,7 @@ export default function InicioPage() {
           </div>
         </div>
       </header>
+      <AnuncioGlobal idioma={idioma} />
 
       <main className="mx-auto w-full max-w-[1120px] flex-1 px-4 pb-16 pt-7 sm:px-6">
         <div className="flex items-start justify-between gap-3">

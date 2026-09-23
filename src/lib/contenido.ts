@@ -18,7 +18,8 @@
 import { doc, getDoc } from "firebase/firestore";
 import { useSyncExternalStore } from "react";
 import { db } from "./firebase";
-import type { Idioma } from "./i18n";
+import type { Idioma, Texto } from "./i18n";
+import { AJUSTES_POR_DEFECTO, fijarAjustes, normalizarAjustes, type Ajustes } from "./ajustes";
 import type { EstadoPunti } from "./puntiSprite";
 import type { Rango } from "./rangos";
 import { TEMAS, type Tema } from "./temas";
@@ -26,7 +27,7 @@ import { LECCIONES, type Ejercicio, type Grafico, type Leccion } from "./leccion
 
 /* ------------------------------------------------------------ tipos */
 
-export type Texto = { es: string; en: string };
+export type { Texto };
 
 export type ParTexto = { a: Texto; b: Texto };
 
@@ -73,6 +74,15 @@ export type TemaC = {
   rango: Rango;
   subtemas: SubtemaC[];
 };
+
+/** JSON con las claves ordenadas: Firebase devuelve los campos en otro orden. */
+export function firma(valor: unknown): string {
+  return JSON.stringify(valor, (_, v) =>
+    v && typeof v === "object" && !Array.isArray(v)
+      ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, v[k]]))
+      : v,
+  );
+}
 
 /* ------------------------------------------------ conversiones */
 
@@ -223,15 +233,18 @@ export type EstadoCatalogo = {
   /** ids de los subtemas que tienen lección publicada */
   conLeccion: ReadonlySet<string>;
   origen: "codigo" | "firebase";
+  /** Números del juego y anuncio (ver ajustes.ts). */
+  ajustes: Ajustes;
   /** false mientras se consulta Firebase por primera vez */
   listo: boolean;
 };
 
-function desdeCodigo(listo: boolean): EstadoCatalogo {
+function desdeCodigo(listo: boolean, ajustes: Ajustes = AJUSTES_POR_DEFECTO): EstadoCatalogo {
   return {
     temas: TEMAS,
     conLeccion: new Set(Object.keys(LECCIONES)),
     origen: "codigo",
+    ajustes,
     listo,
   };
 }
@@ -249,21 +262,33 @@ function avisar() {
 
 export function cargarCatalogo(): Promise<EstadoCatalogo> {
   if (pedido) return pedido;
-  pedido = getDoc(doc(db, "contenido", "catalogo"))
-    .then((snap) => {
+  // Catálogo y ajustes se piden a la vez: un solo momento de espera.
+  // Si los ajustes fallan, se juega con los de siempre; no se bloquea nada.
+  pedido = Promise.all([
+    getDoc(doc(db, "contenido", "catalogo")),
+    getDoc(doc(db, "contenido", "ajustes"))
+      .then((a) => normalizarAjustes(a.exists() ? a.data() : null))
+      .catch(() => AJUSTES_POR_DEFECTO),
+  ])
+    .then(([snap, ajustes]) => {
+      fijarAjustes(ajustes);
       const temas = snap.exists() ? (snap.data().temas as TemaC[] | undefined) : undefined;
       estado = temas
         ? {
             temas: aTemas(temas),
             conLeccion: new Set(temas.flatMap((x) => x.subtemas.filter((s) => s.tieneLeccion).map((s) => s.id))),
             origen: "firebase",
+            ajustes,
             listo: true,
           }
-        : desdeCodigo(true);
+        : desdeCodigo(true, ajustes);
       return estado;
     })
     .catch(() => {
+      // Sin conexión con Firebase: se juega con lo del código y los ajustes
+      // de siempre. Se permite reintentar en la próxima pantalla.
       estado = desdeCodigo(true);
+      pedido = null;
       return estado;
     })
     .finally(avisar);
@@ -311,4 +336,55 @@ export async function cargarLeccion(id: string): Promise<LeccionB | null> {
     // Sin conexión: si está en el código, al menos esa versión.
     return LECCIONES[id] ? leccionABilingue(LECCIONES[id]) : null;
   }
+}
+
+/* ------------------------------------------ preguntas frecuentes */
+
+/** Una pregunta de la portada: p = pregunta, r = respuesta. */
+export type PreguntaFaq = { p: Texto; r: Texto };
+
+function esTexto(x: unknown): x is Texto {
+  const t = x as Texto | undefined;
+  return typeof t?.es === "string" && typeof t?.en === "string";
+}
+
+// Solo la portada las usa, así que se piden al montarla y no antes.
+// null = todavía no llegan, o no hay en Firebase (se usan las del código).
+let faq: PreguntaFaq[] | null = null;
+let pedidoFaq: Promise<void> | null = null;
+const oyentesFaq = new Set<() => void>();
+
+function pedirFaq() {
+  if (pedidoFaq) return pedidoFaq;
+  pedidoFaq = getDoc(doc(db, "contenido", "faq"))
+    .then((snap) => {
+      const lista = snap.exists() ? (snap.data().preguntas as unknown) : null;
+      const validas = Array.isArray(lista) ? lista.filter((q) => esTexto(q?.p) && esTexto(q?.r)) : [];
+      faq = validas.length ? (validas as PreguntaFaq[]) : null;
+    })
+    .catch(() => {
+      pedidoFaq = null;
+    })
+    .finally(() => oyentesFaq.forEach((f) => f()));
+  return pedidoFaq;
+}
+
+export function recargarFaq() {
+  pedidoFaq = null;
+  return pedirFaq();
+}
+
+/** Las preguntas de Firebase, o null para usar las escritas en el código. */
+export function useFaq(): PreguntaFaq[] | null {
+  return useSyncExternalStore(
+    (f) => {
+      oyentesFaq.add(f);
+      void pedirFaq();
+      return () => {
+        oyentesFaq.delete(f);
+      };
+    },
+    () => faq,
+    () => null,
+  );
 }

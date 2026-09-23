@@ -1,3 +1,4 @@
+import { ajustesVigentes } from "./ajustes";
 /**
  * Los tres rangos de dificultad, con nombre propio.
  *
@@ -51,11 +52,11 @@ export const RANGOS: Record<
  * DECISIÓN ABIERTA: también podría subirse de rango por mundos completados en
  * vez de por XP. Se eligió XP porque premia la constancia y no solo el avance.
  */
-export const XP_RANGO: Record<Rango, number> = {
-  explorador: 0,
-  capitan: 100,
-  arquitecto: 300,
-};
+/** Desde cuánto XP empieza cada rango. Se cambia en el admin (Ajustes). */
+export function xpDeRango(r: Rango): number {
+  const j = ajustesVigentes().juego;
+  return r === "explorador" ? 0 : r === "capitan" ? j.xpCapitan : j.xpArquitecto;
+}
 
 const ORDEN: Rango[] = ["explorador", "capitan", "arquitecto"];
 
@@ -68,12 +69,12 @@ export function rangoPorXp(xp: number): {
   faltan: number;
 } {
   let actual: Rango = "explorador";
-  for (const r of ORDEN) if (xp >= XP_RANGO[r]) actual = r;
+  for (const r of ORDEN) if (xp >= xpDeRango(r)) actual = r;
   const i = ORDEN.indexOf(actual);
   const siguiente = ORDEN[i + 1] ?? null;
   if (!siguiente) return { actual, siguiente: null, avance: 1, faltan: 0 };
-  const desde = XP_RANGO[actual];
-  const hasta = XP_RANGO[siguiente];
+  const desde = xpDeRango(actual);
+  const hasta = xpDeRango(siguiente);
   return {
     actual,
     siguiente,

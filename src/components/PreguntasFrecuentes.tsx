@@ -3,6 +3,7 @@
 import PuntiPixel from "@/components/PuntiPixel";
 import { useIdioma } from "@/lib/useIdioma";
 import type { Idioma } from "@/lib/i18n";
+import { useFaq, type PreguntaFaq } from "@/lib/contenido";
 
 /**
  * Acordeón de preguntas frecuentes.
@@ -16,9 +17,12 @@ import type { Idioma } from "@/lib/i18n";
  */
 
 type T = Record<Idioma, string>;
-type Pregunta = { p: T; r: T };
 
-const PREGUNTAS: Pregunta[] = [
+/**
+ * Las preguntas de siempre. Se usan hasta que el admin guarde las suyas en
+ * Ajustes → Preguntas frecuentes, y son las que se copian allí la primera vez.
+ */
+export const PREGUNTAS_CODIGO: PreguntaFaq[] = [
   {
     p: { es: "¿Punti es gratis?", en: "Is Punti free?" },
     r: {
@@ -95,6 +99,7 @@ const TITULO: T = { es: "Preguntas frecuentes", en: "Frequently asked questions"
 
 export default function PreguntasFrecuentes() {
   const idioma = useIdioma();
+  const preguntas = useFaq() ?? PREGUNTAS_CODIGO;
 
   return (
     <section className="mt-16" aria-labelledby="faq-titulo">
@@ -109,8 +114,8 @@ export default function PreguntasFrecuentes() {
       </div>
 
       <div className="mx-auto mt-7 flex max-w-[760px] flex-col gap-2">
-        {PREGUNTAS.map((q) => (
-          <details key={q.p.es} className="faq-item border-2 border-[var(--color-panel-border)] bg-[rgba(16,16,40,0.55)]">
+        {preguntas.map((q, i) => (
+          <details key={`${i}-${q.p.es}`} className="faq-item border-2 border-[var(--color-panel-border)] bg-[rgba(16,16,40,0.55)]">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5 font-[family-name:var(--font-ui)] text-[15px] font-bold text-white sm:text-base">
               {q.p[idioma]}
               <i className="faq-flecha shrink-0 text-[var(--matrix)]" aria-hidden="true">▾</i>

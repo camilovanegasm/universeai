@@ -41,3 +41,6 @@ export function idiomaValido(valor: unknown): Idioma {
 export function textoPixel(texto: string): string {
   return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
 }
+
+/** Un texto escrito en los dos idiomas, uno al lado del otro. */
+export type Texto = Record<Idioma, string>;

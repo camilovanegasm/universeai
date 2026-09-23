@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/lib/AuthContext";
 import { cambiarPremium, esAdmin, listarUsuarios, llenarTanque, type UsuarioAdmin } from "@/lib/admin";
-import { GASOLINA_MAXIMA } from "@/lib/progreso";
+import { gasolinaMaxima } from "@/lib/progreso";
 import { RANGOS, rangoPorXp } from "@/lib/rangos";
 import PuntiPixel from "@/components/PuntiPixel";
 import BarraGasolina from "@/components/BarraGasolina";
@@ -124,7 +124,7 @@ export default function AdminPage() {
     setOcupado(u.uid);
     try {
       await llenarTanque(u.uid);
-      actualizarLocal(u.uid, { gasolina: GASOLINA_MAXIMA });
+      actualizarLocal(u.uid, { gasolina: gasolinaMaxima() });
       setAviso({ texto: `Tanque lleno para ${u.nombre || u.email}` });
     } catch {
       setAviso({ texto: "No se pudo llenar el tanque. Intenta de nuevo.", malo: true });
@@ -252,7 +252,7 @@ export default function AdminPage() {
             <ol className="flex flex-col gap-3">
               {visibles.map((u, i) => {
                 const rango = RANGOS[rangoPorXp(u.xp).actual];
-                const lleno = u.gasolina >= GASOLINA_MAXIMA;
+                const lleno = u.gasolina >= gasolinaMaxima();
                 const trabajando = ocupado === u.uid;
                 return (
                   <li
@@ -310,7 +310,7 @@ export default function AdminPage() {
                       <div>
                         <dt>Gasolina</dt>
                         <dd className="pt-1.5">
-                          <BarraGasolina gasolina={u.gasolina} maximo={GASOLINA_MAXIMA} etiqueta={`Gasolina ${u.gasolina}`} alto={12} />
+                          <BarraGasolina gasolina={u.gasolina} maximo={gasolinaMaxima()} etiqueta={`Gasolina ${u.gasolina}`} alto={12} />
                         </dd>
                       </div>
                       <p className="col-span-4 normal-case tracking-normal">

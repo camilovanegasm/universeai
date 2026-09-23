@@ -12,10 +12,14 @@
 import { collection, doc, getDoc, getDocs, serverTimestamp, setDoc, writeBatch } from "firebase/firestore";
 import { db } from "./firebase";
 import { LECCIONES } from "./lecciones";
+import { calcularXpMaximo, normalizarAjustes, validarJuego, type Ajustes, type AjustesJuego, type Anuncio } from "./ajustes";
 import {
+  firma,
   catalogoDesdeCodigo,
   leccionABilingue,
   recargarCatalogo,
+  recargarFaq,
+  type PreguntaFaq,
   type EjercicioB,
   type LeccionB,
   type TemaC,
@@ -25,14 +29,9 @@ import {
 
 /* ---------------------------------------------------------- utilidades */
 
-/** JSON con las claves ordenadas: Firebase devuelve los campos en otro orden. */
-export function firma(valor: unknown): string {
-  return JSON.stringify(valor, (_, v) =>
-    v && typeof v === "object" && !Array.isArray(v)
-      ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, v[k]]))
-      : v,
-  );
-}
+// `firma` vive en contenido.ts (la usan también pantallas públicas) y se
+// reexporta aquí para que el editor la tenga a mano.
+export { firma };
 
 /** "Mitos y verdades" → "mitos-y-verdades". Sirve de id permanente. */
 export function aId(texto: string): string {
@@ -303,4 +302,51 @@ export async function publicarLeccion(l: LeccionB) {
   if (bor.exists()) lote.update(doc(db, "borradores", "catalogo"), { temas: marcar(bor.data().temas as TemaC[]) });
   await lote.commit();
   await recargarCatalogo();
+}
+
+/* -------------------------------------------------------- ajustes */
+
+// Los ajustes no tienen borrador: son pocos números y se guardan a
+// propósito con un botón. Lo que se guarda aplica de inmediato.
+
+export async function leerAjustesAdmin(): Promise<{ ajustes: Ajustes; faq: PreguntaFaq[] | null }> {
+  const [a, f] = await Promise.all([getDoc(doc(db, "contenido", "ajustes")), getDoc(doc(db, "contenido", "faq"))]);
+  const lista = f.exists() ? (f.data().preguntas as PreguntaFaq[] | undefined) : undefined;
+  return {
+    ajustes: normalizarAjustes(a.exists() ? a.data() : null),
+    faq: Array.isArray(lista) && lista.length ? lista : null,
+  };
+}
+
+export async function guardarJuego(juego: AjustesJuego) {
+  const problemas = validarJuego(juego);
+  if (problemas.length) throw new Error(problemas[0]);
+  // xpMaximo se calcula aquí, no lo escribe nadie a mano: las reglas de
+  // Firestore lo usan para saber cuánto XP aceptar por lección.
+  const final = { ...juego, xpMaximo: calcularXpMaximo(juego) };
+  await setDoc(doc(db, "contenido", "ajustes"), { juego: final, actualizadoEn: serverTimestamp() }, { merge: true });
+  await recargarCatalogo();
+  return final;
+}
+
+export async function guardarAnuncio(anuncio: Anuncio) {
+  await setDoc(doc(db, "contenido", "ajustes"), { anuncio, actualizadoEn: serverTimestamp() }, { merge: true });
+  await recargarCatalogo();
+}
+
+export function validarFaq(lista: PreguntaFaq[]): string[] {
+  const p: string[] = [];
+  if (lista.length === 0) p.push("Tiene que haber al menos una pregunta");
+  lista.forEach((q, i) => {
+    if (!lleno(q.p)) p.push(`Pregunta ${i + 1}: ${faltaEn(q.p)}`);
+    if (!lleno(q.r)) p.push(`Respuesta ${i + 1}: ${faltaEn(q.r)}`);
+  });
+  return p;
+}
+
+export async function guardarFaq(lista: PreguntaFaq[]) {
+  const problemas = validarFaq(lista);
+  if (problemas.length) throw new Error(problemas[0]);
+  await setDoc(doc(db, "contenido", "faq"), { preguntas: lista, actualizadoEn: serverTimestamp() });
+  await recargarFaq();
 }

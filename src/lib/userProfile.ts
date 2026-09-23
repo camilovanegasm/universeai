@@ -5,6 +5,7 @@
 import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 import type { User } from "firebase/auth";
 import { db } from "./firebase";
+import { cargarCatalogo } from "./contenido";
 import type { Idioma } from "./i18n";
 
 export type ProgresoLeccion = {
@@ -28,6 +29,8 @@ export type PerfilUsuario = {
   // tanque también tocan `ultimaActividad`, y no deben contar como "jugó hoy".
   // Los perfiles viejos no la tienen; mientras falte se usa `ultimaActividad`.
   ultimaLeccion?: string;
+  /** Id de la última lección completada; lo usan las reglas de Firestore. */
+  ultimaLeccionId?: string;
   progreso: Record<string, ProgresoLeccion>;
   /** Idioma elegido en la bienvenida. Si falta, la persona todavía no lo eligió. */
   idioma?: Idioma;
@@ -41,7 +44,6 @@ export type PerfilUsuario = {
   premium?: boolean;
 };
 
-const VIDAS_INICIALES = 5;
 
 // Crea el documento del perfil la primera vez que alguien se registra.
 // Si el documento ya existe (por ejemplo, alguien que inicia sesión con Google más de una vez),
@@ -54,11 +56,14 @@ export async function crearPerfilSiNoExiste(usuario: User) {
     return;
   }
 
+  // El tanque inicial es el configurado en Ajustes (5 si no se ha cambiado).
+  const { ajustes } = await cargarCatalogo();
   await setDoc(referencia, {
-    nombre: usuario.displayName ?? "",
-    email: usuario.email ?? "",
+    // Recortados a lo que aceptan las reglas de Firestore.
+    nombre: (usuario.displayName ?? "").slice(0, 80),
+    email: (usuario.email ?? "").slice(0, 200),
     xp: 0,
-    corazones: VIDAS_INICIALES,
+    corazones: ajustes.juego.gasolinaMaxima,
     racha: 0,
     progreso: {},
     creadoEn: serverTimestamp(),

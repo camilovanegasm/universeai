@@ -46,30 +46,71 @@ service cloud.firestore {
         || f == fecha(request.time + duration.value(2, 'h'));
     }
 
+    // ---------- Números del juego ----------
+    // Salen de contenido/ajustes, que el admin cambia en la pestaña AJUSTES.
+    // Si el documento no existe, se usan los de siempre (5 de gasolina,
+    // 20 XP por lección). Firebase cobra una sola lectura por petición
+    // aunque se consulte varias veces.
+
+    function juego() {
+      let ruta = /databases/$(database)/documents/contenido/ajustes;
+      return exists(ruta) ? get(ruta).data.get('juego', {}) : {};
+    }
+
+    function tanque() {
+      return juego().get('gasolinaMaxima', 5);
+    }
+
+    function xpMaximo() {
+      return juego().get('xpMaximo', 20);
+    }
+
     // ---------- Reglas del juego ----------
 
     // La gasolina se llama `corazones` en la base de datos por compatibilidad.
-    // El mismo día solo puede bajar. En un día nuevo se recarga, hasta 5.
+    // El mismo día solo puede bajar. En un día nuevo se recarga, hasta el tanque.
     function gasolinaValida(antes, despues) {
       let mismoDia = despues.get('ultimaActividad', '') == antes.get('ultimaActividad', '');
       return despues.corazones is number
         && despues.corazones >= 0
-        && (mismoDia ? despues.corazones <= antes.corazones : despues.corazones <= 5);
+        && (mismoDia ? despues.corazones <= antes.corazones : despues.corazones <= tanque());
+    }
+
+    // Lo que guarda la app al completar una lección (ver completarLeccion).
+    function entradaValida(e) {
+      return e is map
+        && e.keys().hasOnly(['completada', 'combustible', 'xpGanado', 'tiempoSegundos', 'ultimaVez'])
+        && e.completada == true
+        && e.combustible in [1, 2, 3]
+        && e.xpGanado is int && e.xpGanado >= 0 && e.xpGanado <= xpMaximo()
+        && e.tiempoSegundos is int && e.tiempoSegundos >= 0
+        && e.ultimaVez == request.time;
+    }
+
+    // Las reglas no pueden recorrer una lista para saber qué lección cambió,
+    // así que la app lo dice en `ultimaLeccionId` y aquí se comprueba que
+    // sea exactamente esa, y solo esa.
+    function progresoValido(antes, despues) {
+      let id = despues.get('ultimaLeccionId', '');
+      return despues.progreso is map
+        && id is string && id.size() > 0 && id.size() <= 60
+        && despues.progreso.diff(antes.progreso).affectedKeys().hasOnly([id])
+        && entradaValida(despues.progreso[id]);
     }
 
     function cambioDelJuego(antes, despues) {
       let cambios = despues.diff(antes).affectedKeys();
       return cambios.hasOnly([
           'xp', 'racha', 'corazones', 'ultimaActividad', 'ultimaLeccion',
-          'progreso', 'idioma', 'bienvenidaVista'
+          'ultimaLeccionId', 'progreso', 'idioma', 'bienvenidaVista'
         ])
         // Idioma: solo los dos que existen.
         && (!cambios.hasAny(['idioma']) || despues.idioma in ['es', 'en'])
         // La bienvenida se marca una vez y no se desmarca.
         && (!cambios.hasAny(['bienvenidaVista']) || despues.bienvenidaVista == true)
-        // XP: solo sube, y como mucho lo que da la mejor lección (15 + 5 de velocidad).
+        // XP: solo sube, y como mucho lo que da la mejor lección + el bono.
         && (!cambios.hasAny(['xp'])
-            || (despues.xp is int && despues.xp > antes.xp && despues.xp <= antes.xp + 20))
+            || (despues.xp is int && despues.xp > antes.xp && despues.xp <= antes.xp + xpMaximo()))
         // La fecha de actividad siempre es la de hoy según el servidor.
         && (!cambios.hasAny(['ultimaActividad']) || esHoy(despues.ultimaActividad))
         && (!cambios.hasAny(['ultimaLeccion']) || esHoy(despues.ultimaLeccion))
@@ -79,19 +120,21 @@ service cloud.firestore {
         && (!cambios.hasAny(['racha'])
             || (cambios.hasAny(['ultimaLeccion'])
                 && (despues.racha == antes.racha + 1 || despues.racha == 1)))
-        // Progreso: como mucho una lección nueva por escritura.
-        && (!cambios.hasAny(['progreso'])
-            || (despues.progreso is map
-                && despues.progreso.size() <= antes.progreso.size() + 1));
+        // Progreso: una lección por escritura, con la forma exacta que
+        // escribe la app. Así nadie llena su perfil de datos inventados.
+        && (!cambios.hasAny(['progreso']) || progresoValido(antes, despues))
+        && (!cambios.hasAny(['ultimaLeccionId']) || cambios.hasAny(['progreso']));
     }
 
-    // Un perfil nuevo tiene que empezar en cero, sin campos extra.
+    // Un perfil nuevo tiene que empezar en cero, sin campos extra y sin
+    // textos gigantes.
     function perfilNuevoValido(d) {
       return d.keys().hasOnly(['nombre', 'email', 'xp', 'corazones', 'racha', 'progreso', 'creadoEn'])
-        && d.nombre is string
-        && d.email is string
+        && d.nombre is string && d.nombre.size() <= 80
+        && d.email is string && d.email.size() <= 200
+        && d.email == request.auth.token.get('email', '')
         && d.xp == 0
-        && d.corazones == 5
+        && d.corazones is number && d.corazones > 0 && d.corazones <= tanque()
         && d.racha == 0
         && d.progreso == {}
         && d.creadoEn == request.time;

@@ -22,6 +22,13 @@
 > propia. Se descartó punti.ai ($90/año) porque promete una herramienta de IA
 > cuando esto enseña sobre IA.
 
+> **Seguridad y eficiencia en cada cambio, sin que se pida:** ver
+> `DOCUMENTACION.md` → 4.2 "Prácticas obligatorias". Lo esencial: la seguridad vive
+> en `firestore.rules` (lista cerrada de campos que el usuario puede escribir), nada
+> de HTML crudo, `.env.local` nunca se sube, leer Firebase una vez y reutilizar, y
+> todo número o texto que Cami quiera cambiar va en el admin (Ajustes), no fijo en
+> el código. Si cambian las reglas, avisar a Cami que las publique.
+
 > Este archivo es la "memoria" del proyecto. Antes de empezar cualquier sesión de trabajo futura, léelo completo para recordar el contexto, las decisiones ya tomadas y en qué fase vamos.
 
 **Ubicación del proyecto en el computador:** `C:\Proyectos\UniverseAI` (la carpeta conserva el nombre viejo; el proyecto se llama Punti)

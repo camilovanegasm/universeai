@@ -10,9 +10,9 @@ import {
   calcularXp,
   completarLeccion,
   gasolinaEfectiva,
-  gastarMediaGasolina,
+  pagarPista,
   gastarGasolina,
-  GASOLINA_MAXIMA,
+  gasolinaMaxima,
 } from "@/lib/progreso";
 import { obtenerPerfil } from "@/lib/userProfile";
 import { useIdioma } from "@/lib/useIdioma";
@@ -180,7 +180,7 @@ export default function LeccionPage({
     );
   }
 
-  const etiquetaGasolina = `${t.gasolina}: ${gasolina} / ${GASOLINA_MAXIMA}`;
+  const etiquetaGasolina = `${t.gasolina}: ${gasolina} / ${gasolinaMaxima()}`;
 
   function siguienteExplicacion() {
     if (!leccion) return;
@@ -202,9 +202,8 @@ export default function LeccionPage({
 
     setErrores((e) => e + 1);
     if (!usuario) return;
-    await gastarGasolina(usuario.uid);
-    const perfil = await obtenerPerfil(usuario.uid);
-    const gasolinaRestante = perfil ? gasolinaEfectiva(perfil) : 0;
+    // gastarGasolina devuelve lo que queda: no hace falta releer el perfil.
+    const gasolinaRestante = await gastarGasolina(usuario.uid);
     setGasolina(gasolinaRestante);
 
     if (gasolinaRestante <= 0) {
@@ -227,9 +226,7 @@ export default function LeccionPage({
     if (!usuario) return;
     sonar("pista");
     reaccionar("info", 2200);
-    await gastarMediaGasolina(usuario.uid);
-    const perfil = await obtenerPerfil(usuario.uid);
-    setGasolina(perfil ? gasolinaEfectiva(perfil) : 0);
+    setGasolina(await pagarPista(usuario.uid));
   }
 
   function avanzarEjercicio() {
@@ -310,7 +307,7 @@ export default function LeccionPage({
             </div>
           </div>
 
-          <BarraGasolina gasolina={gasolina} maximo={GASOLINA_MAXIMA} etiqueta={etiquetaGasolina} alto={14} />
+          <BarraGasolina gasolina={gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} alto={14} />
           <BotonSonido className="shrink-0" />
         </header>
 
@@ -370,7 +367,7 @@ export default function LeccionPage({
       <div className="flex flex-1 flex-col items-center justify-center gap-5 px-6 py-12 text-center">
         <PuntiPixel estado="battery" ancho={144} />
         <h2 className="font-[family-name:var(--font-display)] text-2xl font-black text-white">{t.sinGasTitulo}</h2>
-        <BarraGasolina gasolina={0} maximo={GASOLINA_MAXIMA} etiqueta={`${t.gasolina}: 0 / ${GASOLINA_MAXIMA}`} alto={20} />
+        <BarraGasolina gasolina={0} maximo={gasolinaMaxima()} etiqueta={`${t.gasolina}: 0 / ${gasolinaMaxima()}`} alto={20} />
         <p className="max-w-md text-[15px] leading-[1.6] text-[var(--muted)]">{t.sinGasTexto}</p>
         <Link href={volverAlTema} transitionTypes={["atras"]} className="boton-pixel">
           {t.volverMundo}
@@ -450,7 +447,7 @@ export default function LeccionPage({
         >
           {t.salir}
         </button>
-        <BarraGasolina gasolina={gasolina} maximo={GASOLINA_MAXIMA} etiqueta={etiquetaGasolina} />
+        <BarraGasolina gasolina={gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} />
         <span className="ml-auto flex items-center gap-3">
           <span className="font-[family-name:var(--font-terminal)] text-[17px] uppercase tracking-[0.14em] text-[var(--muted)]">
             {t.ejercicio} {indiceEjercicio + 1} / {leccion.ejercicios.length}
@@ -466,6 +463,7 @@ export default function LeccionPage({
           key={`${idioma}-${indiceEjercicio}`}
           ejercicio={ejercicioActual}
           gasolinaDisponible={gasolina}
+          costoPista={catalogo.ajustes.juego.costoPista}
           onResultado={manejarResultadoEjercicio}
           onUsarPista={usarPista}
           idioma={idioma}

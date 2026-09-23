@@ -229,6 +229,61 @@ Las órbitas y los anillos usan `vector-effect="non-scaling-stroke"`. Sin eso, c
 
 ---
 
+### 4.2 Prácticas obligatorias en cada cambio — seguridad y eficiencia
+
+Pedido de Cami (2026-09-23): "aplica las prácticas desde el inicio en términos de
+eficiencia y seguridad, para no estar repitiendo". Esta lista se cumple en **todo**
+cambio, sin que haga falta pedirlo. Si algo no se puede cumplir, se dice por qué.
+
+**Seguridad**
+
+1. **La seguridad vive en `firestore.rules`, no en la interfaz.** Esconder un botón o
+   una ruta no protege nada. Todo dato nuevo que el usuario pueda escribir entra en la
+   lista cerrada de `cambioDelJuego`, con tipo, tamaño y límite. Lo que no está en la
+   lista, solo lo escribe el admin.
+2. **Nada de confiar en el cliente para lo que da ventaja** (XP, gasolina, premium,
+   fechas). Las fechas las pone el reloj del servidor (`request.time`); los topes salen
+   de `contenido/ajustes`.
+3. **Admin = correo verificado en las reglas** (`esAdmin()`), y el mismo correo en
+   `src/lib/admin.ts`. Si cambia uno, cambia el otro.
+4. **Textos siempre como texto.** Nunca `dangerouslySetInnerHTML`, `innerHTML` ni
+   `eval` con contenido que venga de Firebase o del usuario. React escapa solo.
+5. **Secretos fuera del repositorio.** `.env.local` nunca se sube (se revisa con
+   `git check-ignore` antes de cada commit). La API key de Firebase es pública por
+   diseño; lo que protege son las reglas.
+6. **Cabeceras de seguridad** en `next.config.ts` (nosniff, anti-iframe, permisos
+   apagados, HSTS). Una página o servicio nuevo que necesite cámara, micrófono o
+   iframes externos obliga a revisarlas.
+7. **El admin no se indexa** (`src/app/admin/layout.tsx`).
+8. **Todo cambio de reglas se anota en CAMBIOS.md con "hay que volver a publicar las
+   reglas"**: las reglas no se despliegan con el push, las publica Cami en la consola.
+9. **Ventanas propias, no del navegador**: nada de `alert`, `confirm` ni `prompt`.
+
+**Eficiencia (lecturas de Firebase = dinero y tiempo)**
+
+1. **Leer una vez y reutilizar.** El catálogo y los ajustes se piden juntos, una vez por
+   visita (`cargarCatalogo`), y todas las pantallas comparten esa copia. Las FAQ solo
+   se piden en la portada.
+2. **No releer lo que se acaba de escribir.** Si una escritura calcula un valor (la
+   gasolina que queda), la función lo devuelve (`gastarGasolina`, `pagarPista`).
+3. **Esperar lo necesario, no más.** Las pantallas que muestran números del juego
+   esperan a `listo`; la portada no espera (muestra lo del código mientras llega).
+4. **Listas grandes paginadas** cuando pasen de unos cientos (hoy: la lista de pilotos
+   del admin lee todos; revisar al llegar a ~500 usuarios).
+5. **Animar solo `transform` y `opacity`**, con `prefers-reduced-motion` siempre.
+6. **Nada de trabajo por cuadro en React**: lo que cambia 60 veces por segundo va en
+   `useRef` o en canvas, no en `useState`.
+7. **El código del admin no viaja a las pantallas públicas**: nada público importa de
+   `contenidoAdmin.ts` ni de `components/admin/`.
+
+**Configurable antes que fijo**
+
+Todo número o texto que Cami pueda querer cambiar (valores del juego, anuncios, FAQ,
+contenido) va en el admin, con un valor por defecto en el código por si Firebase no
+responde. Antes de escribir un número fijo nuevo, preguntarse si va en Ajustes.
+
+---
+
 ## 5. Mapa de archivos
 
 ```
@@ -360,12 +415,12 @@ los campos del juego, y con límites:
 
 | Campo | Qué puede hacer el usuario |
 |---|---|
-| `xp` | Solo subir, máximo 20 por escritura |
-| `corazones` (gasolina) | El mismo día solo bajar; en un día nuevo, recargar hasta 5 |
+| `xp` | Solo subir, como mucho la mejor nota + bono (según Ajustes; 20 por defecto) |
+| `corazones` (gasolina) | El mismo día solo bajar; en un día nuevo, recargar hasta el tanque de Ajustes (5 por defecto) |
 | `ultimaActividad` | Solo la fecha de hoy según el reloj del servidor (margen de 2 h) |
 | `ultimaLeccion` | Solo la fecha de hoy. Es la fecha de la racha |
 | `racha` | Solo con la primera lección completada de un día nuevo: +1 o volver a 1 |
-| `progreso` | Como mucho una lección nueva por escritura |
+| `progreso` | Una lección por escritura, con la forma exacta que escribe la app; la lección se identifica en `ultimaLeccionId` |
 | `idioma` | `es` o `en` |
 | `bienvenidaVista` | Solo pasar a `true` |
 | todo lo demás (premium, rol…) | Nada. Solo el admin |
@@ -392,6 +447,8 @@ y se edita en **/admin/contenido**, sin tocar código.
 | `lecciones/{id}` | Cada lección publicada | Cualquiera | Admin |
 | `borradores/catalogo` | Los mundos como los está editando el admin | Admin | Admin |
 | `borradores/leccion-{id}` | Cada lección en edición | Admin | Admin |
+| `contenido/ajustes` | Números del juego (tanque, costos, XP, rangos) y el anuncio | Cualquiera | Admin |
+| `contenido/faq` | Preguntas frecuentes de la portada | Cualquiera | Admin |
 
 - **Borrador y publicado.** Todo se guarda solo como borrador (1,2 s después del
   último cambio). Los estudiantes no ven nada hasta que se toca PUBLICAR. Los
@@ -572,6 +629,14 @@ Dónde estamos y qué sigue. Se actualiza cada vez que se cierra una fase.
 ## 12. Pendientes
 
 - ~~Racha y fallos~~: arreglado en la fase 4.0 con el campo `ultimaLeccion`.
+
+- **Content-Security-Policy completa** (seguridad): falta. Hay que probarla con el
+  login de Google y los scripts de Next antes de activarla.
+- **Firebase App Check** (seguridad): evita que alguien use la base de datos con
+  scripts propios en vez de la app. Requiere que Cami cree una clave de reCAPTCHA
+  en la consola de Firebase; después se activa en el código.
+- **Lista de pilotos paginada** (eficiencia): hoy el admin lee todos los usuarios de
+  una vez. Revisar al llegar a ~500.
 
 ### Acciones de Cami
 
