@@ -733,6 +733,7 @@ defecto (`src/lib/ajustes.ts`). Las reglas de Firestore leen los mismos números
   con 1 o 2, 1/3 con 3 o más.
 - **XP**: 15 / 10 / 5 según la nota, **+5** si termina dentro del tiempo objetivo.
 - **Premio de rango**: al subir de rango, horas de gasolina ilimitada (6 por defecto).
+- **Minijuegos**: ganar uno recarga +1 de gasolina, máximo 3 veces al día y con 30 s entre recargas (ver 6.10). Con el tanque lleno no gasta recarga. No dan XP.
 - **Rangos**: 10, de Cadete (0 XP) a Leyenda cósmica (2600 XP). Tabla en 6.1.1.
 - **Racha**: cuenta días seguidos con al menos una lección completada (fecha
   `ultimaLeccion`). Fallar o recibir gasolina del admin no la mueve.
