@@ -974,3 +974,21 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
 - Sobre WhatsApp/Telegram (pregunta de Cami): no hace falta. Desde la app de Claude en
   el celular se piden las mismas cosas y el Radar se puede lanzar cuando se quiera. Un
   bot tendría sentido más adelante para los estudiantes (recordatorios de racha).
+
+### Planeta Arena escrito (7 lecciones, por Claude)
+- `el-mapa-de-los-modelos`, `openai-chatgpt`, `google-gemini`, `anthropic-claude`,
+  `xai-grok`, `modelos-chinos`, `cual-uso-para-que`, en ES y EN, con la voz de Punti.
+  La 8.ª (`novedades-de-la-semana`) la propone el Radar IA cada lunes.
+- **Regla anti-envejecimiento:** los ejercicios nunca preguntan versiones ni precios.
+  Cada lección de marca tiene una sola pantalla "viva" (la 3) con versiones y cifras,
+  marcada en Notas para que el Radar la revise.
+- Datos verificados el 2026-09-23: ChatGPT lanzado el 30-nov-2022, ~900 millones de
+  usuarios semanales (feb-2026), GPT-5.6 Sol (9-jul-2026) — notas de versión de
+  OpenAI; Bard → Gemini (8-feb-2024), Gemini 3.1 Pro (feb-2026) y 3.6 Flash
+  (21-jul-2026) — Wikipedia; Claude Sonnet 5 (30-jun-2026), planes Free/Pro/Max —
+  Wikipedia; SpaceX compró xAI (feb-2026), Grok 4.7 (21-sep-2026) — x.ai/news;
+  DeepSeek n.º 1 en la App Store de EE. UU. (27-ene-2025), bloqueo en Italia
+  (30-ene-2025), DeepSeek V4 (24-abr-2026) — Wikipedia; Qwen 3.8 (ago-2026) —
+  Wikipedia; Kimi K3 (jul-2026) — Fortune.
+- Probadas con el lector del importador: 7 lecciones, 0 faltas, 0 avisos.
+- Entregadas en el Drive: "Punti · Planeta Arena (lecciones escritas por Claude)".

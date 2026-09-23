@@ -418,6 +418,8 @@ Lecciones (ids): `el-mapa-de-los-modelos` · `openai-chatgpt` · `google-gemini`
 `cual-uso-para-que` · `novedades-de-la-semana` (viva, la alimenta el Radar IA y
 reemplaza a `modelos-recientes` de Lexia).
 
+**Estado (2026-09-23):** las 7 lecciones fijas están escritas (hoja en el Drive, ver 6.7), con datos verificados a septiembre de 2026. Falta crear el mundo en el admin, pegarlas y publicarlas.
+
 Regla de diseño: cada lección separa lo que dura (quién es la empresa, en qué es fuerte)
 de una pantalla **viva** con versiones y precios, que es lo único que el Radar toca cada
 semana. Neutralidad: mismos criterios para todas las marcas; quien escribe es Claude (de
@@ -603,6 +605,7 @@ WhatsApp o Telegram). El Radar IA también se puede lanzar cuando se quiera, pid
 | Punti-Contenido | `181wQyGETx1UfL2HUBVSUqXm3vYzvG9V_AF2K-Eb_YXA` | **La hoja oficial**: una pestaña por mundo |
 | Punti · Mundo 01 Origen (lecciones escritas por Claude) | `14zqgaGAtGpBcCweZcIJWzMxu-4_hVt7TN5dapt5oSgk` | Las 4 lecciones que faltaban del Mundo 01, para pegar en la oficial |
 | Punti · Planeta Arena (plan de lecciones) | `1elBy-ZiCPWRxMpTkECJZO-2MHu-KjEdjjecNLX0bov0` | Plan de las 8 lecciones del planeta nuevo |
+| Punti · Planeta Arena (lecciones escritas por Claude) | `1dC9kiwcj4r2M39-o4qmRZ3f5oxmPrCofcZA23TAurGg` | Las 7 lecciones de Arena completas en ES/EN (la 8.ª, Novedades, la escribe el Radar) |
 
 ## 7. Reglas del juego
 
