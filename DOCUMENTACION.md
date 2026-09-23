@@ -100,6 +100,11 @@ por detrás de un nombre, el nombre desaparece.
 
 ## 3. Cómo se navega
 
+**Barra de abajo (`NavPunti.tsx`)**, con sesión iniciada: MUNDOS (/inicio) · SEGUIR
+(/seguir, directo a la próxima lección) · MANUAL (/como-funciona) · PERFIL (/perfil).
+No aparece en la portada, login, registro, bienvenida, dentro de una lección ni en el
+admin.
+
 Tres niveles, y cada uno usa la forma que le corresponde.
 
 ```

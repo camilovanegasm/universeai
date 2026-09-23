@@ -1,3 +1,4 @@
+import NavPunti from "@/components/NavPunti";
 import type { Metadata } from "next";
 import { Orbitron, VT323, Rajdhani, Press_Start_2P, Inter } from "next/font/google";
 import "./globals.css";
@@ -39,7 +40,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <FondoEspacial />
         <LangDocumento />
         <SonidoGlobal />
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          {children}
+          <NavPunti />
+        </AuthProvider>
       </body>
     </html>
   );

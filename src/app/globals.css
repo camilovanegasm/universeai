@@ -945,3 +945,23 @@ textarea.campo-admin { resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .btn-admin { transition: none; }
 }
+
+/* ---------- Barra de navegación de abajo (NavPunti) ---------- */
+.nav-punti-item {
+  transition: color 120ms, background-color 120ms, transform 90ms steps(2);
+}
+.nav-punti-item:active { transform: translateY(2px); }
+.nav-punti-item:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.nav-punti-activo {
+  background: color-mix(in srgb, var(--nav-color) 12%, transparent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--nav-color) 35%, transparent);
+}
+/* el ícono activo da un saltito al llegar, en dos pasos como un sprite */
+.nav-punti-activo svg { animation: nav-salto 360ms steps(3) 1; }
+@keyframes nav-salto {
+  40% { transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-punti-item { transition: none; }
+  .nav-punti-activo svg { animation: none; }
+}

@@ -830,3 +830,33 @@ estar repitiendo".
   claros; los textos de costo salen bien en los dos idiomas.
 - **No se pudo ver** la pestaña Ajustes ni probar las reglas nuevas: exigen la cuenta
   del admin y publicar las reglas.
+
+---
+
+## 2026-09-23 · Barra de navegación de abajo (NavPunti)
+
+Cami: "es muy difícil navegarla porque uno se pierde". Cada pantalla tenía sus
+propios botones de ida y vuelta y no había un lugar fijo desde donde ir a
+cualquier parte.
+
+- `src/components/NavPunti.tsx`: barra fija abajo con cuatro destinos, cada uno con
+  su ícono en pixel art (dibujado con cuadritos, un solo `<path>` por ícono) y su
+  color neón al estar activo:
+  - **MUNDOS** (planeta con luna, cian) → /inicio; también activa dentro de un mundo.
+  - **SEGUIR** (cohete, verde) → /seguir.
+  - **MANUAL** (libro, amarillo) → /como-funciona.
+  - **PERFIL** (casco de astronauta, rosa) → /perfil.
+- El activo lleva borde y brillo de su color y el ícono da un saltito al llegar
+  (en pasos, como un sprite; nada con movimiento reducido).
+- No aparece sin sesión ni donde estorba: portada, login, registro, bienvenida,
+  dentro de una lección (ahí se sale con SALIR) y admin (tiene sus pestañas).
+- Reserva su alto al final de cada página para no tapar contenido, y respeta el
+  borde inferior de los iPhone.
+- **/seguir** (nuevo): busca la primera lección publicada que no has hecho, en el
+  orden de los mundos, y te lleva directo. Si hiciste todas: "¡Estás al día!".
+  Eficiencia: la barra no lee nada de Firebase; el perfil se lee solo al tocar
+  SEGUIR.
+- Verificado en 375 px con una página de prueba (ya borrada): los cuatro estados
+  activos, textos alineados a la misma altura. El círculo con "N" que tapa una
+  esquina en localhost es el indicador de desarrollo de Next y no sale en
+  punti.space.
