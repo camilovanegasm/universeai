@@ -317,6 +317,9 @@ responde. Antes de escribir un número fijo nuevo, preguntarse si va en Ajustes.
 
 ## 5. Mapa de archivos
 
+> **El personaje:** todo sobre Punti (ficha, paleta, estados y exports en PNG, SVG, GIF y logo) está en la carpeta principal `personaje-punti/`; empieza por su README.
+
+
 ```
 C:\Proyectos\UniverseAI          (la carpeta sigue llamándose así por dentro)
 ├─ CLAUDE.md                     memoria de contexto para Claude (léela primero)

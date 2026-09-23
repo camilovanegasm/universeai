@@ -38,7 +38,6 @@ yarn-error.log*
 
 # imágenes de referencia visual (no forman parte de la app)
 /referencias
-/personaje-cache
 
 # typescript
 *.tsbuildinfo

@@ -1158,3 +1158,20 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
   - Dominio autorizado: punti.space.
   - El logo se sube cuando se pida la verificación de marca.
 - **Pendiente:** que un abogado revise los textos antes de cobrar el Club. Considerar un correo de soporte propio (hola@punti.space).
+
+### Carpeta del personaje: `personaje-punti/` (2026-09-23, pedido de Cami)
+- `README.md`, la ficha completa:
+  - Quién es y cómo habla.
+  - Cómo se ve, con la paleta y sus 9 roles.
+  - Los 9 estados, con cuándo se usa cada uno.
+  - Los recortes, dónde vive en el código y qué no hacer.
+- Exports generados desde `src/lib/puntiSprite.ts`:
+  - PNG transparentes: 9 estados × 3 recortes × 2 tamaños.
+  - SVG de cuerpo y cabeza.
+  - Cuadrados de 1080 px para redes.
+  - Hoja de referencia.
+  - GIF de los estados y GIF de Punti flotando.
+  - Logo en 8 tamaños y `favicon.ico`.
+  - Paleta en JSON y PNG.
+  - Rejillas en texto.
+- Se borró `personaje-cache/` (el personaje viejo, que estaba fuera de git) y su línea en `.gitignore`.
