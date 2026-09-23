@@ -1001,3 +1001,19 @@ textarea.campo-admin { resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .insignia-sube { animation: none; }
 }
+
+/* 404: el agujero de gusano se amplía sin difuminar, y Punti gira despacio
+   como si flotara perdido en el espacio. */
+.agujero-gusano {
+  image-rendering: pixelated;
+}
+.punti-perdido {
+  animation: punti-perdido 6s ease-in-out infinite;
+}
+@keyframes punti-perdido {
+  0%, 100% { transform: translateY(0) rotate(-7deg); }
+  50% { transform: translateY(-12px) rotate(7deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .punti-perdido { animation: none; }
+}

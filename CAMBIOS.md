@@ -1175,3 +1175,13 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
   - Paleta en JSON y PNG.
   - Rejillas en texto.
 - Se borró `personaje-cache/` (el personaje viejo, que estaba fuera de git) y su línea en `.gitignore`.
+
+### Página 404: el agujero de gusano (2026-09-23, pedido de Cami)
+- `src/app/not-found.tsx`, en ES/EN:
+  - Un túnel en pixel art dibujado en un canvas de 240 × 135 y ampliado sin difuminar.
+  - 30 anillos de pixeles en cian, violeta, verde y rosa vienen del fondo, giran y se tuercen, con estrellas que salen disparadas del centro.
+  - Punti (estado `info`) flota girando justo delante del "infinito".
+- Texto con la voz de Punti: "Te caíste en un agujero de gusano. Tranquilo, astronauta, a mí también me ha pasado…". Muestra la ruta perdida.
+- Botón a los mundos, o a la portada si no hay sesión.
+- Con prefers-reduced-motion queda un cuadro quieto; la animación se pausa sola cuando la pestaña no se ve.
+- Revisado en computador y en celular (375 px, sin scroll horizontal).
