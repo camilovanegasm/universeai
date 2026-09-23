@@ -992,3 +992,34 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
   Wikipedia; Kimi K3 (jul-2026) — Fortune.
 - Probadas con el lector del importador: 7 lecciones, 0 faltas, 0 avisos.
 - Entregadas en el Drive: "Punti · Planeta Arena (lecciones escritas por Claude)".
+
+### Toda la escuela escrita (2026-09-23)
+- 22 lecciones nuevas, escritas por Claude con la voz de Punti, en ES y EN:
+  - **Lexia:** 4 lecciones.
+  - **Eco:** 4 lecciones.
+  - **Forja:** 3 lecciones.
+  - **Prisma:** 4 lecciones.
+  - **Brújula:** 3 lecciones.
+  - **Autómata:** 3 lecciones.
+  - **Arena:** la primera edición de `novedades-de-la-semana`.
+- Con Mundo 01 y Arena suman 33 lecciones en hoja, más `definicion`, que está en el código.
+- Archivos en `contenido/`:
+  - `punti-todas-las-lecciones.tsv`: se pega completo en el admin.
+  - Un CSV por mundo.
+- Datos verificados el 2026-09-23:
+  - Cierre de la app Sora (25-mar-2026, Al Jazeera).
+  - La Corte Suprema de EE. UU. no revisa Thaler v. Perlmutter (2-mar-2026, Morgan Lewis).
+  - Asistente de Google → Gemini desde el 4-sep-2026 (The Decoder).
+  - Grok 4.7 (21-sep-2026, x.ai/news).
+  - Claude lidera ~26 % del I+D de Anthropic (18-sep-2026, Spectrum News).
+  - Caso Amazon (Reuters, 2018).
+  - NYT contra OpenAI y Microsoft (2023).
+- Revisión independiente, 11 arreglos:
+  - Pasos ambiguos en ejercicios de ordenar.
+  - Cómo cobran Zapier y Make, y n8n gratis solo si la instalas tú.
+  - Definición de deepfake.
+  - "Muchas herramientas usan difusión" (no todas).
+  - Opciones EN de un completar-frase.
+- **Ejercicio.tsx:** las opciones de opción múltiple y completar-frase salen en orden aleatorio.
+  - Antes, la correcta quedaba casi siempre en el mismo lugar.
+  - Se mezclan índices, así que "correcta" y las opciones tachadas del segundo intento siguen funcionando.

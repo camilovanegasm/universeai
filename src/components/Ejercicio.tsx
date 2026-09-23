@@ -65,6 +65,15 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
   const [pasosMezclados] = useState(() =>
     ejercicio.tipo === "ordenar-pasos" ? mezclar(ejercicio.pasos) : []
   );
+  // Las opciones también salen en orden aleatorio: así la correcta no queda
+  // siempre en el mismo lugar y nadie aprende la posición en vez del tema.
+  // Se mezclan los índices, no los textos, para no tocar la lógica de
+  // "correcta" ni de las opciones descartadas.
+  const [ordenOpciones] = useState(() =>
+    ejercicio.tipo === "opcion-multiple" || ejercicio.tipo === "completar-frase"
+      ? mezclar(ejercicio.opciones.map((_, i) => i))
+      : []
+  );
   const [texto, setTexto] = useState("");
   const [avisoTextoCorto, setAvisoTextoCorto] = useState(false);
   const [pistaRevelada, setPistaRevelada] = useState(false);
@@ -116,9 +125,9 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
         <p className="font-[family-name:var(--font-ui)] text-lg font-bold text-white">
           {ejercicio.pregunta}
         </p>
-        {ejercicio.opciones.map((opcion, indice) => (
+        {ordenOpciones.map((indice) => (
           <button
-            key={opcion}
+            key={indice}
             disabled={comprobado || descartadas.includes(indice)}
             onClick={() => {
               setSeleccion(indice);
@@ -126,7 +135,7 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
             }}
             className={estiloDe(indice === ejercicio.correcta, seleccion === indice, indice)}
           >
-            {opcion}
+            {ejercicio.opciones[indice]}
           </button>
         ))}
       </div>
@@ -164,9 +173,9 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
           {/^[\p{L}\p{N}]/u.test(ejercicio.despues.trim()) ? " " : ""}
           {ejercicio.despues.trim()}
         </p>
-        {ejercicio.opciones.map((opcion, indice) => (
+        {ordenOpciones.map((indice) => (
           <button
-            key={opcion}
+            key={indice}
             disabled={comprobado || descartadas.includes(indice)}
             onClick={() => {
               setSeleccion(indice);
@@ -174,7 +183,7 @@ export default function Ejercicio({ ejercicio, gasolinaDisponible, costoPista = 
             }}
             className={estiloDe(indice === ejercicio.correcta, seleccion === indice, indice)}
           >
-            {opcion}
+            {ejercicio.opciones[indice]}
           </button>
         ))}
       </div>

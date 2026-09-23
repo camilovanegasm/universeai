@@ -607,6 +607,23 @@ WhatsApp o Telegram). El Radar IA también se puede lanzar cuando se quiera, pid
 | Punti · Planeta Arena (plan de lecciones) | `1elBy-ZiCPWRxMpTkECJZO-2MHu-KjEdjjecNLX0bov0` | Plan de las 8 lecciones del planeta nuevo |
 | Punti · Planeta Arena (lecciones escritas por Claude) | `1dC9kiwcj4r2M39-o4qmRZ3f5oxmPrCofcZA23TAurGg` | Las 7 lecciones de Arena completas en ES/EN (la 8.ª, Novedades, la escribe el Radar) |
 
+**Escuela completa (2026-09-23).** Todas las lecciones están escritas: 34 en total
+(`definicion` en el código y 33 en hojas). Los archivos están en la carpeta
+`contenido/` del proyecto:
+
+| Archivo | Qué es |
+|---|---|
+| `punti-todas-las-lecciones.tsv` | Las 33 lecciones en un solo archivo (Mundo 01, Arena, mundos 02 a 07 y Novedades). Se abre con el Bloc de notas, se copia todo y se pega en PEGAR DESDE LA HOJA |
+| `mundo-02-lexia.csv` … `mundo-07-automata.csv` | Un archivo por mundo, para subir al Drive o pegar en la pestaña de la hoja oficial |
+| `mundo-08-arena-novedades.csv` | Primera edición de Novedades de la semana (datos del 14 al 22 de septiembre de 2026) |
+
+Cómo se escribieron: voz de Punti, 4 a 6 pantallas y 5 ejercicios por lección, en ES y EN.
+Cada lección pasó por el lector del importador (0 faltas, 0 avisos) y por un revisor
+independiente. Ese revisor corrigió pasos de "ordenar" que admitían más de un orden, el
+cobro de Zapier/Make/n8n y la definición de deepfake. Pantallas vivas (las revisa el Radar):
+`generadores-de-imagenes` 4, `video-con-ia` 3, `derechos-de-autor` 3 y toda
+`novedades-de-la-semana`.
+
 ## 7. Reglas del juego
 
 Toda esta lógica vive en `src/lib/progreso.ts`, separada de la interfaz. **Los
