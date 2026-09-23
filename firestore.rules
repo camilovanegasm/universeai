@@ -72,6 +72,21 @@ service cloud.firestore {
       return juego().get('xpMaximo', 20);
     }
 
+    // ¿El XP pasó de `a` a `b` cruzando el umbral de algún rango? Los umbrales
+    // salen de Ajustes (xpRango2...xpRango10); los números de respaldo son los
+    // de siempre (ver ajustes.ts).
+    function cruza(a, b, u) {
+      return a < u && b >= u;
+    }
+    function subioDeRango(a, b) {
+      let j = juego();
+      return cruza(a, b, j.get('xpRango2', 40)) || cruza(a, b, j.get('xpRango3', 120))
+        || cruza(a, b, j.get('xpRango4', 250)) || cruza(a, b, j.get('xpRango5', 450))
+        || cruza(a, b, j.get('xpRango6', 700)) || cruza(a, b, j.get('xpRango7', 1000))
+        || cruza(a, b, j.get('xpRango8', 1400)) || cruza(a, b, j.get('xpRango9', 1900))
+        || cruza(a, b, j.get('xpRango10', 2600));
+    }
+
     // ---------- Reglas del juego ----------
 
     // La gasolina se llama `corazones` en la base de datos por compatibilidad.
@@ -109,8 +124,15 @@ service cloud.firestore {
       let cambios = despues.diff(antes).affectedKeys();
       return cambios.hasOnly([
           'xp', 'racha', 'corazones', 'ultimaActividad', 'ultimaLeccion',
-          'ultimaLeccionId', 'progreso', 'idioma', 'bienvenidaVista'
+          'ultimaLeccionId', 'progreso', 'idioma', 'bienvenidaVista', 'premioRangoDesde'
         ])
+        // Premio de subir de rango (gasolina ilimitada unas horas): solo con la
+        // hora del servidor y solo si en esta misma escritura el XP cruzó el
+        // umbral de un rango. Nadie se lo puede regalar.
+        && (!cambios.hasAny(['premioRangoDesde'])
+            || (despues.premioRangoDesde == request.time
+                && juego().get('horasPremioRango', 6) > 0
+                && subioDeRango(antes.get('xp', 0), despues.xp)))
         // Idioma: solo los dos que existen.
         && (!cambios.hasAny(['idioma']) || despues.idioma in ['es', 'en'])
         // La bienvenida se marca una vez y no se desmarca.

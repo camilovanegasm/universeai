@@ -39,6 +39,8 @@ export type AjustesJuego = {
   xpRango8: number;
   xpRango9: number;
   xpRango10: number;
+  /** Horas de gasolina ilimitada al subir de rango. 0 = sin premio. */
+  horasPremioRango: number;
   /**
    * Lo máximo que una lección puede sumar de una vez. Se calcula al guardar
    * (la mejor nota + el bono) y lo usan las reglas de Firestore.
@@ -92,6 +94,7 @@ export const AJUSTES_POR_DEFECTO: Ajustes = {
     xpRango8: 1400,
     xpRango9: 1900,
     xpRango10: 2600,
+    horasPremioRango: 6,
     xpMaximo: 20,
   },
   anuncio: { activo: false, tono: "info", texto: { es: "", en: "" } },
@@ -188,6 +191,8 @@ export function validarJuego(j: AjustesJuego): string[] {
   }
   if (!(j.xpPerfecta >= j.xpBuena && j.xpBuena >= j.xpBasica))
     p.push("El XP tiene que ir de mayor a menor: sin errores ≥ 1-2 errores ≥ 3 o más");
+  if (!entero(j.horasPremioRango) || j.horasPremioRango < 0 || j.horasPremioRango > 72)
+    p.push("Premio al subir de rango: horas enteras entre 0 y 72");
   let anterior = 0;
   for (let n = 2; n <= 10; n++) {
     const v = j[`xpRango${n}` as keyof AjustesJuego];

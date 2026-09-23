@@ -13,6 +13,7 @@ import {
   pagarPista,
   gastarGasolina,
   gasolinaMaxima,
+  gasolinaIlimitada,
 } from "@/lib/progreso";
 import { obtenerPerfil } from "@/lib/userProfile";
 import { useIdioma } from "@/lib/useIdioma";
@@ -58,7 +59,12 @@ const TX: Record<Idioma, Record<string, string>> = {
     clubTitulo: "Esta lección es del Club",
     clubTexto: "Está en un mundo de Punti Club. Todo lo esencial de la IA sigue gratis en los demás mundos.",
     clubBoton: "VER PUNTI CLUB",
-    ilimitada: "Gasolina ilimitada · Club",
+    ilimitada: "Gasolina ilimitada",
+    subiste: "SUBISTE DE RANGO",
+    premio: "horas de gasolina ilimitada",
+    premioTexto: "Falla sin miedo y pide todas las pistas que quieras. Empieza ahora.",
+    siguienteRango: "Próximo rango",
+    xpPara: "XP para",
   },
   en: {
     noEncontrado: "We couldn't find that lesson.",
@@ -88,7 +94,12 @@ const TX: Record<Idioma, Record<string, string>> = {
     clubTitulo: "This lesson is for the Club",
     clubTexto: "It's in a Punti Club world. Everything essential about AI is still free in the other worlds.",
     clubBoton: "SEE PUNTI CLUB",
-    ilimitada: "Unlimited fuel · Club",
+    ilimitada: "Unlimited fuel",
+    subiste: "RANK UP",
+    premio: "hours of unlimited fuel",
+    premioTexto: "Miss without fear and ask for every hint you want. Starts now.",
+    siguienteRango: "Next rank",
+    xpPara: "XP to",
   },
 };
 
@@ -129,6 +140,8 @@ export default function LeccionPage({
   const [gasolina, setGasolina] = useState(0);
   // Miembro del Club: gasolina ilimitada y pistas gratis. null = aún no se sabe.
   const [premium, setPremium] = useState<boolean | null>(null);
+  // Gasolina ilimitada: Club, o las horas de premio por subir de rango.
+  const [ilimitada, setIlimitada] = useState(false);
   const [estadoPunti, setEstadoPunti] = useState<EstadoPunti>("online");
   const [resultado, setResultado] = useState<{ xp: number; combustible: 1 | 2 | 3; rangoNuevo: Escalon | null } | null>(null);
   const xpInicial = useRef(0);
@@ -145,6 +158,7 @@ export default function LeccionPage({
     obtenerPerfil(usuario.uid).then((perfil) => {
       setGasolina(perfil ? gasolinaEfectiva(perfil) : 0);
       setPremium(perfil?.premium === true);
+      setIlimitada(gasolinaIlimitada(perfil).activa);
       xpInicial.current = perfil?.xp ?? 0;
       setFase("explicacion");
     });
@@ -229,7 +243,7 @@ export default function LeccionPage({
     );
   }
 
-  const etiquetaGasolina = premium ? t.ilimitada : `${t.gasolina}: ${gasolina} / ${gasolinaMaxima()}`;
+  const etiquetaGasolina = ilimitada ? t.ilimitada : `${t.gasolina}: ${gasolina} / ${gasolinaMaxima()}`;
 
   function siguienteExplicacion() {
     if (!leccion) return;
@@ -251,8 +265,8 @@ export default function LeccionPage({
 
     setErrores((e) => e + 1);
     if (!usuario) return;
-    if (premium) {
-      // Club: fallar no gasta gasolina.
+    if (ilimitada) {
+      // Gasolina ilimitada (Club o premio de rango): fallar no gasta.
       reaccionar("error");
       return;
     }
@@ -280,7 +294,7 @@ export default function LeccionPage({
     if (!usuario) return;
     sonar("pista");
     reaccionar("info", 2200);
-    if (premium) return; // Club: las pistas son gratis.
+    if (ilimitada) return; // Gasolina ilimitada: las pistas son gratis.
     setGasolina(await pagarPista(usuario.uid));
   }
 
@@ -362,7 +376,7 @@ export default function LeccionPage({
             </div>
           </div>
 
-          <BarraGasolina gasolina={premium ? gasolinaMaxima() : gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} alto={14} />
+          <BarraGasolina gasolina={ilimitada ? gasolinaMaxima() : gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} alto={14} />
           <BotonSonido className="shrink-0" />
         </header>
 
@@ -440,16 +454,36 @@ export default function LeccionPage({
         </h2>
 
         {resultado.rangoNuevo && (
-          <div
-            className="rango-nuevo border-2 px-5 py-3 text-center"
-            style={{ borderColor: resultado.rangoNuevo.color, color: resultado.rangoNuevo.color }}
+          <section
+            aria-live="polite"
+            className="rango-nuevo relative w-full max-w-sm border-2 bg-[rgba(10,10,30,0.92)] px-5 pb-5 pt-4 text-center"
+            style={{ borderColor: resultado.rangoNuevo.color, boxShadow: `0 0 34px ${resultado.rangoNuevo.color}40` }}
           >
-            <p className="font-[family-name:var(--font-pixel)] text-[9px]">{t.nuevoRango}</p>
-            <InsigniaRango escalon={resultado.rangoNuevo} ancho={120} className="mx-auto mt-3" />
-            <p className="mt-2 font-[family-name:var(--font-display)] text-[19px] font-black">
+            <p className="font-[family-name:var(--font-pixel)] text-[11px] leading-[1.6]" style={{ color: resultado.rangoNuevo.color }}>
+              ★ {t.subiste} ★
+            </p>
+            <InsigniaRango escalon={resultado.rangoNuevo} ancho={170} className="insignia-sube mx-auto mt-3" />
+            <p className="mt-1 font-[family-name:var(--font-display)] text-[21px] font-black" style={{ color: resultado.rangoNuevo.color }}>
               {idioma === "en" ? resultado.rangoNuevo.tituloEn : resultado.rangoNuevo.titulo}
             </p>
-          </div>
+            <p className="font-[family-name:var(--font-terminal)] text-[15px] tracking-[0.1em] text-[var(--muted)]">
+              {resultado.rangoNuevo.n}/10
+            </p>
+
+            {catalogo.ajustes.juego.horasPremioRango > 0 && (
+              <div className="mt-4 flex items-center gap-3 border-t-2 border-[var(--color-panel-border)] pt-4 text-left">
+                <span aria-hidden="true" className="grid h-12 w-12 shrink-0 place-items-center border-2 border-[var(--gold)] bg-[rgba(255,230,0,0.1)] font-[family-name:var(--font-pixel)] text-[16px] text-[var(--gold)]">
+                  ∞
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-[family-name:var(--font-ui)] text-[17px] font-bold uppercase text-[var(--gold)]">
+                    {catalogo.ajustes.juego.horasPremioRango} {t.premio}
+                  </span>
+                  <span className="block text-[13px] leading-[1.45] text-[var(--muted)]">{t.premioTexto}</span>
+                </span>
+              </div>
+            )}
+          </section>
         )}
 
         <div className="flex flex-wrap items-center justify-center gap-6">
@@ -503,7 +537,7 @@ export default function LeccionPage({
         >
           {t.salir}
         </button>
-        <BarraGasolina gasolina={premium ? gasolinaMaxima() : gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} />
+        <BarraGasolina gasolina={ilimitada ? gasolinaMaxima() : gasolina} maximo={gasolinaMaxima()} etiqueta={etiquetaGasolina} />
         <span className="ml-auto flex items-center gap-3">
           <span className="font-[family-name:var(--font-terminal)] text-[17px] uppercase tracking-[0.14em] text-[var(--muted)]">
             {t.ejercicio} {indiceEjercicio + 1} / {leccion.ejercicios.length}
@@ -518,8 +552,8 @@ export default function LeccionPage({
         <Ejercicio
           key={`${idioma}-${indiceEjercicio}`}
           ejercicio={ejercicioActual}
-          gasolinaDisponible={premium ? gasolinaMaxima() : gasolina}
-          costoPista={premium ? 0 : catalogo.ajustes.juego.costoPista}
+          gasolinaDisponible={ilimitada ? gasolinaMaxima() : gasolina}
+          costoPista={ilimitada ? 0 : catalogo.ajustes.juego.costoPista}
           onResultado={manejarResultadoEjercicio}
           onUsarPista={usarPista}
           idioma={idioma}

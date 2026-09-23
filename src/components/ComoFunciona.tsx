@@ -74,8 +74,8 @@ const PASOS: Paso[] = [
     estado: "levelup",
     titulo: { es: "Subes de rango", en: "You rank up" },
     texto: {
-      es: "Terminar da XP, y terminar rápido y sin errores da más. Hay 10 rangos: empiezas de Cadete y, lección a lección, subes hasta Leyenda cósmica. ¿Hasta dónde llegas tú?",
-      en: "Finishing earns XP, and finishing fast with no mistakes earns more. There are 10 ranks: you start as a Cadet and, lesson by lesson, climb all the way to Cosmic Legend. How far will you go?",
+      es: "Terminar da XP, y terminar rápido y sin errores da más. Hay 10 rangos, de Cadete a Leyenda cósmica, y cada vez que subes ganas horas de gasolina ilimitada. ¿Hasta dónde llegas tú?",
+      en: "Finishing earns XP, and finishing fast with no mistakes earns more. There are 10 ranks, from Cadet to Cosmic Legend, and every time you rank up you get hours of unlimited fuel. How far will you go?",
     },
     color: "#ffe600",
     maqueta: "rangos",

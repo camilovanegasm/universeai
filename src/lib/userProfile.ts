@@ -2,7 +2,7 @@
 // El campo se llama `corazones` por compatibilidad con las cuentas que ya existen;
 // en toda la interfaz se llama gasolina.
 // Cada usuario tiene un documento en la colección "usuarios", identificado por su ID de Firebase Auth.
-import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, serverTimestamp, setDoc, updateDoc, type Timestamp } from "firebase/firestore";
 import type { User } from "firebase/auth";
 import { db } from "./firebase";
 import { cargarCatalogo } from "./contenido";
@@ -36,6 +36,13 @@ export type PerfilUsuario = {
   idioma?: Idioma;
   /** true cuando ya pasó por la bienvenida (idioma + manual). */
   bienvenidaVista?: boolean;
+  /**
+   * Cuándo subió de rango por última vez (hora del servidor). Desde ahí tiene
+   * gasolina ilimitada por las horas que diga Ajustes (horasPremioRango).
+   * Las reglas solo lo dejan escribir en la misma escritura en que el XP
+   * cruza el umbral de un rango.
+   */
+  premioRangoDesde?: Timestamp;
   /**
    * Premium. Solo el admin lo puede escribir (lo impiden las reglas de
    * Firestore). Todavía no cambia nada en la app: qué incluye se decide con

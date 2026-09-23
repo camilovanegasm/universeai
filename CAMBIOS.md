@@ -1120,3 +1120,24 @@ IA". Luz verde con todo; "todo lo que hablemos, vélo actualizando en la documen
   - Pantalla "Esta lección es del Club".
   - Los premium tienen gasolina ilimitada y pistas gratis, y su perfil muestra "Miembro de Punti Club".
 - **El admin** puede entrar a los mundos del Club aunque no sea premium.
+
+### Filtro de mundos con cohete y premio por subir de rango (2026-09-23, pedido de Cami)
+- **`FiltroRuta.tsx`**, en /inicio:
+  - Una ruta con 4 paradas: Todos, Explorador (fácil), Capitán (intermedio) y Arquitecto (avanzado), cada una con su número de mundos.
+  - Un cohete en pixel art, con llama que titila, viaja a la parada elegida, y la ruta recorrida se pinta con rayas del color del nivel.
+  - Funciona con el dedo, el mouse o las flechas del teclado (radiogroup). La animación se apaga con prefers-reduced-motion.
+  - Revisado en computador y en celular (375 px, sin scroll horizontal).
+- **/inicio:**
+  - El texto ya no dice "Siete mundos": cuenta los reales.
+  - Los mundos se filtran por dificultad.
+  - El color de cada mundo va con su número (no cambia al filtrar).
+- **Premio de rango:** 6 horas de gasolina ilimitada al subir de rango.
+  - Horas configurables en Ajustes (`horasPremioRango`).
+  - Campo `premioRangoDesde`, validado en las reglas con `subioDeRango()`.
+  - `gasolinaIlimitada()` en `progreso.ts` junta el Club y el premio.
+  - Lección: fallar no gasta y las pistas son gratis mientras dura.
+  - Cabecera de /inicio: "∞ h:mm" (o "∞ CLUB").
+  - Si las reglas rechazan el premio, la lección se guarda igual sin él.
+- **Pantalla de subir de rango rediseñada** (inspirada en juegos): "★ SUBISTE DE RANGO ★", insignia grande que entra girando, rango n/10 y la tarjeta del premio "∞ 6 horas de gasolina ilimitada".
+- **Manual paso 04:** menciona el premio.
+- **Minijuegos para recargar gasolina:** anotados en DOCUMENTACION §12 para una tarea aparte.

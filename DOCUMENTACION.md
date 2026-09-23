@@ -459,6 +459,14 @@ empiezan en el XP que se fija en Admin → Ajustes → RANGOS.
 | 9 | Guardián estelar | 1900 | rosa, 3 estrellas, alas y corona |
 | 10 | Leyenda cósmica | 2600 | tornasol, alas doradas, corona, destellos y brillo |
 
+**Premio por subir de rango:** cada vez que alguien sube de rango gana **6 horas de gasolina
+ilimitada** (configurable en Admin → Ajustes → RANGOS, `horasPremioRango`; 0 = sin premio).
+Se guarda `premioRangoDesde` con la hora del servidor, y las reglas de Firestore solo lo
+aceptan en la misma escritura en que el XP cruza el umbral de un rango. Si las reglas lo
+rechazan, la lección se guarda igual, sin premio. Mientras dura, fallar no gasta y las pistas
+son gratis. La cabecera de /inicio muestra "∞ 5:12" (horas:minutos restantes) y la pantalla de
+"subiste de rango" muestra el premio.
+
 Una pasada completa por la escuela da unos 400 a 500 XP (Piloto o Capitán). Los
 rangos altos se ganan repitiendo lecciones: premian la práctica. Un mundo marcado
 "Capitán" es el que se recomienda a quien ya llegó a ese rango.
@@ -721,6 +729,7 @@ defecto (`src/lib/ajustes.ts`). Las reglas de Firestore leen los mismos números
 - **Combustible de la lección** (la nota, no la gasolina): 3/3 sin errores, 2/3
   con 1 o 2, 1/3 con 3 o más.
 - **XP**: 15 / 10 / 5 según la nota, **+5** si termina dentro del tiempo objetivo.
+- **Premio de rango**: al subir de rango, horas de gasolina ilimitada (6 por defecto).
 - **Rangos**: 10, de Cadete (0 XP) a Leyenda cósmica (2600 XP). Tabla en 6.1.1.
 - **Racha**: cuenta días seguidos con al menos una lección completada (fecha
   `ultimaLeccion`). Fallar o recibir gasolina del admin no la mueve.
@@ -952,6 +961,20 @@ es lo que no puede faltar el día uno; lo demás puede llegar después.
 ---
 
 ## 12. Pendientes
+
+### Tarea aparte: minijuegos para recargar gasolina (idea de Cami, 2026-09-23)
+
+Se trabaja en una tarea nueva del proyecto, para no cargar esta conversación. Punto de partida:
+- **Objetivo:** minijuegos cortos sobre IA que recarguen gasolina, fáciles de construir entre Cami y Claude.
+- **Ya existe y se puede reutilizar:**
+  - La gasolina (`progreso.ts`) y los ajustes (`ajustes.ts`).
+  - Los ejercicios (`Ejercicio.tsx`) y los sonidos (`sonido.ts`).
+  - Punti en pixel art y las reglas de Firestore.
+- **Regla de seguridad clave:** hoy la gasolina solo puede bajar el mismo día (`gasolinaValida` en
+  `firestore.rules`). Recargarla con un juego exige una regla nueva con límite diario (por ejemplo,
+  +1 por juego y máximo N al día), guardado con la hora del servidor, para que nadie se recargue
+  a sí mismo desde la consola.
+
 
 Lo técnico que no bloquea pero no se debe olvidar:
 

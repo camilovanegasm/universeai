@@ -7,7 +7,8 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useAuth } from "@/lib/AuthContext";
 import { guardarIdioma, obtenerPerfil, type PerfilUsuario } from "@/lib/userProfile";
-import { gasolinaEfectiva, rachaEfectiva, gasolinaMaxima } from "@/lib/progreso";
+import { gasolinaEfectiva, gasolinaIlimitada, rachaEfectiva, gasolinaMaxima, textoRestante } from "@/lib/progreso";
+import FiltroRuta, { type FiltroMundos } from "@/components/FiltroRuta";
 import { textoTema } from "@/lib/temas";
 import { useCatalogo } from "@/lib/contenido";
 import AnuncioGlobal from "@/components/AnuncioGlobal";
@@ -35,7 +36,9 @@ const TX: Record<Idioma, Record<string, string>> = {
     cerrar: "Cerrar sesión",
     eyebrow: "// El universo de Punti",
     intro:
-      "Siete mundos, cada uno con sus lecciones. Puedes entrar al que quieras, en el orden que quieras — aquí nada se desbloquea a la fuerza.",
+      "{n} mundos, cada uno con sus lecciones. Entra al que quieras, en el orden que quieras: aquí nada se desbloquea a la fuerza. Si no sabes por dónde empezar, elige una ruta.",
+    ninguno: "No hay mundos en esta ruta todavía.",
+    ilimitada: "Gasolina ilimitada",
     primera: "¿Primera vez por aquí?",
     primeraTexto: "Punti te explica en cinco pasos cómo funciona el universo, la gasolina y los rangos.",
     manual: "VER MANUAL",
@@ -52,7 +55,9 @@ const TX: Record<Idioma, Record<string, string>> = {
     cerrar: "Sign out",
     eyebrow: "// Punti's universe",
     intro:
-      "Seven worlds, each with its own lessons. Jump into whichever you like, in any order — nothing here is locked behind anything else.",
+      "{n} worlds, each with its own lessons. Jump into whichever you like, in any order: nothing here is locked. Not sure where to start? Pick a route.",
+    ninguno: "No worlds on this route yet.",
+    ilimitada: "Unlimited fuel",
     primera: "First time here?",
     primeraTexto: "Punti walks you through the universe, fuel and ranks in five steps.",
     manual: "SEE MANUAL",
@@ -70,6 +75,14 @@ export default function InicioPage() {
   // la pantalla con 0 de avance y luego salta, o se ve /inicio justo antes de
   // mandar a la bienvenida.
   const [perfilListo, setPerfilListo] = useState(false);
+  const [filtro, setFiltro] = useState<FiltroMundos>("todos");
+  // Reloj de minuto en minuto: solo para el tiempo que le queda al premio de
+  // gasolina ilimitada.
+  const [ahora, setAhora] = useState(() => Date.now());
+  useEffect(() => {
+    const reloj = setInterval(() => setAhora(Date.now()), 60_000);
+    return () => clearInterval(reloj);
+  }, []);
 
   useEffect(() => {
     if (!cargando && !usuario) router.push("/login");
@@ -138,6 +151,14 @@ export default function InicioPage() {
   }
 
   const gasolina = perfil ? gasolinaEfectiva(perfil) : 0;
+  const sinLimite = gasolinaIlimitada(perfil, ahora);
+  const conteos: Record<FiltroMundos, number> = {
+    todos: mundos.length,
+    explorador: mundos.filter((m) => m.rango === "explorador").length,
+    capitan: mundos.filter((m) => m.rango === "capitan").length,
+    arquitecto: mundos.filter((m) => m.rango === "arquitecto").length,
+  };
+  const visibles = filtro === "todos" ? mundos : mundos.filter((m) => m.rango === filtro);
   const racha = perfil ? rachaEfectiva(perfil) : 0;
   const totalSubtemas = catalogo.temas.reduce((suma, x) => suma + x.subtemas.length, 0);
   const totalHechas = mundos.reduce((suma, x) => suma + x.hechas, 0);
@@ -174,11 +195,21 @@ export default function InicioPage() {
               <span className="hidden font-[family-name:var(--font-terminal)] text-[15px] uppercase tracking-[0.14em] text-[var(--muted)] sm:inline">
                 {t.gasolina}
               </span>
-              <BarraGasolina
-                gasolina={gasolina}
-                maximo={gasolinaMaxima()}
-                etiqueta={`${t.gasolina}: ${gasolina} ${t.de} ${gasolinaMaxima()}`}
-              />
+              {sinLimite.activa ? (
+                <span
+                  className="border-2 border-[var(--gold)] bg-[rgba(255,230,0,0.1)] px-1.5 py-0.5 font-[family-name:var(--font-terminal)] text-[15px] tracking-[0.06em] text-[var(--gold)]"
+                  title={t.ilimitada}
+                  aria-label={t.ilimitada}
+                >
+                  ∞ {sinLimite.club ? "CLUB" : sinLimite.hasta ? textoRestante(sinLimite.hasta, ahora) : ""}
+                </span>
+              ) : (
+                <BarraGasolina
+                  gasolina={gasolina}
+                  maximo={gasolinaMaxima()}
+                  etiqueta={`${t.gasolina}: ${gasolina} ${t.de} ${gasolinaMaxima()}`}
+                />
+              )}
             </div>
 
             <span className="font-[family-name:var(--font-pixel)] text-[10px] text-[var(--cyan)]" title="XP">
@@ -217,10 +248,15 @@ export default function InicioPage() {
         <h2 className="mt-2 font-[family-name:var(--font-pixel)] text-[18px] leading-[1.4] text-white sm:text-[26px]">
           {t.elige}
         </h2>
-        <p className="mt-3 max-w-[54ch] text-[15px] text-[var(--muted)]">{t.intro}</p>
+        <p className="mt-3 max-w-[58ch] text-[15px] text-[var(--muted)]">{t.intro.replace("{n}", String(mundos.length))}</p>
 
-        <div className="mt-7">
-          <MundosPunti mundos={mundos} idioma={idioma} onEntrar={(id) => router.push(`/tema/${id}`, { transitionTypes: ["adelante"] })} />
+        <div className="mt-6">
+          <FiltroRuta valor={filtro} alCambiar={setFiltro} conteos={conteos} idioma={idioma} />
+        </div>
+
+        <div className="mt-6">
+          {visibles.length === 0 && <p className="text-[15px] text-[var(--muted)]">{t.ninguno}</p>}
+          <MundosPunti mundos={visibles} idioma={idioma} onEntrar={(id) => router.push(`/tema/${id}`, { transitionTypes: ["adelante"] })} />
         </div>
 
         {/* El mismo recorrido que ve quien se registra por primera vez, aquí

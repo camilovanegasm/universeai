@@ -47,8 +47,10 @@ export default function MundosPunti({ mundos, onEntrar, idioma = "es" }: Props) 
   const t = TX[idioma];
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {mundos.map((m, i) => {
-        const color = COLORES[i % COLORES.length];
+      {mundos.map((m) => {
+        // El color va con el número del mundo, no con su lugar en la lista: así
+        // no cambia cuando se filtra, y coincide con el de la pantalla del mundo.
+        const color = COLORES[(m.numero - 1) % COLORES.length];
         const enObra = m.disponibles === 0;
         const completo = m.total > 0 && m.hechas >= m.total;
         const porcentaje = m.total > 0 ? Math.round((m.hechas / m.total) * 100) : 0;

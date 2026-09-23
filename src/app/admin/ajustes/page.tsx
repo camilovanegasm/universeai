@@ -301,6 +301,13 @@ function BloqueJuego({
             );
           })}
         </div>
+        <Numero
+          id="horasPremioRango"
+          etiqueta="Premio al subir de rango (horas)"
+          ayuda="Horas de gasolina ilimitada al subir de rango. 0 = sin premio."
+          valor={juego.horasPremioRango}
+          alCambiar={campo("horasPremioRango")}
+        />
         <p className="text-[13px] text-[var(--muted)]">
           XP desde el que empieza cada rango; el 1, Cadete, empieza en 0. Cada número tiene que ser mayor que el anterior. Como las lecciones se pueden repetir, los rangos altos premian la práctica.
         </p>

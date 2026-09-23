@@ -988,3 +988,16 @@ textarea.campo-admin { resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .insignia-leyenda { animation: none; }
 }
+
+/* La insignia nueva entra girando y cae en su lugar, como una medalla. */
+.insignia-sube {
+  animation: insignia-sube 0.9s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+}
+@keyframes insignia-sube {
+  0% { transform: scale(0.2) rotate(-25deg); opacity: 0; }
+  70% { transform: scale(1.08) rotate(4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .insignia-sube { animation: none; }
+}

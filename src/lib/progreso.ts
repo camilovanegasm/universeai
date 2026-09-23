@@ -4,6 +4,7 @@ import { doc, runTransaction, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase";
 import type { PerfilUsuario } from "./userProfile";
 import { ajustesVigentes } from "./ajustes";
+import { rangoPorXp } from "./rangos";
 
 // Los números del juego (tanque, costos, XP) se cambian desde el admin, en
 // Ajustes. Aquí se leen de `ajustesVigentes()`; ver ajustes.ts.
@@ -65,6 +66,27 @@ export function gasolinaEfectiva(perfil: PerfilUsuario): number {
   return Math.min(perfil.corazones, maxima);
 }
 
+/**
+ * Gasolina ilimitada: los miembros del Club siempre, y cualquiera durante las
+ * horas del premio después de subir de rango. `hasta` es cuándo se acaba el
+ * premio (null si es del Club o si no hay premio activo).
+ */
+export function gasolinaIlimitada(perfil: PerfilUsuario | null, ahora = Date.now()): { activa: boolean; club: boolean; hasta: Date | null } {
+  if (!perfil) return { activa: false, club: false, hasta: null };
+  if (perfil.premium === true) return { activa: true, club: true, hasta: null };
+  const horas = ajustesVigentes().juego.horasPremioRango;
+  const desde = perfil.premioRangoDesde?.toMillis?.();
+  if (!desde || horas <= 0) return { activa: false, club: false, hasta: null };
+  const fin = desde + horas * 3600_000;
+  return fin > ahora ? { activa: true, club: false, hasta: new Date(fin) } : { activa: false, club: false, hasta: null };
+}
+
+/** "5:12" (horas:minutos): lo que le queda al premio. Corto para que quepa en la cabecera del celular. */
+export function textoRestante(hasta: Date, ahora = Date.now()): string {
+  const min = Math.max(0, Math.ceil((hasta.getTime() - ahora) / 60000));
+  return `${Math.floor(min / 60)}:${String(min % 60).padStart(2, "0")}`;
+}
+
 // Racha "de verdad": si pasó más de un día completo sin actividad, ya se rompió aunque
 // Firestore todavía tenga guardado el número anterior.
 export function rachaEfectiva(perfil: PerfilUsuario): number {
@@ -90,13 +112,20 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
   const { combustible, xp } = calcularXp(resultado);
   const hoy = fechaDeHoy();
 
-  await runTransaction(db, async (tx) => {
+  const guardar = (conPremio: boolean) => runTransaction(db, async (tx) => {
     const snap = await tx.get(referencia);
     if (!snap.exists()) throw new Error("El perfil del usuario no existe.");
     const datos = snap.data() as PerfilUsuario;
 
+    // ¿Esta lección lo hace subir de rango? Si hay premio, arranca ahora
+    // (hora del servidor; las reglas comprueban que el XP cruzó un umbral).
+    const xpAntes = datos.xp ?? 0;
+    const sube = rangoPorXp(xpAntes).actual.id !== rangoPorXp(xpAntes + xp).actual.id;
+    const premio = conPremio && sube && ajustesVigentes().juego.horasPremioRango > 0 ? { premioRangoDesde: serverTimestamp() } : {};
+
     tx.update(referencia, {
-      xp: (datos.xp ?? 0) + xp,
+      ...premio,
+      xp: xpAntes + xp,
       racha: proximaRacha(datos.ultimaLeccion ?? datos.ultimaActividad, hoy, datos.racha ?? 0),
       corazones: gasolinaEfectiva(datos),
       ultimaActividad: hoy,
@@ -112,6 +141,16 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
       },
     });
   });
+
+  try {
+    await guardar(true);
+  } catch (e) {
+    // Si las reglas rechazan el premio (por ejemplo, el admin acaba de cambiar
+    // los umbrales de XP), la lección se guarda igual, sin premio: completar
+    // una lección nunca se pierde por el premio.
+    if ((e as { code?: string }).code !== "permission-denied") throw e;
+    await guardar(false);
+  }
 }
 
 /**
