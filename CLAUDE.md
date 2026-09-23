@@ -10,6 +10,11 @@
 >
 > **Bajada:** "Aprende IA jugando".
 >
+> **Documentación completa:** `DOCUMENTACION.md` en esta misma carpeta es la
+> memoria del proyecto — concepto, identidad, arquitectura, decisiones con su
+> porqué, y la bitácora por fases. Léelo antes de tocar nada estructural, y
+> agrégale una entrada nueva cada vez que se complete un bloque de trabajo.
+>
 > **Dominio:** **punti.space** es el principal. Se eligió porque el producto ES
 > un universo (el que Punti construyó), y porque renueva a ~$1.78/año en vez de
 > los anzuelos que cobran poco el primer año y se disparan después. Si también se
