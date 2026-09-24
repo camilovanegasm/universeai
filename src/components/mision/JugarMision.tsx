@@ -114,7 +114,13 @@ export default function JugarMision({
   const [piloto, setPiloto] = useState("");
   // Lo último que dijo Punti y en qué bloque. Al pasar de bloque vuelve solo a
   // lo que abre el bloque nuevo (sin un efecto que lo reescriba).
-  const [reaccion, setReaccion] = useState<{ clave: string; d: Dicho } | null>(null);
+  const [reaccion, setReaccion] = useState<{ clave: string; d: Dicho; n: number } | null>(null);
+  // Burbuja de Punti: si el piloto bajó y Punti reacciona, aparece abajo, sobre
+  // el botón, como en los videojuegos. Se va sola si vuelve a ver a Punti arriba.
+  const [consolaVisible, setConsolaVisible] = useState(true);
+  const [burbujaCerrada, setBurbujaCerrada] = useState(0);
+  const contadorReaccion = useRef(0);
+  const consolaRef = useRef<HTMLDivElement>(null);
   const [confirmarSalida, setConfirmarSalida] = useState(false);
   const [resultado, setResultado] = useState<{ xp: number; combustible: 1 | 2 | 3; rangoNuevo: Escalon | null; guardado: boolean } | null>(null);
   const xpInicial = useRef(0);
@@ -162,7 +168,32 @@ export default function JugarMision({
   // Cada bloque abre con lo que dice Punti; después habla por lo que hace el piloto.
   const claveActual = fase === "ficha" ? "ficha" : (bloque?.id ?? "");
   const dicho: Dicho | null = reaccion?.clave === claveActual ? reaccion.d : (bloque?.punti ?? null);
-  const decir = useCallback((d: Dicho) => setReaccion({ clave: claveActual, d }), [claveActual]);
+  const decir = useCallback(
+    (d: Dicho) => setReaccion({ clave: claveActual, d, n: ++contadorReaccion.current }),
+    [claveActual],
+  );
+  const reaccionActual = reaccion?.clave === claveActual ? reaccion : null;
+  const burbuja = reaccionActual && !consolaVisible && burbujaCerrada !== reaccionActual.n ? reaccionActual : null;
+
+  // La burbuja se va sola cuando ya dio tiempo de leerla (más larga, más tiempo).
+  const burbujaN = burbuja?.n ?? 0;
+  const burbujaLargo = burbuja?.d.texto[idioma].length ?? 0;
+  useEffect(() => {
+    if (!burbujaN) return;
+    const reloj = setTimeout(() => setBurbujaCerrada(burbujaN), Math.min(12_000, 4_000 + burbujaLargo * 45));
+    return () => clearTimeout(reloj);
+  }, [burbujaN, burbujaLargo]);
+
+  // ¿Se ve la consola de Punti? (el observador avisa al entrar y salir de pantalla)
+  useEffect(() => {
+    const consola = consolaRef.current;
+    if (!consola || typeof IntersectionObserver === "undefined") return;
+    const obs = new IntersectionObserver(([e]) => setConsolaVisible(e.intersectionRatio > 0.6), {
+      threshold: [0, 0.6, 1],
+    });
+    obs.observe(consola);
+    return () => obs.disconnect();
+  }, [fase]);
   const completar = useCallback(
     (conAyuda?: boolean) => {
       if (!bloque) return;
@@ -224,6 +255,7 @@ export default function JugarMision({
     setResultado({ xp: guardado || vista ? xp : 0, combustible, rangoNuevo, guardado });
     setReaccion({
       clave: "ficha",
+      n: ++contadorReaccion.current,
       d: {
       estado: "levelup",
       texto: {
@@ -276,8 +308,10 @@ export default function JugarMision({
   const textoBoton = fase === "guardando" ? t.guardando : indice === 0 ? t.despegar : ultimo ? t.aterrizar : t.continuar;
 
   return (
-    <div className="flex flex-1 flex-col">
-      <header className="flex items-center gap-3 border-b-2 border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.94)] px-4 py-3">
+    // Pantalla de app: el encabezado arriba y CONTINUAR abajo siempre a la vista;
+    // solo el contenido del bloque se desplaza.
+    <div className="flex h-dvh min-h-0 flex-col overflow-hidden">
+      <header className="flex shrink-0 items-center gap-3 border-b-2 border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.94)] px-4 py-3">
         {fase !== "ficha" ? (
           <button
             type="button"
@@ -319,14 +353,18 @@ export default function JugarMision({
       </header>
 
       {vista && (
-        <p className="border-b-2 border-dashed border-[var(--gold)] bg-[rgba(255,230,0,0.08)] px-4 py-2 text-center font-[family-name:var(--font-pixel)] text-[8px] leading-[1.7] text-[var(--gold)]">
+        <p className="shrink-0 border-b-2 border-dashed border-[var(--gold)] bg-[rgba(255,230,0,0.08)] px-4 py-2 text-center font-[family-name:var(--font-pixel)] text-[8px] leading-[1.7] text-[var(--gold)]">
           {t.vista}
         </p>
       )}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 pb-8 pt-5">
+      <div
+        ref={scrollRef}
+        // Tocar el ejercicio cierra la burbuja: nunca tapa lo que el piloto quiere hacer.
+        onPointerDown={() => burbuja && setBurbujaCerrada(burbuja.n)}
+        className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-8 pt-5">
         <div className="mx-auto grid w-full max-w-xl gap-4">
           {/* Punti habla: siempre arriba, en todos los bloques */}
-          <div className="consola-leccion" aria-live="polite">
+          <div ref={consolaRef} className="consola-leccion" aria-live="polite">
             <span className="consola-esquina consola-esquina-tl" />
             <span className="consola-esquina consola-esquina-br" />
             <div className="flex items-start gap-3 p-3.5">
@@ -334,7 +372,7 @@ export default function JugarMision({
               <div className="min-w-0 flex-1">
                 <p className="font-[family-name:var(--font-pixel)] text-[8px] leading-[1.8] text-[var(--matrix)]">{t.punti}</p>
                 <p className="font-[family-name:var(--font-terminal)] text-[21px] leading-[1.18] text-[#d9ffe3]">
-                  {dicho && <TextoTecleado key={`${idioma}-${dicho.texto[idioma]}`} texto={dicho.texto[idioma]} />}
+                  {dicho && <TextoTecleado key={`${idioma}-${dicho.texto[idioma]}`} texto={dicho.texto[idioma]} voz={!burbuja} />}
                 </p>
               </div>
             </div>
@@ -393,7 +431,31 @@ export default function JugarMision({
       </div>
 
       {fase !== "ficha" && (
-        <footer className="border-t-2 border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.96)] px-4 py-3.5">
+        <footer className="relative shrink-0 border-t-2 border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.96)] px-4 pb-[max(0.875rem,env(safe-area-inset-bottom))] pt-3.5">
+          {burbuja && (
+            <div className="pointer-events-none absolute inset-x-0 bottom-full px-4 pb-3">
+              <div
+                key={burbuja.n}
+                // Tocar la burbuja también la cierra (como pasar el diálogo en un juego).
+                onClick={() => setBurbujaCerrada(burbuja.n)}
+                className="burbuja-punti pointer-events-auto mx-auto flex w-full max-w-xl items-start gap-2.5 p-3"
+              >
+                <PuntiPixel estado={burbuja.d.estado} recorte="busto" ancho={46} flotando={false} />
+                <p aria-hidden="true" className="min-w-0 flex-1 font-[family-name:var(--font-terminal)] text-[19px] leading-[1.15] text-[#d9ffe3]">
+                  <TextoTecleado key={`${idioma}-${burbuja.n}`} texto={burbuja.d.texto[idioma]} />
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setBurbujaCerrada(burbuja.n)}
+                  aria-label={idioma === "en" ? "Close Punti's message" : "Cerrar el mensaje de Punti"}
+                  className="-mr-1 -mt-1 grid h-8 w-8 shrink-0 place-content-center font-[family-name:var(--font-pixel)] text-[10px] text-[var(--muted)] hover:text-white"
+                >
+                  ✕
+                </button>
+                <span className="burbuja-punti-cola" aria-hidden="true" />
+              </div>
+            </div>
+          )}
           <div className="mx-auto flex w-full max-w-xl">
             <button
               type="button"

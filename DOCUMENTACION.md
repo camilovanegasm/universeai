@@ -936,6 +936,22 @@ Lo que quedó en C1.1:
   emulador de reglas de Firebase no se pudo correr (la red lo bloquea): la prueba real de las
   reglas es la de Cami en localhost.
 
+**Ajustes tras la primera prueba en celular (2026-09-24, pedidos por Cami).**
+- **Burbuja de Punti:** si el piloto bajó y Punti reacciona (por ejemplo al transmitir en el
+  Laboratorio), el mensaje salta abajo, sobre CONTINUAR, como un globo de diálogo pixel con un
+  "pop" por pasos. Se va sola cuando dio tiempo de leerla (4 a 12 s según el largo), al tocarla,
+  al tocar el ejercicio o con la ✕, y no aparece si Punti ya se ve arriba. Sin movimiento si la
+  persona lo pidió. En `JugarMision.tsx` (`.burbuja-punti` en `globals.css`).
+- **Pantalla de app en la misión:** el encabezado queda arriba y CONTINUAR abajo siempre a la vista;
+  solo el contenido se desplaza (`h-dvh`, respeta la zona segura del iPhone). La barra de navegación
+  de abajo (MUNDOS, SEGUIR…) ya no sale durante una misión, igual que en las lecciones.
+- **Punti como app (PWA):** `src/app/manifest.ts`, íconos en `public/iconos/` y `src/app/apple-icon.png`,
+  color del sistema `#050510`. En el celular, "Agregar a pantalla de inicio" abre Punti a pantalla
+  completa, sin la barra del navegador. Pendiente: probar el inicio de sesión con Google dentro de la
+  app instalada en iPhone (si falla, se cambia la ventana emergente por redirección).
+- **Español de Colombia en el Laboratorio:** la IA a veces respondía con voseo ("comprá", "llevate").
+  Ahora se le pide tú o usted, nunca vos.
+
 **Costo estimado del Laboratorio** (precios verificados 2026-09-23): por uso ~USD 0,0004 con
 Gemini 2.5 Flash-Lite y ~USD 0,005 con Claude Haiku 4.5; con 100 pilotos diarios y 10 usos,
 ~USD 13 o ~USD 150 al mes. El proveedor se elige en C0 con prueba real y criterio neutral.

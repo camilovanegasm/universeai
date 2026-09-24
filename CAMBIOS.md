@@ -12,6 +12,22 @@ Para el detalle de decisiones y el porqué de cada cosa, ver `DOCUMENTACION.md`.
 
 ---
 
+## 2026-09-24 · C1.4 (parte 1) · Burbuja de Punti, pantalla de app y PWA
+
+### Agregado
+- `src/app/manifest.ts` — Punti instalable como app (pantalla completa).
+- `public/iconos/` (192, 512, maskable) y `src/app/apple-icon.png` — íconos de la app.
+
+### Cambiado
+- `src/components/mision/JugarMision.tsx` — burbuja de Punti; encabezado y CONTINUAR siempre visibles.
+- `src/app/globals.css` — estilo y animación `.burbuja-punti`.
+- `src/components/NavPunti.tsx` — la barra de abajo no sale en `/mision`.
+- `src/app/layout.tsx` — `appleWebApp` y color del sistema.
+- `src/lib/servidor/anthropic.ts` — español de Colombia, sin voseo.
+- `DOCUMENTACION.md` — ajustes tras la prueba en celular.
+
+---
+
 ## 2026-09-24 · C1.3 · Laboratorio en vivo
 
 **⚠ Hay que volver a publicar las reglas de Firestore** (`labValido` y bloque `laboratorio`). Copia

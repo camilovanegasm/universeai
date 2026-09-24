@@ -1,5 +1,5 @@
 import NavPunti from "@/components/NavPunti";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Orbitron, VT323, Rajdhani, Press_Start_2P, Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/lib/AuthContext";
@@ -28,6 +28,14 @@ export const metadata: Metadata = {
   title: "Punti — Aprende IA jugando",
   description:
     "Un universo construido por Punti para aprender Inteligencia Artificial gratis: lecciones cortas, planetas por explorar y una racha que cuidar.",
+  applicationName: "Punti",
+  // En iPhone, "Agregar a pantalla de inicio" abre Punti como app, sin barras del navegador.
+  appleWebApp: { capable: true, title: "Punti", statusBarStyle: "black" },
+};
+
+// Color de la barra del sistema (Android y la app instalada): el fondo del espacio.
+export const viewport: Viewport = {
+  themeColor: "#050510",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
