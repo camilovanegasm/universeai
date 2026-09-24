@@ -17,6 +17,7 @@ import Cargando from "@/components/Cargando";
 import PlanetaPixel from "@/components/PlanetaPixel";
 import RutaTema, { type SubtemaEnPlaneta } from "@/components/RutaTema";
 import { juegoDelMundo } from "@/lib/juegos/catalogo";
+import { misionesSemilla } from "@/lib/misiones/cargar";
 
 // Mismos colores y mismo orden que la pantalla de mundos, para que el planeta
 // al que entraste sea del color de la tarjeta que tocaste.
@@ -34,6 +35,8 @@ const TX: Record<Idioma, Record<string, string>> = {
     clubTexto: "Sus lecciones son para miembros de Punti Club. Mira qué incluye y anótate.",
     clubBoton: "VER PUNTI CLUB",
     minijuego: "MINIJUEGO",
+    misiones: "MISIONES · VISTA PREVIA DEL ADMIN",
+    misionesTexto: "Formato nuevo. Solo tú las ves mientras el mundo se rehace.",
     recarga: "Gana y recarga gasolina",
     jugar: "JUGAR",
   },
@@ -47,6 +50,8 @@ const TX: Record<Idioma, Record<string, string>> = {
     clubTexto: "Its lessons are for Punti Club members. See what's included and join.",
     clubBoton: "SEE PUNTI CLUB",
     minijuego: "MINIGAME",
+    misiones: "MISSIONS · ADMIN PREVIEW",
+    misionesTexto: "New format. Only you can see them while this world is rebuilt.",
     recarga: "Win to refill your fuel",
     jugar: "PLAY",
   },
@@ -119,6 +124,8 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
   const hechas = subtemas.filter((s) => s.completado).length;
   const juego = juegoDelMundo(tema.id);
   const completo = hechas === subtemas.length && subtemas.length > 0;
+  // Formato nuevo (fase C1): solo el admin ve la entrada hasta que el mundo esté rehecho.
+  const misiones = esAdmin(usuario) ? misionesSemilla(tema.id) : [];
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
@@ -182,6 +189,33 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
           </span>
           <span className="font-[family-name:var(--font-pixel)] text-[9px]" style={{ color: juego.color }}>{t.jugar}</span>
         </Link>
+      )}
+
+      {misiones.length > 0 && (
+        <section className="mx-auto mt-4 w-[calc(100%-2rem)] max-w-2xl border-2 border-dashed border-[var(--cyan)] bg-[rgba(0,245,255,0.05)] px-4 py-3">
+          <p className="font-[family-name:var(--font-pixel)] text-[8px] leading-[1.8] text-[var(--cyan)]">{textoPixel(t.misiones)}</p>
+          <p className="text-[13px] text-[var(--muted)]">{t.misionesTexto}</p>
+          <ul className="mt-2 grid gap-2">
+            {misiones.map((m) => (
+              <li key={m.id}>
+                <Link
+                  href={`/mision/${tema.id}/${m.id}`}
+                  transitionTypes={["adelante"]}
+                  className="flex items-center gap-3 border-2 border-[var(--color-panel-border)] bg-[rgba(10,10,30,0.88)] px-3 py-2.5 transition-colors hover:border-[var(--cyan)]"
+                >
+                  <span className="font-[family-name:var(--font-pixel)] text-[9px] text-[var(--cyan)]">
+                    {m.capitulo}.{String(m.numero).padStart(2, "0")}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-[family-name:var(--font-ui)] text-[16px] font-bold text-white">{m.titulo[idioma]}</span>
+                    <span className="block text-[13px] text-[var(--muted)]">{m.resumen[idioma]}</span>
+                  </span>
+                  <span className="font-[family-name:var(--font-terminal)] text-[15px] text-[var(--muted)]">{m.minutos} min</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       <RutaTema

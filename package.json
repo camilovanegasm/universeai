@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "probar:laboratorio": "node herramientas/prueba-laboratorio/probar.mjs --solo-a",
+    "validar:misiones": "node contenido/misiones/validar.mjs",
+    "comparar:laboratorio": "node herramientas/prueba-laboratorio/probar.mjs"
   },
   "dependencies": {
     "firebase": "^12.19.0",

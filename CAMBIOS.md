@@ -12,6 +12,126 @@ Para el detalle de decisiones y el porqué de cada cosa, ver `DOCUMENTACION.md`.
 
 ---
 
+## 2026-09-23 (noche) · C1.1 · Lector de misiones
+
+### Agregado
+- `src/app/mision/[mundoId]/[misionId]/page.tsx` — la pantalla de una misión.
+- `src/lib/misiones/` — `tipos.ts`, `revisar.mjs` (+ `revisar.d.mts`), `cargar.ts`, `laboratorio.ts`.
+- `src/components/mision/` — `Bloques.tsx` (14 tipos), `Laboratorio.tsx`, `FichaMision.tsx`, `Base.tsx`, `tipos.ts`.
+- `src/components/TextoTecleado.tsx`, `src/components/ConfirmarSalida.tsx` — sacados de la página de la lección.
+
+### Cambiado
+- `src/app/leccion/[temaId]/[subtemaId]/page.tsx` — usa los dos componentes sacados (mismo comportamiento).
+- `src/app/tema/[id]/page.tsx` — tarjeta de misiones, solo visible para el admin.
+- `contenido/misiones/validar.mjs` — ahora usa `src/lib/misiones/revisar.mjs` (reglas en un solo lugar).
+
+Sin cambios en las reglas de Firestore (no hay que publicar nada).
+`referencias/temporal-claude/punti-src.tgz` es una copia temporal para la prueba; se puede borrar.
+
+---
+
+## 2026-09-23 (noche) · Segunda prueba del Laboratorio y cierre de C0
+
+### Cambiado
+- `contenido/misiones/eco/03-la-tienda-de-dona-marta.json` — rúbricas que dicen qué no cuenta.
+- `contenido/misiones/FORMATO-PAQUETE.md` — reglas de rúbrica y de claves.
+- `herramientas/prueba-laboratorio/probar.mjs` — temperatura 0 al calificar; "si dudas, marca false".
+- `referencias/prueba-laboratorio/INFORME.md` y `DOCUMENTACION.md` — segunda corrida; C0 terminada.
+
+Sin cambios en `src/` ni en las reglas.
+
+---
+
+## 2026-09-23 (noche) · Prueba del Laboratorio con Claude Haiku 4.5
+
+### Agregado
+- `herramientas/prueba-laboratorio/probar.mjs` — prueba del Laboratorio con la API de Anthropic (lee la llave de `.env.local`, nunca la imprime).
+- `referencias/prueba-laboratorio/` — resultados e `INFORME.md`.
+- `package.json` — scripts `probar:laboratorio`, `comparar:laboratorio` y `validar:misiones`.
+
+### Cambiado
+- `DOCUMENTACION.md` 6.11 — resultado de la prueba y decisión: Haiku 4.5, forma A.
+
+Sin cambios en `src/` ni en las reglas. `.env.local` sigue ignorado por git.
+
+---
+
+## 2026-09-23 (noche) · Laboratorio solo con Anthropic
+
+- `DOCUMENTACION.md` 6.11 — decisión de Cami: el Laboratorio usa solo Anthropic (Claude Haiku 4.5), con workspace propio y límite de gasto.
+
+---
+
+## 2026-09-23 (noche) · Molde de misiones y revisor
+
+### Agregado
+- `contenido/misiones/FORMATO-PAQUETE.md` — paquete de misión y fichas de los 14 bloques.
+- `contenido/misiones/validar.mjs` — revisor de paquetes (sin dependencias).
+- `contenido/misiones/eco/03-la-tienda-de-dona-marta.json` — misión 3 en español e inglés.
+
+### Cambiado
+- `referencias/prototipos/mision-dona-marta.html` — correcciones del revisor independiente.
+- `DOCUMENTACION.md` 6.11.
+
+Sin cambios en `src/` ni en las reglas.
+
+---
+
+## 2026-09-23 (noche) · Ficha de misión en el prototipo
+
+- `referencias/prototipos/mision-dona-marta.html` — el último bloque ahora es la Ficha de misión.
+- `DOCUMENTACION.md` 6.11 — anotado el pedido y lo que muestra la ficha.
+
+Sin cambios en `src/` ni en las reglas.
+
+---
+
+## 2026-09-23 (noche) · Prototipo de la misión 3 de Eco
+
+### Agregado
+- `referencias/prototipos/mision-dona-marta.html` — prototipo jugable del formato nuevo (no va en la app).
+- `referencias/prototipos/punti-sprite.js` — `puntiSprite.ts` compilado para usarlo fuera de Next.
+
+### Cambiado
+- `DOCUMENTACION.md` 6.11 — temario de Eco aprobado y prototipo.
+
+Sin cambios en `src/` ni en las reglas.
+
+---
+
+## 2026-09-23 (noche) · Tablero "Ruta de vuelo"
+
+- Tablero vivo del avance del proyecto, fuera del código (artifact con base de datos propia).
+  Anotado en `DOCUMENTACION.md` 6.11. Sin cambios de código ni de reglas.
+
+---
+
+## 2026-09-23 (noche) · Plan de aprendizaje aprobado, empieza C0
+
+### Cambiado
+- `DOCUMENTACION.md` — 6.11 pasa a APROBADA con la tabla de decisiones de Cami, el
+  temario de Eco, el costo del Laboratorio; fase actual pasa a C0; entrada en bitácora.
+- `guias/voz-de-punti.md` — sección nueva "Punti es el protagonista" para el formato de misiones.
+- `CLAUDE.md` — nota de que el contenido del formato nuevo vive en el admin.
+
+Sin cambios de código ni de reglas.
+
+---
+
+## 2026-09-23 (noche) · Propuesta: aprender de verdad
+
+**Por qué:** Cami quiere que Punti enseñe en profundidad y no sea un quiz repetido
+(referencia: Codédex).
+
+### Cambiado
+- `DOCUMENTACION.md` — sección nueva 6.11 con el resumen de la propuesta y entrada
+  en la bitácora. El plan completo está en el documento "Punti · Plan para aprender
+  de verdad".
+
+Sin cambios de código ni de reglas.
+
+---
+
 ## 2026-09-23 · Sistema visual nuevo: pixel art y adiós a la galaxia
 
 **Por qué:** el mapa galáctico no servía en celular. Arrastrar, hacer zoom y

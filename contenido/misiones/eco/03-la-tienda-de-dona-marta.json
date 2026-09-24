@@ -1,0 +1,829 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-tienda-de-dona-marta",
+  "mundo": "prompts",
+  "capitulo": 1,
+  "numero": 3,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "contexto"
+  ],
+  "usaConceptos": [
+    "prompt"
+  ],
+  "titulo": {
+    "es": "La tienda de Doña Marta",
+    "en": "Doña Marta's Corner Store"
+  },
+  "resumen": {
+    "es": "Darle contexto a un prompt: lo que la IA necesita saber de ti para responder bien.",
+    "en": "Giving a prompt context: what AI needs to know about you to answer well."
+  },
+  "siguiente": "en-que-forma-lo-quieres",
+  "fuentes": [],
+  "actualizado": "2026-09-23",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegó una señal a la antena de Eco. Es Doña Marta, la de la tienda de la esquina. Le pidió un aviso a una IA y le salió cualquier cosa. Vamos a ayudarle.",
+          "en": "Pilot, a signal just reached Eco's antenna. It's Doña Marta, who runs the corner store. She asked an AI for a sign and got something useless. Let's help her out."
+        }
+      },
+      "titulo": {
+        "es": "La tienda de Doña Marta",
+        "en": "Doña Marta's Corner Store"
+      },
+      "texto": {
+        "es": "Hoy aprendes a darle contexto a un prompt: lo que la IA necesita saber de ti para responder bien. Unos 10 minutos.",
+        "en": "Today you'll learn to give a prompt context: what AI needs to know about you to answer well. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Mira lo que pidió ella y lo que le devolvió la IA. Después mira cómo lo arreglamos.",
+          "en": "Look at what she asked for and what the AI gave her. Then look at how we fixed it."
+        }
+      },
+      "titulo": {
+        "es": "Dos pedidos, dos avisos",
+        "en": "Two requests, two signs"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Hazme un aviso para la tienda.",
+          "en": "Make me a sign for the store."
+        },
+        "salida": {
+          "es": "¡GRAN OFERTA! Visítanos y descubre nuestros increíbles productos de calidad al mejor precio. ¡Te esperamos!",
+          "en": "HUGE SALE! Visit us and discover our amazing quality products at the best prices. We're waiting for you!"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "quien",
+            "texto": {
+              "es": "Tengo una tienda de barrio en La Esperanza. ",
+              "en": "I run a small corner store in a residential neighborhood. "
+            }
+          },
+          {
+            "pieza": "para",
+            "texto": {
+              "es": "Mis clientes son vecinos, sobre todo señoras que compran el mercado del día. ",
+              "en": "My customers are neighbors, mostly people picking up groceries for the day. "
+            }
+          },
+          {
+            "pieza": "que",
+            "texto": {
+              "es": "Quiero que este sábado aprovechen un 2x1 en pan y leche de 7 a 9 a. m. ",
+              "en": "I want them to come this Saturday for 2-for-1 bread and milk, 7 to 9 a.m. "
+            }
+          },
+          {
+            "pieza": "donde",
+            "texto": {
+              "es": "El aviso va pegado en la puerta, en letra grande: máximo 4 líneas.",
+              "en": "The sign goes on the front door in big letters: 4 lines max."
+            }
+          }
+        ],
+        "salidaTipo": "cartel",
+        "salida": {
+          "es": "SÁBADO MADRUGADOR\nPan y leche 2x1\nDe 7 a 9 a. m.\nTienda Doña Marta, aquí en la esquina",
+          "en": "EARLY BIRD SATURDAY\n2-for-1 bread and milk\n7 to 9 a.m.\nDoña Marta's, right on the corner"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? Son cuatro datos que Doña Marta sabía y la IA no. Eso se llama contexto.",
+          "en": "See the colors? Those are four things Doña Marta knew and the AI didn't. That's called context."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "La IA no te conoce. No sabe si tienes una tienda o una multinacional. El contexto son estas cuatro piezas. Toca cada una.",
+          "en": "AI doesn't know you. It can't tell a corner store from a global chain. Context is these four pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas del contexto",
+        "en": "The 4 pieces of context"
+      },
+      "piezas": [
+        {
+          "id": "quien",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Quién eres",
+            "en": "Who you are"
+          },
+          "descripcion": {
+            "es": "Tu negocio, tu oficio, desde dónde hablas.",
+            "en": "Your business, your job, where you're coming from."
+          },
+          "ejemplo": {
+            "es": "\"Tengo una tienda de barrio\" le dice a la IA que no escriba como un supermercado.",
+            "en": "\"I run a small corner store\" tells the AI not to write like a supermarket chain."
+          }
+        },
+        {
+          "id": "para",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Para quién es",
+            "en": "Who it's for"
+          },
+          "descripcion": {
+            "es": "Quién lo va a leer o a usar.",
+            "en": "Who will read it or use it."
+          },
+          "ejemplo": {
+            "es": "\"Vecinos que compran el mercado del día\" cambia las palabras y el tono.",
+            "en": "\"Neighbors picking up groceries\" changes the words and the tone."
+          }
+        },
+        {
+          "id": "que",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué quieres lograr",
+            "en": "What you want"
+          },
+          "descripcion": {
+            "es": "La acción o el resultado que buscas.",
+            "en": "The action or result you're after."
+          },
+          "ejemplo": {
+            "es": "\"2x1 el sábado de 7 a 9\" le da algo concreto que anunciar, en vez de \"gran oferta\".",
+            "en": "\"2-for-1 on Saturday, 7 to 9\" gives it something real to announce instead of \"huge sale\"."
+          }
+        },
+        {
+          "id": "donde",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Dónde se va a usar",
+            "en": "Where it will be used"
+          },
+          "descripcion": {
+            "es": "Cartel, WhatsApp, correo… y su largo.",
+            "en": "A sign, a text, an email… and how long it can be."
+          },
+          "ejemplo": {
+            "es": "\"En la puerta, 4 líneas\" decide el largo y el tamaño de la letra.",
+            "en": "\"On the door, 4 lines\" decides the length and the text size."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Don Julio tiene una papelería. ¿Qué pieza es cada frase de su prompt?",
+          "en": "Your turn. Don Julio runs a stationery shop. Which piece is each sentence of his prompt?"
+        }
+      },
+      "titulo": {
+        "es": "Arma el pedido de Don Julio",
+        "en": "Build Don Julio's request"
+      },
+      "grupos": [
+        "quien",
+        "para",
+        "que",
+        "donde"
+      ],
+      "items": [
+        {
+          "grupo": "quien",
+          "texto": {
+            "es": "Soy dueño de una papelería cerca de un colegio.",
+            "en": "I own a stationery shop near a school."
+          }
+        },
+        {
+          "grupo": "para",
+          "texto": {
+            "es": "Es para mamás y papás que compran útiles.",
+            "en": "It's for parents buying school supplies."
+          }
+        },
+        {
+          "grupo": "que",
+          "texto": {
+            "es": "Quiero que vengan antes de que empiecen las clases.",
+            "en": "I want them to come in before classes start."
+          }
+        },
+        {
+          "grupo": "donde",
+          "texto": {
+            "es": "Va en un estado de WhatsApp, cortico.",
+            "en": "It's going in a short WhatsApp status."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Clasificaste las cuatro. Ya reconoces el contexto cuando lo ves.",
+          "en": "All four sorted. You can spot context when you see it now."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, no. Lee otra vez: ¿habla de quién escribe, de quién lee, de lo que quiere lograr o de dónde va?",
+          "en": "Hmm, not quite. Read it again: is it about who's writing, who's reading, what he wants, or where it goes?"
+        }
+      },
+      "malPorGrupo": {
+        "donde": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Pregúntate: ¿esto dice dónde va a aparecer el mensaje?",
+            "en": "Close. Ask yourself: does this say where the message will show up?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. La tienda cumple 10 años el domingo y Doña Marta quiere celebrarlo con los vecinos. Escribe el prompt que tú le mandarías a la IA.",
+          "en": "Your turn to transmit. The store turns 10 on Sunday and Doña Marta wants to celebrate with the neighbors. Write the prompt you'd send to the AI."
+        }
+      },
+      "titulo": {
+        "es": "El aniversario de la tienda",
+        "en": "The store's anniversary"
+      },
+      "reto": {
+        "es": "Datos que te cuenta Doña Marta: la tienda cumple 10 años este domingo. Va a regalar tinto de 7 a 10 a. m. y a rifar un mercado entre los que compren. El aviso va en la puerta.",
+        "en": "Here's what Doña Marta tells you: the store turns 10 this Sunday. She'll give away free coffee from 7 to 10 a.m. and raffle a basket of groceries among customers. The sign goes on the door."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "quien",
+          "texto": {
+            "es": "Quién eres",
+            "en": "Who you are"
+          },
+          "rubrica": "El prompt dice quién habla o qué negocio es (una tienda de barrio, Doña Marta). No cuenta si solo dice 'la tienda' o 'mi negocio' sin decir qué tipo de negocio es.",
+          "claves": {
+            "es": [
+              "tienda",
+              "negocio",
+              "soy ",
+              "tengo una",
+              "tengo un",
+              "dona marta",
+              "somos",
+              "local"
+            ],
+            "en": [
+              "store",
+              "shop",
+              "business",
+              "i run",
+              "i own",
+              "we are",
+              "my store",
+              "my shop",
+              "marta"
+            ]
+          }
+        },
+        {
+          "id": "para",
+          "texto": {
+            "es": "Para quién es",
+            "en": "Who it's for"
+          },
+          "rubrica": "El prompt nombra a las personas que van a leer el aviso (vecinos, clientes, familias). No cuenta describir el negocio: 'tienda de barrio' dice quién es el negocio, no para quién es el aviso.",
+          "claves": {
+            "es": [
+              "cliente",
+              "vecin",
+              "del barrio",
+              "senora",
+              "familia",
+              "gente",
+              "personas",
+              "comunidad"
+            ],
+            "en": [
+              "customer",
+              "neighbor",
+              "neighbour",
+              "locals",
+              "people",
+              "families",
+              "community",
+              "regulars"
+            ]
+          }
+        },
+        {
+          "id": "que",
+          "texto": {
+            "es": "Qué quieres lograr",
+            "en": "What you want"
+          },
+          "rubrica": "El prompt dice qué se quiere lograr con datos concretos: al menos dos de estos (10 años, domingo, tinto gratis y su horario, rifa). No cuenta solo 'aniversario' o 'algo bonito'.",
+          "claves": {
+            "es": [
+              "aniversario",
+              "10 anos",
+              "diez anos",
+              "cumple",
+              "celebr",
+              "invit",
+              "regalo",
+              "rifa",
+              "gratis",
+              "domingo",
+              "tinto",
+              "cafe"
+            ],
+            "en": [
+              "anniversary",
+              "10 years",
+              "ten years",
+              "turns 10",
+              "celebrat",
+              "invite",
+              "free",
+              "raffle",
+              "sunday",
+              "giveaway",
+              "coffee",
+              "turns ten"
+            ]
+          }
+        },
+        {
+          "id": "donde",
+          "texto": {
+            "es": "Dónde se va a usar",
+            "en": "Where it will be used"
+          },
+          "rubrica": "El prompt dice dónde se va a usar el aviso (puerta, cartel, vitrina) o cuánto debe medir (número de líneas). No cuenta la palabra 'aviso' sola.",
+          "claves": {
+            "es": [
+              "cartel",
+              "puerta",
+              "pared",
+              "papel",
+              "imprimir",
+              "lineas",
+              "renglon",
+              "vitrina"
+            ],
+            "en": [
+              "poster",
+              "door",
+              "window",
+              "flyer",
+              "print",
+              "lines",
+              "storefront"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un pequeño negocio a escribir un aviso. Responde solo con el aviso, sin explicaciones. Usa únicamente los datos que da el prompt; si faltan datos, escribe algo genérico en vez de inventarlos.",
+        "en": "You are an AI helping a small business write a sign. Reply with the sign only, no explanations. Use only the details given in the prompt; if details are missing, write something generic instead of making them up."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "cartel",
+          "salida": {
+            "es": "¡10 AÑOS DE BARRIO!\nEste domingo: tinto gratis de 7 a 10 a. m.\nY si compras, entras a la rifa de un mercado\nTienda Doña Marta · Gracias, vecinos",
+            "en": "10 YEARS ON THIS CORNER!\nThis Sunday: free coffee, 7 to 10 a.m.\nBuy anything and you're in the grocery raffle\nDoña Marta's · Thank you, neighbors"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. El aviso suena a Doña Marta, no a un supermercado. Mira la lista: cada pieza que pusiste se nota en el resultado.",
+              "en": "Strong signal. The sign sounds like Doña Marta, not a supermarket. Check the list: every piece you added shows up in the result."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Celebramos nuestro aniversario! Gracias por su preferencia. ¡Los esperamos!",
+            "en": "We're celebrating our anniversary! Thank you for your loyalty. See you soon!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. La IA no sabe para quién es ni qué hay de especial. Mira la lista: agrega las piezas que faltan y transmite otra vez.",
+              "en": "Weak signal. The AI doesn't know who it's for or what's special. Check the list: add the missing pieces and transmit again."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Yo también le escribí un prompt a Doña Marta y me salió un desastre. Tiene dos partes que chocan entre sí. Tócalas.",
+          "en": "Confession time. I wrote Doña Marta a prompt too, and it was a mess. Two parts of it contradict each other. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Encuentra el choque",
+        "en": "Find the clash"
+      },
+      "trozos": [
+        {
+          "es": "Tengo una tienda de barrio.",
+          "en": "I run a corner store."
+        },
+        {
+          "es": "Haz un aviso muy corto, de dos líneas,",
+          "en": "Write a very short sign, two lines only,"
+        },
+        {
+          "es": "que explique todos los productos que vendemos con sus precios,",
+          "en": "listing every product we sell with its price,"
+        },
+        {
+          "es": "para pegar en la puerta.",
+          "en": "to put on the door."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Dos líneas no alcanzan para todos los productos con precios. Cuando dos pedidos chocan, la IA sacrifica uno sin avisarte. Hay que decidir: corto o completo.",
+          "en": "You got me. Two lines can't hold every product and price. When two requests clash, the AI drops one without telling you. You have to choose: short or complete."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esas dos pueden vivir juntas. Busca las que piden cosas imposibles al mismo tiempo.",
+          "en": "Those two can live together. Look for the two that can't both be true."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Última prueba de señal. Doña Marta también quiere mandarlo al grupo de WhatsApp del barrio, en máximo 3 líneas. Te dejé tu prompt anterior: cámbiale solo lo necesario.",
+          "en": "Last signal test. Doña Marta also wants to post it in the neighborhood group chat, 3 lines max. I left your last prompt here: change only what you need to."
+        }
+      },
+      "titulo": {
+        "es": "Ahora para WhatsApp",
+        "en": "Now for the group chat"
+      },
+      "reto": {
+        "es": "Mismo aniversario, nuevo lugar: el grupo de WhatsApp del barrio. Máximo 3 líneas.",
+        "en": "Same anniversary, new place: the neighborhood WhatsApp group. 3 lines max."
+      },
+      "inicial": "anterior",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "wa",
+          "texto": {
+            "es": "Dice que es para WhatsApp",
+            "en": "Says it's for WhatsApp"
+          },
+          "rubrica": "El prompt dice que el mensaje es para WhatsApp o para un grupo de chat. No cuenta si sigue diciendo que es un cartel para la puerta.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "whats",
+              "grupo",
+              "wpp",
+              "wsp"
+            ],
+            "en": [
+              "whatsapp",
+              "group chat",
+              "chat",
+              "text message"
+            ]
+          }
+        },
+        {
+          "id": "largo",
+          "texto": {
+            "es": "Pone un límite de largo",
+            "en": "Sets a length limit"
+          },
+          "rubrica": "El prompt pide explícitamente un largo de 3 líneas o menos, o dice que sea corto. No cuenta si no menciona ningún largo, ni si pide 4 líneas o más.",
+          "claves": {
+            "es": [
+              "3 lineas",
+              "tres lineas",
+              "3 renglones",
+              "tres renglones",
+              "max 3",
+              "maximo 3"
+            ],
+            "en": [
+              "3 lines",
+              "three lines",
+              "3-line",
+              "three-line",
+              "max 3"
+            ]
+          }
+        },
+        {
+          "id": "sigue",
+          "texto": {
+            "es": "Mantiene el aniversario y lo que se regala",
+            "en": "Keeps the anniversary and the giveaways"
+          },
+          "rubrica": "El prompt conserva los datos del aniversario (10 años o domingo) y al menos uno de los regalos (tinto gratis, rifa). No cuenta si solo dice 'mi tienda'.",
+          "claves": {
+            "es": [
+              "aniversario",
+              "10 anos",
+              "cumple",
+              "tinto",
+              "rifa",
+              "gratis"
+            ],
+            "en": [
+              "anniversary",
+              "10 years",
+              "coffee",
+              "raffle",
+              "free"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un pequeño negocio a escribir un mensaje. Responde solo con el mensaje, sin explicaciones. Respeta el largo que pida el prompt. Usa únicamente los datos que da el prompt.",
+        "en": "You are an AI helping a small business write a message. Reply with the message only, no explanations. Respect any length the prompt asks for. Use only the details given in the prompt."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Vecinos, ¡la tienda cumple 10 años!\nEste domingo, tinto gratis de 7 a 10 a. m.\nY si compran, entran a la rifa de un mercado. Los esperamos.",
+            "en": "Neighbors, the store turns 10!\nFree coffee this Sunday, 7 to 10 a.m.\nBuy anything and you're in the grocery raffle. See you there."
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Así se hace. Cambiaste solo lo que cambió: dónde se usa y el largo. El resto del contexto ya estaba bien.",
+              "en": "That's how it's done. You changed only what needed changing: where it goes and how long it is. The rest of the context was already right."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Hola a todos! Queremos contarles que nuestra querida tienda está cumpliendo años y para celebrarlo tenemos muchas sorpresas preparadas para ustedes, así que no se lo pueden perder este fin de semana…",
+            "en": "Hi everyone! We wanted to let you know that our beloved store is celebrating another year, and we've prepared lots of surprises for you, so make sure you don't miss out this weekend…"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Salió un testamento para WhatsApp. Revisa la lista: la IA necesita saber dónde va y cuánto puede ocupar.",
+              "en": "That's an essay, not a group message. Check the list: the AI needs to know where it goes and how much room it has."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto te lo llevas. Cada piloto lleva su bitácora. Escribe con tus palabras qué es el contexto, como se lo explicarías a Doña Marta.",
+          "en": "This one comes with you. Every pilot keeps a logbook. Write what context is in your own words, the way you'd explain it to Doña Marta."
+        }
+      },
+      "concepto": "contexto",
+      "definicion": {
+        "es": "Lo que la IA necesita saber de ti para responder bien: quién eres, para quién es, qué quieres lograr y dónde se va a usar.",
+        "en": "What AI needs to know about you to answer well: who you are, who it's for, what you want, and where it will be used."
+      },
+      "pregunta": {
+        "es": "El contexto es…",
+        "en": "Context is…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "avisos",
+        "en": "signs"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. La tarjeta de Contexto y tu prompt del aniversario ya viven en tu bitácora. Te los voy a recordar en el repaso cuando se te estén olvidando.",
+          "en": "Saved. Your Context card and your anniversary prompt now live in your logbook. I'll bring them back in your review right when you're about to forget them."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas rápidas y aterrizamos.",
+          "en": "Two quick questions and we land."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Por qué la IA le devolvió a Doña Marta un aviso genérico?",
+            "en": "Why did the AI give Doña Marta such a generic sign?"
+          },
+          "opciones": [
+            {
+              "es": "Porque la IA no la conoce y nadie le dio contexto",
+              "en": "Because the AI doesn't know her and got no context"
+            },
+            {
+              "es": "Porque las IA no saben escribir avisos",
+              "en": "Because AI can't write signs"
+            },
+            {
+              "es": "Porque usó una IA gratuita",
+              "en": "Because she used a free AI"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Sin contexto, cualquier IA adivina, y adivina genérico.",
+              "en": "Exactly. Without context, any AI guesses, and it guesses generic."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Piensa en lo que la IA sabía de Doña Marta antes de responder.",
+              "en": "Not that. Think about what the AI knew about Doña Marta before it answered."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "\"Haz un post para mi panadería en Instagram.\" ¿Qué le falta?",
+            "en": "\"Write an Instagram post for my bakery.\" What's missing?"
+          },
+          "opciones": [
+            {
+              "es": "El nombre de la IA que lo va a escribir",
+              "en": "The name of the AI that will write it"
+            },
+            {
+              "es": "Para quién es y qué quieres lograr",
+              "en": "Who it's for and what you want"
+            },
+            {
+              "es": "Nada, ya está completo",
+              "en": "Nothing, it's complete"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Dice quién eres y dónde va, pero no a quién le habla ni qué quiere conseguir.",
+              "en": "Right. It says who you are and where it goes, but not who it's talking to or what you're after."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Revisa las cuatro piezas: ¿cuáles están y cuáles no?",
+              "en": "Go through the four pieces: which ones are there and which aren't?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "El contexto",
+        "en": "Context"
+      },
+      "resumen": {
+        "es": "Lo que la IA necesita saber de ti para responder bien. Sin él, cualquier IA responde genérico.",
+        "en": "What AI needs to know about you to answer well. Without it, any AI gives you something generic."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07",
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Descubriste las 4 piezas en el aviso de Doña Marta",
+          "en": "You found the 4 pieces in Doña Marta's sign"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Armaste el pedido de Don Julio pieza por pieza",
+          "en": "You built Don Julio's request piece by piece"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Escribiste el aviso del aniversario",
+          "en": "You wrote the anniversary sign"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Encontraste el error en el prompt de Punti",
+          "en": "You caught the mistake in Punti's prompt"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Lo adaptaste a WhatsApp en 3 líneas",
+          "en": "You adapted it for WhatsApp in 3 lines"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "dar-contexto",
+      "titulo": {
+        "es": "Dar contexto a la IA",
+        "en": "Giving AI context"
+      }
+    }
+  }
+}

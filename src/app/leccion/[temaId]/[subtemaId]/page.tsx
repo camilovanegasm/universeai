@@ -29,6 +29,8 @@ import BarraGasolina from "@/components/BarraGasolina";
 import Ejercicio from "@/components/Ejercicio";
 import GraficoExplicacion from "@/components/GraficoExplicacion";
 import { juegoDelMundo } from "@/lib/juegos/catalogo";
+import TextoTecleado from "@/components/TextoTecleado";
+import ConfirmarSalida from "@/components/ConfirmarSalida";
 
 type Fase = "cargando" | "explicacion" | "ejercicios" | "sin-gasolina" | "resultado";
 
@@ -595,112 +597,5 @@ export default function LeccionPage({
         />
       )}
     </div>
-  );
-}
-
-/**
- * Confirmación para salir del quiz. Es un panel de la app, no un
- * confirm() del navegador: se ve como el resto y no congela la página.
- * Escape o tocar fuera = seguir jugando (lo que no pierde nada).
- */
-function ConfirmarSalida({
-  titulo,
-  texto,
-  seguir,
-  salir,
-  alSeguir,
-  alSalir,
-}: {
-  titulo: string;
-  texto: string;
-  seguir: string;
-  salir: string;
-  alSeguir: () => void;
-  alSalir: () => void;
-}) {
-  const seguirRef = useRef<HTMLButtonElement>(null);
-
-  // El foco va a "seguir jugando" una sola vez, al abrir.
-  useEffect(() => {
-    seguirRef.current?.focus();
-  }, []);
-
-  useEffect(() => {
-    const alTeclear = (e: KeyboardEvent) => {
-      if (e.key === "Escape") alSeguir();
-    };
-    window.addEventListener("keydown", alTeclear);
-    return () => window.removeEventListener("keydown", alTeclear);
-  }, [alSeguir]);
-
-  return (
-    <div
-      className="cargando-entra fixed inset-0 z-40 grid place-items-center bg-black/70 px-4 backdrop-blur-sm"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) alSeguir();
-      }}
-    >
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="salir-titulo"
-        className="flex w-full max-w-sm flex-col items-center gap-4 border-2 border-[var(--pink)] bg-[#0a0a1e] p-6 text-center"
-      >
-        <PuntiPixel estado="battery" ancho={80} />
-        <h2 id="salir-titulo" className="font-[family-name:var(--font-display)] text-xl font-black text-white">
-          {titulo}
-        </h2>
-        <p className="text-[15px] text-[var(--muted)]">{texto}</p>
-        <div className="flex w-full flex-col gap-2">
-          <button ref={seguirRef} onClick={alSeguir} className="boton-pixel boton-pixel-lleno">
-            {seguir}
-          </button>
-          <button
-            onClick={alSalir}
-            className="px-3 py-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--pink)] hover:underline"
-          >
-            {salir}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/**
- * Escribe el texto letra por letra, como una transmisión entrante.
- * Se monta de nuevo en cada pantalla (por el `key`), así no hace falta
- * reiniciar el contador a mano. Si la persona pidió menos movimiento,
- * muestra el texto completo de una vez.
- */
-function TextoTecleado({ texto }: { texto: string }) {
-  const [sinMovimiento] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
-  const [letras, setLetras] = useState(0);
-
-  useEffect(() => {
-    if (sinMovimiento) return;
-    let cuantas = 0;
-    const id = setInterval(() => {
-      cuantas += 2;
-      if (texto[cuantas - 1] && texto[cuantas - 1] !== " ") sonar("voz");
-      if (cuantas >= texto.length) {
-        setLetras(texto.length);
-        clearInterval(id);
-      } else {
-        setLetras(cuantas);
-      }
-    }, 12);
-    return () => clearInterval(id);
-  }, [texto, sinMovimiento]);
-
-  const completo = sinMovimiento || letras >= texto.length;
-
-  return (
-    <>
-      {completo ? texto : texto.slice(0, letras)}
-      {!completo && <span className="cursor-terminal" />}
-    </>
   );
 }

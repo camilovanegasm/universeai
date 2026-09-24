@@ -78,6 +78,22 @@ estos ajustes:
 - Los signos de exclamación que marketingskills prohíbe, Punti los usa con medida
   (regla 7).
 
+## Punti es el protagonista (formato de misiones, decidido 2026-09-23)
+
+En el formato nuevo (misiones hechas de bloques) Punti no desaparece detrás de los
+ejercicios: **él habla y enseña en cada bloque**.
+
+- Cada misión abre con una transmisión de Punti que plantea el problema del día.
+- Punti presenta cada bloque, reacciona a lo que hace el piloto y da la
+  retroalimentación del Laboratorio con su voz, nunca con la de un sistema
+  ("Respuesta incorrecta" no; "Uy, la antena no captó el contexto. Prueba otra vez" sí).
+- En "Punti se equivocó" el que falla es él, con humor, y el piloto lo corrige.
+- La conversación sigue en el espacio: transmisión, señal, antena, piloto, bitácora,
+  aterrizar. Cada mundo tiene su propia historia (Eco: la antena que solo entiende
+  mensajes claros).
+- El cuaderno del piloto se llama "Bitácora de [nombre]". El artículo extra de cada
+  capítulo es el "Archivo de Punti".
+
 ## Formato de lección (recordatorio)
 
 Una lección tiene 4 pantallas (con gráfico opcional), 5 ejercicios en este orden:

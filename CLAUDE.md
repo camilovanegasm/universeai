@@ -31,7 +31,9 @@
 
 > **Contenido y textos:** antes de escribir cualquier texto que vea un estudiante,
 > lee `guias/voz-de-punti.md` (manda sobre todo) y, para datos de IA, sigue
-> `guias/especialista-ia.md`. Claude escribe el contenido; Cami revisa y publica. La
+> `guias/especialista-ia.md`. Claude escribe el contenido; Cami revisa y publica.
+> **Formato nuevo (misiones de bloques, desde 2026-09-23): el lugar principal es el
+> admin**; Claude entrega paquetes que se importan como borrador (DOCUMENTACION.md 6.11). La
 > hoja oficial del contenido es "Punti-Contenido" en el Google Drive de Cami (ver
 > DOCUMENTACION.md 6.6 y 6.7). Cada lunes corre el Radar IA semanal.
 >

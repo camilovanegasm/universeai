@@ -13,7 +13,7 @@
 >
 > (Ver también `CLAUDE.md` en esta misma carpeta: contexto operativo para Claude Code.)
 
-**Última actualización:** 2026-09-23 (noche) · **Fase actual:** 6.0 — preparar el lanzamiento (ver sección 11)
+**Última actualización:** 2026-09-23 (noche) · **Fase actual:** C1 (motor de bloques) · tramo C1.1 hecho, sigue C1.2 (ver 6.11). El lanzamiento espera a Eco rehecho
 
 > Para el detalle de qué se tocó en cada sesión, ver `CAMBIOS.md`.
 
@@ -720,6 +720,160 @@ existen. Con eso la escuela quedaría en unos 12 mundos y unas 80 lecciones.
 Cada lección se escribe igual que las actuales: voz de Punti, ES/EN, lector del
 importador y revisor independiente. Los datos que envejecen van en pantallas vivas.
 
+### 6.11 Aprender de verdad (propuesta 2026-09-23, APROBADA)
+
+Cami pidió profundizar el aprendizaje: que Punti no sea "una plataforma de quiz",
+tomando como referencia a Codédex, con cuaderno de notas y plantillas que no sean
+rígidas. Claude escribió el plan completo en el documento **"Punti · Plan para
+aprender de verdad"** (https://claude.ai/code/artifact/bbfc5392-077b-4c70-b97c-09b8a15b1a9c).
+
+Lo esencial de la propuesta (nada está decidido todavía):
+- **Diagnóstico:** las 78 lecciones tienen la misma forma (4 pantallas + 5 preguntas
+  en el mismo orden + tarea fuera de la app). Enseñan a recordar, no a hacer.
+- **Estructura nueva:** mundo → capítulos (3 a 5) → misiones (4 a 7 por capítulo),
+  con proyecto de capítulo, Bitácora de Punti (artículo), Retos, insignia por
+  capítulo, Hoja de referencia y proyecto final con certificado (Club).
+- **Motor de bloques + recetas:** una misión es una lista de bloques (Transmisión,
+  Antes/después, Laboratorio, Punti se equivocó, Clasificar, Caso con decisiones,
+  Debate, Punto de control, Nota al cuaderno, Reto en tu IA, Fuente, Pantalla viva…).
+  Cada tipo de mundo tiene una receta que sugiere el orden: Concepto, Habilidad,
+  Criterio, Construcción, Mercado, Futuro. Las lecciones actuales se reciclan.
+- **Cuaderno del piloto:** pestaña nueva con Conceptos, Mis prompts, Mis notas y
+  Proyectos; en `usuarios/{uid}/cuaderno/{nota}`, solo el dueño, con topes.
+- **Autoalimentada:** mapa de conceptos, dominio por concepto, Repaso del día con
+  repaso espaciado, y el Radar IA marcando el bloque exacto que envejeció.
+- **Laboratorio** en tres niveles: simulado (gratis), en tu IA con evidencia (gratis)
+  y en vivo con IA real (Club, llave solo en el servidor, tope diario).
+- **Los 100 GB:** el texto no es el límite (cabe en menos de 50 MB); sirven para
+  originales y respaldos. Las imágenes de la app necesitan un servicio de archivos web.
+- **Fases C0 a C6:** diseño → motor de bloques → cuaderno → piloto Eco → repaso →
+  migrar el resto → Club. Las fases 6.0 a 6.4 del lanzamiento no cambian.
+- **Decisiones abiertas:** aprobar el enfoque, mundo piloto (recomendado Eco),
+  lanzar ya o con Eco rehecho, Laboratorio en vivo solo Club o no, hoja o admin
+  como lugar principal para escribir, nombres.
+
+**Decisiones de Cami (2026-09-23, 18:50) — la propuesta queda aprobada:**
+
+| Pregunta | Decisión |
+|---|---|
+| Enfoque (mundo → capítulos → misiones de bloques + bitácora + repaso) | Aprobado. **Punti es el protagonista**: él habla y enseña en cada bloque, y la conversación sigue girando alrededor del espacio |
+| Mundo piloto | **Eco**. Cuando esté terminado y no le falte nada, se replica a los demás |
+| Lanzamiento | **Con Eco rehecho.** Sin fecha; se sigue trabajando |
+| Laboratorio en vivo | **Siempre habilitado, para todos.** Con tope por piloto y tope de gasto global diario, configurables en Ajustes; al pasar el tope, modo simulado |
+| Dónde se escribe | Decidido por Claude (Cami lo delegó): **el admin es el lugar principal**. Claude entrega cada misión como paquete, el admin lo valida e importa como borrador, Cami revisa y publica, y cada publicación guarda versión. La hoja Punti-Contenido queda para las lecciones del formato viejo |
+| Nombres | Misión, Retos, Hoja de referencia, Laboratorio, Repaso del día. El cuaderno se llama **"Bitácora de [nombre del piloto]"**. El artículo extra de cada capítulo se llama **Archivo de Punti** |
+
+**Fase actual: C0 (diseño).** Temario de Eco propuesto: 4 capítulos (La antena, El taller de
+interferencias, Trucos de piloto, Tu copiloto), 19 misiones y 4 proyectos. Detalle en el
+documento del plan, sección 14. Siguen: fichas de bloques, misión 3 escrita, prototipo y
+prueba de modelos para el Laboratorio.
+
+**Tablero de avance "Ruta de vuelo"** (creado 2026-09-23): https://claude.ai/artifact/B5cmtn9M7Uu72asJ27sdKo
+Muestra la fase actual, el camino al lanzamiento, lo que le toca a Cami y las decisiones
+recientes. Los datos viven aparte de la página (colecciones `proyecto`, `fases`, `bitacora`):
+**Claude los actualiza al cerrar cada bloque de trabajo**, sin rehacer la página. Solo Cami
+(y quien él invite como editor) puede marcar tareas; los demás solo leen.
+
+**Temario de Eco aprobado (2026-09-23, 19:06).** Cami lo aprueba y prefiere ver la ejecución
+para resolver dudas. Primer prototipo jugable: misión 3 "La tienda de Doña Marta"
+(https://claude.ai/artifact/2yegKYbG6GJpdxtYoWB9dW; copia en
+`referencias/prototipos/mision-dona-marta.html`). Diez bloques: inicio, antes/después,
+transmisión con diagrama tocable, clasificar, Laboratorio, Punti se equivocó, Laboratorio más
+difícil (parte del prompt anterior), nota a la Bitácora, punto de control y resultado. Usa el
+Punti de pixel art real (`punti-sprite.js`, compilado de `src/lib/puntiSprite.ts`). La revisión
+del Laboratorio es simulada con palabras clave y respuestas escritas de antemano; solo español.
+
+**Ficha de misión (pedido de Cami, 2026-09-23, 19:30).** A Cami le gustó el prototipo y pidió
+que cada misión cierre con un resumen visual "como una ficha técnica de lo aprendido y lo que
+hice". Se agregó como último bloque: sello de completada, Punti celebrando, XP, combustible,
+transmisiones y piezas usadas; lo aprendido (el concepto y sus 4 piezas, encendidas las que usó);
+lo que hizo (logros de la misión); su mejor prompt con las palabras de contexto en color; su
+frase; y el nivel de la habilidad (Vista, Practicada, Dominada). Se guarda en la Bitácora. Idea
+para después: una ficha de capítulo que junte las de sus misiones, y poder descargarla como imagen.
+
+**El molde de las misiones (2026-09-23, noche).** En `contenido/misiones/`:
+- `FORMATO-PAQUETE.md`: el paquete de misión (JSON bilingüe `{ es, en }`, formato
+  `punti-mision@1`) y la **ficha de los 14 tipos de bloque**: inicio, transmision,
+  antes-despues, piezas, clasificar, laboratorio, punti-se-equivoco, nota-bitacora,
+  punto-control, caso, debate, reto-ia, fuente, pantalla-viva. Cada ficha dice para qué sirve,
+  sus campos, cómo se completa, cómo habla Punti, cómo se ve en celular y en qué recetas encaja.
+- `validar.mjs`: revisor sin dependencias (`node contenido/misiones/validar.mjs`). Errores
+  impiden importar; avisos marcan lo que va contra la voz de Punti. Las salidas de ejemplo de la
+  IA no se revisan con la voz de Punti (imitan a una IA, a veces mal a propósito). El admin
+  aplicará las mismas reglas al importar (C1).
+- `eco/03-la-tienda-de-dona-marta.json`: primera misión en paquete, 0 errores y 0 avisos.
+  Un revisor independiente encontró 15 mejoras y se aplicaron (también en el prototipo). La
+  principal: las palabras clave del modo simulado dejaban aprobar sin aplicar la lección
+  ("aviso" contaba como "dónde se usa"). **Regla que queda:** una clave nunca puede ser una
+  palabra que casi cualquier prompt trae, ni una que aparezca en el prompt heredado.
+- Cada laboratorio lleva, por check, una `rubrica` (para la IA que revisa en vivo) y `claves`
+  por idioma (para el modo simulado cuando se alcanza el tope de gasto), más el `sistema` que
+  el servidor le pone al modelo.
+
+**Proveedor del Laboratorio: solo Anthropic (decisión de Cami, 2026-09-23, 19:50).** Se
+descarta la comparación con Gemini. Modelo previsto: **Claude Haiku 4.5** (USD 1 por millón de
+tokens de entrada y USD 5 de salida; ~USD 0,005 por uso; ~USD 150/mes con 100 pilotos diarios
+y 10 usos cada uno). Verificado en fuentes oficiales: Anthropic no entrena con lo que se manda por
+su API salvo consentimiento explícito
+(https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training), y la
+consola permite un workspace propio con **límite de gasto mensual y alertas**
+(https://platform.claude.com/docs/en/manage-claude/workspaces). Configuración: workspace
+"Punti" con límite de gasto; llave `ANTHROPIC_API_KEY` **sin** prefijo `NEXT_PUBLIC_` (así nunca
+viaja al navegador), en `.env.local` y después en Vercel. Neutralidad: el Laboratorio usa Claude
+por dentro, pero las lecciones siguen describiendo todas las marcas con los mismos criterios, y
+el Laboratorio no se presenta como "Claude" ante el piloto.
+
+**Prueba real del Laboratorio (2026-09-23, 20:15).** Cami pidió "el modelo más económico y
+que sea igualmente profesional": se confirma **Claude Haiku 4.5, forma A** (una llamada
+responde al prompt, otra lo califica con la rúbrica y escribe a Punti). Resultado: 38/40
+checks, resiste un prompt tramposo, **USD 0,0026 por uso real** (~USD 78/mes con 100 pilotos
+diarios × 10 usos). La forma B (todo en una llamada) se descartó: casi el mismo costo y se deja
+engañar. Detalle y correcciones en `referencias/prueba-laboratorio/INFORME.md`. Reglas que
+quedan para el servidor: el revisor ve solo el prompt del piloto (nunca la respuesta de la IA);
+el prompt del piloto va entre etiquetas y se trata como datos; la salida se pide en texto plano;
+calificación con herramienta de salida estructurada (no texto libre). La prueba corre en el
+Windows de Cami (`npm run probar:laboratorio`): el entorno de Claude bloquea llamadas con llaves.
+Primera llave quedó cortada al copiarla (82 de ~108 caracteres); se creó otra.
+
+**Segunda corrida y cierre de C0 (2026-09-23, 20:18).** Las tres correcciones funcionaron
+(prompt vago bien revisado, Punti en 22 a 30 palabras hablándole al piloto, salidas en texto
+plano, trampa resistida). Quedaron 2 errores de 40, ambos por generosidad del revisor. Se
+corrigen con rúbricas que dicen qué NO cuenta (regla nueva en `FORMATO-PAQUETE.md`), temperatura
+0 al calificar y "si dudas, marca false". **Fase C0 terminada**; C1 (motor de bloques) espera la
+aprobación de Cami.
+
+**Fase C1 (aprobada 2026-09-23, 20:21) · tramo C1.1: el lector de misiones.** C1 se hace en
+cuatro tramos: C1.1 lector de misiones · C1.2 admin (importar, revisar, publicar, versiones) ·
+C1.3 Laboratorio en vivo con Claude desde el servidor · C1.4 pruebas y documentación.
+
+Lo que quedó en C1.1:
+- Ruta `/mision/[mundoId]/[misionId]` (`src/app/mision/…/page.tsx`): Punti arriba en todos los
+  bloques, barra de avance, gasolina, salir con confirmación, "Aterrizar" y la Ficha de misión.
+- `src/lib/misiones/`: `tipos.ts` (el paquete), `revisar.mjs` + `revisar.d.mts` (las reglas del
+  revisor, **un solo archivo** para la app, el admin y `npm run validar:misiones`), `cargar.ts`
+  (Firebase `misiones/{id}` o la semilla de `contenido/misiones/`; un paquete con errores no se
+  juega) y `laboratorio.ts` (modo simulado y resaltado de claves).
+- `src/components/mision/`: los 14 tipos de bloque (`Bloques.tsx`), `Laboratorio.tsx`,
+  `FichaMision.tsx`, `Base.tsx`. `TextoTecleado` y `ConfirmarSalida` pasaron a
+  `src/components/` y ahora los usan la lección y la misión.
+- Entrada: en el mundo Eco aparece la tarjeta "MISIONES · VISTA PREVIA DEL ADMIN", **solo para el
+  admin**, hasta que Eco esté rehecho. Los pilotos siguen viendo el Eco de siempre.
+- **Economía igual que las lecciones** (decisión técnica, revisable): XP y combustible salen de
+  `calcularXp` y el progreso se guarda con `completarLeccion`, así las reglas de Firestore no
+  cambian ni se abren. Una misión da hoy lo mismo que una lección (hasta 20 XP con el bono). Si
+  Cami quiere que una misión dé más, se sube `xpMaximo` en Ajustes o se hace una regla aparte.
+  Los errores en ejercicios cerrados gastan gasolina; transmitir en el Laboratorio no.
+- La nota a la bitácora todavía no se guarda en la cuenta: llega con la Bitácora (C2).
+- Verificado: tipos y lint limpios; la misión completa jugada con clics reales en celular
+  (390 px), en español e inglés, con Firebase y sesión simulados: 0 errores, y lo que se
+  escribe al terminar tiene la forma exacta que aceptan las reglas. Se corrigió un error que
+  devolvía al primer bloque si el objeto de sesión cambiaba (ahora depende del uid).
+
+**Costo estimado del Laboratorio** (precios verificados 2026-09-23): por uso ~USD 0,0004 con
+Gemini 2.5 Flash-Lite y ~USD 0,005 con Claude Haiku 4.5; con 100 pilotos diarios y 10 usos,
+~USD 13 o ~USD 150 al mes. El proveedor se elige en C0 con prueba real y criterio neutral.
+Por verificar: que el plan de API no entrene con los datos, y si Vercel exige el plan Pro.
+
 ## 7. Reglas del juego
 
 Toda esta lógica vive en `src/lib/progreso.ts`, separada de la interfaz. **Los
@@ -1085,6 +1239,16 @@ tenía otra sesión abierta. **Sigue sin explicación.** De ahí salió `CAMBIOS
 ---
 
 ## 13. Bitácora
+
+### 2026-09-23 (noche) — Cami aprueba el plan de aprendizaje
+
+- Aprobado el formato nuevo con Eco como piloto; se lanza con Eco rehecho. Laboratorio en vivo para todos, con topes. El admin pasa a ser el lugar principal del contenido. Nombres: Bitácora de [nombre] y Archivo de Punti. Ver 6.11.
+- Empieza la fase C0 con el temario de Eco.
+
+### 2026-09-23 (noche) — Propuesta para aprender de verdad
+
+- Plan para pasar de quiz a curso: capítulos, misiones de bloques, cuaderno, repaso y Laboratorio. Ver 6.11.
+- Solo propuesta; no se tocó código. Espera la aprobación de Cami.
 
 ### 2026-09-23 (noche) — Minijuegos que recargan gasolina
 
