@@ -8,7 +8,10 @@
 //  - Mis prompts: sus prompts del Laboratorio, con las piezas que tenían y un
 //    botón para copiarlos y usarlos en su IA de verdad.
 //  - Mis notas: notas libres (crear, editar, borrar; máximo 200).
-//  - Fichas: las Fichas de misión, con acceso para volver a jugarlas.
+//  - Fichas: las Fichas de misión, con acceso para volver a jugarlas y un
+//    botón para guardarlas (o compartirlas) como imagen.
+//
+// Arriba, "Descargar mi Bitácora" baja todo en un archivo de texto (.txt).
 //
 // Los datos vienen de src/lib/bitacora.ts. Todo se muestra como texto. Borrar
 // pide un segundo toque (no hay confirm() del navegador).
@@ -33,7 +36,11 @@ import {
   type EntradaNota,
   type EntradaPrompt,
 } from "@/lib/bitacora";
+import { bitacoraComoTexto, fechaCorta } from "@/lib/bitacoraTexto";
+import { descargar, nombreSeguro } from "@/lib/compartir";
+import type { DatosFichaImagen } from "@/lib/fichaImagen";
 import PuntiPixel from "@/components/PuntiPixel";
+import BotonFichaImagen from "@/components/mision/BotonFichaImagen";
 import Cargando from "@/components/Cargando";
 import TextoTecleado from "@/components/TextoTecleado";
 
@@ -75,6 +82,8 @@ const T: Record<Idioma, Record<string, string>> = {
     vacioFichas: "Cada misión que completes deja aquí su ficha.",
     saludoVacio: "Tu bitácora está en blanco, piloto. Cada misión que completes la va llenando.",
     saludo: "Todo lo que aprendiste y escribiste, en un solo lugar. Vuelve cuando quieras.",
+    descargarTodo: "Descargar mi Bitácora",
+    descargada: "¡Descargada!",
   },
   en: {
     bitacora: "Logbook of",
@@ -111,6 +120,8 @@ const T: Record<Idioma, Record<string, string>> = {
     vacioFichas: "Every mission you complete leaves its card here.",
     saludoVacio: "Your logbook is blank, pilot. Every mission you complete fills it up.",
     saludo: "Everything you learned and wrote, in one place. Come back anytime.",
+    descargarTodo: "Download my logbook",
+    descargada: "Downloaded!",
   },
 };
 
@@ -122,8 +133,7 @@ const COLOR: Record<Seccion, string> = {
 };
 
 function fecha(e: Entrada, idioma: Idioma) {
-  const d = e.fecha?.toDate?.();
-  return d ? d.toLocaleDateString(idioma === "en" ? "en-US" : "es-CO", { day: "numeric", month: "short", year: "numeric" }) : "";
+  return fechaCorta(e.fecha?.toDate?.(), idioma);
 }
 
 export default function BitacoraPage() {
@@ -218,6 +228,8 @@ export default function BitacoraPage() {
           </div>
         </div>
 
+        {!vacia && <DescargarTodo entradas={entradas} idioma={idioma} piloto={piloto} t={t} />}
+
         <div role="tablist" aria-label={`${t.bitacora} ${piloto}`} className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {secciones.map((s) => {
             const activa = s === seccion;
@@ -255,7 +267,7 @@ export default function BitacoraPage() {
           {seccion === "notas" && (
             <Notas lista={grupos.notas} todas={entradas} idioma={idioma} t={t} uid={usuario.uid} quitar={quitar} poner={poner} />
           )}
-          {seccion === "fichas" && <Fichas lista={grupos.fichas} idioma={idioma} t={t} />}
+          {seccion === "fichas" && <Fichas lista={grupos.fichas} todas={entradas} piloto={piloto} idioma={idioma} t={t} />}
         </section>
       </main>
     </div>
@@ -540,7 +552,84 @@ function Notas({
   );
 }
 
-function Fichas({ lista, idioma, t }: { lista: (EntradaFicha & { id: string })[]; idioma: Idioma; t: Txt }) {
+/**
+ * "Descargar mi Bitácora": toda la Bitácora en un .txt, en el idioma que se
+ * está viendo. Se arma en el navegador con lo que ya está cargado (no vuelve
+ * a leer Firebase).
+ */
+function DescargarTodo({ entradas, idioma, piloto, t }: { entradas: Entrada[]; idioma: Idioma; piloto: string; t: Txt }) {
+  const [listo, setListo] = useState(false);
+  useEffect(() => {
+    if (!listo) return;
+    const reloj = setTimeout(() => setListo(false), 2500);
+    return () => clearTimeout(reloj);
+  }, [listo]);
+  return (
+    <div className="flex justify-end">
+      <button
+        type="button"
+        onClick={() => {
+          // La marca BOM al inicio ayuda a los editores viejos de Windows a
+          // reconocer las tildes (UTF-8).
+          const texto = "\uFEFF" + bitacoraComoTexto(entradas, idioma, piloto);
+          const blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
+          descargar(blob, `Bitacora-de-${nombreSeguro(piloto, idioma === "en" ? "Pilot" : "Piloto")}.txt`);
+          sonar("acierto");
+          setListo(true);
+        }}
+        className="boton-pixel"
+        style={{ borderColor: "var(--cyan)", color: "var(--cyan)", background: "transparent" }}
+      >
+        ↓ {textoPixel(listo ? t.descargada : t.descargarTodo)}
+      </button>
+    </div>
+  );
+}
+
+/**
+ * Los datos de la imagen de una Ficha, sacados de la Bitácora: la ficha, el
+ * concepto de esa misión y su mejor prompt aprobado (el del último
+ * Laboratorio). Lo que falte, la imagen simplemente no lo muestra.
+ */
+function datosImagen(e: EntradaFicha, todas: Entrada[], piloto: string, idioma: Idioma): DatosFichaImagen {
+  const concepto = todas.find((x): x is EntradaConcepto & { id: string } => x.tipo === "concepto" && x.mision === e.mision);
+  const prompt = todas
+    .filter((x): x is EntradaPrompt & { id: string } => x.tipo === "prompt" && x.mision === e.mision && x.aprobado)
+    .sort((a, b) => b.id.localeCompare(a.id))[0];
+  const piezas = (prompt?.piezas ?? "")
+    .split("·")
+    .map((p) => p.trim())
+    .filter(Boolean)
+    .map((titulo) => ({ titulo, usada: true }));
+  return {
+    idioma,
+    titulo: e.titulo[idioma] || e.titulo.es || e.titulo.en,
+    piloto,
+    xp: e.xp,
+    combustible: e.combustible,
+    transmisiones: e.transmisiones,
+    concepto: concepto
+      ? { titulo: concepto.titulo[idioma], frase: concepto.frase, definicion: concepto.definicion[idioma] }
+      : undefined,
+    mejorPrompt: prompt?.texto,
+    piezas,
+    fecha: e.fecha?.toDate?.() ?? null,
+  };
+}
+
+function Fichas({
+  lista,
+  todas,
+  piloto,
+  idioma,
+  t,
+}: {
+  lista: (EntradaFicha & { id: string })[];
+  todas: Entrada[];
+  piloto: string;
+  idioma: Idioma;
+  t: Txt;
+}) {
   if (!lista.length) return <Vacio texto={t.vacioFichas} />;
   return (
     <div className="grid gap-3 sm:grid-cols-2">
@@ -560,6 +649,13 @@ function Fichas({ lista, idioma, t }: { lista: (EntradaFicha & { id: string })[]
             ))}
           </dl>
           <Pie izquierda={fecha(e, idioma)}>
+            <BotonFichaImagen
+              idioma={idioma}
+              nombreArchivo={`Ficha-${nombreSeguro(e.titulo[idioma] || e.mision, "Mision")}-${nombreSeguro(piloto)}.png`}
+              armar={() => datosImagen(e, todas, piloto, idioma)}
+              className="boton-pixel"
+              style={{ borderColor: "var(--pink)", color: "var(--pink)", background: "transparent", padding: "0.8rem 1rem" }}
+            />
             <Link
               href={`/mision/${e.mundo}/${e.mision}`}
               transitionTypes={["adelante"]}

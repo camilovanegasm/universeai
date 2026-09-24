@@ -1,0 +1,774 @@
+{
+  "formato": "punti-mision@1",
+  "id": "conversar-no-disparar",
+  "mundo": "prompts",
+  "capitulo": 1,
+  "numero": 5,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "iterar"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "contexto",
+    "forma"
+  ],
+  "titulo": {
+    "es": "Conversar, no disparar",
+    "en": "Talk, Don't Just Fire"
+  },
+  "resumen": {
+    "es": "Conversar con la IA: tomar la primera respuesta como borrador y pedir ajustes concretos en vez de empezar de cero.",
+    "en": "Talking with AI: treat the first answer as a draft and ask for specific tweaks instead of starting over."
+  },
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, entró una señal a la antena. Es Sofía, que hace tortas en su casa y las vende por Instagram. Va en su sexto prompt para el mismo post: cada vez que algo no le gusta, borra todo y empieza de cero.",
+          "en": "Pilot, a signal just came in. It's Sofía, who bakes cakes at home and sells them on Instagram. She's on her sixth prompt for the same post: every time something's off, she deletes it all and starts over."
+        }
+      },
+      "titulo": {
+        "es": "Conversar, no disparar",
+        "en": "Talk, Don't Just Fire"
+      },
+      "texto": {
+        "es": "Hoy aprendes a conversar con la IA: la primera respuesta es un borrador y se mejora con ajustes. Es la última misión del capítulo. Unos 8 minutos.",
+        "en": "Today you'll learn to talk with AI: the first answer is a draft, and you improve it with tweaks. It's the last mission of the chapter. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "La IA le dio a Sofía un texto para sus brownies: larguísimo y con una abuela que no existe. Mira cómo le respondió ella a la IA y cómo le respondemos nosotros.",
+          "en": "The AI gave Sofía a caption for her brownies: way too long, and starring a grandma who doesn't exist. Look at how she replied to the AI, and how we'd reply."
+        }
+      },
+      "titulo": {
+        "es": "Dos formas de responder",
+        "en": "Two ways to reply"
+      },
+      "antes": {
+        "prompt": {
+          "es": "No me gusta. Hazlo mejor.",
+          "en": "I don't like it. Make it better."
+        },
+        "salida": {
+          "es": "¡Descubre nuestros irresistibles brownies! Preparados con amor siguiendo la receta secreta de la abuela, cada bocado es una experiencia única que te transportará a tu infancia. Perfectos para compartir en familia, con amigos o para darte un gusto. ¡Haz tu pedido hoy mismo!",
+          "en": "Discover our irresistible brownies! Made with love from Grandma's secret recipe, every bite is a one-of-a-kind experience that takes you right back to childhood. Perfect for sharing with family, friends, or treating yourself. Order yours today!"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "gusto",
+            "texto": {
+              "es": "Me gusta la primera frase. ",
+              "en": "I like the first line. "
+            }
+          },
+          {
+            "pieza": "cambia",
+            "texto": {
+              "es": "Hazlo más corto: máximo 2 líneas. ",
+              "en": "Make it shorter: 2 lines max. "
+            }
+          },
+          {
+            "pieza": "agrega",
+            "texto": {
+              "es": "Agrega que la caja de 6 cuesta $18.000. ",
+              "en": "Add that a box of 6 is $18. "
+            }
+          },
+          {
+            "pieza": "quita",
+            "texto": {
+              "es": "Quita lo de la abuela, que no es cierto.",
+              "en": "Take out the grandma part, it isn't true."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "¡Descubre nuestros irresistibles brownies!\nLa caja de 6 cuesta $18.000.",
+          "en": "Discover our irresistible brownies!\nA box of 6 is $18."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Cada color es una pieza del ajuste. No empezamos de cero: dijimos qué servía, qué cambiar, qué agregar y qué quitar. La IA arregló el mismo texto en vez de inventar otro.",
+          "en": "Each color is a piece of the tweak. We didn't start over: we said what worked, what to change, what to add and what to cut. The AI fixed the same text instead of inventing a new one."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "La primera respuesta es un borrador, como la primera prueba de un vestido con la modista. No lo botas: dices qué ajustar. Un buen ajuste tiene estas cuatro piezas. Toca cada una.",
+          "en": "The first answer is a draft, like the first fitting at the tailor. You don't throw the outfit away: you say what to adjust. A good tweak has these four pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas de un buen ajuste",
+        "en": "The 4 pieces of a good tweak"
+      },
+      "piezas": [
+        {
+          "id": "gusto",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Lo que te gustó",
+            "en": "What you liked"
+          },
+          "descripcion": {
+            "es": "La parte que sirve y se queda.",
+            "en": "The part that works and stays."
+          },
+          "ejemplo": {
+            "es": "\"Me gusta la primera frase\" le dice a la IA qué no tocar.",
+            "en": "\"I like the first line\" tells the AI what not to touch."
+          }
+        },
+        {
+          "id": "cambia",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué cambiar",
+            "en": "What to change"
+          },
+          "descripcion": {
+            "es": "El largo o el tono, dicho con precisión.",
+            "en": "The length or the tone, said precisely."
+          },
+          "ejemplo": {
+            "es": "\"Máximo 2 líneas\" funciona. \"Mejóralo\" no le dice nada.",
+            "en": "\"2 lines max\" works. \"Make it better\" tells it nothing."
+          }
+        },
+        {
+          "id": "agrega",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Qué agregar",
+            "en": "What to add"
+          },
+          "descripcion": {
+            "es": "El dato que falta, con su valor.",
+            "en": "The missing detail, with its value."
+          },
+          "ejemplo": {
+            "es": "\"La caja de 6 cuesta $18.000\", no \"pon el precio\": la IA no sabe cuánto cobras.",
+            "en": "\"A box of 6 is $18,\" not \"add the price\": the AI doesn't know what you charge."
+          }
+        },
+        {
+          "id": "quita",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Qué quitar",
+            "en": "What to cut"
+          },
+          "descripcion": {
+            "es": "Lo que sobra o lo que no es cierto.",
+            "en": "Whatever is extra or isn't true."
+          },
+          "ejemplo": {
+            "es": "\"Quita lo de la abuela\" borra algo que la IA se inventó.",
+            "en": "\"Take out the grandma part\" removes something the AI made up."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estos son ajustes que otros vendedores le mandaron a la IA. ¿Cuáles le dicen algo claro y cuáles la dejan adivinando?",
+          "en": "Your turn. These are tweaks other sellers sent to an AI. Which ones say something clear, and which leave it guessing?"
+        }
+      },
+      "titulo": {
+        "es": "¿Claro o vago?",
+        "en": "Clear or vague?"
+      },
+      "grupos": [
+        {
+          "id": "claro",
+          "titulo": {
+            "es": "Claro",
+            "en": "Clear"
+          }
+        },
+        {
+          "id": "vago",
+          "titulo": {
+            "es": "Vago",
+            "en": "Vague"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "vago",
+          "texto": {
+            "es": "Hazlo más bonito.",
+            "en": "Make it nicer."
+          }
+        },
+        {
+          "grupo": "claro",
+          "texto": {
+            "es": "Cambia \"estimados clientes\" por \"hola, vecinos\".",
+            "en": "Change \"Dear valued customers\" to \"Hi, neighbors\"."
+          }
+        },
+        {
+          "grupo": "vago",
+          "texto": {
+            "es": "No me convence. Otra vez.",
+            "en": "Not feeling it. Again."
+          }
+        },
+        {
+          "grupo": "claro",
+          "texto": {
+            "es": "Quita la última frase y agrega el horario: de 8 a. m. a 6 p. m.",
+            "en": "Cut the last sentence and add the hours: 8 a.m. to 6 p.m."
+          }
+        },
+        {
+          "grupo": "vago",
+          "texto": {
+            "es": "Mejóralo un poquito.",
+            "en": "Improve it a little."
+          }
+        },
+        {
+          "grupo": "claro",
+          "texto": {
+            "es": "Me gusta el inicio. Déjalo igual y acorta el resto a 2 líneas.",
+            "en": "I like the opening. Keep it and cut the rest to 2 lines."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Ya distingues un ajuste que la antena capta de uno que solo hace ruido.",
+          "en": "Six for six. You can tell a tweak the antenna picks up from one that's just noise."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, no. Ponte en los zapatos de la IA: con esa frase, ¿sabrías exactamente qué cambiar?",
+          "en": "Hmm, not quite. Put yourself in the AI's shoes: with that sentence, would you know exactly what to change?"
+        }
+      },
+      "malPorGrupo": {
+        "claro": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Esa frase dice qué cambiar y cómo. ¿Qué tendría que adivinar la IA ahí?",
+            "en": "Close. That one says what to change and how. What would the AI have to guess?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Sofía estrena una torta de maracuyá y la IA ya le dio un primer texto. No empieces de cero: respóndele a la IA qué te gustó y qué ajustar.",
+          "en": "Your turn to transmit. Sofía has a new passion fruit cake, and the AI already gave her a first caption. Don't start over: reply to the AI with what you liked and what to adjust."
+        }
+      },
+      "titulo": {
+        "es": "El post de la torta",
+        "en": "The cake post"
+      },
+      "reto": {
+        "es": "Primer borrador de la IA: \"Estimados clientes: nos complace presentarles nuestra nueva torta de maracuyá, la mejor de todo el país, elaborada con ingredientes de la más alta calidad.\" Sofía quiere que suene como habla ella, que diga el precio ($45.000, para 12 personas) y que se pida por mensaje directo.",
+        "en": "The AI's first draft: \"Dear valued customers: we are pleased to introduce our new passion fruit cake, the best in the whole country, made with only the finest ingredients.\" Sofía wants it to sound like her, to show the price ($45, serves 12) and to say orders go through direct message."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "gusto",
+          "texto": {
+            "es": "Dice qué le gustó",
+            "en": "Says what you liked"
+          },
+          "rubrica": "El mensaje dice qué parte del borrador sirve o se queda (por ejemplo, que presenta la torta de maracuyá como nueva, o la frase de los ingredientes). No cuenta un saludo, un 'gracias' ni un 'está bien' general sin decir qué parte se conserva.",
+          "claves": {
+            "es": [
+              "me gusta que",
+              "me gusta como",
+              "me gusta lo de",
+              "me gusta la parte",
+              "me gusta el inicio",
+              "me gusta la primera",
+              "me gusto que",
+              "me gusto como",
+              "me gusto lo de",
+              "me encanta que",
+              "manten",
+              "conserva",
+              "deja igual",
+              "dejalo igual",
+              "deja la parte",
+              "deja lo de",
+              "eso si sirve"
+            ],
+            "en": [
+              "i like",
+              "i liked",
+              "i love the",
+              "love the",
+              "keep the",
+              "leave the",
+              "that part works",
+              "works well"
+            ]
+          }
+        },
+        {
+          "id": "cambia",
+          "texto": {
+            "es": "Pide un cambio concreto",
+            "en": "Asks for a specific change"
+          },
+          "rubrica": "El mensaje pide un cambio concreto de tono o de largo: más cercano, como habla Sofía, menos formal, sin 'estimados clientes', o un largo con número. No cuenta 'mejóralo', 'hazlo bonito' u 'otra vez' sin decir qué cambiar.",
+          "claves": {
+            "es": [
+              "cercan",
+              "menos formal",
+              "informal",
+              "como hablo",
+              "como habla",
+              "relajad",
+              "mas corto",
+              "mas corta",
+              "tono",
+              "lineas",
+              "renglones"
+            ],
+            "en": [
+              "friendly",
+              "warmer",
+              "casual",
+              "less formal",
+              "the way i talk",
+              "how i talk",
+              "shorter",
+              "tone",
+              "lines"
+            ]
+          }
+        },
+        {
+          "id": "agrega",
+          "texto": {
+            "es": "Agrega un dato con su valor",
+            "en": "Adds a detail with its value"
+          },
+          "rubrica": "El mensaje pide agregar un dato nuevo con su valor: el precio (45.000 en español, 45 en inglés), que alcanza para 12 personas, o que los pedidos son por mensaje directo. No cuenta 'agrega más información' ni 'pon el precio' sin decir cuál es.",
+          "claves": {
+            "es": [
+              "45.000",
+              "45000",
+              "45 mil",
+              "12 personas",
+              "doce personas",
+              "mensaje directo",
+              " dm",
+              "por interno",
+              "al interno",
+              "por privado"
+            ],
+            "en": [
+              "$45",
+              "45 dollars",
+              "serves 12",
+              "12 people",
+              "twelve people",
+              "direct message",
+              " dm"
+            ]
+          }
+        },
+        {
+          "id": "quita",
+          "texto": {
+            "es": "Pide quitar algo concreto",
+            "en": "Asks to cut something specific"
+          },
+          "rubrica": "El mensaje pide quitar algo concreto del borrador: 'la mejor de todo el país' (una exageración que Sofía no puede probar), 'estimados clientes' o 'nos complace'. No cuenta 'quita lo que sobra' o 'hazlo más limpio' sin decir qué.",
+          "claves": {
+            "es": [
+              "quita",
+              "elimina",
+              "borrale",
+              "borra lo",
+              "borra la",
+              "borra el",
+              "sacale",
+              "saca lo",
+              "saca la",
+              "exager",
+              "sin lo de"
+            ],
+            "en": [
+              "remove",
+              "delete",
+              "get rid of",
+              "take out",
+              "drop the",
+              "cut the",
+              "lose the",
+              "exaggerat",
+              "without the"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una repostera que vende tortas por Instagram a escribir sus publicaciones. En esta conversación ya le diste este primer borrador: \"Estimados clientes: nos complace presentarles nuestra nueva torta de maracuyá, la mejor de todo el país, elaborada con ingredientes de la más alta calidad.\" El mensaje que recibes es lo que ella te responde sobre ese borrador. Aplica sus ajustes sobre el mismo borrador y responde solo con la nueva versión, sin explicaciones. Conserva lo que ella no pida cambiar. Si pide algo vago como 'mejóralo' u 'otra vez', cambia unas pocas palabras y deja el mismo estilo formal. Usa únicamente los datos que ella da; no inventes precios, horarios ni otros datos.",
+        "en": "You are an AI helping a home baker who sells cakes on Instagram write her posts. Earlier in this conversation you gave her this first draft: \"Dear valued customers: we are pleased to introduce our new passion fruit cake, the best in the whole country, made with only the finest ingredients.\" The message you receive is her reply about that draft. Apply her changes to that same draft and reply with the new version only, no explanations. Keep anything she doesn't ask to change. If she asks for something vague like 'make it better' or 'again', change a few words and keep the same formal style. Use only the details she gives; don't make up prices, hours or anything else."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Nueva en mi horno: torta de maracuyá, hecha con ingredientes de la más alta calidad.\nAlcanza para 12 personas y cuesta $45.000.\nPídela por mensaje directo.",
+            "en": "New out of my oven: passion fruit cake, made with only the finest ingredients.\nServes 12, and it's $45.\nOrder by direct message."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. No empezaste de cero: el texto conserva lo que servía y cambió justo lo que pediste. Así se conversa con la IA.",
+              "en": "Strong signal. You didn't start over: the caption kept what worked and changed exactly what you asked for. That's how you talk with AI."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Queridos clientes: con gran alegría les presentamos nuestra nueva torta de maracuyá, sin duda la mejor de todo el país, preparada con ingredientes de primera calidad.",
+            "en": "Dear customers: we are delighted to present our new passion fruit cake, without a doubt the best in the whole country, prepared with top-quality ingredients."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. La IA cambió unas palabras, pero no sabe qué querías. Mira la lista: di qué te gustó, qué cambiar, qué agregar y qué quitar.",
+              "en": "Weak signal. The AI swapped a few words, but it doesn't know what you wanted. Check the list: say what you liked, what to change, what to add and what to cut."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Otra confesión. Yo también le ayudé a Sofía, con un post de galletas. Esta fue mi conversación con la IA. Dos de mis mensajes estorbaron más de lo que ayudaron. Tócalos.",
+          "en": "Another confession. I helped Sofía too, with a cookie post. This was my chat with the AI. Two of my messages did more harm than good. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mis cinco mensajes",
+        "en": "My five messages"
+      },
+      "trozos": [
+        {
+          "es": "Escribe un post para mis galletas de avena, máximo 3 líneas.",
+          "en": "Write a post for my oatmeal cookies, 3 lines max."
+        },
+        {
+          "es": "Me gusta el inicio. Cambia el final para que invite a pedir.",
+          "en": "I like the opening. Change the ending so it invites people to order."
+        },
+        {
+          "es": "No sirve. Borra todo y empieza de cero.",
+          "en": "This is no good. Delete it all and start over."
+        },
+        {
+          "es": "Agrega que el paquete de 10 cuesta $12.000.",
+          "en": "Add that a pack of 10 is $12."
+        },
+        {
+          "es": "Mejóralo.",
+          "en": "Make it better."
+        }
+      ],
+      "malos": [
+        2,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. \"Borra todo\" botó lo que ya servía, y \"mejóralo\" no le dice nada a la antena. La IA no adivina qué es mejor para ti: tienes que decírselo.",
+          "en": "You got me. \"Delete it all\" threw out what already worked, and \"make it better\" tells the antenna nothing. The AI can't guess what better means to you: you have to say it."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese mensaje le da a la IA algo concreto. Busca los que la dejan adivinando o tiran lo que ya estaba bien.",
+          "en": "That one gives the AI something concrete. Look for the ones that leave it guessing or throw away what was already good."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Una nota más para tu bitácora, la última del capítulo. Escribe con tus palabras qué es iterar, como se lo explicarías a Sofía.",
+          "en": "One more logbook entry, the last one this chapter. Write what iterating means in your own words, the way you'd explain it to Sofía."
+        }
+      },
+      "concepto": "iterar",
+      "definicion": {
+        "es": "Conversar con la IA en vez de disparar un solo pedido: tomar la primera respuesta como borrador y pedir ajustes concretos sobre ella, diciendo qué sirve y qué cambiar.",
+        "en": "Talking with AI instead of firing off one request: treating the first answer as a draft and asking for specific tweaks to it, saying what works and what to change."
+      },
+      "pregunta": {
+        "es": "Iterar es…",
+        "en": "Iterating is…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "ajustes",
+        "en": "tweaks"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Iterar y tu ajuste del post ya viven en tu bitácora, con todo lo que armaste en este capítulo.",
+          "en": "Saved. Your Iterating card and your post tweak now live in your logbook, with everything else you built this chapter."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas rápidas antes de cerrar el capítulo.",
+          "en": "Two quick questions before we close the chapter."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "La IA te dio un texto que casi sirve, pero está muy largo. ¿Qué haces?",
+            "en": "The AI gave you a text that almost works, but it's too long. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Escribes otro prompt desde cero",
+              "en": "Write a new prompt from scratch"
+            },
+            {
+              "es": "Le pides que lo acorte a un largo concreto",
+              "en": "Ask it to cut it to a specific length"
+            },
+            {
+              "es": "Lo dejas así, la IA sabe más",
+              "en": "Leave it, the AI knows best"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Un texto que casi sirve se ajusta; no se bota.",
+              "en": "Right. A text that almost works gets adjusted, not thrown out."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en lo que ya servía de ese texto. ¿Vale la pena perderlo?",
+              "en": "Hmm. Think about what already worked in that text. Is it worth losing?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Cuál de estos ajustes capta mejor la antena?",
+            "en": "Which of these tweaks does the antenna pick up best?"
+          },
+          "opciones": [
+            {
+              "es": "Hazlo mejor, porfa",
+              "en": "Make it better, please"
+            },
+            {
+              "es": "No me gusta, otra vez",
+              "en": "I don't like it, again"
+            },
+            {
+              "es": "Me gusta el inicio; quita la última frase y agrega el precio: $20.000",
+              "en": "I like the opening; cut the last line and add the price: $20"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Dice qué se queda, qué sale y qué entra.",
+              "en": "Exactly. It says what stays, what goes and what comes in."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: con esa frase, ¿la IA sabe qué cambiar?",
+              "en": "Ask yourself: with that sentence, does the AI know what to change?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Cerramos el capítulo con un calentamiento. Lo que sigue es tu proyecto, el Kit de señales: 5 prompts que funcionen para un negocio real, tuyo o inventado. Empieza con uno y conversa con tu IA.",
+          "en": "We close the chapter with a warm-up. Next up is your project, the Signal Kit: 5 prompts that work for a real business, yours or made up. Start with one and talk it through with your AI."
+        }
+      },
+      "titulo": {
+        "es": "Calentamiento del Kit de señales",
+        "en": "Signal Kit warm-up"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra. Pídele un texto para un negocio real, tuyo o inventado, con las piezas del pedido completo. Después ajusta la respuesta al menos dos veces, sin empezar de cero.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another. Ask it for a text for a real business, yours or made up, using the pieces of a complete request. Then tweak the answer at least twice, without starting over."
+      },
+      "checks": [
+        {
+          "es": "Pedí el texto con las piezas del pedido completo",
+          "en": "I asked using the pieces of a complete request"
+        },
+        {
+          "es": "Dije qué me gustó de la primera respuesta",
+          "en": "I said what I liked about the first answer"
+        },
+        {
+          "es": "Pedí al menos dos ajustes concretos",
+          "en": "I asked for at least two specific tweaks"
+        },
+        {
+          "es": "Me quedé con una versión que usaría de verdad",
+          "en": "I ended up with a version I'd actually use"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Iterar",
+        "en": "Iterating"
+      },
+      "resumen": {
+        "es": "Conversar con la IA: la primera respuesta es un borrador que se mejora con ajustes concretos, sin empezar de cero.",
+        "en": "Talking with AI: the first answer is a draft you improve with specific tweaks, without starting over."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste cómo se ajusta un post sin empezar de cero",
+          "en": "You saw how to fix a post without starting over"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste los ajustes claros de los vagos",
+          "en": "You sorted clear tweaks from vague ones"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Ajustaste el post de la torta de Sofía",
+          "en": "You tweaked Sofía's cake post"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste mis dos mensajes que estorbaban",
+          "en": "You caught my two unhelpful messages"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Calentaste motores para tu Kit de señales",
+          "en": "You warmed up for your Signal Kit"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "iterar-con-la-ia",
+      "titulo": {
+        "es": "Conversar con la IA para mejorar",
+        "en": "Talking with AI to improve"
+      }
+    }
+  }
+}

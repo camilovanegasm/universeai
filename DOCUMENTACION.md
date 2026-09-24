@@ -1012,8 +1012,27 @@ pruebas en el celular de Cami (misión completa, Laboratorio en vivo, app instal
 - Verificado: tipos y lint limpios; misión completa con clics en celular (español en vivo, inglés
   en práctica) → concepto, 2 prompts y ficha guardados; notas creadas, editadas, borradas con doble
   toque y persistentes al recargar; 0 errores.
-- Pendiente para más adelante: descargar la ficha como imagen, ficha de capítulo, y que las
-  lecciones del formato viejo también dejen algo en la Bitácora.
+- **Ficha como imagen** (`src/lib/fichaImagen.ts`, `BotonFichaImagen.tsx`): 1080x1350 (formato de
+  Instagram) dibujada en canvas con el Punti pixel, tu frase, tu mejor prompt y las piezas. En el
+  celular abre la hoja de Compartir (WhatsApp, Instagram, Fotos); en el computador se descarga
+  (`src/lib/compartir.ts`). Se carga solo al tocar el botón. Está al final de cada misión y en cada
+  ficha de la Bitácora.
+- **Exportar la Bitácora** (`src/lib/bitacoraTexto.ts`): "DESCARGAR MI BITÁCORA" arma un .txt legible
+  con las cuatro secciones, en el idioma del piloto.
+- Pendiente para más adelante: ficha de capítulo, y que las lecciones del formato viejo también
+  dejen algo en la Bitácora.
+
+**Fase C3 empezó: Capítulo 1 de Eco completo (2026-09-24).** Cinco misiones en
+`contenido/misiones/eco/`, encadenadas: 1 Primera señal (Andrés y su taller de bicicletas; qué es un
+prompt), 2 El pedido completo (el Profe Hernán y su escuelita de fútbol; las 5 piezas: tarea,
+contexto, datos, forma, tono), 3 La tienda de Doña Marta (contexto), 4 En qué forma lo quieres
+(Gloria y la biblioteca comunitaria; forma = formato + largo, y el tono), 5 Conversar, no disparar
+(Sofía y sus tortas; iterar). Escritas por dos agentes en paralelo y unificadas por un editor
+independiente (términos iguales en todas, sin personajes repetidos, sin voseo); pruebas de palabras
+clave de cada Laboratorio (buenos pasan, flojos no); revisor: 0 errores, 0 avisos. En inglés "la
+forma" es "format". Están en la semilla (ADMIN → MISIONES → USAR SEMILLA) en estado "revisión":
+Cami las revisa, corrige textos si quiere y publica. Notas del editor: el Laboratorio de la misión 2
+pasa con 4 de 5 piezas; "Tu turno de transmitir" y "Me atrapaste" quedan como muletillas de Punti.
 
 **Costo estimado del Laboratorio** (precios verificados 2026-09-23): por uso ~USD 0,0004 con
 Gemini 2.5 Flash-Lite y ~USD 0,005 con Claude Haiku 4.5; con 100 pilotos diarios y 10 usos,

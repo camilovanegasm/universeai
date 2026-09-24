@@ -12,6 +12,20 @@ Para el detalle de decisiones y el porqué de cada cosa, ver `DOCUMENTACION.md`.
 
 ---
 
+## 2026-09-24 · C2 ficha como imagen + C3 Capítulo 1 de Eco
+
+### Agregado
+- `src/lib/fichaImagen.ts`, `src/lib/compartir.ts`, `src/components/mision/BotonFichaImagen.tsx` — la ficha como imagen para compartir.
+- `src/lib/bitacoraTexto.ts` — exportar la Bitácora como .txt.
+- `contenido/misiones/eco/01-primera-senal.json`, `02-el-pedido-completo.json`, `04-en-que-forma-lo-quieres.json`, `05-conversar-no-disparar.json`.
+
+### Cambiado
+- `src/components/mision/FichaMision.tsx`, `src/app/bitacora/page.tsx` — botones de imagen y descarga.
+- `src/lib/misiones/semilla.ts` — las 5 misiones del Capítulo 1.
+- `DOCUMENTACION.md` — C2 y C3 en 6.11.
+
+---
+
 ## 2026-09-24 · C2 · Bitácora del piloto
 
 **⚠ Hay que volver a publicar las reglas de Firestore** (bloque `bitacora`). Copia de las

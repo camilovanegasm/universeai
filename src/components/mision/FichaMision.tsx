@@ -9,6 +9,8 @@ import type { BloqueDe, PaqueteMision, Pieza } from "@/lib/misiones/tipos";
 import { resaltarClaves } from "@/lib/misiones/laboratorio";
 import type { Escalon } from "@/lib/rangos";
 import PuntiPixel from "@/components/PuntiPixel";
+import { nombreSeguro } from "@/lib/compartir";
+import BotonFichaImagen from "./BotonFichaImagen";
 import type { RegistroMision } from "./tipos";
 
 const T: Record<Idioma, Record<string, string>> = {
@@ -110,6 +112,9 @@ export default function FichaMision({
   const idMejor = orden.find((id) => registro.labs[id]?.aprobado) ?? orden.find((id) => registro.labs[id]);
   const mejor = idMejor ? registro.labs[idMejor] : undefined;
   const todosLosChecks = labs.flatMap((l) => l.checks);
+  // La definición de Punti para la imagen: la de la nota a la Bitácora (la
+  // misma que el piloto ve al lado de su frase); si no hay, el resumen del concepto.
+  const nota = paquete.bloques.find((b): b is BloqueDe<"nota-bitacora"> => b.tipo === "nota-bitacora");
   const colorDe = (id: string | null) => (id ? (piezas.find((p) => p.id === id)?.color ?? "#00f5ff") : null);
 
   return (
@@ -252,6 +257,31 @@ export default function FichaMision({
         </div>
         <p className="text-[12px] text-[#636898]">{t.nivel}</p>
       </section>
+
+      {/* La ficha como imagen para compartir o guardar (se dibuja al tocar). */}
+      <div className="flex flex-wrap items-center gap-3 border-t border-dashed border-[rgba(0,255,65,0.35)] pt-4">
+        <BotonFichaImagen
+          idioma={idioma}
+          nombreArchivo={`Ficha-${nombreSeguro(paquete.titulo[idioma], "Mision")}-${nombreSeguro(piloto)}.png`}
+          armar={() => ({
+            idioma,
+            titulo: paquete.titulo[idioma],
+            piloto,
+            codigo,
+            xp,
+            combustible,
+            transmisiones,
+            concepto: {
+              titulo: f.concepto.titulo[idioma],
+              frase: registro.frase,
+              definicion: nota?.definicion[idioma] || f.concepto.resumen[idioma],
+            },
+            mejorPrompt: mejor?.prompt,
+            piezas: piezas.map((p) => ({ titulo: p.titulo[idioma], color: p.color, usada: usada(p.id) })),
+            fecha: hoy,
+          })}
+        />
+      </div>
     </article>
   );
 }

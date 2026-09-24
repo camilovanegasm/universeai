@@ -1,0 +1,654 @@
+{
+  "formato": "punti-mision@1",
+  "id": "primera-senal",
+  "mundo": "prompts",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 7,
+  "conceptos": [
+    "prompt"
+  ],
+  "usaConceptos": [],
+  "titulo": {
+    "es": "Primera señal",
+    "en": "First Signal"
+  },
+  "resumen": {
+    "es": "Qué es un prompt y por qué la IA solo sabe lo que tú le escribes.",
+    "en": "What a prompt is, and why AI only knows what you write to it."
+  },
+  "siguiente": "el-pedido-completo",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Hola, piloto. Soy Punti y construí Eco, el planeta de las comunicaciones. En el centro hay una antena gigante que habla con las IA del universo, pero solo entiende mensajes claros. Y acaba de entrar la primera señal.",
+          "en": "Hi, pilot. I'm Punti, and I built Eco, the planet of communications. At its center stands a giant antenna that talks to the AIs of the universe, but it only understands clear messages. And the first signal just came in."
+        }
+      },
+      "titulo": {
+        "es": "Primera señal",
+        "en": "First Signal"
+      },
+      "texto": {
+        "es": "Es Andrés, el del taller de bicicletas del barrio. Le pidió ayuda a una IA y no le sirvió. Hoy descubres qué es un prompt y por qué la IA solo sabe lo que le escribes. Unos 7 minutos.",
+        "en": "It's Andrés, who runs the neighborhood bike repair shop. He asked an AI for help and got nothing useful. Today you'll find out what a prompt is and why AI only knows what you write. About 7 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Antes de ayudar a Andrés, una palabra que vas a oír mucho en Eco: prompt.",
+          "en": "Before we help Andrés, here's a word you'll hear a lot on Eco: prompt."
+        }
+      },
+      "titulo": {
+        "es": "¿Qué es un prompt?",
+        "en": "What's a prompt?"
+      },
+      "texto": {
+        "es": "Un prompt es el mensaje que le escribes a una IA. Nada más. La IA no ve tu cara, no conoce tu negocio y no lee mentes: solo sabe lo que dice ese mensaje. Es como dejarle una nota a alguien que nunca te ha visto.",
+        "en": "A prompt is the message you write to an AI. That's it. The AI can't see your face, doesn't know your business and can't read minds: all it knows is what that message says. It's like leaving a note for someone who has never met you."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Tú escribes el prompt",
+            "en": "You write the prompt"
+          },
+          {
+            "es": "La IA lo lee, palabra por palabra",
+            "en": "The AI reads it, word by word"
+          },
+          {
+            "es": "Responde con lo que leyó y adivina el resto",
+            "en": "It answers with what it read and guesses the rest"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto le escribió Andrés a la IA, y esto le devolvió. Abajo está el mismo pedido, pero con lo que Andrés sabía y no había escrito.",
+          "en": "Here's what Andrés wrote to the AI, and what he got back. Below is the same request, now with what Andrés knew but hadn't written."
+        }
+      },
+      "titulo": {
+        "es": "Lo que Andrés no escribió",
+        "en": "What Andrés left out"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Escribe un mensaje para mis clientes.",
+          "en": "Write a message for my customers."
+        },
+        "salida": {
+          "es": "¡Hola! Queremos agradecerte por tu confianza. Tenemos grandes novedades para ti. ¡Visítanos pronto y descúbrelas!",
+          "en": "Hi there! We want to thank you for your trust. We have big news for you. Visit us soon to find out more!"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "sabes",
+            "texto": {
+              "es": "Tengo un taller de bicicletas en el barrio. ",
+              "en": "I run a bike repair shop in the neighborhood. "
+            }
+          },
+          {
+            "pieza": "pedido",
+            "texto": {
+              "es": "Escribe un mensaje para mis clientes contándoles que ahora abro los domingos. ",
+              "en": "Write a message telling my customers I'm now open on Sundays. "
+            }
+          },
+          {
+            "pieza": "sabes",
+            "texto": {
+              "es": "Abro de 8 a. m. a 1 p. m., y al que llegue antes de las 10 le reviso las llantas gratis.",
+              "en": "I'm open 8 a.m. to 1 p.m., and anyone who comes before 10 gets a free tire check."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "¡Ahora abrimos los domingos!\nDe 8 a. m. a 1 p. m.\nLlega antes de las 10 y te revisamos las llantas gratis.\nTu taller de bicicletas del barrio",
+          "en": "We're now open on Sundays!\n8 a.m. to 1 p.m.\nCome before 10 and we'll check your tires for free.\nYour neighborhood bike shop"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. Una pieza es lo que Andrés pide. La otra es lo que solo él sabía: su taller, su horario, su regalo. La IA no tenía cómo adivinarlo.",
+          "en": "Look at the colors. One piece is what Andrés asks for. The other is what only he knew: his shop, his hours, his free offer. The AI had no way to guess any of it."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Todo prompt útil lleva por lo menos estas dos piezas. En la próxima misión te muestro las demás. Toca cada una.",
+          "en": "Every useful prompt has at least these two pieces. In the next mission I'll show you the rest. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 2 piezas básicas",
+        "en": "The 2 basic pieces"
+      },
+      "piezas": [
+        {
+          "id": "pedido",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Lo que pides",
+            "en": "What you ask for"
+          },
+          "descripcion": {
+            "es": "Qué quieres que la IA haga por ti.",
+            "en": "What you want the AI to do for you."
+          },
+          "ejemplo": {
+            "es": "\"Escribe un mensaje contándoles que abro los domingos\". Sin esto, la IA tiene que adivinar hasta qué le estás pidiendo.",
+            "en": "\"Write a message telling them I'm open on Sundays.\" Without this, the AI has to guess even what you're asking for."
+          }
+        },
+        {
+          "id": "sabes",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Lo que solo tú sabes",
+            "en": "What only you know"
+          },
+          "descripcion": {
+            "es": "Los datos de tu vida que la IA no puede ver.",
+            "en": "The details of your life the AI can't see."
+          },
+          "ejemplo": {
+            "es": "\"Abro de 8 a 1\". La IA nunca ha entrado a tu taller: si no se lo escribes, lo inventa o lo deja vacío.",
+            "en": "\"I'm open 8 to 1.\" The AI has never set foot in your shop: if you don't write it, it makes it up or leaves it blank."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. La IA leyó muchísimo, pero nunca ha entrado al taller de Andrés. ¿Qué cosas ya sabe y cuáles solo sabe Andrés?",
+          "en": "Your turn. The AI has read a huge amount, but it has never been inside Andrés's shop. What does it already know, and what does only Andrés know?"
+        }
+      },
+      "titulo": {
+        "es": "¿Quién lo sabe?",
+        "en": "Who knows this?"
+      },
+      "grupos": [
+        {
+          "id": "ia",
+          "titulo": {
+            "es": "La IA ya lo sabe",
+            "en": "The AI already knows"
+          }
+        },
+        {
+          "id": "tu",
+          "titulo": {
+            "es": "Solo tú lo sabes",
+            "en": "Only you know"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "ia",
+          "texto": {
+            "es": "Cómo se escribe un mensaje amable",
+            "en": "How to write a friendly message"
+          }
+        },
+        {
+          "grupo": "tu",
+          "texto": {
+            "es": "A qué hora abre tu taller los domingos",
+            "en": "What time your shop opens on Sundays"
+          }
+        },
+        {
+          "grupo": "ia",
+          "texto": {
+            "es": "Para qué sirven los frenos de una bicicleta",
+            "en": "What a bike's brakes are for"
+          }
+        },
+        {
+          "grupo": "tu",
+          "texto": {
+            "es": "Cuánto cobras por arreglar una llanta pinchada",
+            "en": "How much you charge to fix a flat tire"
+          }
+        },
+        {
+          "grupo": "tu",
+          "texto": {
+            "es": "El nombre de la clienta que te dejó su bicicleta",
+            "en": "The name of the customer who left her bike with you"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso es. La IA sabe mucho del mundo y nada de tu vida. Lo tuyo lo tienes que escribir tú.",
+          "en": "That's it. AI knows a lot about the world and nothing about your life. Your part, you have to write yourself."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, lee otra vez. Pregúntate: ¿esto lo sabría alguien que nunca ha pisado el taller?",
+          "en": "Hmm, read it again. Ask yourself: would someone who's never been to the shop know this?"
+        }
+      },
+      "malPorGrupo": {
+        "ia": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: la IA sabe mucho del mundo, pero ¿cómo sabría eso de tu taller si nadie se lo contó?",
+            "en": "Careful: AI knows a lot about the world, but how would it know that about your shop if nobody told it?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. La bicicleta de Laura, una clienta de Andrés, ya está lista. Escribe el prompt para que la IA le redacte el mensaje de WhatsApp.",
+          "en": "Your turn to transmit. Laura, one of Andrés's customers, has her bike ready. Write the prompt so the AI drafts her a WhatsApp message."
+        }
+      },
+      "titulo": {
+        "es": "La bicicleta de Laura",
+        "en": "Laura's bike"
+      },
+      "reto": {
+        "es": "Datos que te cuenta Andrés: la bicicleta de su clienta Laura ya está lista. Le cambió los frenos y la cadena. Son 45.000 pesos. Puede recogerla hasta el sábado a las 6 p. m. Quiere avisarle por WhatsApp.",
+        "en": "Here's what Andrés tells you: his customer Laura's bike is ready. He replaced the brakes and the chain. The bill is $45. She can pick it up until Saturday at 6 p.m. He wants to let her know on WhatsApp."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "pedido",
+          "texto": {
+            "es": "Lo que pides: un mensaje para Laura",
+            "en": "What you ask for: a message to Laura"
+          },
+          "rubrica": "El prompt pide escribir un mensaje para Laura (o para la clienta) avisando que su bicicleta ya está lista. No cuenta 'escribe un mensaje' sin decir para quién ni para qué, ni un prompt que solo lista datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "a laura",
+              "a la clienta",
+              "a mi clienta",
+              "avisale",
+              "avisarle",
+              "dile a",
+              "cuentale",
+              "escribele"
+            ],
+            "en": [
+              "to laura",
+              "for laura",
+              "tell laura",
+              "text laura",
+              "let laura know",
+              "message laura",
+              "to my customer",
+              "for my customer",
+              "to the customer",
+              "for the customer"
+            ]
+          }
+        },
+        {
+          "id": "sabes",
+          "texto": {
+            "es": "Lo que solo tú sabes: el arreglo y el precio",
+            "en": "What only you know: repair and price"
+          },
+          "rubrica": "El prompt dice qué se le hizo a la bicicleta (cambio de frenos y cadena) y cuánto cuesta (45.000 pesos, o 45 dólares en inglés). Hacen falta las dos cosas. No cuenta 'el arreglo', 'lo que le hice' o 'lo que debe' sin decir cuál arreglo ni cuánto.",
+          "claves": {
+            "es": [
+              "freno",
+              "cadena",
+              "45.000",
+              "45 mil",
+              "45000",
+              "cuarenta y cinco"
+            ],
+            "en": [
+              "brake",
+              "chain",
+              "$45",
+              "45 dollars",
+              "forty-five"
+            ]
+          }
+        },
+        {
+          "id": "cuando",
+          "texto": {
+            "es": "Hasta cuándo puede recogerla",
+            "en": "When she can pick it up"
+          },
+          "rubrica": "El prompt dice hasta cuándo puede recoger la bicicleta: el sábado, a las 6 p. m. (basta con el día o la hora). No cuenta 'pronto', 'cuando pueda' ni 'esta semana'.",
+          "claves": {
+            "es": [
+              "sabado",
+              "6 p",
+              "6pm",
+              "6 de la tarde",
+              "seis de la tarde"
+            ],
+            "en": [
+              "saturday",
+              "6 p",
+              "6pm",
+              "six p"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a escribir mensajes cortos de WhatsApp. Responde solo con el mensaje, sin explicaciones. No conoces a quien escribe ni a sus clientes: usa únicamente lo que dice el prompt. Si falta un dato (nombre, arreglo, precio, fecha), no lo inventes: deja el hueco entre corchetes, como [nombre] o [precio].",
+        "en": "You are an AI that helps write short WhatsApp messages. Reply with the message only, no explanations. You don't know the writer or their customers: use only what the prompt says. If a detail is missing (name, repair, price, date), don't make it up: leave the gap in square brackets, like [name] or [price]."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, Laura. Tu bicicleta ya está lista: le cambiamos los frenos y la cadena. El total es de 45.000 pesos. Puedes recogerla hasta el sábado a las 6 p. m. Te esperamos en el taller.",
+            "en": "Hi Laura! Your bike is ready: we replaced the brakes and the chain. The total is $45. You can pick it up until Saturday at 6 p.m. See you at the shop."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. Ni un hueco: la IA supo a quién, qué arreglo, cuánto y hasta cuándo, porque tú se lo escribiste.",
+              "en": "Clean signal. Not a single gap: the AI knew who, what repair, how much and until when, because you wrote it down."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Hola, [nombre]. Te cuento que tu [producto] ya está listo. El valor es de [precio] y puedes pasar a recogerlo [día y hora]. ¡Gracias por confiar en nosotros!",
+            "en": "Hi [name]! Just letting you know your [item] is ready. The total is [price], and you can pick it up [day and time]. Thanks for trusting us!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "¿Ves los corchetes? Son huecos: cosas que la IA no sabía. Mira la lista y escribe lo que solo Andrés sabe.",
+              "en": "See the brackets? Those are gaps: things the AI didn't know. Check the list and write in what only Andrés knows."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le escribí un prompt a Andrés para otra clienta y la IA quedó en blanco. Tiene dos partes que solo entiendo yo. Tócalas.",
+          "en": "Confession time. I wrote Andrés a prompt for another customer and the AI drew a blank. Two parts of it only make sense to me. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Lo que solo entiende Punti",
+        "en": "Only Punti gets it"
+      },
+      "trozos": [
+        {
+          "es": "Escribe un mensaje amable por WhatsApp",
+          "en": "Write a friendly WhatsApp message"
+        },
+        {
+          "es": "para la señora de siempre,",
+          "en": "to our usual customer,"
+        },
+        {
+          "es": "diciéndole que ya quedó lo de la otra vez",
+          "en": "saying that thing from last time is done,"
+        },
+        {
+          "es": "y que puede pasar hoy hasta las 6 p. m.",
+          "en": "and that she can come by today until 6 p.m."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Escribí como si la IA estuviera en el taller conmigo. ¿Cuál señora? ¿Qué cosa? Lo que para ti es obvio, para la IA no existe si no lo escribes.",
+          "en": "You got me. I wrote as if the AI were in the shop with me. Which customer? What thing? What's obvious to you doesn't exist for the AI unless you write it."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte la entiende cualquiera. Busca las que solo tienen sentido si ya conoces el taller.",
+          "en": "Anyone would understand that part. Look for the ones that only make sense if you already know the shop."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Tu primera nota en la bitácora. Cada piloto lleva la suya. Escribe con tus palabras qué es un prompt, como se lo explicarías a Andrés.",
+          "en": "Your first logbook entry. Every pilot keeps one. Write what a prompt is in your own words, the way you'd explain it to Andrés."
+        }
+      },
+      "concepto": "prompt",
+      "definicion": {
+        "es": "El mensaje que le escribes a una IA. Es lo único que la IA sabe de ti: lo que no escribes, para ella no existe.",
+        "en": "The message you write to an AI. It's all the AI knows about you: whatever you don't write doesn't exist for it."
+      },
+      "pregunta": {
+        "es": "Un prompt es…",
+        "en": "A prompt is…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "mensajes a clientes",
+        "en": "customer messages"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Prompt y tu mensaje para Laura ya viven en tu bitácora. Te los traigo de vuelta en el repaso, justo cuando se te estén olvidando.",
+          "en": "Saved. Your Prompt card and your message to Laura now live in your logbook. I'll bring them back in your review right when you're about to forget them."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas cortas y cerramos la primera señal.",
+          "en": "Two quick questions and we close out the first signal."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué es un prompt?",
+            "en": "What is a prompt?"
+          },
+          "opciones": [
+            {
+              "es": "El mensaje que le escribes a una IA",
+              "en": "The message you write to an AI"
+            },
+            {
+              "es": "Un programa que instalas en el celular",
+              "en": "An app you install on your phone"
+            },
+            {
+              "es": "La respuesta que te devuelve la IA",
+              "en": "The answer the AI gives you back"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Y ese mensaje es todo lo que la IA sabe de ti.",
+              "en": "Right. And that message is everything the AI knows about you."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Piensa en lo que hizo Andrés antes de recibir la respuesta.",
+              "en": "Not that. Think about what Andrés did before he got an answer."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Le escribes a una IA: \"Avísale a mi vecino que ya llegó lo suyo.\" ¿Qué va a pasar?",
+            "en": "You write to an AI: \"Let my neighbor know his stuff arrived.\" What will happen?"
+          },
+          "opciones": [
+            {
+              "es": "Va a averiguar quién es tu vecino",
+              "en": "It will figure out who your neighbor is"
+            },
+            {
+              "es": "Va a dejar huecos o inventar lo que no sabe",
+              "en": "It will leave gaps or make up what it doesn't know"
+            },
+            {
+              "es": "Va a escribir el mensaje perfecto",
+              "en": "It will write the perfect message"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. \"Mi vecino\" y \"lo suyo\" solo tienen sentido para ti.",
+              "en": "Exactly. \"My neighbor\" and \"his stuff\" only make sense to you."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿qué sabe la IA de tu vecino si nadie se lo contó?",
+              "en": "Hmm. Ask yourself: what does the AI know about your neighbor if nobody told it?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "El prompt",
+        "en": "The prompt"
+      },
+      "resumen": {
+        "es": "El mensaje que le escribes a una IA. Ella solo sabe lo que dice ese mensaje: el resto lo adivina.",
+        "en": "The message you write to an AI. It only knows what that message says: the rest, it guesses."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Viste lo que le faltaba al mensaje de Andrés",
+          "en": "You saw what Andrés's message was missing"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Separaste lo que sabe la IA de lo que solo tú sabes",
+          "en": "You sorted what AI knows from what only you know"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste el mensaje para Laura sin huecos",
+          "en": "You wrote Laura's message with no gaps"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste a Punti dando cosas por sabidas",
+          "en": "You caught Punti assuming the AI knew things"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "escribir-un-prompt",
+      "titulo": {
+        "es": "Escribir un prompt",
+        "en": "Writing a prompt"
+      }
+    }
+  }
+}

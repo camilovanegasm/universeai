@@ -1,0 +1,906 @@
+{
+  "formato": "punti-mision@1",
+  "id": "en-que-forma-lo-quieres",
+  "mundo": "prompts",
+  "capitulo": 1,
+  "numero": 4,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "forma"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "contexto"
+  ],
+  "titulo": {
+    "es": "En qué forma lo quieres",
+    "en": "What Format Do You Want?"
+  },
+  "resumen": {
+    "es": "Pedir la forma de la respuesta (formato y largo) y su tono. Los mismos datos sirven o no según cómo lleguen.",
+    "en": "Asking for the format of the answer (layout and length) and its tone. The same facts land or flop depending on how they arrive."
+  },
+  "siguiente": "conversar-no-disparar",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegó una señal a la antena. Es Gloria, la bibliotecaria de la biblioteca comunitaria del barrio. Le pidió a una IA que organizara la información del Festival de lectura y le salió un párrafo que nadie leyó.",
+          "en": "Pilot, a signal just reached the antenna. It's Gloria, who runs the neighborhood's community library. She asked an AI to organize the info for the Reading Festival and got a paragraph nobody read."
+        }
+      },
+      "titulo": {
+        "es": "En qué forma lo quieres",
+        "en": "What Format Do You Want?"
+      },
+      "texto": {
+        "es": "Hoy practicas dos piezas del pedido completo: la forma (formato y largo) y el tono. Los mismos datos sirven o no según cómo lleguen. Unos 9 minutos.",
+        "en": "Today you'll practice two pieces of the complete request: format (layout and length) and tone. The same facts land or flop depending on how they arrive. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Mira lo que pidió Gloria y lo que le llegó. Después mira cómo lo pedimos nosotros, con los mismos datos.",
+          "en": "Look at what Gloria asked for and what she got. Then look at how we asked, with the exact same facts."
+        }
+      },
+      "titulo": {
+        "es": "Mismos datos, otra forma",
+        "en": "Same facts, new format"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Organízame esto: festival de lectura el sábado de 9 a. m. a 1 p. m., entrada gratis, traer un libro para cambiar, los niños vienen con un adulto.",
+          "en": "Organize this: reading festival Saturday 9 a.m. to 1 p.m., free entry, bring a book to swap, kids come with an adult."
+        },
+        "salida": {
+          "es": "Se informa a la comunidad en general que el próximo sábado se llevará a cabo el Festival de Lectura, en el horario comprendido entre las 9:00 a. m. y la 1:00 p. m. La entrada será de carácter gratuito. Se solicita a los asistentes portar un libro con fines de intercambio. Es importante precisar que los menores de edad deberán asistir en compañía de un adulto responsable.",
+          "en": "The community is hereby informed that the Reading Festival will take place this coming Saturday, between the hours of 9:00 a.m. and 1:00 p.m. Admission will be free of charge. Attendees are requested to bring a book for exchange purposes. Please note that minors must be accompanied by a responsible adult."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "formato",
+            "texto": {
+              "es": "Con esos datos, haz un mensaje para el grupo de WhatsApp de la biblioteca, con lo importante en una lista. ",
+              "en": "Using those details, write a message for the library's WhatsApp group, with the key points as a list. "
+            }
+          },
+          {
+            "pieza": "largo",
+            "texto": {
+              "es": "Máximo 6 líneas. ",
+              "en": "6 lines max. "
+            }
+          },
+          {
+            "pieza": "tono",
+            "texto": {
+              "es": "Que suene como les hablo yo: cálido y con ánimo.",
+              "en": "Make it sound the way I talk to them: warm and lively."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Vecinos, ¡este sábado es el Festival de lectura!\nDe 9 a. m. a 1 p. m. en la biblioteca.\n- Entrada gratis\n- Trae un libro para cambiar\n- Los niños, con un adulto\nLos esperamos. Gloria",
+          "en": "Neighbors, the Reading Festival is this Saturday!\n9 a.m. to 1 p.m. at the library.\n- Free entry\n- Bring a book to swap\n- Kids come with an adult\nSee you there. Gloria"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores: los datos no cambiaron. Cambiaron el formato y el largo, que juntos son la forma, y también el tono. Son dos piezas del pedido completo.",
+          "en": "Look at the colors: the facts stayed the same. What changed was the layout and the length, which together make the format, and the tone too. Two pieces of the complete request."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "La forma tiene dos partes: el formato y el largo. Y va de la mano con el tono. Los datos pueden ser los mismos: estas tres piezas deciden si alguien los lee. Toca cada una.",
+          "en": "Format has two parts: the layout and the length. And it goes hand in hand with tone. The facts can stay the same: these three pieces decide whether anyone reads them. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "La forma y el tono",
+        "en": "Format and tone"
+      },
+      "piezas": [
+        {
+          "id": "formato",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "El formato",
+            "en": "The layout"
+          },
+          "descripcion": {
+            "es": "Lista, tabla, mensaje o pasos: la figura de la respuesta.",
+            "en": "List, table, message or steps: the outline of the answer."
+          },
+          "ejemplo": {
+            "es": "\"Una tabla con hora, actividad y lugar\" y cualquiera la lee de un vistazo.",
+            "en": "\"A table with time, activity and place\" and anyone can read it at a glance."
+          }
+        },
+        {
+          "id": "largo",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "El largo",
+            "en": "The length"
+          },
+          "descripcion": {
+            "es": "Cuántas líneas, palabras o puntos. Mejor con un número.",
+            "en": "How many lines, words or points. Best with a number."
+          },
+          "ejemplo": {
+            "es": "\"Corto\" lo decide la IA. \"Máximo 6 líneas\" lo decides tú.",
+            "en": "\"Short\" is the AI's call. \"6 lines max\" is yours."
+          }
+        },
+        {
+          "id": "tono",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "El tono",
+            "en": "The tone"
+          },
+          "descripcion": {
+            "es": "Cómo suena, según quién lo va a leer.",
+            "en": "How it sounds, depending on who will read it."
+          },
+          "ejemplo": {
+            "es": "A los vecinos, cercano. A los jóvenes, relajado y directo. A la alcaldía, formal.",
+            "en": "For neighbors, warm. For teenagers, relaxed and direct. For city hall, formal."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Gloria tiene cuatro encargos para la IA. ¿Qué formato le sirve a cada uno?",
+          "en": "Your turn. Gloria has four jobs for the AI. Which layout fits each one?"
+        }
+      },
+      "titulo": {
+        "es": "Escoge el formato",
+        "en": "Pick the layout"
+      },
+      "grupos": [
+        {
+          "id": "tabla",
+          "titulo": {
+            "es": "Tabla",
+            "en": "Table"
+          }
+        },
+        {
+          "id": "lista",
+          "titulo": {
+            "es": "Lista",
+            "en": "List"
+          }
+        },
+        {
+          "id": "pasos",
+          "titulo": {
+            "es": "Pasos",
+            "en": "Steps"
+          }
+        },
+        {
+          "id": "mensaje",
+          "titulo": {
+            "es": "Mensaje",
+            "en": "Message"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "tabla",
+          "texto": {
+            "es": "Comparar el precio de los estantes en tres almacenes.",
+            "en": "Compare shelf prices at three stores."
+          }
+        },
+        {
+          "grupo": "lista",
+          "texto": {
+            "es": "Los materiales que faltan para el taller de cómic.",
+            "en": "The supplies still missing for the comic workshop."
+          }
+        },
+        {
+          "grupo": "pasos",
+          "texto": {
+            "es": "Explicarle a un vecino nuevo cómo sacar el carné de la biblioteca.",
+            "en": "Walk a new neighbor through getting a library card."
+          }
+        },
+        {
+          "grupo": "mensaje",
+          "texto": {
+            "es": "Avisar en el grupo que la biblioteca cierra el lunes festivo.",
+            "en": "Tell the group chat the library is closed on the Monday holiday."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Cuatro de cuatro. Ya sabes que cada encargo pide su propio formato.",
+          "en": "Four for four. Now you know every job calls for its own layout."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, no. Pregúntate: ¿hay que comparar, seguir un orden, revisar cosas sueltas o avisarle algo a alguien?",
+          "en": "Hmm, not quite. Ask yourself: is it comparing, following an order, checking off loose items, or telling someone something?"
+        }
+      },
+      "malPorGrupo": {
+        "pasos": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Aquí el orden importa: primero una cosa y después la otra. ¿Qué formato respeta ese orden?",
+            "en": "Close. Order matters here: first one thing, then the next. Which layout keeps that order?"
+          }
+        },
+        "lista": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Aquí el orden no importa: son cosas sueltas para ir revisando. ¿Qué formato sirve para eso?",
+            "en": "Close. Order doesn't matter here: they're loose items to check off. Which layout works for that?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Gloria quiere pegar el programa del sábado en la entrada y que se entienda de un vistazo. Para eso sirve más una tabla que un mensaje. Escribe el prompt.",
+          "en": "Your turn to transmit. Gloria wants to post Saturday's program at the entrance so people get it at a glance. A table works better than a message here. Write the prompt."
+        }
+      },
+      "titulo": {
+        "es": "La hoja de la entrada",
+        "en": "The sheet by the door"
+      },
+      "reto": {
+        "es": "Programa del sábado: 9:00 a. m., hora del cuento, sala infantil. 10:30 a. m., taller de cómic, salón principal. 12:00 m., trueque de libros, patio. Gloria va a imprimir la hoja y quiere solo lo necesario.",
+        "en": "Saturday's program: 9:00 a.m., story time, children's room. 10:30 a.m., comic workshop, main hall. 12:00 p.m., book swap, courtyard. Gloria will print the sheet and wants only what matters."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "formato",
+          "texto": {
+            "es": "Pide una tabla",
+            "en": "Asks for a table"
+          },
+          "rubrica": "El prompt pide la respuesta en forma de tabla o cuadro con filas y columnas. No cuenta 'organízalo', 'ordénalo' o 'hazlo claro' sin decir la forma, ni pedir una lista o un mensaje.",
+          "claves": {
+            "es": [
+              "tabla",
+              "cuadro",
+              "columna"
+            ],
+            "en": [
+              " table",
+              "table:",
+              "table with",
+              "column",
+              "grid"
+            ]
+          }
+        },
+        {
+          "id": "columnas",
+          "texto": {
+            "es": "Dice qué columnas lleva",
+            "en": "Says which columns"
+          },
+          "rubrica": "El prompt dice qué información va en las columnas, con al menos dos de estas: hora, actividad (o taller), lugar (o sala). No cuenta pedir 'una tabla con el programa' sin decir qué columnas, ni solo pegar los datos del sábado.",
+          "claves": {
+            "es": [
+              "hora, actividad",
+              "la hora, la actividad",
+              "hora y actividad",
+              "la hora y la actividad",
+              "hora, lugar",
+              "la hora, el lugar",
+              "hora y lugar",
+              "la hora y el lugar",
+              "actividad, hora",
+              "la actividad, la hora",
+              "actividad y hora",
+              "la actividad y la hora",
+              "actividad, lugar",
+              "la actividad, el lugar",
+              "actividad y lugar",
+              "la actividad y el lugar",
+              "lugar, hora",
+              "el lugar, la hora",
+              "lugar y hora",
+              "el lugar y la hora",
+              "lugar, actividad",
+              "el lugar, la actividad",
+              "lugar y actividad",
+              "el lugar y la actividad",
+              "columnas:",
+              "columnas de",
+              "columnas con"
+            ],
+            "en": [
+              "time, activity",
+              "time and activity",
+              "time, place",
+              "time and place",
+              "time, location",
+              "time and location",
+              "activity, time",
+              "activity and time",
+              "activity, place",
+              "activity and place",
+              "activity, location",
+              "activity and location",
+              "place, time",
+              "place and time",
+              "place, activity",
+              "place and activity",
+              "place, location",
+              "place and location",
+              "location, time",
+              "location and time",
+              "location, activity",
+              "location and activity",
+              "location, place",
+              "location and place",
+              "columns:",
+              "columns for",
+              "columns with"
+            ]
+          }
+        },
+        {
+          "id": "largo",
+          "texto": {
+            "es": "Pide solo la tabla",
+            "en": "Asks for just the table"
+          },
+          "rubrica": "El prompt limita lo que va fuera de la tabla: 'solo la tabla', 'sin explicaciones', 'nada más', que quepa en media hoja, o un número de filas. No cuenta si no dice nada sobre el largo, ni 'corto' sin decir qué se deja por fuera.",
+          "claves": {
+            "es": [
+              "solo la tabla",
+              "unicamente la tabla",
+              "solamente la tabla",
+              "sin explicacion",
+              "sin texto",
+              "nada mas",
+              "media hoja",
+              "3 filas",
+              "tres filas"
+            ],
+            "en": [
+              "only the table",
+              "just the table",
+              "table only",
+              "no explanation",
+              "no extra text",
+              "nothing else",
+              "half a page",
+              "3 rows",
+              "three rows"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a la bibliotecaria de una biblioteca comunitaria. Responde solo con lo que te pida, en la forma, el largo y el tono que te pida. Si pide una tabla, escríbela en texto plano con las columnas separadas por el signo |. Si no dice qué forma quiere, responde en un párrafo corrido y formal. Usa únicamente los datos del prompt; no inventes.",
+        "en": "You are an AI helping the librarian of a community library. Reply only with what she asks for, in the format, length and tone she asks for. If she asks for a table, write it in plain text with columns separated by the | sign. If she doesn't say what format she wants, reply in a single formal paragraph. Use only the details in the prompt; don't make anything up."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hora | Actividad | Lugar\n9:00 a. m. | Hora del cuento | Sala infantil\n10:30 a. m. | Taller de cómic | Salón principal\n12:00 m. | Trueque de libros | Patio",
+            "en": "Time | Activity | Place\n9:00 a.m. | Story time | Children's room\n10:30 a.m. | Comic workshop | Main hall\n12:00 p.m. | Book swap | Courtyard"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Una tabla, tres columnas y nada más. Quien entre a la biblioteca la lee de un vistazo.",
+              "en": "Strong signal. One table, three columns, nothing else. Anyone walking into the library can read it at a glance."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "El sábado la biblioteca ofrecerá tres actividades. La primera será la hora del cuento, a las 9:00 a. m., en la sala infantil. Posteriormente, a las 10:30 a. m., se realizará el taller de cómic en el salón principal. Finalmente, a las 12:00 m., tendrá lugar el trueque de libros en el patio.",
+            "en": "On Saturday, the library will offer three activities. The first will be story time, at 9:00 a.m., in the children's room. Next, at 10:30 a.m., the comic workshop will take place in the main hall. Finally, at 12:00 p.m., the book swap will be held in the courtyard."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. Los datos llegaron, pero en párrafo. Mira la lista: dile a la IA qué formato quieres, qué columnas lleva y que no agregue nada más.",
+              "en": "Weak signal. The facts came through, but as a paragraph. Check the list: tell the AI the layout, the columns, and not to add anything else."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Me toca confesar. Les escribí el plan del sábado a los muchachos del grupo juvenil de la biblioteca y lo mandé sin revisar. Dos frases harían salir corriendo a cualquier muchacho de 15 años. Tócalas.",
+          "en": "I have to own up. I wrote Saturday's plan for the library's youth group and sent it without checking. Two sentences would send any 15-year-old running. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Encuentra el tono equivocado",
+        "en": "Find the wrong tone"
+      },
+      "trozos": [
+        {
+          "es": "Muchachos, el sábado es el Festival de lectura.",
+          "en": "Hey everyone, Saturday is the Reading Festival."
+        },
+        {
+          "es": "Se requiere su presencia en las instalaciones a las 10:30 a. m.",
+          "en": "Your presence is required at the facility at 10:30 a.m."
+        },
+        {
+          "es": "Hay taller de cómic en el salón principal.",
+          "en": "There's a comic workshop in the main hall."
+        },
+        {
+          "es": "El incumplimiento de esta citación acarreará las sanciones correspondientes.",
+          "en": "Failure to comply with this summons will result in the corresponding penalties."
+        },
+        {
+          "es": "¡Traigan a sus amigos!",
+          "en": "Bring your friends!"
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Les hablé a unos muchachos como si estuvieran en un juzgado. Los datos estaban bien; el tono no. Cuando pidas algo, di quién lo va a leer y cómo debe sonar.",
+          "en": "You got me. I talked to a bunch of teenagers like they were in court. The facts were fine; the tone wasn't. When you ask for something, say who will read it and how it should sound."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa frase la entiende cualquier muchacho. Busca las que suenan a papel de juzgado.",
+          "en": "Any teenager gets that one. Look for the ones that sound like court papers."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora cambia el público. Gloria les va a mandar el plan a los muchachos del grupo juvenil. Te dejé tu prompt de la tabla: cambia la forma y el tono, no las actividades.",
+          "en": "Now the audience changes. Gloria is sending the plan to the library's youth group. I left your table prompt here: change the format and the tone, not the activities."
+        }
+      },
+      "titulo": {
+        "es": "El plan para el grupo juvenil",
+        "en": "The plan for the youth group"
+      },
+      "reto": {
+        "es": "Mismas actividades, otro público: los muchachos de 13 a 16 años del grupo juvenil. Gloria les va a mandar el plan del sábado por WhatsApp, en pocos pasos que un muchacho lea rápido y recuerde.",
+        "en": "Same activities, new audience: the youth group, ages 13 to 16. Gloria will send them Saturday's plan on WhatsApp, in a few steps a teenager will read in one go and remember."
+      },
+      "inicial": "anterior",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "formato",
+          "texto": {
+            "es": "Pide pasos en orden",
+            "en": "Asks for steps in order"
+          },
+          "rubrica": "El prompt pide la respuesta en pasos numerados o en orden (primero, después, al final). No cuenta si sigue pidiendo una tabla, ni si pide un párrafo o un mensaje.",
+          "claves": {
+            "es": [
+              "pasos",
+              "paso a paso",
+              "numerad",
+              "enumerad"
+            ],
+            "en": [
+              "steps",
+              "step by step",
+              "step-by-step",
+              "numbered"
+            ]
+          }
+        },
+        {
+          "id": "largo",
+          "texto": {
+            "es": "Dice cuántos pasos",
+            "en": "Says how many steps"
+          },
+          "rubrica": "El prompt pone un número de pasos o de frases (por ejemplo, 3 o 4 pasos). No cuenta 'pocos pasos' o 'corto' sin un número, ni el límite de filas que traía el prompt de la tabla.",
+          "claves": {
+            "es": [
+              "3 pasos",
+              "tres pasos",
+              "4 pasos",
+              "cuatro pasos",
+              "5 pasos",
+              "cinco pasos"
+            ],
+            "en": [
+              "3 steps",
+              "3 short steps",
+              "3 numbered",
+              "3 simple steps",
+              "3 easy steps",
+              "three steps",
+              "three short steps",
+              "three numbered",
+              "three simple steps",
+              "three easy steps",
+              "4 steps",
+              "4 short steps",
+              "4 numbered",
+              "4 simple steps",
+              "4 easy steps",
+              "four steps",
+              "four short steps",
+              "four numbered",
+              "four simple steps",
+              "four easy steps",
+              "5 steps",
+              "5 short steps",
+              "5 numbered",
+              "5 simple steps",
+              "5 easy steps",
+              "five steps",
+              "five short steps",
+              "five numbered",
+              "five simple steps",
+              "five easy steps"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "Les habla a los jóvenes",
+            "en": "Speaks to the teens"
+          },
+          "rubrica": "El prompt dice que lo van a leer jóvenes o adolescentes (los muchachos del grupo juvenil, de 13 a 16 años) o pide un tono para ellos: relajado, informal, directo, frases cortas. No cuenta si deja el tono formal de adulto, ni 'que suene bien' o 'que sea claro' sin decir cómo ni para quién.",
+          "claves": {
+            "es": [
+              "jovenes",
+              "adolescente",
+              "muchacho",
+              "grupo juvenil",
+              "13 a 16",
+              "relajad",
+              "informal",
+              "descomplicad",
+              "tono",
+              "que suene",
+              "sin sonar formal"
+            ],
+            "en": [
+              "teen",
+              "youth group",
+              "young people",
+              "13 to 16",
+              "relaxed",
+              "casual",
+              "informal",
+              "laid-back",
+              "tone",
+              "sound like",
+              "not formal"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a la bibliotecaria de una biblioteca comunitaria. Responde solo con lo que te pida, en la forma, el largo y el tono que te pida. Si pide una tabla, escríbela en texto plano con las columnas separadas por el signo |. Si pide pasos, numéralos. Si no dice qué forma quiere, responde en un párrafo corrido y formal. Usa únicamente los datos del prompt; no inventes.",
+        "en": "You are an AI helping the librarian of a community library. Reply only with what she asks for, in the format, length and tone she asks for. If she asks for a table, write it in plain text with columns separated by the | sign. If she asks for steps, number them. If she doesn't say what format she wants, reply in a single formal paragraph. Use only the details in the prompt; don't make anything up."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. A las 9: hora del cuento, en la sala infantil.\n2. A las 10:30: taller de cómic, en el salón principal.\n3. A las 12: trueque de libros, en el patio.\nNos vemos el sábado, ¡no falten!",
+            "en": "1. At 9: story time, in the children's room.\n2. At 10:30: comic workshop, in the main hall.\n3. At noon: book swap, in the courtyard.\nSee you Saturday, don't miss it!"
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Así se hace. Mismas actividades, otra forma: pasos cortos y un tono que un muchacho sí lee. Cambiaste solo lo que cambió: el formato, el largo y el tono.",
+              "en": "That's how it's done. Same activities, new format: short steps and a tone a teenager will actually read. You changed only what needed changing: the layout, the length and the tone."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Hora | Actividad | Lugar\n9:00 a. m. | Hora del cuento | Sala infantil\n10:30 a. m. | Taller de cómic | Salón principal\n12:00 m. | Trueque de libros | Patio",
+            "en": "Time | Activity | Place\n9:00 a.m. | Story time | Children's room\n10:30 a.m. | Comic workshop | Main hall\n12:00 p.m. | Book swap | Courtyard"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La antena devolvió la tabla otra vez. Para un muchacho de 15 años eso parece una circular del colegio, no un plan. Mira la lista: pide pasos, di cuántos y a quién le hablas.",
+              "en": "The antenna sent back the table again. To a 15-year-old that looks like a school notice, not a plan. Check the list: ask for steps, say how many, and who you're talking to."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto va para tu bitácora. Escribe con tus palabras qué es la forma, como se lo explicarías a Gloria.",
+          "en": "This one goes in your logbook. Write what format means in your own words, the way you'd explain it to Gloria."
+        }
+      },
+      "concepto": "forma",
+      "definicion": {
+        "es": "Cómo quieres que llegue la respuesta: el formato (lista, tabla, mensaje o pasos) y el largo. Se pide junto con el tono, según quién la va a leer.",
+        "en": "How you want the answer delivered: the layout (list, table, message or steps) and the length. Ask for it together with the tone, depending on who will read it."
+      },
+      "pregunta": {
+        "es": "La forma es…",
+        "en": "Format is…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "tablas y planes",
+        "en": "tables and plans"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Forma y tu plan para el grupo juvenil ya viven en tu bitácora. Vuelven en el repaso para que no se te escapen.",
+          "en": "Saved. Your Format card and your youth-group plan now live in your logbook. They'll come back in your review so they don't slip away."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Última parada: tres preguntas.",
+          "en": "Last stop: three questions."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Gloria pidió \"organízame esto\" y le llegó un párrafo que nadie leyó. ¿Qué le faltó al prompt?",
+            "en": "Gloria asked the AI to \"organize this\" and got a paragraph nobody read. What was her prompt missing?"
+          },
+          "opciones": [
+            {
+              "es": "Usar una IA más potente",
+              "en": "A more powerful AI"
+            },
+            {
+              "es": "Decir la forma y el tono",
+              "en": "The format and the tone"
+            },
+            {
+              "es": "Escribir el prompt en mayúsculas",
+              "en": "Writing the prompt in capital letters"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Los datos estaban; la forma y el tono no. Si no los pides, la IA escoge por ti.",
+              "en": "Exactly. The facts were there; the format and tone weren't. If you don't ask for them, the AI picks for you."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en qué cambió entre el párrafo y el mensaje para el grupo.",
+              "en": "Hmm. Think about what changed between the paragraph and the message for the group."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Quieres una hoja con los libros prestados: quién lo tiene, qué libro es y cuándo lo devuelve. ¿Qué formato pides?",
+            "en": "You want one sheet of borrowed books: who has each one, which book it is and when it's due. Which layout do you ask for?"
+          },
+          "opciones": [
+            {
+              "es": "Un párrafo",
+              "en": "A paragraph"
+            },
+            {
+              "es": "Pasos numerados",
+              "en": "Numbered steps"
+            },
+            {
+              "es": "Una tabla",
+              "en": "A table"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Varios datos de cada libro, lado a lado: filas y columnas.",
+              "en": "Right. Several details for each book, side by side: rows and columns."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pista: vas a mirar varios datos de cada libro lado a lado.",
+              "en": "Hint: you'll be looking at several details for each book side by side."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Le pides a la IA \"hazlo corto\". ¿Qué pasa?",
+            "en": "You tell the AI \"keep it short.\" What happens?"
+          },
+          "opciones": [
+            {
+              "es": "La IA decide qué es corto; mejor pon un número",
+              "en": "The AI decides what short means; better give a number"
+            },
+            {
+              "es": "Siempre responde en una sola línea",
+              "en": "It always replies in a single line"
+            },
+            {
+              "es": "La IA no entiende la palabra corto",
+              "en": "The AI doesn't understand the word short"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Así es. Para la IA, corto puede ser un párrafo entero. \"Máximo 4 líneas\" no deja dudas.",
+              "en": "That's it. To an AI, short can mean a whole paragraph. \"4 lines max\" leaves no doubt."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa: ¿cuánto es corto para ti y cuánto para una máquina que no te conoce?",
+              "en": "Think: how short is short to you, and to a machine that doesn't know you?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "La forma",
+        "en": "The format"
+      },
+      "resumen": {
+        "es": "Cómo quieres que llegue la respuesta: formato y largo, junto con el tono. Los mismos datos sirven o no según la forma.",
+        "en": "How you want the answer delivered: layout and length, together with tone. The same facts land or flop depending on the format."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07",
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste el mismo festival en dos formas",
+          "en": "You saw the same festival in two formats"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Escogiste el formato de cada encargo de Gloria",
+          "en": "You picked the layout for each of Gloria's jobs"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Armaste la tabla del programa del sábado",
+          "en": "You built the table for Saturday's program"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste mis frases de juzgado",
+          "en": "You caught my courtroom sentences"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Convertiste la tabla en un plan para el grupo juvenil",
+          "en": "You turned the table into a plan for the youth group"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-la-forma",
+      "titulo": {
+        "es": "Pedirle la forma a la IA",
+        "en": "Asking AI for the right format"
+      }
+    }
+  }
+}

@@ -1,0 +1,884 @@
+{
+  "formato": "punti-mision@1",
+  "id": "el-pedido-completo",
+  "mundo": "prompts",
+  "capitulo": 1,
+  "numero": 2,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "pedido-completo"
+  ],
+  "usaConceptos": [
+    "prompt"
+  ],
+  "titulo": {
+    "es": "El pedido completo",
+    "en": "The Complete Request"
+  },
+  "resumen": {
+    "es": "Las cinco piezas de un buen pedido: tarea, contexto, datos, forma y tono.",
+    "en": "The five pieces of a good request: task, context, details, format and tone."
+  },
+  "siguiente": "la-tienda-de-dona-marta",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, entra otra señal a la antena. Es el profe Hernán, que entrena a los niños del barrio en una escuelita de fútbol. Le pidió un mensaje a una IA y le salió una circular de oficina. Vamos a ayudarle.",
+          "en": "Pilot, another signal is coming in. It's Coach Hernán, who runs a kids' soccer school in the neighborhood. He asked an AI for a message and got something that reads like an office memo. Let's help him."
+        }
+      },
+      "titulo": {
+        "es": "El pedido completo",
+        "en": "The Complete Request"
+      },
+      "texto": {
+        "es": "En la primera señal viste dos piezas: lo que pides y lo que solo tú sabes. Hoy las conviertes en cinco, las del pedido completo. Unos 9 minutos.",
+        "en": "In the first signal you saw two pieces: what you ask for and what only you know. Today they become five, the pieces of a complete request. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto escribió el profe y esto recibió. Abajo está el mismo pedido, completo.",
+          "en": "Here's what the coach wrote and what he got. Below is the same request, complete."
+        }
+      },
+      "titulo": {
+        "es": "De circular a mensaje del profe",
+        "en": "From office memo to coach talk"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Escribe algo sobre el torneo.",
+          "en": "Write something about the tournament."
+        },
+        "salida": {
+          "es": "Estimados padres de familia:\nPor medio de la presente nos permitimos informarles sobre el próximo torneo programado. Agradecemos de antemano su atención y colaboración.\nCordialmente, la Dirección",
+          "en": "Dear Parents and Guardians:\nWe are writing to inform you of the upcoming scheduled tournament. We thank you in advance for your attention and cooperation.\nSincerely, The Management"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "contexto",
+            "texto": {
+              "es": "Soy el profe de una escuelita de fútbol del barrio, con niños de 8 a 12 años. ",
+              "en": "I coach a neighborhood soccer school for kids ages 8 to 12. "
+            }
+          },
+          {
+            "pieza": "tarea",
+            "texto": {
+              "es": "Escribe un mensaje para invitar a los papás al torneo. ",
+              "en": "Write a message inviting the parents to our tournament. "
+            }
+          },
+          {
+            "pieza": "datos",
+            "texto": {
+              "es": "Es este sábado a las 8 a. m. en la cancha del parque; cada niño trae uniforme blanco y agua. ",
+              "en": "It's this Saturday at 8 a.m. at the park field; each kid brings a white uniform and water. "
+            }
+          },
+          {
+            "pieza": "forma",
+            "texto": {
+              "es": "Va para el grupo de WhatsApp: máximo 5 líneas. ",
+              "en": "It's for the WhatsApp group: 5 lines max. "
+            }
+          },
+          {
+            "pieza": "tono",
+            "texto": {
+              "es": "Que suene alegre y cercano.",
+              "en": "Make it sound upbeat and friendly."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Papás, ¡este sábado hay torneo!\nNos vemos a las 8 a. m. en la cancha del parque.\nCada niño trae uniforme blanco y agua.\nVengan a hacer barra.\nProfe Hernán",
+          "en": "Parents, it's tournament day this Saturday!\nSee you at 8 a.m. at the park field.\nEach kid brings a white uniform and water.\nCome cheer them on.\nCoach Hernán"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Cinco colores, cinco piezas: qué hacer, quién escribe y para quién, los datos, la forma y el tono. A eso le llamo un pedido completo.",
+          "en": "Five colors, five pieces: what to do, who's writing and for whom, the details, the format and the tone. That's what I call a complete request."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las cinco piezas. No siempre hacen falta todas, pero cuando una respuesta sale floja, casi siempre falta alguna. Toca cada una.",
+          "en": "Here are the five pieces. You won't always need all of them, but when an answer comes out weak, one is almost always missing. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 5 piezas del pedido",
+        "en": "The 5 pieces of a request"
+      },
+      "piezas": [
+        {
+          "id": "tarea",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "La tarea",
+            "en": "The task"
+          },
+          "descripcion": {
+            "es": "Qué quieres que haga, con un verbo claro.",
+            "en": "What you want it to do, with a clear verb."
+          },
+          "ejemplo": {
+            "es": "\"Escribe un mensaje para invitar al torneo\". Escribe, resume, compara, haz una lista: el verbo es el timón.",
+            "en": "\"Write a message inviting them to the tournament.\" Write, summarize, compare, make a list: the verb steers the ship."
+          }
+        },
+        {
+          "id": "contexto",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "El contexto",
+            "en": "The context"
+          },
+          "descripcion": {
+            "es": "Quién eres, para quién es y para qué.",
+            "en": "Who you are, who it's for and why."
+          },
+          "ejemplo": {
+            "es": "\"Soy el profe de una escuelita de fútbol\". Es tan importante que la próxima misión es solo sobre esta pieza.",
+            "en": "\"I coach a kids' soccer school.\" It matters so much that the next mission is all about this piece."
+          }
+        },
+        {
+          "id": "datos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Los datos",
+            "en": "The details"
+          },
+          "descripcion": {
+            "es": "Lo concreto que solo tú sabes: fechas, lugares, precios.",
+            "en": "The specifics only you know: dates, places, prices."
+          },
+          "ejemplo": {
+            "es": "\"Sábado, 8 a. m., cancha del parque\". Sin esto, la IA deja huecos o se los inventa.",
+            "en": "\"Saturday, 8 a.m., park field.\" Without this, the AI leaves gaps or fills them with made-up stuff."
+          }
+        },
+        {
+          "id": "forma",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "La forma",
+            "en": "The format"
+          },
+          "descripcion": {
+            "es": "Cómo lo quieres: mensaje, lista, tabla, y qué tan largo.",
+            "en": "How it looks: message, list, table, and how long."
+          },
+          "ejemplo": {
+            "es": "\"Para WhatsApp, máximo 5 líneas\". Más adelante en este capítulo tiene su propia misión, junto con el tono.",
+            "en": "\"For WhatsApp, 5 lines max.\" Later in this chapter it gets its own mission, together with tone."
+          }
+        },
+        {
+          "id": "tono",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "El tono",
+            "en": "The tone"
+          },
+          "descripcion": {
+            "es": "Cómo debe sonar: alegre, serio, cercano.",
+            "en": "How it should sound: upbeat, serious, friendly."
+          },
+          "ejemplo": {
+            "es": "\"Alegre y cercano\" hace que suene al profe Hernán y no a una oficina.",
+            "en": "\"Upbeat and friendly\" makes it sound like Coach Hernán, not like an office."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Camila estudia contabilidad y quiere que la IA le ayude a repasar para un parcial. ¿Qué pieza es cada frase de su pedido?",
+          "en": "Your turn. Camila studies accounting and wants the AI to help her prepare for an exam. Which piece is each sentence of her request?"
+        }
+      },
+      "titulo": {
+        "es": "Arma el pedido de Camila",
+        "en": "Build Camila's request"
+      },
+      "grupos": [
+        "tarea",
+        "contexto",
+        "datos",
+        "forma",
+        "tono"
+      ],
+      "items": [
+        {
+          "grupo": "tarea",
+          "texto": {
+            "es": "Hazme preguntas de práctica para repasar.",
+            "en": "Give me practice questions to review."
+          }
+        },
+        {
+          "grupo": "contexto",
+          "texto": {
+            "es": "Estudio contabilidad y voy en segundo semestre.",
+            "en": "I'm in my second semester of accounting."
+          }
+        },
+        {
+          "grupo": "datos",
+          "texto": {
+            "es": "El parcial es el lunes y es sobre impuestos y nómina.",
+            "en": "The exam is on Monday and covers taxes and payroll."
+          }
+        },
+        {
+          "grupo": "forma",
+          "texto": {
+            "es": "Ponlas en una lista numerada, con las respuestas al final.",
+            "en": "Put them in a numbered list, with the answers at the end."
+          }
+        },
+        {
+          "grupo": "tono",
+          "texto": {
+            "es": "Explícame como un profe paciente, sin palabras rebuscadas.",
+            "en": "Explain it like a patient teacher, no fancy words."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Cinco de cinco. Ya ves las piezas en cualquier pedido, no solo en el del profe.",
+          "en": "Five for five. Now you can spot the pieces in any request, not just the coach's."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, lee otra vez. ¿La frase dice qué hacer, quién pide, qué datos hay, cómo se ve o cómo suena?",
+          "en": "Hmm, read it again. Does it say what to do, who's asking, what the details are, how it looks or how it sounds?"
+        }
+      },
+      "malPorGrupo": {
+        "datos": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Pregúntate: ¿esta frase da un dato del tema, o cuenta quién está pidiendo?",
+            "en": "Close. Ask yourself: does this give a detail about the topic, or say who's asking?"
+          }
+        },
+        "tono": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Pregúntate: ¿esta frase dice cómo debe sonar, o cómo se debe ver?",
+            "en": "Close. Ask yourself: is this about how it should sound, or how it should look?"
+          }
+        },
+        "forma": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Pregúntate: ¿esta frase dice cómo se ve el resultado, o cómo debe sonar?",
+            "en": "Close. Ask yourself: is this about how the result looks, or how it should sound?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Una pieza manda sobre las demás: la tarea. Te muestro por qué.",
+          "en": "One piece leads all the others: the task. Here's why."
+        }
+      },
+      "titulo": {
+        "es": "La tarea empieza con un verbo",
+        "en": "The task starts with a verb"
+      },
+      "texto": {
+        "es": "\"Ayúdame con el torneo\" no dice nada: ¿escribo, organizo, calculo? Escribe, resume, compara, haz una lista: cada verbo pide un resultado distinto. Si la IA no sabe qué hacer, hace lo más genérico que encuentra.",
+        "en": "\"Help me with the tournament\" says nothing: should it write, organize, calculate? Write, summarize, compare, make a list: each verb asks for a different result. When the AI doesn't know what to do, it does the most generic thing it can."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Verbo vago",
+            "en": "Vague verb"
+          },
+          "b": {
+            "es": "Verbo claro",
+            "en": "Clear verb"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Ayúdame con el torneo",
+              "en": "Help me with the tournament"
+            },
+            "b": {
+              "es": "Escribe la invitación al torneo",
+              "en": "Write the tournament invitation"
+            }
+          },
+          {
+            "a": {
+              "es": "Mira lo de los uniformes",
+              "en": "Look into the uniforms thing"
+            },
+            "b": {
+              "es": "Compara estos dos precios de uniformes",
+              "en": "Compare these two uniform quotes"
+            }
+          },
+          {
+            "a": {
+              "es": "Algo para la reunión",
+              "en": "Something for the meeting"
+            },
+            "b": {
+              "es": "Haz una lista de temas para la reunión",
+              "en": "Make a list of topics for the meeting"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. El profe quiere reunir a los papás para planear el paseo de fin de año. Arma el pedido completo, con las cinco piezas.",
+          "en": "Your turn to transmit. The coach wants to get the parents together to plan the end-of-season trip. Build the complete request, with all five pieces."
+        }
+      },
+      "titulo": {
+        "es": "La reunión de papás",
+        "en": "The parents' meeting"
+      },
+      "reto": {
+        "es": "Datos que te cuenta el profe Hernán: quiere invitar a los papás de la escuelita a una reunión el jueves a las 7 p. m. en el salón comunal, para planear el paseo de fin de año. Es para el grupo de WhatsApp de los papás. Quiere que suene cercano, no como una circular.",
+        "en": "Here's what Coach Hernán tells you: he wants to invite the soccer school parents to a meeting on Thursday at 7 p.m. at the community hall, to plan the end-of-season trip. It's for the parents' WhatsApp group. He wants it to sound friendly, not like an official notice."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: un verbo claro",
+            "en": "The task: a clear verb"
+          },
+          "rubrica": "El prompt pide una acción concreta y dice qué producir: escribir, redactar o hacer un mensaje o una invitación a la reunión (también vale 'necesito un mensaje para...'). No cuenta 'ayúdame con la reunión' ni 'algo sobre la reunión', ni un prompt que solo cuenta datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "escribe un",
+              "escribe el",
+              "escribeme",
+              "escribir un",
+              "redacta",
+              "hazme un mensaje",
+              "haz un mensaje",
+              "hazme una invitacion",
+              "haz una invitacion",
+              "crea un mensaje",
+              "crea una invitacion",
+              "arma un mensaje",
+              "necesito un mensaje",
+              "invita a",
+              "invitalos"
+            ],
+            "en": [
+              "write a message",
+              "write a short",
+              "write a whatsapp",
+              "write a friendly",
+              "write an invit",
+              "write me",
+              "write the message",
+              "write the invit",
+              "draft",
+              "compose",
+              "create a message",
+              "create an invitation",
+              "make a message",
+              "make an invitation",
+              "i need a message",
+              "invite the parents"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "El contexto: quién escribe o para quién",
+            "en": "The context: who's writing or who it's for"
+          },
+          "rubrica": "El prompt dice quién escribe (el profe o entrenador de una escuelita de fútbol) o para quién es el mensaje (los papás, padres o acudientes de los niños). No cuenta 'mi grupo', 'todos' o 'la gente' sin decir quiénes son.",
+          "claves": {
+            "es": [
+              "el profe",
+              "soy profe",
+              "profe de",
+              "entrenador",
+              "escuelita",
+              "escuela de futbol",
+              "papas",
+              "padres",
+              "acudientes"
+            ],
+            "en": [
+              "coach",
+              "soccer school",
+              "football school",
+              "parents",
+              "moms and dads",
+              "youth soccer"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos: día, hora, lugar o motivo",
+            "en": "The details: day, time, place or purpose"
+          },
+          "rubrica": "El prompt trae al menos dos datos concretos de la reunión: jueves, 7 p. m., salón comunal, planear el paseo de fin de año. No cuenta 'una reunión' o 'pronto' sin día, hora, lugar ni motivo.",
+          "claves": {
+            "es": [
+              "jueves",
+              "salon comunal",
+              "paseo",
+              "7 p",
+              "7pm",
+              "7:00",
+              "7 de la noche",
+              "siete de la noche"
+            ],
+            "en": [
+              "thursday",
+              "community hall",
+              "community center",
+              "trip",
+              "7 p",
+              "7pm",
+              "7:00",
+              "seven p"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: WhatsApp o un largo",
+            "en": "The format: WhatsApp or a length"
+          },
+          "rubrica": "El prompt dice dónde va el mensaje o qué tan largo debe ser: grupo de WhatsApp, un número de líneas, un párrafo, breve. No cuenta la palabra 'mensaje' sola ni 'para los papás': eso dice para quién es, no la forma.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "wpp",
+              "lineas",
+              "renglones",
+              "parrafo",
+              "mensaje breve",
+              "mensaje corto",
+              "mensaje cortico",
+              "pocas palabras"
+            ],
+            "en": [
+              "whatsapp",
+              "group chat",
+              "lines",
+              "sentences",
+              "paragraph",
+              "short message",
+              "brief",
+              "few words"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "El tono: cómo debe sonar",
+            "en": "The tone: how it should sound"
+          },
+          "rubrica": "El prompt dice cómo debe sonar el mensaje: cercano, amable, alegre, informal, relajado, no como una circular. No cuenta 'bonito' o 'bueno' solos, porque no describen un tono, ni hablar del largo: 'breve' es forma, no tono.",
+          "claves": {
+            "es": [
+              "cercano",
+              "amable",
+              "alegre",
+              "calido",
+              "informal",
+              "relajado",
+              "tono",
+              "no como una circular",
+              "que suene"
+            ],
+            "en": [
+              "friendly",
+              "warm",
+              "cheerful",
+              "upbeat",
+              "casual",
+              "relaxed",
+              "tone",
+              "not formal",
+              "sound like"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a escribir mensajes. Responde solo con lo que te pidan, sin explicaciones. Usa únicamente lo que dice el prompt: no supongas quién escribe, para quién es ni datos que no estén. Si falta un dato, escribe algo genérico en vez de inventarlo. Si el prompt no pide un largo ni un tono, escribe un mensaje formal y largo, como una circular.",
+        "en": "You are an AI that helps write messages. Reply with only what is asked for, no explanations. Use only what the prompt says: don't assume who is writing, who it's for, or any details that aren't there. If a detail is missing, write something generic instead of making it up. If the prompt asks for no length and no tone, write a long, formal message, like an official notice."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Papás de la escuelita, ¡los necesitamos!\nReunión el jueves a las 7 p. m. en el salón comunal.\nVamos a planear juntos el paseo de fin de año.\nTraigan sus ideas.\nProfe Hernán",
+            "en": "Soccer school parents, we need you!\nMeeting on Thursday at 7 p.m. at the community hall.\nLet's plan the end-of-season trip together.\nBring your ideas.\nCoach Hernán"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal perfecta. Se nota cada pieza: el verbo, para quién, los datos, el formato de WhatsApp y el tono del profe.",
+              "en": "Perfect signal. Every piece shows: the verb, who it's for, the details, the WhatsApp format and the coach's tone."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimados padres de familia:\nPor medio de la presente se les convoca a una reunión de carácter importante. Se solicita su puntual asistencia. Cualquier inquietud será atendida oportunamente.\nAtentamente, la Dirección",
+            "en": "Dear Parents and Guardians:\nYou are hereby invited to an important meeting. Your prompt attendance is kindly requested. Any questions will be addressed in due course.\nSincerely, The Management"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: salió una circular sin día ni lugar. Mira la lista: cada pieza que falta es algo que la IA tuvo que adivinar.",
+              "en": "Weak signal: out came a memo with no day or place. Check the list: every missing piece is something the AI had to guess."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "El profe ya se animó a probar solo. Mira lo que le pasó y ayúdale a decidir qué cambiar.",
+          "en": "The coach tried it on his own. See what happened and help him decide what to change."
+        }
+      },
+      "titulo": {
+        "es": "¿Qué pieza falta?",
+        "en": "Which piece is missing?"
+      },
+      "escena": {
+        "es": "El profe escribió: \"Escribe un mensaje para los papás: el entrenamiento del martes pasa al miércoles a las 4 p. m. por la lluvia.\" La IA puso bien los datos, pero le salió un párrafo larguísimo que suena a oficina. ¿Qué cambia en su pedido?",
+        "en": "The coach wrote: \"Write a message for the parents: Tuesday's practice moves to Wednesday at 4 p.m. because of the rain.\" The AI got the details right, but wrote a huge paragraph that sounds like an office. What should he change in his request?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Agregar forma y tono: \"para WhatsApp, 3 líneas, que suene cercano\"",
+            "en": "Add format and tone: \"for WhatsApp, 3 lines, make it friendly\""
+          },
+          "consecuencia": {
+            "es": "Eso. Los datos ya estaban; faltaban la forma y el tono. Ahora el mensaje sale corto y suena al profe.",
+            "en": "That's it. The details were already there; format and tone were missing. Now the message comes out short and sounds like the coach."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Mandar el mismo pedido otra vez, a ver si sale distinto",
+            "en": "Send the same request again and hope it comes out different"
+          },
+          "consecuencia": {
+            "es": "Puede cambiar un poco, pero la IA sigue adivinando el largo y el tono. Mandar lo mismo esperando otra cosa gasta tiempo.",
+            "en": "It might change a little, but the AI is still guessing the length and tone. Sending the same thing and expecting something else wastes time."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Agregar más datos sobre el entrenamiento",
+            "en": "Add more details about the practice"
+          },
+          "consecuencia": {
+            "es": "Los datos ya estaban bien. Con más datos, el párrafo sale todavía más largo. Lo que fallaba era cómo sonaba y cuánto medía.",
+            "en": "The details were already fine. More details make the paragraph even longer. What was off was how it sounded and how long it was."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Cuando una respuesta sale floja, no reescribas todo. Busca la pieza que falta y agrégala. Más adelante en este capítulo vas a practicar ese ajuste.",
+          "en": "When an answer comes out weak, don't rewrite everything. Find the missing piece and add it. Later in this chapter you'll practice that kind of fix."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué es un pedido completo, como se lo explicarías al profe Hernán.",
+          "en": "Logbook time. Write what a complete request is in your own words, the way you'd explain it to Coach Hernán."
+        }
+      },
+      "concepto": "pedido-completo",
+      "definicion": {
+        "es": "Un prompt con cinco piezas: la tarea (un verbo claro), el contexto, los datos, la forma y el tono. Si la respuesta sale floja, casi siempre falta una.",
+        "en": "A prompt with five pieces: the task (a clear verb), context, details, format and tone. If the answer comes out weak, one is almost always missing."
+      },
+      "pregunta": {
+        "es": "Un pedido completo es…",
+        "en": "A complete request is…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "mensajes de grupo",
+        "en": "group messages"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta del pedido completo y el mensaje de la reunión ya viven en tu bitácora. En el repaso te los traigo de vuelta.",
+          "en": "Saved. Your Complete Request card and the meeting message now live in your logbook. I'll bring them back in your review."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas cortas para aterrizar.",
+          "en": "Three quick questions to land."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál tarea es más clara?",
+            "en": "Which task is clearest?"
+          },
+          "opciones": [
+            {
+              "es": "Ayúdame con la reunión",
+              "en": "Help me with the meeting"
+            },
+            {
+              "es": "Mira lo de la reunión",
+              "en": "Look into the meeting thing"
+            },
+            {
+              "es": "Haz una lista de temas para la reunión",
+              "en": "Make a list of topics for the meeting"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. \"Haz una lista\" dice exactamente qué resultado quieres.",
+              "en": "Right. \"Make a list\" says exactly what result you want."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Busca la que tiene un verbo que pide un resultado concreto.",
+              "en": "Hmm. Look for the one whose verb asks for a concrete result."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "\"Escribe un correo de 5 líneas para mi jefe pidiendo el viernes libre.\" ¿Qué pieza no está?",
+            "en": "\"Write a 5-line email to my boss asking for Friday off.\" Which piece is missing?"
+          },
+          "opciones": [
+            {
+              "es": "La tarea",
+              "en": "The task"
+            },
+            {
+              "es": "El tono",
+              "en": "The tone"
+            },
+            {
+              "es": "La forma",
+              "en": "The format"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. No dice si debe sonar formal o de confianza, y con un jefe eso pesa.",
+              "en": "Exactly. It doesn't say whether it should sound formal or relaxed, and with a boss that matters."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Esa sí está. Repasa las piezas una por una: ¿cuál no aparece en la frase?",
+              "en": "That one's there. Go through the pieces one by one: which one doesn't show up?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA te devolvió un mensaje con huecos como [fecha] y [lugar]. ¿Qué pieza faltaba?",
+            "en": "The AI gave you a message with gaps like [date] and [place]. Which piece was missing?"
+          },
+          "opciones": [
+            {
+              "es": "El tono",
+              "en": "The tone"
+            },
+            {
+              "es": "Los datos",
+              "en": "The details"
+            },
+            {
+              "es": "La forma",
+              "en": "The format"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. La fecha y el lugar solo los sabes tú. Si no los escribes, quedan en blanco.",
+              "en": "Yes. Only you know the date and place. If you don't write them, they stay blank."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mira qué quedó en blanco. ¿Qué pieza guarda las cosas concretas que solo tú sabes?",
+              "en": "Look at what was left blank. Which piece holds the specifics only you know?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "El pedido completo",
+        "en": "The complete request"
+      },
+      "resumen": {
+        "es": "Un prompt con cinco piezas: tarea, contexto, datos, forma y tono. Si la respuesta sale floja, busca la que falta.",
+        "en": "A prompt with five pieces: task, context, details, format and tone. If the answer comes out weak, find the missing one."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste las cinco piezas en el mensaje del profe",
+          "en": "You saw the five pieces in the coach's message"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Armaste el pedido de Camila pieza por pieza",
+          "en": "You built Camila's request piece by piece"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste la invitación a la reunión de papás",
+          "en": "You wrote the invite to the parents' meeting"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Encontraste la pieza que le faltaba al profe",
+          "en": "You found the piece the coach was missing"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-completo",
+      "titulo": {
+        "es": "Hacer un pedido completo",
+        "en": "Making a complete request"
+      }
+    }
+  }
+}
