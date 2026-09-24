@@ -21,6 +21,10 @@ export type RegistroMision = {
 export type PropsBloque<B extends Bloque = Bloque> = {
   bloque: B;
   idioma: Idioma;
+  /** Id de la misión (el Laboratorio en vivo se lo manda al servidor). */
+  misionId: string;
+  /** Vista previa del admin: el servidor lee el borrador en vez de la publicada. */
+  vista: boolean;
   /** Todas las piezas de la misión, por id (colores y títulos compartidos). */
   piezas: Record<string, Pieza>;
   registro: RegistroMision;

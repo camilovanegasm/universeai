@@ -1,13 +1,16 @@
 // De dónde sale una misión.
 //
 // - Publicada en Firebase (`misiones/{id}`, campo `paquete`): manda esa. La
-//   publica el admin desde "Importar misión" (fase C1.2).
+//   publica el admin desde ADMIN → MISIONES.
 // - Si no está en Firebase (o Firebase no responde), se usa la semilla: los
 //   paquetes guardados en contenido/misiones/, igual que temas.ts y
 //   lecciones.ts son la semilla de las lecciones viejas.
 //
-// Eficiencia: cada misión se pide una sola vez por visita y se guarda en
-// memoria; volver a abrirla no gasta otra lectura.
+// Qué misiones tiene cada mundo sale de `contenido/misiones` (el índice que
+// escribe Publicar). Si todavía no hay índice, de la semilla.
+//
+// Eficiencia: cada misión y el índice se piden una sola vez por visita y se
+// guardan en memoria; volver a abrirlos no gasta otra lectura.
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import type { Idioma } from "@/lib/i18n";
@@ -17,16 +20,56 @@ import eco03 from "../../../contenido/misiones/eco/03-la-tienda-de-dona-marta.js
 
 const SEMILLA: PaqueteMision[] = [eco03 as unknown as PaqueteMision];
 
-const porId = new Map<string, Promise<PaqueteMision | null>>();
+/** Lo que se muestra de una misión en la ruta de su mundo. */
+export type ResumenMision = {
+  id: string;
+  mundo: string;
+  capitulo: number;
+  numero: number;
+  titulo: Texto;
+  resumen: Texto;
+  minutos: number;
+};
 
-/** Las misiones de un mundo que trae la semilla, en orden. */
-export function misionesSemilla(mundo: string): PaqueteMision[] {
-  return SEMILLA.filter((m) => m.mundo === mundo).sort((a, b) => a.capitulo - b.capitulo || a.numero - b.numero);
+const porId = new Map<string, Promise<PaqueteMision | null>>();
+let indice: Promise<ResumenMision[]> | null = null;
+
+const resumirSemilla = (p: PaqueteMision): ResumenMision => ({
+  id: p.id,
+  mundo: p.mundo,
+  capitulo: p.capitulo,
+  numero: p.numero,
+  titulo: p.titulo,
+  resumen: p.resumen,
+  minutos: p.minutos,
+});
+
+/** Después de publicar u ocultar: la próxima lectura va a Firebase otra vez. */
+export function olvidarCache(id?: string) {
+  if (id) porId.delete(id);
+  indice = null;
+}
+
+/** Las misiones de un mundo, en orden de capítulo y número. */
+export async function misionesDelMundo(mundo: string): Promise<ResumenMision[]> {
+  if (!indice) {
+    indice = getDoc(doc(db, "contenido", "misiones"))
+      .then((snap) => (snap.exists() ? ((snap.data().lista as ResumenMision[] | undefined) ?? null) : null))
+      .catch(() => null)
+      .then((lista) => lista ?? SEMILLA.map(resumirSemilla));
+  }
+  const lista = await indice;
+  return lista.filter((m) => m.mundo === mundo).sort((a, b) => a.capitulo - b.capitulo || a.numero - b.numero);
+}
+
+/** Los paquetes de la semilla (para importarlos desde el admin). */
+export function paquetesSemilla(): PaqueteMision[] {
+  return SEMILLA;
 }
 
 /**
  * La misión lista para jugar, o null si no existe. Un paquete que no pasa el
- * revisor no se juega: mejor "en construcción" que una misión rota.
+ * revisor no se juega: mejor "no encontrada" que una misión rota.
  */
 export function cargarMision(id: string): Promise<PaqueteMision | null> {
   const guardada = porId.get(id);

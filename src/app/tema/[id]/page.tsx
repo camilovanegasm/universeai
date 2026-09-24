@@ -17,7 +17,7 @@ import Cargando from "@/components/Cargando";
 import PlanetaPixel from "@/components/PlanetaPixel";
 import RutaTema, { type SubtemaEnPlaneta } from "@/components/RutaTema";
 import { juegoDelMundo } from "@/lib/juegos/catalogo";
-import { misionesSemilla } from "@/lib/misiones/cargar";
+import { misionesDelMundo, type ResumenMision } from "@/lib/misiones/cargar";
 
 // Mismos colores y mismo orden que la pantalla de mundos, para que el planeta
 // al que entraste sea del color de la tarjeta que tocaste.
@@ -64,6 +64,7 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
   const t = TX[idioma];
   const { usuario, cargando } = useAuth();
   const [perfil, setPerfil] = useState<PerfilUsuario | null>(null);
+  const [misiones, setMisiones] = useState<ResumenMision[]>([]);
 
   const catalogo = useCatalogo();
   const indice = catalogo.temas.findIndex((x) => x.id === id);
@@ -84,6 +85,20 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
       vigente = false;
     };
   }, [usuario]);
+
+  // Formato nuevo (fase C1): solo el admin ve las misiones hasta que el mundo
+  // esté rehecho. Una lectura del índice por visita (queda en memoria).
+  const soyAdmin = esAdmin(usuario);
+  useEffect(() => {
+    if (!soyAdmin) return;
+    let vigente = true;
+    misionesDelMundo(id).then((m) => {
+      if (vigente) setMisiones(m);
+    });
+    return () => {
+      vigente = false;
+    };
+  }, [id, soyAdmin]);
 
   const subtemas = useMemo<SubtemaEnPlaneta[]>(
     () =>
@@ -124,8 +139,6 @@ export default function TemaPage({ params }: { params: Promise<{ id: string }> }
   const hechas = subtemas.filter((s) => s.completado).length;
   const juego = juegoDelMundo(tema.id);
   const completo = hechas === subtemas.length && subtemas.length > 0;
-  // Formato nuevo (fase C1): solo el admin ve la entrada hasta que el mundo esté rehecho.
-  const misiones = esAdmin(usuario) ? misionesSemilla(tema.id) : [];
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">

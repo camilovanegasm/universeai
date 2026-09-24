@@ -13,7 +13,7 @@
 >
 > (Ver también `CLAUDE.md` en esta misma carpeta: contexto operativo para Claude Code.)
 
-**Última actualización:** 2026-09-23 (noche) · **Fase actual:** C1 (motor de bloques) · tramo C1.1 hecho, sigue C1.2 (ver 6.11). El lanzamiento espera a Eco rehecho
+**Última actualización:** 2026-09-23 (noche) · **Fase actual:** C1 (motor de bloques) · C1.1, C1.2 y C1.3 hechos, sigue C1.4 (ver 6.11). El lanzamiento espera a Eco rehecho
 
 > Para el detalle de qué se tocó en cada sesión, ver `CAMBIOS.md`.
 
@@ -869,6 +869,73 @@ Lo que quedó en C1.1:
   escribe al terminar tiene la forma exacta que aceptan las reglas. Se corrigió un error que
   devolvía al primer bloque si el objeto de sesión cambiaba (ahora depende del uid).
 
+**Tramo C1.2: el admin de misiones (2026-09-23, noche).** Pestaña nueva ADMIN → MISIONES.
+- `/admin/misiones`: importar un paquete (pegar el JSON o elegir el archivo; botón "USAR SEMILLA"
+  para los que ya están en el proyecto). Pasa por el mismo revisor; un paquete con errores no se
+  importa. Importar deja un **borrador**: los pilotos no ven nada todavía. Lista con estado:
+  SIN PUBLICAR · PUBLICADA vN · vN CAMBIOS SIN PUBLICAR.
+- `/admin/misiones/[id]`: los errores y avisos del revisor; **editor de textos** (todos los textos
+  de la misión en español e inglés, agrupados por bloque, con buscador; se guardan solos en el
+  borrador, `src/lib/misiones/textos.ts`); PUBLICAR con confirmación de dos toques (desactivado si
+  hay errores o no hay cambios); VERSIONES con RESTAURAR (trae una versión vieja al borrador, no
+  publica: publicarla crea una versión nueva, el historial nunca se reescribe); OCULTAR DEL MUNDO.
+- `/admin/misiones/[id]/vista`: vista previa jugable del borrador, **sin gastar gasolina ni
+  guardar progreso**. El motor que juega una misión quedó en `src/components/mision/JugarMision.tsx`
+  y lo usan la página de los pilotos y esta vista.
+- En Firebase: `borradores/mision-{id}` y `borradores/misiones` (lista), `misiones/{id}` (lo
+  publicado, con `version` y `club`), `misiones/{id}/versiones/{0001…}` (historial) y
+  `contenido/misiones` (índice público de qué misiones tiene cada mundo, lo lee la ruta del mundo).
+  Todo en `src/lib/misiones/admin.ts` (ninguna pantalla pública lo importa). Publicar escribe todo
+  en un solo lote: o todo o nada. Tope de 400 KB por paquete.
+- **Reglas nuevas** (`firestore.rules`): `misiones/{id}` la lee cualquiera salvo las del Club
+  (miembros y admin), solo el admin escribe; `versiones` solo el admin. Copia de las reglas
+  anteriores en `referencias/firestore.rules.antes-de-misiones`. **Hay que publicarlas en la consola
+  antes de usar el admin de misiones** (también en localhost, que usa el mismo Firebase).
+- Verificado con Firebase simulado y clics reales: 14 comprobaciones (paquete roto rechazado,
+  importar no publica, texto editado y autoguardado, v1 y v2 con su versión e índice, PUBLICAR
+  desactivado sin cambios, restaurar no toca lo publicado, vista previa no toca el perfil, el piloto
+  juega lo publicado). 0 errores. Tipos y lint limpios en todo el proyecto.
+
+**Tramo C1.3: el Laboratorio en vivo (2026-09-24).** El Laboratorio habla con Claude Haiku 4.5.
+- **Cómo viaja un prompt:** el navegador manda a `/api/laboratorio` solo la misión, el bloque, el
+  prompt (12 a 600 letras), el idioma y la sesión (`src/lib/misiones/laboratorioVivo.ts`). El
+  servidor (`src/app/api/laboratorio/route.ts`) carga él mismo las instrucciones y la rúbrica desde
+  la misión publicada (o el borrador, en la vista previa del admin): nadie puede cambiarlas para
+  usar la IA de Punti en otra cosa. Luego hace dos llamadas (forma A de C0): la IA responde al
+  prompt y otra llamada, a temperatura 0, califica **solo el prompt** con la rúbrica
+  (`src/lib/servidor/anthropic.ts`). Las dos llamadas comparten 24 segundos como máximo.
+- **La llave** vive solo en el servidor: `ANTHROPIC_API_KEY` en `.env.local` (tu PC) y en las
+  variables de entorno de Vercel, **sin** `NEXT_PUBLIC_`. Nunca se imprime ni se devuelve, y los
+  errores de Anthropic no se reenvían.
+- **El servidor no tiene llave maestra de Firebase:** lee y escribe con la sesión del piloto
+  (`src/lib/servidor/firestoreRest.ts`), así que las reglas se aplican igual que en su navegador.
+- **Topes** (ADMIN → AJUSTES → LABORATORIO EN VIVO, con el gasto máximo estimado al lado):
+  `labUsosPiloto` 15 al día, `labUsosClub` 40, `labUsosDia` 2000 para toda la app (0 = apagado).
+  Cada transmisión suma 1 en el perfil (`labUsos`, `labDia`) y 1 en `laboratorio/{día}` **en la
+  misma escritura, antes de llamar a la IA**. Las reglas exigen que suban juntos, de a 1, sin pasar
+  los topes y sin volver atrás en el día (`labValido` y `match /laboratorio/{dia}`). El contador
+  de la app sube con un incremento de Firestore, así muchos pilotos a la vez no chocan. Encima de
+  todo, el límite de gasto del espacio de trabajo "Punti" en Anthropic.
+- **Respaldo:** si se acabó el tope, el admin lo apagó, falta la llave, no hay conexión o la IA no
+  responde, el Laboratorio sigue con la revisión de práctica (palabras clave) y Punti lo explica.
+  Nadie se queda atascado. Mientras el piloto escribe, la lista se marca con esa revisión local
+  como pista; al transmitir en vivo manda lo que dijo la IA. Arriba se ve "IA en vivo · quedan N hoy".
+- **Seguridad del prompt:** se le quitan los `<` y `>` antes de calificarlo (no puede cerrar la
+  etiqueta y colar instrucciones), el calificador solo acepta los checks del ejercicio y solo si
+  dicen exactamente `true`, y el cuerpo del pedido tiene tope de 8 KB.
+- **Pendiente conocido:** alguien con muchas cuentas falsas podría gastar el tope de toda la app en
+  un día (no cuesta dinero de más: los topes lo impiden, pero deja a los demás en modo práctica).
+  Se cierra con App Check o exigiendo correo verificado, junto con reCAPTCHA (ya en pendientes).
+- **Reglas nuevas:** copia de las anteriores en `referencias/firestore.rules.antes-de-laboratorio`.
+  **Hay que publicarlas antes de probar** (también en localhost).
+- Verificado: tipos y lint limpios; 26 pruebas de la ruta con Firestore y Anthropic simulados
+  (topes, Club, día nuevo, apagado, token ajeno, IA caída sin filtrar el error, intento de colar
+  instrucciones, reintento si choca, borrador sin permiso, pedidos gigantes o raros); la misión
+  completa jugada con clics en celular en los tres modos (en vivo, tope alcanzado, sin conexión).
+  Revisión de seguridad independiente: sin huecos críticos; sus arreglos ya están aplicados. El
+  emulador de reglas de Firebase no se pudo correr (la red lo bloquea): la prueba real de las
+  reglas es la de Cami en localhost.
+
 **Costo estimado del Laboratorio** (precios verificados 2026-09-23): por uso ~USD 0,0004 con
 Gemini 2.5 Flash-Lite y ~USD 0,005 con Claude Haiku 4.5; con 100 pilotos diarios y 10 usos,
 ~USD 13 o ~USD 150 al mes. El proveedor se elige en C0 con prueba real y criterio neutral.
@@ -1239,6 +1306,10 @@ tenía otra sesión abierta. **Sigue sin explicación.** De ahí salió `CAMBIOS
 ---
 
 ## 13. Bitácora
+
+### 2026-09-24 — C1.3: el Laboratorio habla con la IA de verdad
+Claude Haiku 4.5 desde el servidor, con topes por piloto y por día que hacen cumplir las reglas,
+tres números nuevos en Ajustes y la revisión de práctica como respaldo. Detalle en 6.11.
 
 ### 2026-09-23 (noche) — Cami aprueba el plan de aprendizaje
 

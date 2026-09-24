@@ -53,6 +53,7 @@ export default function MarcoAdmin({
   const pestanas = [
     { href: "/admin", texto: "PILOTOS", activa: ruta === "/admin" },
     { href: "/admin/contenido", texto: "CONTENIDO", activa: ruta.startsWith("/admin/contenido") },
+    { href: "/admin/misiones", texto: "MISIONES", activa: ruta.startsWith("/admin/misiones") },
     { href: "/admin/ajustes", texto: "AJUSTES", activa: ruta.startsWith("/admin/ajustes") },
   ];
 

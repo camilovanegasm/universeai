@@ -1,10 +1,16 @@
 "use client";
 
-// El Laboratorio: el piloto escribe un prompt, lo "transmite" y ve qué pasa.
+// El Laboratorio: el piloto escribe un prompt, lo transmite y ve qué pasa.
 //
-// Hoy en MODO SIMULADO (palabras clave y respuestas de ejemplo del paquete).
-// La fase C1.3 lo conecta a la IA en vivo desde el servidor; este modo queda
-// de respaldo para cuando se alcance el tope de gasto o no haya conexión.
+// EN VIVO (fase C1.3): el prompt va al servidor (/api/laboratorio), que lo
+// manda a Claude Haiku con las instrucciones del ejercicio y lo califica con la
+// rúbrica de la misión. Punti responde con lo que dijo la IA.
+//
+// REVISIÓN DE PRÁCTICA (respaldo): palabras clave y respuestas de ejemplo del
+// paquete. Entra sola si se acabaron las transmisiones en vivo del día, si el
+// admin apagó el Laboratorio, si no hay conexión o si la IA no responde.
+// Mientras el piloto escribe, la lista se marca con esta revisión local como
+// pista; al transmitir en vivo manda lo que dijo la IA.
 //
 // Transmitir NO gasta gasolina: el Laboratorio es para practicar y equivocarse.
 // Después de `maxIntentos` se deja seguir aunque no pase, para que nadie se
@@ -13,14 +19,17 @@ import { useEffect, useRef, useState } from "react";
 import type { Idioma } from "@/lib/i18n";
 import { textoPixel } from "@/lib/i18n";
 import { sonar } from "@/lib/sonido";
-import type { BloqueDe } from "@/lib/misiones/tipos";
+import type { BloqueDe, Dicho } from "@/lib/misiones/tipos";
 import { MAX_PROMPT, revisarSimulado } from "@/lib/misiones/laboratorio";
+import { transmitirVivo } from "@/lib/misiones/laboratorioVivo";
 import { Etiqueta, Salida, Tarjeta } from "./Base";
 import type { PropsBloque } from "./tipos";
 
 const T: Record<Idioma, Record<string, string>> = {
   es: {
     laboratorio: "Laboratorio",
+    vivo: "IA en vivo",
+    quedan: "quedan hoy",
     simulado: "Revisión de práctica",
     tuPrompt: "Tu prompt",
     placeholder: "Escribe aquí tu prompt…",
@@ -32,9 +41,13 @@ const T: Record<Idioma, Record<string, string>> = {
     vacio: "La antena no captó nada. Escribe un pedido completo, como si le hablaras a alguien que no te conoce.",
     intentos: "Intento",
     de: "de",
+    topePiloto: "Usaste tus transmisiones en vivo de hoy. Sigo con la revisión de práctica; mañana la antena vuelve a estar libre.",
+    respaldo: "La antena en vivo está descansando. Sigo con la revisión de práctica, que también cuenta.",
   },
   en: {
     laboratorio: "Lab",
+    vivo: "Live AI",
+    quedan: "left today",
     simulado: "Practice review",
     tuPrompt: "Your prompt",
     placeholder: "Write your prompt here…",
@@ -46,28 +59,53 @@ const T: Record<Idioma, Record<string, string>> = {
     vacio: "The antenna picked up nothing. Write a full request, as if you were talking to someone who doesn't know you.",
     intentos: "Try",
     de: "of",
+    topePiloto: "You used today's live transmissions. I'll keep going with the practice review; tomorrow the antenna is free again.",
+    respaldo: "The live antenna is resting. I'll keep going with the practice review, which counts too.",
   },
 };
 
-export default function Laboratorio({ bloque, idioma, registro, decir, completar, guardarLab }: PropsBloque<BloqueDe<"laboratorio">>) {
+type Resultado = { checks: Record<string, boolean>; aprobado: boolean; salida: string; cartel: boolean; dicho: Dicho };
+
+export default function Laboratorio({ bloque, idioma, misionId, vista, registro, decir, completar, guardarLab }: PropsBloque<BloqueDe<"laboratorio">>) {
   const t = T[idioma];
   const previo = registro.labs[bloque.id];
   const anterior = Object.values(registro.labs).at(-1)?.prompt ?? "";
   const [prompt, setPrompt] = useState(previo?.prompt ?? (bloque.inicial === "anterior" ? anterior : ""));
   const [intentos, setIntentos] = useState(previo?.intentos ?? 0);
   const [transmitiendo, setTransmitiendo] = useState(false);
-  const [respuesta, setRespuesta] = useState<{ texto: string; cartel: boolean } | null>(null);
-  const reloj = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [respuesta, setRespuesta] = useState<{ texto: string; cartel: boolean; vivo: boolean } | null>(null);
+  /** Lo que marcó la IA, atado al prompt que calificó (si lo edita, vuelve la pista local). */
+  const [marcaVivo, setMarcaVivo] = useState<{ prompt: string; checks: Record<string, boolean> } | null>(null);
+  const [modo, setModo] = useState<"vivo" | "simulado">("vivo");
+  const [restantes, setRestantes] = useState<number | null>(null);
+  const [aviso, setAviso] = useState<string | null>(null);
+  const montado = useRef(true);
 
-  useEffect(() => () => {
-    if (reloj.current) clearTimeout(reloj.current);
+  useEffect(() => {
+    montado.current = true;
+    return () => {
+      montado.current = false;
+    };
   }, []);
 
-  // La lista se marca mientras escribe: le muestra qué piezas ya puso.
-  const checks = revisarSimulado(bloque.checks, prompt, idioma);
+  const pista = revisarSimulado(bloque.checks, prompt, idioma);
+  const checks = marcaVivo && marcaVivo.prompt === prompt.trim() ? marcaVivo.checks : pista;
   const cumplidos = Object.values(checks).filter(Boolean).length;
 
-  function transmitir() {
+  function simular(limpio: string): Resultado {
+    const revision = revisarSimulado(bloque.checks, limpio, idioma);
+    const aprobado = Object.values(revision).filter(Boolean).length >= bloque.aprobar;
+    const r = aprobado ? bloque.simulado.bueno : bloque.simulado.debil;
+    return {
+      checks: revision,
+      aprobado,
+      salida: r.salida[idioma],
+      cartel: aprobado && bloque.simulado.bueno.salidaTipo === "cartel",
+      dicho: r.punti,
+    };
+  }
+
+  async function transmitir() {
     const limpio = prompt.trim();
     if (limpio.length < 12) {
       sonar("error");
@@ -77,34 +115,61 @@ export default function Laboratorio({ bloque, idioma, registro, decir, completar
     setTransmitiendo(true);
     sonar("toque");
     decir({ estado: "loading", texto: { es: T.es.transmitiendo, en: T.en.transmitiendo } });
-    const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    reloj.current = setTimeout(() => {
-      const revision = revisarSimulado(bloque.checks, limpio, idioma);
-      const ok = Object.values(revision).filter(Boolean).length;
-      const aprobado = ok >= bloque.aprobar;
-      const n = intentos + 1;
-      const r = aprobado ? bloque.simulado.bueno : bloque.simulado.debil;
-      setIntentos(n);
-      setTransmitiendo(false);
-      setRespuesta({ texto: r.salida[idioma], cartel: aprobado && bloque.simulado.bueno.salidaTipo === "cartel" });
-      guardarLab(bloque.id, { prompt: limpio, checks: revision, aprobado, intentos: n });
-      decir(r.punti);
-      if (aprobado) {
-        sonar("acierto");
-        completar();
-      } else {
-        sonar("error");
-        if (n >= bloque.maxIntentos) completar(true);
-      }
-    }, sinMovimiento ? 0 : 900);
+
+    const r = await transmitirVivo({ misionId, bloqueId: bloque.id, prompt: limpio, idioma, vista });
+    if (!montado.current) return;
+
+    let res: Resultado;
+    let enVivo = false;
+    if (r.modo === "vivo") {
+      enVivo = true;
+      res = {
+        checks: r.checks,
+        aprobado: r.aprobado,
+        salida: r.salida,
+        cartel: false,
+        dicho: { estado: r.punti.estado, texto: { es: r.punti.texto, en: r.punti.texto } },
+      };
+      setModo("vivo");
+      setRestantes(r.restantes);
+      setAviso(null);
+    } else {
+      res = simular(limpio);
+      setModo("simulado");
+      if (r.restantes !== null) setRestantes(r.restantes);
+      setAviso(r.motivo === "tope-piloto" ? t.topePiloto : t.respaldo);
+    }
+
+    const n = intentos + 1;
+    setIntentos(n);
+    setTransmitiendo(false);
+    setMarcaVivo(enVivo ? { prompt: limpio, checks: res.checks } : null);
+    setRespuesta({ texto: res.salida, cartel: res.cartel, vivo: enVivo });
+    guardarLab(bloque.id, { prompt: limpio, checks: res.checks, aprobado: res.aprobado, intentos: n });
+    decir(res.dicho);
+    if (res.aprobado) {
+      sonar("acierto");
+      completar();
+    } else {
+      sonar("error");
+      if (n >= bloque.maxIntentos) completar(true);
+    }
   }
+
+  const insignia =
+    modo === "vivo" ? (restantes !== null ? `${t.vivo} · ${restantes} ${t.quedan}` : t.vivo) : t.simulado;
 
   return (
     <div className="grid gap-3">
       <Tarjeta borde="rgba(0,245,255,0.45)">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <Etiqueta color="var(--cyan)">{t.laboratorio}</Etiqueta>
-          <span className="font-[family-name:var(--font-ui)] text-[12px] font-semibold text-[var(--muted)]">{t.simulado}</span>
+          <span
+            className="font-[family-name:var(--font-ui)] text-[12px] font-semibold"
+            style={{ color: modo === "vivo" ? "var(--matrix)" : "var(--muted)" }}
+          >
+            {insignia}
+          </span>
         </div>
         <p className="text-[15px] leading-[1.6] text-white">{bloque.reto[idioma]}</p>
 
@@ -142,9 +207,15 @@ export default function Laboratorio({ bloque, idioma, registro, decir, completar
 
         {respuesta && (
           <div className="grid gap-2 border border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.6)] p-3">
-            <Etiqueta>{`${t.respondio} ${t.ejemplo}`}</Etiqueta>
+            <Etiqueta>{respuesta.vivo ? t.respondio : `${t.respondio} ${t.ejemplo}`}</Etiqueta>
             <Salida texto={respuesta.texto} cartel={respuesta.cartel} />
           </div>
+        )}
+
+        {aviso && (
+          <p role="status" className="font-[family-name:var(--font-terminal)] text-[16px] text-[var(--muted)]">
+            {aviso}
+          </p>
         )}
 
         <div className="flex flex-wrap items-center gap-3">

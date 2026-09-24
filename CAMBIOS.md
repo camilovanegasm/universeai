@@ -12,6 +12,50 @@ Para el detalle de decisiones y el porqué de cada cosa, ver `DOCUMENTACION.md`.
 
 ---
 
+## 2026-09-24 · C1.3 · Laboratorio en vivo
+
+**⚠ Hay que volver a publicar las reglas de Firestore** (`labValido` y bloque `laboratorio`). Copia
+de las anteriores en `referencias/firestore.rules.antes-de-laboratorio`.
+**⚠ En Vercel:** agregar la variable `ANTHROPIC_API_KEY` (sin `NEXT_PUBLIC_`). Sin ella el
+Laboratorio sigue en modo práctica.
+
+### Agregado
+- `src/app/api/laboratorio/route.ts` — la ruta del servidor que habla con Claude.
+- `src/lib/servidor/anthropic.ts` — las dos llamadas a Claude Haiku 4.5 (responder y calificar).
+- `src/lib/servidor/firestoreRest.ts` — Firestore desde el servidor con la sesión del piloto.
+- `src/lib/misiones/laboratorioVivo.ts` — el navegador pide la revisión en vivo.
+
+### Cambiado
+- `src/components/mision/Laboratorio.tsx` — en vivo, con la revisión de práctica de respaldo.
+- `src/components/mision/tipos.ts` y `JugarMision.tsx` — los bloques reciben `misionId` y `vista`.
+- `src/lib/ajustes.ts` y `src/app/admin/ajustes/page.tsx` — `labUsosPiloto`, `labUsosClub`, `labUsosDia`.
+- `firestore.rules` — contador del Laboratorio en el perfil y `laboratorio/{dia}`.
+- `DOCUMENTACION.md` — tramo C1.3 en 6.11 y bitácora.
+
+---
+
+## 2026-09-23 (noche) · C1.2 · Admin de misiones
+
+**⚠ Hay que volver a publicar las reglas de Firestore** (bloque nuevo `misiones`). Copia de las
+anteriores en `referencias/firestore.rules.antes-de-misiones`.
+
+### Agregado
+- `src/app/admin/misiones/page.tsx` — importar paquetes y lista con estado.
+- `src/app/admin/misiones/[id]/page.tsx` — revisar, editar textos, publicar, versiones, restaurar, ocultar.
+- `src/app/admin/misiones/[id]/vista/page.tsx` — vista previa del borrador sin gastar gasolina.
+- `src/lib/misiones/admin.ts` — borradores, publicar, versiones (solo admin).
+- `src/lib/misiones/textos.ts` — encuentra y cambia los textos de un paquete.
+- `src/components/mision/JugarMision.tsx` — el motor de la misión, sacado de la página.
+
+### Cambiado
+- `src/app/mision/[mundoId]/[misionId]/page.tsx` — ahora solo carga y entrega a JugarMision.
+- `src/lib/misiones/cargar.ts` — índice publicado por mundo (`misionesDelMundo`) y `olvidarCache`.
+- `src/app/tema/[id]/page.tsx` — lee el índice publicado (sigue visible solo para el admin).
+- `src/components/admin/MarcoAdmin.tsx` — pestaña MISIONES.
+- `firestore.rules` — bloque `misiones` y `versiones`.
+
+---
+
 ## 2026-09-23 (noche) · C1.1 · Lector de misiones
 
 ### Agregado

@@ -50,6 +50,16 @@ export type AjustesJuego = {
    * del servidor: frena a quien quiera recargar con un programa en bucle.
    */
   segundosEntreRecargas: number;
+  /** Laboratorio en vivo: transmisiones a la IA por piloto al día (sin Club). */
+  labUsosPiloto: number;
+  /** Laboratorio en vivo: transmisiones al día para miembros del Club. */
+  labUsosClub: number;
+  /**
+   * Laboratorio en vivo: transmisiones al día de TODA la app. Es el freno del
+   * gasto (cada una cuesta unos US$0,0026 con Claude Haiku 4.5).
+   * 0 = Laboratorio en vivo apagado (todos usan la revisión de práctica).
+   */
+  labUsosDia: number;
   /**
    * Lo máximo que una lección puede sumar de una vez. Se calcula al guardar
    * (la mejor nota + el bono) y lo usan las reglas de Firestore.
@@ -107,6 +117,9 @@ export const AJUSTES_POR_DEFECTO: Ajustes = {
     gasolinaPorJuego: 1,
     recargasJuegoDia: 3,
     segundosEntreRecargas: 30,
+    labUsosPiloto: 15,
+    labUsosClub: 40,
+    labUsosDia: 2000,
     xpMaximo: 20,
   },
   anuncio: { activo: false, tono: "info", texto: { es: "", en: "" } },
@@ -211,6 +224,12 @@ export function validarJuego(j: AjustesJuego): string[] {
     p.push("Recargas con minijuegos al día: un número entero entre 0 y 20");
   if (!entero(j.segundosEntreRecargas) || j.segundosEntreRecargas < 0 || j.segundosEntreRecargas > 3600)
     p.push("Segundos entre recargas: un número entero entre 0 y 3600");
+  if (!entero(j.labUsosPiloto) || j.labUsosPiloto < 0 || j.labUsosPiloto > 200)
+    p.push("Laboratorio, transmisiones por piloto: un número entero entre 0 y 200");
+  if (!entero(j.labUsosClub) || j.labUsosClub < 0 || j.labUsosClub > 500)
+    p.push("Laboratorio, transmisiones del Club: un número entero entre 0 y 500");
+  if (!entero(j.labUsosDia) || j.labUsosDia < 0 || j.labUsosDia > 1000000)
+    p.push("Laboratorio, transmisiones de toda la app: un número entero entre 0 y 1.000.000");
   let anterior = 0;
   for (let n = 2; n <= 10; n++) {
     const v = j[`xpRango${n}` as keyof AjustesJuego];

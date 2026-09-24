@@ -133,6 +133,28 @@ service cloud.firestore {
         && despues.corazones <= tanque();
     }
 
+    // Laboratorio en vivo (fase C1.3, ver src/app/api/laboratorio/route.ts).
+    // Cada transmisión a la IA suma 1 en el perfil (`labUsos` del día `labDia`)
+    // Y 1 en el contador de toda la app (laboratorio/{dia}), en la MISMA
+    // escritura: una no pasa sin la otra. Así:
+    //  - nadie pasa de su tope del día (Club: labUsosClub; resto: labUsosPiloto);
+    //  - el contador no se reinicia (el día solo avanza, igual que las recargas);
+    //  - la app entera no pasa de labUsosDia (0 = Laboratorio en vivo apagado).
+    function labValido(antes, despues) {
+      let j = juego();
+      let dia = despues.get('labDia', '');
+      let diaAntes = antes.get('labDia', '');
+      let n = despues.get('labUsos', -1);
+      let tope = antes.get('premium', false) == true ? j.get('labUsosClub', 40) : j.get('labUsosPiloto', 15);
+      let contador = /databases/$(database)/documents/laboratorio/$(dia);
+      return dia is string && esHoy(dia) && dia >= diaAntes
+        && n is int
+        && (dia == diaAntes ? n == antes.get('labUsos', 0) + 1 : n == 1)
+        && n <= tope
+        && j.get('labUsosDia', 2000) > 0
+        && getAfter(contador).data.get('usos', -1) == (exists(contador) ? get(contador).data.usos + 1 : 1);
+    }
+
     // Lo que guarda la app al completar una lección (ver completarLeccion).
     function entradaValida(e) {
       return e is map
@@ -160,8 +182,12 @@ service cloud.firestore {
       return cambios.hasOnly([
           'xp', 'racha', 'corazones', 'ultimaActividad', 'ultimaLeccion',
           'ultimaLeccionId', 'progreso', 'idioma', 'bienvenidaVista', 'premioRangoDesde',
-          'recargasJuego', 'recargaJuegoDia', 'ultimaRecargaJuego'
+          'recargasJuego', 'recargaJuegoDia', 'ultimaRecargaJuego',
+          'labUsos', 'labDia'
         ])
+        // El contador del Laboratorio en vivo: solo sube de a 1, junto con el
+        // contador de la app (ver labValido).
+        && (!cambios.hasAny(['labUsos', 'labDia']) || labValido(antes, despues))
         // Los campos de la recarga con minijuegos solo cambian juntos, en una
         // recarga válida (que además exige que la gasolina suba).
         && (!cambios.hasAny(['recargasJuego', 'recargaJuegoDia', 'ultimaRecargaJuego'])
@@ -268,6 +294,49 @@ service cloud.firestore {
       allow create, update: if esDueno(usuarioId) && anotacionValida(request.resource.data);
       allow delete: if esDueno(usuarioId) || esAdmin();
     }
+    // ---------- Misiones (formato nuevo, fase C1) ----------
+    // La misión publicada la lee cualquiera, salvo las de mundos del Club
+    // (`club: true`): esas solo miembros y el admin, igual que las lecciones.
+    // Solo el admin publica. Las versiones (el historial de cada publicación)
+    // solo las ve y escribe el admin.
+    match /misiones/{misionId} {
+      allow read: if resource == null
+        || resource.data.get('club', false) != true
+        || esAdmin()
+        || esPremium();
+      allow write: if esAdmin();
+      match /versiones/{version} {
+        allow read, write: if esAdmin();
+      }
+    }
+
+    // ---------- Laboratorio en vivo: contador de toda la app ----------
+    // Un documento por día (laboratorio/2026-09-24 → { usos }). Solo sube de a
+    // 1, nunca pasa de labUsosDia y siempre junto con el contador del perfil
+    // de quien transmite (usoPareado). Nadie lo borra ni lo reinicia.
+    match /laboratorio/{dia} {
+      function usoPareado(d) {
+        let yo = /databases/$(database)/documents/usuarios/$(request.auth.uid);
+        let antes = get(yo).data;
+        let despues = getAfter(yo).data;
+        return despues.get('labDia', '') == d
+          && despues.get('labUsos', -1)
+             == (antes.get('labDia', '') == d ? antes.get('labUsos', 0) + 1 : 1);
+      }
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && esHoy(dia)
+        && request.resource.data.keys().hasOnly(['usos'])
+        && request.resource.data.usos == 1
+        && juego().get('labUsosDia', 2000) >= 1
+        && usoPareado(dia);
+      allow update: if request.auth != null && esHoy(dia)
+        && request.resource.data.keys().hasOnly(['usos'])
+        && request.resource.data.usos == resource.data.usos + 1
+        && request.resource.data.usos <= juego().get('labUsosDia', 2000)
+        && usoPareado(dia);
+      allow delete: if false;
+    }
+
     // Los borradores del editor: solo el admin los ve.
     match /borradores/{documento} {
       allow read, write: if esAdmin();

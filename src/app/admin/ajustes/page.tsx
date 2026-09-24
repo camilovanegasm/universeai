@@ -289,6 +289,20 @@ function BloqueJuego({
       </fieldset>
 
       <fieldset className="flex flex-col gap-3">
+        <legend className="mb-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--gold)]">LABORATORIO EN VIVO</legend>
+        <div className="flex flex-wrap gap-5">
+          <Numero id="labUsosPiloto" etiqueta="Transmisiones por piloto al día" ayuda="Veces que cada piloto usa la IA en vivo. Después sigue en práctica." valor={juego.labUsosPiloto} alCambiar={campo("labUsosPiloto")} />
+          <Numero id="labUsosClub" etiqueta="Transmisiones del Club al día" ayuda="Lo mismo, para miembros de Punti Club." valor={juego.labUsosClub} alCambiar={campo("labUsosClub")} />
+          <Numero id="labUsosDia" etiqueta="Transmisiones de toda la app al día" ayuda="El freno del gasto. 0 = IA en vivo apagada." valor={juego.labUsosDia} alCambiar={campo("labUsosDia")} />
+        </div>
+        <p className="text-[13px] text-[var(--muted)]">
+          {juego.labUsosDia > 0
+            ? `Gasto máximo con Claude Haiku 4.5: unos US$${(juego.labUsosDia * 0.0026).toFixed(2)} al día si se usan todas (US$${(juego.labUsosDia * 0.0026 * 30).toFixed(0)} al mes). Lo normal es mucho menos. El límite de gasto de Anthropic frena igual.`
+            : "La IA en vivo está apagada: todos los pilotos usan la revisión de práctica."}
+        </p>
+      </fieldset>
+
+      <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 font-[family-name:var(--font-pixel)] text-[9px] text-[var(--gold)]">XP POR LECCION</legend>
         <div className="flex flex-wrap gap-5">
           <Numero id="xpPerfecta" etiqueta="Sin errores" valor={juego.xpPerfecta} alCambiar={campo("xpPerfecta")} />
