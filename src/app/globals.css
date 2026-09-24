@@ -1114,3 +1114,13 @@ textarea.campo-admin { resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .burbuja-punti { animation: none; }
 }
+
+/* ── Invitación a instalar Punti ("¡Llévame en tu pantalla!") ── */
+.invitacion-app { animation: invitacion-entra 0.35s steps(5, end) both; }
+@keyframes invitacion-entra {
+  0% { opacity: 0; clip-path: inset(48% 0 48% 0); }
+  100% { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .invitacion-app { animation: none; }
+}

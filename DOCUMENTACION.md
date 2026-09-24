@@ -949,6 +949,13 @@ Lo que quedó en C1.1:
   color del sistema `#050510`. En el celular, "Agregar a pantalla de inicio" abre Punti a pantalla
   completa, sin la barra del navegador. Pendiente: probar el inicio de sesión con Google dentro de la
   app instalada en iPhone (si falla, se cambia la ventana emergente por redirección).
+- **"¡Llévame en tu pantalla!"** (`src/components/InvitacionApp.tsx`, idea de Cami): Punti invita a
+  instalar la app en una pantalla completa. En Android el botón abre el instalador del sistema; en
+  iPhone muestra los dos pasos (Compartir → Agregar a pantalla de inicio), porque Apple no deja
+  abrirlo desde la página. Solo en celular, con sesión, si no está instalada, nunca en medio de una
+  lección, misión, juego o del admin, 3,5 s después de llegar. "Ahora no" vuelve en 7 días, máximo
+  3 veces; "No volver a mostrar" la apaga en ese celular (se recuerda en el navegador). Probado en
+  iPhone, Android (acepta, se cierra sola), Android sin instalador y computador (no sale).
 - **Español de Colombia en el Laboratorio:** la IA a veces respondía con voseo ("comprá", "llevate").
   Ahora se le pide tú o usted, nunca vos.
 

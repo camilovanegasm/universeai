@@ -1,4 +1,5 @@
 import NavPunti from "@/components/NavPunti";
+import InvitacionApp from "@/components/InvitacionApp";
 import type { Metadata, Viewport } from "next";
 import { Orbitron, VT323, Rajdhani, Press_Start_2P, Inter } from "next/font/google";
 import "./globals.css";
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <AuthProvider>
           {children}
           <NavPunti />
+          <InvitacionApp />
         </AuthProvider>
       </body>
     </html>

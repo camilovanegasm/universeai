@@ -16,6 +16,7 @@ Para el detalle de decisiones y el porqué de cada cosa, ver `DOCUMENTACION.md`.
 
 ### Agregado
 - `src/app/manifest.ts` — Punti instalable como app (pantalla completa).
+- `src/components/InvitacionApp.tsx` — Punti invita a instalar la app ("¡Llévame en tu pantalla!").
 - `public/iconos/` (192, 512, maskable) y `src/app/apple-icon.png` — íconos de la app.
 
 ### Cambiado
