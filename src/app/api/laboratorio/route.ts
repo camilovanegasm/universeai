@@ -21,13 +21,12 @@ import type { BloqueDe, PaqueteMision } from "@/lib/misiones/tipos";
 import { revisarPaquete } from "@/lib/misiones/revisar.mjs";
 import { conSesion, ErrorFirestore, uidDelToken, type Documento } from "@/lib/servidor/firestoreRest";
 import { revisarEnVivo } from "@/lib/servidor/anthropic";
-import eco03 from "../../../../contenido/misiones/eco/03-la-tienda-de-dona-marta.json";
+import { SEMILLA } from "@/lib/misiones/semilla";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
-const SEMILLA: PaqueteMision[] = [eco03 as unknown as PaqueteMision];
 const MAX_PROMPT = 600;
 const POR_DEFECTO = { labUsosPiloto: 15, labUsosClub: 40, labUsosDia: 2000 };
 

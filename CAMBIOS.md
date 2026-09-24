@@ -12,6 +12,28 @@ Para el detalle de decisiones y el porqué de cada cosa, ver `DOCUMENTACION.md`.
 
 ---
 
+## 2026-09-24 · Optimización de carga y favicon
+
+### Agregado
+- `src/lib/firebaseApp.ts` — app + login sin Firestore; ventana de Google solo en login/registro.
+- `src/lib/datosIniciales.ts` — catálogo y perfil se piden al arrancar, en paralelo.
+- `src/lib/servidor/catalogoPublicado.ts` — ids publicados para prearmar páginas.
+- `src/lib/misiones/semilla.ts` — misiones de la semilla sin Firebase.
+- `src/app/{tema,leccion,mision,juego}/…/page.tsx` — prearmado al publicar; la pantalla pasó a `Pagina*.tsx`.
+- `src/app/icon.svg` — favicon pixel de Punti.
+
+### Cambiado
+- `src/lib/userProfile.ts` — perfil en vivo, una escucha por sesión.
+- `src/lib/progreso.ts` — las transacciones marcan el perfil por confirmar.
+- `src/lib/contenido.ts` — copia del catálogo en el navegador.
+- `src/lib/AuthContext.tsx`, `src/lib/firebase.ts`, `src/app/layout.tsx` — arranque en paralelo, preconnect, fuentes.
+- `src/app/login/page.tsx`, `src/app/registro/page.tsx` — recarga única para la ventana de Google.
+- `src/lib/misiones/cargar.ts`, `src/app/api/laboratorio/route.ts` — usan `semilla.ts`.
+- `src/app/favicon.ico` — nuevo.
+- `src/components/InvitacionApp.tsx` — también en la portada; `?invitacion=1` para probarla.
+
+---
+
 ## 2026-09-24 · C1.4 (parte 1) · Burbuja de Punti, pantalla de app y PWA
 
 ### Agregado

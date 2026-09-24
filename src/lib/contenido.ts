@@ -266,8 +266,47 @@ function avisar() {
   oyentes.forEach((f) => f());
 }
 
+/*
+ * Copia guardada en el navegador (lo último que llegó de Firebase). En la
+ * siguiente visita, los mundos se dibujan al instante con esa copia y la
+ * versión nueva la reemplaza en silencio apenas llega. Si el navegador no deja
+ * guardar (modo privado), simplemente se espera a Firebase como antes.
+ */
+const CLAVE_COPIA = "punti-catalogo-v1";
+let copiaUsada = false;
+
+function usarCopiaGuardada() {
+  if (copiaUsada || typeof window === "undefined") return;
+  copiaUsada = true;
+  try {
+    const c = JSON.parse(localStorage.getItem(CLAVE_COPIA) ?? "null") as { temas?: TemaC[]; ajustes?: unknown } | null;
+    if (!c || !Array.isArray(c.temas)) return;
+    const ajustes = normalizarAjustes(c.ajustes ?? null);
+    fijarAjustes(ajustes);
+    estado = {
+      temas: aTemas(c.temas),
+      conLeccion: new Set(c.temas.flatMap((x) => x.subtemas.filter((s) => s.tieneLeccion).map((s) => s.id))),
+      origen: "firebase",
+      ajustes,
+      listo: true,
+    };
+    avisar();
+  } catch {
+    /* copia dañada o sin almacenamiento: se espera a Firebase */
+  }
+}
+
+function guardarCopia(temas: TemaC[], ajustes: Ajustes) {
+  try {
+    localStorage.setItem(CLAVE_COPIA, JSON.stringify({ temas, ajustes }));
+  } catch {
+    /* sin espacio o modo privado: no pasa nada */
+  }
+}
+
 export function cargarCatalogo(): Promise<EstadoCatalogo> {
   if (pedido) return pedido;
+  usarCopiaGuardada();
   // Catálogo y ajustes se piden a la vez: un solo momento de espera.
   // Si los ajustes fallan, se juega con los de siempre; no se bloquea nada.
   pedido = Promise.all([
@@ -279,6 +318,7 @@ export function cargarCatalogo(): Promise<EstadoCatalogo> {
     .then(([snap, ajustes]) => {
       fijarAjustes(ajustes);
       const temas = snap.exists() ? (snap.data().temas as TemaC[] | undefined) : undefined;
+      if (temas) guardarCopia(temas, ajustes);
       estado = temas
         ? {
             temas: aTemas(temas),
@@ -292,8 +332,9 @@ export function cargarCatalogo(): Promise<EstadoCatalogo> {
     })
     .catch(() => {
       // Sin conexión con Firebase: se juega con lo del código y los ajustes
-      // de siempre. Se permite reintentar en la próxima pantalla.
-      estado = desdeCodigo(true);
+      // de siempre (o con la copia guardada, si había). Se permite reintentar
+      // en la próxima pantalla.
+      if (!(estado.listo && estado.origen === "firebase")) estado = desdeCodigo(true);
       pedido = null;
       return estado;
     })

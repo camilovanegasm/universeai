@@ -959,6 +959,35 @@ Lo que quedó en C1.1:
 - **Español de Colombia en el Laboratorio:** la IA a veces respondía con voseo ("comprá", "llevate").
   Ahora se le pide tú o usted, nunca vos.
 
+**Optimización de carga (2026-09-24, pedido de Cami: "a veces se demora").** Se midió antes de
+tocar (compilando el sitio y leyendo el código de Firebase). Lo que frenaba y lo que se hizo:
+1. **"Contando estrellas" en iPhone.** Con `getAuth()`, en celulares y Safari el login espera en
+   cada apertura a que cargue la ventana oculta de Google (`apis.google.com` + iframe de
+   firebaseapp.com) ANTES de decir quién es la persona. Ahora (`src/lib/firebaseApp.ts`) la
+   ventana solo arranca en `/login` y `/registro`; si se llega ahí navegando, esa pantalla se
+   recarga una vez para arrancar con ella (en iPhone tiene que estar lista antes del toque o Safari
+   bloquea el popup). Probado: la portada y los mundos ya no la cargan, el login sí, sin bucles.
+   La sesión se guarda igual que antes (mismas persistencias): nadie pierde su sesión.
+2. **Servidor dormido.** Mundos, lecciones, misiones y minijuegos eran páginas "dinámicas": cada
+   visita despertaba una función de Vercel (arranque en frío de hasta 1-2 s). Ahora se prearman al
+   publicar (`generateStaticParams`; los mundos y lecciones se leen del catálogo publicado en
+   Firebase, `src/lib/servidor/catalogoPublicado.ts`, con los del código de respaldo) y se sirven
+   desde la red de Vercel. Los que se publiquen después igual abren (se arman en la primera visita).
+   Las pantallas quedaron en `PaginaTema.tsx`, `PaginaLeccion.tsx`, `PaginaMision.tsx`, `PaginaJuego.tsx`.
+3. **El perfil se pedía en cada pantalla.** Ahora hay una escucha en vivo por sesión
+   (`obtenerPerfil` en `userProfile.ts`): la primera pantalla espera, las demás lo tienen al instante
+   y al día (también cambios del admin u otro celular). Tras guardar progreso (`transaccion` en
+   `progreso.ts`) la siguiente lectura confirma con el servidor. 9 pruebas.
+4. **Esperas en fila.** El catálogo y el perfil se piden apenas arranca la app, en paralelo con el
+   login (`AuthContext` → `datosIniciales.ts`), y no cuando la pantalla ya se dibujó.
+5. **Catálogo recordado.** La última versión de los mundos y ajustes se guarda en el navegador: en
+   la siguiente visita Inicio se dibuja al instante y se actualiza en silencio (`contenido.ts`).
+6. **Menos peso al arrancar.** Firestore quedó fuera del paquete del marco de la app (llega aparte,
+   en paralelo); conexión adelantada con los servidores de Firebase (`preconnect` en el layout);
+   la fuente Press Start 2P ya no se precarga.
+- **Favicon nuevo:** la cabeza de Punti en pixel art (`src/app/icon.svg`, nítido a cualquier
+  tamaño, y `src/app/favicon.ico` 16/32/48/256), hecho desde la misma rejilla de `puntiSprite.ts`.
+
 **Costo estimado del Laboratorio** (precios verificados 2026-09-23): por uso ~USD 0,0004 con
 Gemini 2.5 Flash-Lite y ~USD 0,005 con Claude Haiku 4.5; con 100 pilotos diarios y 10 usos,
 ~USD 13 o ~USD 150 al mes. El proveedor se elige en C0 con prueba real y criterio neutral.

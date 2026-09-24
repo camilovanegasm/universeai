@@ -16,9 +16,8 @@ import { db } from "@/lib/firebase";
 import type { Idioma } from "@/lib/i18n";
 import type { PaqueteMision, Texto } from "./tipos";
 import { revisarPaquete } from "./revisar.mjs";
-import eco03 from "../../../contenido/misiones/eco/03-la-tienda-de-dona-marta.json";
+import { SEMILLA } from "./semilla";
 
-const SEMILLA: PaqueteMision[] = [eco03 as unknown as PaqueteMision];
 
 /** Lo que se muestra de una misión en la ruta de su mundo. */
 export type ResumenMision = {

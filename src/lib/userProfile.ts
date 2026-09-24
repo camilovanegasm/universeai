@@ -2,7 +2,7 @@
 // El campo se llama `corazones` por compatibilidad con las cuentas que ya existen;
 // en toda la interfaz se llama gasolina.
 // Cada usuario tiene un documento en la colección "usuarios", identificado por su ID de Firebase Auth.
-import { doc, getDoc, serverTimestamp, setDoc, updateDoc, type Timestamp } from "firebase/firestore";
+import { doc, getDoc, onSnapshot, serverTimestamp, setDoc, updateDoc, type Timestamp } from "firebase/firestore";
 import type { User } from "firebase/auth";
 import { db } from "./firebase";
 import { cargarCatalogo } from "./contenido";
@@ -86,15 +86,83 @@ export async function crearPerfilSiNoExiste(usuario: User) {
   });
 }
 
+/* ------------------------------------------------ el perfil, en vivo
+ *
+ * Antes cada pantalla pedía el perfil a Firebase al abrirse (una espera de red
+ * en cada cambio de pantalla). Ahora hay UNA escucha en vivo por sesión: la
+ * primera pantalla espera la respuesta; las siguientes lo tienen al instante,
+ * y siempre al día (Firebase avisa cada cambio, también los de otro celular o
+ * del admin).
+ *
+ * Después de guardar progreso (transacciones de progreso.ts) se marca "por
+ * confirmar": la próxima pantalla pide la versión del servidor, así nunca
+ * muestra el XP o la gasolina de antes de la lección.
+ */
+type Vivo = {
+  uid: string;
+  datos: PerfilUsuario | null;
+  listo: boolean;
+  porConfirmar: boolean;
+  esperando: ((p: PerfilUsuario | null) => void)[];
+  cancelar: () => void;
+};
+let vivo: Vivo | null = null;
+
+function leerDelServidor(uid: string): Promise<PerfilUsuario | null> {
+  return getDoc(doc(db, "usuarios", uid)).then((s) => (s.exists() ? (s.data() as PerfilUsuario) : null));
+}
+
+function escuchar(uid: string) {
+  soltarPerfil();
+  const v: Vivo = { uid, datos: null, listo: false, porConfirmar: false, esperando: [], cancelar: () => {} };
+  vivo = v;
+  v.cancelar = onSnapshot(
+    doc(db, "usuarios", uid),
+    (snap) => {
+      // Las horas del servidor que aún no llegan se estiman (no quedan en null).
+      v.datos = snap.exists() ? (snap.data({ serverTimestamps: "estimate" }) as PerfilUsuario) : null;
+      if (snap.metadata.fromCache && !v.listo) return; // la primera vez, se espera al servidor
+      v.listo = true;
+      const cola = v.esperando.splice(0);
+      cola.forEach((f) => f(v.datos));
+    },
+    () => {
+      // Sin permiso o sin red: quien esperaba lo pide de la forma de siempre.
+      const cola = v.esperando.splice(0);
+      if (vivo === v) vivo = null;
+      cola.forEach((f) => leerDelServidor(uid).then(f, () => f(null)));
+    },
+  );
+}
+
+/** Empieza a escuchar el perfil apenas se sabe quién es (lo llama AuthContext). */
+export function precargarPerfil(uid: string) {
+  if (vivo?.uid !== uid) escuchar(uid);
+}
+
+/** Deja de escuchar (al cerrar sesión o cambiar de cuenta). */
+export function soltarPerfil() {
+  if (!vivo) return;
+  vivo.cancelar();
+  vivo = null;
+}
+
+/** Tras guardar progreso: la próxima lectura confirma con el servidor. */
+export function perfilPorConfirmar() {
+  if (vivo) vivo.porConfirmar = true;
+}
+
 export async function obtenerPerfil(uid: string): Promise<PerfilUsuario | null> {
-  const referencia = doc(db, "usuarios", uid);
-  const snapshot = await getDoc(referencia);
-
-  if (!snapshot.exists()) {
-    return null;
+  if (vivo?.uid !== uid) escuchar(uid);
+  const v = vivo!;
+  if (v.porConfirmar) {
+    v.porConfirmar = false;
+    const datos = await leerDelServidor(uid);
+    v.datos = datos;
+    return datos;
   }
-
-  return snapshot.data() as PerfilUsuario;
+  if (v.listo) return v.datos;
+  return new Promise((resolver) => v.esperando.push(resolver));
 }
 
 /**

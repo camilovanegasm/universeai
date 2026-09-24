@@ -5,7 +5,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import type { User } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase";
+import { auth } from "./firebaseApp";
 
 type AuthContextValue = {
   usuario: User | null;
@@ -22,9 +22,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
+    // Mientras se confirma la sesión, ya se piden en paralelo los mundos y
+    // ajustes (que no dependen de quién es). Firestore se carga aparte, sin
+    // frenar el primer dibujo.
+    const datos = import("./datosIniciales");
+    void datos.then((m) => m.precargarCatalogo());
     const unsubscribe = onAuthStateChanged(auth, (usuarioActual) => {
       setUsuario(usuarioActual);
       setCargando(false);
+      // Apenas se sabe quién es, se empieza a traer su perfil (en vivo).
+      void datos.then((m) => (usuarioActual ? m.precargarPerfil(usuarioActual.uid) : m.soltarPerfil()));
     });
     return unsubscribe;
   }, []);

@@ -1,6 +1,7 @@
 import NavPunti from "@/components/NavPunti";
 import InvitacionApp from "@/components/InvitacionApp";
 import type { Metadata, Viewport } from "next";
+import { preconnect } from "react-dom";
 import { Orbitron, VT323, Rajdhani, Press_Start_2P, Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/lib/AuthContext";
@@ -22,6 +23,9 @@ const pressStart = Press_Start_2P({
   variable: "--font-press-start",
   weight: "400",
   subsets: ["latin"],
+  // Solo para etiquetas pequeñas: no se precarga, así no compite con las
+  // fuentes del texto que se lee primero.
+  preload: false,
 });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
@@ -40,6 +44,12 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  // Abrir de una vez la conexión con los servidores de Firebase (login y base
+  // de datos): cuando la app los necesita, el saludo de red ya está hecho.
+  preconnect("https://firestore.googleapis.com");
+  preconnect("https://identitytoolkit.googleapis.com");
+  preconnect("https://securetoken.googleapis.com");
+  if (process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN) preconnect(`https://${process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}`);
   return (
     <html
       lang="es"

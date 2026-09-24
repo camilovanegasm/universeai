@@ -4,7 +4,8 @@
 //
 // Pantalla completa con Punti. Cuándo sale:
 //  - solo en celular, con sesión iniciada, y si Punti NO está ya instalada;
-//  - nunca en medio de una lección, misión, juego o en el admin;
+//  - nunca en medio de una lección, misión, juego, login o en el admin;
+//  - para probarla: punti.space/?invitacion=1 (la muestra ya y reinicia lo recordado);
 //  - espera unos segundos después de llegar a la pantalla;
 //  - si dice "Ahora no", vuelve a preguntar en 7 días; como mucho 3 veces;
 //    "No volver a mostrar" la apaga para siempre en ese celular.
@@ -104,7 +105,6 @@ function esCelular() {
 /** Rutas donde no se interrumpe al piloto. */
 function enMedioDeAlgo(ruta: string) {
   return (
-    ruta === "/" ||
     ruta === "/login" ||
     ruta === "/registro" ||
     ruta === "/bienvenida" ||
@@ -147,18 +147,30 @@ export default function InvitacionApp() {
   // ¿Toca invitar? Se decide unos segundos después de llegar a una pantalla tranquila.
   useEffect(() => {
     if (!usuario || mostrada.current || enMedioDeAlgo(ruta)) return;
-    const reloj = setTimeout(() => {
-      if (yaInstalada() || !esCelular()) return;
-      const r = leer();
-      if (r.nunca || r.veces >= MAX_VECES) return;
-      if (r.ultima && Date.now() - r.ultima < DIAS_ENTRE_VECES * 86_400_000) return;
-      const plataforma: Plataforma | null = esIOS() ? "ios" : evento.current ? "android" : null;
-      if (!plataforma) return; // navegador sin forma de instalar: no se promete lo que no hay
-      mostrada.current = true;
-      guardar({ ...r, veces: r.veces + 1, ultima: Date.now() });
-      sonar("pantalla");
-      setAbierta(plataforma);
-    }, ESPERA_MS);
+    // punti.space/?invitacion=1 la muestra ya, sin importar lo recordado (para probarla).
+    const forzar = new URLSearchParams(window.location.search).has("invitacion");
+    const reloj = setTimeout(
+      () => {
+        if (yaInstalada()) return;
+        const r = leer();
+        if (!forzar) {
+          if (!esCelular()) return;
+          if (r.nunca || r.veces >= MAX_VECES) return;
+          if (r.ultima && Date.now() - r.ultima < DIAS_ENTRE_VECES * 86_400_000) return;
+        }
+        const plataforma: Plataforma | null = esIOS() ? "ios" : evento.current ? "android" : forzar ? "ios" : null;
+        if (!plataforma) return; // navegador sin forma de instalar: no se promete lo que no hay
+        mostrada.current = true;
+        guardar(forzar ? { veces: 0, ultima: 0, nunca: false } : { ...r, veces: r.veces + 1, ultima: Date.now() });
+        setAbierta(plataforma);
+        try {
+          sonar("pantalla");
+        } catch {
+          /* sin sonido no pasa nada */
+        }
+      },
+      forzar ? 800 : ESPERA_MS,
+    );
     return () => clearTimeout(reloj);
   }, [usuario, ruta]);
 

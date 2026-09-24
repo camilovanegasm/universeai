@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+import { necesitaRecargarParaGoogle } from "@/lib/firebaseApp";
 import { crearPerfilSiNoExiste } from "@/lib/userProfile";
 import { traducirErrorAuth } from "@/lib/authErrors";
 import { useIdioma } from "@/lib/useIdioma";
@@ -50,6 +51,12 @@ const TX: Record<Idioma, Record<string, string>> = {
 };
 
 export default function RegistroPage() {
+  // "Continuar con Google" necesita su ventana lista desde el arranque (si no,
+  // iPhone la bloquea). Si se llegó aquí navegando dentro de la app, se
+  // recarga una vez esta pantalla para arrancar con ella (ver firebaseApp.ts).
+  useEffect(() => {
+    if (necesitaRecargarParaGoogle()) window.location.reload();
+  }, []);
   const router = useRouter();
   const idioma = useIdioma();
   const t = TX[idioma];

@@ -1,10 +1,15 @@
 // Lógica de juego: cuánto combustible/XP se gana por lección, cuándo se resetean los
 // gasolina del día, y cuándo la racha sube, se mantiene o se rompe.
-import { doc, runTransaction, serverTimestamp } from "firebase/firestore";
+import { doc, runTransaction, serverTimestamp, type Transaction } from "firebase/firestore";
 import { db } from "./firebase";
-import type { PerfilUsuario } from "./userProfile";
+import { perfilPorConfirmar, type PerfilUsuario } from "./userProfile";
 import { ajustesVigentes } from "./ajustes";
 import { rangoPorXp } from "./rangos";
+
+/** Toda escritura del perfil pasa por aquí: al terminar, la próxima pantalla lee el perfil confirmado. */
+function transaccion<T>(f: (tx: Transaction) => Promise<T>): Promise<T> {
+  return runTransaction(db, f).finally(perfilPorConfirmar);
+}
 
 // Los números del juego (tanque, costos, XP) se cambian desde el admin, en
 // Ajustes. Aquí se leen de `ajustesVigentes()`; ver ajustes.ts.
@@ -122,7 +127,7 @@ export async function completarLeccion(uid: string, idLeccion: string, resultado
   const { combustible, xp } = calcularXp(resultado);
   const hoy = fechaDeHoy();
 
-  const guardar = (conPremio: boolean) => runTransaction(db, async (tx) => {
+  const guardar = (conPremio: boolean) => transaccion(async (tx) => {
     const snap = await tx.get(referencia);
     if (!snap.exists()) throw new Error("El perfil del usuario no existe.");
     const datos = snap.data() as PerfilUsuario;
@@ -176,7 +181,7 @@ async function descontarGasolina(uid: string, cantidad: number): Promise<number>
   const referencia = doc(db, "usuarios", uid);
   const hoy = fechaDeHoy();
 
-  return runTransaction(db, async (tx) => {
+  return transaccion(async (tx) => {
     const snap = await tx.get(referencia);
     if (!snap.exists()) return 0;
     const datos = snap.data() as PerfilUsuario;
@@ -229,7 +234,7 @@ export async function recargarConJuego(uid: string): Promise<ResultadoRecarga> {
   const referencia = doc(db, "usuarios", uid);
   const hoy = fechaDeHoy();
   try {
-    return await runTransaction(db, async (tx): Promise<ResultadoRecarga> => {
+    return await transaccion(async (tx): Promise<ResultadoRecarga> => {
       const snap = await tx.get(referencia);
       if (!snap.exists()) return { estado: "error", gasolina: 0, restantes: 0 };
       const datos = snap.data() as PerfilUsuario;
