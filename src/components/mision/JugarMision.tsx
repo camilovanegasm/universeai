@@ -32,6 +32,7 @@ import TextoTecleado from "@/components/TextoTecleado";
 import ConfirmarSalida from "@/components/ConfirmarSalida";
 import BloqueMision, { BLOQUES_PASIVOS } from "@/components/mision/Bloques";
 import FichaMision from "@/components/mision/FichaMision";
+import { guardarAterrizaje, guardarConcepto } from "@/lib/bitacora";
 import type { RegistroLab, RegistroMision } from "@/components/mision/tipos";
 
 type Fase = "cargando" | "jugando" | "sin-gasolina" | "guardando" | "ficha";
@@ -204,7 +205,25 @@ export default function JugarMision({
     [bloque],
   );
   const guardarLab = useCallback((id: string, r: RegistroLab) => setRegistro((reg) => ({ ...reg, labs: { ...reg.labs, [id]: r } })), []);
-  const guardarFrase = useCallback((frase: string) => setRegistro((reg) => ({ ...reg, frase })), []);
+  // La frase del piloto se guarda en su Bitácora apenas toca "Guardar" (no al
+  // final): si sale a mitad de la misión, su concepto ya quedó guardado.
+  const guardarFrase = useCallback(
+    (frase: string) => {
+      setRegistro((reg) => ({ ...reg, frase }));
+      if (vista || !uid || bloque?.tipo !== "nota-bitacora") return;
+      void guardarConcepto(uid, {
+        concepto: bloque.concepto,
+        titulo: paquete.ficha.concepto.titulo,
+        definicion: bloque.definicion,
+        frase,
+        mision: paquete.id,
+        mundo: paquete.mundo,
+      }).catch(() => {
+        /* sin conexión: la misión sigue; la frase queda en la ficha */
+      });
+    },
+    [vista, uid, bloque, paquete],
+  );
 
   const fallar = useCallback(() => {
     setErrores((e) => e + 1);
@@ -246,6 +265,38 @@ export default function JugarMision({
       } catch {
         guardado = false;
       }
+    }
+    // A la Bitácora: los prompts de cada Laboratorio y la Ficha de misión.
+    // No frena el aterrizaje: si falla, la misión ya quedó guardada.
+    if (guardado) {
+      const prompts = paquete.bloques.flatMap((b) => {
+        const lab = b.tipo === "laboratorio" ? registro.labs[b.id] : undefined;
+        if (b.tipo !== "laboratorio" || !lab?.prompt) return [];
+        return [
+          {
+            bloque: b.id,
+            texto: lab.prompt,
+            etiqueta: b.titulo ?? paquete.titulo,
+            piezas: b.checks.filter((c) => lab.checks[c.id]).map((c) => c.texto[idioma]),
+            aprobado: lab.aprobado,
+            idioma,
+          },
+        ];
+      });
+      void guardarAterrizaje(usuario.uid, {
+        mision: paquete.id,
+        mundo: paquete.mundo,
+        titulo: paquete.titulo,
+        prompts,
+        ficha: {
+          xp,
+          combustible,
+          transmisiones: Object.values(registro.labs).reduce((a, l) => a + l.intentos, 0),
+          conAyuda: registro.conAyuda.length,
+        },
+      }).catch(() => {
+        /* sin conexión: la ficha se ve igual en pantalla */
+      });
     }
     const antes = rangoPorXp(xpInicial.current).actual;
     const despues = rangoPorXp(xpInicial.current + xp).actual;

@@ -12,6 +12,23 @@ Para el detalle de decisiones y el porqué de cada cosa, ver `DOCUMENTACION.md`.
 
 ---
 
+## 2026-09-24 · C2 · Bitácora del piloto
+
+**⚠ Hay que volver a publicar las reglas de Firestore** (bloque `bitacora`). Copia de las
+anteriores en `referencias/firestore.rules.antes-de-bitacora`.
+
+### Agregado
+- `src/lib/bitacora.ts` — leer, guardar y borrar entradas de la Bitácora.
+- `src/app/bitacora/page.tsx` — la pantalla "Bitácora de [nombre]".
+
+### Cambiado
+- `src/components/mision/JugarMision.tsx` — guarda concepto, prompts y ficha en la Bitácora.
+- `src/components/NavPunti.tsx` — pestaña BITÁCORA (solo admin por ahora), textos pixel sin tildes.
+- `firestore.rules` — `bitacoraValida` y `match /bitacora/{entrada}`.
+- `DOCUMENTACION.md` — fase C1 cerrada, C2 en 6.11 y bitácora.
+
+---
+
 ## 2026-09-24 · Optimización de carga y favicon
 
 ### Agregado

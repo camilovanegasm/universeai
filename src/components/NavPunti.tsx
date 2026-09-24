@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/AuthContext";
 import { useIdioma } from "@/lib/useIdioma";
-import type { Idioma } from "@/lib/i18n";
+import { textoPixel, type Idioma } from "@/lib/i18n";
+import { esAdmin } from "@/lib/admin";
 
 /**
  * La barra de navegación de abajo: siempre en el mismo lugar, para que nadie
@@ -12,6 +13,8 @@ import type { Idioma } from "@/lib/i18n";
  *
  *   MUNDOS  → todos los mundos (/inicio)
  *   SEGUIR  → directo a la próxima lección que te toca (/seguir)
+ *   BITÁCORA → el cuaderno del piloto (por ahora solo el admin, como las
+ *              misiones: se abre a todos con el lanzamiento de Eco)
  *   MANUAL  → cómo funciona Punti
  *   PERFIL  → tu progreso y tus ajustes
  *
@@ -66,6 +69,22 @@ const LIBRO: Icono = [
   ".#...##...#.",
   ".####..####.",
   ".....##.....",
+];
+
+// Un cuaderno con espiral y un lápiz cruzado.
+const CUADERNO: Icono = [
+  "..........##",
+  ".########.##",
+  "#.......#.#.",
+  ".#.####.##..",
+  "#......##...",
+  ".#.###.#.#..",
+  "#.......#...",
+  ".#.####.#...",
+  "#.......#...",
+  ".#.##...#...",
+  "#.......#...",
+  ".########...",
 ];
 
 const CASCO: Icono = [
@@ -129,6 +148,13 @@ const DESTINOS: Destino[] = [
     activo: (r) => r === "/seguir",
   },
   {
+    href: "/bitacora",
+    texto: { es: "Bitácora", en: "Logbook" },
+    icono: CUADERNO,
+    color: "#b400ff",
+    activo: (r) => r === "/bitacora",
+  },
+  {
     href: "/como-funciona",
     texto: { es: "Manual", en: "Manual" },
     icono: LIBRO,
@@ -164,11 +190,12 @@ export default function NavPunti() {
   const { usuario } = useAuth();
 
   if (!usuario || oculta(ruta)) return null;
-  return <BarraNav ruta={ruta} idioma={idioma} />;
+  return <BarraNav ruta={ruta} idioma={idioma} conBitacora={esAdmin(usuario)} />;
 }
 
 /** Solo el dibujo de la barra, sin decidir si se muestra. */
-export function BarraNav({ ruta, idioma }: { ruta: string; idioma: Idioma }) {
+export function BarraNav({ ruta, idioma, conBitacora = false }: { ruta: string; idioma: Idioma; conBitacora?: boolean }) {
+  const destinos = conBitacora ? DESTINOS : DESTINOS.filter((d) => d.href !== "/bitacora");
   return (
     <>
       {/* Reserva el alto de la barra al final de la página: sin esto, lo
@@ -179,8 +206,8 @@ export function BarraNav({ ruta, idioma }: { ruta: string; idioma: Idioma }) {
         aria-label={idioma === "en" ? "Main menu" : "Menú principal"}
         className="nav-punti fixed inset-x-0 bottom-0 z-30 border-t-2 border-[var(--color-panel-border)] bg-[rgba(5,5,16,0.96)] pb-[env(safe-area-inset-bottom,0px)] backdrop-blur"
       >
-        <ul className="mx-auto grid max-w-[520px] grid-cols-4 gap-1.5 px-2 py-2">
-          {DESTINOS.map((d) => {
+        <ul className={`mx-auto grid max-w-[560px] gap-1 px-1.5 py-2 ${destinos.length === 5 ? "grid-cols-5" : "grid-cols-4"}`}>
+          {destinos.map((d) => {
             const activo = d.activo(ruta);
             return (
               <li key={d.href}>
@@ -202,7 +229,7 @@ export function BarraNav({ ruta, idioma }: { ruta: string; idioma: Idioma }) {
                     <IconoPixel mapa={d.icono} />
                   </span>
                   <span className="font-[family-name:var(--font-pixel)] text-[8px] leading-none">
-                    {d.texto[idioma].toUpperCase()}
+                    {textoPixel(d.texto[idioma])}
                   </span>
                 </Link>
               </li>

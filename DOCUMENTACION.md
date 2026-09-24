@@ -13,7 +13,7 @@
 >
 > (Ver también `CLAUDE.md` en esta misma carpeta: contexto operativo para Claude Code.)
 
-**Última actualización:** 2026-09-23 (noche) · **Fase actual:** C1 (motor de bloques) · C1.1, C1.2 y C1.3 hechos, sigue C1.4 (ver 6.11). El lanzamiento espera a Eco rehecho
+**Última actualización:** 2026-09-23 (noche) · **Fase actual:** C2 (Bitácora) · C1 terminada; C2.1 y C2.2 hechos (ver 6.11). El lanzamiento espera a Eco rehecho
 
 > Para el detalle de qué se tocó en cada sesión, ver `CAMBIOS.md`.
 
@@ -988,6 +988,33 @@ tocar (compilando el sitio y leyendo el código de Firebase). Lo que frenaba y l
 - **Favicon nuevo:** la cabeza de Punti en pixel art (`src/app/icon.svg`, nítido a cualquier
   tamaño, y `src/app/favicon.ico` 16/32/48/256), hecho desde la misma rejilla de `puntiSprite.ts`.
 
+**Fase C1 terminada (2026-09-24).** Motor de bloques, admin de misiones, Laboratorio en vivo,
+pruebas en el celular de Cami (misión completa, Laboratorio en vivo, app instalada) y optimización.
+
+**Fase C2: la Bitácora de [nombre del piloto] (2026-09-24).**
+- **Datos** (`src/lib/bitacora.ts`): `usuarios/{uid}/bitacora/{id}`, cuatro tipos con id fijo
+  (repetir una misión actualiza, no duplica): `concepto-{concepto}` (la frase del piloto + la
+  definición de Punti), `prompt-{mision}-{bloque}` (su prompt de cada Laboratorio, con las piezas
+  que tenía y si pasó), `ficha-{mision}` (XP, combustible, transmisiones) y `nota-{0..199}` (notas
+  libres, máximo 200). Se leen hasta 500 entradas, lo más nuevo primero.
+- **Desde la misión** (`JugarMision.tsx`): el concepto se guarda apenas el piloto toca "Guardar en
+  mi Bitácora" (si sale a mitad de misión, ya quedó); los prompts y la ficha, al aterrizar, en una
+  sola escritura. Nunca en la vista previa del admin. Si falla la red, la misión sigue igual.
+- **Pantalla** `/bitacora`: "Bitácora de [nombre]" con Conceptos (tu frase y la de Punti), Mis
+  prompts (con COPIAR para usarlos en tu IA), Mis notas (crear, editar, borrar con doble toque) y
+  Fichas (con "Jugar otra vez"). Pestaña BITÁCORA en la barra de abajo, **por ahora solo para el
+  admin** (como las misiones); se abre a todos con el lanzamiento de Eco.
+- **Reglas** (`bitacoraValida` y `match /bitacora/{entrada}`): solo el dueño lee, escribe y borra
+  (ni el admin lee la de otros); cada tipo con forma exacta, largos máximos y la hora del servidor.
+  Copia de las anteriores en `referencias/firestore.rules.antes-de-bitacora`. Revisión independiente
+  sin huecos; único punto menor: un programa podría llenar la Bitácora propia con entradas
+  inventadas (solo le afecta a él; por eso el tope de 500 al leer).
+- Verificado: tipos y lint limpios; misión completa con clics en celular (español en vivo, inglés
+  en práctica) → concepto, 2 prompts y ficha guardados; notas creadas, editadas, borradas con doble
+  toque y persistentes al recargar; 0 errores.
+- Pendiente para más adelante: descargar la ficha como imagen, ficha de capítulo, y que las
+  lecciones del formato viejo también dejen algo en la Bitácora.
+
 **Costo estimado del Laboratorio** (precios verificados 2026-09-23): por uso ~USD 0,0004 con
 Gemini 2.5 Flash-Lite y ~USD 0,005 con Claude Haiku 4.5; con 100 pilotos diarios y 10 usos,
 ~USD 13 o ~USD 150 al mes. El proveedor se elige en C0 con prueba real y criterio neutral.
@@ -1358,6 +1385,10 @@ tenía otra sesión abierta. **Sigue sin explicación.** De ahí salió `CAMBIOS
 ---
 
 ## 13. Bitácora
+
+### 2026-09-24 — C2: la Bitácora del piloto
+Cada misión deja en la Bitácora el concepto con las palabras del piloto, sus prompts y su ficha;
+el piloto suma notas libres. Pantalla /bitacora (solo admin hasta el lanzamiento). Detalle en 6.11.
 
 ### 2026-09-24 — C1.3: el Laboratorio habla con la IA de verdad
 Claude Haiku 4.5 desde el servidor, con topes por piloto y por día que hacen cumplir las reglas,

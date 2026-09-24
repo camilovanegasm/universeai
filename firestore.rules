@@ -242,6 +242,50 @@ service cloud.firestore {
         && d.creadoEn == request.time;
     }
 
+    // ---------- Bitácora del piloto (fase C2) ----------
+    // usuarios/{uid}/bitacora/{id}. Solo el dueño la lee y escribe (ni el
+    // admin lee la de otros). Cada tipo tiene un id fijo y una forma exacta,
+    // con largos máximos (ver src/lib/bitacora.ts). Las notas libres van de
+    // nota-0 a nota-199: así nadie llena su cuenta sin límite.
+
+    function textoBilingue(t, n) {
+      return t is map && t.keys().hasOnly(['es', 'en'])
+        && t.es is string && t.en is string && t.es.size() <= n && t.en.size() <= n;
+    }
+
+    function idSeguro(s) {
+      return s is string && s.matches('[a-z0-9-]{1,80}');
+    }
+
+    function textoEntre(s, min, max) {
+      return s is string && s.size() >= min && s.size() <= max;
+    }
+
+    function bitacoraValida(id, d) {
+      return d.fecha == request.time && (
+        (id.matches('concepto-[a-z0-9-]{1,80}')
+          && d.keys().hasOnly(['tipo', 'concepto', 'titulo', 'definicion', 'frase', 'mision', 'mundo', 'fecha'])
+          && d.tipo == 'concepto' && idSeguro(d.concepto) && id == 'concepto-' + d.concepto
+          && textoBilingue(d.titulo, 120) && textoBilingue(d.definicion, 400)
+          && textoEntre(d.frase, 1, 280) && idSeguro(d.mision) && idSeguro(d.mundo))
+        || (id.matches('prompt-[a-z0-9-]{1,80}-b[0-9]{2}')
+          && d.keys().hasOnly(['tipo', 'texto', 'etiqueta', 'piezas', 'aprobado', 'idioma', 'mision', 'mundo', 'fecha'])
+          && d.tipo == 'prompt' && textoEntre(d.texto, 1, 600) && textoBilingue(d.etiqueta, 80)
+          && textoEntre(d.piezas, 0, 400) && d.aprobado is bool && d.idioma in ['es', 'en']
+          && idSeguro(d.mision) && idSeguro(d.mundo) && id.matches('prompt-' + d.mision + '-b[0-9]{2}'))
+        || (id.matches('ficha-[a-z0-9-]{1,80}')
+          && d.keys().hasOnly(['tipo', 'titulo', 'xp', 'combustible', 'transmisiones', 'conAyuda', 'mision', 'mundo', 'fecha'])
+          && d.tipo == 'ficha' && textoBilingue(d.titulo, 120)
+          && d.xp is int && d.xp >= 0 && d.xp <= 100 && d.combustible in [1, 2, 3]
+          && d.transmisiones is int && d.transmisiones >= 0 && d.transmisiones <= 50
+          && d.conAyuda is int && d.conAyuda >= 0 && d.conAyuda <= 30
+          && idSeguro(d.mision) && idSeguro(d.mundo) && id == 'ficha-' + d.mision)
+        || (id.matches('nota-(0|[1-9][0-9]?|1[0-9][0-9])')
+          && d.keys().hasOnly(['tipo', 'texto', 'fecha'])
+          && d.tipo == 'nota' && textoEntre(d.texto, 1, 1200))
+      );
+    }
+
     // ---------- Perfiles ----------
 
     match /usuarios/{usuarioId} {
@@ -258,6 +302,12 @@ service cloud.firestore {
       // Nadie borra perfiles desde la app: borrar y volver a crear serviría
       // para reiniciar la gasolina.
       allow delete: if false;
+
+      // La Bitácora del piloto (ver bitacoraValida arriba).
+      match /bitacora/{entrada} {
+        allow read, delete: if esDueno(usuarioId);
+        allow create, update: if esDueno(usuarioId) && bitacoraValida(entrada, request.resource.data);
+      }
     }
 
     // ---------- Contenido (mundos y lecciones) ----------
