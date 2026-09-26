@@ -1,0 +1,701 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-cuenta-nueva-del-proveedor",
+  "mundo": "etica-y-seguridad",
+  "capitulo": 1,
+  "numero": 3,
+  "receta": "criterio",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "segundo-canal"
+  ],
+  "usaConceptos": [
+    "voz-clonada"
+  ],
+  "titulo": {
+    "es": "La cuenta nueva del proveedor",
+    "en": "The Supplier's New Account"
+  },
+  "resumen": {
+    "es": "Correos, audios y videollamadas falsas que piden pagar: todo cambio de cuenta se confirma por un segundo canal.",
+    "en": "Fake emails, audio and video calls asking you to pay: every account change gets confirmed through a second channel."
+  },
+  "siguiente": "el-mensaje-perfecto",
+  "fuentes": [
+    {
+      "titulo": "CNN: Arup, víctima de una estafa de 25 millones de dólares con deepfake (16 may. 2024)",
+      "url": "https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Suena la sirena de El faro, piloto. Esta tormenta no llega a la casa sino a la oficina, y trae la cara y la voz del jefe.",
+          "en": "The Lighthouse siren is going off, pilot. This storm doesn't hit the house, it hits the office, and it wears the boss's face and voice."
+        }
+      },
+      "titulo": {
+        "es": "La cuenta nueva del proveedor",
+        "en": "The Supplier's New Account"
+      },
+      "texto": {
+        "es": "Dayana es auxiliar contable en una distribuidora de lácteos en Pasto. \"El gerente\" le pide por videollamada pagar hoy a una cuenta nueva. Hoy aprendes la regla del segundo canal. Unos 8 minutos.",
+        "en": "Dayana is an accounting assistant at a dairy distributor in Pasto. \"The manager\" asks her on a video call to pay a new account today. Today you'll learn the second-channel rule. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Esto ya pasó en grande, y vale la pena contarlo.",
+          "en": "This has already happened on a big scale, and it's worth telling."
+        }
+      },
+      "titulo": {
+        "es": "La videollamada falsa",
+        "en": "The fake video call"
+      },
+      "texto": {
+        "es": "En 2024, un empleado de la firma de ingeniería Arup en Hong Kong transfirió unos 25 millones de dólares. Se lo pidió \"el director financiero\" en una videollamada con varios colegas. Todos eran falsos, hechos con IA. Hoy el engaño puede traer correo perfecto, audio y video. La defensa no es mirar mejor: es confirmar por otro lado.",
+        "en": "In 2024, an employee of the engineering firm Arup in Hong Kong sent about 25 million dollars. \"The finance director\" asked for it on a video call with several colleagues. All of them were fakes made with AI. Today a scam can come with a perfect email, audio and video. The defense isn't looking harder: it's confirming another way."
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora es el turno de Dayana. Es viernes, 4 p. m., y el banco cierra pronto. Mira qué pasa con cada opción.",
+          "en": "Now it's Dayana's turn. It's Friday, 4 p.m., and the bank closes soon. See what happens with each option."
+        }
+      },
+      "titulo": {
+        "es": "El viernes a las 4",
+        "en": "Friday at 4"
+      },
+      "escena": {
+        "es": "A Dayana le entra una videollamada del gerente desde un número nuevo. Se ve y se oye como él: \"Dayana, el proveedor de envases cambió de banco. Págale hoy los 18 millones a esta cuenta nueva. Es urgente y no lo comente todavía\". Luego le llega el número de cuenta por el mismo chat.",
+        "en": "Dayana gets a video call from the manager, from a new number. He looks and sounds like himself: \"Dayana, the container supplier changed banks. Pay him the $4,500 today into this new account. It's urgent, and keep it quiet for now.\" Then the account number arrives in the same chat."
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Pagar: vio la cara del gerente y oyó su voz",
+            "en": "Pay: she saw the manager's face and heard his voice"
+          },
+          "consecuencia": {
+            "es": "El pago sale. El lunes el gerente llega de viaje: nunca hizo esa llamada. Con IA, ver una cara y oír una voz ya no prueba quién es.",
+            "en": "The payment goes out. On Monday the manager is back from a trip: he never made that call. With AI, seeing a face and hearing a voice no longer proves who it is."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Escribirle por ese mismo chat: \"¿Seguro, jefe?\"",
+            "en": "Write back in that same chat: \"Are you sure, boss?\""
+          },
+          "consecuencia": {
+            "es": "\"Seguro, Dayana, hágale\". Del otro lado sigue el mismo impostor. Confirmar por el mismo canal es preguntarle al engaño si es engaño.",
+            "en": "\"Sure, Dayana, go ahead.\" The same impostor is still on the other end. Confirming in the same channel is asking the scam if it's a scam."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Colgar y llamar al gerente al número de siempre",
+            "en": "Hang up and call the manager on his usual number"
+          },
+          "consecuencia": {
+            "es": "El gerente contesta desde el aeropuerto: no ha pedido nada. Dayana llama también al proveedor al número de la última factura: no ha cambiado de banco. No se paga.",
+            "en": "The manager answers from the airport: he hasn't asked for anything. Dayana also calls the supplier on the number from the last invoice: no new bank. Nothing gets paid."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Esa es la regla del segundo canal: todo cambio de cuenta o pago urgente se confirma por un canal distinto al que lo pidió, y que ya conocías desde antes.",
+          "en": "That's the second-channel rule: any account change or urgent payment gets confirmed through a different channel from the one that asked, one you already knew before."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. ¿Cuál es un segundo canal de verdad y cuál es el mismo canal disfrazado?",
+          "en": "Your turn. Which one is a real second channel, and which is the same channel in disguise?"
+        }
+      },
+      "titulo": {
+        "es": "¿Mismo canal o segundo canal?",
+        "en": "Same channel or second channel?"
+      },
+      "grupos": [
+        {
+          "id": "mismo",
+          "titulo": {
+            "es": "Mismo canal",
+            "en": "Same channel"
+          }
+        },
+        {
+          "id": "segundo",
+          "titulo": {
+            "es": "Segundo canal",
+            "en": "Second channel"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "mismo",
+          "texto": {
+            "es": "Responder el correo que pidió el cambio",
+            "en": "Reply to the email that asked for the change"
+          }
+        },
+        {
+          "grupo": "segundo",
+          "texto": {
+            "es": "Llamar al número de la factura del mes pasado",
+            "en": "Call the number on last month's invoice"
+          }
+        },
+        {
+          "grupo": "mismo",
+          "texto": {
+            "es": "Llamar al número que viene en ese correo",
+            "en": "Call the number given in that email"
+          }
+        },
+        {
+          "grupo": "segundo",
+          "texto": {
+            "es": "Ir a la oficina del gerente y preguntarle",
+            "en": "Walk to the manager's office and ask him"
+          }
+        },
+        {
+          "grupo": "mismo",
+          "texto": {
+            "es": "Escribir por el chat de la videollamada",
+            "en": "Write in the video call's chat"
+          }
+        },
+        {
+          "grupo": "segundo",
+          "texto": {
+            "es": "Llamar al número guardado desde hace meses",
+            "en": "Call the number saved months ago"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso es. El segundo canal tiene que ser distinto y conocido desde antes. Un número que trae el mensaje sospechoso es parte del mismo engaño.",
+          "en": "That's it. The second channel has to be different and known from before. A number that comes inside the suspicious message is part of the same trick."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, pregúntate: ¿ese número o ese chat lo conocías antes del mensaje, o te lo dio el mensaje?",
+          "en": "Hmm, ask yourself: did you know that number or chat before the message, or did the message give it to you?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Para que no dependa de la memoria de nadie, la distribuidora necesita una regla escrita. Tiene tres piezas. Toca cada una.",
+          "en": "So it doesn't depend on anyone's memory, the distributor needs a written rule. It has three pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las piezas de la regla",
+        "en": "The pieces of the rule"
+      },
+      "piezas": [
+        {
+          "id": "otro-canal",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Otro canal conocido",
+            "en": "A known, separate channel"
+          },
+          "descripcion": {
+            "es": "Confirmar por un medio distinto y que ya conocías.",
+            "en": "Confirm through a different route you already knew."
+          },
+          "ejemplo": {
+            "es": "\"Se llama al número de la última factura\". Nunca al número ni al correo que trae la solicitud.",
+            "en": "\"Call the number on the last invoice.\" Never the number or email that came with the request."
+          }
+        },
+        {
+          "id": "dos-personas",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Dos personas",
+            "en": "Two people"
+          },
+          "descripcion": {
+            "es": "Un cambio de cuenta lo aprueban dos, no una.",
+            "en": "An account change needs two approvals, not one."
+          },
+          "ejemplo": {
+            "es": "\"Lo aprueban la auxiliar y el gerente\". Engañar a una persona es fácil; engañar a dos a la vez, mucho menos.",
+            "en": "\"The assistant and the manager both approve it.\" Fooling one person is easy; fooling two at once is much harder."
+          }
+        },
+        {
+          "id": "pausa",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Pausa si hay prisa",
+            "en": "Pause under pressure"
+          },
+          "descripcion": {
+            "es": "La urgencia es razón para frenar, no para correr.",
+            "en": "Urgency is a reason to slow down, not to hurry."
+          },
+          "ejemplo": {
+            "es": "\"Si hay prisa o secreto, no se paga hasta confirmar\". Así nadie se siente culpable por esperar.",
+            "en": "\"If there's a rush or secrecy, nothing gets paid until it's confirmed.\" That way nobody feels guilty for waiting."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Dayana quiere dejar la regla por escrito para toda la empresa. Pídele a la IA una regla de pagos de 4 pasos con las tres piezas.",
+          "en": "Your turn to transmit. Dayana wants the rule in writing for the whole company. Ask the AI for a 4-step payment rule with all three pieces."
+        }
+      },
+      "titulo": {
+        "es": "La regla de pagos",
+        "en": "The payment rule"
+      },
+      "reto": {
+        "es": "Pedido de Dayana: una regla de pagos de 4 pasos para la distribuidora (8 empleados). Debe servir cuando alguien pide cambiar la cuenta de un proveedor o pagar urgente, aunque llegue por correo, audio o videollamada.",
+        "en": "Dayana's request: a 4-step payment rule for the distributor (8 employees). It has to work whenever someone asks to change a supplier's account or make an urgent payment, whether it comes by email, audio or video call."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "otro-canal",
+          "texto": {
+            "es": "Confirmar por otro canal ya conocido",
+            "en": "Confirm through a known, separate channel"
+          },
+          "rubrica": "El prompt pide que la regla exija confirmar el cambio o el pago por un canal distinto al que lo pidió y que ya se conocía antes: llamar al número guardado o al de la factura anterior, preguntar en persona. No cuenta 'confirmar' sin decir por dónde, ni responder el mismo correo, chat o llamada, ni llamar al número que trae el mensaje nuevo.",
+          "claves": {
+            "es": [
+              "otro canal",
+              "canal distinto",
+              "canal diferente",
+              "segundo canal",
+              "numero guardado",
+              "numero conocido",
+              "numero de siempre",
+              "numero registrado",
+              "numero que ya",
+              "factura anterior",
+              "ultima factura",
+              "en persona",
+              "otra via"
+            ],
+            "en": [
+              "another channel",
+              "separate channel",
+              "different channel",
+              "second channel",
+              "saved number",
+              "known number",
+              "number on file",
+              "usual number",
+              "number we already",
+              "previous invoice",
+              "last invoice",
+              "in person",
+              "face to face"
+            ]
+          }
+        },
+        {
+          "id": "dos-personas",
+          "texto": {
+            "es": "Dos personas aprueban",
+            "en": "Two people approve"
+          },
+          "rubrica": "El prompt pide que los cambios de cuenta o los pagos urgentes los aprueben dos personas, no una sola (por ejemplo, la auxiliar y el gerente, o dos firmas). No cuenta 'que alguien lo revise' sin decir que son dos personas distintas, ni que la misma persona lo revise dos veces.",
+          "claves": {
+            "es": [
+              "dos personas",
+              "2 personas",
+              "doble aprobacion",
+              "doble firma",
+              "dos firmas",
+              "segunda persona",
+              "otra persona",
+              "dos aprobaciones",
+              "aprueben dos",
+              "aprobado por dos"
+            ],
+            "en": [
+              "two people",
+              "2 people",
+              "two-person",
+              "dual approval",
+              "double approval",
+              "two signatures",
+              "second person",
+              "another person",
+              "two approvals",
+              "approved by two"
+            ]
+          }
+        },
+        {
+          "id": "pausa",
+          "texto": {
+            "es": "Qué hacer si hay prisa",
+            "en": "What to do under pressure"
+          },
+          "rubrica": "El prompt pide que la regla diga qué hacer cuando hay presión, urgencia o secreto: pausar, no pagar hasta confirmar, avisar a alguien. No cuenta pedir que la regla sea 'rápida' o 'ágil', ni mencionar la urgencia sin decir qué hacer con ella.",
+          "claves": {
+            "es": [
+              "si hay prisa",
+              "si hay urgencia",
+              "si hay presion",
+              "si presionan",
+              "si nos presionan",
+              "si apuran",
+              "si piden secreto",
+              "pausa",
+              "pausar",
+              "no pagar hasta",
+              "no se paga hasta",
+              "no pagar sin",
+              "no se paga sin",
+              "frenar",
+              "detener"
+            ],
+            "en": [
+              "if there's pressure",
+              "if there is pressure",
+              "under pressure",
+              "if there's a rush",
+              "if someone rushes",
+              "if they rush",
+              "if it's urgent",
+              "if they ask for secrecy",
+              "pause",
+              "don't pay until",
+              "do not pay until",
+              "no payment until",
+              "never pay until",
+              "hold off",
+              "stop and confirm",
+              "stop the payment"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a pequeñas empresas a escribir reglas internas claras. Responde solo con la regla: un título y máximo 4 pasos numerados, en frases cortas. Usa solo lo que pide el prompt. Si no dice por dónde confirmar, escribe 'confirmar el cambio' sin decir cómo. Si no pide aprobación de dos personas, deja que apruebe una. Si no dice qué hacer con la prisa, no lo menciones.",
+        "en": "You are an AI that helps small businesses write clear internal rules. Reply with the rule only: a title and up to 4 numbered steps, in short sentences. Use only what the prompt asks for. If it doesn't say how to confirm, write 'confirm the change' without saying how. If it doesn't ask for two people to approve, let one person approve. If it doesn't say what to do under pressure, don't mention it."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Regla de pagos de la distribuidora\n1. Todo cambio de cuenta o pago urgente se confirma llamando al número que ya teníamos guardado, nunca al que trae el mensaje.\n2. Lo aprueban dos personas: la auxiliar contable y el gerente.\n3. Si hay prisa, secreto o presión, se pausa. No se paga hasta confirmar.\n4. Se deja por escrito quién confirmó, cuándo y por dónde.",
+            "en": "Distributor payment rule\n1. Any account change or urgent payment is confirmed by calling the number we already had saved, never the one in the message.\n2. Two people approve it: the accounting assistant and the manager.\n3. If there's a rush, secrecy or pressure, we pause. Nothing is paid until it's confirmed.\n4. We write down who confirmed, when and how."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Regla a prueba de tormentas. Otro canal, dos personas y una pausa. Ni la mejor videollamada falsa pasa por ahí.",
+              "en": "A storm-proof rule. Another channel, two people and a pause. Not even the best fake video call gets through that."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Regla de pagos\n1. Revisar la solicitud de cambio de cuenta.\n2. Confirmar el cambio.\n3. Hacer el pago a tiempo.\n4. Guardar el comprobante.",
+            "en": "Payment rule\n1. Review the account change request.\n2. Confirm the change.\n3. Make the payment on time.\n4. Keep the receipt."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Tiene 4 pasos, pero ninguno frena la tormenta. ¿Confirmar por dónde? ¿Quién más aprueba? Mira la lista y dale a la IA lo que le falta.",
+              "en": "It has 4 steps, but none of them stops the storm. Confirm how? Who else approves? Check the list and give the AI what's missing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confesión. Ayer le ayudé a otra empresa con un cambio de cuenta y me sentí muy juicioso. Pero dos cosas que hice le abrieron la puerta a la tormenta. Tócalas.",
+          "en": "Confession. Yesterday I helped another company with an account change and felt very responsible. But two things I did opened the door to the storm. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Punti confirmó mal",
+        "en": "Punti confirmed it wrong"
+      },
+      "trozos": [
+        {
+          "es": "Llegó un correo del proveedor con la cuenta nueva.",
+          "en": "An email came in from the supplier with the new account."
+        },
+        {
+          "es": "Como no tenía errores de ortografía, lo tomé como confiable.",
+          "en": "Since it had no spelling mistakes, I trusted it."
+        },
+        {
+          "es": "Para confirmar, respondí ese mismo correo y me dijeron que sí.",
+          "en": "To confirm, I replied to that same email and they said yes."
+        },
+        {
+          "es": "Guardé el correo y el soporte en la carpeta de pagos.",
+          "en": "I saved the email and the receipt in the payments folder."
+        },
+        {
+          "es": "Y le avisé al gerente del cambio.",
+          "en": "And I told the manager about the change."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Un correo perfecto hoy lo escribe cualquier IA. Y responder el mismo correo es preguntarle al engaño si es engaño. Tenía que llamar al número de la última factura.",
+          "en": "You got me. Any AI can write a perfect email today. And replying to the same email is asking the scam if it's a scam. I should have called the number on the last invoice."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte está bien hecha. Busca dónde confié en el mismo canal o en lo bien escrito.",
+          "en": "That part was fine. Look for where I trusted the same channel or how well it was written."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Nota para tu bitácora. Explica con tus palabras qué es el segundo canal, como se lo dirías a alguien que maneja pagos.",
+          "en": "Note for your logbook. Explain the second channel in your own words, the way you'd tell someone who handles payments."
+        }
+      },
+      "concepto": "segundo-canal",
+      "definicion": {
+        "es": "Confirmar un pedido de plata o un cambio de cuenta por un medio distinto al que llegó y que ya conocías: el número guardado, la última factura, en persona.",
+        "en": "Confirming a money request or an account change through a different route from the one it came in, one you already knew: the saved number, the last invoice, in person."
+      },
+      "pregunta": {
+        "es": "El segundo canal es…",
+        "en": "The second channel is…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "regla de pagos",
+        "en": "payment rule"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu regla de pagos queda en tu bitácora. Si manejas plata de un negocio, imprímela y pégala donde se hacen los pagos.",
+          "en": "Saved. Your payment rule is in your logbook. If you handle a business's money, print it and stick it where payments get made."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos esta alerta.",
+          "en": "Two questions and we close this alert."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Un proveedor te escribe desde su correo de siempre: cambió de banco y manda la cuenta nueva. ¿Qué haces?",
+            "en": "A supplier emails you from their usual address: they changed banks and send the new account. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Lo llamo al número que ya tenía guardado antes de cambiar nada",
+              "en": "Call them on the number I already had before changing anything"
+            },
+            {
+              "es": "Le respondo el correo para que me confirme",
+              "en": "Reply to the email so they can confirm"
+            },
+            {
+              "es": "Pago a la cuenta nueva: el correo es el de siempre",
+              "en": "Pay the new account: it's their usual email"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Un correo de verdad también puede estar robado. La llamada al número conocido es el segundo canal.",
+              "en": "Right. A real email account can be hacked too. A call to the known number is the second channel."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: si alguien se metió a ese correo, ¿quién te contesta?",
+              "en": "Hmm. Ask yourself: if someone broke into that email, who answers you?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Por qué ya no basta con ver la cara del gerente en una videollamada?",
+            "en": "Why isn't seeing the manager's face on a video call enough anymore?"
+          },
+          "opciones": [
+            {
+              "es": "Porque con IA se pueden imitar la cara y la voz en video",
+              "en": "Because AI can fake a face and a voice on video"
+            },
+            {
+              "es": "Porque las videollamadas se cortan mucho",
+              "en": "Because video calls drop a lot"
+            },
+            {
+              "es": "Porque los gerentes nunca hacen videollamadas",
+              "en": "Because managers never make video calls"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Por eso la regla no depende de lo que ves, sino de por dónde confirmas.",
+              "en": "Exactly. That's why the rule doesn't depend on what you see, but on how you confirm."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Acuérdate de lo que pasó en Hong Kong con la videollamada.",
+              "en": "Hmm. Remember what happened in Hong Kong with the video call."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Segundo canal",
+        "en": "Second channel"
+      },
+      "resumen": {
+        "es": "Todo cambio de cuenta o pago urgente se confirma por un medio distinto al que lo pidió y que ya conocías. La cara y la voz ya no bastan.",
+        "en": "Every account change or urgent payment is confirmed through a different route you already knew. A face and a voice aren't enough anymore."
+      }
+    },
+    "piezas": "b05",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Llamaste al gerente al número de siempre antes de pagar",
+          "en": "You called the manager's usual number before paying"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Distinguiste el segundo canal del mismo canal disfrazado",
+          "en": "You told a real second channel from a disguised one"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste una regla de pagos a prueba de tormentas",
+          "en": "You wrote a storm-proof payment rule"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste a Punti confirmando por el mismo correo",
+          "en": "You caught Punti confirming through the same email"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "confirmar-por-otro-canal",
+      "titulo": {
+        "es": "Confirmar por otro canal",
+        "en": "Confirming another way"
+      }
+    }
+  }
+}

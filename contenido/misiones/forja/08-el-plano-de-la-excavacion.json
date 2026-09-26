@@ -1,0 +1,877 @@
+{
+  "formato": "punti-mision@1",
+  "id": "el-plano-de-la-excavacion",
+  "mundo": "herramientas-de-ia",
+  "capitulo": 2,
+  "numero": 8,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 11,
+  "conceptos": [
+    "plan-de-investigacion"
+  ],
+  "usaConceptos": [
+    "tipos-de-busqueda",
+    "pedido-completo",
+    "iterar"
+  ],
+  "titulo": {
+    "es": "El plano de la excavación",
+    "en": "The Dig Plan"
+  },
+  "resumen": {
+    "es": "La investigación profunda arranca con un plan que tú corriges: pregunta, alcance, fuentes y forma del informe.",
+    "en": "Deep research starts with a plan you can fix: the question, the scope, the sources and the shape of the report."
+  },
+  "siguiente": "hechos-opiniones-y-voces",
+  "fuentes": [
+    {
+      "titulo": "OpenAI: preguntas frecuentes de deep research (ChatGPT propone un plan que puedes revisar y cambiar antes de empezar; uso según el plan)",
+      "url": "https://help.openai.com/en/articles/10500283-deep-research-faq",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google: Gemini Deep Research (Gemini te presenta el plan y puedes ajustarlo)",
+      "url": "https://gemini.google/overview/deep-research/",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegó un encargo grande a la mina. Es Arley, mensajero en moto en Bogotá. Está pensando pasarse a una moto eléctrica y quiere que una investigación profunda le ayude a decidir.",
+          "en": "Pilot, a big job just reached the mine. It's Arley, a motorcycle courier in Bogotá. He's thinking of switching to an electric motorcycle and wants a deep research job to help him decide."
+        }
+      },
+      "titulo": {
+        "es": "El plano de la excavación",
+        "en": "The Dig Plan"
+      },
+      "texto": {
+        "es": "Hoy escribes el encargo de una investigación profunda y corriges su plan antes de que empiece a cavar. Unos 11 minutos.",
+        "en": "Today you write the brief for a deep research job and fix its plan before it starts digging. About 11 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Primero, un ejemplo de otro encargo. La vecina de Arley tiene una panadería y le pidió a la IA que investigara paneles solares. Mira el plan que le devolvió. Abajo, el mismo encargo bien hecho.",
+          "en": "First, an example from a different job. Arley's neighbor runs a bakery and asked the AI to research solar panels. Look at the plan she got back. Below, the same brief done right."
+        }
+      },
+      "titulo": {
+        "es": "Excavar todo o excavar lo que sirve",
+        "en": "Dig everything, or dig what matters"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Investiga todo sobre paneles solares.",
+          "en": "Research everything about solar panels."
+        },
+        "salida": {
+          "es": "Plan de investigación:\n1. Historia de la energía solar.\n2. Cómo funcionan las celdas solares.\n3. El mercado mundial de paneles.\n4. Las marcas más grandes del mundo.\n5. El futuro de las energías renovables.",
+          "en": "Research plan:\n1. The history of solar energy.\n2. How solar cells work.\n3. The global solar panel market.\n4. The world's biggest brands.\n5. The future of renewable energy."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "pregunta",
+            "texto": {
+              "es": "Quiero decidir si me conviene poner paneles solares en mi panadería: sí o no. ",
+              "en": "I want to decide whether solar panels make sense for my bakery: yes or no. "
+            }
+          },
+          {
+            "pieza": "alcance",
+            "texto": {
+              "es": "Es en Bogotá, con un presupuesto de hasta $10.000.000, y quiero recuperar la plata en máximo 5 años. ",
+              "en": "It's in Bogotá, with a budget of up to $2,500, and I want to earn the money back within 5 years. "
+            }
+          },
+          {
+            "pieza": "fuentes",
+            "texto": {
+              "es": "Prefiero fuentes oficiales y de los últimos dos años; evita páginas de vendedores. ",
+              "en": "I prefer official sources from the last two years; avoid sellers' websites. "
+            }
+          },
+          {
+            "pieza": "forma",
+            "texto": {
+              "es": "Entrégame una tabla de costos, pros y contras, y riesgos.",
+              "en": "Give me a table of costs, pros and cons, and risks."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Plan de investigación:\n1. Cuánta energía gasta una panadería pequeña en Bogotá.\n2. Cuánto cuesta una instalación pequeña, según fuentes de los últimos dos años.\n3. En cuánto tiempo se paga sola.\n4. Qué trámites o ayudas hay en Colombia.\nFuentes: oficiales y recientes, sin páginas de vendedores.\nEntrega: tabla de costos, pros y contras, y riesgos.",
+          "en": "Research plan:\n1. How much energy a small bakery in Bogotá uses.\n2. What a small installation costs, based on sources from the last two years.\n3. How long it takes to pay for itself.\n4. What permits or incentives exist in Colombia.\nSources: official and recent, no sellers' websites.\nDeliverable: table of costs, pros and cons, and risks."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? El primer plan cava en todas partes y no llega a ninguna decisión. El segundo cava justo donde está la respuesta que ella necesita.",
+          "en": "See the colors? The first plan digs everywhere and never reaches a decision. The second digs right where her answer is."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un buen encargo de investigación lleva cuatro piezas. Con ellas, el plano de la excavación sale derecho. Toca cada una.",
+          "en": "A good research brief has four pieces. With them, the dig plan comes out straight. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas del encargo",
+        "en": "The 4 pieces of the brief"
+      },
+      "piezas": [
+        {
+          "id": "pregunta",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "La pregunta de decisión",
+            "en": "The decision question"
+          },
+          "descripcion": {
+            "es": "Qué vas a decidir: sí o no, cuál, cuándo.",
+            "en": "What you'll decide: yes or no, which one, when."
+          },
+          "ejemplo": {
+            "es": "\"¿Me conviene, sí o no?\" le dice a la investigación dónde terminar.",
+            "en": "\"Does it make sense, yes or no?\" tells the research where to stop."
+          }
+        },
+        {
+          "id": "alcance",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "El alcance",
+            "en": "The scope"
+          },
+          "descripcion": {
+            "es": "Dónde, cuánta plata, qué tiempo.",
+            "en": "Where, how much money, what time frame."
+          },
+          "ejemplo": {
+            "es": "\"En Bogotá, hasta tanto, en 5 años\". Sin alcance, cava en todo el mundo.",
+            "en": "\"In Bogotá, up to this much, within 5 years.\" Without scope, it digs up the whole world."
+          }
+        },
+        {
+          "id": "fuentes",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Qué fuentes",
+            "en": "Which sources"
+          },
+          "descripcion": {
+            "es": "Cuáles preferir y cuáles evitar.",
+            "en": "Which to prefer and which to avoid."
+          },
+          "ejemplo": {
+            "es": "\"Oficiales y recientes; sin páginas de vendedores\". El que vende siempre dice que conviene.",
+            "en": "\"Official and recent; no sellers' sites.\" Whoever's selling always says it's worth it."
+          }
+        },
+        {
+          "id": "forma",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "La forma del informe",
+            "en": "The shape of the report"
+          },
+          "descripcion": {
+            "es": "Tabla, pros y contras, riesgos.",
+            "en": "A table, pros and cons, risks."
+          },
+          "ejemplo": {
+            "es": "\"Tabla de costos y riesgos\". Así lees el informe en cinco minutos, no en una hora.",
+            "en": "\"A table of costs and risks.\" That way you read the report in five minutes, not an hour."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ahora, cómo trabaja esta pica por dentro.",
+          "en": "Now, how this pickaxe works on the inside."
+        }
+      },
+      "titulo": {
+        "es": "Primero el plano, después la pica",
+        "en": "First the plan, then the pickaxe"
+      },
+      "texto": {
+        "es": "La investigación profunda no arranca a cavar de una. Primero te muestra un plan, y ahí puedes corregirlo. Después tarda varios minutos, lee muchas páginas y entrega un informe con fuentes. Corregir el plan toma un minuto. Corregir el informe es volver a empezar.",
+        "en": "Deep research doesn't start digging right away. First it shows you a plan, and that's where you can fix it. Then it takes several minutes, reads many pages and delivers a report with sources. Fixing the plan takes a minute. Fixing the report means starting over."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Tú escribes el encargo",
+            "en": "You write the brief"
+          },
+          {
+            "es": "La herramienta propone un plan",
+            "en": "The tool proposes a plan"
+          },
+          {
+            "es": "Tú lo corriges",
+            "en": "You fix it"
+          },
+          {
+            "es": "Investiga y entrega un informe con fuentes",
+            "en": "It researches and delivers a sourced report"
+          },
+          {
+            "es": "Tú lo templas",
+            "en": "You temper it"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno en el plano. Escribe el encargo de Arley para una investigación profunda. La herramienta te va a responder solo con el plan, sin cavar todavía.",
+          "en": "Your turn at the plan. Write Arley's brief for a deep research job. The tool will reply with just the plan, without digging yet."
+        }
+      },
+      "titulo": {
+        "es": "El encargo de Arley",
+        "en": "Arley's brief"
+      },
+      "reto": {
+        "es": "Datos de Arley (inventados): es mensajero en moto en Bogotá, recorre unos 120 km al día, tiene ahorrados $6.000.000 y quiere decidir este año si se pasa a una moto eléctrica. Escribe el encargo.",
+        "en": "Arley's details (made up): he's a motorcycle courier in Bogotá, rides about 75 miles a day, has saved $1,500 and wants to decide this year whether to switch to an electric motorcycle. Write the brief."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "pregunta",
+          "texto": {
+            "es": "Hace una pregunta de decisión",
+            "en": "Asks a decision question"
+          },
+          "rubrica": "El prompt plantea una decisión: si le conviene o no pasarse a moto eléctrica, sí o no, o cuál opción elegir. No cuenta 'investiga todo sobre motos eléctricas' o 'háblame de motos eléctricas', que no piden decidir nada.",
+          "claves": {
+            "es": [
+              "me conviene",
+              "le conviene",
+              "conviene",
+              "si o no",
+              "vale la pena",
+              "decidir",
+              "decida",
+              "si me paso",
+              "si se pasa",
+              "deberia",
+              "cual me",
+              "cual le"
+            ],
+            "en": [
+              "worth it",
+              "should i",
+              "should he",
+              "yes or no",
+              "decide",
+              "makes sense",
+              "whether to switch",
+              "whether he should",
+              "whether i should",
+              "which one",
+              "is it better"
+            ]
+          }
+        },
+        {
+          "id": "alcance",
+          "texto": {
+            "es": "Da el alcance",
+            "en": "Gives the scope"
+          },
+          "rubrica": "El prompt da el alcance con datos del reto: la ciudad (Bogotá), el presupuesto ($6.000.000 en español, $1,500 en inglés), los kilómetros o millas por día o el plazo (este año). No cuenta 'en Colombia' solo ni 'con poco presupuesto' sin cifra.",
+          "claves": {
+            "es": [
+              "bogota",
+              "120",
+              "6.000.000",
+              "6000000",
+              "6 millones",
+              "seis millones",
+              "presupuesto de",
+              "km",
+              "kilometros",
+              "este ano"
+            ],
+            "en": [
+              "bogota",
+              "75 miles",
+              "75 mi",
+              "1,500",
+              "1500",
+              "budget of",
+              "miles a day",
+              "per day",
+              "this year"
+            ]
+          }
+        },
+        {
+          "id": "fuentes",
+          "texto": {
+            "es": "Dice qué fuentes preferir o evitar",
+            "en": "Says which sources to prefer or avoid"
+          },
+          "rubrica": "El prompt dice qué fuentes preferir (oficiales, recientes, independientes) o cuáles evitar (vendedores, concesionarios, publicidad). No cuenta 'fuentes confiables' o 'buenas fuentes' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "oficial",
+              "reciente",
+              "ultimos",
+              "evita",
+              "no uses",
+              "sin paginas de",
+              "vendedor",
+              "concesionario",
+              "publicidad",
+              "independiente",
+              "prefiero",
+              "prefiere"
+            ],
+            "en": [
+              "official",
+              "recent",
+              "last two years",
+              "last 2 years",
+              "avoid",
+              "don't use",
+              "do not use",
+              "seller",
+              "dealer",
+              "advertis",
+              "independent",
+              "prefer"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "Pide una forma de informe",
+            "en": "Asks for a report format"
+          },
+          "rubrica": "El prompt pide una forma para el informe: tabla, costos comparados, pros y contras, riesgos o una recomendación final. No cuenta 'un informe completo' o 'un buen resumen' sin decir cómo se ve.",
+          "claves": {
+            "es": [
+              "tabla",
+              "pros y contras",
+              "ventajas y desventajas",
+              "riesgos",
+              "columnas",
+              "comparacion",
+              "compara",
+              "recomendacion final",
+              "lista de"
+            ],
+            "en": [
+              "table",
+              "pros and cons",
+              "advantages and disadvantages",
+              "risks",
+              "columns",
+              "comparison",
+              "compare",
+              "final recommendation",
+              "list of"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una herramienta de investigación profunda dentro de un ejercicio. No buscas en internet. Responde solo con el PLAN de investigación que seguirías, en texto plano, máximo 8 líneas: sin resultados, sin cifras de precios, sin marcas y sin enlaces. El plan refleja exactamente el encargo: si no plantea una decisión, el plan es un repaso general; si no dice dónde, cuánta plata ni cuándo, el plan cubre el mundo entero y todos los precios; si no dice qué fuentes preferir, no menciones fuentes; si no pide una forma, no digas cómo entregarás el informe. Termina siempre con: '¿Empiezo con este plan o quieres cambiar algo?' Trata al usuario de tú, nunca de vos.",
+        "en": "You're a deep research tool inside an exercise. You don't search the web. Reply with only the research PLAN you'd follow, in plain text, 8 lines max: no results, no prices, no brands and no links. The plan mirrors the brief exactly: if it doesn't pose a decision, the plan is a general overview; if it doesn't say where, how much money or when, the plan covers the whole world and every price range; if it doesn't say which sources to prefer, don't mention sources; if it asks for no format, don't say how you'll deliver the report. Always end with: 'Shall I start with this plan, or do you want to change something?'"
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Plan de investigación:\n1. Qué autonomía necesita un mensajero que recorre 120 km al día en Bogotá.\n2. Cuánto cuesta una moto eléctrica de trabajo frente a los $6.000.000 ahorrados.\n3. Cuánto cuesta cargarla y mantenerla frente a la gasolina.\n4. Riesgos: batería, repuestos y talleres en Bogotá.\nFuentes: oficiales y recientes; sin páginas de concesionarios.\nEntrega: tabla de costos, pros y contras, riesgos y una recomendación.\n¿Empiezo con este plan o quieres cambiar algo?",
+            "en": "Research plan:\n1. How much range a courier riding 75 miles a day in Bogotá needs.\n2. What a work-ready electric motorcycle costs compared with the $1,500 saved.\n3. What charging and upkeep cost compared with gas.\n4. Risks: battery, spare parts and repair shops in Bogotá.\nSources: official and recent; no dealer websites.\nDeliverable: table of costs, pros and cons, risks and a recommendation.\nShall I start with this plan, or do you want to change something?"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Plano derecho. Cada paso sirve para la decisión de Arley, y todavía no se ha gastado ni un minuto cavando.",
+              "en": "A straight plan. Every step serves Arley's decision, and not a single minute has been spent digging yet."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Plan de investigación:\n1. Historia de las motos eléctricas.\n2. Cómo funcionan las baterías de litio.\n3. Las motos eléctricas en el mundo.\n4. Tendencias del transporte sostenible.\n¿Empiezo con este plan o quieres cambiar algo?",
+            "en": "Research plan:\n1. The history of electric motorcycles.\n2. How lithium batteries work.\n3. Electric motorcycles around the world.\n4. Trends in sustainable transport.\nShall I start with this plan, or do you want to change something?"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La pica quiere cavar en todo el planeta. Mira la lista: qué decide Arley, dónde y con cuánto, qué fuentes y en qué forma.",
+              "en": "The pickaxe wants to dig up the whole planet. Check the list: what Arley is deciding, where and with how much, which sources and in what shape."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Mandé otro encargo para Arley y aprobé el plan sin leerlo. Tiene dos partes que lo mandan a cavar en otra mina. Tócalas.",
+          "en": "Confession time. I sent another brief for Arley and approved the plan without reading it. Two parts send it digging in the wrong mine. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "El plan que aprobé sin leer",
+        "en": "The plan I approved unread"
+      },
+      "trozos": [
+        {
+          "es": "1. Precios de motos eléctricas en México.",
+          "en": "1. Electric motorcycle prices in Mexico."
+        },
+        {
+          "es": "2. Autonomía real de las motos eléctricas para trabajo de reparto.",
+          "en": "2. Real-world range of electric motorcycles for delivery work."
+        },
+        {
+          "es": "3. Datos de 2019 a 2021.",
+          "en": "3. Data from 2019 to 2021."
+        },
+        {
+          "es": "4. Entrega: tabla de costos, pros y contras, y riesgos.",
+          "en": "4. Deliverable: table of costs, pros and cons, and risks."
+        }
+      ],
+      "malos": [
+        0,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Arley vive en Bogotá, no en México: otros precios, otros impuestos, otras calles. Y datos de hace cinco años no sirven para una tecnología que cambia tan rápido. Eso se corrige en el plano, antes de cavar.",
+          "en": "You got me. Arley lives in Bogotá, not Mexico: different prices, taxes and streets. And five-year-old data won't do for technology that changes this fast. You fix that on the plan, before digging."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte sí le sirve a Arley. Busca un lugar equivocado y unos años que ya pasaron.",
+          "en": "That part does help Arley. Look for the wrong place and some years that are long gone."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "La herramienta está esperando tu respuesta: \"¿Empiezo con este plan?\". No le digas que sí. Escríbele la corrección.",
+          "en": "The tool is waiting for your answer: \"Shall I start with this plan?\" Don't say yes. Write it the correction."
+        }
+      },
+      "titulo": {
+        "es": "Corrige el plano",
+        "en": "Fix the plan"
+      },
+      "reto": {
+        "es": "La herramienta propuso el plan que acabas de revisar: precios en México y datos de 2019 a 2021. Arley vive en Bogotá y necesita datos recientes. Escribe la corrección antes de que empiece a investigar.",
+        "en": "The tool proposed the plan you just reviewed: prices in Mexico and data from 2019 to 2021. Arley lives in Bogotá and needs recent data. Write the correction before it starts researching."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "parte",
+          "texto": {
+            "es": "Dice qué parte del plan cambiar",
+            "en": "Says which part of the plan to change"
+          },
+          "rubrica": "El prompt señala qué parte del plan hay que cambiar: el país (México), los años (2019 a 2021) o el punto 1 o 3. No cuenta 'cámbialo', 'no me gusta' o 'hazlo mejor' sin decir qué parte.",
+          "claves": {
+            "es": [
+              "mexico",
+              "punto 1",
+              "punto 3",
+              "paso 1",
+              "paso 3",
+              "el 1",
+              "el 3",
+              "2019",
+              "2021",
+              "los anos",
+              "el pais"
+            ],
+            "en": [
+              "mexico",
+              "point 1",
+              "point 3",
+              "step 1",
+              "step 3",
+              "item 1",
+              "item 3",
+              "number 1",
+              "number 3",
+              "2019",
+              "2021",
+              "the years",
+              "the country"
+            ]
+          }
+        },
+        {
+          "id": "correcto",
+          "texto": {
+            "es": "Da el dato correcto",
+            "en": "Gives the right information"
+          },
+          "rubrica": "El prompt da el dato correcto: Bogotá o Colombia en vez de México, y datos recientes (de los últimos dos años, 2025 o 2026) en vez de 2019 a 2021. No cuenta decir solo que está mal sin decir cómo debe quedar.",
+          "claves": {
+            "es": [
+              "bogota",
+              "colombia",
+              "ultimos dos anos",
+              "ultimos 2 anos",
+              "reciente",
+              "2025",
+              "2026",
+              "de este ano",
+              "actuales"
+            ],
+            "en": [
+              "bogota",
+              "colombia",
+              "last two years",
+              "last 2 years",
+              "recent",
+              "2025",
+              "2026",
+              "this year",
+              "current"
+            ]
+          }
+        },
+        {
+          "id": "confirmar",
+          "texto": {
+            "es": "Pide ver el plan antes de empezar",
+            "en": "Asks to see the plan before it starts"
+          },
+          "rubrica": "El prompt pide ver o confirmar el plan corregido antes de empezar a investigar. No cuenta 'corrígelo y sigue' o 'dale', que dejan arrancar sin revisar.",
+          "claves": {
+            "es": [
+              "antes de empezar",
+              "antes de seguir",
+              "antes de investigar",
+              "antes de arrancar",
+              "muestrame el plan",
+              "ensename el plan",
+              "muestrame el nuevo",
+              "confirma",
+              "no empieces",
+              "espera",
+              "primero muestrame",
+              "plan corregido",
+              "plan nuevo"
+            ],
+            "en": [
+              "before you start",
+              "before starting",
+              "before you begin",
+              "before researching",
+              "show me the plan",
+              "show me the new",
+              "show me the updated",
+              "confirm",
+              "don't start",
+              "do not start",
+              "wait",
+              "revised plan",
+              "updated plan",
+              "corrected plan",
+              "new plan"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres la herramienta de investigación profunda del ejercicio. No buscas en internet. Propusiste este plan: 1. Precios de motos eléctricas en México. 2. Autonomía real de las motos eléctricas para trabajo de reparto. 3. Datos de 2019 a 2021. 4. Entrega: tabla de costos, pros y contras, y riesgos. El usuario te escribe una corrección. Responde en texto plano, máximo 7 líneas, solo con el plan corregido: cambia únicamente lo que la corrección pida, sin resultados, precios, marcas ni enlaces. Si la corrección no dice qué parte cambiar ni cómo debe quedar, deja el plan igual y pregunta qué quiere cambiar. Si el usuario pide ver el plan antes de empezar, termina con: '¿Empiezo con este plan?'. Si no lo pide, termina con: 'Listo, empiezo a investigar.' Trata al usuario de tú, nunca de vos.",
+        "en": "You're the exercise's deep research tool. You don't search the web. You proposed this plan: 1. Electric motorcycle prices in Mexico. 2. Real-world range of electric motorcycles for delivery work. 3. Data from 2019 to 2021. 4. Deliverable: table of costs, pros and cons, and risks. The user writes you a correction. Reply in plain text, 7 lines max, with only the corrected plan: change only what the correction asks for, with no results, prices, brands or links. If the correction doesn't say which part to change or how it should be, keep the plan as is and ask what they want to change. If the user asks to see the plan before you start, end with: 'Shall I start with this plan?' If not, end with: 'All set, starting the research.'"
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Plan corregido:\n1. Precios de motos eléctricas en Bogotá.\n2. Autonomía real de las motos eléctricas para trabajo de reparto.\n3. Datos de los últimos dos años.\n4. Entrega: tabla de costos, pros y contras, y riesgos.\n¿Empiezo con este plan?",
+            "en": "Corrected plan:\n1. Electric motorcycle prices in Bogotá.\n2. Real-world range of electric motorcycles for delivery work.\n3. Data from the last two years.\n4. Deliverable: table of costs, pros and cons, and risks.\nShall I start with this plan?"
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Plano corregido y la pica quieta hasta que tú digas. Así se cava en la veta correcta.",
+              "en": "Plan fixed, and the pickaxe stays still until you say so. That's how you dig the right vein."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Plan de investigación:\n1. Precios de motos eléctricas en México.\n2. Autonomía real de las motos eléctricas para trabajo de reparto.\n3. Datos de 2019 a 2021.\nListo, empiezo a investigar.",
+            "en": "Research plan:\n1. Electric motorcycle prices in Mexico.\n2. Real-world range of electric motorcycles for delivery work.\n3. Data from 2019 to 2021.\nAll set, starting the research."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Uy, arrancó a cavar en México. Mira la lista: qué parte cambiar, cómo debe quedar y que te muestre el plan antes de empezar.",
+              "en": "Uh-oh, it started digging in Mexico. Check the list: which part to change, how it should read, and to show you the plan before starting."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Un dato de hoy, con fecha. Lo reviso cada semana, porque estas herramientas cambian seguido.",
+          "en": "Today's facts, with a date. I check this every week, because these tools change often."
+        }
+      },
+      "titulo": {
+        "es": "El plano hoy",
+        "en": "The plan today"
+      },
+      "texto": {
+        "es": "A la fecha, ChatGPT y Gemini te muestran el plan de su investigación profunda antes de empezar, y te dejan cambiarlo. Cuántas investigaciones puedes hacer depende del plan que pagues, y eso cambia. Si tu herramienta no muestra el plan, pídele que te lo muestre primero.",
+        "en": "As of this date, ChatGPT and Gemini show you the plan for their deep research before starting, and let you change it. How many research jobs you get depends on your plan, and that changes. If your tool doesn't show the plan, ask it to show you first."
+      },
+      "revisado": "2026-09-26"
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué lleva un buen encargo de investigación, como se lo explicarías a Arley.",
+          "en": "Logbook time. Write in your own words what a good research brief includes, the way you'd explain it to Arley."
+        }
+      },
+      "concepto": "plan-de-investigacion",
+      "definicion": {
+        "es": "El encargo de una investigación profunda dice la pregunta de decisión, el alcance, qué fuentes preferir y la forma del informe. Antes de que empiece, revisas su plan y lo corriges.",
+        "en": "A deep research brief states the decision question, the scope, which sources to prefer and the shape of the report. Before it starts, you review its plan and fix it."
+      },
+      "pregunta": {
+        "es": "Un buen encargo de investigación…",
+        "en": "A good research brief…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "investigaciones",
+        "en": "research briefs"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu encargo ya vive en tu bitácora. La próxima vez que tengas que decidir algo grande, cambias los datos y listo.",
+          "en": "Saved. Your brief now lives in your logbook. Next time you have a big decision, swap in the details and you're set."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y guardamos las herramientas.",
+          "en": "Two questions and we put the tools away."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuándo es más barato corregir una investigación profunda?",
+            "en": "When is it cheapest to fix a deep research job?"
+          },
+          "opciones": [
+            {
+              "es": "En el plan, antes de que empiece",
+              "en": "In the plan, before it starts"
+            },
+            {
+              "es": "En el informe, cuando ya terminó",
+              "en": "In the report, once it's done"
+            },
+            {
+              "es": "Nunca: lo que entrega es lo que hay",
+              "en": "Never: what it delivers is what you get"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Corregir el plan toma un minuto; el informe, volver a empezar.",
+              "en": "Right. Fixing the plan takes a minute; the report means starting over."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Acuérdate de mi plan en México. ¿Cuándo se podía arreglar sin perder tiempo?",
+              "en": "Remember my plan in Mexico? When could it be fixed without wasting time?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué encargo le sirve más a Arley?",
+            "en": "Which brief helps Arley most?"
+          },
+          "opciones": [
+            {
+              "es": "Investiga todo sobre motos eléctricas",
+              "en": "Research everything about electric motorcycles"
+            },
+            {
+              "es": "¿Me conviene moto eléctrica en Bogotá con $6.000.000? Fuentes recientes y tabla de costos",
+              "en": "Electric motorcycle for work in Bogotá on $1,500: worth it? Recent sources, cost table"
+            },
+            {
+              "es": "Dame la mejor moto eléctrica del mercado",
+              "en": "Give me the best electric motorcycle on the market"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Decisión, alcance, fuentes y forma, en dos líneas.",
+              "en": "Exactly. Decision, scope, sources and shape, in two lines."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Repasa las cuatro piezas del encargo: ¿cuál opción las trae?",
+              "en": "Go over the four pieces of the brief: which option has them?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "El plan de investigación",
+        "en": "The research plan"
+      },
+      "resumen": {
+        "es": "Un encargo con pregunta, alcance, fuentes y forma, y un plan que corriges antes de que la investigación empiece.",
+        "en": "A brief with a question, scope, sources and shape, and a plan you fix before the research starts."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05",
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste un plan que cava en todo y uno que cava lo que sirve",
+          "en": "You saw a plan that digs everywhere and one that digs what matters"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Escribiste el encargo de Arley",
+          "en": "You wrote Arley's brief"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste el país y los años equivocados",
+          "en": "You caught the wrong country and the wrong years"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Corregiste el plan antes de que empezara",
+          "en": "You fixed the plan before it started"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "encargar-investigacion",
+      "titulo": {
+        "es": "Encargar una investigación",
+        "en": "Briefing a research job"
+      }
+    }
+  }
+}

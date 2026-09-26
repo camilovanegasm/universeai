@@ -1,0 +1,886 @@
+{
+  "formato": "punti-mision@1",
+  "id": "lo-que-no-se-transmite",
+  "mundo": "prompts",
+  "capitulo": 2,
+  "numero": 8,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "datos-sensibles"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "contexto"
+  ],
+  "titulo": {
+    "es": "Lo que no se transmite",
+    "en": "What Stays Off the Air"
+  },
+  "resumen": {
+    "es": "Qué datos no se le pegan a una IA y cómo pedir ayuda igual, con marcadores y rangos.",
+    "en": "Which data never goes into an AI, and how to still get help with placeholders and ranges."
+  },
+  "siguiente": "esta-respuesta-sirve",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, alerta en el taller de interferencias. Es Don Wilson, el administrador de un conjunto residencial. Está a punto de pegarle a una IA la lista de los que deben la cuota, con cédulas y celulares. Hay que frenarlo antes de que transmita.",
+          "en": "Pilot, alert in the interference workshop. It's Don Wilson, who manages an apartment complex. He's about to paste his list of residents behind on fees into an AI, ID numbers and phone numbers included. We need to stop him before he transmits."
+        }
+      },
+      "titulo": {
+        "es": "Lo que no se transmite",
+        "en": "What Stays Off the Air"
+      },
+      "texto": {
+        "es": "Hoy ves qué datos no se le pegan a una IA y cómo pedir ayuda igual, sin soltarlos. Seguimos en el taller de interferencias. Unos 8 minutos.",
+        "en": "Today you'll see which data never goes into an AI, and how to still get help without giving it away. We're still in the interference workshop. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, la lista roja del taller. Estos datos no se transmiten, ni los tuyos ni los de otros.",
+          "en": "First, the workshop's red list. This data doesn't get transmitted, yours or anyone else's."
+        }
+      },
+      "titulo": {
+        "es": "La lista roja",
+        "en": "The red list"
+      },
+      "texto": {
+        "es": "Lo que escribes en un chat de IA viaja a los computadores de la empresa que lo ofrece. Según el servicio y cómo lo tengas configurado, puede quedar guardado, lo puede leer una persona que revisa o se puede usar para mejorar la IA. No tienes que saberte cada política: el hábito seguro es no transmitir estos datos.",
+        "en": "What you type into an AI chat travels to the computers of the company that runs it. Depending on the service and your settings, it may be stored, read by a human reviewer or used to improve the AI. You don't need to memorize every policy: the safe habit is to keep this data out."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "No se transmite",
+            "en": "Stays off the air"
+          },
+          "b": {
+            "es": "Por ejemplo",
+            "en": "For example"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Quién eres, con números",
+              "en": "Who you are, with numbers"
+            },
+            "b": {
+              "es": "Nombre completo con cédula, teléfono o dirección",
+              "en": "Full name with ID number, phone or address"
+            }
+          },
+          {
+            "a": {
+              "es": "Claves y códigos",
+              "en": "Passwords and codes"
+            },
+            "b": {
+              "es": "Contraseñas, el código que te llega por mensaje",
+              "en": "Passwords, the code you get by text"
+            }
+          },
+          {
+            "a": {
+              "es": "Plata",
+              "en": "Money"
+            },
+            "b": {
+              "es": "Números de cuenta o de tarjeta, extractos",
+              "en": "Account or card numbers, bank statements"
+            }
+          },
+          {
+            "a": {
+              "es": "Salud",
+              "en": "Health"
+            },
+            "b": {
+              "es": "Historia clínica, exámenes con nombre",
+              "en": "Medical records, test results with a name on them"
+            }
+          },
+          {
+            "a": {
+              "es": "Lo privado de otros",
+              "en": "Other people's private stuff"
+            },
+            "b": {
+              "es": "Chats, datos o problemas de otra persona",
+              "en": "Someone else's chats, data or problems"
+            }
+          },
+          {
+            "a": {
+              "es": "Lo confidencial del trabajo",
+              "en": "Confidential work info"
+            },
+            "b": {
+              "es": "Listas de clientes, contratos, cifras internas",
+              "en": "Client lists, contracts, internal figures"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Don Wilson tiene varias cosas a la mano para su pedido. ¿Cuáles se pueden transmitir y cuáles se quedan en tierra?",
+          "en": "Your turn. Don Wilson has a few things handy for his request. Which ones can be transmitted, and which stay on the ground?"
+        }
+      },
+      "titulo": {
+        "es": "¿Se transmite o no?",
+        "en": "Transmit or not?"
+      },
+      "grupos": [
+        {
+          "id": "no",
+          "titulo": {
+            "es": "Se queda en tierra",
+            "en": "Stays on the ground"
+          }
+        },
+        {
+          "id": "si",
+          "titulo": {
+            "es": "Se puede transmitir",
+            "en": "Can be transmitted"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "La cédula de un residente, para ponerla en una carta",
+            "en": "A resident's ID number, to put in a letter"
+          }
+        },
+        {
+          "grupo": "si",
+          "texto": {
+            "es": "Que el conjunto tiene 80 apartamentos y una piscina",
+            "en": "That the complex has 80 apartments and a pool"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "El código de 6 números que le llegó por mensaje de texto",
+            "en": "The 6-digit code he just got by text message"
+          }
+        },
+        {
+          "grupo": "si",
+          "texto": {
+            "es": "Que la cuota de administración subió este año",
+            "en": "That the building fee went up this year"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "Una foto de la tarjeta débito del conjunto, para que la IA revise un cobro",
+            "en": "A photo of the building's debit card, so the AI can check a charge"
+          }
+        },
+        {
+          "grupo": "si",
+          "texto": {
+            "es": "Un borrador de carta que dice [nombre] donde va el nombre",
+            "en": "A draft letter that says [name] where the name goes"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Las seis en su lugar. Lo que identifica a alguien o abre una cuenta se queda en tierra. Lo demás puede volar.",
+          "en": "All six in place. Anything that identifies someone or opens an account stays on the ground. The rest can fly."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, míralo otra vez. ¿Ese dato identifica a una persona o abre una cuenta?",
+          "en": "Hmm, look again. Does that identify a person or open an account?"
+        }
+      },
+      "malPorGrupo": {
+        "si": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Con ese dato, ¿alguien podría saber quién es una persona o entrar a una cuenta? Si no, puede volar.",
+            "en": "Close. With that, could someone tell who a person is or get into an account? If not, it can fly."
+          }
+        },
+        "no": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Revisa la lista roja: números que identifican, claves, datos de plata. ¿Este trae alguno?",
+            "en": "Close. Check the red list: identifying numbers, passwords, money details. Does this one have any?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto iba a pegar Don Wilson (los datos son inventados) y esto le devolvió la IA. Abajo está el mismo pedido, sin soltar datos.",
+          "en": "Here's what Don Wilson was about to paste (the data is made up) and what the AI sent back. Below is the same request, without giving data away."
+        }
+      },
+      "titulo": {
+        "es": "El cobro, sin soltar datos",
+        "en": "The reminder, minus the data"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Escribe un mensaje de cobro para Fulana de Tal, C.C. 12.345.678, cel. 300 123 4567, apto 301. Debe $963.000 de administración.",
+          "en": "Write a payment reminder for Jane Doe, ID 12345678, cell (555) 010-0147, apt 301. She owes $963 in building fees."
+        },
+        "salida": {
+          "es": "Señora Fulana de Tal, C.C. 12.345.678, apartamento 301:\nLe recordamos que tiene un saldo pendiente de $963.000 por concepto de administración.\nPara cualquier inquietud, comuníquese al 300 123 4567.\nAtentamente, la Administración",
+          "en": "Ms. Jane Doe, ID 12345678, apartment 301:\nThis is to remind you of an outstanding balance of $963 in building fees.\nFor any questions, please call (555) 010-0147.\nSincerely, Building Management"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "conserva",
+            "texto": {
+              "es": "Soy el administrador de un conjunto residencial. ",
+              "en": "I manage an apartment complex. "
+            }
+          },
+          {
+            "pieza": "marcadores",
+            "texto": {
+              "es": "Escribe un recordatorio amable para [nombre], del apartamento [apto]. ",
+              "en": "Write a friendly reminder for [name], in apartment [apt]. "
+            }
+          },
+          {
+            "pieza": "rangos",
+            "texto": {
+              "es": "Lleva unos meses atrasado en la cuota de administración. ",
+              "en": "They're a few months behind on building fees. "
+            }
+          },
+          {
+            "pieza": "conserva",
+            "texto": {
+              "es": "Es para WhatsApp: máximo 4 líneas.",
+              "en": "It's for WhatsApp: 4 lines max."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Hola, [nombre]. Le escribe la administración del conjunto.\nLe recordamos que el apartamento [apto] tiene cuotas de administración pendientes.\nSi necesita un acuerdo de pago, escríbanos.\nGracias.",
+          "en": "Hi, [name]. This is building management.\nJust a reminder that apartment [apt] has some building fees pending.\nIf you need a payment plan, message us.\nThanks."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira lo que ya no está: la cédula y el teléfono. Para un recordatorio no hacían falta. El nombre y el apartamento van como marcadores, y Don Wilson los llena en su celular antes de enviar.",
+          "en": "Look at what's gone: the ID number and the phone. A reminder didn't need them. The name and apartment are placeholders, and Don Wilson fills them in on his phone before sending."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Para pedir ayuda sin soltar datos hay cuatro movimientos. Sirven en cualquier pedido, no solo en los cobros. Toca cada uno.",
+          "en": "There are four moves for getting help without giving data away. They work in any request, not just payment reminders. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Pedir sin soltar datos",
+        "en": "Asking without giving data"
+      },
+      "piezas": [
+        {
+          "id": "quita",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Quita lo que sobra",
+            "en": "Cut what's extra"
+          },
+          "descripcion": {
+            "es": "Cédulas, teléfonos y claves casi nunca hacen falta.",
+            "en": "ID numbers, phones and passwords are almost never needed."
+          },
+          "ejemplo": {
+            "es": "Para escribir un recordatorio, la IA no necesita la cédula de nadie. Si no le sirve a la IA, no lo pegues.",
+            "en": "To write a reminder, the AI doesn't need anyone's ID number. If the AI can't use it, don't paste it."
+          }
+        },
+        {
+          "id": "marcadores",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Pon marcadores",
+            "en": "Use placeholders"
+          },
+          "descripcion": {
+            "es": "Cambia nombres por [nombre], [apto] o [cliente].",
+            "en": "Swap names for [name], [apt] or [client]."
+          },
+          "ejemplo": {
+            "es": "La IA escribe alrededor de [nombre] y tú lo reemplazas al final. El dato real se queda contigo.",
+            "en": "The AI writes around [name] and you fill it in at the end. The real data stays with you."
+          }
+        },
+        {
+          "id": "rangos",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Usa rangos",
+            "en": "Use ranges"
+          },
+          "descripcion": {
+            "es": "Aproximados en vez de cifras y fechas exactas.",
+            "en": "Rough numbers instead of exact figures and dates."
+          },
+          "ejemplo": {
+            "es": "\"Debe más de un millón\" o \"unos meses\" le sirven igual a la IA para escribir el mensaje.",
+            "en": "\"Owes over a thousand\" or \"a few months\" works just as well for the AI to write the message."
+          }
+        },
+        {
+          "id": "conserva",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Deja el contexto",
+            "en": "Keep the context"
+          },
+          "descripcion": {
+            "es": "Quién eres, qué necesitas y para quién es.",
+            "en": "Who you are, what you need and who it's for."
+          },
+          "ejemplo": {
+            "es": "Quitar datos no es quitarlo todo. Sin \"soy el administrador\" ni \"es para WhatsApp\", la respuesta sale floja.",
+            "en": "Cutting data doesn't mean cutting everything. Without \"I manage the building\" or \"it's for WhatsApp,\" the answer comes out weak."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Otro residente, otro cobro. Reescribe el pedido para que la IA pueda ayudar sin que viaje ningún dato. Aquí todo es inventado, y tu versión tampoco lleva datos reales.",
+          "en": "Your turn to transmit. Another resident, another reminder. Rewrite the request so the AI can help without any data traveling. Everything here is made up, and your version shouldn't have real data either."
+        }
+      },
+      "titulo": {
+        "es": "El cobro del 502",
+        "en": "The reminder for 502"
+      },
+      "reto": {
+        "es": "Don Wilson iba a pegar esto (todo es inventado): \"Escribe un recordatorio amable por WhatsApp para Pepito Pérez, C.C. 98.765.432, cel. 300 987 6543, apto 502. Debe $1.284.000 de administración desde junio.\" Reescríbelo sin datos que identifiquen a nadie, pero que la IA igual pueda ayudar.",
+        "en": "Don Wilson was about to paste this (it's all made up): \"Write a friendly WhatsApp reminder for John Doe, ID 98765432, cell (555) 010-0192, apt 502. He owes $1,284 in building fees since June.\" Rewrite it with no data that identifies anyone, but so the AI can still help."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "quita",
+          "texto": {
+            "es": "Sin cédula, teléfono ni nombre completo",
+            "en": "No ID number, phone or full name"
+          },
+          "rubrica": "El prompt ya no trae ninguno de los datos que identifican al residente del reto: ni el nombre (Pepito Pérez en español, John Doe en inglés), ni la cédula, ni el celular; se refiere a él de forma general ('un residente', 'el propietario', [nombre]). No cuenta si alguno de esos datos sigue en el prompt, aunque sea en parte (solo el nombre o solo el apellido, algunos dígitos de la cédula o del teléfono), ni si los cambia por otros datos que parecen reales.",
+          "claves": {
+            "es": [
+              "un residente",
+              "una residente",
+              "el residente",
+              "la residente",
+              "al residente",
+              "un propietario",
+              "una propietaria",
+              "el propietario",
+              "un vecino",
+              "una vecina",
+              "[nombre",
+              "(nombre",
+              "{nombre",
+              "[residente",
+              "[propietario"
+            ],
+            "en": [
+              "a resident",
+              "the resident",
+              "a tenant",
+              "the tenant",
+              "an owner",
+              "the owner",
+              "a neighbor",
+              "the neighbor",
+              "[name",
+              "(name",
+              "{name",
+              "[resident",
+              "[tenant",
+              "[owner"
+            ]
+          }
+        },
+        {
+          "id": "marcadores",
+          "texto": {
+            "es": "Marcadores en vez de datos",
+            "en": "Placeholders instead of data"
+          },
+          "rubrica": "El prompt usa al menos un marcador en el lugar de un dato personal, para llenarlo después: [nombre], [apto], [residente], {nombre}, (nombre) o XXX. No cuenta si junto al marcador sigue el dato real (el nombre, la cédula o el teléfono del reto), ni describir a la persona sin dejarle un lugar al dato ('un residente' solo no es un marcador).",
+          "claves": {
+            "es": [
+              "[",
+              "{",
+              "(nombre",
+              "(apto",
+              "xxx",
+              "fulano"
+            ],
+            "en": [
+              "[",
+              "{",
+              "(name",
+              "(apt",
+              "xxx",
+              "so-and-so"
+            ]
+          }
+        },
+        {
+          "id": "rangos",
+          "texto": {
+            "es": "Rangos en vez de cifras exactas",
+            "en": "Ranges instead of exact figures"
+          },
+          "rubrica": "El prompt cambia el valor exacto de la deuda o la fecha por algo aproximado o por un marcador: 'más de un millón', 'unos meses', 'varios meses', [valor], [fecha]. No cuenta si deja el valor exacto del reto (1.284.000 en español, 1,284 en inglés) o 'desde junio' tal cual, ni si simplemente no dice nada de la deuda.",
+          "claves": {
+            "es": [
+              "mas de un millon",
+              "un millon largo",
+              "como un millon",
+              "mas o menos",
+              "un poco mas de",
+              "alrededor de",
+              "cerca de",
+              "aproximad",
+              "unos meses",
+              "varios meses",
+              "algunos meses",
+              "hace meses",
+              "hace unos",
+              "[valor",
+              "[monto",
+              "[deuda",
+              "[cantidad",
+              "[saldo",
+              "[fecha",
+              "[mes"
+            ],
+            "en": [
+              "over $1,000",
+              "more than $1,000",
+              "over a thousand",
+              "more than a thousand",
+              "about a thousand",
+              "around a thousand",
+              "more or less",
+              "around $",
+              "about $",
+              "roughly",
+              "approximately",
+              "a few months",
+              "several months",
+              "a couple of months",
+              "for months",
+              "[amount",
+              "[total",
+              "[balance",
+              "[date",
+              "[month",
+              "[sum"
+            ]
+          }
+        },
+        {
+          "id": "conserva",
+          "texto": {
+            "es": "Deja el contexto útil",
+            "en": "Keeps the useful context"
+          },
+          "rubrica": "El prompt conserva lo que la IA necesita para ayudar: de qué se trata el mensaje (un recordatorio de la cuota de administración atrasada) y, si quiere, quién escribe (el administrador del conjunto), el tono o que es para WhatsApp. No cuenta un prompt que quedó solo con marcadores sin decir de qué se trata ('escribe un mensaje para [nombre]'), ni 'para WhatsApp' o 'amable' si no dice que es un recordatorio de la cuota.",
+          "claves": {
+            "es": [
+              "recordatorio",
+              "recordarle",
+              "recuerde",
+              "cuota",
+              "administracion",
+              "administrador",
+              "atrasad",
+              "pendiente",
+              "conjunto",
+              "edificio"
+            ],
+            "en": [
+              "reminder",
+              "remind",
+              "fee",
+              "hoa",
+              "building",
+              "apartment complex",
+              "overdue",
+              "behind on",
+              "past due",
+              "manager"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a escribir mensajes para residentes de un conjunto. Responde solo con el mensaje pedido, sin explicaciones ni advertencias. Usa exactamente lo que trae el prompt: si trae marcadores como [nombre], [apto] o [valor], déjalos tal cual en el mensaje; si trae nombres, cédulas, teléfonos o cifras, cópialos en el mensaje. No inventes nombres, cifras, fechas ni datos de contacto. Si el prompt no dice de qué se trata el mensaje, escribe algo genérico y formal.",
+        "en": "You are an AI that helps write messages for residents of an apartment complex. Reply only with the requested message, with no explanations or warnings. Use exactly what the prompt gives you: if it has placeholders like [name], [apt] or [amount], keep them as they are in the message; if it has names, ID numbers, phone numbers or figures, copy them into the message. Don't make up names, figures, dates or contact details. If the prompt doesn't say what the message is about, write something generic and formal."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, [nombre]. Le escribe la administración del conjunto.\nLe recordamos que el apartamento [apto] lleva unos meses atrasado en la cuota de administración.\nSi necesita un acuerdo de pago, escríbanos.\nGracias.",
+            "en": "Hi, [name]. This is building management.\nJust a reminder that apartment [apt] is a few months behind on building fees.\nIf you need a payment plan, message us.\nThanks."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Transmisión segura. La IA armó el recordatorio completo y no viajó ni una cédula ni un teléfono. Los marcadores los llena Don Wilson al final.",
+              "en": "Safe transmission. The AI wrote the whole reminder and not one ID number or phone number traveled. Don Wilson fills in the placeholders at the end."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Señor Pepito Pérez, C.C. 98.765.432, apartamento 502:\nLe recordamos que adeuda $1.284.000 por concepto de administración desde junio.\nContacto registrado: 300 987 6543.\nAtentamente, la Administración",
+            "en": "Mr. John Doe, ID 98765432, apartment 502:\nThis is to remind you that you owe $1,284 in building fees since June.\nContact on file: (555) 010-0192.\nSincerely, Building Management"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Uy, el mensaje salió, pero con los datos adentro: ya viajaron. Mira la lista: quita lo que sobra, pon marcadores, usa rangos y deja el contexto que sirve.",
+              "en": "Uh-oh, the message came out, but with the data inside: it already traveled. Check the list: cut what's extra, use placeholders and ranges, and keep the useful context."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Otra confesión del taller. Ayer le ayudé a Beatriz, que cuida a su mamá, a pedirle a la IA una tabla con los horarios de las pastillas. Dos de mis frases soltaron datos que no hacían falta. Tócalas.",
+          "en": "Another workshop confession. Yesterday I helped Beatriz, who looks after her mom, ask an AI for a table of her pill schedule. Two of my sentences gave away data that wasn't needed. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Los datos que solté",
+        "en": "The data I gave away"
+      },
+      "trozos": [
+        {
+          "es": "Organiza en una tabla los horarios de las pastillas de mi mamá.",
+          "en": "Put my mom's pill schedule into a table."
+        },
+        {
+          "es": "Toma una pastilla para la presión a las 7 a. m. y otra a las 9 p. m.",
+          "en": "She takes a blood pressure pill at 7 a.m. and another one at 9 p.m."
+        },
+        {
+          "es": "Su cédula, con la que está afiliada a la EPS, es 1.098.765.432.",
+          "en": "Her ID number, the one on her health insurance, is 1098765432."
+        },
+        {
+          "es": "Te pego su historia clínica completa para que tengas contexto.",
+          "en": "Here's her full medical record so you have context."
+        },
+        {
+          "es": "Que la tabla sea fácil de leer y se pueda imprimir.",
+          "en": "Make the table easy to read and printable."
+        }
+      ],
+      "malos": [
+        2,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Para una tabla de horarios no hacía falta la cédula ni la historia clínica. Con \"una pastilla para la presión\" la IA ya tenía lo que necesitaba.",
+          "en": "You got me. A pill schedule didn't need her ID number or her medical record. With \"a blood pressure pill\" the AI already had what it needed."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa frase le sirve a la IA para armar la tabla. Busca las que traen datos que la tabla no necesita.",
+          "en": "That one helps the AI build the table. Look for the ones with data the table doesn't need."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Una nota para tu bitácora: ¿qué es un dato sensible? Explícalo con tus palabras, como para que a Don Wilson no se le olvide nunca.",
+          "en": "A note for your logbook: what is sensitive data? Explain it in your own words, so Don Wilson never forgets."
+        }
+      },
+      "concepto": "datos-sensibles",
+      "definicion": {
+        "es": "Datos que no se le pegan a una IA: cédulas, teléfonos, direcciones, claves, datos de plata o de salud, lo privado de otros y lo confidencial del trabajo. Se quitan o se cambian por marcadores.",
+        "en": "Data you don't paste into an AI: ID numbers, phones, addresses, passwords, money or health details, other people's private info and confidential work info. Cut it or swap it for placeholders."
+      },
+      "pregunta": {
+        "es": "Un dato sensible es…",
+        "en": "Sensitive data is…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "pedir sin datos",
+        "en": "asking without data"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de datos sensibles y tu pedido sin datos quedaron en tu bitácora, que no viaja a ninguna parte. Te los recuerdo en el repaso.",
+          "en": "Saved. Your Sensitive Data card and your data-free request are in your logbook, which doesn't travel anywhere. I'll remind you in your review."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y apagamos la alarma.",
+          "en": "Three questions and we switch off the alarm."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Quieres que la IA te ayude a entender un correo de tu banco. ¿Qué le pegas?",
+            "en": "You want the AI to help you understand an email from your bank. What do you paste?"
+          },
+          "opciones": [
+            {
+              "es": "El correo completo, con tu número de cuenta",
+              "en": "The whole email, account number included"
+            },
+            {
+              "es": "El correo, con [cuenta] donde iba el número",
+              "en": "The email, with [account] where the number was"
+            },
+            {
+              "es": "Una foto de tu tarjeta, para que entienda mejor",
+              "en": "A photo of your card, so it understands better"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. La IA entiende el correo igual, y el número se queda contigo.",
+              "en": "Right. The AI understands the email just the same, and the number stays with you."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Para explicar el correo, ¿la IA necesita de verdad ese número?",
+              "en": "Hmm. To explain the email, does the AI really need that number?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Por qué es mejor no pegar datos sensibles en un chat de IA?",
+            "en": "Why is it better not to paste sensitive data into an AI chat?"
+          },
+          "opciones": [
+            {
+              "es": "Porque la IA los publica en internet",
+              "en": "Because the AI posts them online"
+            },
+            {
+              "es": "Porque, según el servicio, pueden guardarse o revisarse",
+              "en": "Because, depending on the service, they may be stored or reviewed"
+            },
+            {
+              "es": "Porque la IA no entiende los números",
+              "en": "Because the AI can't understand numbers"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Cada servicio tiene sus reglas. El hábito seguro sirve con todos.",
+              "en": "Exactly. Every service has its own rules. The safe habit works with all of them."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No tan rápido. Piensa a dónde viaja lo que escribes y quién decide qué pasa con eso.",
+              "en": "Not so fast. Think about where your text travels and who decides what happens to it."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Cambiaste todos los datos por marcadores y la respuesta salió floja. ¿Qué faltó?",
+            "en": "You swapped all the data for placeholders and the answer came out weak. What was missing?"
+          },
+          "opciones": [
+            {
+              "es": "Pegar la cédula para que la IA entienda",
+              "en": "Pasting the ID number so the AI gets it"
+            },
+            {
+              "es": "Dejar el contexto: quién eres, qué necesitas, para quién",
+              "en": "Keeping the context: who you are, what you need, who it's for"
+            },
+            {
+              "es": "Nada: sin datos, la IA no sirve",
+              "en": "Nothing: without data, AI is useless"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Se quitan los datos, no el contexto.",
+              "en": "Yes. You cut the data, not the context."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mira los cuatro movimientos. ¿Cuál es el que no se debe olvidar al quitar datos?",
+              "en": "Look at the four moves. Which one shouldn't you forget when cutting data?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Datos sensibles",
+        "en": "Sensitive data"
+      },
+      "resumen": {
+        "es": "Datos que no se le pegan a una IA. Se quitan o se cambian por marcadores y rangos, y se deja el contexto útil.",
+        "en": "Data you don't paste into an AI. Cut it or swap it for placeholders and ranges, and keep the useful context."
+      }
+    },
+    "piezas": "b05",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Separaste lo que se transmite de lo que se queda en tierra",
+          "en": "You sorted what gets transmitted from what stays on the ground"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Viste el cobro de Don Wilson sin un solo dato",
+          "en": "You saw Don Wilson's reminder without a single data point"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Reescribiste el pedido del 502 sin soltar datos",
+          "en": "You rewrote the 502 request without giving data away"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste los dos datos que yo solté",
+          "en": "You caught the two pieces of data I gave away"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-sin-datos",
+      "titulo": {
+        "es": "Pedir ayuda sin soltar datos",
+        "en": "Getting help without giving data"
+      }
+    }
+  }
+}

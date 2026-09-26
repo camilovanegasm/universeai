@@ -1,0 +1,796 @@
+{
+  "formato": "punti-mision@1",
+  "id": "las-manos-detras-de-los-datos",
+  "mundo": "como-se-construye",
+  "capitulo": 1,
+  "numero": 3,
+  "receta": "construccion",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "etiquetado"
+  ],
+  "usaConceptos": [
+    "aprendizaje-supervisado",
+    "cadena-de-construccion"
+  ],
+  "titulo": {
+    "es": "Las manos detrás de los datos",
+    "en": "The Hands Behind the Data"
+  },
+  "resumen": {
+    "es": "Etiquetar datos: escribir una guía clara para que todas las personas del equipo clasifiquen igual.",
+    "en": "Labeling data: writing a clear guide so everyone on the team labels the same way."
+  },
+  "siguiente": "basura-entra-basura-sale",
+  "fuentes": [
+    {
+      "titulo": "MIT Technology Review: How the AI industry profits from catastrophe (Karen Hao y Andrea Paola Hernández, 20 abr. 2022)",
+      "url": "https://www.technologyreview.com/2022/04/20/1050392/ai-industry-appen-scale-data-labels/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Global Voices: Latin America: Uncovering the hidden human workforce behind AI (5 oct. 2024)",
+      "url": "https://globalvoices.org/2024/10/05/latin-america-uncovering-the-hidden-human-workforce-behind-ai/",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, en la mina no todo lo hacen máquinas. Aquí trabajan mineros humanos: los que etiquetan. Llegó una señal de Barranquilla: el equipo de Yessica no se pone de acuerdo.",
+          "en": "Pilot, not everything in the mine is done by machines. Human miners work here too: the labelers. A signal came in from Barranquilla: Yessica's team can't agree."
+        }
+      },
+      "titulo": {
+        "es": "Las manos detrás de los datos",
+        "en": "The Hands Behind the Data"
+      },
+      "texto": {
+        "es": "Yessica, 27, etiqueta datos desde su casa para empresas de IA de otros países. Le toca clasificar mensajes de clientes y cada compañera lo hace distinto. Hoy escribes una guía de etiquetado clara. Unos 10 minutos.",
+        "en": "Yessica, 27, labels data from home for AI companies abroad. Her job is sorting customer messages, and every teammate sorts them differently. Today you'll write a clear labeling guide. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué es eso de etiquetar. Te va a sonar al solucionario de Origen.",
+          "en": "First, what labeling actually is. It'll remind you of the answer key from Origin."
+        }
+      },
+      "titulo": {
+        "es": "El solucionario lo escriben personas",
+        "en": "People write the answer key"
+      },
+      "texto": {
+        "es": "Etiquetar es ponerle a cada dato su respuesta: esta foto es un gato, este mensaje es una queja. Con esas respuestas aprende la IA. También hay personas que califican respuestas de IA, una por una. Sin ellas no hay modelo. En América Latina es un trabajo real, casi siempre por internet y desde la casa, como el de Yessica.",
+        "en": "Labeling means giving each piece of data its answer: this photo is a cat, this message is a complaint. That's what the AI learns from. Other people rate AI answers, one by one. Without them, there's no model. In Latin America it's real work, usually online and from home, like Yessica's."
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Mira la guía que le dieron al equipo de Yessica y lo que pasó. Después mira la guía arreglada.",
+          "en": "Look at the guide Yessica's team was given and what happened. Then look at the fixed guide."
+        }
+      },
+      "titulo": {
+        "es": "Dos guías, un mismo mensaje",
+        "en": "Two guides, one message"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Guía: clasifica cada mensaje como queja, pregunta, pedido u otro.",
+          "en": "Guide: label each message as complaint, question, request or other."
+        },
+        "salida": {
+          "es": "Mensaje: \"Me cobraron dos veces, ¿me devuelven la plata?\"\nEtiquetadora 1: queja\nEtiquetadora 2: pregunta\nEtiquetadora 3: pedido",
+          "en": "Message: \"You charged me twice, can I get my money back?\"\nLabeler 1: complaint\nLabeler 2: question\nLabeler 3: request"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "definicion",
+            "texto": {
+              "es": "Queja: el cliente dice que algo salió mal. Pregunta: solo pide información. Pedido: pide que hagan algo. ",
+              "en": "Complaint: the customer says something went wrong. Question: only asks for information. Request: asks you to do something. "
+            }
+          },
+          {
+            "pieza": "ejemplo",
+            "texto": {
+              "es": "Ejemplo de queja: \"Me llegó un cobro que no hice\". ",
+              "en": "Complaint example: \"There's a charge on my bill I didn't make.\" "
+            }
+          },
+          {
+            "pieza": "dudosos",
+            "texto": {
+              "es": "Si un mensaje trae una queja y algo más, es queja. Si no cabe en ninguna, es otro.",
+              "en": "If a message has a complaint plus something else, it's a complaint. If it fits none, it's other."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Mensaje: \"Me cobraron dos veces, ¿me devuelven la plata?\"\nEtiquetadora 1: queja\nEtiquetadora 2: queja\nEtiquetadora 3: queja",
+          "en": "Message: \"You charged me twice, can I get my money back?\"\nLabeler 1: complaint\nLabeler 2: complaint\nLabeler 3: complaint"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? La guía clara dice qué es cada categoría, da un ejemplo y resuelve los casos dudosos. Con eso, las tres coinciden.",
+          "en": "See the colors? The clear guide says what each category is, gives an example and settles the unclear cases. With that, all three agree."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Una guía de etiquetado tiene tres piezas. Toca cada una.",
+          "en": "A labeling guide has three pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 3 piezas de una guía",
+        "en": "The 3 pieces of a guide"
+      },
+      "piezas": [
+        {
+          "id": "definicion",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Definición",
+            "en": "Definition"
+          },
+          "descripcion": {
+            "es": "Qué es cada categoría, en una frase.",
+            "en": "What each category is, in one sentence."
+          },
+          "ejemplo": {
+            "es": "\"Pregunta: solo pide información\" deja claro que, si además reclama, ya no es solo pregunta.",
+            "en": "\"Question: only asks for information\" makes it clear that if it also complains, it's not just a question."
+          }
+        },
+        {
+          "id": "ejemplo",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Ejemplos",
+            "en": "Examples"
+          },
+          "descripcion": {
+            "es": "Al menos un mensaje real de cada categoría.",
+            "en": "At least one real message for each category."
+          },
+          "ejemplo": {
+            "es": "Un buen ejemplo aclara más que una definición larga. Mejor si también muestras uno que parece de esa categoría y no lo es.",
+            "en": "A good example says more than a long definition. Even better if you show one that looks like it fits and doesn't."
+          }
+        },
+        {
+          "id": "dudosos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Casos dudosos",
+            "en": "Unclear cases"
+          },
+          "descripcion": {
+            "es": "Qué hacer si cabe en dos categorías o en ninguna.",
+            "en": "What to do if it fits two categories or none."
+          },
+          "ejemplo": {
+            "es": "Sin esta regla, cada persona decide a su manera. Con ella, todas deciden igual.",
+            "en": "Without this rule, everyone decides their own way. With it, everyone decides the same."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora etiquetas tú con esta guía: si reclama algo, queja, aunque pregunte. Si solo pide información, pregunta. Si pide que hagan algo, pedido. Lo demás, otro.",
+          "en": "Now you label, using this guide: if it complains, complaint, even if it asks something. If it only asks for information, question. If it asks you to do something, request. Anything else, other."
+        }
+      },
+      "titulo": {
+        "es": "Tu turno de etiquetar",
+        "en": "Your turn to label"
+      },
+      "grupos": [
+        {
+          "id": "queja",
+          "titulo": {
+            "es": "Queja",
+            "en": "Complaint"
+          }
+        },
+        {
+          "id": "pregunta",
+          "titulo": {
+            "es": "Pregunta",
+            "en": "Question"
+          }
+        },
+        {
+          "id": "pedido",
+          "titulo": {
+            "es": "Pedido",
+            "en": "Request"
+          }
+        },
+        {
+          "id": "otro",
+          "titulo": {
+            "es": "Otro",
+            "en": "Other"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "pregunta",
+          "texto": {
+            "es": "¿A qué hora abren la oficina el sábado?",
+            "en": "What time does the office open on Saturday?"
+          }
+        },
+        {
+          "grupo": "pedido",
+          "texto": {
+            "es": "Por favor, pásenme la fecha de pago al día 15.",
+            "en": "Please move my payment date to the 15th."
+          }
+        },
+        {
+          "grupo": "queja",
+          "texto": {
+            "es": "Llevo tres días sin servicio, ¿cuándo vienen a arreglarlo?",
+            "en": "I've had no service for three days, when are you coming to fix it?"
+          }
+        },
+        {
+          "grupo": "otro",
+          "texto": {
+            "es": "Muchas gracias, la técnica fue muy amable.",
+            "en": "Thank you so much, the technician was really kind."
+          }
+        },
+        {
+          "grupo": "queja",
+          "texto": {
+            "es": "El técnico no llegó y nadie me avisó.",
+            "en": "The technician never showed up and nobody told me."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Etiquetaste como una profesional del equipo de Yessica. Fíjate: el de los tres días lo resolvió la regla de los dudosos.",
+          "en": "You labeled like a pro on Yessica's team. Notice: the three-days one was settled by the unclear-cases rule."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, lee la guía otra vez. ¿Ese mensaje reclama algo, solo pide información o pide que hagan algo?",
+          "en": "Hmm, read the guide again. Does that message complain, only ask for information, or ask for something to be done?"
+        }
+      },
+      "malPorGrupo": {
+        "pregunta": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Trae una pregunta, pero ¿también reclama algo? Según la guía, ahí gana queja.",
+            "en": "Close. It asks something, but does it also complain? By the guide, complaint wins there."
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de escribir la guía. Cuando transmitas, la IA la va a usar con tres mensajes difíciles y te va a decir dónde dudó.",
+          "en": "Your turn to write the guide. When you transmit, the AI will use it on three tricky messages and tell you where it hesitated."
+        }
+      },
+      "titulo": {
+        "es": "La guía de Yessica",
+        "en": "Yessica's guide"
+      },
+      "reto": {
+        "es": "Yessica etiqueta mensajes de clientes de una empresa de internet en cuatro categorías: queja, pregunta, pedido u otro. Escribe la guía que usarían ella y sus compañeras. La IA la aplicará a tres mensajes difíciles que ya tiene: no hace falta que los pegues.",
+        "en": "Yessica labels customer messages for an internet provider in four categories: complaint, question, request or other. Write the guide she and her teammates would use. The AI will apply it to three tricky messages it already has: you don't need to paste them."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "define",
+          "texto": {
+            "es": "Define cada categoría",
+            "en": "Defines each category"
+          },
+          "rubrica": "El prompt define cada una de las cuatro categorías (queja, pregunta, pedido, otro) con una frase que dice qué es. No cuenta solo nombrar las categorías en una lista sin decir qué significa cada una.",
+          "claves": {
+            "es": [
+              "queja:",
+              "queja es",
+              "queja =",
+              "pregunta:",
+              "pregunta es",
+              "pedido:",
+              "pedido es",
+              "es cuando",
+              "significa",
+              "se refiere a",
+              "definicion"
+            ],
+            "en": [
+              "complaint:",
+              "complaint is",
+              "complaint =",
+              "question:",
+              "question is",
+              "request:",
+              "request is",
+              "is when",
+              "means",
+              "refers to",
+              "definition"
+            ]
+          }
+        },
+        {
+          "id": "ejemplos",
+          "texto": {
+            "es": "Da ejemplos de cada una",
+            "en": "Gives examples of each"
+          },
+          "rubrica": "El prompt da al menos un mensaje de ejemplo para cada categoría (o para la mayoría). No cuenta decir 'usa ejemplos' sin escribir ninguno.",
+          "claves": {
+            "es": [
+              "ejemplo",
+              "p. ej",
+              "por ej",
+              "como cuando dicen"
+            ],
+            "en": [
+              "example",
+              "e.g.",
+              "for instance",
+              "like when they say"
+            ]
+          }
+        },
+        {
+          "id": "dudosos",
+          "texto": {
+            "es": "Resuelve los casos dudosos",
+            "en": "Settles the unclear cases"
+          },
+          "rubrica": "El prompt dice qué hacer con los mensajes que caben en dos categorías o en ninguna (una regla de prioridad, mandarlos a 'otro' o marcarlos para revisión). No cuenta 'clasifícalos bien' sin una regla.",
+          "claves": {
+            "es": [
+              "dos categorias",
+              "mas de una",
+              "ninguna",
+              "dudoso",
+              "duda",
+              "ambas",
+              "no cabe",
+              "prioridad",
+              "gana"
+            ],
+            "en": [
+              "two categories",
+              "more than one",
+              "none of",
+              "fits none",
+              "unclear",
+              "borderline",
+              "both",
+              "doesn't fit",
+              "does not fit",
+              "priority",
+              "wins",
+              "ambiguous"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que etiqueta mensajes de clientes de una empresa de internet. El prompt del piloto es tu guía de etiquetado: aplícala tal cual, sin agregar reglas propias. Clasifica estos tres mensajes: 1) \"Excelente servicio, llevo una semana sin internet.\" 2) \"Quiero el plan de 300 megas, ¿cuánto vale?\" 3) \"Mi vecino dice que ustedes cobran de más.\" Para cada uno escribe la categoría y una línea de por qué, citando la parte de la guía que usaste. Si la guía no resuelve un caso, escribe \"Dudé:\" y di qué le falta a la guía. Responde en texto plano y corto.",
+        "en": "You are an AI labeling customer messages for an internet provider. The pilot's prompt is your labeling guide: apply it exactly as written, without adding rules of your own. Label these three messages: 1) \"Excellent service, I've been without internet for a week.\" 2) \"I want the 300 Mb plan, how much is it?\" 3) \"My neighbor says you overcharge.\" For each one, give the category and one line on why, pointing to the part of the guide you used. If the guide doesn't settle a case, write \"Unsure:\" and say what the guide is missing. Reply in short plain text."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1) \"Excelente servicio, llevo una semana sin internet.\" Dudé: dice \"excelente\", pero cuenta un problema. La guía no dice qué hacer con la ironía.\n2) \"Quiero el plan de 300 megas, ¿cuánto vale?\" Dudé: pide un plan y pregunta el precio. La guía no dice cuál gana entre pedido y pregunta.\n3) \"Mi vecino dice que ustedes cobran de más.\" Otro: según tu regla, si no cabe en ninguna, va a otro.",
+            "en": "1) \"Excellent service, I've been without internet for a week.\" Unsure: it says \"excellent\" but describes a problem. The guide doesn't cover sarcasm.\n2) \"I want the 300 Mb plan, how much is it?\" Unsure: it requests a plan and asks the price. The guide doesn't say whether request or question wins.\n3) \"My neighbor says you overcharge.\" Other: by your rule, if it fits none, it goes to other."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Tu guía resolvió un caso sola, y la IA dudó justo donde dudaría una persona. Eso vale oro: ya sabes dónde ajustar.",
+              "en": "Good signal. Your guide settled one case on its own, and the AI hesitated exactly where a person would. That's gold: now you know where to adjust."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "1) Queja, creo.\n2) ¿Pregunta o pedido?\n3) No sé.\nLa guía no dice qué es cada categoría ni qué hacer si hay dudas.",
+            "en": "1) Complaint, I think.\n2) Question or request?\n3) Not sure.\nThe guide doesn't say what each category is or what to do when unsure."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. Con esa guía, la IA adivina igual que las compañeras de Yessica. Revisa la lista: faltan piezas de la guía.",
+              "en": "Weak signal. With that guide, the AI guesses just like Yessica's teammates did. Check the list: some pieces of the guide are missing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Antes de ajustar, hablemos un minuto del trabajo de Yessica.",
+          "en": "Before you adjust it, let's talk about Yessica's job for a minute."
+        }
+      },
+      "titulo": {
+        "es": "El trabajo detrás de la guía",
+        "en": "The job behind the guide"
+      },
+      "texto": {
+        "es": "Etiquetar exige criterio, y por eso una buena guía importa tanto. Reportajes de MIT Technology Review (2022) y Global Voices (2024) contaron cómo es este trabajo en la región: pago por tarea, trabajo que llega a ratos y muchas veces sin prestaciones. Si te ofrecen uno, pregunta cuánto pagan, cada cuánto y qué pasa si te suspenden la cuenta.",
+        "en": "Labeling takes judgment, which is why a good guide matters so much. Reports by MIT Technology Review (2022) and Global Voices (2024) described this work in the region: pay per task, work that comes and goes, and often no benefits. Offered a job like this? Ask how much it pays, how often, and what happens if your account gets suspended."
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora arreglas la guía donde la IA dudó. Te dejé tu guía anterior: agrégale reglas para esos casos, sin volver a empezar.",
+          "en": "Now fix the guide where the AI hesitated. I left your last guide here: add rules for those cases, without starting over."
+        }
+      },
+      "titulo": {
+        "es": "Ajusta la guía",
+        "en": "Adjust the guide"
+      },
+      "reto": {
+        "es": "La IA dudó con \"Excelente servicio, llevo una semana sin internet\" y con \"Quiero el plan de 300 megas, ¿cuánto vale?\". Y mandó a otro \"Mi vecino dice que ustedes cobran de más\". Di en qué categoría va cada uno y por qué, como una regla que sirva para mensajes parecidos.",
+        "en": "The AI hesitated on \"Excellent service, I've been without internet for a week\" and on \"I want the 300 Mb plan, how much is it?\". And it put \"My neighbor says you overcharge\" under other. Say which category each one goes in and why, as a rule that works for similar messages."
+      },
+      "inicial": "anterior",
+      "aprobar": 2,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "ironia",
+          "texto": {
+            "es": "Resuelve el mensaje irónico",
+            "en": "Settles the sarcastic message"
+          },
+          "rubrica": "El prompt agrega una regla o un ejemplo para el mensaje irónico ('Excelente servicio, llevo una semana sin internet') y dice en qué categoría va (lo esperable es queja, porque cuenta un problema). No cuenta copiar el mensaje sin decir qué categoría le toca.",
+          "claves": {
+            "es": [
+              "ironi",
+              "sarcas",
+              "excelente servicio",
+              "una semana sin",
+              "semana sin internet"
+            ],
+            "en": [
+              "irony",
+              "ironic",
+              "sarcas",
+              "excellent service",
+              "a week without",
+              "without internet for a week"
+            ]
+          }
+        },
+        {
+          "id": "doble",
+          "texto": {
+            "es": "Resuelve el que pide y pregunta",
+            "en": "Settles the request-plus-question"
+          },
+          "rubrica": "El prompt agrega una regla para el mensaje que pide un plan y pregunta el precio ('Quiero el plan de 300 megas, ¿cuánto vale?') y dice cuál categoría gana (pedido o pregunta, con una razón). No cuenta repetir el mensaje sin decidir.",
+          "claves": {
+            "es": [
+              "300 megas",
+              "300 mega",
+              "plan de 300",
+              "cuanto vale"
+            ],
+            "en": [
+              "300 mb",
+              "300 meg",
+              "300-meg",
+              "how much is it"
+            ]
+          }
+        },
+        {
+          "id": "vecino",
+          "texto": {
+            "es": "Resuelve el mensaje del vecino",
+            "en": "Settles the neighbor message"
+          },
+          "rubrica": "El prompt dice qué hacer con el mensaje que repite lo que dijo otra persona ('Mi vecino dice que ustedes cobran de más'): confirma que va a otro o lo cambia a otra categoría, con una razón. No cuenta nombrarlo sin decidir.",
+          "claves": {
+            "es": [
+              "vecino",
+              "cobran de mas",
+              "otra persona",
+              "de oidas",
+              "rumor",
+              "tercero"
+            ],
+            "en": [
+              "neighbor",
+              "neighbour",
+              "overcharg",
+              "someone else",
+              "secondhand",
+              "hearsay",
+              "rumor",
+              "third part"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que etiqueta mensajes de clientes de una empresa de internet. El prompt del piloto es tu guía de etiquetado, ya ajustada: aplícala tal cual, sin agregar reglas propias. Clasifica estos tres mensajes: 1) \"Excelente servicio, llevo una semana sin internet.\" 2) \"Quiero el plan de 300 megas, ¿cuánto vale?\" 3) \"Mi vecino dice que ustedes cobran de más.\" Para cada uno escribe la categoría y una línea de por qué, citando la regla que usaste. Si la guía todavía no resuelve un caso, escribe \"Dudé:\" y di qué le falta. Al final di si dudaste en alguno. Responde en texto plano y corto.",
+        "en": "You are an AI labeling customer messages for an internet provider. The pilot's prompt is your labeling guide, now adjusted: apply it exactly as written, without adding rules of your own. Label these three messages: 1) \"Excellent service, I've been without internet for a week.\" 2) \"I want the 300 Mb plan, how much is it?\" 3) \"My neighbor says you overcharge.\" For each one, give the category and one line on why, pointing to the rule you used. If the guide still doesn't settle a case, write \"Unsure:\" and say what's missing. At the end, say whether you hesitated on any. Reply in short plain text."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1) \"Excelente servicio, llevo una semana sin internet.\" Queja: tu regla dice que en un mensaje irónico manda el problema que cuenta, no las palabras amables.\n2) \"Quiero el plan de 300 megas, ¿cuánto vale?\" Pedido: tu regla dice que si pide algo y además pregunta, gana pedido.\n3) \"Mi vecino dice que ustedes cobran de más.\" Otro: tu regla dice que lo que cuenta otra persona, sin datos de su cuenta, va a otro.\nNo dudé en ninguno.",
+            "en": "1) \"Excellent service, I've been without internet for a week.\" Complaint: your rule says that in a sarcastic message, the problem described counts, not the nice words.\n2) \"I want the 300 Mb plan, how much is it?\" Request: your rule says that if it asks for something and also asks a question, request wins.\n3) \"My neighbor says you overcharge.\" Other: your rule says secondhand claims with no account details go to other.\nI didn't hesitate on any."
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Así se ajusta una guía. No la reescribiste: le agregaste reglas justo donde había huecos. Con esto el equipo de Yessica etiqueta igual.",
+              "en": "That's how you adjust a guide. You didn't rewrite it: you added rules right where the gaps were. Now Yessica's team labels the same way."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "1) Dudé: ¿queja u otro?\n2) Dudé: ¿pedido o pregunta?\n3) Otro.",
+            "en": "1) Unsure: complaint or other?\n2) Unsure: request or question?\n3) Other."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Siguen las mismas dudas. Revisa la lista: la guía necesita decir qué hacer con esos mensajes en concreto.",
+              "en": "Same doubts as before. Check the list: the guide needs to say what to do with those specific messages."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué hace buena a una guía de etiquetado, como se lo dirías al equipo de Yessica.",
+          "en": "Into the logbook. In your own words, write what makes a labeling guide good, the way you'd tell Yessica's team."
+        }
+      },
+      "concepto": "etiquetado",
+      "definicion": {
+        "es": "Etiquetar es ponerle a cada dato su respuesta para que la IA aprenda. Una buena guía define cada categoría, da ejemplos y resuelve los casos dudosos.",
+        "en": "Labeling means giving each piece of data its answer so the AI can learn. A good guide defines each category, gives examples and settles the unclear cases."
+      },
+      "pregunta": {
+        "es": "Una buena guía de etiquetado tiene…",
+        "en": "A good labeling guide has…"
+      },
+      "guardaPrompt": "b08",
+      "etiqueta": {
+        "es": "guía de etiquetado",
+        "en": "labeling guide"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu guía quedan en la bitácora. La vas a usar en la ficha de datos del capítulo.",
+          "en": "Saved. Your note and your guide are in the logbook. You'll use it in this chapter's datasheet."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y salimos de esta galería.",
+          "en": "Two questions and we're out of this tunnel."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Tres etiquetadoras clasifican el mismo mensaje de tres formas distintas. ¿Qué revisas primero?",
+            "en": "Three labelers sort the same message three different ways. What do you check first?"
+          },
+          "opciones": [
+            {
+              "es": "La guía: si define bien y resuelve los casos dudosos",
+              "en": "The guide: whether it defines things well and settles unclear cases"
+            },
+            {
+              "es": "Cuál de las tres trabaja más rápido",
+              "en": "Which of the three works fastest"
+            },
+            {
+              "es": "Nada: que la IA decida sola",
+              "en": "Nothing: let the AI decide on its own"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Cuando todas dudan en lo mismo, casi siempre el hueco está en la guía.",
+              "en": "Right. When everyone struggles with the same thing, the gap is almost always in the guide."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en lo que cambió entre la guía vaga y la clara.",
+              "en": "Think about what changed between the vague guide and the clear one."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Te ofrecen un trabajo de etiquetado por internet. ¿Qué conviene preguntar?",
+            "en": "You're offered an online labeling job. What's worth asking?"
+          },
+          "opciones": [
+            {
+              "es": "Cuánto pagan, cada cuánto y qué pasa si suspenden la cuenta",
+              "en": "How much it pays, how often, and what happens if they suspend the account"
+            },
+            {
+              "es": "Solo cuántas horas al día hay que trabajar",
+              "en": "Only how many hours a day you have to work"
+            },
+            {
+              "es": "Nada: si es por internet, es seguro",
+              "en": "Nothing: if it's online, it's safe"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Son las preguntas que los reportajes muestran que importan.",
+              "en": "Exactly. Those are the questions the reports show really matter."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Recuerda lo que contaron los reportajes sobre el pago y las cuentas suspendidas.",
+              "en": "Remember what the reports said about pay and suspended accounts."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "El etiquetado",
+        "en": "Data labeling"
+      },
+      "resumen": {
+        "es": "Personas le ponen a cada dato su respuesta. Una guía clara hace que todas etiqueten igual.",
+        "en": "People give each piece of data its answer. A clear guide makes everyone label the same way."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b08",
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Etiquetaste cinco mensajes con la guía",
+          "en": "You labeled five messages with the guide"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste la guía de etiquetado de Yessica",
+          "en": "You wrote Yessica's labeling guide"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Ajustaste la guía donde la IA dudó",
+          "en": "You fixed the guide where the AI hesitated"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Pasaste el punto de control",
+          "en": "You passed the checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "escribir-guia-de-etiquetado",
+      "titulo": {
+        "es": "Escribir una guía de etiquetado",
+        "en": "Writing a labeling guide"
+      }
+    }
+  }
+}

@@ -1,0 +1,825 @@
+{
+  "formato": "punti-mision@1",
+  "id": "del-desorden-al-plan",
+  "mundo": "herramientas-de-ia",
+  "capitulo": 1,
+  "numero": 4,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "notas-a-plan"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "forma",
+    "herramienta-por-tarea"
+  ],
+  "titulo": {
+    "es": "Del desorden al plan",
+    "en": "From Mess to Plan"
+  },
+  "resumen": {
+    "es": "Convertir notas sueltas en un plan con orden: cómo agrupar, qué va primero, en qué forma y qué falta preguntar.",
+    "en": "Turning scattered notes into an ordered plan: how to group, what goes first, what format and what still needs asking."
+  },
+  "siguiente": "respuestas-para-clientes",
+  "fuentes": [],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, encargo nuevo en la fragua. Es Yeison, 24 años, electricista a domicilio en Barranquilla. Tiene diez notas de voz de clientes, todas revueltas, y no sabe por dónde empezar la semana.",
+          "en": "Pilot, new job at the forge. It's Yeison, 24, a home electrician in Barranquilla. He has ten voice notes from customers, all jumbled together, and no idea where to start his week."
+        }
+      },
+      "titulo": {
+        "es": "Del desorden al plan",
+        "en": "From Mess to Plan"
+      },
+      "texto": {
+        "es": "Hoy conviertes notas sueltas en un plan con orden: qué va primero, dónde y qué falta preguntar. Y lo templas antes de confirmarle nada a nadie. Unos 9 minutos.",
+        "en": "Today you turn scattered notes into an ordered plan: what goes first, where, and what still needs asking. And you temper it before confirming anything to anyone. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto le pidió Yeison a la IA la semana pasada, con sus notas pegadas. Abajo está el mismo pedido, con lo que él sabe de su trabajo.",
+          "en": "Here's what Yeison asked the AI last week, with his notes pasted in. Below is the same request, with what he knows about his own work."
+        }
+      },
+      "titulo": {
+        "es": "Del montón a la tabla",
+        "en": "From pile to plan"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Organízame esto: [5 notas de voz de la semana pasada]",
+          "en": "Organize this for me: [5 voice notes from last week]"
+        },
+        "salida": {
+          "es": "1. Casa en Villa Country: cambiar un interruptor.\n2. Panadería en Rebolo: el horno eléctrico bota chispas.\n3. Apartamento en Altos del Prado: instalar una lámpara.\n4. Taller en Barrio Abajo: cotizar un tablero nuevo.\n5. Tienda en Rebolo: se fundió el bombillo del letrero.",
+          "en": "1. House in Villa Country: replace a light switch.\n2. Bakery in Rebolo: the electric oven is sparking.\n3. Apartment in Altos del Prado: install a lamp.\n4. Workshop in Barrio Abajo: quote a new breaker panel.\n5. Shop in Rebolo: the sign's bulb burned out."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "agrupar",
+            "texto": {
+              "es": "Agrupa los trabajos por barrio, para no cruzar la ciudad dos veces. ",
+              "en": "Group the jobs by neighborhood, so I don't cross the city twice. "
+            }
+          },
+          {
+            "pieza": "prioridad",
+            "texto": {
+              "es": "Pon primero lo peligroso, como chispas, olor a quemado o cables sueltos. ",
+              "en": "Put dangerous things first, like sparks, a burning smell or loose wires. "
+            }
+          },
+          {
+            "pieza": "forma",
+            "texto": {
+              "es": "Dámelo por días, de lunes a sábado. ",
+              "en": "Lay it out by day, Monday to Saturday. "
+            }
+          },
+          {
+            "pieza": "falta",
+            "texto": {
+              "es": "Si falta dirección u hora, escribe \"preguntar\" y no lo inventes.",
+              "en": "If an address or time is missing, write \"ask\" and don't make it up."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Lunes (Rebolo)\n- Horno que bota chispas, panadería. URGENTE\n- Bombillo del letrero, tienda. Hora: preguntar\nMartes (Villa Country y Altos del Prado)\n- Interruptor, casa. Hora: preguntar\n- Lámpara, apartamento. Dirección: preguntar\nMiércoles (Barrio Abajo)\n- Cotizar tablero, taller. Hora: preguntar",
+          "en": "Monday (Rebolo)\n- Sparking oven, bakery. URGENT\n- Sign bulb, shop. Time: ask\nTuesday (Villa Country and Altos del Prado)\n- Light switch, house. Time: ask\n- Lamp, apartment. Address: ask\nWednesday (Barrio Abajo)\n- Panel quote, workshop. Time: ask"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? Las notas eran las mismas. Lo que cambió fue el criterio de Yeison: dónde queda cada cliente, qué es peligroso y qué le falta saber.",
+          "en": "See the colors? The notes were the same. What changed was Yeison's judgment: where each customer is, what's dangerous and what he still needs to know."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Para pasar del montón al plan, la IA necesita tu criterio en cuatro piezas. Toca cada una.",
+          "en": "To get from a pile to a plan, the AI needs your judgment in four pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas del plan",
+        "en": "The 4 pieces of a plan"
+      },
+      "piezas": [
+        {
+          "id": "agrupar",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Cómo agrupar",
+            "en": "How to group"
+          },
+          "descripcion": {
+            "es": "Por barrio, por cliente o por tipo de trabajo.",
+            "en": "By neighborhood, by customer or by type of job."
+          },
+          "ejemplo": {
+            "es": "\"Por barrio\" le ahorra a Yeison cruzar la ciudad dos veces el mismo día.",
+            "en": "\"By neighborhood\" saves Yeison from crossing the city twice in one day."
+          }
+        },
+        {
+          "id": "prioridad",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Qué va primero",
+            "en": "What goes first"
+          },
+          "descripcion": {
+            "es": "Una prioridad con un criterio tuyo.",
+            "en": "A priority, based on your own rule."
+          },
+          "ejemplo": {
+            "es": "\"Primero lo peligroso\". Sin criterio, la IA ordena por lo que llegó primero.",
+            "en": "\"Dangerous things first.\" Without a rule, AI sorts by whatever came in first."
+          }
+        },
+        {
+          "id": "forma",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "La forma",
+            "en": "The format"
+          },
+          "descripcion": {
+            "es": "Tabla, columnas o lista por días.",
+            "en": "A table, columns or a day-by-day list."
+          },
+          "ejemplo": {
+            "es": "\"Por días, de lunes a sábado\". Así el plan cabe en la pantalla del celular.",
+            "en": "\"By day, Monday to Saturday.\" That way the plan fits on a phone screen."
+          }
+        },
+        {
+          "id": "falta",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Lo que falta",
+            "en": "What's missing"
+          },
+          "descripcion": {
+            "es": "Que marque los huecos en vez de llenarlos.",
+            "en": "Have it flag gaps instead of filling them."
+          },
+          "ejemplo": {
+            "es": "\"Si falta la dirección, escribe preguntar\". Una dirección inventada es un viaje perdido.",
+            "en": "\"If the address is missing, write ask.\" A made-up address is a wasted trip."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Estas son las diez notas de Yeison, ya pasadas a texto. Todas son inventadas. Léelas rápido: con ellas vas a trabajar.",
+          "en": "Here are Yeison's ten notes, already transcribed. They're all made up. Skim them: you'll be working with them."
+        }
+      },
+      "titulo": {
+        "es": "Las notas de Yeison",
+        "en": "Yeison's notes"
+      },
+      "texto": {
+        "es": "Mira lo que se repite: barrios cercanos, trabajos urgentes y huecos. Tres notas no dicen la dirección y casi ninguna dice la hora. Ese es el metal en bruto. Tu pedido decide si la IA lo ordena bien o si rellena los huecos con inventos.",
+        "en": "Look at what repeats: nearby neighborhoods, urgent jobs and gaps. Three notes have no address, and almost none give a time. That's the raw metal. Your request decides whether the AI puts it in order or fills the gaps with made-up stuff."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Nota",
+            "en": "Note"
+          },
+          "b": {
+            "es": "Lo que dice",
+            "en": "What it says"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "1",
+              "en": "1"
+            },
+            "b": {
+              "es": "Tienda en Las Nieves: el congelador se apaga solo. \"Pásate cuando puedas\".",
+              "en": "Shop in Las Nieves: the freezer keeps shutting off. \"Come by when you can.\""
+            }
+          },
+          {
+            "a": {
+              "es": "2",
+              "en": "2"
+            },
+            "b": {
+              "es": "Apartamento en El Prado: huele a quemado en un tomacorriente.",
+              "en": "Apartment in El Prado: a power outlet smells like burning."
+            }
+          },
+          {
+            "a": {
+              "es": "3",
+              "en": "3"
+            },
+            "b": {
+              "es": "Casa en Soledad: instalar 3 lámparas en el patio, el sábado en la mañana.",
+              "en": "House in Soledad: install 3 patio lights, Saturday morning."
+            }
+          },
+          {
+            "a": {
+              "es": "4",
+              "en": "4"
+            },
+            "b": {
+              "es": "Oficina en Riomar: cotizar cableado para 6 puestos. Sin dirección.",
+              "en": "Office in Riomar: quote wiring for 6 desks. No address."
+            }
+          },
+          {
+            "a": {
+              "es": "5",
+              "en": "5"
+            },
+            "b": {
+              "es": "Casa en Boston: el breaker se dispara cuando prenden el aire.",
+              "en": "House in Boston: the breaker trips when they turn on the AC."
+            }
+          },
+          {
+            "a": {
+              "es": "6",
+              "en": "6"
+            },
+            "b": {
+              "es": "Peluquería en Las Nieves: cambiar dos tomas.",
+              "en": "Hair salon in Las Nieves: replace two outlets."
+            }
+          },
+          {
+            "a": {
+              "es": "7",
+              "en": "7"
+            },
+            "b": {
+              "es": "Señora en Soledad: revisar el timbre. Sin dirección.",
+              "en": "Lady in Soledad: check the doorbell. No address."
+            }
+          },
+          {
+            "a": {
+              "es": "8",
+              "en": "8"
+            },
+            "b": {
+              "es": "Colegio en El Recreo: revisar las luces de un salón antes del lunes.",
+              "en": "School in El Recreo: check a classroom's lights before Monday."
+            }
+          },
+          {
+            "a": {
+              "es": "9",
+              "en": "9"
+            },
+            "b": {
+              "es": "Casa en Riomar: montar un ventilador de techo. Sin dirección.",
+              "en": "House in Riomar: install a ceiling fan. No address."
+            }
+          },
+          {
+            "a": {
+              "es": "10",
+              "en": "10"
+            },
+            "b": {
+              "es": "Edificio en El Prado: un cable cuelga en el parqueadero.",
+              "en": "Building in El Prado: a cable is hanging loose in the parking lot."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno en el yunque. Las diez notas ya están pegadas. Pide el plan de la semana que a Yeison le sirva de verdad.",
+          "en": "Your turn at the anvil. The ten notes are already pasted in. Ask for a weekly plan Yeison can actually use."
+        }
+      },
+      "titulo": {
+        "es": "El plan de Yeison",
+        "en": "Yeison's plan"
+      },
+      "reto": {
+        "es": "Las 10 notas de Yeison (inventadas) ya están pegadas. Trabaja de lunes a sábado en Barranquilla y Soledad. Hay trabajos peligrosos, barrios que se repiten y notas sin dirección ni hora. Pídele a la IA el plan de la semana.",
+        "en": "Yeison's 10 notes (made up) are already pasted in. He works Monday to Saturday in Barranquilla and Soledad. There are dangerous jobs, repeated neighborhoods and notes with no address or time. Ask the AI for the weekly plan."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "agrupar",
+          "texto": {
+            "es": "Dice cómo agrupar",
+            "en": "Says how to group"
+          },
+          "rubrica": "El prompt pide agrupar o separar los trabajos por barrio, zona, sector, lugar o cliente. No cuenta 'organízalo' u 'ordénalo' sin decir cómo agrupar.",
+          "claves": {
+            "es": [
+              "agrupa",
+              "agrupar",
+              "por barrio",
+              "por zona",
+              "por sector",
+              "por cliente",
+              "por lugar",
+              "por ubicacion",
+              "junta los",
+              "juntar los",
+              "separa por",
+              "separalos por"
+            ],
+            "en": [
+              "group",
+              "by neighborhood",
+              "by neighbourhood",
+              "by area",
+              "by zone",
+              "by customer",
+              "by client",
+              "by location",
+              "cluster",
+              "sort by area"
+            ]
+          }
+        },
+        {
+          "id": "prioridad",
+          "texto": {
+            "es": "Da un criterio de prioridad",
+            "en": "Gives a priority rule"
+          },
+          "rubrica": "El prompt pide una prioridad con un criterio: urgencia, peligro o riesgo, cercanía, o lo que deja a alguien sin luz. No cuenta 'ordénalo por prioridad' o 'lo más importante primero' sin decir qué hace que algo sea prioritario.",
+          "claves": {
+            "es": [
+              "urgen",
+              "peligro",
+              "riesgo",
+              "seguridad",
+              "emergencia",
+              "quemado",
+              "lo mas grave",
+              "cercan",
+              "sin luz"
+            ],
+            "en": [
+              "urgen",
+              "danger",
+              "risk",
+              "safety",
+              "emergenc",
+              "burning",
+              "most serious",
+              "closest",
+              "nearby",
+              "distance",
+              "without power"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "Pide una forma concreta",
+            "en": "Asks for a clear format"
+          },
+          "rubrica": "El prompt pide una forma concreta: tabla, columnas, lista por días u horario por día. No cuenta 'un plan' o 'una lista de tareas' sin decir cómo se ve.",
+          "claves": {
+            "es": [
+              "tabla",
+              "columna",
+              "por dia",
+              "por dias",
+              "dia por dia",
+              "cada dia",
+              "cronograma",
+              "calendario",
+              "horario por"
+            ],
+            "en": [
+              "table",
+              "column",
+              "by day",
+              "day by day",
+              "each day",
+              "per day",
+              "calendar",
+              "timeline",
+              "day-by-day"
+            ]
+          }
+        },
+        {
+          "id": "falta",
+          "texto": {
+            "es": "Pide marcar lo que falta",
+            "en": "Asks to flag what's missing"
+          },
+          "rubrica": "El prompt pide marcar lo que falta (dirección, hora) o dice que no lo invente. No cuenta si no dice nada de los datos que faltan.",
+          "claves": {
+            "es": [
+              "falta",
+              "no invent",
+              "sin invent",
+              "preguntar",
+              "confirmar",
+              "por definir",
+              "marca lo",
+              "marcar lo",
+              "no tengo la"
+            ],
+            "en": [
+              "missing",
+              "don't make up",
+              "do not make up",
+              "don't invent",
+              "do not invent",
+              "ask the",
+              "write ask",
+              "to confirm",
+              "flag",
+              "unknown",
+              "tbd"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una herramienta que organiza tareas. El usuario ya pegó estas notas de voz, pasadas a texto, de un electricista de Barranquilla: Nota 1: Tienda en Las Nieves: el congelador se apaga solo. \"Pásate cuando puedas\". Nota 2: Apartamento en El Prado: huele a quemado en un tomacorriente. Nota 3: Casa en Soledad: instalar 3 lámparas en el patio, el sábado en la mañana. Nota 4: Oficina en Riomar: cotizar cableado para 6 puestos. Sin dirección. Nota 5: Casa en Boston: el breaker se dispara cuando prenden el aire. Nota 6: Peluquería en Las Nieves: cambiar dos tomas. Nota 7: Señora en Soledad: revisar el timbre. Sin dirección. Nota 8: Colegio en El Recreo: revisar las luces de un salón antes del lunes. Nota 9: Casa en Riomar: montar un ventilador de techo. Sin dirección. Nota 10: Edificio en El Prado: un cable cuelga en el parqueadero. El prompt que recibes es lo que pide sobre ellas. Responde solo con el plan, en texto plano. Haz exactamente lo que pida el prompt: si no pide agrupar, deja las notas en el orden en que llegaron; si no da un criterio de prioridad, no priorices; si no pide una forma, escribe un párrafo corrido; si no pide marcar lo que falta, omite esos huecos sin avisar. Nunca inventes direcciones, horas ni nombres. Nunca uses vos.",
+        "en": "You are a task-organizing tool. The user already pasted in these transcribed voice notes from an electrician in Barranquilla: Note 1: Shop in Las Nieves: the freezer keeps shutting off. \"Come by when you can.\" Note 2: Apartment in El Prado: a power outlet smells like burning. Note 3: House in Soledad: install 3 patio lights, Saturday morning. Note 4: Office in Riomar: quote wiring for 6 desks. No address. Note 5: House in Boston: the breaker trips when they turn on the AC. Note 6: Hair salon in Las Nieves: replace two outlets. Note 7: Lady in Soledad: check the doorbell. No address. Note 8: School in El Recreo: check a classroom's lights before Monday. Note 9: House in Riomar: install a ceiling fan. No address. Note 10: Building in El Prado: a cable is hanging loose in the parking lot. The prompt you receive is what they want done with them. Reply with the plan only, in plain text. Do exactly what the prompt asks: if it doesn't ask to group, keep the notes in the order they came in; if it gives no priority rule, don't prioritize; if it asks for no format, write one running paragraph; if it doesn't ask to flag what's missing, skip those gaps without saying so. Never make up addresses, times or names."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Lunes (El Prado)\n- Olor a quemado en tomacorriente, apartamento. URGENTE\n- Cable colgando en el parqueadero, edificio. URGENTE\nMartes (Boston y Las Nieves)\n- Breaker que se dispara, casa en Boston. Hora: preguntar\n- Congelador de la tienda y dos tomas de la peluquería. Hora: preguntar\nMiércoles (Riomar)\n- Cotizar cableado, oficina. Dirección: preguntar\n- Ventilador de techo, casa. Dirección: preguntar\nViernes (El Recreo)\n- Luces del salón, colegio. Antes del lunes\nSábado en la mañana (Soledad)\n- 3 lámparas en el patio\n- Timbre de la señora. Dirección: preguntar",
+            "en": "Monday (El Prado)\n- Burning smell at an outlet, apartment. URGENT\n- Loose cable in the parking lot, building. URGENT\nTuesday (Boston and Las Nieves)\n- Breaker that trips, house in Boston. Time: ask\n- Shop freezer and two salon outlets. Time: ask\nWednesday (Riomar)\n- Wiring quote, office. Address: ask\n- Ceiling fan, house. Address: ask\nFriday (El Recreo)\n- Classroom lights, school. Before Monday\nSaturday morning (Soledad)\n- 3 patio lights\n- The lady's doorbell. Address: ask"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso es un plan. Lo peligroso va primero, cada día queda en una zona y los huecos dicen \"preguntar\". Yeison no cruza la ciudad dos veces.",
+              "en": "Now that's a plan. Dangerous jobs go first, each day stays in one area and the gaps say \"ask\". Yeison won't cross the city twice."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Esta semana tienes que ir a la tienda de Las Nieves por el congelador, al apartamento de El Prado por el olor a quemado, a la casa de Soledad por las lámparas, a la oficina de Riomar por el cableado, a Boston por el breaker y a varios lugares más por tomas, un timbre, unas luces, un ventilador y un cable.",
+            "en": "This week you need to go to the shop in Las Nieves for the freezer, the apartment in El Prado for the burning smell, the house in Soledad for the lights, the office in Riomar for the wiring, Boston for the breaker, and several more places for outlets, a doorbell, some lights, a fan and a cable."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA te devolvió el mismo montón, ahora en un párrafo. Mira la lista: cómo agrupar, qué va primero, en qué forma y qué falta.",
+              "en": "The AI handed back the same pile, now as a paragraph. Check the list: how to group, what goes first, what format and what's missing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le armé un plan a Yeison y casi se lo mando sin templar. Tiene dos errores que podían salir caros. Tócalos.",
+          "en": "Confession time. I put together a plan for Yeison and nearly sent it untempered. It has two mistakes that could have cost a lot. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "El plan de Punti",
+        "en": "Punti's plan"
+      },
+      "trozos": [
+        {
+          "es": "Lunes 8 a. m.: breaker que se dispara, Boston.",
+          "en": "Monday 8 a.m.: breaker that trips, Boston."
+        },
+        {
+          "es": "Lunes 10 a. m.: congelador y tomas, Las Nieves.",
+          "en": "Monday 10 a.m.: freezer and outlets, Las Nieves."
+        },
+        {
+          "es": "Jueves: olor a quemado en el tomacorriente, El Prado.",
+          "en": "Thursday: burning smell at the outlet, El Prado."
+        },
+        {
+          "es": "Sábado: lámparas en Soledad y timbre en la calle 30 # 12-45.",
+          "en": "Saturday: patio lights in Soledad and doorbell at 30 Example Street."
+        },
+        {
+          "es": "Por confirmar: hora del ventilador en Riomar.",
+          "en": "To confirm: time for the fan in Riomar."
+        }
+      ],
+      "malos": [
+        2,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Dejé para el jueves un olor a quemado, que no puede esperar. Y me inventé la dirección del timbre: la nota no la tenía. Yeison habría tocado la puerta equivocada.",
+          "en": "You got me. I pushed a burning smell to Thursday, and that can't wait. And I made up the doorbell address: the note didn't have one. Yeison would have knocked on the wrong door."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa línea está bien. Busca algo peligroso que quedó tarde y un dato que no venía en las notas.",
+          "en": "That line is fine. Look for something dangerous that got pushed back and a detail that wasn't in the notes."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "El plan quedó bien. Ahora Yeison va a confirmarles a los clientes por WhatsApp. ¿Qué hace antes?",
+          "en": "The plan came out right. Now Yeison is about to confirm with customers on WhatsApp. What does he do first?"
+        }
+      },
+      "titulo": {
+        "es": "Antes de confirmar",
+        "en": "Before confirming"
+      },
+      "escena": {
+        "es": "La IA le armó a Yeison el plan de la semana y hasta le escribió un mensaje de confirmación para cada cliente. Son diez mensajes listos para copiar y pegar. Es domingo en la noche. ¿Qué hace Yeison?",
+        "en": "The AI built Yeison's weekly plan and even wrote a confirmation message for each customer. Ten messages, ready to copy and paste. It's Sunday night. What does Yeison do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Los manda todos ya: el plan está bien hecho",
+            "en": "Sends them all now: the plan is solid"
+          },
+          "consecuencia": {
+            "es": "Un mensaje dice \"nos vemos el martes a las 9\", y esa hora nadie la acordó. La clienta de Boston lo espera desde temprano, y él llega a las 2.",
+            "en": "One message says \"see you Tuesday at 9\", a time nobody agreed on. The customer in Boston waits from early on, and he shows up at 2."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Compara cada mensaje con su nota y pregunta lo que falta",
+            "en": "Checks each message against its note and asks what's missing"
+          },
+          "consecuencia": {
+            "es": "Eso es templar. Encuentra la hora que la IA puso sola, la cambia por una pregunta y llama a los dos clientes que no tienen dirección.",
+            "en": "That's tempering. He finds the time the AI added on its own, swaps it for a question and calls the two customers with no address."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Le pide a la IA que complete las direcciones que faltan",
+            "en": "Asks the AI to fill in the missing addresses"
+          },
+          "consecuencia": {
+            "es": "La IA escribe direcciones que suenan reales, pero no lo son. Solo el cliente sabe dónde vive.",
+            "en": "The AI writes addresses that sound real, but aren't. Only the customer knows where they live."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Templar un plan es mirar dos cosas: que lo urgente quede primero y que no haya ningún dato que no estaba en tus notas. Lo que falta se pregunta.",
+          "en": "Tempering a plan means checking two things: that urgent jobs come first, and that there's no detail that wasn't in your notes. Whatever's missing, you ask."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cómo pasas de un montón de notas a un plan, como se lo explicarías a Yeison.",
+          "en": "Logbook time. Write in your own words how you go from a pile of notes to a plan, the way you'd explain it to Yeison."
+        }
+      },
+      "concepto": "notas-a-plan",
+      "definicion": {
+        "es": "Convertir notas sueltas en un plan: le pides a la IA agrupar, poner prioridad con tu criterio, una forma clara y marcar lo que falta. Después revisas que nada sea inventado.",
+        "en": "Turning scattered notes into a plan: you ask the AI to group them, prioritize by your rule, use a clear format and flag what's missing. Then you check nothing was made up."
+      },
+      "pregunta": {
+        "es": "Para pasar del desorden a un plan…",
+        "en": "To go from a mess to a plan…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "planes",
+        "en": "plans"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu prompt del plan ya están en tu bitácora. El lunes que tengas el celular lleno de notas, ya sabes dónde buscarlo.",
+          "en": "Saved. Your note and your plan prompt are in your logbook. Next Monday your phone is full of notes, you know where to find it."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y Yeison arranca la semana.",
+          "en": "Two questions and Yeison starts his week."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "\"Organízame esto\", con tus notas pegadas. ¿Qué le falta a ese pedido?",
+            "en": "\"Organize this for me\", with your notes pasted in. What's that request missing?"
+          },
+          "opciones": [
+            {
+              "es": "Más notas",
+              "en": "More notes"
+            },
+            {
+              "es": "Cómo agrupar, qué va primero y en qué forma",
+              "en": "How to group, what goes first and what format"
+            },
+            {
+              "es": "Nada: la IA ya sabe organizar",
+              "en": "Nothing: AI already knows how to organize"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Sin tu criterio, la IA solo cambia el montón de lugar.",
+              "en": "Right. Without your judgment, AI just moves the pile around."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Acuérdate de la lista que salió igual al montón. ¿Qué le faltaba?",
+              "en": "Hmm. Remember the list that came out just like the pile? What was missing?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "A una nota le falta la dirección. ¿Qué le pides a la IA?",
+            "en": "A note is missing the address. What do you ask the AI?"
+          },
+          "opciones": [
+            {
+              "es": "Que la averigüe",
+              "en": "To look it up"
+            },
+            {
+              "es": "Que escriba \"preguntar\" en vez de inventarla",
+              "en": "To write \"ask\" instead of making it up"
+            },
+            {
+              "es": "Que quite ese trabajo del plan",
+              "en": "To drop that job from the plan"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. El hueco se marca, y la dirección se la pides al cliente.",
+              "en": "Exactly. The gap gets flagged, and you get the address from the customer."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Acuérdate de mi timbre en una calle que no existía. ¿Quién sabe la dirección?",
+              "en": "Remember my doorbell on a street that didn't exist? Who knows the address?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "De notas a plan",
+        "en": "From notes to plan"
+      },
+      "resumen": {
+        "es": "Las notas sueltas se vuelven plan cuando le das a la IA tu criterio: cómo agrupar, qué va primero, qué forma y qué marcar como faltante.",
+        "en": "Scattered notes become a plan when you give AI your judgment: how to group, what goes first, what format and what to flag as missing."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste cómo tu criterio cambia un montón de notas",
+          "en": "You saw how your judgment changes a pile of notes"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pediste el plan de la semana de Yeison",
+          "en": "You asked for Yeison's weekly plan"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste la urgencia aplazada y la dirección inventada",
+          "en": "You caught the delayed emergency and the made-up address"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Templaste las confirmaciones antes de mandarlas",
+          "en": "You tempered the confirmations before sending them"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "ordenar-notas",
+      "titulo": {
+        "es": "Pasar de notas a plan",
+        "en": "Turning notes into a plan"
+      }
+    }
+  }
+}

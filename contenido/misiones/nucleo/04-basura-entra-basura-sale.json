@@ -1,0 +1,685 @@
+{
+  "formato": "punti-mision@1",
+  "id": "basura-entra-basura-sale",
+  "mundo": "como-se-construye",
+  "capitulo": 1,
+  "numero": 4,
+  "receta": "construccion",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "calidad-de-datos"
+  ],
+  "usaConceptos": [
+    "fuentes-de-datos",
+    "cadena-de-construccion",
+    "sesgo",
+    "origen-del-modelo"
+  ],
+  "titulo": {
+    "es": "Basura entra, basura sale",
+    "en": "Garbage In, Garbage Out"
+  },
+  "resumen": {
+    "es": "Auditar datos: si están limpios, si están completos y quién falta en ellos.",
+    "en": "Auditing data: whether it's clean, whether it's complete, and who's missing from it."
+  },
+  "siguiente": "ficha-de-datos",
+  "fuentes": [
+    {
+      "titulo": "Common Crawl: estadísticas de idiomas por archivo mensual (CC-MAIN-2026-39: inglés 41,86 %, español 4,74 %)",
+      "url": "https://commoncrawl.github.io/cc-crawl-statistics/plots/languages",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "CENIA: Latam-GPT, la primera IA regional abierta creada con datos latinoamericanos (10 feb. 2026)",
+      "url": "https://cenia.cl/2026/02/10/latam-gpt-la-primera-ia-regional-abierta-creada-con-datos-latinoamericanos/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Cancillería de Colombia: Colombia y Chile fortalecen su liderazgo regional en IA en el lanzamiento de Latam-GPT (Colombia aportó más de 220.000 documentos)",
+      "url": "https://chile.embajada.gov.co/sala-de-prensa/noticias/colombia-y-chile-fortalecen-su-liderazgo-regional-en-inteligencia-artificial-en-el-marco-del-lanzamiento-de-latam-gpt",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, en la mina huele raro. Llegó un cargamento de grabaciones, y el asistente que salió de ahí no le entiende a nadie del Pacífico. La señal viene de Guapi, en el Cauca.",
+          "en": "Pilot, something smells off in the mine. A load of recordings came in, and the assistant built from it can't understand anyone from the Pacific coast. The signal is from Guapi, in Cauca."
+        }
+      },
+      "titulo": {
+        "es": "Basura entra, basura sale",
+        "en": "Garbage In, Garbage Out"
+      },
+      "texto": {
+        "es": "Emiro, 47, lidera un consejo comunitario de pescadores. Querían un asistente de voz para reportar la pesca, y el que probaron no entiende su acento. Hoy aprendes a auditar datos. Unos 10 minutos.",
+        "en": "Emiro, 47, leads a community council of fishers. They wanted a voice assistant to report their catch, and the one they tried can't understand their accent. Today you'll learn to audit data. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, por qué le pasa esto a Emiro. No es mala suerte: está en los datos.",
+          "en": "First, why this is happening to Emiro. It's not bad luck: it's in the data."
+        }
+      },
+      "titulo": {
+        "es": "Lo que falta también enseña",
+        "en": "What's missing teaches too"
+      },
+      "texto": {
+        "es": "Un modelo aprende lo que hay en sus datos, y también lo que falta. En Common Crawl, un archivo público de páginas web que usan muchas IA para entrenar, a septiembre de 2026 hay casi nueve páginas en inglés por cada una en español. Y el habla del Pacífico colombiano es apenas un pedacito de ese español.",
+        "en": "A model learns what's in its data, and also what isn't. In Common Crawl, a public archive of web pages many AIs train on, there were almost nine pages in English for every one in Spanish as of September 2026. And the way people speak on Colombia's Pacific coast is just a sliver of that Spanish."
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de meter un cargamento al reactor, lo reviso con la linterna. Estos son los cuatro problemas que busco. Toca cada uno.",
+          "en": "Before a load goes into the reactor, I check it with my headlamp. These are the four problems I look for. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "4 problemas de un cargamento",
+        "en": "4 problems in a load"
+      },
+      "piezas": [
+        {
+          "id": "sucio",
+          "color": "#ff9f43",
+          "titulo": {
+            "es": "Sucio",
+            "en": "Dirty"
+          },
+          "descripcion": {
+            "es": "Datos con errores, ruido o mal etiquetados.",
+            "en": "Data with errors, noise or wrong labels."
+          },
+          "ejemplo": {
+            "es": "Una grabación donde el motor de la lancha tapa la voz. La IA aprende ruido.",
+            "en": "A recording where the boat motor drowns out the voice. The AI learns noise."
+          }
+        },
+        {
+          "id": "repetido",
+          "color": "#b388ff",
+          "titulo": {
+            "es": "Repetido",
+            "en": "Duplicated"
+          },
+          "descripcion": {
+            "es": "El mismo dato muchas veces, que pesa de más.",
+            "en": "The same data many times over, so it counts too much."
+          },
+          "ejemplo": {
+            "es": "Si la misma frase aparece 300 veces, el modelo cree que la gente siempre habla así.",
+            "en": "If the same sentence shows up 300 times, the model thinks people always talk that way."
+          }
+        },
+        {
+          "id": "incompleto",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Incompleto",
+            "en": "Incomplete"
+          },
+          "descripcion": {
+            "es": "A cada dato le faltan partes clave.",
+            "en": "Each record is missing key parts."
+          },
+          "ejemplo": {
+            "es": "Reportes que dicen el pescado pero no cuántos kilos. No sirven para reportar la pesca.",
+            "en": "Reports that name the fish but not how many kilos. They're useless for reporting the catch."
+          }
+        },
+        {
+          "id": "desbalanceado",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Desbalanceado",
+            "en": "Unbalanced"
+          },
+          "descripcion": {
+            "es": "Unos grupos tienen mucho y otros casi nada.",
+            "en": "Some groups have lots, others almost nothing."
+          },
+          "ejemplo": {
+            "es": "Casi todo del interior y nada del Pacífico. El modelo aprende a oír a unos y no a otros.",
+            "en": "Almost all inland, nothing from the Pacific. The model learns to hear some people and not others."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Este es el cargamento que usaron para el asistente de Emiro. ¿Qué problema tiene cada parte?",
+          "en": "This is the load they used for Emiro's assistant. What problem does each part have?"
+        }
+      },
+      "titulo": {
+        "es": "Revisa el cargamento",
+        "en": "Inspect the load"
+      },
+      "grupos": [
+        "sucio",
+        "repetido",
+        "incompleto",
+        "desbalanceado"
+      ],
+      "items": [
+        {
+          "grupo": "repetido",
+          "texto": {
+            "es": "300 grabaciones de la misma frase de prueba, copiadas por error.",
+            "en": "300 recordings of the same test sentence, copied by mistake."
+          }
+        },
+        {
+          "grupo": "desbalanceado",
+          "texto": {
+            "es": "8 de cada 10 voces son de hombres.",
+            "en": "8 out of 10 voices are men's."
+          }
+        },
+        {
+          "grupo": "sucio",
+          "texto": {
+            "es": "Audios donde el viento y el motor no dejan oír la voz.",
+            "en": "Audio where wind and engine noise bury the voice."
+          }
+        },
+        {
+          "grupo": "incompleto",
+          "texto": {
+            "es": "Reportes grabados que dicen la especie pero no los kilos.",
+            "en": "Recorded reports that give the species but not the weight."
+          }
+        },
+        {
+          "grupo": "desbalanceado",
+          "texto": {
+            "es": "Ninguna grabación de Guapi ni de otro pueblo del Pacífico.",
+            "en": "Not one recording from Guapi or any other Pacific town."
+          }
+        },
+        {
+          "grupo": "sucio",
+          "texto": {
+            "es": "Grabaciones marcadas con la especie equivocada.",
+            "en": "Recordings labeled with the wrong species."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Cargamento revisado. Ya ves por qué el asistente no le entiende a Emiro: las voces del Pacífico ni siquiera entraron a la mina.",
+          "en": "Load inspected. Now you see why the assistant can't understand Emiro: Pacific voices never even made it into the mine."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, mira otra vez. ¿Es ruido, algo repetido, datos a medias o grupos que casi no están?",
+          "en": "Hmm, look again. Is it noise, something duplicated, half-finished records, or groups that are barely there?"
+        }
+      },
+      "malPorGrupo": {
+        "incompleto": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Incompleto es cuando a cada grabación le faltan partes. ¿Aquí falta algo dentro de cada una, o faltan grupos enteros de personas?",
+            "en": "Close. Incomplete means each recording is missing parts. Is something missing inside each one here, or are whole groups of people missing?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Yo ya tenía la solución para Emiro, y era facilísima. Mira mi plan. Dos partes están mal. Tócalas.",
+          "en": "I already had the fix for Emiro, and it was super easy. Look at my plan. Two parts are wrong. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "El plan de Punti",
+        "en": "Punti's plan"
+      },
+      "trozos": [
+        {
+          "es": "Para que el asistente entienda a la gente de Guapi,",
+          "en": "To get the assistant to understand people in Guapi,"
+        },
+        {
+          "es": "basta con meterle el triple de grabaciones de Bogotá y Medellín,",
+          "en": "we just add three times as many recordings from Bogotá and Medellín,"
+        },
+        {
+          "es": "porque con más datos un modelo siempre mejora.",
+          "en": "because more data always makes a model better."
+        },
+        {
+          "es": "Después lo probamos con pescadores de Guapi.",
+          "en": "Then we test it with fishers from Guapi."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. El triple de lo mismo no le enseña el acento del Pacífico: solo agranda el desbalance. Más datos ayuda cuando son los datos que faltan.",
+          "en": "You caught me. Three times more of the same won't teach it the Pacific accent: it just makes the imbalance bigger. More data helps when it's the data that's missing."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte está bien. Busca las que confunden \"más datos\" con \"los datos que faltan\".",
+          "en": "That part's fine. Look for the ones that mix up \"more data\" with \"the data that's missing.\""
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Esto no solo le pasa a Emiro. Toda una región se hizo la misma pregunta.",
+          "en": "This doesn't just happen to Emiro. A whole region asked the same question."
+        }
+      },
+      "titulo": {
+        "es": "Una región en los datos",
+        "en": "A region in the data"
+      },
+      "texto": {
+        "es": "Por eso existen esfuerzos como Latam-GPT, un modelo abierto lanzado en febrero de 2026 y entrenado con textos de la región. Lo coordinó un centro de Chile con instituciones de muchos países, y Colombia aportó más de 220.000 documentos. La idea es la misma de Emiro: si quieres que la IA te entienda, tienes que estar en los datos.",
+        "en": "That's why efforts like Latam-GPT exist: an open model launched in February 2026 and trained on text from the region. A research center in Chile coordinated it with institutions from many countries, and Colombia contributed more than 220,000 documents. The idea is the same as Emiro's: if you want AI to understand you, you have to be in the data."
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de auditor. El consejo comunitario quiere entender qué salió mal antes de gastar otro peso. Pídele a la IA la auditoría de esos datos.",
+          "en": "Your turn to be the auditor. The community council wants to understand what went wrong before spending another peso. Ask the AI to audit that data."
+        }
+      },
+      "titulo": {
+        "es": "La auditoría de Emiro",
+        "en": "Emiro's audit"
+      },
+      "reto": {
+        "es": "Los datos del asistente que probaron (inventados): 400 horas de grabaciones, casi todas de Bogotá, Medellín y Bucaramanga; 8 de cada 10 voces son de hombres; ninguna grabación del Pacífico. Pídele a la IA una auditoría para Emiro y el consejo comunitario.",
+        "en": "The data behind the assistant they tried (made up): 400 hours of recordings, almost all from Bogotá, Medellín and Bucaramanga; 8 out of 10 voices are men's; not one recording from the Pacific coast. Ask the AI for an audit for Emiro and the community council."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "describe",
+          "texto": {
+            "es": "Describe cómo son los datos",
+            "en": "Describes the data"
+          },
+          "rubrica": "El prompt incluye la descripción del conjunto de datos: al menos dos de estos (400 horas, ciudades del interior, 8 de cada 10 voces de hombres, nada del Pacífico). No cuenta decir 'estos datos' o 'los datos del asistente' sin describirlos.",
+          "claves": {
+            "es": [
+              "400 horas",
+              "horas de grabacion",
+              "bogota",
+              "medellin",
+              "bucaramanga",
+              "8 de cada 10",
+              "voces de hombres",
+              "del interior"
+            ],
+            "en": [
+              "400 hours",
+              "hours of recording",
+              "bogota",
+              "medellin",
+              "bucaramanga",
+              "8 out of 10",
+              "8 in 10",
+              "male voices",
+              "men's voices",
+              "are men"
+            ]
+          }
+        },
+        {
+          "id": "falta",
+          "texto": {
+            "es": "Pide identificar quién falta",
+            "en": "Asks who's missing"
+          },
+          "rubrica": "El prompt pide identificar qué grupos o voces faltan o están poco representados en los datos. No cuenta pedir solo 'revisa los datos' o 'mejora el asistente'.",
+          "claves": {
+            "es": [
+              "quien falta",
+              "quienes faltan",
+              "que falta",
+              "que voces faltan",
+              "faltan",
+              "ausente",
+              "no aparece",
+              "subrepresent",
+              "poco representad"
+            ],
+            "en": [
+              "who is missing",
+              "who's missing",
+              "what is missing",
+              "what's missing",
+              "missing",
+              "underrepresent",
+              "left out",
+              "not represented"
+            ]
+          }
+        },
+        {
+          "id": "permiso",
+          "texto": {
+            "es": "Pide conseguirlos con permiso",
+            "en": "Asks how to get them with permission"
+          },
+          "rubrica": "El prompt pide cómo conseguir los datos que faltan con permiso o consentimiento de las personas (o acuerdo con la comunidad). No cuenta pedir 'conseguir más grabaciones' sin mencionar el permiso.",
+          "claves": {
+            "es": [
+              "permiso",
+              "consentimiento",
+              "autoriza",
+              "acuerdo con la comunidad",
+              "acuerdo con el consejo"
+            ],
+            "en": [
+              "permission",
+              "consent",
+              "authoriz",
+              "agreement with"
+            ]
+          }
+        },
+        {
+          "id": "probar",
+          "texto": {
+            "es": "Pide probarlo con gente de Guapi",
+            "en": "Asks to test it with people in Guapi"
+          },
+          "rubrica": "El prompt pide cómo probar el asistente con personas de Guapi o del Pacífico antes de usarlo. No cuenta pedir 'que funcione mejor' sin decir con quién se prueba.",
+          "claves": {
+            "es": [
+              "probar con",
+              "prueba con",
+              "pruebas con",
+              "probarlo con",
+              "probarlo en",
+              "probar en guapi",
+              "gente de guapi",
+              "pescadores de guapi",
+              "evaluar con",
+              "prueben con"
+            ],
+            "en": [
+              "test with",
+              "test it with",
+              "testing with",
+              "try it with",
+              "try it out with",
+              "people from guapi",
+              "fishers from guapi",
+              "fishermen from guapi",
+              "evaluate with",
+              "test it in guapi"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un consejo comunitario de pescadores a revisar los datos de un asistente de voz. Responde con una auditoría corta en texto plano, solo con los puntos que pida el prompt. Usa solo los datos del prompt. No inventes cifras, leyes, instituciones ni enlaces. Si hablas de grabar voces de personas, di que se hace con su permiso explicado en palabras sencillas.",
+        "en": "You are an AI helping a fishing community council review the data behind a voice assistant. Reply with a short plain-text audit, covering only the points the prompt asks for. Use only the data in the prompt. Don't invent figures, laws, institutions or links. If you talk about recording people's voices, say it's done with their permission, explained in plain words."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Auditoría de los datos\nCómo están: 400 horas, casi todas de Bogotá, Medellín y Bucaramanga; 8 de cada 10 voces de hombres; nada del Pacífico.\nQuién falta: pescadores y pescadoras de Guapi y del Pacífico, mujeres, personas mayores y las palabras propias de la pesca en la zona.\nCómo conseguirlo con permiso: grabar a voluntarios que den su autorización por escrito, explicada en palabras sencillas, con acuerdo del consejo comunitario. Quien quiera puede retirarse.\nCómo probarlo: grabar reportes nuevos con gente de Guapi que no esté en los datos y contar cuántos entiende bien antes y después.",
+            "en": "Data audit\nWhat it looks like: 400 hours, almost all from Bogotá, Medellín and Bucaramanga; 8 out of 10 voices are men's; nothing from the Pacific.\nWho's missing: fishermen and fisherwomen from Guapi and the Pacific coast, women in general, older people, and local fishing vocabulary.\nHow to get it with permission: record volunteers who give written consent, explained in plain words, with the community council's agreement. Anyone can drop out.\nHow to test it: record new reports from people in Guapi who aren't in the data and count how many it understands, before and after."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Auditoría completa. Emiro sabe qué falta, cómo conseguirlo con respeto y cómo comprobar que funcionó. Así se revisa un cargamento.",
+              "en": "Full audit. Emiro knows what's missing, how to get it respectfully, and how to check that it worked. That's how you inspect a load."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Los datos parecen suficientes: 400 horas es bastante. Se recomienda entrenar el modelo más tiempo para mejorar la precisión.",
+            "en": "The data looks sufficient: 400 hours is plenty. Training the model longer is recommended to improve accuracy."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. La IA miró la cantidad y no quién falta. Revisa la lista: pregúntale por las voces ausentes, el permiso y la prueba en Guapi.",
+              "en": "Weak signal. The AI looked at the amount, not at who's missing. Check the list: ask about the missing voices, permission and testing in Guapi."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué preguntas le haces a un cargamento de datos antes de meterlo al reactor.",
+          "en": "Into the logbook. In your own words, write the questions you ask a load of data before it goes into the reactor."
+        }
+      },
+      "concepto": "calidad-de-datos",
+      "definicion": {
+        "es": "Un modelo aprende lo que hay en sus datos y también lo que falta. Revisar datos es preguntar: ¿está limpio?, ¿está completo?, ¿quién falta?",
+        "en": "A model learns what's in its data and also what isn't. Checking data means asking: is it clean? Is it complete? Who's missing?"
+      },
+      "pregunta": {
+        "es": "Para revisar un conjunto de datos, pregunto…",
+        "en": "To check a dataset, I ask…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "auditoría de datos",
+        "en": "data audit"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu auditoría quedan en la bitácora. En el proyecto del capítulo las juntas todas en una ficha.",
+          "en": "Saved. Your note and your audit are in the logbook. In the chapter project you'll put them all together on one sheet."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y subimos a la boca de la mina.",
+          "en": "Two questions and we head up to the mine entrance."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Un asistente entiende bien a gente de Bogotá y mal a gente de Guapi. ¿Qué problema de datos es el más probable?",
+            "en": "An assistant understands people from Bogotá well and people from Guapi poorly. What's the most likely data problem?"
+          },
+          "opciones": [
+            {
+              "es": "Desbalanceado: casi no había voces del Pacífico",
+              "en": "Unbalanced: there were hardly any Pacific voices"
+            },
+            {
+              "es": "Repetido: había frases copiadas",
+              "en": "Duplicated: there were copied sentences"
+            },
+            {
+              "es": "Ninguno: es culpa del micrófono del celular",
+              "en": "None: it's the phone's microphone"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Le va peor con quien casi no estaba en sus datos.",
+              "en": "Right. It does worse with whoever was barely in its data."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en quién estaba en las grabaciones y quién no.",
+              "en": "Think about who was in the recordings and who wasn't."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Cuándo sí ayuda conseguir más datos?",
+            "en": "When does getting more data actually help?"
+          },
+          "opciones": [
+            {
+              "es": "Cuando son los datos que faltan, conseguidos con permiso",
+              "en": "When it's the missing data, gathered with permission"
+            },
+            {
+              "es": "Siempre, sin importar de dónde vengan",
+              "en": "Always, no matter where it comes from"
+            },
+            {
+              "es": "Nunca: más datos siempre empeoran el modelo",
+              "en": "Never: more data always makes it worse"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. No es cuánto, es qué y con qué permiso.",
+              "en": "Exactly. It's not how much, it's what, and with whose permission."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Recuerda el plan de Punti y el triple de grabaciones de Bogotá.",
+              "en": "Remember Punti's plan and the triple load of Bogotá recordings."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "La calidad de los datos",
+        "en": "Data quality"
+      },
+      "resumen": {
+        "es": "Lo que falta en los datos también se aprende. Revisa si está limpio, completo y quién falta.",
+        "en": "What's missing from the data gets learned too. Check whether it's clean, complete, and who's missing."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Encontraste los problemas del cargamento de Emiro",
+          "en": "You found the problems in Emiro's load"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Atrapaste el \"más datos siempre mejora\" de Punti",
+          "en": "You caught Punti's \"more data is always better\""
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Hiciste la auditoría de datos para Guapi",
+          "en": "You ran the data audit for Guapi"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Pasaste el punto de control",
+          "en": "You passed the checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "auditar-datos",
+      "titulo": {
+        "es": "Auditar un conjunto de datos",
+        "en": "Auditing a dataset"
+      }
+    }
+  }
+}

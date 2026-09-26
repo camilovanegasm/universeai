@@ -1,0 +1,665 @@
+{
+  "formato": "punti-mision@1",
+  "id": "reglas-o-ejemplos",
+  "mundo": "que-es-la-ia",
+  "capitulo": 1,
+  "numero": 2,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "reglas-vs-ejemplos"
+  ],
+  "usaConceptos": [
+    "ia"
+  ],
+  "titulo": {
+    "es": "Reglas o ejemplos",
+    "en": "Rules or Examples"
+  },
+  "resumen": {
+    "es": "La diferencia entre un programa que sigue reglas escritas y una IA que encuentra sus reglas en los ejemplos.",
+    "en": "The difference between a program that follows written rules and an AI that finds its own rules in examples."
+  },
+  "siguiente": "los-cuatro-oficios",
+  "fuentes": [
+    {
+      "titulo": "Google for Developers, Introduction to Machine Learning: What is ML?",
+      "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, sigo en el taller. Llegó una señal de Bucaramanga. Nubia, cajera de supermercado, tiene una duda que a mí también me costó entender cuando me encendí.",
+          "en": "Pilot, I'm still in the workshop. A signal came in from Bucaramanga. Nubia, a supermarket cashier, has a question I also found tricky when I first switched on."
+        }
+      },
+      "titulo": {
+        "es": "Reglas o ejemplos",
+        "en": "Rules or examples"
+      },
+      "texto": {
+        "es": "A Nubia le enseñaron a revisar billetes con reglas: la marca de agua y el hilo. Una compañera nueva detecta los falsos al tacto. Hoy ves la diferencia entre un programa normal y una IA. Unos 8 minutos.",
+        "en": "Nubia was taught to check bills with rules: the watermark and the security thread. A new coworker spots fakes just by touch. Today you'll see the difference between a regular program and an AI. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Hay dos maneras de enseñarle algo a una máquina. Mira la tabla.",
+          "en": "There are two ways to teach a machine something. Look at the table."
+        }
+      },
+      "titulo": {
+        "es": "Dos maneras de enseñar",
+        "en": "Two ways to teach"
+      },
+      "texto": {
+        "es": "Un programa normal sigue reglas que alguien escribió: si tiene marca de agua y tiene hilo, el billete es bueno. Una IA no recibe esas reglas. Mira miles de billetes buenos y falsos, y encuentra sola las señales que los separan. Como la compañera de Nubia, que aprendió de tanto tocar billetes.",
+        "en": "A regular program follows rules someone wrote: if it has a watermark and a thread, the bill is good. An AI doesn't get those rules. It looks at thousands of real and fake bills and finds the signs that tell them apart on its own. Like Nubia's coworker, who learned from handling so many bills."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Programa de reglas",
+            "en": "Rule-based program"
+          },
+          "b": {
+            "es": "Programa que aprende",
+            "en": "Program that learns"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Alguien escribe cada regla",
+              "en": "Someone writes every rule"
+            },
+            "b": {
+              "es": "Encuentra sus reglas en los ejemplos",
+              "en": "Finds its rules in the examples"
+            }
+          },
+          {
+            "a": {
+              "es": "Un falso nuevo imita la marca de agua y el hilo: lo deja pasar",
+              "en": "A new fake copies the watermark and thread: it lets it through"
+            },
+            "b": {
+              "es": "Puede notar otras señales que vio en miles de falsos",
+              "en": "It may catch other signs it saw in thousands of fakes"
+            }
+          },
+          {
+            "a": {
+              "es": "Sabe decir por qué decidió",
+              "en": "Can say why it decided"
+            },
+            "b": {
+              "es": "A veces no sabe explicar por qué decidió",
+              "en": "Sometimes can't explain why it decided"
+            }
+          },
+          {
+            "a": {
+              "es": "Si algo cambia, alguien reescribe las reglas",
+              "en": "If something changes, someone rewrites the rules"
+            },
+            "b": {
+              "es": "Si algo cambia, necesita ejemplos nuevos",
+              "en": "If something changes, it needs new examples"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las dos formas, con su color. Ninguna es mejor siempre: cada una sirve para algo distinto. Toca cada una.",
+          "en": "Here are the two ways, each with its color. Neither one always wins: each is good for something different. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las dos formas",
+        "en": "The two ways"
+      },
+      "piezas": [
+        {
+          "id": "reglas",
+          "color": "#ff9f1c",
+          "titulo": {
+            "es": "Reglas escritas",
+            "en": "Written rules"
+          },
+          "descripcion": {
+            "es": "Alguien le dice paso a paso qué hacer.",
+            "en": "Someone tells it what to do, step by step."
+          },
+          "ejemplo": {
+            "es": "\"Si el billete no tiene hilo, recházalo.\" Sirve cuando las reglas son pocas y claras, como sumar la cuenta del mercado.",
+            "en": "\"If the bill has no thread, reject it.\" Works when the rules are few and clear, like adding up a grocery bill."
+          }
+        },
+        {
+          "id": "ejemplos",
+          "color": "#00e5d0",
+          "titulo": {
+            "es": "Aprender de ejemplos",
+            "en": "Learning from examples"
+          },
+          "descripcion": {
+            "es": "Mira muchos casos y encuentra sus propias reglas.",
+            "en": "Looks at many cases and finds its own rules."
+          },
+          "ejemplo": {
+            "es": "Miles de billetes, cada uno con su respuesta: bueno o falso. Sirve cuando las reglas son demasiadas o nadie sabe escribirlas, como reconocer una voz.",
+            "en": "Thousands of bills, each with its answer: real or fake. Works when there are too many rules or nobody knows how to write them, like recognizing a voice."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora decides tú. ¿Cada tarea se resuelve mejor con reglas escritas o aprendiendo de ejemplos? Pista: ¿alguien podría escribir todas las reglas en una hoja?",
+          "en": "Now you decide. Is each task better handled with written rules or by learning from examples? Hint: could someone write all the rules on one sheet of paper?"
+        }
+      },
+      "titulo": {
+        "es": "¿Reglas o ejemplos?",
+        "en": "Rules or examples?"
+      },
+      "grupos": [
+        "reglas",
+        "ejemplos"
+      ],
+      "items": [
+        {
+          "grupo": "reglas",
+          "texto": {
+            "es": "Calcular las vueltas que Nubia le da a un cliente",
+            "en": "Working out the change Nubia gives a customer"
+          }
+        },
+        {
+          "grupo": "ejemplos",
+          "texto": {
+            "es": "Entender la letra a mano de una lista de mercado",
+            "en": "Reading a handwritten grocery list"
+          }
+        },
+        {
+          "grupo": "reglas",
+          "texto": {
+            "es": "Avisar que un yogur vence mañana, según la fecha de la etiqueta",
+            "en": "Warning that a yogurt expires tomorrow, based on the label date"
+          }
+        },
+        {
+          "grupo": "ejemplos",
+          "texto": {
+            "es": "Reconocer si una foto muestra un mango o una papaya",
+            "en": "Telling whether a photo shows a mango or a papaya"
+          }
+        },
+        {
+          "grupo": "reglas",
+          "texto": {
+            "es": "Hacer un descuento del 10 % los martes",
+            "en": "Giving a 10% discount on Tuesdays"
+          }
+        },
+        {
+          "grupo": "ejemplos",
+          "texto": {
+            "es": "Detectar correos de estafa que cambian cada semana",
+            "en": "Spotting scam emails that change every week"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Muy bien. Cuando las reglas caben en una hoja, ganan las reglas. Cuando nadie sabe escribirlas todas, gana aprender de ejemplos.",
+          "en": "Nice work. When the rules fit on one sheet, rules win. When nobody can write them all down, learning from examples wins."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Imagina que tienes que escribir las instrucciones. ¿Te alcanza una hoja o te faltarían mil?",
+          "en": "Hmm. Imagine you had to write the instructions. Would one sheet do, or would you need a thousand?"
+        }
+      },
+      "malPorGrupo": {
+        "reglas": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: ¿cómo escribirías la regla exacta para eso? Hay demasiados casos distintos.",
+            "en": "Careful: how would you write the exact rule for that? There are too many different cases."
+          }
+        },
+        "ejemplos": {
+          "estado": "error",
+          "texto": {
+            "es": "Esa tiene una regla clara y corta. No hace falta que la máquina aprenda nada.",
+            "en": "That one has a short, clear rule. The machine doesn't need to learn anything."
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Te confieso algo. Ayer le expliqué a Nubia qué es la IA y creo que metí la pata dos veces. Toca las partes donde me equivoqué.",
+          "en": "I have a confession. Yesterday I explained AI to Nubia, and I think I messed up twice. Tap the parts where I got it wrong."
+        }
+      },
+      "titulo": {
+        "es": "Mi calculadora inteligente",
+        "en": "My smart calculator"
+      },
+      "trozos": [
+        {
+          "es": "La calculadora del celular es una IA.",
+          "en": "The phone's calculator is an AI."
+        },
+        {
+          "es": "Hace cuentas más rápido que cualquier persona",
+          "en": "It does math faster than any person"
+        },
+        {
+          "es": "y no se equivoca en una suma.",
+          "en": "and never gets a sum wrong."
+        },
+        {
+          "es": "Aprendió a sumar mirando millones de cuentas.",
+          "en": "It learned to add by looking at millions of sums."
+        }
+      ],
+      "malos": [
+        0,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. La calculadora es rápida, pero sigue reglas que alguien escribió. Nunca aprendió nada de ejemplos. Ser rápida no la hace IA.",
+          "en": "You got me. The calculator is fast, but it follows rules someone wrote. It never learned anything from examples. Being fast doesn't make it AI."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte es cierta. Busca dónde digo que la calculadora es IA o que aprendió algo.",
+          "en": "That part is true. Look for where I say the calculator is AI or that it learned something."
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Nubia quiere entender las dos formas con su propio trabajo. Pídele a la IA que compare cómo revisaría billetes cada una.",
+          "en": "Your turn. Nubia wants to understand the two ways using her own job. Ask the AI to compare how each one would check bills."
+        }
+      },
+      "titulo": {
+        "es": "Los billetes de Nubia",
+        "en": "Nubia's bills"
+      },
+      "reto": {
+        "es": "Datos de Nubia: es cajera de supermercado en Bucaramanga. Revisa billetes con reglas: marca de agua e hilo de seguridad. Su compañera nueva detecta los falsos al tacto, por experiencia. Nubia nunca ha visto cómo trabaja una IA.",
+        "en": "About Nubia: she's a supermarket cashier in Bucaramanga. She checks bills with rules: watermark and security thread. Her new coworker spots fakes by touch, from experience. Nubia has never seen how an AI works."
+      },
+      "inicial": "vacio",
+      "aprobar": 2,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "comparar",
+          "texto": {
+            "es": "Pide comparar las dos formas",
+            "en": "Asks to compare the two ways"
+          },
+          "rubrica": "El prompt pide comparar dos formas de revisar billetes: un programa que sigue reglas escritas y uno que aprende de ejemplos. No cuenta preguntar solo por la IA o solo por el programa de reglas, ni '¿qué es mejor?' sin decir entre qué.",
+          "claves": {
+            "es": [
+              "compara",
+              "comparacion",
+              "diferencia",
+              "las dos formas",
+              "los dos programas",
+              "ambos",
+              "ambas",
+              "reglas y",
+              "reglas vs",
+              "reglas o ",
+              " versus "
+            ],
+            "en": [
+              "compare",
+              "comparison",
+              "difference",
+              "differ",
+              "both",
+              "the two ways",
+              "the two programs",
+              "rules vs",
+              "rules versus",
+              "rules and",
+              "rules or ",
+              " versus "
+            ]
+          }
+        },
+        {
+          "id": "billetes",
+          "texto": {
+            "es": "Usa el caso de los billetes o la caja",
+            "en": "Uses the bills or the register"
+          },
+          "rubrica": "El prompt usa el caso de Nubia: revisar billetes falsos o su trabajo en la caja del supermercado. No cuenta una comparación general sin ningún ejemplo de su trabajo.",
+          "claves": {
+            "es": [
+              "billete",
+              "caja",
+              "cajera",
+              "supermercado",
+              "falso",
+              "marca de agua",
+              "hilo"
+            ],
+            "en": [
+              "bill",
+              "banknote",
+              "cashier",
+              "register",
+              "supermarket",
+              "counterfeit",
+              "fake",
+              "watermark",
+              "thread"
+            ]
+          }
+        },
+        {
+          "id": "cuando",
+          "texto": {
+            "es": "Pide cuándo conviene cada una",
+            "en": "Asks when each one fits"
+          },
+          "rubrica": "El prompt pide cuándo conviene cada forma, o una ventaja y una desventaja de cada una, o cuál sirve mejor en qué situación. No cuenta pedir solo que las explique o las describa.",
+          "claves": {
+            "es": [
+              "cuando conviene",
+              "cuando sirve",
+              "cuando usar",
+              "cuando es mejor",
+              "conviene",
+              "ventaja",
+              "desventaja",
+              "pros",
+              "contras",
+              "cual es mejor",
+              "cual sirve",
+              "en que casos",
+              "para que sirve cada"
+            ],
+            "en": [
+              "when to use",
+              "when each",
+              "better for",
+              "works best",
+              "advantage",
+              "disadvantage",
+              "pros",
+              "upside",
+              "downside",
+              "which is better",
+              "which one is better",
+              "strength",
+              "weakness"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que explica tecnología a personas sin estudios técnicos. Responde en máximo 8 frases cortas, sin palabras técnicas. Usa solo el caso que trae el prompt. Si el prompt no pide cuándo conviene cada forma, no lo agregues.",
+        "en": "You are an AI that explains technology to people with no technical background. Reply in 8 short sentences at most, with no technical words. Use only the case the prompt gives. If the prompt doesn't ask when each approach fits, don't add it."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Programa de reglas: revisa lo que alguien le escribió. ¿Tiene marca de agua? ¿Tiene hilo? Si sí, lo acepta.\nVentaja: es claro y explica por qué decidió.\nDesventaja: un falso nuevo que imite esas dos cosas se le pasa.\n\nPrograma que aprende: miró miles de billetes buenos y falsos, y encontró sus propias señales.\nVentaja: puede notar detalles que nadie escribió.\nDesventaja: necesita muchísimos ejemplos y no siempre sabe explicar su decisión.\n\nPara la caja: las reglas sirven para lo básico; el que aprende ayuda con los falsos que van cambiando.",
+            "en": "Rule-based program: it checks what someone wrote for it. Watermark? Thread? If yes, it accepts the bill.\nUpside: it's clear and can say why it decided.\nDownside: a new fake that copies those two things gets past it.\n\nProgram that learns: it looked at thousands of real and fake bills and found its own signs.\nUpside: it may notice details nobody wrote down.\nDownside: it needs tons of examples and can't always explain its decision.\n\nFor the register: rules handle the basics; the learning one helps with fakes that keep changing."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso es comparar. La IA puso las dos formas lado a lado, con el caso de Nubia y con cuándo sirve cada una.",
+              "en": "Now that's a comparison. The AI put both ways side by side, with Nubia's case and when each one works."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "La inteligencia artificial puede detectar billetes falsos analizando imágenes con algoritmos avanzados. Es una tecnología muy útil para supermercados y bancos.",
+            "en": "Artificial intelligence can detect counterfeit bills by analyzing images with advanced algorithms. It's a very useful technology for supermarkets and banks."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Solo habló de la IA y sonó a anuncio. Pide que compare las dos formas y que diga cuándo conviene cada una.",
+              "en": "It only talked about AI and sounded like an ad. Ask it to compare the two ways and say when each one fits."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras la diferencia entre un programa de reglas y una IA, como se la contarías a Nubia.",
+          "en": "Logbook time. Write the difference between a rule-based program and an AI in your own words, the way you'd tell Nubia."
+        }
+      },
+      "concepto": "reglas-vs-ejemplos",
+      "definicion": {
+        "es": "Un programa normal sigue reglas que alguien escribió. Una IA encuentra sus propias reglas mirando ejemplos. Aprender gana cuando las reglas son demasiadas o nadie sabe escribirlas.",
+        "en": "A regular program follows rules someone wrote. An AI finds its own rules by looking at examples. Learning wins when there are too many rules or nobody knows how to write them."
+      },
+      "pregunta": {
+        "es": "La diferencia entre reglas y ejemplos es…",
+        "en": "The difference between rules and examples is…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "comparar dos formas",
+        "en": "comparing two ways"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Esta idea la vas a usar en todo Origen: cada vez que veas algo \"inteligente\", pregúntate si sigue reglas o si aprendió.",
+          "en": "Saved. You'll use this idea all over Origin: whenever you see something \"smart\", ask whether it follows rules or learned."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y seguimos.",
+          "en": "Two questions and we move on."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Un almacén quiere un programa que haga 20 % de descuento los viernes. ¿Qué le sirve?",
+            "en": "A store wants a program that gives 20% off on Fridays. What does it need?"
+          },
+          "opciones": [
+            {
+              "es": "Una IA que aprenda de miles de viernes",
+              "en": "An AI that learns from thousands of Fridays"
+            },
+            {
+              "es": "Un programa de reglas: es una regla clara",
+              "en": "A rule-based program: it's one clear rule"
+            },
+            {
+              "es": "Ninguno de los dos",
+              "en": "Neither one"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Si la regla cabe en una línea, no hace falta que nadie aprenda nada.",
+              "en": "Right. If the rule fits on one line, nothing needs to learn anything."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Esa tarea se puede escribir en una sola línea?",
+              "en": "Hmm. Can that task be written in a single line?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Por qué la compañera de Nubia se parece a una IA?",
+            "en": "Why is Nubia's coworker a bit like an AI?"
+          },
+          "opciones": [
+            {
+              "es": "Aprendió de tanto tocar billetes, no de una lista de reglas",
+              "en": "She learned from handling so many bills, not from a list of rules"
+            },
+            {
+              "es": "Trabaja más rápido que Nubia",
+              "en": "She works faster than Nubia"
+            },
+            {
+              "es": "Nunca se equivoca",
+              "en": "She's never wrong"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Miles de ejemplos, y las reglas las encontró ella.",
+              "en": "Exactly. Thousands of examples, and she found the rules herself."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Piensa en cómo aprendió ella a detectar los falsos.",
+              "en": "Not that. Think about how she learned to spot the fakes."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Reglas o ejemplos",
+        "en": "Rules or examples"
+      },
+      "resumen": {
+        "es": "Un programa normal sigue reglas escritas. Una IA encuentra sus reglas en los ejemplos.",
+        "en": "A regular program follows written rules. An AI finds its rules in the examples."
+      }
+    },
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Decidiste qué tareas van con reglas y cuáles con ejemplos",
+          "en": "You decided which tasks need rules and which need examples"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Atrapaste a Punti diciendo que la calculadora es IA",
+          "en": "You caught Punti calling the calculator AI"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "La IA comparó las dos formas con los billetes de Nubia",
+          "en": "The AI compared both ways using Nubia's bills"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Pasaste el punto de control",
+          "en": "You passed the checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "distinguir-reglas-y-ejemplos",
+      "titulo": {
+        "es": "Distinguir reglas y ejemplos",
+        "en": "Telling rules from examples"
+      }
+    }
+  }
+}

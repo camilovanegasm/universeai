@@ -1,0 +1,1027 @@
+{
+  "formato": "punti-mision@1",
+  "id": "carpeta-de-tramites",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 2,
+  "numero": 8,
+  "receta": "construccion",
+  "largo": "proyecto",
+  "minutos": 20,
+  "conceptos": [
+    "carpeta-de-tramites"
+  ],
+  "usaConceptos": [
+    "presupuesto",
+    "entender-documentos",
+    "reclamo-formal",
+    "entender-credito",
+    "datos-sensibles"
+  ],
+  "titulo": {
+    "es": "Carpeta de trámites",
+    "en": "Paperwork folder"
+  },
+  "resumen": {
+    "es": "Tu proyecto del capítulo: presupuesto del mes, un reclamo listo con marcadores y tus 5 preguntas antes de firmar.",
+    "en": "Your chapter project: monthly budget, a ready complaint with placeholders and your 5 questions before signing."
+  },
+  "siguiente": "entender-no-diagnosticar",
+  "fuentes": [
+    {
+      "titulo": "Ley 1755 de 2015, derecho de petición (Función Pública)",
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=65334",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ley 142 de 1994, arts. 154 a 159 (normograma de la Cancillería)",
+      "url": "https://www.cancilleria.gov.co/sites/default/files/Normograma/docs/ley_0142_1994_pr005.htm",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, esta vez la llamada viene de tu propia billetera. Ya ayudaste a Karen, a Don Rubén, a Doña Gladys y a Jefferson. Ahora armas tu carpeta.",
+          "en": "Pilot, this time the call comes from your own wallet. You've helped Karen, Don Rubén, Doña Gladys and Jefferson. Now you build your own folder."
+        }
+      },
+      "titulo": {
+        "es": "Carpeta de trámites",
+        "en": "Paperwork folder"
+      },
+      "texto": {
+        "es": "Punti no es asesor financiero ni abogado: la IA te ayuda a entender y a redactar, y la decisión es tuya. Proyecto del módulo: tu presupuesto, un reclamo listo y tus 5 preguntas antes de firmar. Unos 20 minutos.",
+        "en": "Punti isn't a financial advisor or a lawyer: AI helps you understand and write, and the decision is yours. It's the wallet module project: your budget, a ready complaint and your 5 questions before signing. About 20 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué lleva tu carpeta.",
+          "en": "First, what goes in your folder."
+        }
+      },
+      "titulo": {
+        "es": "Lo que lleva tu carpeta",
+        "en": "What's in your folder"
+      },
+      "texto": {
+        "es": "Tu carpeta de trámites son tres hojas que vas a usar muchas veces: tu presupuesto del mes, un reclamo con marcadores listo para llenar y tus 5 preguntas para antes de firmar cualquier cosa. La IA hace el borrador. Tú pones tus cifras, revisas las sumas y los plazos, y decides.",
+        "en": "Your paperwork folder is three sheets you'll use again and again: your monthly budget, a complaint with placeholders ready to fill in, and your 5 questions for before you sign anything. AI makes the draft. You add your numbers, check the sums and deadlines, and decide."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Presupuesto: cifras redondas y sumas a la vista",
+            "en": "Budget: round numbers and visible sums"
+          },
+          {
+            "es": "Reclamo: hechos, pedido y marcadores",
+            "en": "Complaint: facts, request and placeholders"
+          },
+          {
+            "es": "5 preguntas antes de firmar",
+            "en": "5 questions before signing"
+          },
+          {
+            "es": "Tu revisión: sumas, datos y plazos",
+            "en": "Your review: sums, details and deadlines"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de empezar, escoge con qué datos trabajas.",
+          "en": "Before you start, choose what information you'll work with."
+        }
+      },
+      "titulo": {
+        "es": "¿Con qué datos?",
+        "en": "With what information?"
+      },
+      "escena": {
+        "es": "Tu carpeta va a salir de lo que le cuentes a la IA. Para el presupuesto necesita cuánto entra y cuánto sale. Para el reclamo, qué pasó y qué pides. ¿Qué le cuentas?",
+        "en": "Your folder will come from what you tell the AI. For the budget it needs what comes in and what goes out. For the complaint, what happened and what you want. What do you tell it?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Mis cifras reales, redondas, y los hechos, sin datos personales",
+            "en": "My real numbers, rounded, and the facts, with no personal details"
+          },
+          "consecuencia": {
+            "es": "Perfecto. Cifras redondas, categorías, fechas y valores de lo que pasó: eso es todo lo que la IA necesita. Tus datos van en la carta, con tu letra.",
+            "en": "Perfect. Round numbers, categories, dates and amounts of what happened: that's all the AI needs. Your details go on the letter, in your own hand."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Todo: extracto del banco, cédula y número de contrato",
+            "en": "Everything: bank statement, ID and account number"
+          },
+          "consecuencia": {
+            "es": "La IA no necesita eso para sumar ni para redactar. Una vez lo pegas, sale de tus manos. Deja solo lo que sirve para la tarea.",
+            "en": "The AI doesn't need that to add up or to draft. Once you paste it, it's out of your hands. Keep only what the task needs."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Cifras inventadas, para no complicarme",
+            "en": "Made-up numbers, to keep it simple"
+          },
+          "consecuencia": {
+            "es": "Sirve para practicar, pero el mes que viene no te va a ayudar. Usa tus cifras de verdad, redondas.",
+            "en": "Fine for practice, but it won't help you next month. Use your real numbers, rounded."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Regla del proyecto: tus cifras de verdad, redondas; ningún dato personal. Cuánto, en qué y cuándo, sí. Banco, cuentas, cédula y claves, no.",
+          "en": "Project rule: your real numbers, rounded; no personal details. How much, on what and when, yes. Bank, accounts, ID and passwords, no."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las cuatro piezas de tu carpeta. Toca cada una para repasarla.",
+          "en": "These are the four pieces of your folder. Tap each one to review it."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas de tu carpeta",
+        "en": "The 4 pieces of your folder"
+      },
+      "piezas": [
+        {
+          "id": "presupuesto",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Tu presupuesto",
+            "en": "Your budget"
+          },
+          "descripcion": {
+            "es": "Cifras redondas, categorías y cada suma a la vista.",
+            "en": "Round numbers, categories and every sum visible."
+          },
+          "ejemplo": {
+            "es": "Lo mismo que hiciste con Karen, pero con tu mes. Sin banco ni cuenta.",
+            "en": "Same as you did with Karen, but with your month. No bank or account."
+          }
+        },
+        {
+          "id": "reclamo",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Tu reclamo",
+            "en": "Your complaint"
+          },
+          "descripcion": {
+            "es": "Hechos con fecha y valor, qué pides, por escrito.",
+            "en": "Facts with dates and amounts, your request, in writing."
+          },
+          "ejemplo": {
+            "es": "Como el de Doña Gladys: [NOMBRE] y [CONTRATO] en el chat, tus datos en la carta.",
+            "en": "Like Doña Gladys's: [NAME] and [ACCOUNT] in the chat, your details on the letter."
+          }
+        },
+        {
+          "id": "preguntas",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Tus 5 preguntas",
+            "en": "Your 5 questions"
+          },
+          "descripcion": {
+            "es": "Lo que preguntas antes de firmar cualquier cosa.",
+            "en": "What you ask before signing anything."
+          },
+          "ejemplo": {
+            "es": "Lo que aprendiste con Don Rubén y Jefferson, en una lista que te sirve siempre.",
+            "en": "What you learned with Don Rubén and Jefferson, in one list that always works."
+          }
+        },
+        {
+          "id": "escotilla",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Tu revisión",
+            "en": "Your review"
+          },
+          "descripcion": {
+            "es": "Sumas, datos y plazos, revisados por ti.",
+            "en": "Sums, details and deadlines, checked by you."
+          },
+          "ejemplo": {
+            "es": "La regla de la escotilla: nada sale de la estación sin que lo revises. Ni una suma, ni un plazo.",
+            "en": "The hatch rule: nothing leaves the station until you check it. Not a sum, not a deadline."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primera hoja: tu presupuesto. Escribe el pedido con tus cifras del mes, redondas.",
+          "en": "First sheet: your budget. Write the request with your monthly numbers, rounded."
+        }
+      },
+      "titulo": {
+        "es": "Tu presupuesto del mes",
+        "en": "Your monthly budget"
+      },
+      "reto": {
+        "es": "Tu mes, con cifras reales y redondas. Di cuánto te entra (aunque cambie, como un rango) y en qué gastas, por categorías: arriendo, mercado, transporte, servicios, deudas, familia. Pide una tabla con cada suma a la vista. Nada de banco, cuenta ni tarjeta.",
+        "en": "Your month, with real, rounded numbers. Say how much comes in (as a range, if it changes) and what you spend on, by category: rent, groceries, transport, utilities, debts, family. Ask for a table with every sum visible. No bank, account or card."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "cifras",
+          "texto": {
+            "es": "Ingresos y gastos en cifras",
+            "en": "Income and expenses in numbers"
+          },
+          "rubrica": "El prompt da lo que entra con cifras (aunque sea un rango) y al menos tres gastos con su valor. Las cifras pueden ser redondas. No cuenta 'gano poco', 'lo de siempre' o 'no me alcanza' sin cifras, ni dar solo el ingreso sin gastos.",
+          "claves": {
+            "es": [
+              "000",
+              " mil",
+              "millon"
+            ],
+            "en": [
+              "000",
+              "thousand",
+              "million"
+            ]
+          }
+        },
+        {
+          "id": "categorias",
+          "texto": {
+            "es": "Por categorías, sin banco ni cuenta",
+            "en": "By category, no bank or account"
+          },
+          "rubrica": "El prompt separa los gastos por categorías con nombre (arriendo, mercado, transporte, servicios, deudas, familia) y NO trae nombre de banco, números de cuenta o de tarjeta, claves ni nombres completos. Si aparece cualquiera de esos datos, marca false. No cuenta 'mis gastos' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "arriendo",
+              "mercado",
+              "transporte",
+              "servicios",
+              "celular",
+              "comida",
+              "deuda",
+              "cuota",
+              "pasajes",
+              "colegio",
+              "mama",
+              "papa"
+            ],
+            "en": [
+              "rent",
+              "groceries",
+              "food",
+              "bus",
+              "transport",
+              "utilities",
+              "phone",
+              "debt",
+              "loan payment",
+              "school",
+              "mom",
+              "dad"
+            ]
+          }
+        },
+        {
+          "id": "sumas",
+          "texto": {
+            "es": "Pide ver o revisar las sumas",
+            "en": "Asks to see or check the sums"
+          },
+          "rubrica": "El prompt pide que la IA muestre cada suma, los totales para verificarlos, que revise sus cuentas, o una columna para comprobar. No cuenta pedir 'un presupuesto' o 'una tabla' sin decir nada de mostrar o revisar las sumas.",
+          "claves": {
+            "es": [
+              "suma",
+              "totales",
+              "el total",
+              "verific",
+              "comprob",
+              "revisa las cuentas",
+              "revisar las cuentas",
+              "que cuadre",
+              "cuanto me sobra",
+              "cuanto sobra",
+              "cuanto queda"
+            ],
+            "en": [
+              "sums",
+              "the sum",
+              "each sum",
+              "every sum",
+              "math",
+              "totals",
+              "the total",
+              "double-check",
+              "verify",
+              "add up",
+              "adds up",
+              "how much is left",
+              "what's left",
+              "left over"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a armar un presupuesto personal. Responde en texto plano, en máximo 120 palabras. Usa solo las cifras del mensaje: no inventes ingresos ni gastos. Si el mensaje no trae cifras, responde con consejos generales de ahorro, sin tabla. Si trae cifras, haz una tabla sencilla (categoría | valor) con el total de ingresos, el total de gastos y lo que sobra o falta. Si pide ver o revisar las sumas, muestra cada suma paso a paso. Si el mensaje trae nombre de banco, número de cuenta, de tarjeta o claves, no los repitas y agrega al final: 'No hace falta que me des datos de tu banco.' Nunca recomiendes bancos, cuentas, créditos, tarjetas ni inversiones: si te lo piden, di que eso se pregunta en la entidad o a un asesor.",
+        "en": "You are an AI that helps build a personal budget. Reply in plain text, in 120 words at most. Use only the numbers in the message: don't invent income or expenses. If the message has no numbers, reply with general saving tips and no table. If it has numbers, make a simple table (category | amount) with total income, total expenses and what's left over or short. If it asks to see or check the sums, show each sum step by step. If the message includes a bank name, an account or card number, or passwords, don't repeat them and add at the end: 'You don't need to give me your bank details.' Never recommend banks, accounts, loans, cards or investments: if asked, say that's a question for the bank or an advisor."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Ingresos: 1.400.000 + 300.000 = 1.700.000\nArriendo | 550.000\nMercado | 450.000\nTransporte | 180.000\nServicios | 170.000\nCuota del celular | 115.000\nGastos: 550.000 + 450.000 + 180.000 + 170.000 + 115.000 = 1.465.000\nSobra: 1.700.000 - 1.465.000 = 235.000",
+            "en": "Income: 1,400,000 + 300,000 = 1,700,000\nRent | 550,000\nGroceries | 450,000\nTransport | 180,000\nUtilities | 170,000\nPhone payment | 115,000\nExpenses: 550,000 + 450,000 + 180,000 + 170,000 + 115,000 = 1,465,000\nLeft over: 1,700,000 - 1,465,000 = 235,000"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Primera hoja lista. Tu mes en una tabla, con cada suma a la vista para revisarla. Y tu banco sigue en tierra.",
+              "en": "First sheet done. Your month in a table, with every sum visible to check. And your bank stays on the ground."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Para organizar tus finanzas, anota tus gastos, reduce los gastos pequeños de cada día y trata de ahorrar una parte de lo que ganas. La constancia es la clave.",
+            "en": "To organize your finances, write down your expenses, cut small daily spending and try to save part of what you earn. Consistency is key."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Consejos generales y cero cuentas. La IA no sabe cuánto te entra ni en qué gastas. Mira la lista.",
+              "en": "General tips and zero math. The AI doesn't know what comes in or what you spend on. Check the list."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Segunda hoja: tu reclamo. Piensa en un cobro o un servicio que no te cuadra. Si hoy no tienes ninguno, usa el de Doña Gladys.",
+          "en": "Second sheet: your complaint. Think of a charge or service that doesn't add up. If you don't have one today, use Doña Gladys's."
+        }
+      },
+      "titulo": {
+        "es": "Tu reclamo listo",
+        "en": "Your ready complaint"
+      },
+      "reto": {
+        "es": "Un cobro o un servicio que no te cuadra: una factura, un plan de celular, una compra. Pide el reclamo con marcadores donde van tus datos, los hechos con meses y valores, qué pides en concreto y respuesta por escrito.",
+        "en": "A charge or a service that doesn't add up: a bill, a phone plan, a purchase. Ask for the complaint with placeholders where your details go, the facts with months and amounts, what exactly you want and a written reply."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "marcadores",
+          "texto": {
+            "es": "Marcadores en vez de datos",
+            "en": "Placeholders instead of data"
+          },
+          "rubrica": "El prompt usa al menos un marcador donde van los datos personales, para llenarlo después: [NOMBRE], [CONTRATO], [CÉDULA], [DIRECCIÓN], {nombre} o XXX. No cuenta si junto al marcador aparece un nombre completo, una cédula o un número de contrato o de cliente.",
+          "claves": {
+            "es": [
+              "[",
+              "{",
+              "(nombre",
+              "(contrato",
+              "xxx"
+            ],
+            "en": [
+              "[",
+              "{",
+              "(name",
+              "(account",
+              "xxx"
+            ]
+          }
+        },
+        {
+          "id": "hechos",
+          "texto": {
+            "es": "Hechos con meses y valores",
+            "en": "Facts with months and amounts"
+          },
+          "rubrica": "El prompt cuenta qué pasó con al menos un mes o fecha y al menos un valor en plata (la factura de marzo llegó por 120.000; me cobraron 45.000 que no pedí). No cuenta 'me cobraron de más' o 'llegó muy cara' sin mes ni valor.",
+          "claves": {
+            "es": [
+              "enero",
+              "febrero",
+              "marzo",
+              "abril",
+              "junio",
+              "julio",
+              "agosto",
+              "septiembre",
+              "octubre",
+              "noviembre",
+              "diciembre",
+              "000",
+              " mil"
+            ],
+            "en": [
+              "january",
+              "february",
+              "march",
+              "april",
+              "june",
+              "july",
+              "august",
+              "september",
+              "october",
+              "november",
+              "december",
+              "000",
+              "thousand"
+            ]
+          }
+        },
+        {
+          "id": "pide",
+          "texto": {
+            "es": "Qué pide y respuesta por escrito",
+            "en": "The request, and a written reply"
+          },
+          "rubrica": "El prompt dice qué pide en concreto (revisar, quitar un cobro, ajustar, devolver, reparar) Y pide respuesta por escrito. Hacen falta las dos cosas. No cuenta 'que me solucionen' o 'que me respondan' sin decir qué pide ni que sea por escrito.",
+          "claves": {
+            "es": [
+              "por escrito",
+              "respuesta escrita",
+              "respondan por escrito",
+              "responda por escrito"
+            ],
+            "en": [
+              "in writing",
+              "written reply",
+              "written response",
+              "written answer"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a escribir reclamos formales a empresas en Colombia. Responde solo con la carta, en texto plano, en máximo 150 palabras. Usa solo los hechos del mensaje; no inventes fechas, valores ni números. Si el mensaje trae marcadores como [NOMBRE] o [CONTRATO], déjalos tal cual. Si trae nombres, cédulas o números de contrato, reemplázalos por marcadores y agrega al final: 'Tus datos los escribes tú en la carta, no en el chat.' Si el mensaje no dice qué pide, termina con 'Solicito que revisen mi caso', sin más. Si pide respuesta por escrito, inclúyelo. Si no trae hechos con meses y valores, escribe una carta corta de inconformidad general. No des consejo legal ni cites artículos: si preguntan por plazos, di que se confirman con la empresa o la Personería.",
+        "en": "You are an AI that helps write formal complaints to companies in Colombia. Reply only with the letter, in plain text, in 150 words at most. Use only the facts in the message; don't invent dates, amounts or numbers. If the message has placeholders like [NAME] or [ACCOUNT], keep them as they are. If it has names, ID numbers or account numbers, replace them with placeholders and add at the end: 'You write your details on the letter, not in the chat.' If the message doesn't say what it's asking for, end with 'I ask you to review my case', nothing more. If it asks for a written reply, include that. If it has no facts with months and amounts, write a short letter of general dissatisfaction. Don't give legal advice or cite articles: if asked about deadlines, say to confirm them with the company or the local ombudsman's office (Personería)."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "[CIUDAD], [FECHA]\nSeñores [EMPRESA]\nAsunto: reclamo por cobro en la factura de agosto. Cliente [NÚMERO DE CLIENTE]\nYo, [NOMBRE], presento este reclamo:\n1. En la factura de agosto aparece un cobro de $45.000 por un servicio que no pedí.\n2. En julio no tenía ese cobro.\nSolicito: retirar ese cobro y devolver lo pagado de más.\nPido respuesta por escrito a [CORREO].\nAdjunto: copia de las facturas de julio y agosto.\n[FIRMA]",
+            "en": "[CITY], [DATE]\nTo: [COMPANY]\nSubject: complaint about a charge on my August bill. Customer [CUSTOMER NUMBER]\nI, [NAME], file this complaint:\n1. My August bill includes a 45,000-peso charge for a service I didn't request.\n2. My July bill didn't have that charge.\nRequest: remove the charge and refund what I overpaid.\nI request a written reply at [EMAIL].\nAttached: copies of the July and August bills.\n[SIGNATURE]"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Segunda hoja lista. Hechos que se pueden revisar, un pedido claro y respuesta por escrito. Tus datos los llenas tú antes de radicar.",
+              "en": "Second sheet done. Facts that can be checked, a clear request and a written reply. You fill in your details before filing."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Señores: estoy muy inconforme con su servicio y sus cobros. Solicito que revisen mi caso.",
+            "en": "To whom it may concern: I'm very unhappy with your service and your charges. I ask you to review my case."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La empresa lee eso y no sabe qué revisar. Mira la lista: meses y valores, qué pides, por escrito, y tus datos como marcadores.",
+              "en": "The company reads that and doesn't know what to check. Look at the list: months and amounts, what you want, in writing, and your details as placeholders."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Hice mi propia lista de 5 preguntas antes de firmar, y dos renglones no son preguntas: son errores. Tócalos.",
+          "en": "Confession time. I made my own list of 5 questions before signing, and two lines aren't questions: they're mistakes. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Las preguntas de Punti",
+        "en": "Punti's questions"
+      },
+      "trozos": [
+        {
+          "es": "¿Cuánto pago en total, con todo sumado?",
+          "en": "How much do I pay in total, with everything added up?"
+        },
+        {
+          "es": "¿Cuál es la tasa efectiva anual, y hay seguros o cobros aparte?",
+          "en": "What's the effective annual rate, and is there insurance or other charges?"
+        },
+        {
+          "es": "Le pego a la IA mi cédula y el contrato completo, para que me diga si firmo.",
+          "en": "I paste my ID and the whole contract into the AI so it tells me whether to sign."
+        },
+        {
+          "es": "¿Qué pasa si me atraso o si quiero terminar antes?",
+          "en": "What happens if I'm late or want to end it early?"
+        },
+        {
+          "es": "Firmo hoy mismo, para no perder la promoción.",
+          "en": "I sign today, so I don't miss the deal."
+        },
+        {
+          "es": "¿Esto lo debería revisar un abogado antes de firmar?",
+          "en": "Should a lawyer look at this before I sign?"
+        }
+      ],
+      "malos": [
+        2,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. La cédula y el contrato completo no se pegan, y la IA no decide si firmas. Y \"firmo hoy\" no es una pregunta: es la prisa del vendedor. Las otras cuatro sí van a tu lista.",
+          "en": "You caught me. Your ID and the whole contract never get pasted, and the AI doesn't decide whether you sign. And \"I sign today\" isn't a question: it's the salesman's rush. The other four go on your list."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa sí es una buena pregunta antes de firmar. Busca una que suelta datos y una que se salta la pausa.",
+          "en": "That's a good question to ask before signing. Look for one that leaks data and one that skips the pause."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tercera hoja, la que más vas a usar: tus 5 preguntas. Pídele a la IA una lista que te sirva para cualquier papel.",
+          "en": "Third sheet, the one you'll use most: your 5 questions. Ask the AI for a list that works for any document."
+        }
+      },
+      "titulo": {
+        "es": "Tus 5 preguntas antes de firmar",
+        "en": "Your 5 questions before signing"
+      },
+      "reto": {
+        "es": "Arma con la IA tus 5 preguntas para antes de firmar cualquier cosa: un crédito, un arriendo, un plan de celular. Que cubran la plata, qué pasa si algo sale mal y cuándo llevarlo a una persona.",
+        "en": "Build your 5 questions with AI for before you sign anything: a loan, a lease, a phone plan. They should cover the money, what happens if something goes wrong and when to take it to a person."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "cinco",
+          "texto": {
+            "es": "Pide 5 preguntas",
+            "en": "Asks for 5 questions"
+          },
+          "rubrica": "El mensaje pide una lista de 5 preguntas (o 'cinco preguntas') para hacer antes de firmar. No cuenta pedir 'unos consejos' o 'qué debo saber' sin pedir una lista de preguntas.",
+          "claves": {
+            "es": [
+              "5 preguntas",
+              "cinco preguntas"
+            ],
+            "en": [
+              "5 questions",
+              "five questions"
+            ]
+          }
+        },
+        {
+          "id": "plata",
+          "texto": {
+            "es": "Que cubran la plata",
+            "en": "Covers the money"
+          },
+          "rubrica": "El mensaje pide que las preguntas cubran la plata: el costo total, la tasa o los intereses, seguros o cobros extra. No cuenta decir 'de plata' sin nombrar ninguna de esas cosas.",
+          "claves": {
+            "es": [
+              "costo total",
+              "cuanto pago",
+              "en total",
+              "tasa",
+              "interes",
+              "cobros",
+              "seguro"
+            ],
+            "en": [
+              "total cost",
+              "how much i pay",
+              "in total",
+              "the rate",
+              "interest",
+              "annual rate",
+              "fees",
+              "charges",
+              "insurance"
+            ]
+          }
+        },
+        {
+          "id": "salida",
+          "texto": {
+            "es": "Que cubran qué pasa si algo sale mal",
+            "en": "Covers what happens if things go wrong"
+          },
+          "rubrica": "El mensaje pide que las preguntas cubran qué pasa si algo sale mal: atrasarse, no poder pagar, terminar antes, cancelar o una multa. No cuenta 'qué riesgos hay' sin nombrar ninguna de esas situaciones.",
+          "claves": {
+            "es": [
+              "atras",
+              "terminar antes",
+              "cancelar",
+              "salirme",
+              "multa",
+              "si no puedo pagar",
+              "retirarme",
+              "penalidad"
+            ],
+            "en": [
+              "pay late",
+              "i'm late",
+              "late payment",
+              "miss a payment",
+              "fall behind",
+              "cancel",
+              "end early",
+              "leave early",
+              "penalty",
+              "get out",
+              "can't pay"
+            ]
+          }
+        },
+        {
+          "id": "persona",
+          "texto": {
+            "es": "Que incluya cuándo ir a una persona",
+            "en": "Includes when to see a person"
+          },
+          "rubrica": "El mensaje pide incluir cuándo llevar el papel a un abogado, un consultorio jurídico, la entidad o un asesor, o pedir tiempo para leerlo antes de firmar. No cuenta pedirle a la IA que decida si firmar.",
+          "claves": {
+            "es": [
+              "abogad",
+              "consultorio",
+              "una persona",
+              "asesor",
+              "tiempo para leer",
+              "tiempo para pensar",
+              "dias para",
+              "pensarlo"
+            ],
+            "en": [
+              "lawyer",
+              "legal aid",
+              "a person",
+              "advisor",
+              "adviser",
+              "time to read",
+              "time to think",
+              "think it over",
+              "days to"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a preparar preguntas para antes de firmar un contrato o un crédito. Responde solo con la lista, en texto plano, sin introducción. Si el mensaje pide un número de preguntas, da exactamente ese número; si no, da una lista larga de consejos generales. Cubre solo los temas que pide el mensaje. Las preguntas deben servir para cualquier papel, sin nombrar empresas ni productos. Nunca digas si conviene firmar ni recomiendes entidades. Si el mensaje pide cuándo ir a una persona, incluye una pregunta sobre llevarlo a un abogado, un consultorio jurídico o la entidad.",
+        "en": "You are an AI that helps prepare questions for before signing a contract or a loan. Reply only with the list, in plain text, with no introduction. If the message asks for a number of questions, give exactly that number; if not, give a long list of general tips. Cover only the topics the message asks for. The questions must work for any document, without naming companies or products. Never say whether signing is a good idea or recommend any company. If the message asks when to see a person, include a question about taking it to a lawyer, a legal aid clinic or the lender."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. ¿Cuánto pago en total, con intereses, seguros y todo sumado?\n2. ¿Cuál es la tasa efectiva anual, y hay cobros aparte?\n3. ¿Qué pasa si me atraso o no puedo pagar un mes?\n4. ¿Qué pasa si quiero terminar antes? ¿Hay multa?\n5. ¿Me dan las condiciones por escrito y tiempo para leerlas o llevarlas a un abogado?",
+            "en": "1. How much do I pay in total, with interest, insurance and everything added up?\n2. What's the effective annual rate, and are there other charges?\n3. What happens if I'm late or can't pay one month?\n4. What happens if I want to end it early? Is there a penalty?\n5. Can I get the terms in writing, with time to read them or take them to a lawyer?"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Tercera hoja lista. Cinco preguntas que sirven para un crédito, un arriendo o un plan de celular. Cópialas en tu celular: son tu escudo antes de firmar.",
+              "en": "Third sheet done. Five questions that work for a loan, a lease or a phone plan. Copy them into your phone: they're your shield before signing."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Antes de firmar, lee bien todo el documento, compara varias opciones, no te dejes presionar, pregunta lo que no entiendas, revisa tu presupuesto, guarda una copia, desconfía de lo que parece demasiado bueno y consulta con alguien de confianza.",
+            "en": "Before signing, read the whole document carefully, compare several options, don't let anyone pressure you, ask about anything you don't understand, check your budget, keep a copy, be wary of anything that seems too good and talk to someone you trust."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Una lista larga de consejos, y ninguna pregunta que puedas hacer en el mostrador. Mira la lista: pide 5 preguntas y di qué deben cubrir.",
+              "en": "A long list of tips, and not one question you can ask at the counter. Check the list: ask for 5 questions and say what they should cover."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora, tu carpeta de verdad. Arma las tres hojas en tu IA y guárdalas donde las encuentres.",
+          "en": "Now, your real folder. Build the three sheets in your AI and keep them where you'll find them."
+        }
+      },
+      "titulo": {
+        "es": "Tu carpeta en el celular",
+        "en": "Your folder on your phone"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Copia allá tus tres pedidos. Revisa las sumas del presupuesto con la calculadora y confirma los plazos del reclamo. Guarda las tres hojas en una nota del celular o en una carpeta de papel.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Copy your three requests there. Check the budget's sums with a calculator and confirm the complaint's deadlines. Save the three sheets in a note on your phone or a paper folder."
+      },
+      "checks": [
+        {
+          "es": "Hice mi presupuesto y revisé las sumas con la calculadora",
+          "en": "I made my budget and checked the sums with a calculator"
+        },
+        {
+          "es": "Dejé un reclamo listo, con marcadores",
+          "en": "I have a complaint ready, with placeholders"
+        },
+        {
+          "es": "Guardé mis 5 preguntas para antes de firmar",
+          "en": "I saved my 5 questions for before signing"
+        },
+        {
+          "es": "No pegué banco, cuentas, cédula, claves ni fotos de documentos",
+          "en": "I didn't paste my bank, accounts, ID, passwords or document photos"
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué es tu carpeta de trámites y para qué te sirve.",
+          "en": "To the logbook. Write in your own words what your paperwork folder is and what it's for."
+        }
+      },
+      "concepto": "carpeta-de-tramites",
+      "definicion": {
+        "es": "Tres hojas hechas con la IA y revisadas por ti: tu presupuesto con cifras redondas, un reclamo con marcadores y tus 5 preguntas antes de firmar. Sin datos personales. La decisión siempre es tuya.",
+        "en": "Three sheets made with AI and checked by you: your budget with round numbers, a complaint with placeholders and your 5 questions before signing. No personal details. The decision is always yours."
+      },
+      "pregunta": {
+        "es": "Mi carpeta de trámites es…",
+        "en": "My paperwork folder is…"
+      },
+      "guardaPrompt": "b08",
+      "etiqueta": {
+        "es": "antes de firmar",
+        "en": "before signing"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tus 5 preguntas quedan en tu bitácora. La próxima vez que alguien te diga \"firme aquí\", ya sabes qué preguntar.",
+          "en": "Saved. Your note and your 5 questions stay in your logbook. The next time someone says \"sign here,\" you know what to ask."
+        }
+      }
+    },
+    {
+      "id": "b11",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas rápidas antes de aterrizar.",
+          "en": "Two quick questions before we land."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué parte de tu carpeta nunca pegas en el chat de la IA?",
+            "en": "Which part of your folder never goes into the AI chat?"
+          },
+          "opciones": [
+            {
+              "es": "Las cifras redondas de tus gastos",
+              "en": "The round numbers of your expenses"
+            },
+            {
+              "es": "Tu número de cuenta y tu cédula",
+              "en": "Your account number and ID"
+            },
+            {
+              "es": "Los hechos del reclamo, con meses y valores",
+              "en": "The complaint's facts, with months and amounts"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. La IA suma y redacta sin ellos. Se quedan en tierra.",
+              "en": "Right. The AI adds and drafts without them. They stay on the ground."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿la IA necesita ese dato para sumar o para redactar?",
+              "en": "Hmm. Ask yourself: does the AI need that to add up or to draft?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA te dice que el plazo para responder tu reclamo es de tres meses. ¿Qué haces?",
+            "en": "The AI tells you the company has three months to answer your complaint. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Lo confirmo en la empresa o en la Personería",
+              "en": "I confirm it with the company or the Personería"
+            },
+            {
+              "es": "Espero tres meses, que la IA sabe",
+              "en": "I wait three months, the AI knows"
+            },
+            {
+              "es": "Radico otro reclamo cada semana",
+              "en": "I file another complaint every week"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Los plazos se confirman con la fuente, no con el chat.",
+              "en": "Exactly. Deadlines get confirmed with the source, not the chat."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: ¿de dónde sale un plazo que puedes contar con seguridad?",
+              "en": "Ask yourself: where does a deadline you can safely count on come from?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Proyecto aterrizado, piloto. Terminaste el módulo billetera.",
+          "en": "Project landed, pilot. You finished the wallet module."
+        }
+      },
+      "titulo": {
+        "es": "Módulo billetera completo",
+        "en": "Wallet module complete"
+      },
+      "texto": {
+        "es": "Ya sabes hacer un presupuesto sin dar tus datos, entender la letra menuda, escribir un reclamo que se responde y entender un crédito antes de firmar. Tu carpeta está en la bitácora. La estación sigue su vuelta: el próximo módulo es la enfermería, donde la luz roja está siempre encendida.",
+        "en": "You can now make a budget without giving your details, understand the fine print, write a complaint that gets answered and understand a loan before signing. Your folder is in your logbook. The station keeps circling: the next module is the sick bay, where the red light is always on."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Carpeta de trámites",
+        "en": "Paperwork folder"
+      },
+      "resumen": {
+        "es": "Presupuesto con cifras redondas, reclamo con marcadores y 5 preguntas antes de firmar, hechos con la IA y revisados por ti.",
+        "en": "A budget with round numbers, a complaint with placeholders and 5 questions before signing, made with AI and checked by you."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b08",
+      "b05",
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Escogiste tus cifras reales, sin datos personales",
+          "en": "You chose your real numbers, with no personal details"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Armaste tu presupuesto del mes",
+          "en": "You built your monthly budget"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Dejaste un reclamo listo con marcadores",
+          "en": "You have a complaint ready with placeholders"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste las dos trampas en la lista de Punti",
+          "en": "You caught both traps in Punti's list"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Hiciste tus 5 preguntas antes de firmar",
+          "en": "You made your 5 questions before signing"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Guardaste tu carpeta de verdad",
+          "en": "You saved your real folder"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "armar-carpeta-de-tramites",
+      "titulo": {
+        "es": "Manejar plata y papeles con IA",
+        "en": "Handling money and paperwork with AI"
+      }
+    }
+  }
+}

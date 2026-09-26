@@ -1,0 +1,918 @@
+{
+  "formato": "punti-mision@1",
+  "id": "que-te-entreviste",
+  "mundo": "prompts",
+  "capitulo": 4,
+  "numero": 15,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "entrevista"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "contexto",
+    "iterar"
+  ],
+  "titulo": {
+    "es": "Que te entreviste",
+    "en": "Let It Interview You"
+  },
+  "resumen": {
+    "es": "Cuando no sabes qué contexto necesita la IA, pídele que te entreviste: una pregunta a la vez y con un final claro.",
+    "en": "When you don't know what context the AI needs, have it interview you: one question at a time, with a clear end."
+  },
+  "siguiente": "que-mejore-tu-prompt",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegamos a la última zona de Eco: Tu copiloto. Aquí la IA te ayuda a pedir. La primera señal es de Don Álvaro, que tiene una finca cafetera en el Quindío. Quiere vender su café por internet y no sabe ni qué preguntar.",
+          "en": "Pilot, we've reached Eco's last zone: Your Copilot. Here the AI helps you ask. The first signal is from Don Álvaro, who has a small coffee farm in Colombia. He wants to sell his coffee online and doesn't even know what to ask."
+        }
+      },
+      "titulo": {
+        "es": "Que te entreviste",
+        "en": "Let It Interview You"
+      },
+      "texto": {
+        "es": "Hoy aprendes a pedirle a la IA que te entreviste antes de responder, para cuando no sabes qué contexto necesita. Unos 9 minutos.",
+        "en": "Today you'll learn to ask the AI to interview you before it answers, for when you don't know what context it needs. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto le pidió Don Álvaro a la IA y esto recibió: consejos que le sirven a cualquiera. Abajo está el mismo pedido, pero dejando que la IA pregunte primero.",
+          "en": "Here's what Don Álvaro asked the AI and what he got: advice that fits anyone. Below is the same request, but letting the AI ask first."
+        }
+      },
+      "titulo": {
+        "es": "De consejos genéricos a una entrevista",
+        "en": "From generic tips to an interview"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Ayúdame a vender mi café por internet.",
+          "en": "Help me sell my coffee online."
+        },
+        "salida": {
+          "es": "Claro. Aquí tienes 10 consejos para vender café en línea:\n1. Crea una página web profesional.\n2. Invierte en publicidad en redes sociales.\n3. Ofrece envíos a todo el mundo.\n4. Consigue certificaciones internacionales.\n5. …",
+          "en": "Sure. Here are 10 tips for selling coffee online:\n1. Build a professional website.\n2. Invest in social media ads.\n3. Offer worldwide shipping.\n4. Get international certifications.\n5. …"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "meta",
+            "texto": {
+              "es": "Tengo una finca cafetera pequeña y quiero empezar a vender mi café por internet. ",
+              "en": "I have a small coffee farm and I want to start selling my coffee online. "
+            }
+          },
+          {
+            "pieza": "pregunta-primero",
+            "texto": {
+              "es": "Antes de darme consejos, entrevístame para entender mi caso. ",
+              "en": "Before you give me advice, interview me so you understand my situation. "
+            }
+          },
+          {
+            "pieza": "una-a-una",
+            "texto": {
+              "es": "Hazme una pregunta a la vez y espera mi respuesta. ",
+              "en": "Ask me one question at a time and wait for my answer. "
+            }
+          },
+          {
+            "pieza": "tope",
+            "texto": {
+              "es": "Máximo 6 preguntas. Después, dame un plan de 5 pasos.",
+              "en": "6 questions max. Then give me a 5-step plan."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Listo. Te haré 6 preguntas, una por una.\nPrimera: ¿cuántas libras de café podrías separar cada mes para vender por internet? ¿Lo tienes en grano, molido o los dos?",
+          "en": "Sounds good. I'll ask you 6 questions, one by one.\nFirst: how many pounds of coffee could you set aside each month to sell online? Do you have it as whole beans, ground or both?"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Cuatro colores: la meta, que pregunte primero, una pregunta a la vez y cuándo parar. La IA ya no adivina: pregunta lo que le falta. Y Don Álvaro responde lo que solo él sabe.",
+          "en": "Four colors: the goal, ask first, one question at a time and when to stop. The AI stops guessing: it asks for what it's missing. And Don Álvaro answers with what only he knows."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Cuando no sabes qué contarle a la IA, deja que ella pregunte. Una buena entrevista tiene estas cinco piezas. Las cuatro primeras van en tu prompt; la última es tu parte. Toca cada una.",
+          "en": "When you don't know what to tell the AI, let it ask. A good interview has these five pieces. The first four go in your prompt; the last one is your part. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las piezas de la entrevista",
+        "en": "The pieces of an interview"
+      },
+      "piezas": [
+        {
+          "id": "meta",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Tu meta",
+            "en": "Your goal"
+          },
+          "descripcion": {
+            "es": "Qué quieres lograr, en una o dos frases.",
+            "en": "What you want to achieve, in a sentence or two."
+          },
+          "ejemplo": {
+            "es": "\"Quiero vender el café de mi finca por internet.\" Con eso la IA sabe hacia dónde apuntar sus preguntas.",
+            "en": "\"I want to sell my farm's coffee online.\" That tells the AI where to aim its questions."
+          }
+        },
+        {
+          "id": "pregunta-primero",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Que pregunte primero",
+            "en": "It asks first"
+          },
+          "descripcion": {
+            "es": "Antes de responder, que te haga preguntas.",
+            "en": "Before it answers, it asks you questions."
+          },
+          "ejemplo": {
+            "es": "\"Antes de darme consejos, entrevístame.\" Sin esta frase, la IA responde de una vez y rellena lo que no sabe.",
+            "en": "\"Before you give me advice, interview me.\" Without this, the AI answers right away and fills in what it doesn't know."
+          }
+        },
+        {
+          "id": "una-a-una",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Una a la vez",
+            "en": "One at a time"
+          },
+          "descripcion": {
+            "es": "Una pregunta, tú respondes, y sigue la otra.",
+            "en": "One question, you answer, then the next."
+          },
+          "ejemplo": {
+            "es": "\"Hazme una pregunta a la vez.\" Diez preguntas juntas marean, y terminas respondiendo tres.",
+            "en": "\"Ask me one question at a time.\" Ten questions at once are too much, and you end up answering three."
+          }
+        },
+        {
+          "id": "tope",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Cuándo parar",
+            "en": "When to stop"
+          },
+          "descripcion": {
+            "es": "Cuántas preguntas y qué hacer al final.",
+            "en": "How many questions, and what to do after."
+          },
+          "ejemplo": {
+            "es": "\"Máximo 6 preguntas; después, dame el plan.\" Si no, la entrevista puede no terminar nunca.",
+            "en": "\"6 questions max, then give me the plan.\" Otherwise the interview might never end."
+          }
+        },
+        {
+          "id": "respuestas",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "Tus respuestas",
+            "en": "Your answers"
+          },
+          "descripcion": {
+            "es": "Lo que solo tú sabes. Si no sabes algo, lo dices.",
+            "en": "What only you know. If you don't know, say so."
+          },
+          "ejemplo": {
+            "es": "La IA pregunta, pero las respuestas son tuyas. Si dices \"no sé\", busca otro camino. Si inventas, el plan sale inventado.",
+            "en": "The AI asks, but the answers are yours. Say \"I don't know\" and it finds another way. Make things up and the plan comes out made up."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estas son preguntas que la IA le hizo a Don Álvaro en su entrevista. Cada una llena una pieza del pedido completo. ¿Cuál?",
+          "en": "Your turn. These are questions the AI asked Don Álvaro in his interview. Each one fills a piece of the complete request. Which one?"
+        }
+      },
+      "titulo": {
+        "es": "¿Qué pieza llena cada pregunta?",
+        "en": "Which piece does each question fill?"
+      },
+      "grupos": [
+        {
+          "id": "contexto",
+          "titulo": {
+            "es": "El contexto",
+            "en": "The context"
+          }
+        },
+        {
+          "id": "datos",
+          "titulo": {
+            "es": "Los datos",
+            "en": "The details"
+          }
+        },
+        {
+          "id": "forma",
+          "titulo": {
+            "es": "La forma",
+            "en": "The format"
+          }
+        },
+        {
+          "id": "tono",
+          "titulo": {
+            "es": "El tono",
+            "en": "The tone"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "contexto",
+          "texto": {
+            "es": "¿Quién te compraría: gente de la ciudad, turistas o cafeterías?",
+            "en": "Who would buy from you: people in the city, tourists or coffee shops?"
+          }
+        },
+        {
+          "grupo": "datos",
+          "texto": {
+            "es": "¿Cuántas libras puedes vender al mes y a qué precio?",
+            "en": "How many pounds can you sell a month, and at what price?"
+          }
+        },
+        {
+          "grupo": "forma",
+          "texto": {
+            "es": "¿Quieres el plan como lista de pasos o como calendario por semanas?",
+            "en": "Do you want the plan as a list of steps or a week-by-week calendar?"
+          }
+        },
+        {
+          "grupo": "tono",
+          "texto": {
+            "es": "¿Cómo quieres sonar en tus publicaciones: familiar y sencillo, o elegante?",
+            "en": "How do you want your posts to sound: homey and simple, or elegant?"
+          }
+        },
+        {
+          "grupo": "datos",
+          "texto": {
+            "es": "¿Tu café es en grano, molido o los dos?",
+            "en": "Is your coffee whole bean, ground or both?"
+          }
+        },
+        {
+          "grupo": "contexto",
+          "texto": {
+            "es": "¿Para qué quieres vender por internet: para ganar más o porque tienes menos compradores?",
+            "en": "Why do you want to sell online: to earn more, or because you have fewer buyers?"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Mira: la IA preguntó justo por las piezas que Don Álvaro no le había dado. Por eso la entrevista funciona.",
+          "en": "Six for six. Look: the AI asked for exactly the pieces Don Álvaro hadn't given it. That's why the interview works."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, lee otra vez. ¿La pregunta busca para quién y para qué, un dato concreto, cómo se ve o cómo suena?",
+          "en": "Hmm, read it again. Is the question after who and why, a specific detail, how it looks or how it sounds?"
+        }
+      },
+      "malPorGrupo": {
+        "contexto": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Pregúntate: ¿busca un dato del café, o para quién y para qué vende?",
+            "en": "Close. Ask yourself: is it after a detail about the coffee, or who he sells to and why?"
+          }
+        },
+        "datos": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Pregúntate: ¿busca algo concreto que solo él sabe, o quién le compra?",
+            "en": "Close. Ask yourself: is it after a specific fact only he knows, or who buys from him?"
+          }
+        },
+        "forma": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Pregúntate: ¿busca cómo se ve el resultado, o cómo debe sonar?",
+            "en": "Close. Ask yourself: is it about how the result looks, or how it should sound?"
+          }
+        },
+        "tono": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Pregúntate: ¿busca cómo debe sonar, o cómo se debe ver?",
+            "en": "Close. Ask yourself: is it about how it should sound, or how it should look?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Don Álvaro necesita un texto que presente su café en internet, pero no sabe qué contarle a la IA. Escribe el prompt para que la IA lo entreviste primero.",
+          "en": "Your turn to transmit. Don Álvaro needs a text introducing his coffee online, but he doesn't know what to tell the AI. Write the prompt so the AI interviews him first."
+        }
+      },
+      "titulo": {
+        "es": "La entrevista de Don Álvaro",
+        "en": "Don Álvaro's interview"
+      },
+      "reto": {
+        "es": "Don Álvaro quiere un texto corto que presente su café a quienes lo vean en internet. Él sabe todo de su finca, pero no sabe qué es lo importante para vender. Escríbele a la IA como si fueras él: que lo entreviste antes de escribir el texto.",
+        "en": "Don Álvaro wants a short text introducing his coffee to people who find it online. He knows everything about his farm, but not what matters for selling. Write to the AI as if you were him: have it interview him before it writes the text."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "meta",
+          "texto": {
+            "es": "Cuenta la meta: vender su café",
+            "en": "States the goal: selling his coffee"
+          },
+          "rubrica": "El prompt dice qué quiere lograr Don Álvaro: vender su café por internet o un texto para presentarlo en internet. No cuenta 'ayúdame con mi negocio' o 'hazme preguntas' sin decir para qué, ni nombrar el café sin decir qué quiere lograr con él.",
+          "claves": {
+            "es": [
+              "vender",
+              "venta",
+              "presentar mi cafe",
+              "presentar el cafe",
+              "por internet",
+              "en internet",
+              "en linea",
+              "online",
+              "tienda virtual",
+              "pagina web"
+            ],
+            "en": [
+              "sell",
+              "sales",
+              "introduce my coffee",
+              "introducing my coffee",
+              "online",
+              "on the internet",
+              "website",
+              "web store"
+            ]
+          }
+        },
+        {
+          "id": "pregunta-primero",
+          "texto": {
+            "es": "Pide que pregunte antes de escribir",
+            "en": "Asks it to ask before writing"
+          },
+          "rubrica": "El prompt le pide a la IA que primero le haga preguntas o lo entreviste, y que no escriba el texto todavía ('antes de escribir, hazme preguntas', 'entrevístame primero'). No cuenta pedir el texto de una vez, ni 'pregúntame si tienes dudas' al final: ahí la IA igual responde primero.",
+          "claves": {
+            "es": [
+              "hazme preguntas",
+              "hazme las preguntas",
+              "hazme unas preguntas",
+              "hazme algunas preguntas",
+              "entrevista",
+              "preguntame primero",
+              "primero preguntame",
+              "primero hazme",
+              "antes de escribir",
+              "antes de responder",
+              "antes de darme",
+              "antes de hacer el texto",
+              "no escribas todavia",
+              "todavia no escribas"
+            ],
+            "en": [
+              "ask me questions",
+              "ask me some questions",
+              "ask me a few",
+              "interview",
+              "ask me first",
+              "first ask me",
+              "before you write",
+              "before writing",
+              "before you answer",
+              "before answering",
+              "before you give",
+              "don't write it yet",
+              "do not write it yet",
+              "don't write the text yet"
+            ]
+          }
+        },
+        {
+          "id": "una-a-una",
+          "texto": {
+            "es": "Una pregunta a la vez",
+            "en": "One question at a time"
+          },
+          "rubrica": "El prompt pide que las preguntas vayan de una en una y que la IA espere cada respuesta ('una pregunta a la vez', 'espera mi respuesta'). No cuenta pedir 'unas preguntas' o 'todas las preguntas' sin decir que vayan de a una.",
+          "claves": {
+            "es": [
+              "una a la vez",
+              "una por una",
+              "una por vez",
+              "de una en una",
+              "de a una",
+              "una sola pregunta",
+              "una pregunta a la vez",
+              "una pregunta por vez",
+              "espera mi respuesta",
+              "espera a que responda",
+              "espera a que te responda",
+              "espera que responda",
+              "espera que te responda",
+              "esperas mi respuesta"
+            ],
+            "en": [
+              "one at a time",
+              "one by one",
+              "one question at a time",
+              "a single question",
+              "one question per",
+              "wait for my answer",
+              "wait for my reply",
+              "wait for my response",
+              "wait for me to answer"
+            ]
+          }
+        },
+        {
+          "id": "tope",
+          "texto": {
+            "es": "Dice cuántas preguntas o cuándo parar",
+            "en": "Says how many questions or when to stop"
+          },
+          "rubrica": "El prompt pone un número máximo de preguntas o dice qué hacer cuando termine la entrevista ('máximo 5 preguntas', 'cuando tengas lo necesario, escribe el texto'). No cuenta 'hazme preguntas' sin límite ni final, ni el largo del texto: '5 líneas' es la forma del texto, no el final de la entrevista.",
+          "claves": {
+            "es": [
+              "3 preguntas",
+              "4 preguntas",
+              "5 preguntas",
+              "6 preguntas",
+              "7 preguntas",
+              "8 preguntas",
+              "tres preguntas",
+              "cuatro preguntas",
+              "cinco preguntas",
+              "seis preguntas",
+              "siete preguntas",
+              "ocho preguntas",
+              "cuando termines",
+              "cuando tengas lo necesario",
+              "cuando tengas suficiente",
+              "cuando tengas todo",
+              "cuando tengas la informacion",
+              "cuando acabes",
+              "al terminar",
+              "despues de las preguntas",
+              "despues de entrevistarme",
+              "despues de la entrevista",
+              "con mis respuestas",
+              "con lo que te responda"
+            ],
+            "en": [
+              "3 questions",
+              "4 questions",
+              "5 questions",
+              "6 questions",
+              "7 questions",
+              "8 questions",
+              "three questions",
+              "four questions",
+              "five questions",
+              "six questions",
+              "seven questions",
+              "eight questions",
+              "when you're done",
+              "when you are done",
+              "when you finish",
+              "when you have enough",
+              "once you have enough",
+              "once you have what",
+              "once you have all",
+              "after the questions",
+              "after the interview",
+              "with my answers"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un pequeño caficultor a vender su café por internet. Si el prompt te pide que le hagas preguntas o lo entrevistes antes de escribir, no escribas el texto todavía: saluda en una línea y haz solo la primera pregunta, la más útil (por ejemplo, qué tiene de especial su café o quién le compraría). Si pidió un número de preguntas, dilo al empezar. Si no pidió que vayan de una en una, haz de una vez una lista de 10 preguntas. Si el prompt no pide entrevista, escribe de una vez un texto de venta genérico sobre un café premium de montaña, y pon entre corchetes lo que no sabes, como [nombre de la finca] o [precio]. Nunca inventes datos de la finca.",
+        "en": "You are an AI helping a small coffee farmer sell his coffee online. If the prompt asks you to ask questions or interview him before writing, don't write the text yet: greet him in one line and ask only the first question, the most useful one (for example, what makes his coffee special or who would buy it). If he asked for a number of questions, say so at the start. If he didn't ask for one question at a time, ask a list of 10 questions all at once. If the prompt doesn't ask for an interview, write a generic sales text right away about a premium mountain coffee, and put what you don't know in square brackets, like [farm name] or [price]. Never make up details about the farm."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Perfecto, Don Álvaro. Te haré 5 preguntas, una por una, y después escribo el texto.\nPrimera pregunta: ¿qué tiene de especial tu café? Por ejemplo, la altura de la finca, cómo lo secas o qué dicen quienes lo prueban.",
+            "en": "Great, Don Álvaro. I'll ask you 5 questions, one by one, and then I'll write the text.\nFirst question: what makes your coffee special? For example, how high up the farm is, how you dry it, or what people say when they taste it."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. La IA no escribió nada todavía: preguntó primero, de a una y con un final claro. Ahora Don Álvaro responde lo que solo él sabe.",
+              "en": "Strong signal. The AI hasn't written anything yet: it asked first, one question at a time, with a clear end. Now Don Álvaro answers with what only he knows."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Descubre el sabor único de nuestro café premium, cultivado con amor en las montañas. En [nombre de la finca] cuidamos cada grano. Pide el tuyo por solo [precio] y recíbelo en la puerta de tu casa.",
+            "en": "Discover the unique flavor of our premium coffee, grown with love in the mountains. At [farm name], we care for every bean. Order yours for just [price] and get it delivered to your door."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA escribió de una vez, con huecos y frases que sirven para cualquier café. Mira la lista: pídele que pregunte primero, de a una, y dile cuándo parar.",
+              "en": "Weak signal: the AI wrote it right away, with gaps and lines that fit any coffee. Check the list: have it ask first, one at a time, and tell it when to stop."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le escribí a Don Álvaro un prompt de entrevista para su plan de ventas. Dos partes le iban a dar problemas. Tócalas.",
+          "en": "Confession time. I wrote Don Álvaro an interview prompt for his sales plan. Two parts were going to cause trouble. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mi prompt de entrevista",
+        "en": "My interview prompt"
+      },
+      "trozos": [
+        {
+          "es": "Quiero vender en internet el café de mi finca.",
+          "en": "I want to sell my farm's coffee online."
+        },
+        {
+          "es": "Antes de darme un plan, entrevístame para entender mi caso.",
+          "en": "Before you give me a plan, interview me so you understand my situation."
+        },
+        {
+          "es": "Hazme todas las preguntas que se te ocurran, de una sola vez.",
+          "en": "Ask me every question you can think of, all at once."
+        },
+        {
+          "es": "Cuando termines, dame un plan de 5 pasos.",
+          "en": "When you're done, give me a 5-step plan."
+        },
+        {
+          "es": "Si no sé responder algo, invéntalo tú para no perder tiempo.",
+          "en": "If I can't answer something, just make it up so we don't waste time."
+        }
+      ],
+      "malos": [
+        2,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Todas de una vez son 20 preguntas en un solo mensaje: Don Álvaro iba a responder tres. Y si la IA inventa las respuestas, el plan sale inventado. Mejor una a la vez, y \"no sé\" cuando no sepa.",
+          "en": "You got me. All at once means 20 questions in one message: Don Álvaro would have answered three. And if the AI makes up the answers, the plan comes out made up. Better one at a time, and \"I don't know\" when he doesn't."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte ayuda a la entrevista. Busca dónde se pierde el orden y dónde las respuestas dejan de ser de Don Álvaro.",
+          "en": "That part helps the interview. Look for where the order falls apart and where the answers stop being Don Álvaro's."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "La entrevista va bien, pero la IA le hizo a Don Álvaro una pregunta que no sabe responder. Mira y ayúdale a decidir.",
+          "en": "The interview is going well, but the AI asked Don Álvaro something he can't answer. Take a look and help him decide."
+        }
+      },
+      "titulo": {
+        "es": "La pregunta difícil",
+        "en": "The tough question"
+      },
+      "escena": {
+        "es": "Tercera pregunta de la IA: \"¿Qué puntaje de taza tiene tu café?\" Don Álvaro nunca ha oído eso. Un vecino le dijo que los cafés buenos sacan más de 85. ¿Qué le responde a la IA?",
+        "en": "The AI's third question: \"What's your coffee's cupping score?\" Don Álvaro has never heard of that. A neighbor told him good coffees score over 85. What does he tell the AI?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Pone 86: total, nadie lo va a revisar",
+            "en": "Say 86: nobody's going to check anyway"
+          },
+          "consecuencia": {
+            "es": "La IA usó el 86 en el texto de venta. Una cafetería le pidió el certificado de ese puntaje. Don Álvaro no lo tenía y perdió la venta.",
+            "en": "The AI put the 86 in the sales text. A coffee shop asked for proof of that score. Don Álvaro didn't have it and lost the sale."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Le dice que no sabe y le pregunta qué es eso",
+            "en": "Say he doesn't know and ask what it means"
+          },
+          "consecuencia": {
+            "es": "La IA le explicó que es una calificación que da un catador al probar el café, y siguió con otra pregunta. El texto habla de lo que Don Álvaro sí sabe de su finca.",
+            "en": "The AI explained it's a rating a coffee taster gives after tasting, and moved on to another question. The text talks about what Don Álvaro does know about his farm."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Cierra el chat: si no sabe eso, no está listo",
+            "en": "Close the chat: if he doesn't know that, he isn't ready"
+          },
+          "consecuencia": {
+            "es": "Se quedó sin texto y sin plan por una sola pregunta. No saber algo es parte de la entrevista: para eso está.",
+            "en": "He ended up with no text and no plan over one question. Not knowing something is part of the interview: that's what it's for."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "En una entrevista, \"no sé\" es una respuesta válida: la IA te explica o busca otro camino. Lo que no sirve es inventar, porque todo lo que respondas termina en el resultado.",
+          "en": "In an interview, \"I don't know\" is a fine answer: the AI explains or finds another way. Making things up doesn't work, because everything you answer ends up in the result."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras para qué sirve que la IA te entreviste, como se lo explicarías a Don Álvaro.",
+          "en": "Logbook time. Write in your own words what having the AI interview you is for, the way you'd explain it to Don Álvaro."
+        }
+      },
+      "concepto": "entrevista",
+      "definicion": {
+        "es": "Pedirle a la IA que te haga preguntas antes de responder, una a la vez y con un final claro, cuando no sabes qué contexto necesita. Las respuestas las pones tú, sin inventar.",
+        "en": "Asking the AI to ask you questions before it answers, one at a time and with a clear end, when you don't know what context it needs. You give the answers, without making anything up."
+      },
+      "pregunta": {
+        "es": "Pedir que la IA me entreviste sirve para…",
+        "en": "Having the AI interview me helps…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "entrevista primero",
+        "en": "interview first"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Entrevista y tu prompt ya están en tu bitácora. Te sirve para cualquier pedido que no sepas cómo empezar.",
+          "en": "Saved. Your Interview card and your prompt are in your logbook. Use it for any request you don't know how to start."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y guardamos la entrevista.",
+          "en": "Three questions and we file the interview away."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuándo conviene pedirle a la IA que te entreviste?",
+            "en": "When is it a good idea to have the AI interview you?"
+          },
+          "opciones": [
+            {
+              "es": "Cuando ya tienes todos los datos y la forma clara",
+              "en": "When you already have all the details and the format"
+            },
+            {
+              "es": "Cuando no sabes qué información necesita para ayudarte",
+              "en": "When you don't know what information it needs to help you"
+            },
+            {
+              "es": "Cuando quieres que responda sin hacerte preguntas",
+              "en": "When you want it to answer without asking you anything"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Si no sabes qué contarle, deja que ella pregunte.",
+              "en": "Right. If you don't know what to tell it, let it ask."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en Don Álvaro: ¿qué le faltaba al principio?",
+              "en": "Hmm. Think of Don Álvaro: what was he missing at the start?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA te manda 12 preguntas en un solo mensaje. ¿Qué ajustas en tu prompt?",
+            "en": "The AI sends you 12 questions in one message. What do you change in your prompt?"
+          },
+          "opciones": [
+            {
+              "es": "Nada, respondo las que alcance",
+              "en": "Nothing, I'll answer what I can"
+            },
+            {
+              "es": "Le pido que responda sin preguntar",
+              "en": "Ask it to answer without asking"
+            },
+            {
+              "es": "Le pido una pregunta a la vez y un máximo",
+              "en": "Ask for one question at a time and a limit"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Una a la vez y con tope: así la entrevista es una conversación.",
+              "en": "Exactly. One at a time, with a limit: that turns the interview into a conversation."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Qué piezas de la entrevista evitan el montón de preguntas juntas?",
+              "en": "Hmm. Which interview pieces prevent the pile of questions?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "En la entrevista, la IA te pregunta algo que no sabes. ¿Qué haces?",
+            "en": "During the interview, the AI asks you something you don't know. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Le digo que no sé y seguimos",
+              "en": "Tell it I don't know and keep going"
+            },
+            {
+              "es": "Invento algo que suene bien",
+              "en": "Make up something that sounds good"
+            },
+            {
+              "es": "Cancelo la entrevista",
+              "en": "Call off the interview"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. \"No sé\" también es una respuesta, y la IA busca otro camino.",
+              "en": "Right. \"I don't know\" is an answer too, and the AI finds another way."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Recuerda el puntaje de taza de Don Álvaro. ¿Qué pasa con lo que se inventa?",
+              "en": "Remember Don Álvaro's cupping score. What happens to things you make up?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Que la IA te entreviste",
+        "en": "Letting the AI interview you"
+      },
+      "resumen": {
+        "es": "Cuando no sabes qué contexto necesita, pídele que te pregunte primero, una a la vez y con un tope. Las respuestas las pones tú.",
+        "en": "When you don't know what context it needs, have it ask first, one question at a time, with a limit. You give the answers."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste cómo una entrevista cambió el pedido de Don Álvaro",
+          "en": "You saw how an interview changed Don Álvaro's request"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Descubriste qué pieza llena cada pregunta",
+          "en": "You found which piece each question fills"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pusiste a la IA a entrevistar a Don Álvaro",
+          "en": "You had the AI interview Don Álvaro"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste mis dos errores de entrevista",
+          "en": "You caught my two interview mistakes"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Aprendiste que \"no sé\" también es una respuesta",
+          "en": "You learned that \"I don't know\" is an answer too"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-entrevista",
+      "titulo": {
+        "es": "Pedir que la IA te entreviste",
+        "en": "Having the AI interview you"
+      }
+    }
+  }
+}

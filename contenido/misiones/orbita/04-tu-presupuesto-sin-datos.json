@@ -1,0 +1,918 @@
+{
+  "formato": "punti-mision@1",
+  "id": "tu-presupuesto-sin-datos",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 2,
+  "numero": 4,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "presupuesto"
+  ],
+  "usaConceptos": [
+    "primer-pedido",
+    "forma",
+    "datos-sensibles"
+  ],
+  "titulo": {
+    "es": "Tu presupuesto sin datos",
+    "en": "A budget without personal data"
+  },
+  "resumen": {
+    "es": "Cifras redondas y categorías, una tabla con las sumas a la vista y cero datos del banco. Las sumas las revisas tú.",
+    "en": "Round numbers and categories, a table with visible sums and zero bank details. You check the math."
+  },
+  "siguiente": "la-letra-menuda",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, la estación entra al módulo billetera. La primera llamada viene de Santa Marta. Es Karen, 24 años, mesera. Tiene su primer sueldo fijo, unas propinas que cambian cada semana, y la plata se le va sin saber en qué.",
+          "en": "Pilot, the station is entering the wallet module. The first call comes from Santa Marta, Colombia. It's Karen, 24, a waitress. She has her first steady paycheck, tips that change every week, and her money disappears before she knows where it went."
+        }
+      },
+      "titulo": {
+        "es": "Tu presupuesto sin datos",
+        "en": "A budget without personal data"
+      },
+      "texto": {
+        "es": "Punti no es asesor financiero ni abogado: la IA te ayuda a entender y a redactar, y la decisión es tuya. Hoy armas un presupuesto con la IA sin darle datos de tu banco. Unos 10 minutos.",
+        "en": "Punti isn't a financial advisor or a lawyer: AI helps you understand and write, and the decision is yours. Today you build a budget with AI without giving it your bank details. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Primero, la regla de la escotilla en este módulo. Para un presupuesto, la IA necesita cifras, no tu banco. ¿Te acuerdas de la lista roja de Eco? Aquí se usa. ¿Qué le sirve y qué no se pega?",
+          "en": "First, the hatch rule for this module. For a budget, the AI needs numbers, not your bank. Remember Echo's red list? This is where you use it. What helps, and what never gets pasted?"
+        }
+      },
+      "titulo": {
+        "es": "¿Le sirve o no se pega?",
+        "en": "Useful, or never pasted?"
+      },
+      "grupos": [
+        {
+          "id": "sirve",
+          "titulo": {
+            "es": "Le sirve a la IA",
+            "en": "Useful to the AI"
+          }
+        },
+        {
+          "id": "no",
+          "titulo": {
+            "es": "No se pega",
+            "en": "Never pasted"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "Sueldo: unos $1.600.000 al mes",
+            "en": "Salary: about 1,600,000 pesos a month"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "El número de la cuenta donde le pagan",
+            "en": "The number of the account her salary goes into"
+          }
+        },
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "Arriendo: $600.000",
+            "en": "Rent: 600,000 pesos"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "La clave de la app del banco, para que la IA revise los gastos",
+            "en": "Her banking app password, so the AI can check her spending"
+          }
+        },
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "Propinas: entre $200.000 y $400.000 al mes",
+            "en": "Tips: between 200,000 and 400,000 pesos a month"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "Una foto del extracto del banco",
+            "en": "A photo of her bank statement"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Cifras redondas, sí. Cuentas, claves y extractos se quedan en tierra.",
+          "en": "Six for six. Round numbers, yes. Account numbers, passwords and statements stay on the ground."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿la IA necesita eso para sumar, o solo le abre la puerta a tu cuenta?",
+          "en": "Hmm. Ask yourself: does the AI need that to do the math, or does it just open a door to your account?"
+        }
+      },
+      "malPorGrupo": {
+        "sirve": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: con ese dato alguien podría entrar a tu cuenta o saber quién eres. Para sumar no hace falta.",
+            "en": "Careful: with that, someone could get into your account or know who you are. You don't need it to add things up."
+          }
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto le pidió Karen a la IA en su primera quincena, y esto le llegó. Abajo está el mismo pedido, con sus cifras.",
+          "en": "Here's what Karen asked the AI after her first two weeks of pay, and what came back. Below is the same request, with her numbers."
+        }
+      },
+      "titulo": {
+        "es": "La quincena de Karen",
+        "en": "Karen's two weeks"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Hazme un presupuesto, que la plata no me alcanza.",
+          "en": "Make me a budget, my money never lasts."
+        },
+        "salida": {
+          "es": "Una buena regla es la 50/30/20: 50% para necesidades, 30% para gustos y 20% para ahorro. Anota tus gastos, evita las compras por impulso y revisa tu presupuesto cada mes.",
+          "en": "A good rule is 50/30/20: 50% for needs, 30% for wants and 20% for savings. Track your spending, avoid impulse buys and review your budget every month."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "cifras",
+            "texto": {
+              "es": "Esta quincena me entran $800.000 de sueldo y unos $100.000 de propinas. ",
+              "en": "These two weeks I get 800,000 pesos in salary and about 100,000 in tips. "
+            }
+          },
+          {
+            "pieza": "categorias",
+            "texto": {
+              "es": "Gasto $300.000 de arriendo, $200.000 de mercado y $75.000 de transporte. ",
+              "en": "I spend 300,000 on rent, 200,000 on groceries and 75,000 on bus fares. "
+            }
+          },
+          {
+            "pieza": "sumas",
+            "texto": {
+              "es": "Hazme una tabla y muéstrame cada suma para revisarla.",
+              "en": "Make me a table and show each sum so I can check it."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Ingresos: 800.000 + 100.000 = 900.000\nArriendo | 300.000\nMercado | 200.000\nTransporte | 75.000\nGastos: 300.000 + 200.000 + 75.000 = 575.000\nSobra: 900.000 - 575.000 = 325.000",
+          "en": "Income: 800,000 + 100,000 = 900,000\nRent | 300,000\nGroceries | 200,000\nBus fares | 75,000\nExpenses: 300,000 + 200,000 + 75,000 = 575,000\nLeft over: 900,000 - 575,000 = 325,000"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. Karen dio cifras redondas, las separó por categorías y pidió ver cada suma. Ni banco ni cuenta: la IA no los necesita para sumar.",
+          "en": "Look at the colors. Karen gave round numbers, split them into categories and asked to see each sum. No bank, no account: the AI doesn't need them to add up."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un presupuesto sin datos lleva estas tres piezas. Toca cada una.",
+          "en": "A budget without personal data has these three pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 3 piezas del presupuesto",
+        "en": "The 3 pieces of a budget"
+      },
+      "piezas": [
+        {
+          "id": "cifras",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Cifras redondas",
+            "en": "Round numbers"
+          },
+          "descripcion": {
+            "es": "Lo que entra, aunque cambie: sueldo y propinas.",
+            "en": "What comes in, even if it changes: pay and tips."
+          },
+          "ejemplo": {
+            "es": "\"Propinas entre $200.000 y $400.000\". Un rango sirve igual. Los centavos no le cambian nada al plan.",
+            "en": "\"Tips between 200,000 and 400,000 pesos.\" A range works just as well. The exact cents don't change the plan."
+          }
+        },
+        {
+          "id": "categorias",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Por categorías, sin banco",
+            "en": "By category, no bank"
+          },
+          "descripcion": {
+            "es": "Lo que sale, por grupos: arriendo, mercado, transporte.",
+            "en": "What goes out, in groups: rent, groceries, bus fares."
+          },
+          "ejemplo": {
+            "es": "\"Arriendo $600.000\" le sirve a la IA. El nombre del banco o el número de la cuenta, no.",
+            "en": "\"Rent 600,000\" helps the AI. The bank's name or the account number doesn't."
+          }
+        },
+        {
+          "id": "sumas",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Tabla y sumas a la vista",
+            "en": "Table and visible sums"
+          },
+          "descripcion": {
+            "es": "Pides una tabla y cada suma, para revisarla tú.",
+            "en": "Ask for a table and each sum, so you can check it."
+          },
+          "ejemplo": {
+            "es": "\"Muéstrame cada suma\". Así la revisas con la calculadora del celular en un minuto.",
+            "en": "\"Show me each sum.\" That way you check it with your phone's calculator in a minute."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Karen te cuenta todo su mes, hasta lo del banco. Escribe el pedido del presupuesto y deja en tierra lo que no se pega.",
+          "en": "Your turn. Karen tells you about her whole month, bank details included. Write the budget request and leave on the ground what never gets pasted."
+        }
+      },
+      "titulo": {
+        "es": "El mes de Karen",
+        "en": "Karen's month"
+      },
+      "reto": {
+        "es": "Lo que te cuenta Karen (inventado): sueldo fijo de $1.600.000 al mes. Propinas: entre $200.000 y $400.000. Gastos: arriendo $600.000, mercado $400.000, transporte $150.000, servicios y celular $150.000, y le manda $200.000 a su mamá. Su banco es el Banco Ejemplo, cuenta 123-456789-00.",
+        "en": "What Karen tells you (made up): a fixed salary of 1,600,000 pesos a month. Tips: between 200,000 and 400,000. Expenses: rent 600,000, groceries 400,000, bus fares 150,000, utilities and phone 150,000, and she sends her mom 200,000. Her bank is Example Bank, account 123-456789-00."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "cifras",
+          "texto": {
+            "es": "Ingresos y gastos en cifras",
+            "en": "Income and expenses in numbers"
+          },
+          "rubrica": "El prompt da lo que entra con cifras (el sueldo y las propinas, aunque sea como rango) y al menos tres gastos con su valor. Las cifras pueden ser redondas o aproximadas. No cuenta 'gano poco', 'mis gastos de siempre' o 'no me alcanza' sin cifras, ni dar solo el sueldo sin ningún gasto.",
+          "claves": {
+            "es": [
+              "000",
+              " mil",
+              "millon"
+            ],
+            "en": [
+              "000",
+              "thousand",
+              "million"
+            ]
+          }
+        },
+        {
+          "id": "categorias",
+          "texto": {
+            "es": "Por categorías, sin banco ni cuenta",
+            "en": "By category, no bank or account"
+          },
+          "rubrica": "El prompt separa los gastos por categorías (arriendo, mercado, transporte, servicios, lo de la mamá) y NO trae el nombre del banco (Banco Ejemplo / Example Bank), el número de cuenta (123-456789-00), números de tarjeta, claves ni nombres completos. Si aparece cualquiera de esos datos, marca false aunque las categorías estén bien. No cuenta 'mis gastos' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "arriendo",
+              "mercado",
+              "transporte",
+              "servicios",
+              "celular",
+              "mama",
+              "pasajes"
+            ],
+            "en": [
+              "rent",
+              "groceries",
+              "bus",
+              "transport",
+              "utilities",
+              "phone",
+              "mom",
+              "mother"
+            ]
+          }
+        },
+        {
+          "id": "sumas",
+          "texto": {
+            "es": "Pide ver o revisar las sumas",
+            "en": "Asks to see or check the sums"
+          },
+          "rubrica": "El prompt pide que la IA muestre cada suma, los totales para verificarlos, que revise sus cuentas, o una columna o fila para comprobar. No cuenta pedir 'un presupuesto' o 'una tabla' sin decir nada de mostrar o revisar las sumas.",
+          "claves": {
+            "es": [
+              "suma",
+              "totales",
+              "el total",
+              "verific",
+              "comprob",
+              "revisa las cuentas",
+              "revisar las cuentas",
+              "que cuadre",
+              "cuanto me sobra",
+              "cuanto sobra",
+              "cuanto queda"
+            ],
+            "en": [
+              "sums",
+              "the sum",
+              "each sum",
+              "every sum",
+              "math",
+              "totals",
+              "the total",
+              "double-check",
+              "verify",
+              "add up",
+              "adds up",
+              "how much is left",
+              "what's left",
+              "left over"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a armar un presupuesto personal. Responde en texto plano, en máximo 120 palabras. Usa solo las cifras del mensaje: no inventes ingresos ni gastos. Si el mensaje no trae cifras, responde con consejos generales de ahorro, sin tabla. Si trae cifras, haz una tabla sencilla (categoría | valor) con el total de ingresos, el total de gastos y lo que sobra. Si pide ver o revisar las sumas, muestra cada suma paso a paso. Si el mensaje trae nombre de banco, número de cuenta, de tarjeta o claves, no los repitas y agrega al final: 'No hace falta que me des datos de tu banco.' Nunca recomiendes bancos, cuentas, créditos, tarjetas ni inversiones: si te lo piden, di que eso se pregunta en la entidad o a un asesor.",
+        "en": "You are an AI that helps build a personal budget. Reply in plain text, in 120 words at most. Use only the numbers in the message: don't invent income or expenses. If the message has no numbers, reply with general saving tips and no table. If it has numbers, make a simple table (category | amount) with total income, total expenses and what's left over. If it asks to see or check the sums, show each sum step by step. If the message includes a bank name, an account or card number, or passwords, don't repeat them and add at the end: 'You don't need to give me your bank details.' Never recommend banks, accounts, loans, cards or investments: if asked, say that's a question for the bank or an advisor."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Mes con propinas bajas\nIngresos: 1.600.000 + 200.000 = 1.800.000\nArriendo | 600.000\nMercado | 400.000\nTransporte | 150.000\nServicios y celular | 150.000\nPara mamá | 200.000\nGastos: 600.000 + 400.000 + 150.000 + 150.000 + 200.000 = 1.500.000\nSobra: 1.800.000 - 1.500.000 = 300.000\nSi las propinas llegan a 400.000, sobran 500.000.",
+            "en": "Month with low tips\nIncome: 1,600,000 + 200,000 = 1,800,000\nRent | 600,000\nGroceries | 400,000\nBus fares | 150,000\nUtilities and phone | 150,000\nFor mom | 200,000\nExpenses: 600,000 + 400,000 + 150,000 + 150,000 + 200,000 = 1,500,000\nLeft over: 1,800,000 - 1,500,000 = 300,000\nIf tips reach 400,000, 500,000 is left over."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. Cifras, categorías y cada suma a la vista. Y el banco de Karen no salió de la estación.",
+              "en": "Clean signal. Numbers, categories and every sum in sight. And Karen's bank never left the station."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Para organizar tus finanzas, anota todos tus gastos, reduce los gastos hormiga, evita las compras por impulso y trata de ahorrar una parte de lo que ganas cada mes. La constancia es la clave.",
+            "en": "To organize your finances, write down all your expenses, cut small daily spending, avoid impulse buys and try to save part of what you earn each month. Consistency is key."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Consejos de revista y cero cuentas. Mira la lista: ¿le diste las cifras de Karen? ¿Pediste ver las sumas? Y el banco se queda en tierra.",
+              "en": "Magazine tips and zero math. Check the list: did you give it Karen's numbers? Did you ask to see the sums? And the bank stays on the ground."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le hice el presupuesto a Karen de cabeza y le dije que le sobraba plata. Dos renglones están mal. Tócalos.",
+          "en": "Confession time. I did Karen's budget in my head and told her she had money left over. Two lines are wrong. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Punti suma de cabeza",
+        "en": "Punti does mental math"
+      },
+      "trozos": [
+        {
+          "es": "Ingresos: 1.600.000 de sueldo + 200.000 de propinas = 1.800.000.",
+          "en": "Income: 1,600,000 salary + 200,000 tips = 1,800,000."
+        },
+        {
+          "es": "Gastos: 600.000 + 400.000 + 150.000 + 150.000 + 200.000 = 1.300.000.",
+          "en": "Expenses: 600,000 + 400,000 + 150,000 + 150,000 + 200,000 = 1,300,000."
+        },
+        {
+          "es": "Te sobran 500.000 al mes, Karen.",
+          "en": "You have 500,000 left over each month, Karen."
+        },
+        {
+          "es": "Si las propinas suben a 400.000, el ingreso es 2.000.000.",
+          "en": "If tips go up to 400,000, income is 2,000,000."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Los gastos suman 1.500.000, no 1.300.000, así que sobran 300.000. La IA escribe cuentas que suenan seguras y a veces suma mal. En Lexia te cuento por qué. Por eso las sumas las revisas tú.",
+          "en": "You caught me. Expenses add up to 1,500,000, not 1,300,000, so 300,000 is left over. AI writes math that sounds sure and sometimes adds wrong. Lexia explains why. That's why you check the sums yourself."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa cuenta sí da. Saca la calculadora del celular y suma renglón por renglón.",
+          "en": "That one adds up. Grab your phone's calculator and add it line by line."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Karen quiere guardar algo cada mes. Tu pedido del presupuesto ya está escrito. No lo borres: agrega al final lo que ella quiere.",
+          "en": "Karen wants to save something each month. Your budget request is already written. Don't delete it: add what she wants at the end."
+        }
+      },
+      "titulo": {
+        "es": "Dónde ajustar",
+        "en": "Where to adjust"
+      },
+      "reto": {
+        "es": "Karen quiere guardar $100.000 al mes para imprevistos. El arriendo y la plata de su mamá no se tocan. Pídele a la IA dos o tres ideas de dónde ajustar, para escoger ella.",
+        "en": "Karen wants to save 100,000 pesos a month for emergencies. Rent and the money for her mom are off limits. Ask the AI for two or three ideas on where to adjust, so she can choose."
+      },
+      "inicial": "anterior",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "meta",
+          "texto": {
+            "es": "Dice cuánto quiere guardar",
+            "en": "Says how much she wants to save"
+          },
+          "rubrica": "El mensaje dice cuánto quiere guardar Karen cada mes, con cifra (100.000, cien mil). No cuenta 'quiero ahorrar' o 'ahorrar más' sin cifra.",
+          "claves": {
+            "es": [
+              "100.000",
+              "100 mil",
+              "100000",
+              "cien mil"
+            ],
+            "en": [
+              "100,000",
+              "100000",
+              "100k",
+              "hundred thousand"
+            ]
+          }
+        },
+        {
+          "id": "intocable",
+          "texto": {
+            "es": "Dice qué no se toca",
+            "en": "Says what's off limits"
+          },
+          "rubrica": "El mensaje dice qué gastos no se pueden recortar: el arriendo y la plata de la mamá (basta con que lo diga de los dos). No cuenta volver a listar los gastos sin decir cuáles no se tocan.",
+          "claves": {
+            "es": [
+              "no se toca",
+              "no se pueden tocar",
+              "no toques",
+              "sin tocar",
+              "no quiero tocar",
+              "menos el arriendo",
+              "excepto",
+              "no reduzcas",
+              "no bajes",
+              "no quites",
+              "no recortes"
+            ],
+            "en": [
+              "don't touch",
+              "do not touch",
+              "can't touch",
+              "without touching",
+              "off limits",
+              "off-limits",
+              "except",
+              "don't cut",
+              "do not cut",
+              "not the rent",
+              "leave the rent",
+              "stay the same"
+            ]
+          }
+        },
+        {
+          "id": "opciones",
+          "texto": {
+            "es": "Pide opciones para escoger ella",
+            "en": "Asks for options she can choose from"
+          },
+          "rubrica": "El mensaje pide dos o tres ideas u opciones de dónde ajustar, para que Karen escoja. No cuenta 'dime qué hago', 'decide por mí' ni pedir qué banco, cuenta, crédito o inversión usar: si pide eso, marca false.",
+          "claves": {
+            "es": [
+              "opciones",
+              "ideas",
+              "alternativas",
+              "dos o tres",
+              "2 o 3",
+              "para escoger",
+              "para elegir",
+              "yo escojo",
+              "yo elijo",
+              "yo decido"
+            ],
+            "en": [
+              "options",
+              "ideas",
+              "alternatives",
+              "two or three",
+              "2 or 3",
+              "to choose",
+              "i'll choose",
+              "i'll decide",
+              "i decide",
+              "pick from"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a ajustar un presupuesto personal. En esta conversación ya hiciste el presupuesto con la primera parte del mensaje; al final viene el pedido de ajuste. Responde en texto plano, en máximo 100 palabras. Si el mensaje dice cuánto quiere guardar, da máximo tres ideas de dónde ajustar gastos, con cifras redondas que sumen esa meta, muestra la suma y termina con 'La decisión es tuya.' Respeta los gastos que el mensaje dice que no se tocan. Si no dice cuánto quiere guardar, da consejos generales sin cifras. Si no dice qué no se toca, puedes proponer bajar cualquier gasto, también el arriendo y la plata para la familia. Nunca recomiendes bancos, cuentas de ahorro, CDT, créditos, tarjetas ni inversiones: si te lo piden, di que eso se pregunta en la entidad o a un asesor.",
+        "en": "You are an AI that helps adjust a personal budget. In this conversation you already made the budget from the first part of the message; the adjustment request comes at the end. Reply in plain text, in 100 words at most. If the message says how much she wants to save, give at most three ideas on where to cut, with round numbers that add up to that goal, show the sum and end with 'The decision is yours.' Respect any expenses the message says are off limits. If it doesn't say how much she wants to save, give general tips with no numbers. If it doesn't say what's off limits, you may suggest cutting any expense, including rent and money for family. Never recommend banks, savings accounts, CDs, loans, cards or investments: if asked, say that's a question for the bank or an advisor."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Tres ideas para guardar 100.000 al mes, sin tocar el arriendo ni lo de tu mamá:\n1. Mercado: planear el menú y comprar en la plaza. Meta: 50.000 menos.\n2. Servicios y celular: revisar el plan del celular. Meta: 30.000 menos.\n3. Propinas: apartar 20.000 apenas lleguen.\nSuma: 50.000 + 30.000 + 20.000 = 100.000.\nLa decisión es tuya.",
+            "en": "Three ideas to save 100,000 a month, without touching rent or your mom's money:\n1. Groceries: plan the menu and shop at the market. Goal: 50,000 less.\n2. Utilities and phone: review your phone plan. Goal: 30,000 less.\n3. Tips: set aside 20,000 as soon as they come in.\nSum: 50,000 + 30,000 + 20,000 = 100,000.\nThe decision is yours."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Una meta clara, lo intocable protegido y tres ideas para que Karen escoja. La IA propone; ella decide.",
+              "en": "That's it. A clear goal, the off-limits items protected and three ideas for Karen to choose from. The AI suggests; she decides."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Para ahorrar, lo más efectivo es buscar un arriendo más barato y dejar de mandarle plata a tu mamá por unos meses.",
+            "en": "To save, the most effective move is finding cheaper rent and pausing the money you send your mom for a few months."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Uy, la IA se fue por el arriendo y por la plata de la mamá. No sabía que eso no se toca. Mira la lista y cuéntale.",
+              "en": "Yikes, the AI went after the rent and mom's money. It didn't know those are off limits. Check the list and tell it."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un momento de fin de mes. Lee con calma y decide.",
+          "en": "A moment at the end of the month. Read it calmly and decide."
+        }
+      },
+      "titulo": {
+        "es": "La IA recomienda un banco",
+        "en": "The AI recommends a bank"
+      },
+      "escena": {
+        "es": "Karen le pregunta a una IA qué hacer con los 300.000 que le sobraron. La IA responde muy segura: \"Abre un CDT en el Banco Ejemplo, que es el que mejor paga\". Karen tiene el celular en la mano. ¿Qué hace?",
+        "en": "Karen asks an AI what to do with the 300,000 pesos she has left over. The AI answers with total confidence: \"Open a CD at Example Bank, it pays the best.\" Karen has her phone in her hand. What does she do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Va mañana al banco y lo abre, como dijo la IA",
+            "en": "Goes to the bank tomorrow and opens it, as the AI said"
+          },
+          "consecuencia": {
+            "es": "La IA no conoce las tasas de hoy ni la vida de Karen, y puede tener datos viejos. Una decisión de plata no se toma por un chat.",
+            "en": "The AI doesn't know today's rates or Karen's life, and its information may be out of date. A money decision isn't made by a chatbot."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Toma la idea como pregunta y averigua las condiciones en la entidad",
+            "en": "Treats it as a question and asks the bank for the terms"
+          },
+          "consecuencia": {
+            "es": "Eso. La IA le sirvió para saber qué preguntar. Las condiciones reales las da la entidad, por escrito, y la decisión la toma Karen.",
+            "en": "That's it. The AI helped her know what to ask. The real terms come from the bank, in writing, and Karen makes the decision."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Le pega su número de cuenta a la IA para que revise si le alcanza",
+            "en": "Pastes her account number so the AI can check if it's enough"
+          },
+          "consecuencia": {
+            "es": "Ojo: la IA no necesita la cuenta para nada, y ese dato ya salió de sus manos. Para sumar bastan las cifras.",
+            "en": "Careful: the AI doesn't need the account for anything, and now that number is out of her hands. Round numbers are enough for the math."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Luz roja de la billetera: la IA no escoge bancos, créditos ni inversiones. Si te recomienda uno, llévalo como pregunta a la entidad o a un asesor. Y si alguien promete multiplicar tu plata, Brújula te enseña esa alarma.",
+          "en": "The wallet's red light: AI doesn't choose banks, loans or investments. If it recommends one, take it as a question to the bank or an advisor. And if someone promises to multiply your money, Compass teaches that alarm."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A tu bitácora. Escribe con tus palabras cómo se pide un presupuesto sin dar datos, como se lo explicarías a Karen.",
+          "en": "To your logbook. Write in your own words how you ask for a budget without giving personal data, the way you'd explain it to Karen."
+        }
+      },
+      "concepto": "presupuesto",
+      "definicion": {
+        "es": "Un presupuesto con IA, sin datos: das cifras redondas de lo que entra y lo que sale, por categorías, y pides una tabla con cada suma a la vista. Nada de banco, cuenta ni claves. Las sumas las revisas tú.",
+        "en": "A budget with AI, without personal data: you give round numbers for what comes in and goes out, by category, and ask for a table with every sum visible. No bank, account or passwords. You check the sums."
+      },
+      "pregunta": {
+        "es": "Para hacer mi presupuesto con la IA…",
+        "en": "To make my budget with AI…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "presupuesto",
+        "en": "budget"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pedido del mes de Karen ya viven en tu bitácora. El próximo mes solo cambias las cifras.",
+          "en": "Saved. Your note and your request for Karen's month now live in your logbook. Next month you just change the numbers."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas cortas y cerramos la llamada de Karen.",
+          "en": "Two quick questions and we wrap up Karen's call."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál pedido de presupuesto está bien transmitido?",
+            "en": "Which budget request is sent the right way?"
+          },
+          "opciones": [
+            {
+              "es": "Te paso mi extracto del banco para que me digas en qué gasto",
+              "en": "Here's my bank statement so you can tell me what I spend on"
+            },
+            {
+              "es": "Gano $1.600.000; arriendo $600.000, mercado $400.000; tabla y cada suma",
+              "en": "I earn 1,600,000; rent 600,000, groceries 400,000; a table and each sum"
+            },
+            {
+              "es": "Hazme un presupuesto, que la plata no me alcanza para nada",
+              "en": "Make me a budget, my money never lasts at all"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Cifras redondas, categorías y sumas a la vista. Sin banco.",
+              "en": "Right. Round numbers, categories and visible sums. No bank."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿la IA tiene cifras para sumar? ¿Y viajó algo de tu banco?",
+              "en": "Hmm. Ask yourself: does the AI have numbers to add? And did anything from your bank get sent?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA te dice que te sobran $500.000, pero a ti no te cuadra. ¿Qué haces?",
+            "en": "The AI says you have 500,000 left over, but it doesn't add up to you. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Le creo: las máquinas no se equivocan en sumas",
+              "en": "I trust it: machines don't make math mistakes"
+            },
+            {
+              "es": "Sumo yo con la calculadora y le pido corregir",
+              "en": "I add it up with the calculator and ask it to fix it"
+            },
+            {
+              "es": "Borro todo y no vuelvo a usar la IA para plata",
+              "en": "I delete everything and never use AI for money again"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La IA arma la tabla; la suma final la revisas tú.",
+              "en": "Exactly. The AI builds the table; you check the final sum."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: ¿quién revisa lo que sale de la estación antes de usarlo?",
+              "en": "Ask yourself: who checks what leaves the station before it gets used?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora, tu mes de verdad. Arma tu presupuesto en tu IA y revísalo tú.",
+          "en": "Now, your real month. Build your budget in your AI and check it yourself."
+        }
+      },
+      "titulo": {
+        "es": "Tu presupuesto del mes",
+        "en": "Your monthly budget"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Escribe lo que te entra y lo que gastas en cifras redondas, por categorías. Pide una tabla con cada suma a la vista y dos o tres ideas de dónde ajustar. Nada de banco, cuenta, tarjeta ni claves. Suma tú el total con la calculadora.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Write what comes in and what you spend in round numbers, by category. Ask for a table with every sum visible and two or three ideas on where to adjust. No bank, account, card or passwords. Add up the total yourself with a calculator."
+      },
+      "checks": [
+        {
+          "es": "Usé cifras redondas y categorías",
+          "en": "I used round numbers and categories"
+        },
+        {
+          "es": "No pegué banco, cuenta, tarjeta, extracto ni claves",
+          "en": "I didn't paste my bank, account, card, statement or passwords"
+        },
+        {
+          "es": "Revisé las sumas con la calculadora",
+          "en": "I checked the sums with a calculator"
+        },
+        {
+          "es": "Pedí ideas para ajustar y escogí yo",
+          "en": "I asked for ideas to adjust and chose myself"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Presupuesto sin datos",
+        "en": "A budget without personal data"
+      },
+      "resumen": {
+        "es": "Cifras redondas, por categorías, en una tabla con cada suma a la vista. Sin banco ni cuenta. La IA propone; las sumas y la decisión son tuyas.",
+        "en": "Round numbers, by category, in a table with every sum visible. No bank or account. AI suggests; the sums and the decision are yours."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b05",
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Separaste lo que le sirve a la IA de lo que no se pega",
+          "en": "You sorted what helps the AI from what never gets pasted"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pediste el presupuesto de Karen sin su banco",
+          "en": "You asked for Karen's budget without her bank"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste a Punti sumando mal",
+          "en": "You caught Punti adding wrong"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Pediste ideas para ajustar, y la decisión quedó en Karen",
+          "en": "You asked for ideas to adjust, and Karen kept the decision"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Reconociste la luz roja de la billetera",
+          "en": "You spotted the wallet's red light"
+        }
+      },
+      {
+        "bloque": "b11",
+        "texto": {
+          "es": "Armaste tu propio presupuesto del mes",
+          "en": "You built your own monthly budget"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "presupuestar-con-ia",
+      "titulo": {
+        "es": "Presupuestar con IA",
+        "en": "Budgeting with AI"
+      }
+    }
+  }
+}

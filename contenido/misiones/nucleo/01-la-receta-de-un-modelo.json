@@ -1,0 +1,709 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-receta-de-un-modelo",
+  "mundo": "como-se-construye",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "cadena-de-construccion"
+  ],
+  "usaConceptos": [
+    "entrenamiento-llm",
+    "aprendizaje-supervisado"
+  ],
+  "titulo": {
+    "es": "La receta de un modelo",
+    "en": "The Recipe for a Model"
+  },
+  "resumen": {
+    "es": "Las cuatro etapas por las que pasa toda IA: datos, entrenamiento, evaluación y despliegue.",
+    "en": "The four stages every AI goes through: data, training, evaluation and deployment."
+  },
+  "siguiente": "de-donde-salen-los-datos",
+  "fuentes": [
+    {
+      "titulo": "Latam-GPT: ficha del modelo (construido sobre Llama 3.1 70B con preentrenamiento continuo)",
+      "url": "https://huggingface.co/latam-gpt/Llama-3.1-70B-LatamGPT-SFT-1.0",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "CENIA: Latam-GPT, la primera IA regional abierta creada con datos latinoamericanos (10 feb. 2026)",
+      "url": "https://cenia.cl/2026/02/10/latam-gpt-la-primera-ia-regional-abierta-creada-con-datos-latinoamericanos/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI: guía de optimización de modelos (prompt, RAG y ajuste fino)",
+      "url": "https://developers.openai.com/api/docs/guides/model-optimization",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, bienvenido a Núcleo, la fábrica donde nacen las mentes de las máquinas. Estoy en la mina, con casco y linterna. Llegó una señal de Caldas: Olga necesita ayuda antes de firmar un contrato.",
+          "en": "Pilot, welcome to the Core, the factory where machine minds are made. I'm down in the mine, helmet and headlamp on. A signal came in from Caldas: Olga needs help before she signs a contract."
+        }
+      },
+      "titulo": {
+        "es": "La receta de un modelo",
+        "en": "The Recipe for a Model"
+      },
+      "texto": {
+        "es": "Olga gerencia una cooperativa cafetera. Un proveedor le ofrece \"entrenar una IA propia\" para leer las facturas de los asociados. Hoy ves las cuatro etapas de toda IA y las preguntas que salen de ellas. Unos 9 minutos.",
+        "en": "Olga manages a coffee growers' co-op. A vendor is offering to \"train her own AI\" to read the members' invoices. Today you'll see the four stages behind every AI and the questions they raise. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Todo lo que ves en Núcleo es una fábrica. Y la receta es la misma para cualquier IA, grande o pequeña.",
+          "en": "Everything you see in the Core is a factory. And the recipe is the same for any AI, big or small."
+        }
+      },
+      "titulo": {
+        "es": "La fábrica por dentro",
+        "en": "Inside the factory"
+      },
+      "texto": {
+        "es": "Toda IA pasa por cuatro etapas. Primero la materia prima: los datos. Luego el horno: el entrenamiento, que hace una cantidad enorme de cuentas en chips especiales. Después el control de calidad: la evaluación. Y al final el muelle: el despliegue, cuando llega a la gente. Si una etapa falla, lo que sale al final también falla.",
+        "en": "Every AI goes through four stages. First the raw material: data. Then the oven: training, which runs an enormous number of calculations on special chips. Then quality control: evaluation. And finally the loading dock: deployment, when it reaches people. If one stage fails, whatever comes out at the end fails too."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Datos: la materia prima",
+            "en": "Data: the raw material"
+          },
+          {
+            "es": "Entrenamiento: el horno",
+            "en": "Training: the oven"
+          },
+          {
+            "es": "Evaluación: control de calidad",
+            "en": "Evaluation: quality control"
+          },
+          {
+            "es": "Despliegue: el muelle de salida",
+            "en": "Deployment: the loading dock"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las cuatro etapas. Sus colores te van a acompañar en todo Núcleo. Toca cada una y mira qué significa para las facturas de Olga.",
+          "en": "These are the four stages. Their colors will follow you all through the Core. Tap each one and see what it means for Olga's invoices."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 etapas de la fábrica",
+        "en": "The 4 stages of the factory"
+      },
+      "piezas": [
+        {
+          "id": "datos",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Datos",
+            "en": "Data"
+          },
+          "descripcion": {
+            "es": "Los ejemplos de los que aprende: textos, fotos, audios.",
+            "en": "The examples it learns from: text, photos, audio."
+          },
+          "ejemplo": {
+            "es": "Para Olga serían facturas escaneadas. ¿Cuáles, de quién y con qué permiso?",
+            "en": "For Olga, that means scanned invoices. Which ones, whose, and with what permission?"
+          }
+        },
+        {
+          "id": "entrenamiento",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Entrenamiento",
+            "en": "Training"
+          },
+          "descripcion": {
+            "es": "El modelo practica con los datos hasta ajustarse.",
+            "en": "The model practices on the data until it's tuned."
+          },
+          "ejemplo": {
+            "es": "Aquí se decide si se arranca de cero o se ajusta un modelo que ya existe. Cambia mucho el costo.",
+            "en": "This is where you decide whether to start from zero or adjust a model that already exists. The cost changes a lot."
+          }
+        },
+        {
+          "id": "evaluacion",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Evaluación",
+            "en": "Evaluation"
+          },
+          "descripcion": {
+            "es": "Se prueba con casos que no vio para medir sus errores.",
+            "en": "It's tested on cases it hasn't seen to measure its mistakes."
+          },
+          "ejemplo": {
+            "es": "¿Cuántas facturas lee bien de cada 100 nuevas? Si nadie lo midió, nadie lo sabe.",
+            "en": "How many out of 100 new invoices does it read correctly? If nobody measured it, nobody knows."
+          }
+        },
+        {
+          "id": "despliegue",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Despliegue",
+            "en": "Deployment"
+          },
+          "descripcion": {
+            "es": "Se pone a funcionar para la gente, y se paga por usarlo.",
+            "en": "It's put to work for people, and there's a cost to run it."
+          },
+          "ejemplo": {
+            "es": "Leer cada factura cuesta algo todos los meses. El contrato no termina el día que se entrega.",
+            "en": "Reading each invoice costs something every month. The contract doesn't end on delivery day."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Llegó un cargamento de frases del contrato. ¿En qué etapa de la fábrica pasa cada una?",
+          "en": "A load of lines from the contract just came in. Which stage of the factory does each one belong to?"
+        }
+      },
+      "titulo": {
+        "es": "¿En qué etapa pasa?",
+        "en": "Which stage is it?"
+      },
+      "grupos": [
+        "datos",
+        "entrenamiento",
+        "evaluacion",
+        "despliegue"
+      ],
+      "items": [
+        {
+          "grupo": "datos",
+          "texto": {
+            "es": "Reunir 2.000 facturas de los asociados, con su autorización.",
+            "en": "Collect 2,000 invoices from members, with their authorization."
+          }
+        },
+        {
+          "grupo": "entrenamiento",
+          "texto": {
+            "es": "Ajustar un modelo que ya existe para que reconozca el formato de las facturas.",
+            "en": "Adjust an existing model so it recognizes the invoice format."
+          }
+        },
+        {
+          "grupo": "evaluacion",
+          "texto": {
+            "es": "Probarlo con 100 facturas que no usó para aprender y contar los errores.",
+            "en": "Test it on 100 invoices it didn't learn from and count the mistakes."
+          }
+        },
+        {
+          "grupo": "despliegue",
+          "texto": {
+            "es": "Conectarlo al computador de la oficina para que lo usen todos los días.",
+            "en": "Connect it to the office computer so staff can use it every day."
+          }
+        },
+        {
+          "grupo": "datos",
+          "texto": {
+            "es": "Quitar las facturas borrosas o repetidas antes de empezar.",
+            "en": "Remove blurry or duplicate invoices before starting."
+          }
+        },
+        {
+          "grupo": "despliegue",
+          "texto": {
+            "es": "Pagar cada mes según cuántas facturas lea.",
+            "en": "Pay each month based on how many invoices it reads."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Todo en su lugar. Ya sabes en qué parte de la fábrica está cada promesa del contrato.",
+          "en": "Everything's in place. You can tell which part of the factory each promise in the contract belongs to."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, esa va en otra etapa. Pregúntate: ¿esto pasa antes de aprender, mientras aprende, cuando lo prueban o cuando ya se usa?",
+          "en": "Hmm, that one belongs somewhere else. Ask yourself: does it happen before learning, during learning, while testing, or once it's in use?"
+        }
+      },
+      "malPorGrupo": {
+        "evaluacion": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Evaluar es probar con casos nuevos. ¿Esta frase habla de medir errores?",
+            "en": "Close. Evaluating means testing on new cases. Is this line about measuring mistakes?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ahora un secreto de la fábrica que casi ningún vendedor cuenta.",
+          "en": "Now a factory secret that almost no salesperson mentions."
+        }
+      },
+      "titulo": {
+        "es": "Casi nadie arranca de cero",
+        "en": "Almost nobody starts from zero"
+      },
+      "texto": {
+        "es": "Entrenar un modelo desde cero cuesta muchísimo. Casi todos parten de uno que ya existe y lo adaptan. Hasta Latam-GPT, el modelo regional lanzado en 2026, partió de un modelo abierto ya hecho y siguió entrenándolo con datos de la región. Para leer facturas, a veces ni hace falta entrenar: basta un modelo existente con buenas instrucciones y buenas pruebas.",
+        "en": "Training a model from scratch costs a fortune. Almost everyone starts from one that already exists and adapts it. Even Latam-GPT, the regional model launched in 2026, started from an existing open model and kept training it on regional data. To read invoices, you may not need training at all: an existing model with good instructions and tests will do."
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Le preparé a Olga unos consejos para la reunión. Dos se me salieron del riel de la vagoneta. Tócalos.",
+          "en": "I wrote Olga some tips for the meeting. Two of them jumped the mine-cart tracks. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Los consejos de Punti",
+        "en": "Punti's tips"
+      },
+      "trozos": [
+        {
+          "es": "Pregunta de dónde salen los datos y quién dio permiso.",
+          "en": "Ask where the data comes from and who gave permission."
+        },
+        {
+          "es": "Una vez entrenada, usarla no cuesta nada.",
+          "en": "Once it's trained, using it costs nothing."
+        },
+        {
+          "es": "Pide ver cómo la probaron con facturas reales.",
+          "en": "Ask to see how they tested it on real invoices."
+        },
+        {
+          "es": "Si no la entrenan desde cero, no es una IA de verdad.",
+          "en": "If they don't train it from scratch, it's not a real AI."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me pillaste dos veces. Usar el modelo cuesta cada mes, factura por factura. Y adaptar uno que ya existe es lo normal: no lo hace menos real, lo hace más barato.",
+          "en": "You caught me twice. Running the model costs money every month, invoice by invoice. And adapting an existing one is the norm: it doesn't make it less real, it makes it cheaper."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese consejo sí sirve. Busca los que chocan con lo que viste de la fábrica: el costo de usarla y el arranque de cero.",
+          "en": "That tip actually works. Look for the ones that clash with what you saw in the factory: running costs and starting from zero."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Olga se reúne mañana con el proveedor. Pídele a la IA la lista de preguntas que ella debe llevar, etapa por etapa.",
+          "en": "Your turn. Olga meets the vendor tomorrow. Ask the AI for the list of questions she should bring, stage by stage."
+        }
+      },
+      "titulo": {
+        "es": "Las preguntas de Olga",
+        "en": "Olga's questions"
+      },
+      "reto": {
+        "es": "Olga gerencia una cooperativa cafetera en Caldas. El proveedor promete \"entrenar una IA propia\" que lea las facturas de los asociados. Ella no es técnica y quiere preguntas claras sobre los datos, sobre si arrancan de cero, sobre cómo la prueban y sobre cuánto cuesta usarla cada mes.",
+        "en": "Olga manages a coffee growers' co-op in Caldas. The vendor promises to \"train her own AI\" that reads the members' invoices. She's not technical and wants clear questions about the data, whether they start from scratch, how they test it, and what it costs to run each month."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Pregunta por los datos",
+            "en": "Asks about the data"
+          },
+          "rubrica": "El prompt pide preguntas sobre los datos: cuáles facturas se usan, de quién son, con qué permiso o cómo se protegen. No cuenta si solo dice 'facturas' para describir la tarea sin pedir preguntas sobre esos datos.",
+          "claves": {
+            "es": [
+              "que datos",
+              "cuales datos",
+              "los datos",
+              "sobre datos",
+              "datos de",
+              "permiso",
+              "de quien son",
+              "privacidad",
+              "autorizacion"
+            ],
+            "en": [
+              "what data",
+              "which data",
+              "the data",
+              "about data",
+              "data from",
+              "permission",
+              "whose",
+              "privacy",
+              "consent"
+            ]
+          }
+        },
+        {
+          "id": "cero",
+          "texto": {
+            "es": "Pregunta si arrancan de cero",
+            "en": "Asks if they start from scratch"
+          },
+          "rubrica": "El prompt pide preguntar si el modelo se entrena desde cero o si adaptan un modelo que ya existe. No cuenta preguntar solo 'cómo la entrenan' sin mencionar esa diferencia.",
+          "claves": {
+            "es": [
+              "desde cero",
+              "de cero",
+              "ya existe",
+              "ya existente",
+              "modelo existente",
+              "ya hecho",
+              "adaptan",
+              "adaptar",
+              "modelo base"
+            ],
+            "en": [
+              "from scratch",
+              "from zero",
+              "existing model",
+              "already exists",
+              "off-the-shelf",
+              "off the shelf",
+              "adapt",
+              "base model",
+              "fine-tun"
+            ]
+          }
+        },
+        {
+          "id": "prueba",
+          "texto": {
+            "es": "Pregunta cómo la prueban",
+            "en": "Asks how they test it"
+          },
+          "rubrica": "El prompt pide preguntar cómo van a probar o evaluar la IA, por ejemplo con facturas nuevas, cuántos errores comete o qué pasa cuando se equivoca. No cuenta pedir que 'funcione bien' sin preguntar cómo se mide.",
+          "claves": {
+            "es": [
+              "prueb",
+              "evalu",
+              "errores",
+              "se equivoca",
+              "equivoque",
+              "precision",
+              "margen de error",
+              "medir",
+              "miden"
+            ],
+            "en": [
+              "test",
+              "evaluat",
+              "mistake",
+              "error",
+              "accuracy",
+              "accurate",
+              "measure",
+              "gets it wrong"
+            ]
+          }
+        },
+        {
+          "id": "mes",
+          "texto": {
+            "es": "Pregunta el costo de usarla cada mes",
+            "en": "Asks the monthly running cost"
+          },
+          "rubrica": "El prompt pide preguntar cuánto cuesta usar la IA después de entregada: cada mes, por factura o por mantenimiento. No cuenta preguntar solo 'cuánto cuesta' o el precio de construirla.",
+          "claves": {
+            "es": [
+              "mensual",
+              "cada mes",
+              "al mes",
+              "por mes",
+              "por factura",
+              "mantenimiento",
+              "costo de uso",
+              "despues de entregada"
+            ],
+            "en": [
+              "monthly",
+              "per month",
+              "a month",
+              "each month",
+              "per invoice",
+              "maintenance",
+              "running cost",
+              "ongoing",
+              "to run it"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a la gerente de una cooperativa cafetera a preparar una reunión con un proveedor de tecnología. Responde con una lista corta de preguntas en español sencillo, agrupadas por tema, sin jerga. Usa solo lo que dice el prompt. No inventes precios, leyes, marcas ni cifras. Si el prompt no pide un tema, no lo agregues por tu cuenta.",
+        "en": "You are an AI helping the manager of a coffee growers' co-op prepare for a meeting with a tech vendor. Reply with a short list of questions in plain language, grouped by topic, no jargon. Use only what the prompt says. Don't invent prices, laws, brands or figures. If the prompt doesn't ask about a topic, don't add it on your own."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Datos\n1. ¿Qué facturas van a usar y cuántas?\n2. ¿Quién autoriza el uso de las facturas de los asociados y dónde se guardan?\n\nCómo la construyen\n3. ¿La entrenan desde cero o adaptan un modelo que ya existe?\n\nPruebas\n4. ¿Con cuántas facturas nuevas la prueban y cuántos errores comete?\n5. ¿Qué pasa cuando lee mal un valor?\n\nCosto\n6. ¿Cuánto cuesta usarla cada mes, además de construirla?",
+            "en": "Data\n1. Which invoices will you use, and how many?\n2. Who authorizes using the members' invoices, and where are they stored?\n\nHow it's built\n3. Do you train it from scratch or adapt an existing model?\n\nTesting\n4. How many new invoices do you test it on, and how many mistakes does it make?\n5. What happens when it misreads an amount?\n\nCost\n6. What does it cost to run each month, on top of building it?"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. Olga llega con una pregunta por cada etapa de la fábrica. Ningún proveedor serio se molesta por esas preguntas.",
+              "en": "Clean signal. Olga shows up with a question for every stage of the factory. No serious vendor will mind those questions."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "1. ¿Qué tan inteligente es la IA?\n2. ¿Cuánto cuesta?\n3. ¿Cuándo la entregan?",
+            "en": "1. How smart is the AI?\n2. How much does it cost?\n3. When will it be delivered?"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. Con esas preguntas el proveedor puede prometer cualquier cosa. Revisa la lista: faltan etapas de la fábrica.",
+              "en": "Weak signal. With those questions the vendor can promise anything. Check the list: some factory stages are missing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto va a tu bitácora. Escribe las cuatro etapas con tus palabras, como se las explicarías a Olga en la puerta de la cooperativa.",
+          "en": "This goes in your logbook. Write the four stages in your own words, the way you'd explain them to Olga at the co-op door."
+        }
+      },
+      "concepto": "cadena-de-construccion",
+      "definicion": {
+        "es": "Toda IA pasa por la misma fábrica: datos, entrenamiento, evaluación y despliegue. Casi siempre se adapta un modelo que ya existe en vez de arrancar de cero.",
+        "en": "Every AI goes through the same factory: data, training, evaluation and deployment. Most of the time an existing model is adapted instead of starting from zero."
+      },
+      "pregunta": {
+        "es": "Las cuatro etapas de la fábrica son…",
+        "en": "The four stages of the factory are…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "proveedores",
+        "en": "vendors"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tus preguntas para proveedores quedan en tu bitácora. Las vas a necesitar el día que alguien te ofrezca una IA propia.",
+          "en": "Saved. Your note and your vendor questions are in your logbook. You'll need them the day someone offers you your own AI."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y subimos a tomar aire.",
+          "en": "Two questions and we head up for some air."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "El proveedor dice: \"Probamos la IA con las mismas facturas con las que aprendió\". ¿Qué etapa quedó floja?",
+            "en": "The vendor says: \"We tested the AI on the same invoices it learned from.\" Which stage is weak?"
+          },
+          "opciones": [
+            {
+              "es": "La evaluación: hay que probar con casos que no vio",
+              "en": "Evaluation: it has to be tested on cases it hasn't seen"
+            },
+            {
+              "es": "El despliegue: falta conectarla al computador",
+              "en": "Deployment: it still needs to be connected"
+            },
+            {
+              "es": "Ninguna: si acierta con esas, acierta con todas",
+              "en": "None: if it gets those right, it gets them all right"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Probar con lo que ya vio es como calificar un examen que el estudiante copió.",
+              "en": "Right. Testing on what it already saw is like grading an exam the student copied."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piénsalo como un examen: ¿sirve si las preguntas son las mismas que ya estudió?",
+              "en": "Think of it as an exam: does it count if the questions are the ones it already studied?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué es lo más común cuando una empresa ofrece \"una IA propia\"?",
+            "en": "What's most common when a company offers \"your own AI\"?"
+          },
+          "opciones": [
+            {
+              "es": "Adaptar un modelo que ya existe",
+              "en": "Adapting a model that already exists"
+            },
+            {
+              "es": "Entrenar un modelo nuevo desde cero",
+              "en": "Training a brand-new model from scratch"
+            },
+            {
+              "es": "Copiar el modelo de otra empresa sin permiso",
+              "en": "Copying another company's model without permission"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Por eso vale preguntar qué modelo adaptan y qué le cambian.",
+              "en": "Exactly. That's why it's worth asking which model they're adapting and what they change."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Recuerda lo que hizo hasta Latam-GPT antes de entrenar con datos de la región.",
+              "en": "Remember what even Latam-GPT did before training on regional data."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "La cadena de construcción",
+        "en": "How an AI gets built"
+      },
+      "resumen": {
+        "es": "Datos, entrenamiento, evaluación y despliegue. Cada etapa trae sus preguntas antes de contratar.",
+        "en": "Data, training, evaluation and deployment. Each stage comes with its own questions before you hire anyone."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Ubicaste cada promesa del contrato en su etapa",
+          "en": "You placed each contract promise in its stage"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste los dos consejos falsos de Punti",
+          "en": "You caught Punti's two bad tips"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Armaste las preguntas de Olga para el proveedor",
+          "en": "You built Olga's questions for the vendor"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Pasaste el punto de control de la mina",
+          "en": "You passed the mine checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "preguntar-antes-de-contratar",
+      "titulo": {
+        "es": "Preguntar antes de contratar una IA",
+        "en": "Asking before you hire an AI"
+      }
+    }
+  }
+}

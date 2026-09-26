@@ -1,0 +1,1286 @@
+{
+  "formato": "punti-mision@1",
+  "id": "semana-organizada",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 1,
+  "numero": 4,
+  "receta": "construccion",
+  "largo": "proyecto",
+  "minutos": 20,
+  "conceptos": [
+    "semana-organizada"
+  ],
+  "usaConceptos": [
+    "primer-pedido",
+    "organizar-la-casa",
+    "iterar",
+    "datos-sensibles"
+  ],
+  "titulo": {
+    "es": "Semana organizada",
+    "en": "An organized week"
+  },
+  "resumen": {
+    "es": "Tu proyecto del capítulo: menú de 7 días con lo que hay, lista de mercado y turnos de oficio de tu casa.",
+    "en": "Your chapter project: a 7-day menu from what you have, a grocery list and your home's chore table."
+  },
+  "siguiente": "tu-presupuesto-sin-datos",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, esta vez la llamada viene de tu casa. Ya ayudaste a Don Eliseo, a Marleny y a Abel. Ahora organizas tu propia semana con la IA.",
+          "en": "Pilot, this time the call is coming from your home. You've helped Don Eliseo, Marleny and Abel. Now you organize your own week with AI."
+        }
+      },
+      "titulo": {
+        "es": "Semana organizada",
+        "en": "An organized week"
+      },
+      "texto": {
+        "es": "Es el proyecto del módulo hogar. Vas a armar tu menú de 7 días, tu lista de mercado y los turnos de tu casa, y a revisarlo todo tú. Unos 20 minutos.",
+        "en": "It's the home module project. You'll build your 7-day menu, your grocery list and your home's chore table, and check it all yourself. About 20 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué lleva tu semana.",
+          "en": "First, what goes into your week."
+        }
+      },
+      "titulo": {
+        "es": "Lo que lleva tu semana",
+        "en": "What goes into your week"
+      },
+      "texto": {
+        "es": "Una semana organizada son tres hojas: qué se come cada día, qué hay que comprar y a quién le toca cada oficio. La IA hace el primer borrador. Tú pones los datos reales de tu casa y le haces al menos un cambio con tu propio criterio antes de pegarlas en la nevera.",
+        "en": "An organized week is three sheets: what you eat each day, what you need to buy and whose turn each chore is. The AI writes the first draft. You bring your home's real details and make at least one change of your own before they go on the fridge."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Menú de 7 días con lo que hay y tu plata",
+            "en": "A 7-day menu from what you have and your budget"
+          },
+          {
+            "es": "Lista de mercado, solo con lo que falta",
+            "en": "A grocery list with only what's missing"
+          },
+          {
+            "es": "Turnos de oficio, parejos",
+            "en": "A fair chore table"
+          },
+          {
+            "es": "Tu revisión: \"cambié esto porque…\"",
+            "en": "Your review: \"I changed this because…\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de empezar, escoge con qué datos trabajas.",
+          "en": "Before you start, choose which details you'll work with."
+        }
+      },
+      "titulo": {
+        "es": "¿Con qué datos?",
+        "en": "Which details?"
+      },
+      "escena": {
+        "es": "Tu semana va a salir de lo que le cuentes a la IA. Necesita saber cuántos son en tu casa, qué hay en la cocina, cuánta plata hay para el mercado y los horarios de cada uno. ¿Qué le cuentas?",
+        "en": "Your week will come from what you tell the AI. It needs to know how many people live in your home, what's in the kitchen, how much money there is for groceries and everyone's hours. What do you tell it?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Mi casa real, con nombres de pila y sin datos personales",
+            "en": "My real home, with first names and no personal data"
+          },
+          "consecuencia": {
+            "es": "Perfecto. Cuántos son, qué hay, cuánta plata y qué horarios: eso es todo lo que la IA necesita. Apellidos, dirección o cédula no le sirven para un menú.",
+            "en": "Perfect. How many, what you have, how much money and what hours: that's all the AI needs. Last names, an address or an ID number don't help with a menu."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Todo: nombres completos, dirección y foto de la factura",
+            "en": "Everything: full names, address and a photo of the bill"
+          },
+          "consecuencia": {
+            "es": "La IA no necesita eso para armar un menú, y una vez lo pegas, ya salió de tus manos. Deja solo lo que sirve para la tarea.",
+            "en": "The AI doesn't need any of that to plan a menu, and once you paste it, it's out of your hands. Share only what the task needs."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Una casa inventada, para no complicarme",
+            "en": "A made-up home, to keep it simple"
+          },
+          "consecuencia": {
+            "es": "Sirve para practicar, pero el lunes no te va a ayudar. Usa tu casa de verdad: el menú y los turnos tienen que caber en tu vida.",
+            "en": "It works for practice, but it won't help you on Monday. Use your real home: the menu and the chores have to fit your life."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Regla del proyecto: datos reales de tu casa, ninguno personal. Cuántos, qué hay, cuánto y cuándo, sí. Apellidos, dirección, cédula y cuentas, no.",
+          "en": "Project rule: real details from your home, nothing personal. How many, what you have, how much and when: yes. Last names, address, ID numbers and accounts: no."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las cuatro piezas del proyecto. Toca cada una para repasarla antes de transmitir.",
+          "en": "These are the four pieces of the project. Tap each one to review it before you transmit."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas de tu semana",
+        "en": "The 4 pieces of your week"
+      },
+      "piezas": [
+        {
+          "id": "menu",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Menú con lo que hay",
+            "en": "Menu from what you have"
+          },
+          "descripcion": {
+            "es": "Lo que ya hay, tu plata y quiénes comen.",
+            "en": "What you have, your budget and who's eating."
+          },
+          "ejemplo": {
+            "es": "\"Somos 4, ya hay arroz y lentejas, y tenemos $150.000 para la semana\". Así el menú cabe en tu nevera y en tu bolsillo.",
+            "en": "\"There are 4 of us, we already have rice and lentils, and $60 for the week.\" Then the menu fits your fridge and your wallet."
+          }
+        },
+        {
+          "id": "lista",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Lista de lo que falta",
+            "en": "List of what's missing"
+          },
+          "descripcion": {
+            "es": "Solo lo que hay que comprar, agrupado por tienda.",
+            "en": "Only what you need to buy, grouped by store."
+          },
+          "ejemplo": {
+            "es": "\"Sin lo que ya tengo, agrupada por tienda\". Así no compras dos veces el arroz.",
+            "en": "\"Leave out what I have, group it by store.\" So you don't buy rice twice."
+          }
+        },
+        {
+          "id": "turnos",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Turnos parejos",
+            "en": "Fair chores"
+          },
+          "descripcion": {
+            "es": "Quiénes, horarios, oficios y una tabla justa.",
+            "en": "Who, hours, chores and a fair table."
+          },
+          "ejemplo": {
+            "es": "Lo mismo que hiciste con Marleny, pero en tu casa: quién está y cuándo, qué oficios hay, y en tabla repartida parejo.",
+            "en": "What you did for Marleny, now at home: who's there and when, what the chores are, in a table split evenly."
+          }
+        },
+        {
+          "id": "revision",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Tu revisión",
+            "en": "Your review"
+          },
+          "descripcion": {
+            "es": "Un cambio tuyo, con su porqué.",
+            "en": "One change of your own, with the reason."
+          },
+          "ejemplo": {
+            "es": "\"Cambia el pescado del viernes por huevos, porque el viernes llego tarde\". Esa frase es tu firma en el proyecto.",
+            "en": "\"Swap Friday's fish for eggs, because I get home late on Fridays.\" That line is your signature on the project."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primera hoja: el menú. Escribe el pedido con los datos de tu casa. Empieza por lo que ya hay en la cocina.",
+          "en": "Sheet one: the menu. Write the request with your home's details. Start with what's already in the kitchen."
+        }
+      },
+      "titulo": {
+        "es": "Tu menú de 7 días",
+        "en": "Your 7-day menu"
+      },
+      "reto": {
+        "es": "Tu casa, con datos reales y sin datos personales. Mira qué hay en la nevera y en la alacena. Pídele a la IA un menú de 7 días que use eso primero. Di cuánta plata hay para el mercado de la semana, cuántos comen y qué comidas quieres (almuerzo, comida…).",
+        "en": "Your home, real details, no personal data. Check what's in the fridge and the cupboard. Ask the AI for a 7-day menu that uses that first. Say how much money you have for the week's groceries, how many people are eating and which meals you want (lunch, dinner…)."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "menu",
+          "texto": {
+            "es": "Lo que ya hay en tu cocina",
+            "en": "What's already in your kitchen"
+          },
+          "rubrica": "El prompt dice qué alimentos concretos ya hay en la casa (al menos dos, con su nombre: arroz, lentejas, huevos, plátano…) y pide usarlos. No cuenta 'lo que tengo', 'lo que hay en la nevera' o 'lo que me queda' sin decir qué alimentos son.",
+          "claves": {
+            "es": [
+              "arroz",
+              "lenteja",
+              "huevo",
+              "platano",
+              "papas",
+              "frijol",
+              "pasta",
+              "atun",
+              "arepa",
+              "yuca",
+              "pollo",
+              "carne",
+              "queso",
+              "leche",
+              "avena",
+              "harina"
+            ],
+            "en": [
+              "rice",
+              "lentil",
+              "egg",
+              "plantain",
+              "potato",
+              "bean",
+              "pasta",
+              "tuna",
+              "arepa",
+              "chicken",
+              "beef",
+              "cheese",
+              "milk",
+              "oats",
+              "flour"
+            ]
+          }
+        },
+        {
+          "id": "plata",
+          "texto": {
+            "es": "Cuánta plata hay para el mercado",
+            "en": "How much money for groceries"
+          },
+          "rubrica": "El prompt dice cuánta plata hay para el mercado de la semana, con una cifra ($150.000, 150 mil; en inglés, $60). No cuenta 'poco presupuesto', 'barato' o 'económico' sin una cifra.",
+          "claves": {
+            "es": [
+              "$",
+              "000",
+              " mil ",
+              "mil pesos",
+              "pesos"
+            ],
+            "en": [
+              "$",
+              "dollars",
+              "bucks",
+              "usd"
+            ]
+          }
+        },
+        {
+          "id": "quienes",
+          "texto": {
+            "es": "Cuántos comen",
+            "en": "How many are eating"
+          },
+          "rubrica": "El prompt dice cuántas personas comen (somos 4, dos adultos y dos niños, vivo solo) o quiénes son, con nombres de pila. No cuenta 'mi familia' o 'mi casa' sin decir cuántos son. Apellidos, direcciones o cédulas no hacen falta: si el prompt los trae, marca false.",
+          "claves": {
+            "es": [
+              "somos 2",
+              "somos 3",
+              "somos 4",
+              "somos 5",
+              "somos 6",
+              "somos dos",
+              "somos tres",
+              "somos cuatro",
+              "somos cinco",
+              "somos seis",
+              "adultos",
+              "vivo solo",
+              "vivo sola",
+              "como solo",
+              "como sola",
+              "2 personas",
+              "3 personas",
+              "4 personas",
+              "5 personas",
+              "dos personas",
+              "tres personas",
+              "cuatro personas",
+              "cinco personas"
+            ],
+            "en": [
+              "there are 2",
+              "there are 3",
+              "there are 4",
+              "there are 5",
+              "there are 6",
+              "there are two",
+              "there are three",
+              "there are four",
+              "there are five",
+              "there are six",
+              "adults",
+              "family of",
+              "i live alone",
+              "just me",
+              "2 people",
+              "3 people",
+              "4 people",
+              "5 people",
+              "two people",
+              "three people",
+              "four people",
+              "five people"
+            ]
+          }
+        },
+        {
+          "id": "comidas",
+          "texto": {
+            "es": "Qué comidas quieres",
+            "en": "Which meals you want"
+          },
+          "rubrica": "El prompt dice qué comidas de cada día quiere en el menú (desayuno, almuerzo, comida o cena, onces) o pide el menú en tabla por día. No cuenta 'un menú' o 'el menú de la semana' solo, sin decir qué comidas ni en qué forma.",
+          "claves": {
+            "es": [
+              "desayuno",
+              "almuerzo",
+              "cena",
+              "onces",
+              "comida de la noche",
+              "tabla",
+              "cuadro"
+            ],
+            "en": [
+              "breakfast",
+              "lunch",
+              "dinner",
+              "supper",
+              " table",
+              "chart",
+              "grid"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una familia a planear el menú de la semana. Responde solo con el menú, en texto plano: un renglón por día, sin explicaciones. Usa primero los alimentos que el mensaje dice que ya hay. Ajusta el menú a la plata que dice el mensaje, sin dar precios de productos: no los conoces. Si el mensaje no dice qué hay, cuántos comen ni cuánta plata hay, propone un menú de restaurante con carnes finas, pescado y mariscos. No des consejos médicos ni de nutrición: si el mensaje menciona una enfermedad, una alergia o una dieta médica, agrega una línea que diga que eso se confirma con su médico. Si el mensaje trae apellidos, direcciones, cédulas o cuentas, no los repitas.",
+        "en": "You are an AI that helps a family plan the week's menu. Reply only with the menu, in plain text: one line per day, no explanations. Use first the foods the message says are already there. Fit the menu to the money the message mentions, without giving product prices: you don't know them. If the message doesn't say what's there, how many are eating or how much money there is, suggest a restaurant-style menu with steak, fish and seafood. Don't give medical or nutrition advice: if the message mentions an illness, an allergy or a medical diet, add a line saying that must be checked with their doctor. If the message includes last names, addresses, ID numbers or account numbers, don't repeat them."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Menú para 4 (almuerzo / comida)\nLunes: arroz con lentejas y plátano / huevos pericos con arepa\nMartes: sopa de lentejas / arepa con queso y chocolate\nMiércoles: arroz con pollo / caldo de papa\nJueves: frijoles con arroz / huevos revueltos con arepa\nViernes: pasta con atún / arepa con queso\nSábado: sudado de pollo con papa / changua\nDomingo: sancocho sencillo / lo que sobre del almuerzo",
+            "en": "Menu for 4 (lunch / dinner)\nMonday: rice and lentils with plantain / scrambled eggs with tomato and toast\nTuesday: lentil soup / cheese toast and hot chocolate\nWednesday: chicken and rice / potato soup\nThursday: beans and rice / scrambled eggs with toast\nFriday: tuna pasta / grilled cheese\nSaturday: chicken and potato stew / egg drop soup\nSunday: simple chicken soup / lunch leftovers"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Primera hoja lista. El menú usa lo que ya hay, cabe en tu plata y es para los que son en tu casa. De aquí sale la lista del mercado.",
+              "en": "Sheet one done. The menu uses what you have, fits your budget and feeds the people in your home. The grocery list comes from here."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Lunes: salmón a la plancha con espárragos\nMartes: lomo de res en salsa de champiñones\nMiércoles: camarones al ajillo\nJueves: pechuga rellena de jamón y queso\nViernes: pargo frito con patacón\nSábado: costillas BBQ\nDomingo: paella de mariscos",
+            "en": "Monday: grilled salmon with asparagus\nTuesday: beef tenderloin with mushroom sauce\nWednesday: garlic shrimp\nThursday: stuffed chicken breast\nFriday: fried snapper\nSaturday: BBQ ribs\nSunday: seafood paella"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "¿Salmón y camarones? La IA no sabe qué hay en tu cocina ni cuánta plata hay. Mira la lista y cuéntale lo de tu casa.",
+              "en": "Salmon and shrimp? The AI doesn't know what's in your kitchen or how much money you have. Check the list and tell it about your home."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Segunda hoja: la lista del mercado. Tu pedido del menú ya está escrito. No lo borres: agrega al final qué lista quieres.",
+          "en": "Sheet two: the grocery list. Your menu request is already written in. Don't delete it: add at the end what kind of list you want."
+        }
+      },
+      "titulo": {
+        "es": "Tu lista de mercado",
+        "en": "Your grocery list"
+      },
+      "reto": {
+        "es": "Con el menú que te dio la IA, pídele la lista de mercado. Que no traiga lo que ya tienes, que venga agrupada por tienda o por pasillo (la plaza, la tienda, el supermercado) y con cantidades para los que son en tu casa.",
+        "en": "Using the menu the AI gave you, ask for the grocery list. It should leave out what you already have, be grouped by store or aisle (market, corner store, supermarket) and have amounts for the people in your home."
+      },
+      "inicial": "anterior",
+      "aprobar": 2,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "falta",
+          "texto": {
+            "es": "Solo lo que falta",
+            "en": "Only what's missing"
+          },
+          "rubrica": "El mensaje pide que la lista traiga solo lo que falta comprar y deje por fuera lo que ya hay en la casa. No cuenta 'hazme la lista del mercado' sin decir que deje por fuera lo que ya hay.",
+          "claves": {
+            "es": [
+              "lo que falta",
+              "lo que me falta",
+              "lo que nos falta",
+              "sin lo que ya",
+              "menos lo que ya",
+              "lo que no tengo",
+              "lo que no tenemos",
+              "no incluyas lo que",
+              "no pongas lo que",
+              "quita lo que ya",
+              "solo lo que hay que comprar"
+            ],
+            "en": [
+              "what's missing",
+              "what’s missing",
+              "what i'm missing",
+              "what i’m missing",
+              "what we're missing",
+              "what we’re missing",
+              "what i don't have",
+              "what i don’t have",
+              "what we don't have",
+              "what we don’t have",
+              "leave out",
+              "leaves out",
+              "without what",
+              "skip what",
+              "don't include what",
+              "don’t include what",
+              "except what",
+              "only what i need to buy",
+              "only what we need to buy",
+              "not what i already",
+              "not what we already"
+            ]
+          }
+        },
+        {
+          "id": "agrupada",
+          "texto": {
+            "es": "Agrupada por tienda o pasillo",
+            "en": "Grouped by store or aisle"
+          },
+          "rubrica": "El mensaje pide la lista agrupada por tienda, lugar o pasillo (plaza, tienda de barrio, supermercado, droguería; frutas y verduras, granos, aseo). No cuenta 'ordenada' u 'organizada' sin decir cómo se agrupa.",
+          "claves": {
+            "es": [
+              "agrupad",
+              "por tienda",
+              "por pasillo",
+              "por seccion",
+              "por lugar",
+              "la plaza",
+              "plaza de mercado",
+              "supermercado",
+              "tienda de la esquina",
+              "tienda del barrio",
+              "droguer",
+              "fruver"
+            ],
+            "en": [
+              "group",
+              "by store",
+              "by aisle",
+              "by section",
+              "farmers market",
+              "supermarket",
+              "corner store",
+              "pharmacy",
+              "produce section"
+            ]
+          }
+        },
+        {
+          "id": "cantidades",
+          "texto": {
+            "es": "Con cantidades",
+            "en": "With amounts"
+          },
+          "rubrica": "El mensaje pide cantidades para cada cosa de la lista (cuántas libras, kilos o unidades), según cuántos comen. No cuenta repetir cuántos son sin pedir cantidades en la lista.",
+          "claves": {
+            "es": [
+              "cantidad",
+              "cuanto de cada",
+              "cuanto comprar",
+              "cuanto compro",
+              "cuantas libras",
+              "cuantos kilos",
+              "cuantas unidades"
+            ],
+            "en": [
+              "quantit",
+              "amounts",
+              "amount of each",
+              "how much of each",
+              "how much to buy",
+              "how many pounds",
+              "how many of each"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una familia a hacer la lista del mercado. En esta conversación ya diste un menú de 7 días con los datos de la primera parte del mensaje. Al final del mensaje viene el pedido de la lista. Responde solo con la lista, en texto plano y sin precios: no los conoces. Si pide dejar por fuera lo que ya hay, no lo incluyas. Si pide agruparla, usa títulos por tienda o por pasillo. Si pide cantidades, ponlas según cuántos comen. Si no pide nada de eso, haz una lista larga y en desorden, con todo, también lo que ya hay. No des consejos médicos ni de nutrición: si el mensaje menciona una enfermedad, una alergia o una dieta médica, agrega una línea que diga que eso se confirma con su médico. Si el mensaje trae apellidos, direcciones, cédulas o cuentas, no los repitas.",
+        "en": "You are an AI that helps a family make a grocery list. Earlier in this conversation you gave a 7-day menu based on the first part of the message. The request for the list comes at the end of the message. Reply only with the list, in plain text and without prices: you don't know them. If it asks to leave out what's already there, don't include it. If it asks for groups, use headings by store or aisle. If it asks for amounts, base them on how many are eating. If it asks for none of that, write a long, jumbled list with everything, including what's already there. Don't give medical or nutrition advice: if the message mentions an illness, an allergy or a medical diet, add a line saying that must be checked with their doctor. If the message includes last names, addresses, ID numbers or account numbers, don't repeat them."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Plaza\n- Plátano: 6\n- Papa: 3 libras\n- Tomate y cebolla: 1 libra de cada uno\nTienda del barrio\n- Arepas: 2 paquetes\n- Queso: 1 libra\n- Huevos: 1 cubeta\nSupermercado\n- Pollo: 2 libras\n- Pasta: 1 paquete\n- Atún: 2 latas",
+            "en": "Market\n- Plantains: 6\n- Potatoes: 3 lb\n- Tomatoes and onions: 1 lb each\nCorner store\n- Bread: 2 loaves\n- Cheese: 1 lb\n- Eggs: 2 dozen\nSupermarket\n- Chicken: 2 lb\n- Pasta: 1 box\n- Tuna: 2 cans"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Segunda hoja lista. Solo lo que falta, agrupado para no dar vueltas y con cantidades para tu casa.",
+              "en": "Sheet two done. Only what's missing, grouped so you skip the extra trips, with amounts for your home."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Lista de mercado: arroz, lentejas, huevos, plátano, papa, pollo, pasta, atún, arroz, cebolla, tomate, queso, arepas, leche, café, azúcar, aceite, sal, lentejas, galletas, jugos, cereal, salchichas.",
+            "en": "Grocery list: rice, lentils, eggs, plantains, potatoes, chicken, pasta, tuna, rice, onions, tomatoes, cheese, bread, milk, coffee, sugar, oil, salt, lentils, cookies, juice, cereal, hot dogs."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Esa lista trae el arroz que ya tienes, y dos veces. Agrega al final: solo lo que falta, agrupado por tienda y con cantidades.",
+              "en": "That list includes the rice you already have, twice. Add at the end: only what's missing, grouped by store, with amounts."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le armé un pedido de menú a una familia de muestra y casi lo mando así. Dos partes no debieron salir de la estación. Tócalas.",
+          "en": "Confession time. I wrote a menu request for a sample family and almost sent it like this. Two parts should never have left the station. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mi pedido de muestra",
+        "en": "My sample request"
+      },
+      "trozos": [
+        {
+          "es": "Somos 4: dos adultos y dos niños de 8 y 11 años.",
+          "en": "There are 4 of us: two adults and two kids, ages 8 and 11."
+        },
+        {
+          "es": "Vivimos en la calle 12 # 34-56, apartamento 201, y mi cédula es 12.345.678.",
+          "en": "We live at 100 Example Street, apartment 201, and my ID number is 12-345-678."
+        },
+        {
+          "es": "Tenemos $150.000 para el mercado de la semana.",
+          "en": "We have $60 for the week's groceries."
+        },
+        {
+          "es": "Ya hay arroz, lentejas, papa y huevos.",
+          "en": "We already have rice, lentils, potatoes and eggs."
+        },
+        {
+          "es": "Pon camarones y lomo de res todos los días.",
+          "en": "Put shrimp and steak on the menu every day."
+        }
+      ],
+      "malos": [
+        1,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. La dirección y la cédula no sirven para un menú: no se pegan. Y camarones con lomo todos los días no caben en $150.000. Revisar también es ver si el pedido se contradice.",
+          "en": "You got me. An address and an ID number don't help with a menu: those never get pasted. And shrimp and steak every day won't fit in $60. Checking also means seeing if the request contradicts itself."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese dato sí le sirve a la IA para el menú. Busca uno que no debió salir y uno que no cuadra con la plata.",
+          "en": "That detail does help the AI with the menu. Look for one that shouldn't have gone out and one that doesn't fit the budget."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tercera hoja: los turnos. Haz lo que hiciste con Marleny, pero con la gente y los oficios de tu casa.",
+          "en": "Sheet three: the chores. Do what you did for Marleny, but with the people and chores in your home."
+        }
+      },
+      "titulo": {
+        "es": "Los turnos de tu casa",
+        "en": "Your home's chore table"
+      },
+      "reto": {
+        "es": "Tu casa, con nombres de pila y sin datos personales. Di quiénes viven, a qué horas está cada uno y qué oficios hay (con sus días, si tienen). Pide una tabla repartida parejo. Si vives solo, pide que los oficios queden parejos entre los días.",
+        "en": "Your home, first names only and no personal data. Say who lives there, when each person is home and what the chores are (with their days, if they have them). Ask for a table split evenly. If you live alone, ask for the chores to be spread evenly across the days."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "quienes",
+          "texto": {
+            "es": "Quiénes y a qué horas",
+            "en": "Who and when"
+          },
+          "rubrica": "El prompt dice quiénes viven en la casa (con nombres de pila, o cuántos son) y cuándo está cada uno: a qué horas trabaja, estudia o llega. Si vive solo, bastan sus propios horarios. No cuenta 'mi familia' sin decir quiénes son ni cuándo están. Apellidos, direcciones o cédulas no hacen falta: si aparecen, marca false.",
+          "claves": {
+            "es": [
+              "en la tarde",
+              "en la manana",
+              "por la tarde",
+              "por la manana",
+              "de la tarde",
+              "de la manana",
+              "en la noche",
+              "de la noche",
+              "jornada",
+              "a. m",
+              "p. m",
+              "a.m",
+              "p.m",
+              "trabaja de",
+              "trabajo de",
+              "estudia en",
+              "llega a las",
+              "llego a las",
+              "sale a las",
+              "salgo a las"
+            ],
+            "en": [
+              "in the afternoon",
+              "in the morning",
+              "in the evening",
+              "at night",
+              "a.m",
+              "p.m",
+              "has school",
+              "have school",
+              "at school until",
+              "works from",
+              "work from",
+              "works until",
+              "work until",
+              "gets home",
+              "get home",
+              "leaves at",
+              "leave at",
+              "night shift",
+              "day shift"
+            ]
+          }
+        },
+        {
+          "id": "tareas",
+          "texto": {
+            "es": "Los oficios de tu casa",
+            "en": "Your home's chores"
+          },
+          "rubrica": "El prompt nombra al menos dos oficios concretos de la casa: lavar la loza, barrer, trapear, sacar la basura, lavar el baño, lavar la ropa, cocinar. No cuenta 'los oficios', 'las tareas' o 'lo de siempre' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "loza",
+              "platos",
+              "barrer",
+              "trapear",
+              "basura",
+              "bano",
+              "camas",
+              "ropa",
+              "cocinar",
+              "planchar",
+              "sacar al perro"
+            ],
+            "en": [
+              "dishes",
+              "sweep",
+              "mop",
+              "trash",
+              "garbage",
+              "bathroom",
+              "beds",
+              "laundry",
+              "cooking",
+              "ironing",
+              "walk the dog",
+              "vacuum"
+            ]
+          }
+        },
+        {
+          "id": "turnos",
+          "texto": {
+            "es": "Tabla y reparto parejo",
+            "en": "A table, split fairly"
+          },
+          "rubrica": "El prompt pide la respuesta en tabla o cuadro y que la carga quede pareja: entre las personas de la casa, o entre los días si vive solo (parejo, justo, que roten, que a nadie le toque más). Hacen falta las dos cosas. No cuenta 'organízalo' sin decir la forma, ni una tabla sin decir nada del reparto.",
+          "claves": {
+            "es": [
+              "parej",
+              "justa",
+              "equitativ",
+              "roten",
+              "rotar",
+              "rotando",
+              "que a nadie",
+              "nadie haga mas",
+              "igual para todos",
+              "lo mismo cada"
+            ],
+            "en": [
+              "evenly",
+              "even split",
+              "fair",
+              "equally",
+              "rotate",
+              "take turns",
+              "no one does more",
+              "nobody does more",
+              "same amount",
+              "spread out"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a organizar los oficios de una casa. Responde solo con lo que te pidan, sin consejos extra. Usa únicamente las personas, horarios y tareas del mensaje; si faltan, escribe [persona] o [tarea] en vez de inventarlos. Si pide una tabla, escríbela en texto plano con las columnas separadas por el signo |. Si no pide tabla, responde con un párrafo largo de consejos generales para organizar un hogar. Si no pide que el reparto sea parejo, no te preocupes por repartir igual. No des consejos médicos ni de nutrición: si el mensaje menciona una enfermedad, una alergia o una dieta médica, agrega una línea que diga que eso se confirma con su médico. Si el mensaje trae apellidos, direcciones, cédulas o cuentas, no los repitas.",
+        "en": "You are an AI that helps organize household chores. Reply only with what you're asked for, with no extra tips. Use only the people, hours and chores in the message; if something is missing, write [person] or [chore] instead of making it up. If it asks for a table, write it in plain text with columns separated by the | sign. If it doesn't ask for a table, reply with a long paragraph of general tips for running a home. If it doesn't ask for an even split, don't worry about sharing the work equally. Don't give medical or nutrition advice: if the message mentions an illness, an allergy or a medical diet, add a line saying that must be checked with their doctor. If the message includes last names, addresses, ID numbers or account numbers, don't repeat them."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Día | Loza | Barrer y trapear | Baño o basura\nLunes | Hijo mayor | Mamá | Papá (basura)\nMartes | Papá | Hijo mayor | Mamá (baño)\nMiércoles | Mamá | Papá | Hijo mayor (basura)\nJueves | Hijo mayor | Mamá | Papá (baño)\nViernes | Papá | Hijo mayor | Mamá (basura)\nSábado | Mamá | Papá | Hijo mayor (baño)\nDomingo: descanso.",
+            "en": "Day | Dishes | Sweep and mop | Bathroom or trash\nMonday | Oldest kid | Mom | Dad (trash)\nTuesday | Dad | Oldest kid | Mom (bathroom)\nWednesday | Mom | Dad | Oldest kid (trash)\nThursday | Oldest kid | Mom | Dad (bathroom)\nFriday | Dad | Oldest kid | Mom (trash)\nSaturday | Mom | Dad | Oldest kid (bathroom)\nSunday: rest day."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Tercera hoja lista. Cada quien tiene sus turnos, parejos y en los días en que está en casa. Ya casi aterrizamos.",
+              "en": "Sheet three done. Everyone has their turns, evenly split and on days they're home. We're almost ready to land."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Para mantener el hogar en orden, lo ideal es que cada miembro de la familia tenga responsabilidades según su edad y sus horarios. Hablen en familia, definan tareas y revisen cada semana cómo va todo. La clave es la constancia y el trabajo en equipo.",
+            "en": "To keep a home in order, ideally each family member takes on responsibilities that fit their age and schedule. Talk as a family, set the chores and check in every week on how it's going. The key is consistency and teamwork."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Consejos y cero turnos. La IA no sabe quiénes viven en tu casa, a qué horas ni qué oficios hay. Mira la lista.",
+              "en": "Tips and zero turns. The AI doesn't know who lives in your home, when they're there or what the chores are. Check the list."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Última hoja, y la más tuya: tu revisión. Busca algo que en tu casa no funciona y escríbele a la IA el cambio y el porqué.",
+          "en": "The last sheet, and the most yours: your review. Find something that doesn't work in your home and write the AI the change and the reason."
+        }
+      },
+      "titulo": {
+        "es": "Cambié esto porque…",
+        "en": "I changed this because…"
+      },
+      "reto": {
+        "es": "Escoge una de tus tres hojas: menú, lista o turnos. Busca algo que no cuadra con tu casa: un plato que nadie come, un turno que choca con un horario, algo que ya tienes en la lista. Escríbele a la IA qué cambiar y por qué, sin empezar de cero.",
+        "en": "Pick one of your three sheets: menu, list or chores. Find something that doesn't fit your home: a dish nobody eats, a chore that clashes with someone's hours, something on the list you already have. Tell the AI what to change and why, without starting over."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "revision",
+          "texto": {
+            "es": "Un cambio concreto",
+            "en": "One specific change"
+          },
+          "rubrica": "El mensaje dice exactamente qué cambiar: qué plato, qué día, qué turno o qué cosa de la lista, y por cuál cambiarlo o si se quita. No cuenta 'mejóralo', 'cámbialo' u 'otra vez' sin decir qué.",
+          "claves": {
+            "es": [
+              "en vez de",
+              "en lugar de",
+              "cambia el",
+              "cambia la",
+              "cambia los",
+              "cambia las",
+              "reemplaza",
+              "pasa el",
+              "pasa la",
+              "mueve el",
+              "mueve la",
+              "quita el",
+              "quita la",
+              "quita los",
+              "quita las",
+              "saca el",
+              "saca la"
+            ],
+            "en": [
+              "instead of",
+              "swap",
+              "replace",
+              "move the",
+              "take out the",
+              "take off the",
+              "remove the",
+              "drop the",
+              "switch the",
+              "change it to",
+              "change monday",
+              "change tuesday",
+              "change wednesday",
+              "change thursday",
+              "change friday",
+              "change saturday",
+              "change sunday"
+            ]
+          }
+        },
+        {
+          "id": "porque",
+          "texto": {
+            "es": "El porqué",
+            "en": "The reason"
+          },
+          "rubrica": "El mensaje dice por qué se hace el cambio, con una razón de la casa ('porque el viernes llego tarde', 'ya que a la niña no le gusta el pescado', 'es que ya tenemos arroz'). No cuenta 'porque sí' ni 'porque no me gusta' sin decir qué de la casa lo explica.",
+          "claves": {
+            "es": [
+              "porque",
+              "ya que",
+              "es que",
+              "debido a",
+              "dado que"
+            ],
+            "en": [
+              "because",
+              "since ",
+              "the reason",
+              "'cause",
+              "’cause"
+            ]
+          }
+        },
+        {
+          "id": "conserva",
+          "texto": {
+            "es": "Deja lo demás igual",
+            "en": "Keeps the rest"
+          },
+          "rubrica": "El mensaje pide conservar lo demás: que deje igual el resto del menú, de la lista o de la tabla. No cuenta empezar de cero ni pedir 'hazlo todo otra vez'.",
+          "claves": {
+            "es": [
+              "lo demas igual",
+              "el resto igual",
+              "deja lo demas",
+              "deja el resto",
+              "deja igual",
+              "dejalo igual",
+              "manten",
+              "conserva",
+              "sin cambiar lo demas",
+              "sin cambiar el resto",
+              "no cambies lo demas",
+              "no cambies el resto"
+            ],
+            "en": [
+              "keep the rest",
+              "rest the same",
+              "everything else",
+              "leave the rest",
+              "keep everything",
+              "don't change the rest",
+              "don’t change the rest",
+              "don't change anything else",
+              "don’t change anything else",
+              "keep it the same"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una familia a organizar su semana. En esta conversación ya le diste un menú de 7 días, una lista de mercado y una tabla de oficios, pero no conoces su contenido exacto. El mensaje es un cambio que la persona pide sobre una de esas hojas. Responde en máximo 3 renglones confirmando qué cambiaste y qué quedó igual. Si el mensaje trae la razón, tenla en cuenta en el cambio. Si el mensaje no dice qué cambiar, responde solo que hiciste 'algunos ajustes', sin decir cuáles. No des consejos médicos ni de nutrición: si el mensaje menciona una enfermedad, una alergia o una dieta médica, agrega una línea que diga que eso se confirma con su médico. Si el mensaje trae apellidos, direcciones, cédulas o cuentas, no los repitas.",
+        "en": "You are an AI that helps a family organize their week. Earlier in this conversation you gave them a 7-day menu, a grocery list and a chore table, but you don't know their exact content. The message is a change the person wants on one of those sheets. Reply in 3 lines at most, confirming what you changed and what stayed the same. If the message gives a reason, take it into account in the change. If the message doesn't say what to change, reply only that you made 'a few tweaks', without saying which. Don't give medical or nutrition advice: if the message mentions an illness, an allergy or a medical diet, add a line saying that must be checked with their doctor. If the message includes last names, addresses, ID numbers or account numbers, don't repeat them."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Listo. El viernes cambié el pescado por huevos pericos con arepa, porque llegas tarde y se hacen en 10 minutos. El resto del menú queda igual.",
+            "en": "Done. On Friday I swapped the fish for scrambled eggs on toast, since you get home late and they take 10 minutes. The rest of the menu stays the same."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Esa es tu firma. Un cambio claro, con su porqué, y lo demás intacto. La semana ya no es de la IA: es tuya.",
+              "en": "That's your signature. A clear change, with its reason, and the rest untouched. The week isn't the AI's anymore: it's yours."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Listo, hice algunos ajustes para mejorarlo.",
+            "en": "Done, I made a few tweaks to improve it."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "¿Algunos ajustes? ¿Cuáles? La IA no sabe qué no funciona en tu casa. Dile qué cambiar, por qué, y que deje lo demás igual.",
+              "en": "A few tweaks? Which ones? The AI doesn't know what isn't working in your home. Tell it what to change, why, and to keep the rest."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora, tu semana de verdad. Arma las tres hojas en tu IA y ponlas donde todos las vean.",
+          "en": "Now, your real week. Build the three sheets in your AI and put them where everyone can see them."
+        }
+      },
+      "titulo": {
+        "es": "Tu semana en la nevera",
+        "en": "Your week on the fridge"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Copia allá tus pedidos del menú, la lista y los turnos, con los datos de tu casa. Haz al menos un cambio con su porqué. Revisa las tres hojas y pégalas en la nevera o mándalas al grupo familiar.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Copy in your menu, list and chore requests, with your home's details. Make at least one change with its reason. Check all three sheets, then stick them on the fridge or send them to the family chat."
+      },
+      "checks": [
+        {
+          "es": "Hice el menú de 7 días con lo que hay y mi plata",
+          "en": "I made the 7-day menu from what I have and my budget"
+        },
+        {
+          "es": "Hice la lista solo con lo que falta, agrupada",
+          "en": "I made the list with only what's missing, grouped"
+        },
+        {
+          "es": "Hice la tabla de turnos, pareja",
+          "en": "I made the chore table, split evenly"
+        },
+        {
+          "es": "Marqué al menos un cambio mío, con su porqué",
+          "en": "I made at least one change of my own, with the reason"
+        },
+        {
+          "es": "No pegué apellidos, dirección, cédula ni cuentas",
+          "en": "I didn't paste last names, address, ID or account numbers"
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué es una semana organizada con IA, como se lo explicarías a alguien de tu casa.",
+          "en": "To the logbook. Write in your own words what an AI-organized week is, the way you'd explain it to someone at home."
+        }
+      },
+      "concepto": "semana-organizada",
+      "definicion": {
+        "es": "Tres hojas que arma la IA con los datos reales de tu casa: menú con lo que hay, lista de lo que falta y turnos parejos. Tú las revisas y les pones al menos un cambio tuyo.",
+        "en": "Three sheets the AI builds from your home's real details: a menu from what you have, a list of what's missing and fair chores. You check them and add at least one change of your own."
+      },
+      "pregunta": {
+        "es": "Una semana organizada es…",
+        "en": "An organized week is…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "menú semanal",
+        "en": "weekly menu"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pedido del menú quedan en tu bitácora. El próximo domingo cambias los datos y armas la semana en cinco minutos.",
+          "en": "Saved. Your note and your menu request are in your logbook. Next Sunday, you swap in the new details and plan the week in five minutes."
+        }
+      }
+    },
+    {
+      "id": "b12",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas rápidas antes de aterrizar.",
+          "en": "Two quick questions before we land."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál de estos datos no hace falta para armar tu menú?",
+            "en": "Which of these details isn't needed to plan your menu?"
+          },
+          "opciones": [
+            {
+              "es": "Cuántos comen en la casa",
+              "en": "How many people eat at home"
+            },
+            {
+              "es": "Lo que ya hay en la nevera",
+              "en": "What's already in the fridge"
+            },
+            {
+              "es": "Tu dirección y tu cédula",
+              "en": "Your address and ID number"
+            },
+            {
+              "es": "La plata para el mercado",
+              "en": "The money for groceries"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Para un menú no sirve, y no se pega.",
+              "en": "Right. It doesn't help with a menu, and it doesn't get pasted."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿ese dato cambia lo que se cocina el martes?",
+              "en": "Hmm. Ask yourself: does that detail change what gets cooked on Tuesday?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "En la tabla de turnos, el jueves le toca barrer a alguien que está trabajando. ¿Qué haces?",
+            "en": "On the chore table, someone who's at work is down to sweep on Thursday. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "La pego igual en la nevera",
+              "en": "Stick it on the fridge anyway"
+            },
+            {
+              "es": "Pido el cambio, con su porqué, y dejo lo demás igual",
+              "en": "Ask for the change, with the reason, and keep the rest"
+            },
+            {
+              "es": "Borro todo y empiezo de cero",
+              "en": "Delete it all and start over"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Revisas, ajustas, y ahí sí va para la nevera.",
+              "en": "Exactly. You check, you adjust, and then it goes on the fridge."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Ojo: ¿qué dice la regla de la escotilla antes de pegar algo en la nevera?",
+              "en": "Careful: what does the hatch rule say before anything goes on the fridge?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Proyecto aterrizado, piloto. Terminaste el módulo hogar.",
+          "en": "Project landed, pilot. You've finished the home module."
+        }
+      },
+      "titulo": {
+        "es": "Módulo hogar completo",
+        "en": "Home module complete"
+      },
+      "texto": {
+        "es": "Ya sabes pedir, ajustar y revisar; organizar la casa con tablas; y reconocer la luz roja de un arreglo. Tu semana está en la bitácora. La estación sigue su vuelta: el próximo módulo es la billetera, donde usas la IA con plata y papeles sin dar tus datos.",
+        "en": "You can now ask, adjust and check; organize your home with tables; and spot the red light on a repair. Your week is in your logbook. The station keeps turning: next up is the wallet module, where you use AI with money and paperwork without giving away your personal data."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Semana organizada",
+        "en": "An organized week"
+      },
+      "resumen": {
+        "es": "Menú con lo que hay, lista de lo que falta y turnos parejos, hechos con la IA y revisados por ti.",
+        "en": "A menu from what you have, a list of what's missing and fair chores, made with AI and checked by you."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b05",
+      "b06",
+      "b08",
+      "b09"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Escogiste datos reales de tu casa, sin datos personales",
+          "en": "You chose real home details, with no personal data"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Armaste tu menú de 7 días",
+          "en": "You built your 7-day menu"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Sacaste la lista de mercado de lo que falta",
+          "en": "You made a grocery list of only what's missing"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste lo que no debió salir de la estación",
+          "en": "You caught what should never have left the station"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Repartiste los turnos de tu casa",
+          "en": "You shared out the chores at home"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Firmaste tu semana con un cambio y su porqué",
+          "en": "You signed your week with a change and its reason"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Pegaste tu semana en la nevera",
+          "en": "You put your week on the fridge"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "planear-la-semana",
+      "titulo": {
+        "es": "Planear la semana con IA",
+        "en": "Planning your week with AI"
+      }
+    }
+  }
+}

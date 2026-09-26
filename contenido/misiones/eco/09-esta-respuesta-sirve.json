@@ -1,0 +1,891 @@
+{
+  "formato": "punti-mision@1",
+  "id": "esta-respuesta-sirve",
+  "mundo": "prompts",
+  "capitulo": 2,
+  "numero": 9,
+  "receta": "criterio",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "revisar-respuesta"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "forma",
+    "iterar",
+    "verificar",
+    "datos-sensibles"
+  ],
+  "titulo": {
+    "es": "¿Esta respuesta sirve?",
+    "en": "Is This Answer Any Good?"
+  },
+  "resumen": {
+    "es": "Una lista de cinco puntos para revisar una respuesta de la IA antes de usarla, y cómo pedir el arreglo.",
+    "en": "A five-point checklist to review an AI answer before you use it, and how to ask for the fix."
+  },
+  "siguiente": "auditoria",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, esta señal casi sale sin revisar. Es Ernesto, que tiene una óptica en el barrio. La IA le escribió el mensaje de su promoción y ya lo iba a mandar a sus 200 clientes. Antes de enviar, lo revisamos juntos.",
+          "en": "Pilot, this signal almost went out unchecked. It's Ernesto, who runs an eyeglasses shop in the neighborhood. The AI wrote his sale message, and he was about to send it to his 200 customers. Let's check it together first."
+        }
+      },
+      "titulo": {
+        "es": "¿Esta respuesta sirve?",
+        "en": "Is This Answer Any Good?"
+      },
+      "texto": {
+        "es": "Hoy armas una lista corta para revisar cualquier respuesta de la IA antes de usarla, y aprendes a pedir el arreglo. Unos 9 minutos.",
+        "en": "Today you'll build a short checklist to review any AI answer before you use it, and learn to ask for the fix. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Una respuesta que suena bien no siempre sirve. Te muestro por qué.",
+          "en": "An answer that sounds good doesn't always work. Here's why."
+        }
+      },
+      "titulo": {
+        "es": "Sonar bien no es lo mismo que servir",
+        "en": "Sounding good isn't the same as working"
+      },
+      "texto": {
+        "es": "La IA escribe rápido y con buena ortografía, así que todo suena convincente. Pero puede dejar por fuera un dato, hablarle a otra gente o prometer algo que no ofreces. Revisar toma un minuto, como contar las vueltas en la tienda: rápido, pero siempre.",
+        "en": "AI writes fast and spells well, so everything sounds convincing. But it can leave out a detail, talk to the wrong crowd or promise something you don't offer. Checking takes a minute, like counting your change at the store: quick, but every time."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Pides",
+            "en": "You ask"
+          },
+          {
+            "es": "Revisas con la lista",
+            "en": "You check it with the list"
+          },
+          {
+            "es": "Pides el arreglo",
+            "en": "You ask for the fix"
+          },
+          {
+            "es": "Lo usas",
+            "en": "You use it"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Esta es la lista del taller: cinco preguntas para cualquier respuesta antes de usarla. Se parecen a las cinco piezas del pedido, pero ahora miras lo que llegó, no lo que pediste. Toca cada una.",
+          "en": "This is the workshop checklist: five questions for any answer before you use it. They mirror the five pieces of a request, but now you look at what came back, not at what you asked. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "La lista del taller",
+        "en": "The workshop checklist"
+      },
+      "piezas": [
+        {
+          "id": "responde",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "¿Responde todo lo que pedí?",
+            "en": "Does it answer all I asked?"
+          },
+          "descripcion": {
+            "es": "Que haga la tarea y traiga cada dato que diste.",
+            "en": "It does the task and includes every detail you gave."
+          },
+          "ejemplo": {
+            "es": "Ernesto dio el precio y los días. Si no aparecen, la respuesta no sirve, por bonita que suene.",
+            "en": "Ernesto gave the price and the days. If they're not there, the answer doesn't work, however nice it sounds."
+          }
+        },
+        {
+          "id": "publico",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "¿Sirve para quien lo lee?",
+            "en": "Is it right for the reader?"
+          },
+          "descripcion": {
+            "es": "Palabras que entienda la persona que lo va a leer.",
+            "en": "Words the person reading it will understand."
+          },
+          "ejemplo": {
+            "es": "Sus clientes son sobre todo señores y señoras mayores. \"Eyewear\" y \"trendy\" no les dicen nada.",
+            "en": "Most of his customers are older folks. \"Drip\" and \"no cap\" mean nothing to them."
+          }
+        },
+        {
+          "id": "forma",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "¿Tiene el largo y la forma?",
+            "en": "Right length and format?"
+          },
+          "descripcion": {
+            "es": "El largo y el formato del lugar donde va.",
+            "en": "The length and format of where it's going."
+          },
+          "ejemplo": {
+            "es": "Un grupo de WhatsApp pide pocos renglones y nada de hashtags. No es Instagram.",
+            "en": "A WhatsApp group calls for a few lines and no hashtags. It's not Instagram."
+          }
+        },
+        {
+          "id": "voz",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "¿Suena a mí?",
+            "en": "Does it sound like me?"
+          },
+          "descripcion": {
+            "es": "Que parezca escrito por ti y no por un anuncio.",
+            "en": "It reads like you wrote it, not like an ad."
+          },
+          "ejemplo": {
+            "es": "Ernesto saluda con \"Buenas, vecinos\". Si el mensaje dice \"Estimada clientela\", sus clientes notan que no es él.",
+            "en": "Ernesto always says \"Morning, neighbors.\" If the message says \"Dear valued clientele,\" his customers can tell it's not him."
+          }
+        },
+        {
+          "id": "sospecha",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "¿Hay algo que verificar?",
+            "en": "Anything to double-check?"
+          },
+          "descripcion": {
+            "es": "Cifras, promesas o datos que tú no diste.",
+            "en": "Figures, promises or facts you didn't give."
+          },
+          "ejemplo": {
+            "es": "La IA a veces rellena huecos con cosas que suenan bien. Si aparece algo que no dijiste, confírmalo o quítalo.",
+            "en": "AI sometimes fills gaps with things that sound good. If something shows up that you didn't say, confirm it or cut it."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Tu turno de revisar. Ernesto pidió un mensaje de WhatsApp con su promo: gafas para leer a $90.000, de lunes a jueves. Esto encontramos en la respuesta. ¿Qué punto de la lista falla en cada caso?",
+          "en": "Your turn to check. Ernesto asked for a WhatsApp message about his sale: reading glasses for $45, Monday to Thursday. Here's what we found in the answer. Which point on the list fails each time?"
+        }
+      },
+      "titulo": {
+        "es": "Las fallas del mensaje de Ernesto",
+        "en": "What's wrong with Ernesto's message"
+      },
+      "grupos": [
+        "responde",
+        "publico",
+        "forma",
+        "voz",
+        "sospecha"
+      ],
+      "items": [
+        {
+          "grupo": "responde",
+          "texto": {
+            "es": "Habla de \"una promo especial\", pero no dice el precio ni los días.",
+            "en": "It mentions \"a special deal\" but never gives the price or the days."
+          }
+        },
+        {
+          "grupo": "publico",
+          "texto": {
+            "es": "Dice \"eyewear\" y \"look trendy\", y sus clientes son señores y señoras mayores.",
+            "en": "It says \"drip\" and \"no cap,\" and most of his customers are older folks."
+          }
+        },
+        {
+          "grupo": "forma",
+          "texto": {
+            "es": "Trae 12 renglones y hashtags, y es para un grupo de WhatsApp.",
+            "en": "It's 12 lines long with hashtags, and it's for a WhatsApp group."
+          }
+        },
+        {
+          "grupo": "voz",
+          "texto": {
+            "es": "Empieza con \"Estimada clientela\", y Ernesto saluda con \"Buenas, vecinos\".",
+            "en": "It opens with \"Dear valued clientele,\" and Ernesto always says \"Morning, neighbors.\""
+          }
+        },
+        {
+          "grupo": "sospecha",
+          "texto": {
+            "es": "Promete el examen de la vista gratis, y Ernesto nunca ofreció eso.",
+            "en": "It promises a free eye exam, and Ernesto never offered that."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Lo viste todo. Un mensaje que sonaba lindo tenía cinco fallas, y las encontraste una por una.",
+          "en": "You caught it all. A message that sounded lovely had five problems, and you found them one by one."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, vuelve a mirar. ¿Falta algo, no lo entienden, no cabe, no suena a él o no es cierto?",
+          "en": "Hmm, take another look. Is something missing, hard to understand, the wrong size, not his voice, or not true?"
+        }
+      },
+      "malPorGrupo": {
+        "responde": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ahí falta algo que Ernesto pidió. ¿Qué punto revisa eso?",
+            "en": "Close. Something Ernesto asked for is missing. Which point checks that?"
+          }
+        },
+        "publico": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. ¿Sus clientes entenderían esas palabras? Piensa en quién lo va a leer.",
+            "en": "Close. Would his customers understand those words? Think about who's reading it."
+          }
+        },
+        "voz": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Esas palabras se entienden, pero ¿suenan a Ernesto?",
+            "en": "Close. Those words are easy to understand, but do they sound like Ernesto?"
+          }
+        },
+        "sospecha": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Esa promesa salió de la nada. ¿Qué punto revisa lo que tú no dijiste?",
+            "en": "Close. That promise came out of nowhere. Which point checks what you didn't say?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Encontrar la falla es la mitad. La otra mitad es pedir el arreglo.",
+          "en": "Finding the problem is half the job. The other half is asking for the fix."
+        }
+      },
+      "titulo": {
+        "es": "Pide el arreglo con la lista",
+        "en": "Ask for the fix with the list"
+      },
+      "texto": {
+        "es": "\"Está mal\" no le dice nada a la IA. Di qué punto falló y cómo lo quieres. Es lo que practicaste con Sofía: no empiezas de cero, arreglas lo que no pasó la revisión.",
+        "en": "\"It's wrong\" tells the AI nothing. Say which point failed and how you want it. It's what you practiced with Sofía: you don't start over, you fix what didn't pass the check."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Vago",
+            "en": "Vague"
+          },
+          "b": {
+            "es": "Con la lista",
+            "en": "With the list"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Está raro",
+              "en": "It's weird"
+            },
+            "b": {
+              "es": "Quita \"eyewear\": mis clientes son mayores",
+              "en": "Drop \"drip\": my customers are older folks"
+            }
+          },
+          {
+            "a": {
+              "es": "Falta algo",
+              "en": "Something's missing"
+            },
+            "b": {
+              "es": "Agrega el precio: $90.000, de lunes a jueves",
+              "en": "Add the price: $45, Monday to Thursday"
+            }
+          },
+          {
+            "a": {
+              "es": "No me convence",
+              "en": "I'm not sold"
+            },
+            "b": {
+              "es": "Quita el examen gratis: no lo ofrezco",
+              "en": "Cut the free eye exam: I don't offer it"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Ernesto tiene otra respuesta para revisar. Pásala por la lista y escríbele a la IA qué arreglar, punto por punto.",
+          "en": "Your turn to transmit. Ernesto has another answer to check. Run it through the list and tell the AI what to fix, point by point."
+        }
+      },
+      "titulo": {
+        "es": "El aviso del sábado",
+        "en": "The Saturday notice"
+      },
+      "reto": {
+        "es": "Ernesto pidió un mensaje de WhatsApp para avisar que el sábado 15 cierra a las 12 m. porque tiene una capacitación. La IA respondió: \"Estimada clientela: este fin de semana tendremos un horario especial. Renueve su look con nuestro eyewear trendy. Como siempre, el segundo par es gratis. #Óptica #Estilo\" Escríbele a la IA qué arreglar.",
+        "en": "Ernesto asked for a WhatsApp message saying that on Saturday the 15th he closes at noon for a training course. The AI replied: \"Dear valued clientele: we'll have special hours this weekend. Upgrade your drip with our frames, no cap. As always, your second pair is free. #Eyewear #Style\" Tell the AI what to fix."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "responde",
+          "texto": {
+            "es": "Da el dato que falta",
+            "en": "Gives the missing detail"
+          },
+          "rubrica": "El mensaje le pide a la IA agregar lo que Ernesto pidió y no está en la respuesta: que el sábado 15 cierra a las 12 m. (al mediodía). Basta con dar la fecha o la hora. No cuenta 'agrega lo que falta', 'pon el horario' o 'di la fecha' sin dar la fecha ni la hora, ni mencionar solo la capacitación.",
+          "claves": {
+            "es": [
+              "15",
+              "12 m",
+              "12m",
+              "12:00",
+              "mediodia",
+              "medio dia",
+              "doce del dia"
+            ],
+            "en": [
+              "15th",
+              "the 15",
+              "noon",
+              "12 p",
+              "12pm",
+              "12:00",
+              "midday"
+            ]
+          }
+        },
+        {
+          "id": "publico",
+          "texto": {
+            "es": "Palabras que entiendan sus clientes",
+            "en": "Words his customers understand"
+          },
+          "rubrica": "El mensaje pide quitar o cambiar las palabras que sus clientes no usan ('eyewear' o 'trendy' en español; 'drip' o 'no cap' en inglés), o dice que los lectores son señores y señoras mayores y deben entenderlo. No cuenta pedir que suene 'más cercano' o 'como hablo yo': eso es la voz, no quién lo lee.",
+          "claves": {
+            "es": [
+              "eyewear",
+              "trendy",
+              "ingles",
+              "mayores",
+              "senores",
+              "senoras",
+              "palabras sencillas",
+              "palabras simples",
+              "palabras raras",
+              "que entiendan",
+              "mis clientes son"
+            ],
+            "en": [
+              "drip",
+              "no cap",
+              "slang",
+              "older",
+              "seniors",
+              "elderly",
+              "plain words",
+              "simple words",
+              "plain english",
+              "my customers are",
+              "regulars"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "Largo y formato de WhatsApp",
+            "en": "WhatsApp length and format"
+          },
+          "rubrica": "El mensaje pide quitar los hashtags o ajustar la forma al grupo de WhatsApp: corto, un número de renglones, sin símbolos de redes. No cuenta 'hazlo mejor' ni pedir un cambio de tono o de palabras.",
+          "claves": {
+            "es": [
+              "hashtag",
+              "numeral",
+              "#",
+              "whatsapp",
+              "lineas",
+              "renglones",
+              "mas corto",
+              "mas corta"
+            ],
+            "en": [
+              "hashtag",
+              "#",
+              "whatsapp",
+              "lines",
+              "shorter",
+              "group chat"
+            ]
+          }
+        },
+        {
+          "id": "voz",
+          "texto": {
+            "es": "Que suene a Ernesto",
+            "en": "Sounds like Ernesto"
+          },
+          "rubrica": "El mensaje pide cambiar el tono para que suene a Ernesto: quitar 'Estimada clientela' ('Dear valued clientele'), saludar como él ('Buenas, vecinos'), más cercano, cálido o menos formal. No cuenta quitar 'eyewear', 'trendy', 'drip' o 'no cap': eso es para quién lo lee, no el tono.",
+          "claves": {
+            "es": [
+              "estimada",
+              "vecinos",
+              "como hablo",
+              "como habla",
+              "cercan",
+              "calid",
+              "menos formal",
+              "informal",
+              "mi estilo",
+              "como yo",
+              "amable"
+            ],
+            "en": [
+              "dear valued",
+              "clientele",
+              "neighbors",
+              "the way i talk",
+              "how i talk",
+              "warm",
+              "friendly",
+              "less formal",
+              "casual",
+              "like me",
+              "my style",
+              "friendlier"
+            ]
+          }
+        },
+        {
+          "id": "sospecha",
+          "texto": {
+            "es": "Quita lo que Ernesto no ofrece",
+            "en": "Cuts what Ernesto doesn't offer"
+          },
+          "rubrica": "El mensaje pide quitar o verificar la promesa del segundo par gratis ('your second pair is free'), que Ernesto no ofreció. No cuenta 'quita lo que sobra' sin decir qué, ni quitar solo los hashtags o el saludo.",
+          "claves": {
+            "es": [
+              "segundo par",
+              "gratis",
+              "no ofrezco",
+              "no lo ofrezco",
+              "no es cierto",
+              "no es verdad",
+              "invent",
+              "eso no existe"
+            ],
+            "en": [
+              "second pair",
+              "is free",
+              "for free",
+              "free pair",
+              "don't offer",
+              "do not offer",
+              "not true",
+              "made up",
+              "never offered",
+              "we don't do"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a Ernesto, dueño de una óptica de barrio, a escribir mensajes para el grupo de WhatsApp de sus clientes. En esta conversación ya le diste este borrador: \"Estimada clientela: este fin de semana tendremos un horario especial. Renueve su look con nuestro eyewear trendy. Como siempre, el segundo par es gratis. #Óptica #Estilo\" El mensaje que recibes es lo que él te pide corregir. Aplica solo lo que pida, sobre ese mismo borrador, y responde solo con la nueva versión, sin explicaciones. Lo que no pida cambiar, déjalo igual, incluidas las palabras en inglés, los hashtags y la promoción del segundo par. Usa solo los datos que él da; no inventes fechas, horas ni promociones.",
+        "en": "You are an AI helping Ernesto, who owns a neighborhood eyeglasses shop, write messages for his customers' WhatsApp group. Earlier in this conversation you gave him this draft: \"Dear valued clientele: we'll have special hours this weekend. Upgrade your drip with our frames, no cap. As always, your second pair is free. #Eyewear #Style\" The message you receive is what he asks you to fix. Apply only what he asks for, to that same draft, and reply with the new version only, no explanations. Keep anything he doesn't ask to change, including the slang, the hashtags and the free second pair offer. Use only the details he gives; don't make up dates, times or deals."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Buenas, vecinos.\nLes cuento que el sábado 15 cierro a las 12 m. por una capacitación.\nLos espero entre semana.\nErnesto",
+            "en": "Morning, neighbors.\nHeads up: on Saturday the 15th I close at noon for a training course.\nSee you during the week.\nErnesto"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Ahora sí sirve. Trae la fecha y la hora, habla como Ernesto, cabe en WhatsApp y ya no promete nada que él no ofrece.",
+              "en": "Now it works. It has the date and time, sounds like Ernesto, fits WhatsApp and no longer promises anything he doesn't offer."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimada clientela: este fin de semana tendremos un horario especial. Renueve su look con nuestro eyewear trendy. Como siempre, el segundo par es gratis. #Óptica #Estilo #Visión",
+            "en": "Dear valued clientele: we'll have special hours this weekend. Upgrade your drip with our frames, no cap. As always, your second pair is free. #Eyewear #Style #Vision"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. La IA cambió casi nada, porque no sabe qué falló. Mira la lista: di qué punto no pasó y cómo lo quieres.",
+              "en": "Weak signal. The AI barely changed anything, because it doesn't know what failed. Check the list: say which point didn't pass and how you want it."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ernesto ya tiene la lista, pero hoy va de afán. Mira qué pasó y ayúdale a decidir.",
+          "en": "Ernesto has the list now, but today he's in a rush. See what happened and help him decide."
+        }
+      },
+      "titulo": {
+        "es": "Con afán también se revisa",
+        "en": "Even in a rush, you check"
+      },
+      "escena": {
+        "es": "Ernesto tiene tres clientes esperando. Le pasó a la IA el día y la hora de los exámenes de la vista de la semana, con [nombre] en vez de los nombres, y le pidió un recordatorio para cada uno. Leyó la respuesta por encima y le suena bien. ¿Qué hace antes de enviar?",
+        "en": "Ernesto has three customers waiting. He gave the AI the day and time of this week's eye exams, with [name] instead of the names, and asked for a reminder for each one. He skimmed the answer and it sounds fine. What does he do before sending?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Los envía ya: suenan bien y no hay tiempo",
+            "en": "Send them now: they sound fine and there's no time"
+          },
+          "consecuencia": {
+            "es": "Un recordatorio salió con la cita un día después. El cliente no llegó y hubo que reacomodar la agenda. Arreglarlo tomó más tiempo que revisar.",
+            "en": "One reminder had the appointment a day late. The customer didn't show up and the schedule had to be reshuffled. Fixing it took longer than checking."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Le pregunta a la misma IA si están bien",
+            "en": "Ask the same AI if they're OK"
+          },
+          "consecuencia": {
+            "es": "La IA le dice que se ven muy bien. Puede ayudar a pulir la redacción, pero preguntarle \"¿está bien?\" no reemplaza el minuto de Ernesto con su agenda y la lista.",
+            "en": "The AI says they look great. It can help polish the wording, but asking \"is this OK?\" doesn't replace Ernesto's minute with his calendar and the list."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Los pasa por la lista en un minuto",
+            "en": "Run them through the list in a minute"
+          },
+          "consecuencia": {
+            "es": "En un minuto ve que una cita quedó un día después y le pide a la IA el arreglo con la fecha correcta. Los recordatorios salen bien y nadie se pierde.",
+            "en": "In a minute he spots an appointment set a day late and asks the AI to fix it with the right date. The reminders go out right and nobody misses a thing."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Revisar toma un minuto con la lista, y ese minuto sale más barato que arreglar un error ya enviado. La IA escribe rápido; lo que solo tú sabes, lo revisas tú.",
+          "en": "Checking takes a minute with the list, and that minute costs less than fixing a mistake that's already out. AI writes fast; what only you know, you check yourself."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "La nota de hoy para tu bitácora: ¿qué es revisar una respuesta? Dilo con tus palabras, como se lo explicarías a Ernesto.",
+          "en": "Today's note for your logbook: what does checking an answer mean? Put it in your own words, the way you'd explain it to Ernesto."
+        }
+      },
+      "concepto": "revisar-respuesta",
+      "definicion": {
+        "es": "Pasar la respuesta por una lista antes de usarla: ¿responde todo?, ¿sirve para quien lo lee?, ¿tiene el largo y la forma?, ¿suena a mí?, ¿hay algo que verificar? Y pedir el arreglo concreto.",
+        "en": "Running the answer through a list before using it: does it answer everything, is it right for the reader, the right length and format, does it sound like me, anything to double-check? Then asking for the specific fix."
+      },
+      "pregunta": {
+        "es": "Revisar una respuesta es…",
+        "en": "Checking an answer means…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "pedir arreglos",
+        "en": "asking for fixes"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Revisar y tu pedido de arreglo quedaron en tu bitácora. Ten la lista a mano: la vas a usar en el proyecto del capítulo.",
+          "en": "Saved. Your Checking card and your fix request are in your logbook. Keep the checklist handy: you'll use it in the chapter project."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y pasamos al proyecto.",
+          "en": "Three questions, then on to the project."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "La IA te dio un mensaje bonito, pero no trae el precio que le diste. ¿Qué punto de la lista falla?",
+            "en": "The AI gave you a nice message, but the price you gave it isn't there. Which point on the list fails?"
+          },
+          "opciones": [
+            {
+              "es": "¿Suena a mí?",
+              "en": "Does it sound like me?"
+            },
+            {
+              "es": "¿Responde todo lo que pedí?",
+              "en": "Does it answer all I asked?"
+            },
+            {
+              "es": "¿Tiene el largo y la forma?",
+              "en": "Right length and format?"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Si falta un dato que diste, no respondió todo lo que pediste.",
+              "en": "Right. If a detail you gave is missing, it didn't answer everything you asked."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. El problema no es cómo suena ni cómo se ve. ¿Qué punto revisa que esté todo?",
+              "en": "Hmm. The problem isn't how it sounds or looks. Which point checks that everything's there?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Con cuál pedido de arreglo sabe la IA exactamente qué cambiar?",
+            "en": "With which fix request does the AI know exactly what to change?"
+          },
+          "opciones": [
+            {
+              "es": "Está mal, hazlo otra vez",
+              "en": "It's wrong, do it again"
+            },
+            {
+              "es": "Quita el examen gratis, que no lo ofrezco, y agrega el precio: $90.000",
+              "en": "Cut the free eye exam, I don't offer it, and add the price: $45"
+            },
+            {
+              "es": "Revísalo tú y corrige lo que esté mal",
+              "en": "Check it yourself and fix whatever's wrong"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Dice qué falló y cómo lo quieres.",
+              "en": "Exactly. It says what failed and how you want it."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: con esa frase, ¿la IA sabe qué falló?",
+              "en": "Ask yourself: with that sentence, does the AI know what failed?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La respuesta dice que tu negocio es \"el número uno de la ciudad\". Tú nunca dijiste eso. ¿Qué haces?",
+            "en": "The answer says your business is \"the number one in town.\" You never said that. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Lo dejas: suena bien",
+              "en": "Leave it: it sounds good"
+            },
+            {
+              "es": "Lo quitas, o lo confirmas antes de usarlo",
+              "en": "Cut it, or confirm it before using it"
+            },
+            {
+              "es": "Lo dejas, porque la IA sabe más",
+              "en": "Leave it, the AI knows best"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Lo que tú no dijiste se confirma o se quita.",
+              "en": "Yes. Anything you didn't say gets confirmed or cut."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿De dónde salió ese dato? Mira el último punto de la lista.",
+              "en": "Hmm. Where did that come from? Look at the last point on the list."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Lo que sigue es el proyecto del capítulo, la Auditoría. Calienta motores con una respuesta de verdad.",
+          "en": "Next up is the chapter project, the Audit. Warm up with a real answer."
+        }
+      },
+      "titulo": {
+        "es": "Calentamiento de la Auditoría",
+        "en": "Audit warm-up"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra. Pídele un texto que de verdad vayas a usar, sin datos sensibles. Pasa la respuesta por los cinco puntos de la lista y pide al menos un arreglo concreto.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another. Ask it for a text you'll actually use, with no sensitive data. Run the answer through the five points on the list and ask for at least one specific fix."
+      },
+      "checks": [
+        {
+          "es": "Pedí un texto real, sin datos sensibles",
+          "en": "I asked for a real text, with no sensitive data"
+        },
+        {
+          "es": "Pasé la respuesta por los cinco puntos de la lista",
+          "en": "I ran the answer through all five points"
+        },
+        {
+          "es": "Pedí el arreglo diciendo qué falló y cómo lo quiero",
+          "en": "I asked for the fix, saying what failed and how I want it"
+        },
+        {
+          "es": "Me quedé con una versión que usaría de verdad",
+          "en": "I ended up with a version I'd actually use"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Revisar la respuesta",
+        "en": "Checking the answer"
+      },
+      "resumen": {
+        "es": "Antes de usar una respuesta, pasarla por la lista de cinco puntos y pedir el arreglo concreto de lo que falle.",
+        "en": "Before using an answer, run it through the five-point list and ask for a specific fix for whatever fails."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Encontraste las cinco fallas del mensaje de Ernesto",
+          "en": "You found the five problems in Ernesto's message"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Pediste el arreglo del aviso del sábado",
+          "en": "You asked for the fix on the Saturday notice"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Revisaste con afán, sin enviar errores",
+          "en": "You checked in a rush, with no mistakes sent"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Calentaste motores para la Auditoría",
+          "en": "You warmed up for the Audit"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "revisar-respuestas",
+      "titulo": {
+        "es": "Revisar respuestas antes de usarlas",
+        "en": "Checking answers before using them"
+      }
+    }
+  }
+}

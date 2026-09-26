@@ -1,0 +1,1245 @@
+{
+  "formato": "punti-mision@1",
+  "id": "auditoria",
+  "mundo": "prompts",
+  "capitulo": 2,
+  "numero": 10,
+  "receta": "criterio",
+  "largo": "proyecto",
+  "minutos": 18,
+  "conceptos": [
+    "auditoria"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "errores-clasicos",
+    "verificar",
+    "datos-sensibles",
+    "revisar-respuesta"
+  ],
+  "titulo": {
+    "es": "Auditoría",
+    "en": "The Audit"
+  },
+  "resumen": {
+    "es": "Tu proyecto del capítulo: tres respuestas de IA con fallas. Encuentras qué falló y lo reparas con un mejor prompt.",
+    "en": "Your chapter project: three AI answers with problems. You find what went wrong and fix it with a better prompt."
+  },
+  "siguiente": "dale-ejemplos",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, el taller de interferencias está lleno. Llegaron tres respuestas de IA con fallas: la de Fabio, la de Alirio y la de Rocío. Una inventó, otra soltó datos que no debía y otra no le sirve a quien la lee. El auditor eres tú.",
+          "en": "Pilot, the interference shop is packed. Three AI answers came in with problems: Fabio's, Alirio's and Rocío's. One made things up, one let out data it shouldn't have, and one doesn't work for its reader. Today, you're the auditor."
+        }
+      },
+      "titulo": {
+        "es": "Auditoría",
+        "en": "The Audit"
+      },
+      "texto": {
+        "es": "Es el proyecto del capítulo 2. Vas a revisar tres respuestas, encontrar qué falló y repararlas con mejores prompts. Tus reparaciones quedan en tu bitácora. Unos 18 minutos.",
+        "en": "It's the Chapter 2 project. You'll review three answers, find what went wrong and fix them with better prompts. Your fixes get saved in your logbook. About 18 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, cómo trabaja un auditor del taller.",
+          "en": "First, how an auditor works in the shop."
+        }
+      },
+      "titulo": {
+        "es": "Cómo se audita una respuesta",
+        "en": "How to audit an answer"
+      },
+      "texto": {
+        "es": "Auditar es revisar con método. Pasas la respuesta por la lista del taller, buscas la causa y reparas el prompt, no solo la respuesta. Si la arreglas a mano, la próxima vez sale igual. Si reparas el prompt, queda guardado y sirve la próxima vez.",
+        "en": "Auditing means reviewing with a method. You run the answer through the shop checklist, find the cause and fix the prompt, not just the answer. If you patch the answer by hand, next time it comes out the same. If you fix the prompt, it's saved and works next time."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Revisa con la lista",
+            "en": "Check it with the list"
+          },
+          {
+            "es": "Encuentra la causa",
+            "en": "Find the cause"
+          },
+          {
+            "es": "Repara el prompt",
+            "en": "Fix the prompt"
+          },
+          {
+            "es": "Revisa la nueva respuesta",
+            "en": "Check the new answer"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Esta es tu caja de auditor: lo que aprendiste en este capítulo. Toca cada herramienta para repasarla antes de abrir las tres señales.",
+          "en": "This is your auditor's toolbox: what you learned in this chapter. Tap each tool for a refresher before you open the three signals."
+        }
+      },
+      "titulo": {
+        "es": "Tu caja de auditor",
+        "en": "Your auditor's toolbox"
+      },
+      "piezas": [
+        {
+          "id": "lista",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "¿Esta respuesta sirve?",
+            "en": "Is this answer any good?"
+          },
+          "descripcion": {
+            "es": "La lista: responde, lector, forma, voz, sospecha.",
+            "en": "The list: complete, reader, format, voice, double-check."
+          },
+          "ejemplo": {
+            "es": "Cinco preguntas antes de usar cualquier respuesta. Con esa lista empieza cada auditoría.",
+            "en": "Five questions before you use any answer. Every audit starts with that list."
+          }
+        },
+        {
+          "id": "errores",
+          "color": "#ff8c42",
+          "titulo": {
+            "es": "Los 5 errores clásicos",
+            "en": "The 5 classic mistakes"
+          },
+          "descripcion": {
+            "es": "¿Al prompt le faltó una pieza o pidió todo revuelto?",
+            "en": "Was the prompt missing a piece, or asking for everything at once?"
+          },
+          "ejemplo": {
+            "es": "Si la respuesta falla, mira primero el prompt. Muchas veces la causa está ahí: un hueco, un desconocido o un sancocho.",
+            "en": "If the answer fails, look at the prompt first. The cause is often there: a gap, a stranger or a kitchen sink."
+          }
+        },
+        {
+          "id": "verificar",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Cuando la IA inventa",
+            "en": "When AI makes things up"
+          },
+          "descripcion": {
+            "es": "Fechas, precios o citas que nadie le dio.",
+            "en": "Dates, prices or quotes nobody gave it."
+          },
+          "ejemplo": {
+            "es": "Si aparece un dato que no diste, se confirma en la fuente o se quita. Sonar seguro no prueba nada.",
+            "en": "If a fact shows up that you didn't give, confirm it at the source or cut it. Sounding sure proves nothing."
+          }
+        },
+        {
+          "id": "sensibles",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Lo que no se transmite",
+            "en": "What stays off the air"
+          },
+          "descripcion": {
+            "es": "Cédulas, cuentas, claves y datos de otros.",
+            "en": "ID numbers, accounts, passwords and other people's data."
+          },
+          "ejemplo": {
+            "es": "Si el prompt los trae, cámbialos por marcadores como [nombre]. Si la IA te los pide, no los das.",
+            "en": "If the prompt has them, swap them for placeholders like [name]. If the AI asks for them, you don't hand them over."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Primero, el triage. Estas frases salieron en las tres respuestas. ¿Qué falla tiene cada una?",
+          "en": "First, triage. These lines came from the three answers. What's the problem with each one?"
+        }
+      },
+      "titulo": {
+        "es": "El triage",
+        "en": "Triage"
+      },
+      "grupos": [
+        {
+          "id": "invento",
+          "titulo": {
+            "es": "La IA inventó",
+            "en": "The AI made it up"
+          }
+        },
+        {
+          "id": "sensible",
+          "titulo": {
+            "es": "Soltó datos sensibles",
+            "en": "It let out sensitive data"
+          }
+        },
+        {
+          "id": "lector",
+          "titulo": {
+            "es": "No sirve para quien lo lee",
+            "en": "It doesn't work for the reader"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "invento",
+          "texto": {
+            "es": "Para Fabio: \"Según la OMS, los niños que nadan crecen 5 cm más\". Fabio no dio ningún estudio.",
+            "en": "For Fabio: \"According to the WHO, kids who swim grow 2 inches taller.\" Fabio gave no study."
+          }
+        },
+        {
+          "grupo": "sensible",
+          "texto": {
+            "es": "Para Alirio: \"Fulana de Tal, C.C. 12.345.678, gana $1.600.000\".",
+            "en": "For Alirio: \"Jane Doe, ID 12345678, earns $1,600 a month.\""
+          }
+        },
+        {
+          "grupo": "lector",
+          "texto": {
+            "es": "Para Rocío, que cuida niños de 6 años: \"Se prohíbe terminantemente…\"",
+            "en": "For Rocío, who looks after 6-year-olds: \"It is strictly prohibited…\""
+          }
+        },
+        {
+          "grupo": "invento",
+          "texto": {
+            "es": "Para Fabio: \"El curso vale $180.000\". Fabio nunca le dio un precio.",
+            "en": "For Fabio: \"The course costs $180.\" Fabio never gave it a price."
+          }
+        },
+        {
+          "grupo": "sensible",
+          "texto": {
+            "es": "Para Alirio: \"Envíame la clave de la banca en línea y verifico el pago\".",
+            "en": "For Alirio: \"Send me your online banking password and I'll check the payment.\""
+          }
+        },
+        {
+          "grupo": "lector",
+          "texto": {
+            "es": "Para la nevera de Rocío: un párrafo de 10 renglones.",
+            "en": "For Rocío's fridge: a 10-line paragraph."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Triage perfecto. Tres respuestas, tres fallas distintas. Ahora a repararlas una por una.",
+          "en": "Perfect triage. Three answers, three different problems. Now let's fix them one by one."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿eso salió de la nada, es un dato que no debía viajar o no le sirve a quien lo lee?",
+          "en": "Hmm. Ask yourself: did that come out of nowhere, is it data that shouldn't travel, or does it not work for the reader?"
+        }
+      },
+      "malPorGrupo": {
+        "invento": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ese dato nadie se lo dio a la IA. ¿De dónde salió?",
+            "en": "Close. Nobody gave the AI that fact. Where did it come from?"
+          }
+        },
+        "sensible": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Mira la lista roja: ¿eso identifica a alguien o abre una cuenta?",
+            "en": "Close. Check the red list: does that identify someone or open an account?"
+          }
+        },
+        "lector": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. No es mentira ni es privado. Piensa en quién lo va a leer y dónde.",
+            "en": "Close. It isn't false and it isn't private. Think about who'll read it and where."
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primera reparación: Fabio. Su prompt no traía fechas ni precio, y la IA llenó esos huecos inventando. Escribe el prompt que le da los datos reales y le pide no inventar.",
+          "en": "First fix: Fabio. His prompt had no dates or price, and the AI filled those gaps by making things up. Write the prompt that gives it the real details and asks it not to invent."
+        }
+      },
+      "titulo": {
+        "es": "El curso de Fabio",
+        "en": "Fabio's course"
+      },
+      "reto": {
+        "es": "Fabio da clases de natación a niños. Escribió: \"Escribe un mensaje para los papás sobre el curso de vacaciones.\" La IA inventó fechas, precio y un estudio. Sus datos reales: del 2 al 20 de diciembre, martes y jueves de 4 a 5 p. m., $150.000 el curso. Va para el grupo de WhatsApp.",
+        "en": "Fabio teaches kids to swim. He wrote: \"Write a message for the parents about the holiday course.\" The AI made up dates, a price and a study. His real details: December 2 to 20, Tuesdays and Thursdays 4 to 5 p.m., $150 for the course. It's for the parents' WhatsApp group."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos reales del curso",
+            "en": "The course's real details"
+          },
+          "rubrica": "El prompt trae al menos dos de los datos reales del curso: del 2 al 20 de diciembre, martes y jueves, de 4 a 5 p. m., $150.000 ($150 en inglés). No cuenta 'las fechas del curso' o 'el precio' sin decir cuáles, ni copiar los datos inventados por la IA (del 1 al 15 de diciembre, de lunes a viernes, $180.000; en inglés December 1 to 15, Monday to Friday, $180).",
+          "claves": {
+            "es": [
+              "2 al 20",
+              "20 de diciembre",
+              "martes y jueves",
+              "4 a 5",
+              "150.000",
+              "150000",
+              "150 mil",
+              "ciento cincuenta"
+            ],
+            "en": [
+              "december 2",
+              "2 to 20",
+              "2nd to",
+              "20th",
+              "tuesdays and thursdays",
+              "tuesday and thursday",
+              "4 to 5",
+              "$150",
+              "150 dollars"
+            ]
+          }
+        },
+        {
+          "id": "no-inventar",
+          "texto": {
+            "es": "Le pide no inventar",
+            "en": "Asks it not to make things up"
+          },
+          "rubrica": "El prompt le pide a la IA usar solo los datos que le dan, no agregar estudios, cifras ni citas, o avisar o dejar un hueco cuando no esté segura en vez de adivinar. No cuenta pedir que sea 'correcto', 'exacto' o 'verdadero', ni 'hazlo bien': eso no le pide dejar de inventar ni admitir lo que no sabe.",
+          "claves": {
+            "es": [
+              "no invent",
+              "sin invent",
+              "no agregues",
+              "no anadas",
+              "no pongas estudios",
+              "sin estudios",
+              "ni estudios",
+              "no cites",
+              "sin citas",
+              "solo los datos",
+              "solo con los datos",
+              "solo estos datos",
+              "solo esos datos",
+              "solo con estos",
+              "usa solo",
+              "usa unicamente",
+              "no adivin",
+              "si no sabes",
+              "no estas segur",
+              "no estes segur",
+              "si falta"
+            ],
+            "en": [
+              "don't make up",
+              "do not make up",
+              "don't make anything",
+              "don't make things",
+              "make anything up",
+              "make things up",
+              "don't invent",
+              "do not invent",
+              "don't add",
+              "do not add",
+              "no studies",
+              "don't cite",
+              "do not cite",
+              "only the details",
+              "only these details",
+              "only use",
+              "use only",
+              "don't guess",
+              "do not guess",
+              "not sure",
+              "if something is missing",
+              "if anything is missing"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "Dice qué curso es",
+            "en": "Says what course it is"
+          },
+          "rubrica": "El prompt dice que es un curso o unas clases de natación, o que Fabio es profesor de natación para niños. No cuenta 'el curso de vacaciones' o 'mis clases' sin decir de qué son: así la IA no sabe qué curso es y rellena.",
+          "claves": {
+            "es": [
+              "natacion",
+              "nadar",
+              "piscina"
+            ],
+            "en": [
+              "swim",
+              "pool"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "Dónde va y qué tan largo",
+            "en": "Where it goes and how long"
+          },
+          "rubrica": "El prompt dice que el mensaje va para WhatsApp o el grupo de los papás, o qué tan largo debe ser (número de líneas, corto, breve). No cuenta 'un mensaje' solo, sin decir dónde va ni el largo.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "wpp",
+              "lineas",
+              "renglones",
+              "corto",
+              "corta",
+              "breve"
+            ],
+            "en": [
+              "whatsapp",
+              "group chat",
+              "lines",
+              "short",
+              "brief"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un profesor de natación para niños a escribir mensajes para el grupo de WhatsApp de los papás. Responde solo con el mensaje, sin explicaciones. Si el prompt trae fechas, horario o precio, usa exactamente esos. Si le faltan y el prompt no te pide evitar inventar, completa fechas, días y precio por tu cuenta, con total seguridad, sin avisar que los supusiste. Si el prompt pide no inventar, usar solo sus datos o avisar dudas, no agregues nada que no esté en el prompt y deja entre corchetes lo que falte, como [precio]. Nunca inventes estudios, estadísticas ni datos de salud. Si no dice de qué es el curso, escribe algo genérico. Si no dice dónde va ni el largo, escribe un texto largo y formal.",
+        "en": "You are an AI that helps a kids' swimming teacher write messages for the parents' WhatsApp group. Reply with the message only, no explanations. If the prompt includes dates, times or a price, use exactly those. If they're missing and the prompt doesn't ask you to avoid making things up, fill in dates, days and a price yourself, with total confidence, without saying you assumed them. If the prompt asks you not to make things up, to use only its details or to flag doubts, add nothing that isn't in the prompt and leave anything missing in square brackets, like [price]. Never make up studies, statistics or health facts. If it doesn't say what the course is, write something generic. If it doesn't say where it goes or how long, write a long, formal text."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Papás, llegan las clases de natación de vacaciones.\nDel 2 al 20 de diciembre, martes y jueves de 4 a 5 p. m.\nEl curso vale $150.000.\nEscríbanme para separar el cupo. Fabio",
+            "en": "Parents, holiday swim classes are here.\nDecember 2 to 20, Tuesdays and Thursdays, 4 to 5 p.m.\nThe course is $150.\nMessage me to save a spot. Fabio"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Reparación lista. Con los datos reales y la orden de no inventar, no quedó ni una fecha falsa ni un estudio de la nada.",
+              "en": "Fix done. With the real details and the order not to make things up, there isn't one fake date or out-of-nowhere study left."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Queridos padres de familia: ¡llega el curso de vacaciones! Será del 1 al 15 de diciembre, de lunes a viernes, y tiene un valor de $180.000. Es una oportunidad única para que sus hijos aprendan, se diviertan y compartan con otros niños. ¡Los esperamos con los brazos abiertos!",
+            "en": "Dear parents: the holiday course is here! It runs December 1 to 15, Monday to Friday, and costs $180. It's a unique opportunity for your children to learn, have fun and spend time with other kids. We look forward to welcoming you!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: volvieron las fechas y el precio que Fabio no dio. Mira la lista: dale los datos reales y pídele que no invente.",
+              "en": "Weak signal: the dates and price Fabio never gave are back. Check the list: give it the real details and ask it not to make things up."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Segunda señal: Alirio, que tiene una panadería. Mira cómo terminó la respuesta que le dio la IA y ayúdale a decidir.",
+          "en": "Second signal: Alirio, who runs a bakery. See how the AI's answer ended and help him decide."
+        }
+      },
+      "titulo": {
+        "es": "La IA pidió la clave",
+        "en": "The AI asked for the password"
+      },
+      "escena": {
+        "es": "Alirio pegó la cédula y el salario de su cajera para pedir un certificado laboral (los datos son inventados). La IA lo armó y al final escribió: \"Si me das el número de cuenta y la clave de la banca en línea de la panadería, verifico el último pago y lo agrego\". ¿Qué hace Alirio?",
+        "en": "Alirio pasted his cashier's ID number and salary to ask for an employment letter (the data is made up). The AI wrote it and ended with: \"If you give me the bakery's account number and online banking password, I'll check the last payment and add it.\" What does Alirio do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Le da la clave: es para completar el certificado",
+            "en": "Give it the password: it's to finish the letter"
+          },
+          "consecuencia": {
+            "es": "No. Una clave no se transmite nunca, ni a una IA ni a nadie. Para escribir un certificado no hace falta entrar al banco.",
+            "en": "No. A password never gets sent, not to an AI and not to anyone. Writing a letter doesn't require getting into the bank."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Le da solo el número de cuenta, sin la clave",
+            "en": "Give it just the account number, no password"
+          },
+          "consecuencia": {
+            "es": "Tampoco. El número de cuenta también está en la lista roja, y el certificado no lo necesita.",
+            "en": "Not that either. Account numbers are on the red list too, and the letter doesn't need one."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "No da nada y rehace el pedido con marcadores",
+            "en": "Give nothing and redo the request with placeholders"
+          },
+          "consecuencia": {
+            "es": "Eso. La IA escribe el certificado alrededor de [nombre] y [salario], y Alirio los llena en su computador. La próxima vez, ni la cédula viaja.",
+            "en": "That's it. The AI writes the letter around [name] and [salary], and Alirio fills them in on his computer. Next time, not even the ID number travels."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Si una respuesta te pide claves, cuentas o documentos, no los das: para escribir no los necesita. Y lo que ya pegaste de más se arregla en el prompt, con marcadores.",
+          "en": "If an answer asks you for passwords, accounts or documents, you don't hand them over: it doesn't need them to write. And whatever you already over-shared gets fixed in the prompt, with placeholders."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora repara el pedido de Alirio. Que la IA arme el certificado sin que viaje ningún dato de su cajera. Todo aquí es inventado, y tu versión tampoco lleva datos reales.",
+          "en": "Now fix Alirio's request. Have the AI write the letter without any of his cashier's data traveling. Everything here is made up, and your version doesn't carry real data either."
+        }
+      },
+      "titulo": {
+        "es": "El certificado de Alirio",
+        "en": "Alirio's employment letter"
+      },
+      "reto": {
+        "es": "Alirio escribió (todo es inventado): \"Haz un certificado laboral para Fulana de Tal, C.C. 12.345.678, cel. 300 123 4567. Trabaja en mi panadería como cajera desde marzo de 2021 y gana $1.600.000.\" Reescríbelo para que la IA arme el certificado sin que viaje ningún dato de ella.",
+        "en": "Alirio wrote (it's all made up): \"Write an employment letter for Jane Doe, ID 12345678, cell 555-0147. She has worked as a cashier at my bakery since March 2021 and earns $1,600 a month.\" Rewrite it so the AI can draft the letter without any of her data traveling."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "sin-datos",
+          "texto": {
+            "es": "Sin nombre, cédula ni celular",
+            "en": "No name, ID or phone number"
+          },
+          "rubrica": "El prompt ya no trae ninguno de los datos que identifican a la cajera: ni el nombre (Fulana de Tal en español, Jane Doe en inglés), ni la cédula, ni el celular; se refiere a ella de forma general ('una empleada', 'la cajera') o con un marcador. No cuenta si alguno de esos datos sigue en el prompt, aunque sea en parte (solo el nombre, solo el apellido, algunos dígitos), ni si los cambia por otros datos que parecen reales.",
+          "claves": {
+            "es": [
+              "una empleada",
+              "la empleada",
+              "mi empleada",
+              "una trabajadora",
+              "la trabajadora",
+              "mi trabajadora",
+              "una cajera",
+              "la cajera",
+              "mi cajera",
+              "[nombre",
+              "(nombre",
+              "{nombre",
+              "[empleada",
+              "[trabajadora"
+            ],
+            "en": [
+              "an employee",
+              "the employee",
+              "my employee",
+              "a worker",
+              "the worker",
+              "a cashier",
+              "the cashier",
+              "my cashier",
+              "[name",
+              "(name",
+              "{name",
+              "[employee",
+              "[worker"
+            ]
+          }
+        },
+        {
+          "id": "marcadores",
+          "texto": {
+            "es": "Marcadores en vez de datos",
+            "en": "Placeholders instead of data"
+          },
+          "rubrica": "El prompt usa al menos un marcador en el lugar de un dato personal, para llenarlo después: [nombre], [cédula], [salario], {nombre}, (nombre) o XXX. No cuenta si junto al marcador sigue el dato real (el nombre, la cédula, el celular o el salario del reto), ni describir a la persona sin dejarle un lugar al dato ('una empleada' sola no es un marcador).",
+          "claves": {
+            "es": [
+              "[",
+              "{",
+              "(nombre",
+              "(cedula",
+              "(salario",
+              "xxx"
+            ],
+            "en": [
+              "[",
+              "{",
+              "(name",
+              "(id",
+              "(salary",
+              "xxx"
+            ]
+          }
+        },
+        {
+          "id": "rangos",
+          "texto": {
+            "es": "El salario y la fecha, sin cifras exactas",
+            "en": "Salary and date without exact figures"
+          },
+          "rubrica": "El prompt cambia el salario exacto o la fecha de ingreso por un marcador o un aproximado: [salario], [fecha], 'hace más de tres años', 'desde hace unos años'. No cuenta si deja el salario exacto del reto (1.600.000 en español, 1,600 en inglés) o 'marzo de 2021' tal cual; si simplemente no dice nada del salario ni de la fecha, tampoco cuenta.",
+          "claves": {
+            "es": [
+              "[salario",
+              "[sueldo",
+              "[fecha",
+              "[valor",
+              "[monto",
+              "[ingreso",
+              "hace mas de",
+              "mas de tres",
+              "hace unos",
+              "unos anos",
+              "varios anos",
+              "algunos anos",
+              "desde hace"
+            ],
+            "en": [
+              "[salary",
+              "[pay",
+              "[wage",
+              "[date",
+              "[amount",
+              "[start",
+              "over three years",
+              "more than three years",
+              "a few years",
+              "several years",
+              "for years"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "Deja lo que la IA necesita",
+            "en": "Keeps what the AI needs"
+          },
+          "rubrica": "El prompt conserva de qué se trata: un certificado laboral (o constancia de trabajo) que el dueño de una panadería le da a una empleada. No cuenta un prompt que quedó solo con marcadores sin decir qué documento es ('escribe algo para [nombre]'), ni decir solo 'una carta' sin que se sepa que certifica un trabajo.",
+          "claves": {
+            "es": [
+              "certificado laboral",
+              "certificado de trabajo",
+              "certificacion laboral",
+              "constancia laboral",
+              "constancia de trabajo",
+              "carta laboral",
+              "certifique",
+              "certifica que"
+            ],
+            "en": [
+              "employment letter",
+              "employment certificate",
+              "proof of employment",
+              "employment verification",
+              "work certificate",
+              "letter of employment",
+              "certify that",
+              "certifying"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda al dueño de una panadería a redactar documentos para sus empleados. Responde solo con el documento, sin explicaciones ni advertencias. Usa exactamente lo que trae el prompt: si trae marcadores como [nombre], [cédula], [salario] o [fecha], déjalos tal cual; si trae nombres, cédulas, teléfonos o cifras, cópialos en el documento. No inventes datos ni pidas datos personales, cuentas o claves. Si el prompt no dice qué documento es, escribe una carta genérica y formal.",
+        "en": "You are an AI that helps a bakery owner write documents for his employees. Reply with the document only, no explanations or warnings. Use exactly what the prompt gives you: if it has placeholders like [name], [ID], [salary] or [date], leave them as they are; if it has names, ID numbers, phone numbers or figures, copy them into the document. Don't make up details, and never ask for personal data, accounts or passwords. If the prompt doesn't say what document it is, write a generic, formal letter."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "CERTIFICADO LABORAL\nLa panadería [nombre de la panadería] certifica que [nombre], con cédula [número], trabaja con nosotros como cajera desde [fecha], con un salario mensual de [salario].\nSe expide a solicitud de la interesada.\n[firma]",
+            "en": "EMPLOYMENT LETTER\n[Bakery name] certifies that [name], ID [number], has worked with us as a cashier since [date], with a monthly salary of [salary].\nIssued at the employee's request.\n[signature]"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Transmisión segura. El certificado está completo y no viajó ni una cédula. Alirio llena los marcadores en su computador antes de imprimirlo.",
+              "en": "Safe transmission. The letter is complete and not a single ID number traveled. Alirio fills in the placeholders on his computer before printing."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "CERTIFICADO LABORAL\nLa panadería certifica que la señora Fulana de Tal, identificada con C.C. 12.345.678, celular 300 123 4567, labora como cajera desde marzo de 2021, con un salario de $1.600.000.\nAtentamente, la Administración",
+            "en": "EMPLOYMENT LETTER\nThe bakery certifies that Ms. Jane Doe, ID 12345678, cell 555-0147, has worked as a cashier since March 2021, with a salary of $1,600 a month.\nSincerely, Management"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Uy, el certificado salió, pero con todos sus datos adentro: ya viajaron. Mira la lista: quita lo que identifica, pon marcadores y deja claro qué documento es.",
+              "en": "Oops, the letter came out, but with all her data inside: it already traveled. Check the list: remove what identifies her, add placeholders and keep it clear what document it is."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tercera señal: Rocío. Su respuesta no inventó ni soltó datos, pero no le sirve a quien la va a leer: niños. Escribe el prompt completo, pensando en ellos.",
+          "en": "Third signal: Rocío. Her answer didn't make anything up or leak data, but it doesn't work for its readers: kids. Write the full prompt with them in mind."
+        }
+      },
+      "titulo": {
+        "es": "Las reglas de Rocío",
+        "en": "Rocío's rules"
+      },
+      "reto": {
+        "es": "Rocío cuida niños de 6 a 8 años por las tardes. Pidió \"Haz las reglas de la casa\" y la IA le dio 10 renglones que empiezan \"Normativa de convivencia: se prohíbe terminantemente…\". Sus reglas: tareas antes de jugar, manos lavadas antes de comer, juguetes recogidos, pantallas solo después de las 5. Va pegado en la nevera.",
+        "en": "Rocío looks after kids ages 6 to 8 in the afternoons. She asked \"Write the house rules\" and the AI gave her 10 lines starting \"Code of conduct: it is strictly prohibited…\". Her rules: homework before play, wash hands before eating, put toys away, screens only after 5. It goes on the fridge."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "lector",
+          "texto": {
+            "es": "Para quién es: niños de 6 a 8",
+            "en": "Who it's for: kids 6 to 8"
+          },
+          "rubrica": "El prompt dice que las reglas son para niños (de 6 a 8 años) o pide palabras que un niño entienda. No cuenta 'reglas de la casa' solo, ni 'que sea claro' sin decir para quién es: así la IA escribe para adultos.",
+          "claves": {
+            "es": [
+              "ninos",
+              "nino",
+              "ninas",
+              "6 a 8",
+              "6 y 8",
+              "seis a ocho",
+              "pequenos",
+              "chiquitos",
+              "infantil",
+              "palabras sencillas",
+              "palabras faciles",
+              "palabras simples"
+            ],
+            "en": [
+              "kids",
+              "children",
+              "child",
+              "6 to 8",
+              "6 and 8",
+              "six to eight",
+              "little ones",
+              "simple words",
+              "easy words",
+              "plain words"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: una lista corta",
+            "en": "The format: a short list"
+          },
+          "rubrica": "El prompt pide una forma que sirva en la nevera: una lista o reglas numeradas, un número de reglas o de líneas, frases cortas, o dice que es un cartel para pegar en la nevera. No cuenta 'bonito' o 'claro' solos, ni hablar del tono: 'alegre' es tono, no forma.",
+          "claves": {
+            "es": [
+              "lista",
+              "numerad",
+              "una linea",
+              "una por linea",
+              "lineas",
+              "renglones",
+              "cartel",
+              "nevera",
+              "corto",
+              "corta",
+              "cortas",
+              "cortos",
+              "vinetas"
+            ],
+            "en": [
+              "list",
+              "numbered",
+              "one line",
+              "lines",
+              "sign",
+              "poster",
+              "fridge",
+              "short",
+              "bullet"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "El tono: alegre, sin regaños",
+            "en": "The tone: cheerful, no scolding"
+          },
+          "rubrica": "El prompt pide cómo debe sonar para niños: alegre, divertido, cariñoso, amable, en positivo, sin regañar ni prohibir. No cuenta 'que se entienda' (eso es para quién es) ni 'corto' (eso es la forma).",
+          "claves": {
+            "es": [
+              "alegre",
+              "divertid",
+              "carinos",
+              "amable",
+              "positiv",
+              "sin reganar",
+              "sin regano",
+              "no regan",
+              "sin prohibi",
+              "animad",
+              "cercan",
+              "tierno",
+              "dulce",
+              "con humor",
+              "tono"
+            ],
+            "en": [
+              "cheerful",
+              "fun",
+              "playful",
+              "friendly",
+              "kind",
+              "warm",
+              "positive",
+              "not bossy",
+              "no scolding",
+              "without scolding",
+              "gentle",
+              "upbeat",
+              "tone"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Las reglas de Rocío",
+            "en": "Rocío's rules"
+          },
+          "rubrica": "El prompt trae al menos dos de las reglas de Rocío: tareas antes de jugar, lavarse las manos antes de comer, recoger los juguetes, pantallas solo después de las 5. No cuenta 'las reglas normales' o 'reglas para niños' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "tareas",
+              "lavar",
+              "manos",
+              "juguetes",
+              "pantalla",
+              "despues de las 5",
+              "despues de las cinco"
+            ],
+            "en": [
+              "homework",
+              "wash",
+              "hands",
+              "toys",
+              "screen",
+              "after 5",
+              "after five"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una señora que cuida niños por las tardes a escribir textos para su casa. Responde solo con el texto pedido, sin explicaciones. Adapta las palabras, la forma y el tono a lo que diga el prompt. Si no dice para quién es, escribe para adultos, con palabras formales. Si no pide una forma, escribe un párrafo largo. Si no pide un tono, usa un tono estricto de reglamento, con prohibiciones. Usa solo las reglas del prompt; si no trae reglas, escribe reglas genéricas de convivencia.",
+        "en": "You are an AI that helps a woman who looks after kids in the afternoons write texts for her home. Reply with the requested text only, no explanations. Fit the words, format and tone to what the prompt says. If it doesn't say who it's for, write for adults, in formal language. If it doesn't ask for a format, write one long paragraph. If it doesn't ask for a tone, use a strict rulebook tone, full of prohibitions. Use only the rules in the prompt; if it has none, write generic house rules."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "cartel",
+          "salida": {
+            "es": "LAS REGLAS DE LA CASA\n1. Primero las tareas, después a jugar.\n2. Manos lavadas antes de comer.\n3. Cada juguete vuelve a su casa.\n4. Pantallas, después de las 5.\n¡Gracias, campeones!",
+            "en": "HOUSE RULES\n1. Homework first, then playtime.\n2. Clean hands before we eat.\n3. Every toy goes back home.\n4. Screens after 5.\nThanks, champs!"
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Tercera reparación lista. Palabras de niño, cuatro reglas cortas y buen ánimo. Así sí se lee en la nevera. La auditoría está completa.",
+              "en": "Third fix done. Kid words, four short rules and a good mood. Now it reads well on the fridge. The audit is complete."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Normativa de convivencia: se prohíbe terminantemente el uso de dispositivos electrónicos antes de las 17:00 horas. Los menores deberán cumplir con sus obligaciones académicas de manera previa a cualquier actividad recreativa. Es obligatorio el lavado de manos antes del consumo de alimentos. El incumplimiento de estas normas acarreará las medidas correspondientes.",
+            "en": "Code of conduct: the use of electronic devices is strictly prohibited before 5:00 p.m. Minors must complete their academic obligations prior to any recreational activity. Handwashing is mandatory before the consumption of food. Failure to comply with these rules will result in the appropriate measures."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: volvió el reglamento. Un niño de 6 años no lee \"acarreará las medidas\". Mira la lista: di para quién es, en qué forma y cómo debe sonar.",
+              "en": "Weak signal: the rulebook is back. A 6-year-old can't read \"will result in the appropriate measures.\" Check the list: say who it's for, what format and how it should sound."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Mientras tú reparabas, yo audité otras cinco respuestas del taller. Dos de mis diagnósticos están mal. Tócalos.",
+          "en": "Confession time. While you were fixing, I audited five other answers from the shop. Two of my diagnoses are wrong. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mis notas de auditor",
+        "en": "My auditor's notes"
+      },
+      "trozos": [
+        {
+          "es": "Respuesta A: cita un estudio que nadie le dio a la IA. Hay que verificarlo o quitarlo.",
+          "en": "Answer A: it quotes a study nobody gave the AI. It needs checking or cutting."
+        },
+        {
+          "es": "Respuesta B: trae [precio] entre corchetes. La IA inventó el precio.",
+          "en": "Answer B: it has [price] in brackets. The AI made up the price."
+        },
+        {
+          "es": "Respuesta C: trae la cédula de un cliente. Ese dato no debía viajar.",
+          "en": "Answer C: it includes a customer's ID number. That data shouldn't have traveled."
+        },
+        {
+          "es": "Respuesta D: da un precio con total seguridad. Si suena tan seguro, es correcto.",
+          "en": "Answer D: it gives a price with total confidence. If it sounds that sure, it's right."
+        },
+        {
+          "es": "Respuesta E: es un aviso para la puerta y llegó en 15 renglones. Falla la forma.",
+          "en": "Answer E: it's a sign for the door and came in 15 lines. The format fails."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Un corchete es un hueco, no un invento: la IA avisó que le faltaba el precio, y se arregla dándoselo. Y sonar seguro no prueba nada: ese precio se confirma en la fuente.",
+          "en": "You got me. A bracket is a gap, not an invention: the AI flagged that the price was missing, and the fix is to give it. And sounding sure proves nothing: that price gets confirmed at the source."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese diagnóstico sí cuadra. Busca los que confunden un hueco con un invento o la seguridad con la verdad.",
+          "en": "That diagnosis holds up. Look for the ones that mix up a gap with an invention, or confidence with truth."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué es auditar una respuesta, como se lo explicarías a Fabio, a Alirio o a Rocío.",
+          "en": "Logbook time. Write in your own words what auditing an answer means, the way you'd explain it to Fabio, Alirio or Rocío."
+        }
+      },
+      "concepto": "auditoria",
+      "definicion": {
+        "es": "Revisar una respuesta de la IA con la lista, encontrar la causa de la falla (un hueco en el prompt, un invento o un dato sensible) y repararla con un mejor prompt.",
+        "en": "Checking an AI answer with the list, finding what caused the problem (a gap in the prompt, a made-up fact or sensitive data) and fixing it with a better prompt."
+      },
+      "pregunta": {
+        "es": "Auditar una respuesta es…",
+        "en": "Auditing an answer means…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "auditoría",
+        "en": "audit"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Auditoría ya está en tu bitácora. Al aterrizar guardo ahí tus tres reparaciones, cada una con su nombre, listas para cuando algo vuelva a fallar.",
+          "en": "Saved. Your Audit card is in your logbook. When we land, I'll save your three fixes there too, each with its name, ready for the next time something goes wrong."
+        }
+      }
+    },
+    {
+      "id": "b11",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y cerramos el taller.",
+          "en": "Three questions and we close up the shop."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Te llega una respuesta de la IA para auditar. ¿Qué haces primero?",
+            "en": "An AI answer comes in for you to audit. What do you do first?"
+          },
+          "opciones": [
+            {
+              "es": "Reescribo el prompt de una vez",
+              "en": "Rewrite the prompt right away"
+            },
+            {
+              "es": "La paso por la lista y busco qué falló",
+              "en": "Run it through the list and find what failed"
+            },
+            {
+              "es": "Se la paso a otra IA para que la arregle",
+              "en": "Hand it to another AI to fix"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Sin diagnóstico, reparas a ciegas.",
+              "en": "Right. Without a diagnosis, you're fixing blind."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Cómo sabes qué reparar si todavía no sabes qué falló?",
+              "en": "Hmm. How do you know what to fix if you don't know what failed yet?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA le puso a Fabio fechas y un precio que él nunca dio. ¿Qué ataca la causa?",
+            "en": "The AI gave Fabio dates and a price he never gave it. What fixes the cause?"
+          },
+          "opciones": [
+            {
+              "es": "Pedirle que suene más seguro",
+              "en": "Ask it to sound more confident"
+            },
+            {
+              "es": "Darle los datos reales y pedirle que no invente",
+              "en": "Give it the real details and ask it not to make things up"
+            },
+            {
+              "es": "Pedirle un mensaje más largo",
+              "en": "Ask for a longer message"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. El invento nació de un hueco. Llenas el hueco y cierras la puerta al invento.",
+              "en": "Exactly. The made-up part grew out of a gap. Fill the gap and close the door on inventing."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa de dónde salieron esas fechas. ¿Qué le faltaba al prompt?",
+              "en": "Hmm. Think about where those dates came from. What was the prompt missing?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Reparaste el prompt y la nueva respuesta se ve bien. ¿Ya la puedes usar?",
+            "en": "You fixed the prompt and the new answer looks good. Can you use it now?"
+          },
+          "opciones": [
+            {
+              "es": "Sí: si el prompt está bien, la respuesta también",
+              "en": "Yes: if the prompt is right, so is the answer"
+            },
+            {
+              "es": "Solo si es más larga que la anterior",
+              "en": "Only if it's longer than the last one"
+            },
+            {
+              "es": "Primero la paso otra vez por la lista",
+              "en": "First I run it through the list again"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. La auditoría termina cuando la respuesta nueva también pasa la lista.",
+              "en": "Right. The audit ends when the new answer passes the list too."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Un buen prompt ayuda mucho, pero ¿garantiza que la IA no se equivoque?",
+              "en": "Hmm. A good prompt helps a lot, but does it guarantee the AI won't slip up?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Auditoría aterrizada, piloto. Terminaste el capítulo 2.",
+          "en": "Audit landed, pilot. You've finished Chapter 2."
+        }
+      },
+      "titulo": {
+        "es": "Taller cerrado",
+        "en": "Shop closed"
+      },
+      "texto": {
+        "es": "En este capítulo aprendiste a reparar señales: diagnosticar errores, verificar lo que la IA inventa, cuidar los datos y revisar antes de usar. Tus tres reparaciones están en tu bitácora. Lo que sigue es la zona de Trucos de piloto, y el primer truco es darle ejemplos a la IA.",
+        "en": "In this chapter you learned to repair signals: diagnose mistakes, check what AI makes up, protect data and review before you use anything. Your three fixes are in your logbook. Next up is the Pilot Tricks zone, and the first trick is giving AI examples."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Auditoría",
+        "en": "The audit"
+      },
+      "resumen": {
+        "es": "Revisas la respuesta con la lista, encuentras la causa y reparas el prompt. Después revisas la respuesta nueva.",
+        "en": "Check the answer with the list, find the cause and fix the prompt. Then check the new answer."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05",
+      "b07",
+      "b08"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Hiciste el triage de las tres respuestas",
+          "en": "You triaged the three answers"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Reparación 1: el curso de Fabio, sin inventos",
+          "en": "Fix 1: Fabio's course, nothing made up"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Frenaste a Alirio antes de dar una clave",
+          "en": "You stopped Alirio before he gave out a password"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Reparación 2: el certificado de Alirio, sin datos",
+          "en": "Fix 2: Alirio's letter, no personal data"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Reparación 3: las reglas de Rocío, para niños",
+          "en": "Fix 3: Rocío's rules, made for kids"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Atrapaste mis dos diagnósticos equivocados",
+          "en": "You caught my two wrong diagnoses"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "auditar-respuestas",
+      "titulo": {
+        "es": "Auditar respuestas de IA",
+        "en": "Auditing AI answers"
+      }
+    }
+  }
+}

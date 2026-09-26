@@ -1,0 +1,826 @@
+{
+  "formato": "punti-mision@1",
+  "id": "de-donde-salen-los-datos",
+  "mundo": "como-se-construye",
+  "capitulo": 1,
+  "numero": 2,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "fuentes-de-datos"
+  ],
+  "usaConceptos": [
+    "cadena-de-construccion",
+    "derechos-de-autor-ia"
+  ],
+  "titulo": {
+    "es": "De dónde salen los datos",
+    "en": "Where the Data Comes From"
+  },
+  "resumen": {
+    "es": "Las seis fuentes de datos de una IA y la pregunta de permiso que trae cada una.",
+    "en": "The six sources of an AI's data and the permission question each one raises."
+  },
+  "siguiente": "las-manos-detras-de-los-datos",
+  "fuentes": [
+    {
+      "titulo": "Epoch AI: Will we run out of data? Limits of LLM scaling based on human-generated data (Villalobos et al., 6 jun. 2024)",
+      "url": "https://epoch.ai/publications/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Nature: AI models collapse when trained on recursively generated data (Shumailov et al., 24 jul. 2024)",
+      "url": "https://www.nature.com/articles/s41586-024-07566-y",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "RFC 9309: Robots Exclusion Protocol (IETF, sep. 2022)",
+      "url": "https://www.rfc-editor.org/rfc/rfc9309.html",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google: rastreadores comunes y el token Google-Extended",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI: rastreadores y GPTBot",
+      "url": "https://developers.openai.com/api/docs/bots",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI Help Center: How your data is used to improve model performance",
+      "url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Clifford Chance: Copyright compliance under the EU AI Act for GPAI model providers (oct. 2025)",
+      "url": "https://www.cliffordchance.com/insights/resources/blogs/ip-insights/2025/10/copyright-compliance-under-the-eu-ai-act-for-gpai-model-providers.html",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "PBS NewsHour: ChatGPT creator OpenAI signs deal with AP to license news stories (13 jul. 2023)",
+      "url": "https://www.pbs.org/newshour/economy/chatgpt-creator-openai-signs-deal-with-ap-to-license-news-stories",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, sigo en la mina. Hoy revisamos de dónde viene la materia prima. Llegó una señal de Medellín: Ómar, dueño de una editorial pequeña, cree que sus libros terminaron dentro de una IA.",
+          "en": "Pilot, I'm still in the mine. Today we check where the raw material comes from. A signal came in from Medellín: Ómar, who runs a small publishing house, thinks his books ended up inside an AI."
+        }
+      },
+      "titulo": {
+        "es": "De dónde salen los datos",
+        "en": "Where the Data Comes From"
+      },
+      "texto": {
+        "es": "Ómar publica libros regionales: crónicas, recetas, historia de pueblos. Hoy ves las seis fuentes de datos de una IA, la pregunta de permiso de cada una y qué puede hacer él. Unos 10 minutos.",
+        "en": "Ómar publishes regional books: local stories, recipes, town histories. Today you'll see the six sources of an AI's data, the permission question behind each one, and what he can do. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las seis vetas de donde sale la materia prima de una IA. Toca cada una: todas traen una pregunta de permiso.",
+          "en": "These are the six seams an AI's raw material is dug from. Tap each one: every one of them comes with a permission question."
+        }
+      },
+      "titulo": {
+        "es": "Las 6 fuentes de datos",
+        "en": "The 6 data sources"
+      },
+      "piezas": [
+        {
+          "id": "web",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Páginas web",
+            "en": "Web pages"
+          },
+          "descripcion": {
+            "es": "Páginas públicas que copian programas llamados rastreadores.",
+            "en": "Public pages copied by programs called crawlers."
+          },
+          "ejemplo": {
+            "es": "Pública no quiere decir sin dueño. La pregunta: ¿el dueño de la página dejó que la copiaran?",
+            "en": "Public doesn't mean ownerless. The question: did the page's owner allow it to be copied?"
+          }
+        },
+        {
+          "id": "libros",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Libros",
+            "en": "Books"
+          },
+          "descripcion": {
+            "es": "Textos largos y bien escritos, muy buscados.",
+            "en": "Long, well-written texts, in high demand."
+          },
+          "ejemplo": {
+            "es": "Los libros le enseñan a escribir bien. La pregunta: ¿quién tiene los derechos y dio permiso?",
+            "en": "Books teach it to write well. The question: who holds the rights, and did they give permission?"
+          }
+        },
+        {
+          "id": "codigo",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Código",
+            "en": "Code"
+          },
+          "descripcion": {
+            "es": "Programas publicados, cada uno con su licencia.",
+            "en": "Published programs, each with its own license."
+          },
+          "ejemplo": {
+            "es": "Mucho código público trae una licencia que dice qué se permite. La pregunta: ¿esa licencia deja usarlo así?",
+            "en": "A lot of public code comes with a license saying what's allowed. The question: does that license allow this use?"
+          }
+        },
+        {
+          "id": "licencia",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Datos con licencia",
+            "en": "Licensed data"
+          },
+          "descripcion": {
+            "es": "Datos comprados o usados con un contrato firmado.",
+            "en": "Data bought or used under a signed contract."
+          },
+          "ejemplo": {
+            "es": "Hay agencias de noticias que ya firmaron acuerdos así con empresas de IA. La pregunta: ¿qué dice el contrato?",
+            "en": "Some news agencies have already signed deals like this with AI companies. The question: what does the contract say?"
+          }
+        },
+        {
+          "id": "usuarios",
+          "color": "#b388ff",
+          "titulo": {
+            "es": "Datos de usuarios",
+            "en": "User data"
+          },
+          "descripcion": {
+            "es": "Lo que la gente escribe en una app, si sus reglas lo permiten.",
+            "en": "What people type into an app, if its rules allow it."
+          },
+          "ejemplo": {
+            "es": "Algunas apps usan tus chats para entrenar si no lo apagas. La pregunta: ¿la persona sabía y podía decir que no?",
+            "en": "Some apps use your chats for training unless you switch it off. The question: did the person know, and could they say no?"
+          }
+        },
+        {
+          "id": "sinteticos",
+          "color": "#ff9f43",
+          "titulo": {
+            "es": "Datos sintéticos",
+            "en": "Synthetic data"
+          },
+          "descripcion": {
+            "es": "Textos o ejemplos que fabrica otra IA.",
+            "en": "Text or examples made by another AI."
+          },
+          "ejemplo": {
+            "es": "Sirven para llenar huecos. La pregunta: ¿las reglas de la IA que los fabricó dejan usarlos para entrenar?",
+            "en": "They help fill gaps. The question: do the rules of the AI that made them allow using them for training?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b03",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Y por qué tanto afán con los datos? Porque la veta buena se está acabando.",
+          "en": "So why all the fuss about data? Because the good seam is running out."
+        }
+      },
+      "titulo": {
+        "es": "La veta no es infinita",
+        "en": "The seam isn't endless"
+      },
+      "texto": {
+        "es": "El buen texto humano no es infinito. Un estudio de Epoch AI (2024) calcula que el texto público de internet podría quedar usado por completo entre 2026 y 2032. Por eso se pagan licencias y se fabrican datos sintéticos. Ojo: según un estudio en Nature (2024), entrenar una y otra vez con texto de IA hace olvidar lo poco común.",
+        "en": "Good human-written text isn't endless. A 2024 Epoch AI study estimates that public text online could be fully used up sometime between 2026 and 2032. So companies pay for licenses and make synthetic data. Careful: per a 2024 Nature study, training again and again on AI-made text makes a model forget rare things."
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Llegaron seis vagonetas a la mina. ¿De qué veta sale cada una?",
+          "en": "Six mine carts just rolled in. Which seam did each one come from?"
+        }
+      },
+      "titulo": {
+        "es": "¿De qué veta sale?",
+        "en": "Which seam is it from?"
+      },
+      "grupos": [
+        "web",
+        "libros",
+        "codigo",
+        "licencia",
+        "usuarios",
+        "sinteticos"
+      ],
+      "items": [
+        {
+          "grupo": "web",
+          "texto": {
+            "es": "Un programa recorre blogs de cocina y guarda su texto.",
+            "en": "A program crawls cooking blogs and saves their text."
+          }
+        },
+        {
+          "grupo": "licencia",
+          "texto": {
+            "es": "Una editorial firma un contrato y cobra por dejar usar su catálogo.",
+            "en": "A publisher signs a contract and gets paid to let its catalog be used."
+          }
+        },
+        {
+          "grupo": "sinteticos",
+          "texto": {
+            "es": "Una IA escribe 10.000 preguntas de práctica para entrenar a otra.",
+            "en": "One AI writes 10,000 practice questions to train another."
+          }
+        },
+        {
+          "grupo": "libros",
+          "texto": {
+            "es": "Novelas completas escaneadas página por página.",
+            "en": "Whole novels scanned page by page."
+          }
+        },
+        {
+          "grupo": "usuarios",
+          "texto": {
+            "es": "Chats de una app cuyas reglas permiten usarlos para entrenar.",
+            "en": "Chats from an app whose rules allow using them for training."
+          }
+        },
+        {
+          "grupo": "codigo",
+          "texto": {
+            "es": "Programas publicados en internet con sus instrucciones.",
+            "en": "Programs posted online along with their instructions."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Ya distingues las vetas, y con eso sabes qué permiso preguntar en cada una.",
+          "en": "Six for six. You can tell the seams apart, so you know which permission to ask about for each."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa vagoneta no es de ahí. Pregúntate: ¿quién hizo ese texto, una persona, un programa o otra IA?",
+          "en": "That cart doesn't belong there. Ask yourself: who made that text, a person, a program, or another AI?"
+        }
+      },
+      "malPorGrupo": {
+        "licencia": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Con licencia quiere decir que hay un contrato firmado con el dueño. ¿Esta frase habla de un contrato?",
+            "en": "Close. Licensed means there's a signed contract with the owner. Is this one about a contract?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ómar tiene una página web con fragmentos de cada libro. Esto le sirve.",
+          "en": "Ómar has a website with excerpts from every book. This is useful for him."
+        }
+      },
+      "titulo": {
+        "es": "Un letrero, no un candado",
+        "en": "A sign, not a lock"
+      },
+      "texto": {
+        "es": "Una página web puede poner un letrero para los rastreadores: un archivo llamado robots.txt. Varias empresas de IA publican el nombre de su rastreador y explican cómo bloquearlo ahí. Pero es un letrero, no un candado: pide, no obliga. Tampoco borra lo que ya se copió, ni frena las copias de tus libros que estén en otras páginas.",
+        "en": "A website can put up a sign for crawlers: a file called robots.txt. Several AI companies publish their crawler's name and explain how to block it there. But it's a sign, not a lock: it asks, it doesn't force. It also doesn't erase what was already copied, or stop copies of your books posted on other sites."
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora decide tú con Ómar. Mira las consecuencias antes de escoger.",
+          "en": "Now you decide with Ómar. Look at the consequences before you choose."
+        }
+      },
+      "titulo": {
+        "es": "¿Qué hace Ómar?",
+        "en": "What does Ómar do?"
+      },
+      "escena": {
+        "es": "Ómar le pidió a una IA que resumiera una de sus crónicas. La respuesta trajo detalles que, según él, solo están en el libro. Su página web tiene fragmentos de todo el catálogo. Su sobrino le dice: \"Tranquilo, tío, eso ya no tiene arreglo\". ¿Qué hace?",
+        "en": "Ómar asked an AI to summarize one of his books of local stories. The answer included details that, as far as he knows, are only in the book. His website has excerpts from the whole catalog. His nephew tells him: \"Relax, it's too late to do anything.\" What does he do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Nada: si ya lo copiaron, no hay nada que hacer",
+            "en": "Nothing: if it's already copied, there's nothing to do"
+          },
+          "consecuencia": {
+            "es": "Los rastreadores siguen visitando su página y nadie sabe qué quiere Ómar. Pierde la oportunidad de decidir sobre su propio catálogo.",
+            "en": "Crawlers keep visiting his site and nobody knows what Ómar wants. He gives up his chance to decide about his own catalog."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Bloquear a los rastreadores y dar el tema por cerrado",
+            "en": "Block the crawlers and call it done"
+          },
+          "consecuencia": {
+            "es": "Frena, desde hoy, a los que respetan el letrero. Pero lo ya copiado se queda, y no sabe qué derechos tiene ni si le convenía cobrar.",
+            "en": "From today on, it stops the crawlers that respect the sign. But what was copied stays, and he still doesn't know his rights or whether he could have charged."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Poner el letrero, asesorarse con un abogado y decidir si ofrece una licencia",
+            "en": "Put up the sign, see a lawyer, and decide whether to offer a license"
+          },
+          "consecuencia": {
+            "es": "Frena la copia futura de quien respeta el letrero, conoce sus derechos y decide si cobra por su catálogo. Es más trabajo, pero ahora decide él.",
+            "en": "It stops future copying by crawlers that respect the sign, he learns his rights, and he decides whether to charge for his catalog. More work, but now he's the one deciding."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Ómar no controla lo que ya pasó, pero sí lo que sigue. Y lo legal cambia según el país: para su caso, un abogado de derechos de autor. Eso lo ves a fondo en Brújula.",
+          "en": "Ómar can't control what already happened, but he can control what comes next. And the legal side depends on the country: for his case, a copyright lawyer. You'll go deeper on that in Compass."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Las reglas sobre esto se mueven rápido. Esta pantalla la reviso seguido.",
+          "en": "The rules on this move fast. I check this screen often."
+        }
+      },
+      "titulo": {
+        "es": "Reglas que se están moviendo",
+        "en": "Rules on the move"
+      },
+      "texto": {
+        "es": "Esto es lo que encontramos a la fecha de esta misión sobre entrenar IA con obras ajenas. No es asesoría legal: cada país tiene sus reglas y cambian. Para un caso real, consulta a un abogado.",
+        "en": "Here's what we found, as of this mission's date, about training AI on other people's work. It isn't legal advice: every country has its own rules and they change. For a real case, talk to a lawyer."
+      },
+      "revisado": "2026-09-26",
+      "tabla": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Dónde",
+            "en": "Where"
+          },
+          "b": {
+            "es": "Qué hay",
+            "en": "What's in place"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Unión Europea",
+              "en": "European Union"
+            },
+            "b": {
+              "es": "Los dueños pueden reservar sus obras con una señal que las máquinas leen. Desde el 2 de agosto de 2025, los modelos de uso general deben respetarla y publicar un resumen de sus datos.",
+              "en": "Owners can reserve their works with a machine-readable signal. Since August 2, 2025, general-purpose model providers must respect it and publish a summary of their training data."
+            }
+          },
+          {
+            "a": {
+              "es": "El letrero robots.txt",
+              "en": "The robots.txt sign"
+            },
+            "b": {
+              "es": "Es un estándar público desde 2022. Pide a los rastreadores que no entren, pero no es un permiso ni un candado.",
+              "en": "A public standard since 2022. It asks crawlers to stay out, but it isn't a permission system or a lock."
+            }
+          },
+          {
+            "a": {
+              "es": "Demandas y autoría",
+              "en": "Lawsuits and authorship"
+            },
+            "b": {
+              "es": "Hay pleitos abiertos en varios países. Lo ves en Brújula, misión 12.",
+              "en": "There are open lawsuits in several countries. You'll see them in Compass, mission 12."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de minero. Ómar quiere una IA propia para su editorial y antes quiere saber de dónde saldrían los datos. Pídele a la IA el mapa de vetas.",
+          "en": "Your turn to be the miner. Ómar wants his own AI for the publishing house, and first he wants to know where the data would come from. Ask the AI for a map of the seams."
+        }
+      },
+      "titulo": {
+        "es": "El mapa de vetas de Ómar",
+        "en": "Ómar's map of seams"
+      },
+      "reto": {
+        "es": "Datos: la editorial de Ómar, en Medellín, quiere una IA que entienda libros regionales de Antioquia: crónicas, recetas e historia de pueblos. Ómar necesita saber de dónde podrían salir los datos, qué permiso pide cada fuente y qué podría salir mal con cada una.",
+        "en": "Details: Ómar's publishing house in Medellín wants an AI that understands regional books from Antioquia: local stories, recipes and town histories. Ómar needs to know where the data could come from, what permission each source requires, and what could go wrong with each one."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "varias",
+          "texto": {
+            "es": "Pide varias fuentes distintas",
+            "en": "Asks for several different sources"
+          },
+          "rubrica": "El prompt pide varias fuentes de datos distintas (al menos tres, o dice 'varias', 'cada fuente', una tabla de fuentes). No cuenta preguntar solo 'de dónde saco datos' esperando una sola respuesta.",
+          "claves": {
+            "es": [
+              "varias fuentes",
+              "distintas fuentes",
+              "diferentes fuentes",
+              "fuentes distintas",
+              "fuentes posibles",
+              "posibles fuentes",
+              "cada fuente",
+              "tabla de fuentes",
+              "tipos de fuente",
+              "3 fuentes",
+              "tres fuentes",
+              "5 fuentes",
+              "cinco fuentes"
+            ],
+            "en": [
+              "several sources",
+              "different sources",
+              "various sources",
+              "possible sources",
+              "each source",
+              "every source",
+              "table of sources",
+              "sources table",
+              "types of source",
+              "kinds of source",
+              "3 sources",
+              "three sources",
+              "5 sources",
+              "five sources"
+            ]
+          }
+        },
+        {
+          "id": "permiso",
+          "texto": {
+            "es": "Pide el permiso de cada fuente",
+            "en": "Asks about permission for each"
+          },
+          "rubrica": "El prompt pide, para cada fuente, si hace falta permiso, autorización o licencia (o quién tiene los derechos). No cuenta si solo nombra fuentes sin preguntar por permisos.",
+          "claves": {
+            "es": [
+              "permiso",
+              "licencia",
+              "autoriza",
+              "derechos de autor",
+              "derecho de autor",
+              "quien tiene los derechos",
+              "consentimiento"
+            ],
+            "en": [
+              "permission",
+              "license",
+              "licence",
+              "authoriz",
+              "copyright",
+              "who owns the rights",
+              "consent"
+            ]
+          }
+        },
+        {
+          "id": "riesgo",
+          "texto": {
+            "es": "Pide un riesgo de cada fuente",
+            "en": "Asks for a risk for each"
+          },
+          "rubrica": "El prompt pide un riesgo, desventaja o lo que podría salir mal con cada fuente (calidad, permiso, sesgo, errores). No cuenta pedir solo 'ventajas' o 'la mejor fuente'.",
+          "claves": {
+            "es": [
+              "riesgo",
+              "desventaja",
+              "salir mal",
+              "sesgo",
+              "peligro",
+              "cuidado con",
+              "puntos debiles",
+              "contras"
+            ],
+            "en": [
+              "risk",
+              "downside",
+              "drawback",
+              "go wrong",
+              "bias",
+              "danger",
+              "watch out",
+              "weak point"
+            ]
+          }
+        },
+        {
+          "id": "para",
+          "texto": {
+            "es": "Dice para qué es la IA",
+            "en": "Says what the AI is for"
+          },
+          "rubrica": "El prompt dice para qué es la IA: entender libros regionales de Antioquia, de una editorial pequeña (crónicas, recetas, historia de pueblos). No cuenta decir solo 'una IA' sin decir para qué.",
+          "claves": {
+            "es": [
+              "editorial",
+              "libros regionales",
+              "antioquia",
+              "medellin",
+              "cronicas",
+              "historia de pueblos",
+              "recetas"
+            ],
+            "en": [
+              "publisher",
+              "publishing",
+              "regional books",
+              "antioquia",
+              "medellin",
+              "local stories",
+              "town histories",
+              "recipes"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una editorial pequeña a planear los datos para una IA. Responde con una tabla corta en texto plano, con las columnas que pida el prompt. Usa solo lo que dice el prompt. No inventes leyes, cifras, empresas ni enlaces. Si hablas de permisos, aclara en una línea que es orientación general y que para decidir hay que consultar a un abogado.",
+        "en": "You are an AI helping a small publishing house plan the data for an AI. Reply with a short plain-text table using the columns the prompt asks for. Use only what the prompt says. Don't invent laws, figures, companies or links. If you talk about permissions, add one line saying it's general guidance and a lawyer should be consulted before deciding."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Fuente | Permiso | Riesgo\nLibros de la editorial | Contrato con cada autor | Autores que no lo autorizan\nCrónicas en otras páginas web | Del dueño de cada página | Copiar sin permiso\nArchivos de bibliotecas públicas | Preguntar a la biblioteca | Escaneos con errores\nRecetas que mandan los lectores | Autorización de cada lector | Pocos pueblos representados\nPreguntas de práctica hechas por IA | Revisar las reglas de esa IA | Sonar genérico o repetir errores\n\nEsto es orientación general. Antes de decidir, consulten a un abogado.",
+            "en": "Source | Permission | Risk\nThe publisher's own books | Contract with each author | Authors who don't agree\nLocal stories on other websites | From each site's owner | Copying without permission\nPublic library archives | Ask the library | Scans with errors\nRecipes sent in by readers | Consent from each reader | Only a few towns represented\nPractice questions made by an AI | Check that AI's rules | Sounding generic or repeating mistakes\n\nThis is general guidance. Talk to a lawyer before deciding."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Mapa completo. Cada veta con su permiso y su riesgo. Con esto Ómar sabe qué preguntar antes de meter un solo libro al reactor.",
+              "en": "Full map. Every seam with its permission and its risk. Now Ómar knows what to ask before a single book goes into the reactor."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Puedes usar textos de internet, libros y documentos sobre Antioquia. Recopílalos y entrena tu IA con ellos.",
+            "en": "You can use online text, books and documents about Antioquia. Gather them and train your AI on them."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. Suena fácil porque nadie preguntó por permisos ni riesgos. Revisa la lista y transmite otra vez.",
+              "en": "Weak signal. It sounds easy because nobody asked about permissions or risks. Check the list and transmit again."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué pregunta harías antes de usar cualquier fuente de datos.",
+          "en": "Into the logbook. In your own words, write the question you'd ask before using any data source."
+        }
+      },
+      "concepto": "fuentes-de-datos",
+      "definicion": {
+        "es": "Los datos de una IA salen de páginas web, libros, código, licencias, usuarios y datos sintéticos. Cada fuente trae su pregunta: ¿quién dio permiso?",
+        "en": "An AI's data comes from web pages, books, code, licenses, users and synthetic data. Every source comes with its question: who gave permission?"
+      },
+      "pregunta": {
+        "es": "Antes de usar una fuente de datos, pregunto…",
+        "en": "Before using a data source, I ask…"
+      },
+      "guardaPrompt": "b08",
+      "etiqueta": {
+        "es": "fuentes de datos",
+        "en": "data sources"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu mapa de vetas quedan en la bitácora. Vuelven en la ficha de datos al final del capítulo.",
+          "en": "Saved. Your note and your map of seams are in the logbook. They come back in the datasheet at the end of the chapter."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos esta galería.",
+          "en": "Two questions and we close up this tunnel."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Ómar puso el letrero robots.txt en su página. ¿Qué logra?",
+            "en": "Ómar put the robots.txt sign on his site. What does it do?"
+          },
+          "opciones": [
+            {
+              "es": "Pide que no lo copien los rastreadores que respetan el letrero",
+              "en": "Asks crawlers that respect the sign not to copy it"
+            },
+            {
+              "es": "Borra sus libros de las IA que ya los usaron",
+              "en": "Removes his books from AIs that already used them"
+            },
+            {
+              "es": "Bloquea cualquier programa, lo respete o no",
+              "en": "Blocks every program, whether it respects it or not"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Es un letrero: sirve con quien lo respeta y desde hoy.",
+              "en": "Right. It's a sign: it works with those who respect it, from now on."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Recuerda la diferencia entre un letrero y un candado.",
+              "en": "Remember the difference between a sign and a lock."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Por qué las empresas de IA buscan licencias y datos sintéticos?",
+            "en": "Why do AI companies look for licenses and synthetic data?"
+          },
+          "opciones": [
+            {
+              "es": "Porque el buen texto humano público no es infinito",
+              "en": "Because good public human text isn't endless"
+            },
+            {
+              "es": "Porque la ley prohíbe usar páginas web en todo el mundo",
+              "en": "Because the law bans using web pages everywhere"
+            },
+            {
+              "es": "Porque los datos sintéticos siempre son mejores",
+              "en": "Because synthetic data is always better"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La veta buena se acaba, y hay que buscar otra con permiso.",
+              "en": "Exactly. The good seam is running out, so they need new ones, with permission."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en lo que dijo el estudio de Epoch AI sobre el texto público.",
+              "en": "Think about what the Epoch AI study said about public text."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Fuentes de datos",
+        "en": "Data sources"
+      },
+      "resumen": {
+        "es": "Web, libros, código, licencias, usuarios y sintéticos. Cada fuente trae su pregunta de permiso.",
+        "en": "Web, books, code, licenses, users and synthetic data. Every source comes with a permission question."
+      }
+    },
+    "piezas": "b02",
+    "mejorPrompt": [
+      "b08"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Reconociste las seis vetas de datos",
+          "en": "You recognized the six data seams"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Ayudaste a Ómar a decidir sobre su catálogo",
+          "en": "You helped Ómar decide about his catalog"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Armaste el mapa de fuentes, permisos y riesgos",
+          "en": "You built the map of sources, permissions and risks"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Pasaste el punto de control",
+          "en": "You passed the checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "rastrear-fuentes-de-datos",
+      "titulo": {
+        "es": "Rastrear de dónde salen los datos",
+        "en": "Tracing where data comes from"
+      }
+    }
+  }
+}

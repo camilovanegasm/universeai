@@ -1,0 +1,978 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-armeria",
+  "mundo": "herramientas-de-ia",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "herramienta-por-tarea"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "datos-sensibles",
+    "elegir-asistente"
+  ],
+  "titulo": {
+    "es": "La armería",
+    "en": "The Armory"
+  },
+  "resumen": {
+    "es": "Escoger la herramienta de IA por la tarea, no por la marca: qué pieza sale, con qué material, para quién y qué es privado.",
+    "en": "Choosing an AI tool by the task, not the brand: what comes out, from what material, for whom and what's private."
+  },
+  "siguiente": "que-suene-a-ti",
+  "fuentes": [
+    {
+      "titulo": "ChatGPT: planes (Free, Go, Plus, Pro), investigación profunda limitada en Free",
+      "url": "https://chatgpt.com/pricing/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Gemini: planes (gratis, Google AI Plus, Pro y Ultra), Deep Research en el plan gratis",
+      "url": "https://gemini.google/subscriptions/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Claude: planes (Free, Pro, Max); búsqueda web en todos, Research desde Pro",
+      "url": "https://claude.com/pricing",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Microsoft: diferencia entre Copilot gratis y Copilot en Microsoft 365",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Microsoft: Copilot en Microsoft 365 Personal, Family, Premium y Pro (con créditos de IA)",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/copilot-in-microsoft-365-personal-family-and-premium",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google: el Modo IA de la Búsqueda llega en español a todo el mundo (23 sep. 2025; respuestas con enlaces a la web)",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-spanish/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google: Gmail entra en la era Gemini (8 ene. 2026; Help me write gratis, primero en EE. UU. y en inglés)",
+      "url": "https://blog.google/products-and-platforms/products/gmail/gmail-is-entering-the-gemini-era/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Canva: presentaciones con IA (Magic Presentations, herramienta premium que gasta uso de IA)",
+      "url": "https://www.canva.com/help/using-magic-presentations/",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Hola, piloto. Te doy la bienvenida a Forja, el planeta volcánico. Lo construí alrededor de una fragua que nunca se apaga. Aquí manda la regla del herrero: el fuego calienta, pero el que da forma eres tú. La IA es el fuego.",
+          "en": "Hi, pilot. Welcome to Forge, the volcanic planet. I built it around a fire that never goes out. The blacksmith's rule applies here: the fire heats the metal, but you're the one who shapes it. AI is the fire."
+        }
+      },
+      "titulo": {
+        "es": "La armería",
+        "en": "The Armory"
+      },
+      "texto": {
+        "es": "Llegó un encargo a la fragua. Diana, asistente de una empresa de buses en Bucaramanga, tiene cuatro encargos este lunes. Hoy escoges la herramienta para cada uno. ¿No has pasado por Eco? Empieza allá. Unos 10 minutos.",
+        "en": "A job just came into the forge. Diana, an assistant at a bus company in Bucaramanga, has four jobs this Monday. Today you pick the right tool for each one. Haven't done Eco yet? Start there. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de escoger herramienta, el herrero mira el encargo. Son cuatro preguntas, y juntas forman la ficha del encargo. Toca cada una.",
+          "en": "Before picking a tool, a blacksmith looks at the job. There are four questions, and together they make the job sheet. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "La ficha del encargo",
+        "en": "The job sheet"
+      },
+      "piezas": [
+        {
+          "id": "pieza",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué pieza sale",
+            "en": "What comes out"
+          },
+          "descripcion": {
+            "es": "Un correo, una tabla, un resumen, un aviso.",
+            "en": "An email, a table, a summary, a notice."
+          },
+          "ejemplo": {
+            "es": "\"Un aviso de 5 líneas para los conductores\". Si no sabes qué sale, ninguna herramienta te salva.",
+            "en": "\"A 5-line notice for the drivers.\" If you don't know what comes out, no tool can save you."
+          }
+        },
+        {
+          "id": "material",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Con qué metal cuentas",
+            "en": "What raw metal you have"
+          },
+          "descripcion": {
+            "es": "Notas, un documento, una tabla, una grabación.",
+            "en": "Notes, a document, a spreadsheet, a recording."
+          },
+          "ejemplo": {
+            "es": "\"La tabla de turnos y el correo del gerente\". Tu metal en bruto decide dónde conviene trabajar.",
+            "en": "\"The shift table and the manager's email.\" Your raw metal decides where it's best to work."
+          }
+        },
+        {
+          "id": "destino",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Quién la recibe",
+            "en": "Who gets it"
+          },
+          "descripcion": {
+            "es": "Dónde se usa y quién la va a leer.",
+            "en": "Where it's used and who will read it."
+          },
+          "ejemplo": {
+            "es": "\"El grupo de WhatsApp de los conductores\". Un chat no se escribe igual que un informe para el gerente.",
+            "en": "\"The drivers' WhatsApp group.\" A group chat isn't written like a report for the manager."
+          }
+        },
+        {
+          "id": "privado",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Qué es privado",
+            "en": "What's private"
+          },
+          "descripcion": {
+            "es": "Datos de personas o de la empresa que no salen.",
+            "en": "People's or company data that stays in."
+          },
+          "ejemplo": {
+            "es": "\"La tabla trae cédulas y celulares\": eso se quita antes de pegar nada en una IA.",
+            "en": "\"The table has ID and phone numbers\": those come out before you paste anything into an AI."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b03",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Con la ficha lista, ahora sí entramos a la armería. Las herramientas de IA vienen en cinco familias.",
+          "en": "With the job sheet ready, now we step into the armory. AI tools come in five families."
+        }
+      },
+      "titulo": {
+        "es": "Las cinco familias",
+        "en": "The five families"
+      },
+      "texto": {
+        "es": "No hay una herramienta para todo. Cada familia es buena para un tipo de tarea. Mira qué pieza sale y dónde está tu metal en bruto, y de ahí sale la familia. La marca viene después. Sobre el precio: casi todas tienen un plan gratis con límites. Empieza por ahí.",
+        "en": "There's no single tool for everything. Each family is good at one kind of task. Look at what comes out and where your raw metal lives, and that gives you the family. The brand comes later. As for price: almost all of them have a free plan with limits. Start there."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Familia",
+            "en": "Family"
+          },
+          "b": {
+            "es": "Buena para",
+            "en": "Good for"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Asistente de chat",
+              "en": "Chat assistant"
+            },
+            "b": {
+              "es": "Escribir, resumir y ordenar lo que tú le pegas",
+              "en": "Writing, summarizing and organizing what you paste in"
+            }
+          },
+          {
+            "a": {
+              "es": "Búsqueda con IA",
+              "en": "AI search"
+            },
+            "b": {
+              "es": "Datos de hoy, con enlaces a las fuentes",
+              "en": "Today's facts, with links to the sources"
+            }
+          },
+          {
+            "a": {
+              "es": "Investigación profunda",
+              "en": "Deep research"
+            },
+            "b": {
+              "es": "Preguntas grandes: tarda minutos y entrega un informe",
+              "en": "Big questions: it takes minutes and returns a report"
+            }
+          },
+          {
+            "a": {
+              "es": "IA en tus programas",
+              "en": "AI inside your apps"
+            },
+            "b": {
+              "es": "Trabajar sobre tu correo, tus documentos y tus hojas",
+              "en": "Working on your email, documents and spreadsheets"
+            }
+          },
+          {
+            "a": {
+              "es": "Herramienta especializada",
+              "en": "Specialized tool"
+            },
+            "b": {
+              "es": "Una sola tarea: transcribir, hacer diapositivas, editar audio",
+              "en": "One job: transcribing, making slides, editing audio"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estos son los encargos de Diana y uno más de su semana. ¿Qué familia va con cada uno?",
+          "en": "Your turn. Here are Diana's jobs, plus one more from her week. Which family goes with each one?"
+        }
+      },
+      "titulo": {
+        "es": "Los encargos de Diana",
+        "en": "Diana's jobs"
+      },
+      "grupos": [
+        {
+          "id": "chat",
+          "titulo": {
+            "es": "Asistente de chat",
+            "en": "Chat assistant"
+          }
+        },
+        {
+          "id": "busqueda",
+          "titulo": {
+            "es": "Búsqueda con IA",
+            "en": "AI search"
+          }
+        },
+        {
+          "id": "programas",
+          "titulo": {
+            "es": "IA en tus programas",
+            "en": "AI inside your apps"
+          }
+        },
+        {
+          "id": "especial",
+          "titulo": {
+            "es": "Herramienta especializada",
+            "en": "Specialized tool"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "chat",
+          "texto": {
+            "es": "Convertir sus notas sueltas en un aviso para los conductores",
+            "en": "Turn her scattered notes into a notice for the drivers"
+          }
+        },
+        {
+          "grupo": "busqueda",
+          "texto": {
+            "es": "Saber si ya salió la tarifa de peajes del año que viene",
+            "en": "Find out if next year's toll rates are out yet"
+          }
+        },
+        {
+          "grupo": "programas",
+          "texto": {
+            "es": "Resumir un hilo de 40 correos con el taller, sin sacarlo del correo",
+            "en": "Summarize a 40-email thread with the repair shop without leaving her inbox"
+          }
+        },
+        {
+          "grupo": "especial",
+          "texto": {
+            "es": "Pasar a texto la grabación de una hora del comité, con quién habló",
+            "en": "Turn an hour-long committee recording into text, showing who spoke"
+          }
+        },
+        {
+          "grupo": "programas",
+          "texto": {
+            "es": "Sacar el total de tiquetes por ruta dentro de la misma hoja de cálculo",
+            "en": "Get total tickets per route right inside the same spreadsheet"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Cinco de cinco. Ya no escoges por la marca: escoges por la tarea y por dónde vive el material.",
+          "en": "Five for five. You're not picking by brand anymore: you pick by the task and by where the material lives."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, no. Mira dos cosas: ¿el dato cambia seguido? ¿El material ya vive dentro de un programa?",
+          "en": "Hmm, not quite. Check two things: does the fact change often? Does the material already live inside an app?"
+        }
+      },
+      "malPorGrupo": {
+        "programas": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Fíjate dónde vive el material: si ya está en el correo o en la hoja, la IA de ese programa lo ve sin copiar nada.",
+            "en": "Close. Look at where the material lives: if it's already in the inbox or the spreadsheet, that app's AI can see it without copying anything."
+          }
+        },
+        "busqueda": {
+          "estado": "error",
+          "texto": {
+            "es": "Pista: ese dato cambia cada año. Un asistente que no busca en internet te puede dar uno viejo.",
+            "en": "Hint: that fact changes every year. An assistant that doesn't search the web could give you an old one."
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Aquí sí van nombres, con fecha. Son ejemplos de hoy, no recomendaciones. Los planes y los límites cambian seguido, por eso reviso esta pantalla cada semana.",
+          "en": "This is where the names go, with a date. They're today's examples, not recommendations. Plans and limits change often, so I check this screen every week."
+        }
+      },
+      "titulo": {
+        "es": "La armería hoy",
+        "en": "The armory today"
+      },
+      "texto": {
+        "es": "Casi todas tienen plan gratis, con límites que cambian. Antes de pagar, mira lo que ya tienes: tu correo o tu paquete de oficina quizás ya traen IA. Quién es cada empresa y cómo compararlas lo ves en Lexia.",
+        "en": "Almost all of them have a free plan, with limits that change. Before paying, check what you already have: your email or office suite may already include AI. Who each company is and how to compare them is covered in Lexia."
+      },
+      "revisado": "2026-09-26",
+      "tabla": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Familia",
+            "en": "Family"
+          },
+          "b": {
+            "es": "Ejemplos (septiembre de 2026)",
+            "en": "Examples (September 2026)"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Asistente de chat",
+              "en": "Chat assistant"
+            },
+            "b": {
+              "es": "ChatGPT, Gemini, Claude y Copilot, todos con plan gratis",
+              "en": "ChatGPT, Gemini, Claude and Copilot, all with a free plan"
+            }
+          },
+          {
+            "a": {
+              "es": "Búsqueda con IA",
+              "en": "AI search"
+            },
+            "b": {
+              "es": "El Modo IA de Google, en español desde 2025, y la búsqueda web de esos asistentes",
+              "en": "Google's AI Mode, in Spanish since 2025, and those assistants' web search"
+            }
+          },
+          {
+            "a": {
+              "es": "Investigación profunda",
+              "en": "Deep research"
+            },
+            "b": {
+              "es": "ChatGPT y Gemini la incluyen, con límites en el plan gratis",
+              "en": "ChatGPT and Gemini include it, with limits on the free plan"
+            }
+          },
+          {
+            "a": {
+              "es": "IA en tus programas",
+              "en": "AI inside your apps"
+            },
+            "b": {
+              "es": "Copilot en Microsoft 365 Personal y Familia; Gemini en Gmail (algunas funciones, primero en inglés)",
+              "en": "Copilot in Microsoft 365 Personal and Family; Gemini in Gmail (some features, English first)"
+            }
+          },
+          {
+            "a": {
+              "es": "Herramienta especializada",
+              "en": "Specialized tool"
+            },
+            "b": {
+              "es": "Canva y otras para diapositivas; apps de transcripción de audio",
+              "en": "Canva and others for slides; audio transcription apps"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno en el yunque. Diana tiene que avisarles a los conductores los turnos de diciembre. Antes de abrir cualquier IA, escribe la ficha del encargo. La armería te dirá qué familia usar.",
+          "en": "Your turn at the anvil. Diana has to tell the drivers their December shifts. Before opening any AI, write the job sheet. The armory will tell you which family to use."
+        }
+      },
+      "titulo": {
+        "es": "La ficha del aviso",
+        "en": "The notice's job sheet"
+      },
+      "reto": {
+        "es": "Datos de Diana (inventados): hay que avisarles a los 35 conductores sus turnos de diciembre por el grupo de WhatsApp. Tiene la tabla de turnos en una hoja de cálculo, con nombres, cédulas y celulares, y un correo del gerente con dos cambios de ruta. Escribe la ficha del encargo.",
+        "en": "Diana's details (made up): the 35 drivers need their December shifts, sent to their WhatsApp group. She has the shift table in a spreadsheet, with names, ID numbers and phone numbers, plus an email from the manager with two route changes. Write the job sheet."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "pieza",
+          "texto": {
+            "es": "Qué pieza debe salir",
+            "en": "What should come out"
+          },
+          "rubrica": "La ficha dice qué pieza debe salir: un aviso, mensaje, circular o comunicado para los conductores o con los turnos. No cuenta nombrar una herramienta o una marca ('usa ChatGPT', 'con la mejor IA') como si eso fuera la tarea, ni 'ayúdame con los turnos' sin decir qué producir.",
+          "claves": {
+            "es": [
+              "aviso",
+              "mensaje para",
+              "mensaje con",
+              "un mensaje",
+              "circular",
+              "comunicado",
+              "notificacion",
+              "anuncio"
+            ],
+            "en": [
+              "notice",
+              "message for",
+              "message to",
+              "message with",
+              "a message",
+              "announcement",
+              "memo",
+              "notification"
+            ]
+          }
+        },
+        {
+          "id": "material",
+          "texto": {
+            "es": "Con qué material cuenta",
+            "en": "What material there is"
+          },
+          "rubrica": "La ficha dice con qué material cuenta: la tabla u hoja de turnos, o el correo del gerente con los cambios de ruta. No cuenta 'los datos', 'la información' o 'lo que tengo' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "tabla",
+              "hoja de calculo",
+              "hoja de turnos",
+              "excel",
+              "planilla",
+              "correo del gerente",
+              "el correo",
+              "cambios de ruta"
+            ],
+            "en": [
+              "table",
+              "spreadsheet",
+              "shift sheet",
+              "excel",
+              "manager's email",
+              "managers email",
+              "the email",
+              "route changes"
+            ]
+          }
+        },
+        {
+          "id": "destino",
+          "texto": {
+            "es": "Quién la recibe o dónde se usa",
+            "en": "Who gets it or where it's used"
+          },
+          "rubrica": "La ficha dice quién recibe la pieza (los conductores) o dónde se usa (el grupo de WhatsApp). No cuenta 'para la empresa', 'para todos' o 'para la gente' sin decir quiénes son.",
+          "claves": {
+            "es": [
+              "conductor",
+              "choferes",
+              "whatsapp",
+              "wasap",
+              "grupo"
+            ],
+            "en": [
+              "driver",
+              "whatsapp",
+              "group chat",
+              "the group"
+            ]
+          }
+        },
+        {
+          "id": "privado",
+          "texto": {
+            "es": "Qué es privado y se quita",
+            "en": "What's private and gets removed"
+          },
+          "rubrica": "La ficha dice que hay datos privados (cédulas, celulares, datos personales) y que se quitan o no se pegan. No cuenta 'cuidado con los datos' sin decir cuáles, ni mencionar las cédulas o los celulares sin decir que se quitan.",
+          "claves": {
+            "es": [
+              "sin las cedulas",
+              "sin cedulas",
+              "sin los celulares",
+              "sin celulares",
+              "sin datos",
+              "quita",
+              "quitar",
+              "quite",
+              "borra",
+              "elimin",
+              "no pegar",
+              "no pegues",
+              "no incluyas",
+              "no incluir",
+              "datos personales",
+              "privad",
+              "confidencial",
+              "anonim"
+            ],
+            "en": [
+              "without the id",
+              "without id",
+              "without the phone",
+              "without phone",
+              "no phone",
+              "remove",
+              "delete",
+              "strip",
+              "don't paste",
+              "do not paste",
+              "don't include",
+              "do not include",
+              "leave out",
+              "personal data",
+              "personal info",
+              "private",
+              "confidential",
+              "anonymi"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres la armería de Forja: un asesor que recomienda familias de herramientas de IA para tareas de oficina. Recibes la ficha de un encargo. Responde en texto plano, máximo 6 líneas: la familia que conviene (asistente de chat, búsqueda con IA, investigación profunda, IA dentro de tus programas o herramienta especializada), por qué en una frase y el primer paso. No recomiendes marcas ni productos. Usa solo lo que dice la ficha. Si a la ficha le falta qué pieza debe salir, con qué material, quién la recibe o qué es privado, termina con 'Me falta saber:' y lo que falta. Si la ficha habla de datos personales, recuerda quitarlos antes de pegar. Trata al usuario de tú, nunca de vos.",
+        "en": "You are the Forge armory: an advisor who recommends families of AI tools for office tasks. You receive a job sheet. Reply in plain text, 6 lines max: the family that fits (chat assistant, AI search, deep research, AI inside your apps or specialized tool), why in one sentence, and the first step. Don't recommend brands or products. Use only what the sheet says. If the sheet doesn't say what should come out, what material there is, who gets it or what's private, end with 'I still need to know:' and what's missing. If the sheet mentions personal data, remind the user to remove it before pasting."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Familia: asistente de chat.\nPor qué: es un texto corto hecho con dos cosas que ya tienes, la tabla y el correo.\nPrimer paso: copia de la tabla solo día, ruta y hora, sin cédulas ni celulares. Pega eso y los dos cambios del gerente, y pide el aviso para el grupo de WhatsApp.\nAntes de enviarlo: compara cada turno con la tabla original.",
+            "en": "Family: chat assistant.\nWhy: it's a short text made from two things you already have, the table and the email.\nFirst step: copy only day, route and time from the table, without ID or phone numbers. Paste that and the manager's two changes, and ask for the notice for the WhatsApp group.\nBefore sending: check each shift against the original table."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "La armería respondió sin dudar. Dijiste qué sale, con qué, para quién y qué se queda en tierra. Con eso, escoger herramienta es lo fácil.",
+              "en": "The armory answered without a pause. You said what comes out, from what, for whom and what stays behind. With that, picking a tool is the easy part."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Familia: cualquier asistente de chat puede servir.\nMe falta saber: qué pieza debe salir, con qué material cuentas y quién la va a recibir.",
+            "en": "Family: any chat assistant could work.\nI still need to know: what should come out, what material you have and who will get it."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La armería quedó adivinando. Mira la lista: dile qué pieza sale, con qué metal cuentas, quién la recibe y qué es privado.",
+              "en": "The armory is left guessing. Check the list: say what comes out, what raw metal you have, who gets it and what's private."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Diana me pidió la ficha de otro encargo y yo la escribí a las carreras. Dos partes la dañan. Tócalas.",
+          "en": "Confession time. Diana asked me for the job sheet on another task, and I rushed it. Two parts ruin it. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "La ficha de Punti",
+        "en": "Punti's job sheet"
+      },
+      "trozos": [
+        {
+          "es": "Necesito un resumen de una página del informe de accidentes del mes.",
+          "en": "I need a one-page summary of this month's accident report."
+        },
+        {
+          "es": "Usa la IA más famosa y listo.",
+          "en": "Just use the most famous AI."
+        },
+        {
+          "es": "El material es el informe en PDF, de 20 páginas.",
+          "en": "The material is the 20-page PDF report."
+        },
+        {
+          "es": "Pégalo completo, con los nombres y las cédulas de los heridos.",
+          "en": "Paste it all in, with the injured people's names and ID numbers."
+        },
+        {
+          "es": "Lo lee el gerente el martes en el comité.",
+          "en": "The manager reads it on Tuesday at the committee meeting."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. \"La IA más famosa\" no dice nada de la tarea: la familia sale de qué pieza necesitas. Y los nombres y cédulas de los heridos se quitan antes de pegar. El resumen no los necesita.",
+          "en": "You got me. \"The most famous AI\" says nothing about the task: the family comes from the piece you need. And the injured people's names and IDs come out before pasting. The summary doesn't need them."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte sí ayuda a escoger. Busca la que habla de fama y no de tarea, y la que suelta datos.",
+          "en": "That part does help you choose. Look for the one about fame instead of the task, and the one that leaks data."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Última regla de la fragua. Diana ya tiene el borrador del aviso y se ve perfecto. ¿Qué hace antes de mandarlo al grupo?",
+          "en": "One last forge rule. Diana has the draft notice and it looks perfect. What does she do before sending it to the group?"
+        }
+      },
+      "titulo": {
+        "es": "Templar antes de entregar",
+        "en": "Temper before you deliver"
+      },
+      "escena": {
+        "es": "La IA le entregó a Diana el aviso con los turnos de diciembre. Está bien escrito, es corto y no trae datos privados. Son las 5:50 p. m. y el grupo de conductores espera. ¿Qué hace Diana?",
+        "en": "The AI gave Diana the notice with the December shifts. It's well written, short and has no private data. It's 5:50 p.m. and the drivers' group is waiting. What does Diana do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Lo manda ya: está bien escrito",
+            "en": "Sends it now: it's well written"
+          },
+          "consecuencia": {
+            "es": "Un turno salió corrido un día. Dos conductores llegan cuando no era y una ruta sale sin bus. Bien escrito no es lo mismo que correcto.",
+            "en": "One shift got moved by a day. Two drivers show up on the wrong day and one route has no bus. Well written isn't the same as correct."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Compara cada turno con la tabla y lo manda",
+            "en": "Checks each shift against the table, then sends it"
+          },
+          "consecuencia": {
+            "es": "Eso es templar. En cinco minutos encuentra el turno corrido, lo arregla y manda un aviso que nadie tiene que corregir.",
+            "en": "That's tempering. In five minutes she finds the shifted day, fixes it and sends a notice nobody has to correct."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Le pregunta a la IA si el aviso está bien",
+            "en": "Asks the AI if the notice is right"
+          },
+          "consecuencia": {
+            "es": "La IA dice que todo está correcto, muy segura. Pero no lo comparó con nada: la tabla original la tiene Diana.",
+            "en": "The AI says it's all correct, very confidently. But it didn't compare it with anything: Diana is the one with the original table."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "En Forja a esto le decimos templar: revisar la pieza antes de entregarla. Cifras, nombres, fechas y a quién le llega. Una pieza sin templar se parte en la mano del cliente.",
+          "en": "In Forge we call this tempering: checking the piece before you hand it over. Numbers, names, dates and who it goes to. An untempered piece breaks in the customer's hand."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cómo escoges una herramienta de IA, como se lo explicarías a Diana.",
+          "en": "Logbook time. Write in your own words how you choose an AI tool, the way you'd explain it to Diana."
+        }
+      },
+      "concepto": "herramienta-por-tarea",
+      "definicion": {
+        "es": "Escoger la herramienta por la tarea y no por la marca: primero dices qué pieza sale, con qué material, quién la recibe y qué es privado. Eso te dice qué familia usar.",
+        "en": "Choosing the tool by the task, not the brand: first you say what comes out, from what material, who gets it and what's private. That tells you which family to use."
+      },
+      "pregunta": {
+        "es": "Para escoger una herramienta de IA…",
+        "en": "To choose an AI tool…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "fichas de encargo",
+        "en": "job sheets"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu ficha del encargo ya vive en tu bitácora. Te la traigo en el repaso, y la vas a usar en cada misión de Forja.",
+          "en": "Saved. Your job sheet now lives in your logbook. I'll bring it back in your review, and you'll use it in every Forge mission."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas rápidas y apagamos el fuego por hoy.",
+          "en": "Three quick questions and we bank the fire for today."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Necesitas la fecha de un trámite que cambia cada año. ¿Qué familia usas?",
+            "en": "You need the date for a procedure that changes every year. Which family do you use?"
+          },
+          "opciones": [
+            {
+              "es": "Un asistente de chat que no busca en internet",
+              "en": "A chat assistant that doesn't search the web"
+            },
+            {
+              "es": "Una búsqueda con IA que muestre la fuente",
+              "en": "An AI search that shows the source"
+            },
+            {
+              "es": "Una herramienta de diapositivas",
+              "en": "A slide-making tool"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Dato de hoy, búsqueda con fuentes. Y la fuente la abres tú.",
+              "en": "Right. Today's fact, search with sources. And you open the source yourself."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa: ¿ese dato cambia? ¿Quién te muestra de dónde salió?",
+              "en": "Hmm. Think: does that fact change? Who shows you where it came from?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué ficha le sirve más a la armería?",
+            "en": "Which job sheet helps the armory most?"
+          },
+          "opciones": [
+            {
+              "es": "Usa la mejor IA para mi informe",
+              "en": "Use the best AI for my report"
+            },
+            {
+              "es": "Resumen de una página del informe de ventas, para el gerente, sin nombres de clientes",
+              "en": "One-page summary of the sales report, for the manager, no customer names"
+            },
+            {
+              "es": "Ayúdame con un documento importante",
+              "en": "Help me with an important document"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Pieza, material, destino y lo privado, en una línea.",
+              "en": "Exactly. Piece, material, recipient and what's private, in one line."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Repasa las cuatro preguntas de la ficha: ¿cuál opción las responde?",
+              "en": "Go over the four job-sheet questions: which option answers them?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "El aviso quedó bien escrito. ¿Ya se puede mandar?",
+            "en": "The notice is well written. Can it go out now?"
+          },
+          "opciones": [
+            {
+              "es": "Sí, si suena profesional",
+              "en": "Yes, if it sounds professional"
+            },
+            {
+              "es": "Después de templarlo: cifras, nombres y fechas contra el original",
+              "en": "After tempering it: numbers, names and dates against the original"
+            },
+            {
+              "es": "Sí, si la IA dice que está correcto",
+              "en": "Yes, if the AI says it's correct"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso es de herrero. El fuego calienta, pero la pieza la revisas tú.",
+              "en": "Spoken like a blacksmith. The fire heats, but you check the piece."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Acuérdate del turno corrido de Diana. ¿Quién tenía la tabla original?",
+              "en": "Remember Diana's shifted day. Who had the original table?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Herramienta por tarea",
+        "en": "Tool by task"
+      },
+      "resumen": {
+        "es": "La herramienta se escoge por la tarea: qué pieza sale, con qué material, quién la recibe y qué es privado. La marca viene después.",
+        "en": "You pick the tool by the task: what comes out, from what material, who gets it and what's private. The brand comes later."
+      }
+    },
+    "piezas": "b02",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Emparejaste los encargos de Diana con su familia",
+          "en": "You matched Diana's jobs with their family"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste la ficha del aviso de diciembre",
+          "en": "You wrote the job sheet for the December notice"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste la fama y los datos en la ficha de Punti",
+          "en": "You caught the fame and the leaked data in Punti's sheet"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Templaste el aviso antes de mandarlo",
+          "en": "You tempered the notice before sending it"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "elegir-herramienta",
+      "titulo": {
+        "es": "Escoger herramienta por tarea",
+        "en": "Choosing a tool by task"
+      }
+    }
+  }
+}

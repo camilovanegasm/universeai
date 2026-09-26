@@ -1,0 +1,923 @@
+{
+  "formato": "punti-mision@1",
+  "id": "divide-lo-grande",
+  "mundo": "prompts",
+  "capitulo": 3,
+  "numero": 13,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "dividir"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "contexto",
+    "iterar",
+    "revisar-respuesta"
+  ],
+  "titulo": {
+    "es": "Divide lo grande",
+    "en": "Break It Down"
+  },
+  "resumen": {
+    "es": "Partir un trabajo grande en prompts pequeños y en orden, usando cada resultado y revisándolo antes de seguir.",
+    "en": "Split a big job into small prompts, in order, building on each result and checking it before moving on."
+  },
+  "siguiente": "dale-un-papel",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, entró una señal a la antena. Es Paola, que organiza la primera comunión de Samuel, su sobrino. Le pidió a la IA toda la fiesta en un solo mensaje y le llegó un plan enorme que no le sirve.",
+          "en": "Pilot, a signal just came in. It's Paola, who's planning the party for her nephew Samuel's First Communion. She asked the AI for the whole party in one message and got back a huge plan she can't use."
+        }
+      },
+      "titulo": {
+        "es": "Divide lo grande",
+        "en": "Break It Down"
+      },
+      "texto": {
+        "es": "Hoy aprendes a partir un trabajo grande en prompts pequeños, uno detrás de otro, revisando entre uno y otro. Unos 10 minutos.",
+        "en": "Today you'll learn to split a big job into small prompts, one after another, checking in between. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Arriba está el mensaje de Paola: un sancocho de seis pedidos, como los que llegaban al taller. Abajo, la misma fiesta pedida por partes. Mira la diferencia.",
+          "en": "Up top is Paola's message: a kitchen sink of six requests, like the ones that came into the repair shop. Below, the same party asked for in parts. Look at the difference."
+        }
+      },
+      "titulo": {
+        "es": "Todo de una o por partes",
+        "en": "All at once or in parts"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Organízame toda la primera comunión de mi sobrino: invitados, comida, decoración, recordatorios, presupuesto y horario.",
+          "en": "Plan my nephew's whole First Communion party: guests, food, decorations, keepsakes, budget and schedule."
+        },
+        "salida": {
+          "es": "Plan completo para la primera comunión:\n1. Lugar: alquila un salón de eventos.\n2. Comida: contrata un banquete para 100 personas.\n3. Decoración: flores naturales en cada mesa.\n4. Música: grupo en vivo o DJ.\n5. Recordatorios: denarios personalizados.\n6. Presupuesto: [presupuesto].\n7. Horario: [horario].",
+          "en": "Complete First Communion plan:\n1. Venue: rent an event hall.\n2. Food: hire a caterer for 100 people.\n3. Decorations: fresh flowers on every table.\n4. Music: live band or DJ.\n5. Keepsakes: custom rosaries.\n6. Budget: [budget].\n7. Schedule: [schedule]."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "mapa",
+            "texto": {
+              "es": "1. Organizo la primera comunión de mi sobrino: 40 invitados, $900.000, almuerzo en la casa de la abuela. Primero dame solo la lista de partes, en orden, sin desarrollarlas. ",
+              "en": "1. I'm planning my nephew's First Communion: 40 guests, $900, lunch at his grandma's house. First, give me just the list of parts, in order, without working them out. "
+            }
+          },
+          {
+            "pieza": "parte",
+            "texto": {
+              "es": "2. Ahora solo el menú del almuerzo, para 40 personas. ",
+              "en": "2. Now just the lunch menu, for 40 people. "
+            }
+          },
+          {
+            "pieza": "revisa",
+            "texto": {
+              "es": "3. Ya revisé el menú: es para 40 y cabe en la plata. ",
+              "en": "3. I checked the menu: it's for 40 and fits the budget. "
+            }
+          },
+          {
+            "pieza": "enlace",
+            "texto": {
+              "es": "Con este menú: arroz con pollo, papa salada y ensalada, haz la lista de compras.",
+              "en": "With this menu: chicken and rice, boiled potatoes and salad, make the shopping list."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Lista de compras para 40 personas:\n- Pollo: 8 kilos\n- Arroz: 3 kilos\n- Papa: 8 kilos\n- Tomate, cebolla y lechuga para la ensalada",
+          "en": "Shopping list for 40 people:\n- Chicken: 18 pounds\n- Rice: 7 pounds\n- Potatoes: 18 pounds\n- Tomatoes, onions and lettuce for the salad"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Cada color es una pieza de la cadena: primero el mapa, luego una parte por prompt, una revisión en medio y el resultado anterior dentro del siguiente prompt. Por eso esta respuesta sí se puede usar.",
+          "en": "Each color is a piece of the chain: first the map, then one part per prompt, a check in between, and the last result inside the next prompt. That's why this answer is actually usable."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ojo: esto no es el paso a paso. Allá la IA muestra sus pasos en una sola respuesta. Aquí tú mandas varios prompts, uno por parte. Una cadena tiene estas cuatro piezas. Toca cada una.",
+          "en": "Heads-up: this isn't step by step. There, the AI shows its steps in one answer. Here, you send several prompts, one per part. A chain has these four pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas de una cadena",
+        "en": "The 4 pieces of a chain"
+      },
+      "piezas": [
+        {
+          "id": "mapa",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Primero, el mapa",
+            "en": "First, the map"
+          },
+          "descripcion": {
+            "es": "La lista de partes, antes de hacer cualquiera.",
+            "en": "The list of parts, before doing any of them."
+          },
+          "ejemplo": {
+            "es": "\"Dame solo la lista de partes, sin desarrollarlas.\" Así ves el trabajo completo y escoges por dónde empezar.",
+            "en": "\"Give me just the list of parts, don't work them out yet.\" You see the whole job and pick where to start."
+          }
+        },
+        {
+          "id": "parte",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Una parte por prompt",
+            "en": "One part per prompt"
+          },
+          "descripcion": {
+            "es": "Cada mensaje pide una sola cosa.",
+            "en": "Each message asks for one thing."
+          },
+          "ejemplo": {
+            "es": "\"Ahora solo el menú.\" Con una sola cosa, la IA tiene espacio para hacerla bien y tú, para revisarla.",
+            "en": "\"Now just the menu.\" With one thing to do, the AI has room to do it well, and you have room to check it."
+          }
+        },
+        {
+          "id": "revisa",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Revisa antes de seguir",
+            "en": "Check before moving on"
+          },
+          "descripcion": {
+            "es": "Un error en una parte se pasa a las que siguen.",
+            "en": "A mistake in one part carries into the next ones."
+          },
+          "ejemplo": {
+            "es": "¿Son 40 invitados? ¿Cabe en la plata? Un minuto de revisión te ahorra rehacer toda la cadena.",
+            "en": "Is it 40 guests? Does it fit the budget? One minute of checking saves you redoing the whole chain."
+          }
+        },
+        {
+          "id": "enlace",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Usa lo anterior",
+            "en": "Build on the last answer"
+          },
+          "descripcion": {
+            "es": "El siguiente prompt arranca con el resultado anterior.",
+            "en": "The next prompt starts from the last result."
+          },
+          "ejemplo": {
+            "es": "\"Con este menú: arroz con pollo…\" Si abres un chat nuevo, pega el resultado: la IA no siempre recuerda otros chats.",
+            "en": "\"With this menu: chicken and rice...\" If you open a new chat, paste the result: the AI doesn't always remember other chats."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. No todo hay que dividirlo: un saludo cabe en un prompt. ¿Cuáles de estos trabajos caben en un solo mensaje y cuáles salen mejor en cadena?",
+          "en": "Your turn. Not everything needs splitting: a greeting fits in one prompt. Which of these jobs fit in one message, and which come out better as a chain?"
+        }
+      },
+      "titulo": {
+        "es": "¿Un prompt o una cadena?",
+        "en": "One prompt or a chain?"
+      },
+      "grupos": [
+        {
+          "id": "uno",
+          "titulo": {
+            "es": "Cabe en un prompt",
+            "en": "Fits in one prompt"
+          }
+        },
+        {
+          "id": "cadena",
+          "titulo": {
+            "es": "Mejor en cadena",
+            "en": "Better as a chain"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "uno",
+          "texto": {
+            "es": "Una felicitación para mi hermana por su grado.",
+            "en": "A message congratulating my sister on her graduation."
+          }
+        },
+        {
+          "grupo": "cadena",
+          "texto": {
+            "es": "Organizar los 15 años de mi hija: lugar, comida, invitados y música.",
+            "en": "Planning my daughter's 15th birthday party: venue, food, guests and music."
+          }
+        },
+        {
+          "grupo": "uno",
+          "texto": {
+            "es": "Un título para el post de mi producto nuevo.",
+            "en": "A title for my new product's post."
+          }
+        },
+        {
+          "grupo": "cadena",
+          "texto": {
+            "es": "El informe de fin de año para la junta del edificio, con cuentas y arreglos.",
+            "en": "The year-end report for the building board, with accounts and repairs."
+          }
+        },
+        {
+          "grupo": "cadena",
+          "texto": {
+            "es": "Planear la mudanza de la familia a otra ciudad.",
+            "en": "Planning the family's move to another city."
+          }
+        },
+        {
+          "grupo": "uno",
+          "texto": {
+            "es": "Responder a qué hora abrimos mañana.",
+            "en": "Replying what time we open tomorrow."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Si el trabajo tiene varias partes que dependen unas de otras, va en cadena. Si es una sola cosa, un buen prompt basta.",
+          "en": "Six for six. If a job has several parts that depend on each other, it's a chain. If it's one thing, one good prompt is enough."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, no. Pregúntate: ¿esto tiene varias partes que dependen unas de otras, o es una sola cosa?",
+          "en": "Hmm, not quite. Ask yourself: does this have several parts that depend on each other, or is it just one thing?"
+        }
+      },
+      "malPorGrupo": {
+        "uno": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Eso es una sola cosa, corta. Un buen prompt con las cinco piezas lo resuelve.",
+            "en": "Close. That's one short thing. One good prompt with the five pieces handles it."
+          }
+        },
+        "cadena": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ahí hay varias partes, y cada una depende de otra. ¿Cabe todo bien en un solo mensaje?",
+            "en": "Close. There are several parts there, and each depends on another. Does it all fit well in one message?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora te toca a ti. Escribe el primer prompt de la cadena de Paola. No pidas la fiesta: pide el mapa.",
+          "en": "Now it's on you. Write the first prompt in Paola's chain. Don't ask for the party: ask for the map."
+        }
+      },
+      "titulo": {
+        "es": "El mapa de la fiesta",
+        "en": "The party map"
+      },
+      "reto": {
+        "es": "Datos de Paola: primera comunión de Samuel, su sobrino. Es un domingo, con almuerzo después de la misa en la casa de la abuela. Van 40 invitados y tiene $900.000 para todo. Pídele a la IA solo la lista de partes que hay que organizar, en orden, sin desarrollarlas.",
+        "en": "Paola's details: her nephew Samuel's First Communion. It's on a Sunday, with lunch after Mass at his grandma's house. There are 40 guests and she has $900 for everything. Ask the AI for just the list of parts to organize, in order, without working them out."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "mapa",
+          "texto": {
+            "es": "El mapa: solo la lista de partes",
+            "en": "The map: just the list of parts"
+          },
+          "rubrica": "El prompt pide primero la lista de partes o pasos que hay que organizar, sin hacerlas todavía ('solo la lista', 'sin desarrollarlas', 'por ahora solo las partes'). No cuenta pedir la fiesta completa o un plan con todo, ni nombrar los temas pidiendo que resuelva cada uno ('organízame invitados, comida y decoración').",
+          "claves": {
+            "es": [
+              "solo la lista",
+              "solamente la lista",
+              "nada mas la lista",
+              "lista de partes",
+              "lista de pasos",
+              "lista de tareas",
+              "lista de cosas",
+              "lista de lo que",
+              "en que partes",
+              "en partes",
+              "por partes",
+              "por etapas",
+              "sin desarrollar",
+              "no desarrolles",
+              "no las desarrolles",
+              "sin detalles",
+              "sin resolver",
+              "todavia no",
+              "aun no",
+              "por ahora",
+              "de momento",
+              "dividelo",
+              "dividamos",
+              "que partes",
+              "cuales partes",
+              "cuales son las partes"
+            ],
+            "en": [
+              "just the list",
+              "only the list",
+              "just a list",
+              "list of parts",
+              "list of steps",
+              "list of tasks",
+              "list of things",
+              "list of what",
+              "in parts",
+              "into parts",
+              "into steps",
+              "in stages",
+              "break it down",
+              "break down",
+              "split it",
+              "what parts",
+              "which parts",
+              "don't work",
+              "without working",
+              "don't develop",
+              "no details yet",
+              "not yet",
+              "for now",
+              "for the moment"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "El contexto: qué celebración es",
+            "en": "The context: what the celebration is"
+          },
+          "rubrica": "El prompt dice qué celebración es y de quién: la primera comunión, del sobrino o de Samuel. No cuenta 'una fiesta', 'un evento' o 'una celebración' solos, sin decir cuál.",
+          "claves": {
+            "es": [
+              "comunion",
+              "sobrino",
+              "samuel"
+            ],
+            "en": [
+              "communion",
+              "nephew",
+              "samuel"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos: invitados, plata, lugar",
+            "en": "The details: guests, money, place"
+          },
+          "rubrica": "El prompt trae al menos dos datos concretos de la fiesta: 40 invitados, el presupuesto de 900.000 (900 en inglés), que es un domingo, el almuerzo después de la misa o que es en la casa de la abuela. No cuenta 'pocos invitados', 'un presupuesto' o 'en una casa' sin decir cuántos, cuánto ni cuál.",
+          "claves": {
+            "es": [
+              "40 personas",
+              "40 invitados",
+              "para 40",
+              "son 40",
+              "somos 40",
+              "de 40",
+              "cuarenta",
+              "900",
+              "novecientos",
+              "domingo",
+              "almuerzo",
+              "misa",
+              "abuela"
+            ],
+            "en": [
+              "40 people",
+              "40 guests",
+              "for 40",
+              "of 40",
+              "forty",
+              "900",
+              "sunday",
+              "lunch",
+              "after mass",
+              "grandma",
+              "grandmother"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a organizar una celebración familiar. Responde solo con lo que te piden, sin explicaciones. Si el mensaje pide solo la lista de partes o pasos, responde con esa lista numerada y en orden, de 5 a 7 partes, una línea cada una, sin desarrollarlas. Si el mensaje pide toda la fiesta de una vez, responde con un plan largo que toca todos los temas por encima, con ideas genéricas y costosas (salón de eventos, banquete, grupo en vivo) y sin hacer cuentas. Usa únicamente los datos del mensaje: si falta uno, déjalo entre corchetes, como [presupuesto] o [número de invitados].",
+        "en": "You are an AI helping someone organize a family celebration. Reply only with what you're asked for, no explanations. If the message asks for just the list of parts or steps, reply with that list, numbered and in order, 5 to 7 parts, one line each, without working them out. If the message asks for the whole party at once, reply with a long plan that skims every topic, with generic, expensive ideas (event hall, caterer, live band) and no math. Use only the details in the message: if one is missing, leave it in square brackets, like [budget] or [number of guests]."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. Confirmar la lista de invitados (40).\n2. Menú del almuerzo, dentro de los $900.000.\n3. Lista de compras.\n4. Decoración de la casa de la abuela.\n5. Recordatorios para los invitados.\n6. Horario del domingo, de la misa al almuerzo.",
+            "en": "1. Confirm the guest list (40).\n2. Lunch menu, within the $900.\n3. Shopping list.\n4. Decorations for grandma's house.\n5. Keepsakes for the guests.\n6. Sunday schedule, from Mass to lunch."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Paola ya tiene el mapa: seis partes, en orden. Ahora puede pedir una a la vez y revisar cada una.",
+              "en": "Good signal. Paola has her map: six parts, in order. Now she can ask for one at a time and check each one."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Plan completo para la primera comunión:\nLugar: alquila un salón de eventos para [número de invitados] personas.\nComida: contrata un banquete de tres tiempos.\nDecoración: flores naturales y globos dorados.\nMúsica: grupo en vivo.\nRecordatorios: denarios personalizados.\nPresupuesto: [presupuesto].",
+            "en": "Complete First Communion plan:\nVenue: rent an event hall for [number of guests] people.\nFood: hire a three-course caterer.\nDecorations: fresh flowers and gold balloons.\nMusic: live band.\nKeepsakes: custom rosaries.\nBudget: [budget]."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA intentó hacer toda la fiesta de una vez y salió un plan caro y por encima. Mira la lista: primero pide solo el mapa.",
+              "en": "Weak signal: the AI tried to do the whole party at once and came up with a pricey, shallow plan. Check the list: ask for just the map first."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Antes del segundo prompt, un truco que salva cadenas.",
+          "en": "Before the second prompt, a trick that saves chains."
+        }
+      },
+      "titulo": {
+        "es": "Revisa entre eslabón y eslabón",
+        "en": "Check between links"
+      },
+      "texto": {
+        "es": "Una cadena es como abotonarse la camisa: si el primer botón entra en el ojal equivocado, todos los demás quedan torcidos. Si una parte trae un error y la pegas en el siguiente prompt, el error viaja por toda la cadena. Antes de seguir, revisa: ¿los números cuadran? ¿Es lo que pediste?",
+        "en": "A chain is like buttoning a shirt: if the first button goes in the wrong hole, all the others end up crooked. If one part has a mistake and you paste it into the next prompt, the mistake travels down the whole chain. Before moving on, check: do the numbers add up? Is it what you asked for?"
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Pides una parte",
+            "en": "You ask for one part"
+          },
+          {
+            "es": "La revisas",
+            "en": "You check it"
+          },
+          {
+            "es": "Pegas lo bueno en el siguiente prompt",
+            "en": "You paste what's good into the next prompt"
+          },
+          {
+            "es": "Pides la parte que sigue",
+            "en": "You ask for the next part"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Paola abrió un chat nuevo para seguir. La IA ya le había dado el menú. Antes de pedir la lista de compras, revisa ese menú con los datos de Paola.",
+          "en": "Paola opened a new chat to keep going. The AI had already given her the menu. Before you ask for the shopping list, check that menu against Paola's details."
+        }
+      },
+      "titulo": {
+        "es": "La lista de compras",
+        "en": "The shopping list"
+      },
+      "reto": {
+        "es": "Esto respondió la IA en la parte del menú: \"Almuerzo para 35 personas: arroz con pollo, papa salada, ensalada y jugo de mora.\" Datos de Paola: 40 invitados y $900.000 para todo. Escribe el siguiente prompt: pide solo la lista de compras. Es un chat nuevo: la IA no ha visto el menú.",
+        "en": "Here's what the AI answered for the menu part: \"Lunch for 35 people: chicken and rice, boiled potatoes, salad and blackberry juice.\" Paola's details: 40 guests and $900 for everything. Write the next prompt: ask for just the shopping list. It's a new chat: the AI hasn't seen the menu."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "enlace",
+          "texto": {
+            "es": "Pega el menú de la parte anterior",
+            "en": "Pastes the menu from the last part"
+          },
+          "rubrica": "El prompt trae el menú de la parte anterior, pegado o con sus platos (arroz con pollo, papa salada, ensalada, jugo de mora). No cuenta 'ese menú', 'el menú de antes' o 'lo que me diste' sin decir cuál: es un chat nuevo y la IA no lo ha visto.",
+          "claves": {
+            "es": [
+              "arroz con pollo",
+              "papa salada",
+              "papas saladas",
+              "jugo de mora",
+              "ensalada",
+              "menu:"
+            ],
+            "en": [
+              "chicken and rice",
+              "rice and chicken",
+              "boiled potato",
+              "blackberry",
+              "salad",
+              "menu:"
+            ]
+          }
+        },
+        {
+          "id": "revisa",
+          "texto": {
+            "es": "Revisa: son 40, no 35",
+            "en": "Checks it: 40 people, not 35"
+          },
+          "rubrica": "El prompt pide la lista para 40 personas o avisa que el menú decía 35 y son 40. No cuenta si pega el menú tal cual, con 35 personas, sin corregir el número.",
+          "claves": {
+            "es": [
+              "40 personas",
+              "40 invitados",
+              "40 comensales",
+              "40 porciones",
+              "para 40",
+              "son 40",
+              "somos 40",
+              "de 40",
+              "a 40",
+              "cuarenta",
+              "no son 35",
+              "no 35"
+            ],
+            "en": [
+              "40 people",
+              "40 guests",
+              "40 servings",
+              "for 40",
+              "are 40",
+              "we're 40",
+              "of 40",
+              "to 40",
+              "forty",
+              "not 35"
+            ]
+          }
+        },
+        {
+          "id": "parte",
+          "texto": {
+            "es": "Pide solo la lista de compras",
+            "en": "Asks for just the shopping list"
+          },
+          "rubrica": "El prompt pide la lista de compras (o del mercado) para ese menú. No cuenta si pide otra cosa, ni si en el mismo mensaje pide además la decoración, los recordatorios u otras partes de la fiesta.",
+          "claves": {
+            "es": [
+              "lista de compras",
+              "lista del mercado",
+              "lista de mercado",
+              "lista para el mercado",
+              "que comprar",
+              "que hay que comprar",
+              "que debo comprar",
+              "que tengo que comprar",
+              "cuanto comprar",
+              "cuanto hay que comprar",
+              "las compras"
+            ],
+            "en": [
+              "shopping list",
+              "grocery list",
+              "what to buy",
+              "what i need to buy",
+              "what i should buy",
+              "how much to buy",
+              "groceries"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a organizar una celebración familiar. Este es un chat nuevo: solo sabes lo que dice el mensaje. Responde solo con lo que te piden, sin explicaciones. Si el mensaje pide la lista de compras y trae el menú, haz la lista para ese menú, con cantidades aproximadas, un producto por línea. Si no trae el menú, haz una lista genérica de fiesta (pasabocas, gaseosa, bombas, torta), porque no sabes qué se va a cocinar. Usa el número de personas que diga el mensaje: si dice 35, calcula para 35 aunque sea un error. Si pide varias partes a la vez, hazlas todas por encima, sin cantidades.",
+        "en": "You are an AI helping someone organize a family celebration. This is a new chat: you only know what the message says. Reply only with what you're asked for, no explanations. If the message asks for a shopping list and includes the menu, make the list for that menu, with rough amounts, one item per line. If it doesn't include the menu, make a generic party list (snacks, soda, balloons, cake), because you don't know what's being cooked. Use the number of people the message gives: if it says 35, plan for 35 even if that's a mistake. If it asks for several parts at once, do them all loosely, with no amounts."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Lista de compras para 40 personas:\n- Pollo: 8 kilos\n- Arroz: 3 kilos\n- Papa: 8 kilos\n- Tomate, cebolla y lechuga para la ensalada\n- Mora: 3 kilos\n- Azúcar: 2 kilos",
+            "en": "Shopping list for 40 people:\n- Chicken: 18 pounds\n- Rice: 7 pounds\n- Potatoes: 18 pounds\n- Tomatoes, onions and lettuce for the salad\n- Blackberries: 6 pounds\n- Sugar: 4 pounds"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Pegaste el menú y corregiste el número antes de seguir. La lista salió para 40 y el error no pasó al siguiente eslabón.",
+              "en": "Good signal. You pasted the menu and fixed the number before moving on. The list came out for 40, and the mistake didn't reach the next link."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Lista de compras para 35 personas:\n- Pollo: 7 kilos\n- Arroz: 2,5 kilos\n- Papa: 7 kilos\n- Verduras para la ensalada\n- Mora: 2,5 kilos",
+            "en": "Shopping list for 35 people:\n- Chicken: 16 pounds\n- Rice: 6 pounds\n- Potatoes: 16 pounds\n- Vegetables for the salad\n- Blackberries: 5 pounds"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. Mira: la lista salió para 35 personas. El error del menú pasó derecho al siguiente eslabón. Revisa la lista de chequeo.",
+              "en": "Weak signal. Look: the list came out for 35 people. The menu's mistake went straight into the next link. Check the list."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Me toca confesar. Le ayudé a Paola con otra parte de la fiesta y armé esta cadena. Dos de mis eslabones la dañaron. Tócalos.",
+          "en": "Time to come clean. I helped Paola with another part of the party and built this chain. Two of my links broke it. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mi cadena torcida",
+        "en": "My crooked chain"
+      },
+      "trozos": [
+        {
+          "es": "1. Dame solo la lista de partes de la fiesta, sin desarrollarlas.",
+          "en": "1. Give me just the list of parts for the party, don't work them out."
+        },
+        {
+          "es": "2. Empecemos por los invitados: agrúpalos por familia.",
+          "en": "2. Let's start with the guests: group them by family."
+        },
+        {
+          "es": "3. La IA contó 52 invitados. Se veía bien, así que seguí sin contar.",
+          "en": "3. The AI counted 52 guests. It looked fine, so I moved on without counting."
+        },
+        {
+          "es": "4. Ahora hazme de una la decoración, los recordatorios, la música y el horario.",
+          "en": "4. Now do the decorations, keepsakes, music and schedule, all at once."
+        },
+        {
+          "es": "5. Con este horario: misa a las 10 y almuerzo a la 1, escribe el mensaje para el grupo de la familia.",
+          "en": "5. With this schedule: Mass at 10 and lunch at 1, write the message for the family group chat."
+        }
+      ],
+      "malos": [
+        2,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Eran 40, no 52, y ese error se iba a pasar a la comida y a los recordatorios. Y en el eslabón 4 volví a pedir todo de una. Una parte por prompt.",
+          "en": "You got me. It was 40, not 52, and that mistake would have carried into the food and the keepsakes. And in link 4 I asked for everything at once again. One part per prompt."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese eslabón cuida la cadena. Repasa las cuatro piezas y busca dónde me salté alguna.",
+          "en": "That link keeps the chain healthy. Go over the four pieces and look for where I skipped one."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Anota en tu bitácora, con tus palabras, qué es dividir un trabajo grande, como se lo explicarías a Paola.",
+          "en": "Write in your logbook, in your own words, what breaking down a big job means, the way you'd explain it to Paola."
+        }
+      },
+      "concepto": "dividir",
+      "definicion": {
+        "es": "Partir un trabajo grande en prompts pequeños y en orden: primero el mapa, luego una parte por prompt, usando el resultado anterior y revisándolo antes de seguir.",
+        "en": "Splitting a big job into small prompts, in order: first the map, then one part per prompt, building on the last result and checking it before moving on."
+      },
+      "pregunta": {
+        "es": "Dividir lo grande es…",
+        "en": "Breaking down a big job is…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "mapa de la cadena",
+        "en": "chain map"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Dividir y el prompt del mapa ya están en tu bitácora. Te sirven para cualquier trabajo grande, no solo para fiestas.",
+          "en": "Saved. Your Breaking Down card and your map prompt are in your logbook. They work for any big job, not just parties."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos el cuarto truco.",
+          "en": "Two questions and the fourth trick is yours."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Te toca organizar la fiesta de fin de año de tu trabajo. ¿Cuál es el mejor primer prompt?",
+            "en": "You're in charge of your work's year-end party. What's the best first prompt?"
+          },
+          "opciones": [
+            {
+              "es": "Organízame toda la fiesta: comida, música, regalos y turnos",
+              "en": "Plan the whole party: food, music, gifts and shifts"
+            },
+            {
+              "es": "Dame solo la lista de partes de la fiesta, en orden, sin desarrollarlas",
+              "en": "Give me just the list of parts for the party, in order, not worked out"
+            },
+            {
+              "es": "Hazme la fiesta más bonita que puedas",
+              "en": "Make me the nicest party you can"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Primero el mapa; después, una parte a la vez.",
+              "en": "Right. First the map, then one part at a time."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa qué te deja ver el trabajo completo antes de meterte en los detalles.",
+              "en": "Hmm. Think about what lets you see the whole job before you get into the details."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "En la segunda parte, la IA puso mal la fecha del evento. ¿Qué haces antes de pedir la tercera?",
+            "en": "In the second part, the AI got the event date wrong. What do you do before asking for the third?"
+          },
+          "opciones": [
+            {
+              "es": "Sigo: en la tercera parte se arregla sola",
+              "en": "Keep going: it'll fix itself in the third part"
+            },
+            {
+              "es": "La corrijo y pego la versión corregida en el siguiente prompt",
+              "en": "Fix it and paste the corrected version into the next prompt"
+            },
+            {
+              "es": "Empiezo toda la cadena de cero",
+              "en": "Start the whole chain over"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Revisas, corriges y sigues. Así el error no viaja.",
+              "en": "Exactly. Check, fix, keep going. That way the mistake doesn't travel."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en la camisa mal abotonada: ¿qué pasa con los botones que siguen?",
+              "en": "Think about the badly buttoned shirt: what happens to the buttons after it?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Dividir lo grande",
+        "en": "Breaking down big jobs"
+      },
+      "resumen": {
+        "es": "Un trabajo grande sale mejor en cadena: primero el mapa, luego una parte por prompt, revisando antes de seguir.",
+        "en": "A big job comes out better as a chain: first the map, then one part per prompt, checking before moving on."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07",
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste la fiesta pedida de una vez y por partes",
+          "en": "You saw the party asked for all at once and in parts"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste lo que cabe en un prompt de lo que va en cadena",
+          "en": "You sorted one-prompt jobs from chain jobs"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Armaste el mapa de la fiesta de Paola",
+          "en": "You built the map for Paola's party"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste el error del menú antes de seguir",
+          "en": "You caught the menu mistake before moving on"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Encontraste los dos eslabones torcidos de mi cadena",
+          "en": "You found the two crooked links in my chain"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "dividir-en-cadena",
+      "titulo": {
+        "es": "Dividir un trabajo en prompts",
+        "en": "Splitting a job into prompts"
+      }
+    }
+  }
+}

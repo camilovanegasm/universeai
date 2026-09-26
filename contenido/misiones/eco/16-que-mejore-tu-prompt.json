@@ -1,0 +1,864 @@
+{
+  "formato": "punti-mision@1",
+  "id": "que-mejore-tu-prompt",
+  "mundo": "prompts",
+  "capitulo": 4,
+  "numero": 16,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "mejorar-prompt"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "iterar",
+    "limites",
+    "entrevista"
+  ],
+  "titulo": {
+    "es": "Que mejore tu prompt",
+    "en": "Let It Improve Your Prompt"
+  },
+  "resumen": {
+    "es": "Pedirle a la IA que revise tu prompt y te proponga uno mejor, y decidir tú qué te quedas.",
+    "en": "Ask the AI to review your prompt and suggest a better one, then decide for yourself what to keep."
+  },
+  "siguiente": "que-se-revise-a-si-misma",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, hay una señal esperando en la antena. Es Marcela, que vende ropa por catálogo a sus vecinas. Escribió un prompt, el resultado no la convenció y no sabe qué le falta. Hoy la IA le ayuda a pedir mejor.",
+          "en": "Pilot, there's a signal waiting at the antenna. It's Marcela, who sells clothes from a catalog to her neighbors. She wrote a prompt, didn't like the result, and can't tell what's missing. Today the AI helps her ask better."
+        }
+      },
+      "titulo": {
+        "es": "Que mejore tu prompt",
+        "en": "Let It Improve Your Prompt"
+      },
+      "texto": {
+        "es": "Hoy aprendes a pedirle a la IA que revise tu prompt y te proponga uno mejor. Y a decidir tú qué te quedas. Unos 9 minutos.",
+        "en": "Today you'll learn to ask the AI to review your prompt and suggest a better one. And to decide for yourself what to keep. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, la idea. Y su trampa.",
+          "en": "First, the idea. And its catch."
+        }
+      },
+      "titulo": {
+        "es": "Tu prompt, revisado por la IA",
+        "en": "Your prompt, reviewed by the AI"
+      },
+      "texto": {
+        "es": "Antes de usar un prompt, puedes pegárselo a la IA y preguntarle qué le falta para responder bien. Ella sabe qué necesita. Lo que no sabe es tu negocio: en su versión mejorada puede meter precios, fechas o promesas que tú nunca dijiste. Por eso la última palabra es tuya.",
+        "en": "Before you use a prompt, you can paste it into the AI and ask what's missing for a good answer. It knows what it needs. What it doesn't know is your business: its improved version can slip in prices, dates or promises you never gave. That's why you get the final say."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Escribes tu prompt",
+            "en": "You write your prompt"
+          },
+          {
+            "es": "La IA dice qué le falta",
+            "en": "The AI says what's missing"
+          },
+          {
+            "es": "Te propone una versión nueva",
+            "en": "It suggests a new version"
+          },
+          {
+            "es": "Tú decides qué se queda",
+            "en": "You decide what stays"
+          },
+          {
+            "es": "Lo usas",
+            "en": "You use it"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un buen pedido de revisión tiene estas piezas. Las cuatro primeras van en tu prompt; la última es tu parte, como en la entrevista de Don Álvaro. Toca cada una.",
+          "en": "A good review request has these pieces. The first four go in your prompt; the last one is your part, just like in Don Álvaro's interview. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las piezas de la revisión",
+        "en": "The pieces of a review request"
+      },
+      "piezas": [
+        {
+          "id": "es-un-prompt",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Es un prompt: revísalo",
+            "en": "It's a prompt: review it"
+          },
+          "descripcion": {
+            "es": "Aclara que no lo responda, que lo revise.",
+            "en": "Make clear it should review it, not answer it."
+          },
+          "ejemplo": {
+            "es": "\"Este es mi prompt. No escribas el mensaje todavía: revísalo.\" Si no lo aclaras, la IA lo toma como un pedido y lo responde.",
+            "en": "\"Here's my prompt. Don't write the message yet: review it.\" If you don't say so, the AI treats it as a request and answers it."
+          }
+        },
+        {
+          "id": "que-falta",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Qué le falta",
+            "en": "What's missing"
+          },
+          "descripcion": {
+            "es": "Que diga qué piezas faltan y por qué.",
+            "en": "Which pieces are missing, and why."
+          },
+          "ejemplo": {
+            "es": "\"Dime qué le falta para que respondas bien.\" Te devuelve algo como: falta el tono, falta para quién es.",
+            "en": "\"Tell me what's missing for you to answer well.\" You get back something like: no tone, no audience."
+          }
+        },
+        {
+          "id": "version",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "La versión nueva",
+            "en": "The new version"
+          },
+          "descripcion": {
+            "es": "Que te proponga el prompt reescrito.",
+            "en": "It suggests a rewritten prompt."
+          },
+          "ejemplo": {
+            "es": "\"Luego dame una versión mejorada.\" Así ves las piezas puestas en su lugar, listas para copiar.",
+            "en": "\"Then give me an improved version.\" That way you see the pieces in place, ready to copy."
+          }
+        },
+        {
+          "id": "sin-inventos",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Sin inventar",
+            "en": "No making things up"
+          },
+          "descripcion": {
+            "es": "Si falta un dato, que pregunte o deje el espacio.",
+            "en": "If a detail is missing, it asks or leaves a blank."
+          },
+          "ejemplo": {
+            "es": "\"Si falta un dato, déjalo entre corchetes, como [fecha].\" Así no aparecen precios que no son tuyos.",
+            "en": "\"If a detail is missing, put it in brackets, like [date].\" That way no prices show up that aren't yours."
+          }
+        },
+        {
+          "id": "tu-decides",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "Tú decides",
+            "en": "You decide"
+          },
+          "descripcion": {
+            "es": "Lees la versión nueva y te quedas con lo que sirve.",
+            "en": "You read the new version and keep what works."
+          },
+          "ejemplo": {
+            "es": "La IA propone; tú eliges. Lo que no es cierto o no suena a ti, lo quitas.",
+            "en": "The AI suggests; you choose. Anything that isn't true or doesn't sound like you gets cut."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Manos a la antena. Pídele a la IA que revise el prompt de Marcela y lo mejore, pero que no lo responda. Yo ya le pasé el prompt.",
+          "en": "Hands on the antenna. Ask the AI to review Marcela's prompt and improve it, but not answer it. I already handed it the prompt."
+        }
+      },
+      "titulo": {
+        "es": "El prompt del catálogo",
+        "en": "The catalog prompt"
+      },
+      "reto": {
+        "es": "El prompt de Marcela: \"Haz un mensaje para mis clientas sobre el catálogo nuevo.\" Ya está en la conversación con la IA. Pídele que lo revise y lo mejore. Ojo: la IA no conoce el negocio de Marcela.",
+        "en": "Marcela's prompt: \"Make a message for my customers about the new catalog.\" It's already in the chat with the AI. Ask it to review and improve it. Careful: the AI doesn't know Marcela's business."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "es-un-prompt",
+          "texto": {
+            "es": "Aclara que es un prompt para revisar",
+            "en": "Makes clear it's a prompt to review"
+          },
+          "rubrica": "El prompt deja claro que la IA debe revisar el prompt de Marcela, no escribir el mensaje: habla de 'mi prompt', 'este prompt' o 'mi pedido', o dice 'no escribas el mensaje todavía'. No cuenta pedir directamente el mensaje del catálogo, aunque traiga más datos o un tono.",
+          "claves": {
+            "es": [
+              "prompt",
+              "mi pedido",
+              "este pedido",
+              "no escribas el mensaje",
+              "no hagas el mensaje",
+              "todavia no escribas",
+              "no lo respondas",
+              "sin escribir el mensaje"
+            ],
+            "en": [
+              "prompt",
+              "my request",
+              "this request",
+              "don't write the message",
+              "do not write the message",
+              "don't answer it",
+              "do not answer it",
+              "without writing the message"
+            ]
+          }
+        },
+        {
+          "id": "que-falta",
+          "texto": {
+            "es": "Pregunta qué le falta",
+            "en": "Asks what's missing"
+          },
+          "rubrica": "El prompt le pide a la IA que diga qué le falta, qué está mal o qué mejoraría del prompt de Marcela (piezas que faltan, puntos débiles). No cuenta pedir solo 'mejóralo' sin preguntar qué le falta, ni 'revisa la ortografía'.",
+          "claves": {
+            "es": [
+              "que le falta",
+              "que le hace falta",
+              "que le faltaria",
+              "dime que falta",
+              "que falta en",
+              "que piezas",
+              "que esta mal",
+              "que mejorarias",
+              "que cambiarias",
+              "que le agregarias",
+              "puntos debiles",
+              "que no funciona",
+              "critica"
+            ],
+            "en": [
+              "what's missing",
+              "what is missing",
+              "anything missing",
+              "pieces are missing",
+              "which pieces",
+              "what pieces",
+              "what's wrong",
+              "what is wrong",
+              "what would you improve",
+              "what would you change",
+              "what would you add",
+              "weak spots",
+              "weak points",
+              "critique"
+            ]
+          }
+        },
+        {
+          "id": "version",
+          "texto": {
+            "es": "Pide una versión mejorada",
+            "en": "Asks for an improved version"
+          },
+          "rubrica": "El prompt le pide a la IA una versión nueva del prompt: reescrito, mejorado o corregido. No cuenta pedir el mensaje para las clientas: se pide un prompt mejor, no el mensaje.",
+          "claves": {
+            "es": [
+              "version mejorada",
+              "version nueva",
+              "nueva version",
+              "otra version",
+              "una version",
+              "reescribe",
+              "reescribelo",
+              "mejoralo",
+              "mejora mi",
+              "mejora el",
+              "mejora este",
+              "prompt mejorado",
+              "prompt mejor",
+              "escribelo mejor"
+            ],
+            "en": [
+              "improved version",
+              "better version",
+              "new version",
+              "another version",
+              "rewrite",
+              "rewritten",
+              "improve it",
+              "improve my",
+              "improve the",
+              "improve this",
+              "improved prompt",
+              "better prompt",
+              "make it better"
+            ]
+          }
+        },
+        {
+          "id": "sin-inventos",
+          "texto": {
+            "es": "Le pide no inventar lo que falta",
+            "en": "Tells it not to make up what's missing"
+          },
+          "rubrica": "El prompt le pide a la IA que no invente los datos que no tiene: que pregunte, que deje espacios o corchetes, o que marque lo que falta ('si falta un dato, pregúntame', 'no inventes precios'). No cuenta 'hazlo más completo' o 'agrega detalles', porque eso invita a inventar.",
+          "claves": {
+            "es": [
+              "no inventes",
+              "sin inventar",
+              "no te inventes",
+              "no agregues datos",
+              "no pongas datos",
+              "corchetes",
+              "espacio en blanco",
+              "espacios en blanco",
+              "deja el espacio",
+              "deja un espacio",
+              "preguntame lo que",
+              "preguntame los datos",
+              "si falta un dato",
+              "si falta algun dato",
+              "si te falta",
+              "si no sabes",
+              "si no tienes"
+            ],
+            "en": [
+              "don't make up",
+              "do not make up",
+              "don't invent",
+              "do not invent",
+              "without inventing",
+              "without making",
+              "brackets",
+              "blank",
+              "placeholder",
+              "ask me for",
+              "ask me what",
+              "if a detail is missing",
+              "if something is missing",
+              "if you're missing",
+              "if you don't know",
+              "if you don't have"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a mejorar prompts. En esta conversación, Marcela, que vende ropa por catálogo a sus vecinas, ya te mostró su prompt: \"Haz un mensaje para mis clientas sobre el catálogo nuevo.\" Si el prompt te pide revisarlo, di en una lista corta qué le falta, usando estas piezas: tarea, contexto, datos, forma y tono. Si te pide una versión mejorada, escríbela entre comillas, en máximo 4 líneas. Si te pide no inventar, pon entre corchetes lo que no sabes, como [fecha]; si no te lo pide, rellena con datos que suenen bien, como un descuento o envío gratis. Si el prompt no deja claro que debes revisar el prompt de Marcela, escribe directamente el mensaje para las clientas, genérico y con datos inventados.",
+        "en": "You are an AI that helps improve prompts. Earlier in this conversation, Marcela, who sells clothes from a catalog to her neighbors, showed you her prompt: \"Make a message for my customers about the new catalog.\" If the prompt asks you to review it, list briefly what's missing, using these pieces: task, context, details, format and tone. If it asks for an improved version, write it in quotation marks, 4 lines max. If it asks you not to make things up, put what you don't know in square brackets, like [date]; if it doesn't, fill in details that sound good, like a discount or free shipping. If the prompt doesn't make clear that you should review Marcela's prompt, just write the message for her customers, generic and with made-up details."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "A tu prompt le faltan cuatro piezas:\n- Contexto: quién eres y quiénes son tus clientas.\n- Datos: qué trae el catálogo y hasta cuándo reciben pedidos.\n- Forma: dónde va y qué tan largo.\n- Tono: cómo quieres sonar.\nVersión mejorada:\n\"Vendo ropa por catálogo a mis vecinas. Escribe un mensaje de WhatsApp de 4 líneas para contarles que llegó el catálogo de [temporada]. Pedidos hasta el [fecha]. Que suene cercano.\"",
+            "en": "Your prompt is missing four pieces:\n- Context: who you are and who your customers are.\n- Details: what's in the catalog and when orders close.\n- Format: where it goes and how long it is.\n- Tone: how you want to sound.\nImproved version:\n\"I sell clothes from a catalog to my neighbors. Write a 4-line WhatsApp message telling them the [season] catalog is here. Orders close on [date]. Make it sound friendly.\""
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. La IA no escribió el mensaje: te dijo qué falta y te dio un prompt mejor, con espacios para los datos de Marcela. Esos los llena ella.",
+              "en": "Strong signal. The AI didn't write the message: it told you what's missing and gave you a better prompt, with blanks for Marcela's details. She fills those in."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Hola, hermosas! Llegó nuestro catálogo nuevo con descuentos de hasta el 50 % y envío gratis a todo el país. ¡Aprovecha antes de que se agote!",
+            "en": "Hi, lovelies! Our new catalog is here, with up to 50% off and free shipping nationwide. Grab yours before it's gone!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA respondió el prompt en vez de revisarlo. Y se inventó un 50 % de descuento. Mira la lista: dile que es un prompt, que diga qué falta y que no invente.",
+              "en": "Weak signal: the AI answered the prompt instead of reviewing it. And it made up a 50% discount. Check the list: tell it it's a prompt, ask what's missing, and tell it not to make things up."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "La IA le propuso cambios a Marcela. Sus datos reales: recibe pedidos hasta el 20, sus precios arrancan en $35.000 y solo entrega en el barrio. ¿Qué se queda, qué se corrige y qué se va?",
+          "en": "The AI suggested some changes to Marcela. Her real details: orders close on the 20th, her prices start at $35, and she only delivers in the neighborhood. What stays, what gets fixed and what goes?"
+        }
+      },
+      "titulo": {
+        "es": "¿Te lo quedas?",
+        "en": "Keep it or not?"
+      },
+      "grupos": [
+        {
+          "id": "queda",
+          "titulo": {
+            "es": "Me lo quedo",
+            "en": "Keep it"
+          }
+        },
+        {
+          "id": "corrijo",
+          "titulo": {
+            "es": "Lo corrijo con mis datos",
+            "en": "Fix it with my details"
+          }
+        },
+        {
+          "id": "quito",
+          "titulo": {
+            "es": "Lo quito",
+            "en": "Cut it"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "queda",
+          "texto": {
+            "es": "Di quién eres: vendes ropa por catálogo a tus vecinas.",
+            "en": "Say who you are: you sell clothes from a catalog to your neighbors."
+          }
+        },
+        {
+          "grupo": "corrijo",
+          "texto": {
+            "es": "Pon que los pedidos cierran el viernes 15.",
+            "en": "Say orders close on Friday the 15th."
+          }
+        },
+        {
+          "grupo": "quito",
+          "texto": {
+            "es": "Ofrece envío gratis a todo el país.",
+            "en": "Offer free shipping nationwide."
+          }
+        },
+        {
+          "grupo": "queda",
+          "texto": {
+            "es": "Pide un mensaje de WhatsApp de máximo 4 líneas.",
+            "en": "Ask for a WhatsApp message, 4 lines max."
+          }
+        },
+        {
+          "grupo": "corrijo",
+          "texto": {
+            "es": "Pon que los precios arrancan en $25.000.",
+            "en": "Say prices start at $25."
+          }
+        },
+        {
+          "grupo": "quito",
+          "texto": {
+            "es": "Di que es la mejor ropa de todo el país.",
+            "en": "Say it's the best clothing in the whole country."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Bien separado. La IA trajo buenas ideas y también datos que no eran de Marcela. Separarlos es tu trabajo de piloto.",
+          "en": "Nicely sorted. The AI brought good ideas and also details that weren't Marcela's. Sorting them out is your job as pilot."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, mira los datos reales de Marcela. ¿Esa idea sirve tal cual, sirve con otro dato o promete algo que ella no ofrece?",
+          "en": "Hmm, look at Marcela's real details. Does that idea work as is, work with a different detail, or promise something she doesn't offer?"
+        }
+      },
+      "malPorGrupo": {
+        "queda": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Esa idea no inventa nada: sirve tal como está.",
+            "en": "Close. That idea doesn't make anything up: it works as is."
+          }
+        },
+        "corrijo": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. La idea sirve, pero el dato no es el de Marcela. Compáralo con sus datos reales.",
+            "en": "Close. The idea works, but the detail isn't Marcela's. Compare it with her real details."
+          }
+        },
+        "quito": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Eso promete algo que Marcela no puede cumplir. Ningún dato lo arregla.",
+            "en": "Close. That promises something Marcela can't deliver. No detail can fix it."
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Me pasó algo con Marcela. Le pedí a la IA que mejorara uno de sus prompts y lo usé tal cual, sin leerlo. Marcela les habla a sus vecinas como amiga. Dos partes no eran de ella. Tócalas.",
+          "en": "Something happened with Marcela. I asked the AI to improve one of her prompts and used it as is, without reading it. Marcela talks to her neighbors like a friend. Two parts weren't hers. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "El prompt que no leí",
+        "en": "The prompt I didn't read"
+      },
+      "trozos": [
+        {
+          "es": "Vendo ropa por catálogo a mis vecinas del barrio.",
+          "en": "I sell clothes from a catalog to my neighbors."
+        },
+        {
+          "es": "Escribe un mensaje de WhatsApp para contarles que llegó el catálogo nuevo.",
+          "en": "Write a WhatsApp message telling them the new catalog is here."
+        },
+        {
+          "es": "Menciona que ya tenemos más de 500 clientas felices.",
+          "en": "Mention that we already have over 500 happy customers."
+        },
+        {
+          "es": "Pedidos hasta el 20 de este mes.",
+          "en": "Orders close on the 20th of this month."
+        },
+        {
+          "es": "Usa un tono formal y elegante, de tienda de lujo.",
+          "en": "Use a formal, elegant tone, like a luxury store."
+        },
+        {
+          "es": "Máximo 4 líneas.",
+          "en": "4 lines max."
+        }
+      ],
+      "malos": [
+        2,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Bien visto. Marcela no tiene 500 clientas: la IA lo inventó para que sonara mejor. Y el tono de lujo no es el de ella, que les habla como amiga. Lo que no es cierto o no suena a ti, se quita.",
+          "en": "Good catch. Marcela doesn't have 500 customers: the AI made that up to sound better. And the luxury tone isn't hers; she talks to them like a friend. Anything untrue or not like you gets cut."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte es de Marcela. Busca un dato que ella nunca dio y un cambio que no suena a ella.",
+          "en": "That part is Marcela's. Look for a detail she never gave and a change that doesn't sound like her."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Una más antes de cerrar. Marcela le pidió a la IA que mejorara otro prompt y le llegó algo que no esperaba. Ayúdale a decidir.",
+          "en": "One more before we wrap up. Marcela asked the AI to improve another prompt and got something she didn't expect. Help her decide."
+        }
+      },
+      "titulo": {
+        "es": "El prompt gigante",
+        "en": "The giant prompt"
+      },
+      "escena": {
+        "es": "La IA le devolvió a Marcela un prompt de 20 líneas, con 12 instrucciones: tono, emojis, llamado a la acción, estrategia de ventas. Marcela solo quería avisar que llegó el catálogo. Lo lee y se marea. ¿Qué hace?",
+        "en": "The AI sent Marcela back a 20-line prompt with 12 instructions: tone, emojis, call to action, sales strategy. Marcela just wanted to say the catalog is here. She reads it and her head spins. What does she do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Lo usa entero: la IA sabe más de prompts",
+            "en": "Use all of it: the AI knows prompts better"
+          },
+          "consecuencia": {
+            "es": "Salió un mensaje largo, con frases de vendedor que Marcela nunca usa. Dos vecinas le preguntaron si le habían robado el WhatsApp.",
+            "en": "Out came a long message full of sales lines Marcela never uses. Two neighbors asked her if someone had taken over her WhatsApp."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Vuelve a su prompt de una línea y se olvida",
+            "en": "Go back to her one-line prompt and forget it"
+          },
+          "consecuencia": {
+            "es": "Le salió el mismo resultado flojo del principio. Botó también las piezas que sí le faltaban, como el tono y hasta cuándo pedir.",
+            "en": "She got the same weak result as before. She also threw out the pieces she really was missing, like the tone and the order deadline."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Se queda con lo que sirve y pide una versión corta",
+            "en": "Keep what works and ask for a short version"
+          },
+          "consecuencia": {
+            "es": "Marcela marcó lo útil: quién es, WhatsApp, hasta cuándo pedir. Le pidió a la IA una versión de 4 líneas con eso. Quedó un prompt corto que suena a ella.",
+            "en": "Marcela picked out what was useful: who she is, WhatsApp, the order deadline. She asked the AI for a 4-line version with just that. She ended up with a short prompt that sounds like her."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Una versión mejorada no es una orden, es una propuesta. La lees, te quedas con lo que sirve y ajustas el resto, como aprendiste a conversar con Sofía.",
+          "en": "An improved version isn't an order, it's a suggestion. You read it, keep what works and adjust the rest, just like you learned to talk things through with Sofía."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Tu nota de hoy: explica con tus palabras cómo le pides a la IA que mejore un prompt, como se lo contarías a Marcela.",
+          "en": "Today's note: explain in your own words how you ask the AI to improve a prompt, the way you'd tell Marcela."
+        }
+      },
+      "concepto": "mejorar-prompt",
+      "definicion": {
+        "es": "Pegarle tu prompt a la IA para que diga qué le falta y te proponga una versión mejor, sin inventar tus datos. Después decides tú qué se queda: la IA propone, tú eliges.",
+        "en": "Pasting your prompt into the AI so it says what's missing and suggests a better version, without making up your details. Then you decide what stays: the AI suggests, you choose."
+      },
+      "pregunta": {
+        "es": "Pedir que la IA mejore mi prompt sirve para…",
+        "en": "Asking the AI to improve my prompt helps…"
+      },
+      "guardaPrompt": "b04",
+      "etiqueta": {
+        "es": "revisar mi prompt",
+        "en": "review my prompt"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta y tu prompt de revisión ya están en tu bitácora. Úsalo con cualquier prompt que no te convenza.",
+          "en": "Saved. Your card and your review prompt are in your logbook. Use it on any prompt you're not happy with."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y Marcela queda lista.",
+          "en": "Three questions and Marcela's all set."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Le pegas tu prompt a la IA para que lo mejore y te devuelve el mensaje final. ¿Qué faltó?",
+            "en": "You paste your prompt into the AI to improve it, and it sends back the finished message. What was missing?"
+          },
+          "opciones": [
+            {
+              "es": "Aclarar que es un prompt para revisar, no para responder",
+              "en": "Making clear it's a prompt to review, not to answer"
+            },
+            {
+              "es": "Pedirle que el mensaje sea más largo",
+              "en": "Asking for a longer message"
+            },
+            {
+              "es": "Darle un papel de experto",
+              "en": "Giving it an expert role"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Si no lo aclaras, la IA lo toma como un pedido más y lo responde.",
+              "en": "Right. If you don't say so, the AI treats it as one more request and answers it."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿La IA sabía que tenía que revisar el prompt, o creyó que era un pedido?",
+              "en": "Hmm. Did the AI know it had to review the prompt, or did it think it was a request?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La versión mejorada de tu prompt dice \"envío gratis\", pero tú no lo ofreces. ¿Qué haces?",
+            "en": "The improved version of your prompt says \"free shipping,\" but you don't offer that. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Lo dejo: la IA sabe más de ventas",
+              "en": "Leave it: the AI knows more about sales"
+            },
+            {
+              "es": "Lo quito y uso el resto",
+              "en": "Cut it and use the rest"
+            },
+            {
+              "es": "Boto toda la versión",
+              "en": "Throw out the whole version"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Te quedas con lo que sirve y quitas lo que no es cierto.",
+              "en": "Exactly. You keep what works and cut what isn't true."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en Marcela: ¿botó todo o separó lo útil de lo inventado?",
+              "en": "Think of Marcela: did she throw it all out, or separate the useful from the made-up?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué le pides a la IA para que no invente datos en la versión nueva?",
+            "en": "What do you ask the AI so it doesn't make up details in the new version?"
+          },
+          "opciones": [
+            {
+              "es": "Que la haga más completa",
+              "en": "To make it more complete"
+            },
+            {
+              "es": "Que agregue más detalles",
+              "en": "To add more details"
+            },
+            {
+              "es": "Que deje entre corchetes lo que no sabe",
+              "en": "To put what it doesn't know in brackets"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Un [fecha] en blanco es mejor que una fecha falsa.",
+              "en": "Right. A blank [date] beats a fake date."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Esa invita a rellenar huecos. Busca la que deja el hueco a la vista.",
+              "en": "Hmm. That one invites it to fill gaps. Look for the one that leaves the gap in plain sight."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Que la IA mejore tu prompt",
+        "en": "Letting the AI improve your prompt"
+      },
+      "resumen": {
+        "es": "Pégale tu prompt para que diga qué le falta y te proponga uno mejor, sin inventar. La IA propone; tú decides qué se queda.",
+        "en": "Paste in your prompt so it says what's missing and suggests a better one, without making things up. The AI suggests; you decide what stays."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b04"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Le pediste a la IA que revisara el prompt de Marcela",
+          "en": "You had the AI review Marcela's prompt"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Separaste lo útil de lo inventado",
+          "en": "You separated the useful from the made-up"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste lo que la IA le metió al prompt",
+          "en": "You caught what the AI slipped into the prompt"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Ayudaste a Marcela con el prompt gigante",
+          "en": "You helped Marcela with the giant prompt"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-mejoras-al-prompt",
+      "titulo": {
+        "es": "Pedir que mejore tu prompt",
+        "en": "Getting your prompt improved"
+      }
+    }
+  }
+}

@@ -12,6 +12,25 @@ Para el detalle de decisiones y el porqué de cada cosa, ver `DOCUMENTACION.md`.
 
 ---
 
+## 2026-09-26 · Contenido en paralelo (tanda A) y semilla fuera del paquete
+
+**Estado completo por mundo:** `contenido/ESTADO-CONTENIDO.md` (punto de partida de cada tanda).
+
+### Agregado
+- `contenido/misiones/GUIA-DE-PRODUCCION.md` — cómo escribe y revisa cada agente.
+- `contenido/ESTADO-CONTENIDO.md` — qué está editado, autorrevisado, sin cerrar o a medias.
+- Misiones nuevas: Origen cap. 2, Lexia cap. 1, Órbita cap. 2, Forja caps. 1 y 2, Prisma cap. 1,
+  Nexo cap. 1, Horizonte cap. 1, Autómata 1-4, Núcleo 1-4, Taller 1 (88 paquetes en total).
+- `scripts/generar-semilla.mjs`, `src/app/semilla/route.ts`, `src/app/semilla/[id]/route.ts`,
+  `src/lib/misiones/resumen.ts` — las misiones de la semilla como archivos estáticos.
+
+### Cambiado
+- `src/lib/misiones/semilla.ts` — generado, solo servidor.
+- `src/lib/misiones/cargar.ts`, `src/app/admin/misiones/page.tsx` — descargan la semilla en vez de llevarla dentro de la app.
+- `package.json` — scripts `semilla`, `predev`, `prebuild`.
+
+---
+
 ## 2026-09-24 · C2 ficha como imagen + C3 Capítulo 1 de Eco
 
 ### Agregado

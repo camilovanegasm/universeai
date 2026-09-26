@@ -1,0 +1,468 @@
+{
+  "formato": "punti-mision@1",
+  "id": "del-ruido-a-la-imagen",
+  "mundo": "imagenes-y-video",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "concepto",
+  "largo": "rapida",
+  "minutos": 5,
+  "conceptos": [
+    "como-nace-una-imagen"
+  ],
+  "usaConceptos": [
+    "reglas-vs-ejemplos"
+  ],
+  "titulo": {
+    "es": "Del ruido a la imagen",
+    "en": "From Noise to Image"
+  },
+  "resumen": {
+    "es": "Cómo crea una imagen la IA a partir de tu texto, y por qué todavía tropieza en letras, manos y cantidades.",
+    "en": "How AI builds an image from your words, and why it still trips over lettering, hands and counting."
+  },
+  "siguiente": "el-haz-completo",
+  "fuentes": [
+    {
+      "titulo": "Hugging Face · Stable Diffusion with Diffusers (difusión: parte de ruido y lo limpia paso a paso; cada ejecución da una imagen distinta; entrenado con pares imagen-texto de LAION-5B)",
+      "url": "https://huggingface.co/blog/stable_diffusion",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI · Introducing 4o image generation (limitaciones: texto en otros idiomas, texto pequeño y denso, muchos objetos, recortes)",
+      "url": "https://openai.com/index/introducing-4o-image-generation/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI Help · ChatGPT Free Tier FAQ (crear imágenes en el plan gratis, con límite aparte)",
+      "url": "https://help.openai.com/en/articles/9275245-chatgpt-free-tier-faq",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Gemini Apps Help · Generate & edit images with Gemini Apps (cuota diaria, edad mínima)",
+      "url": "https://support.google.com/gemini/answer/14286560?hl=en",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Microsoft · How to use AI picture generators (Copilot crea imágenes a partir de un prompt escrito)",
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/for-individuals/do-more-with-ai/ai-art-and-creativity/how-to-use-ai-picture-generators",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Bienvenido a Prisma, piloto, el planeta de cristal. Lo tallé para que la luz entre por una cara y salga partida en colores: imagen, movimiento y sonido. Aquí la regla es sencilla: la luz que entra es tu idea. Si entra turbia, sale turbia.",
+          "en": "Welcome to Prism, pilot, the crystal planet. I carved it so light comes in one face and leaves split into colors: image, motion and sound. The rule here is simple: the light going in is your idea. Cloudy in, cloudy out."
+        }
+      },
+      "titulo": {
+        "es": "Del ruido a la imagen",
+        "en": "From Noise to Image"
+      },
+      "texto": {
+        "es": "Primera parada: el taller de luz. Don Evaristo, 67 años, pinta acuarelas en Villa de Leyva y no entiende cómo \"pinta\" una máquina. Hoy lo averiguas con él. Unos 5 minutos.",
+        "en": "First stop: the light workshop. Don Evaristo, 67, paints watercolors in Villa de Leyva and can't figure out how a machine \"paints\". Today you'll find out together. About 5 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Don Evaristo aprendió a pintar copiando paisajes durante años. La máquina también aprendió mirando, pero de otra manera.",
+          "en": "Don Evaristo learned to paint by copying landscapes for years. The machine also learned by looking, just differently."
+        }
+      },
+      "titulo": {
+        "es": "Cómo aprendió a pintar",
+        "en": "How it learned to paint"
+      },
+      "texto": {
+        "es": "Un generador de imágenes vio millones de imágenes, cada una con su descripción: \"perro dormido en una hamaca\", \"acuarela de un pueblo con techos de teja\". De tanto ver, aprendió cómo se ve cada cosa y cómo se combinan. No pega pedazos de fotos guardadas: aprendió patrones, como Don Evaristo aprendió el verde de los cerros.",
+        "en": "An image generator looked at millions of images, each with its description: \"dog asleep in a hammock\", \"watercolor of a town with clay-tile roofs\". From all that looking, it learned what things look like and how they go together. It doesn't paste together stored photos: it learned patterns, the way Don Evaristo learned the green of the hills."
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora mira cómo nace una imagen en muchos generadores. Todo empieza en algo parecido a la estática de un televisor viejo. Toca los cuatro pasos, en orden.",
+          "en": "Now watch how an image is born in many generators. It all starts with something like the static on an old TV. Tap the four steps, in order."
+        }
+      },
+      "titulo": {
+        "es": "Del ruido a la imagen",
+        "en": "From noise to image"
+      },
+      "piezas": [
+        {
+          "id": "ruido",
+          "color": "#b39dff",
+          "titulo": {
+            "es": "1. Puro ruido",
+            "en": "1. Pure noise"
+          },
+          "descripcion": {
+            "es": "Arranca de una imagen de puntos al azar.",
+            "en": "It starts from an image of random dots."
+          },
+          "ejemplo": {
+            "es": "Cada intento arranca de un ruido distinto. Por eso el mismo prompt, pedido dos veces, no sale igual.",
+            "en": "Every try starts from different noise. That's why the same prompt, asked twice, doesn't come out the same."
+          }
+        },
+        {
+          "id": "guia",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "2. Tu texto guía",
+            "en": "2. Your words guide it"
+          },
+          "descripcion": {
+            "es": "Tus palabras le dicen qué buscar en el ruido.",
+            "en": "Your words tell it what to look for in the noise."
+          },
+          "ejemplo": {
+            "es": "Con \"casa colonial blanca con balcón de madera\", en cada paso empuja el ruido hacia algo que se parezca a eso.",
+            "en": "With \"white colonial house with a wooden balcony\", each step nudges the noise toward something that looks like that."
+          }
+        },
+        {
+          "id": "pasos",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "3. Limpia paso a paso",
+            "en": "3. Clean up, step by step"
+          },
+          "descripcion": {
+            "es": "Quita ruido muchas veces: primero formas, luego detalles.",
+            "en": "It removes noise many times: shapes first, details later."
+          },
+          "ejemplo": {
+            "es": "Primero salen manchas: cielo arriba, casa abajo. Al final, tejas y balcón. Como una acuarela: primero el fondo, después el pincel fino.",
+            "en": "First come blobs: sky on top, house below. Tiles and balcony come last. Like a watercolor: background first, fine brush later."
+          }
+        },
+        {
+          "id": "final",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "4. La imagen",
+            "en": "4. The image"
+          },
+          "descripcion": {
+            "es": "Queda lo más probable, sin que nadie lo cuente.",
+            "en": "What's left is the most likely picture, and nobody counts anything."
+          },
+          "ejemplo": {
+            "es": "Nadie revisa si hay 5 tejas o 6, ni si una palabra está bien escrita. Pinta lo que se ve probable, y ahí nacen los tropiezos.",
+            "en": "Nobody checks whether there are 5 tiles or 6, or whether a word is spelled right. It paints what looks likely, and that's where slip-ups come from."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Don Evaristo quiere saber en qué confiar. ¿Cada cosa suele salir bien o hay que revisarla con lupa? Pista: ¿para acertar hay que contar o deletrear?",
+          "en": "Don Evaristo wants to know what to trust. Does each thing usually come out fine, or should you check it closely? Hint: does getting it right mean counting or spelling?"
+        }
+      },
+      "titulo": {
+        "es": "¿En qué confiar?",
+        "en": "What can you trust?"
+      },
+      "grupos": [
+        {
+          "id": "bien",
+          "titulo": {
+            "es": "Suele salir bien",
+            "en": "Usually comes out fine"
+          }
+        },
+        {
+          "id": "lupa",
+          "titulo": {
+            "es": "Revísalo con lupa",
+            "en": "Check it closely"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "bien",
+          "texto": {
+            "es": "Un atardecer naranja sobre los cerros",
+            "en": "An orange sunset over the hills"
+          }
+        },
+        {
+          "grupo": "lupa",
+          "texto": {
+            "es": "Un letrero que diga \"Panadería El Trigal\"",
+            "en": "A sign that says \"Golden Wheat Bakery\""
+          }
+        },
+        {
+          "grupo": "bien",
+          "texto": {
+            "es": "Una acuarela de un pueblo con techos de teja",
+            "en": "A watercolor of a town with clay-tile roofs"
+          }
+        },
+        {
+          "grupo": "lupa",
+          "texto": {
+            "es": "Exactamente 7 velas en una torta",
+            "en": "Exactly 7 candles on a cake"
+          }
+        },
+        {
+          "grupo": "lupa",
+          "texto": {
+            "es": "Dos manos entrelazadas tocando guitarra",
+            "en": "Two hands intertwined, playing guitar"
+          }
+        },
+        {
+          "grupo": "bien",
+          "texto": {
+            "es": "Un gato dormido en una ventana",
+            "en": "A cat asleep on a windowsill"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso es. Ambientes, estilos y cosas comunes suelen salir bien. Contar, deletrear y dedos enredados todavía le cuestan.",
+          "en": "That's it. Scenes, styles and everyday things usually come out fine. Counting, spelling and tangled fingers are still hard for it."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿para que salga bien hay que contar, deletrear o acomodar dedos?",
+          "en": "Hmm. Ask yourself: does getting this right mean counting, spelling or arranging fingers?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un experimento para hacer afuera de Punti, si tienes a mano una IA que cree imágenes. Así compruebas con tus ojos que cada intento arranca de un ruido distinto.",
+          "en": "An experiment to try outside Punti, if you have an AI that makes images. You'll see for yourself that every try starts from different noise."
+        }
+      },
+      "titulo": {
+        "es": "La misma idea, dos veces",
+        "en": "Same idea, twice"
+      },
+      "instruccion": {
+        "es": "Abre una IA que cree imágenes: ChatGPT, Gemini, Copilot u otra. En dos chats nuevos, pide exactamente lo mismo: \"Acuarela de una calle empedrada de pueblo, con casas blancas y balcones de madera\". Compara las dos imágenes. No subas fotos tuyas ni de otras personas.",
+        "en": "Open an AI that makes images: ChatGPT, Gemini, Copilot or another. In two new chats, ask for exactly the same thing: \"Watercolor of a cobblestone village street with white houses and wooden balconies\". Compare the two images. Don't upload photos of yourself or anyone else."
+      },
+      "checks": [
+        {
+          "es": "Pedí la misma frase dos veces, en chats nuevos",
+          "en": "I asked for the same sentence twice, in new chats"
+        },
+        {
+          "es": "Encontré al menos tres diferencias entre las dos",
+          "en": "I found at least three differences between them"
+        },
+        {
+          "es": "Busqué algún detalle raro: letras, manos o cantidades",
+          "en": "I looked for anything odd: lettering, hands or counts"
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cómo nace una imagen, como se lo explicarías a Don Evaristo.",
+          "en": "Logbook time. Write in your own words how an image is born, the way you'd explain it to Don Evaristo."
+        }
+      },
+      "concepto": "como-nace-una-imagen",
+      "definicion": {
+        "es": "Un generador aprendió de millones de imágenes con su descripción. Muchos parten de ruido y lo limpian guiados por tu texto. Pinta lo probable, sin contar ni revisar: por eso tropieza en letras, manos y cantidades.",
+        "en": "A generator learned from millions of images with their descriptions. Many start from noise and clean it up, guided by your words. It paints what's likely, without counting or checking: that's why it trips over lettering, hands and counts."
+      },
+      "pregunta": {
+        "es": "Una IA crea una imagen…",
+        "en": "An AI makes an image…"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Esta tarjeta es la base de todo Prisma. Cuando una imagen salga rara, vuelve aquí: casi siempre era algo que había que contar o deletrear.",
+          "en": "Saved. This card is the foundation for all of Prism. When an image comes out odd, come back here: it was almost always something that needed counting or spelling."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y seguimos.",
+          "en": "Two questions and we move on."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Don Evaristo pide dos veces la misma acuarela y le salen distintas. ¿Por qué?",
+            "en": "Don Evaristo asks for the same watercolor twice and gets two different ones. Why?"
+          },
+          "opciones": [
+            {
+              "es": "Cada intento arranca de un ruido distinto",
+              "en": "Every try starts from different noise"
+            },
+            {
+              "es": "La IA se cansó en el segundo intento",
+              "en": "The AI got tired on the second try"
+            },
+            {
+              "es": "Copió dos fotos distintas de internet",
+              "en": "It copied two different photos online"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Otro ruido, otra imagen, aunque el texto sea el mismo.",
+              "en": "Exactly. Different noise, different image, even with the same words."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en cómo empieza cada imagen, antes de que tu texto la guíe.",
+              "en": "Hmm. Think about how each image starts, before your words guide it."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué conviene revisar con lupa en una imagen hecha con IA?",
+            "en": "What's worth checking closely in an AI-made image?"
+          },
+          "opciones": [
+            {
+              "es": "El color del cielo",
+              "en": "The color of the sky"
+            },
+            {
+              "es": "Letras, manos y cantidades",
+              "en": "Lettering, hands and counts"
+            },
+            {
+              "es": "Que se vea nítida",
+              "en": "Whether it looks sharp"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Lo que hay que contar o deletrear es donde más tropieza.",
+              "en": "Right. Whatever needs counting or spelling is where it trips most."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. ¿Qué cosas exigen contar o deletrear?",
+              "en": "Not that. Which things need counting or spelling?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Cómo nace una imagen",
+        "en": "How an image is born"
+      },
+      "resumen": {
+        "es": "Aprendió de imágenes con su descripción y, en muchos generadores, limpia ruido guiada por tu texto. Pinta lo probable.",
+        "en": "It learned from images with descriptions and, in many generators, cleans up noise guided by your words. It paints what's likely."
+      }
+    },
+    "piezas": "b03",
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Seguiste una imagen desde el ruido hasta el final",
+          "en": "You followed an image from noise to the end"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste lo que sale bien de lo que se revisa con lupa",
+          "en": "You sorted what comes out fine from what needs a close look"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pediste la misma imagen dos veces y comparaste",
+          "en": "You asked for the same image twice and compared"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Pasaste el punto de control",
+          "en": "You passed the checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "entender-como-nace-una-imagen",
+      "titulo": {
+        "es": "Entender cómo nace una imagen",
+        "en": "Understanding how an image is born"
+      }
+    }
+  }
+}

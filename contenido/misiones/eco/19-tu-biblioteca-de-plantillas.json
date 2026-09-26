@@ -1,0 +1,900 @@
+{
+  "formato": "punti-mision@1",
+  "id": "tu-biblioteca-de-plantillas",
+  "mundo": "prompts",
+  "capitulo": 4,
+  "numero": 19,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "plantillas"
+  ],
+  "usaConceptos": [
+    "kit-de-senales",
+    "pedido-completo",
+    "datos-sensibles",
+    "iterar"
+  ],
+  "titulo": {
+    "es": "Tu biblioteca de plantillas",
+    "en": "Your Template Library"
+  },
+  "resumen": {
+    "es": "Convertir los prompts que te funcionaron en plantillas con espacios y nombre, listas para reusar y mejorar.",
+    "en": "Turn prompts that worked into named templates with blanks, ready to reuse and improve."
+  },
+  "siguiente": "tu-copiloto-personal",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, entra una señal con prisa. Es Luz Dary, que tiene una agencia de viajes pequeña. Hace un mes escribió un prompt buenísimo para confirmar viajes. No lo encuentra, y cada vez lo reescribe de memoria. Siempre se le olvida algo.",
+          "en": "Pilot, a hurried signal is coming in. It's Luz Dary, who runs a small travel agency. A month ago she wrote a great prompt for confirming trips. Now she can't find it, so she rewrites it from memory every time. She always forgets something."
+        }
+      },
+      "titulo": {
+        "es": "Tu biblioteca de plantillas",
+        "en": "Your Template Library"
+      },
+      "texto": {
+        "es": "En el Kit de señales guardaste prompts y les cambiabas los datos a mano. Hoy los vuelves plantillas: con espacios, con nombre y en un lugar donde las encuentres. Unos 10 minutos.",
+        "en": "In the Signal Kit you saved prompts and changed their details by hand. Today you turn them into templates: with blanks, a name, and a place where you can find them. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto escribió Luz Dary de memoria para un cliente nuevo. Abajo está su plantilla, con los espacios ya llenos.",
+          "en": "This is what Luz Dary wrote from memory for a new customer. Below is her template, with the blanks already filled in."
+        }
+      },
+      "titulo": {
+        "es": "De memoria o con plantilla",
+        "en": "From memory or from a template"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Escribe el mensaje de confirmación del viaje, como el de la otra vez.",
+          "en": "Write the trip confirmation message, like the one from last time."
+        },
+        "salida": {
+          "es": "Estimado cliente:\nLe confirmamos su reserva. Por favor verifique los detalles de su viaje.\nCualquier inquietud, estamos atentos.\nCordialmente, la Agencia",
+          "en": "Dear customer:\nWe are confirming your booking. Please verify your trip details.\nFor any questions, we are at your service.\nSincerely, The Agency"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "nombre",
+            "texto": {
+              "es": "Plantilla: confirmación de viaje. ",
+              "en": "Template: trip confirmation. "
+            }
+          },
+          {
+            "pieza": "fijo",
+            "texto": {
+              "es": "Tengo una agencia de viajes pequeña. Escribe un WhatsApp para confirmarle el viaje a este cliente. ",
+              "en": "I run a small travel agency. Write a WhatsApp message confirming this customer's trip. "
+            }
+          },
+          {
+            "pieza": "huecos",
+            "texto": {
+              "es": "Cliente: Pepito Pérez. Destino: Cartagena. Fechas: 12 al 15 de marzo. ",
+              "en": "Customer: John Doe. Destination: Cartagena. Dates: March 12 to 15. "
+            }
+          },
+          {
+            "pieza": "fijo",
+            "texto": {
+              "es": "Máximo 5 líneas, tono cálido. Al final, recuérdale llevar su documento de identidad.",
+              "en": "5 lines max, warm tone. At the end, remind them to bring their ID."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Hola, Pepito. Tu viaje a Cartagena está confirmado: del 12 al 15 de marzo.\nEn estos días te mando los tiquetes y la reserva del hotel.\nCualquier duda, me escribes por aquí.\nNo olvides llevar tu documento de identidad.\nLuz Dary",
+          "en": "Hi, John. Your trip to Cartagena is confirmed: March 12 to 15.\nI'll send your tickets and hotel booking in the next few days.\nAny questions, just message me here.\nDon't forget to bring your ID.\nLuz Dary"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Lo fijo ya no hay que pensarlo: quién es, qué pedir, el largo, el tono y el recordatorio. Luz Dary solo llenó los espacios: cliente, destino y fechas. Y como la plantilla tiene nombre, la encuentra en un segundo.",
+          "en": "The fixed part needs no more thought: who she is, what to ask, length, tone and the reminder. Luz Dary only filled in the blanks: customer, destination and dates. And since the template has a name, she finds it in a second."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Una plantilla tiene cuatro piezas. Las dos primeras la arman. Las otras dos hacen que te siga sirviendo. Toca cada una.",
+          "en": "A template has four pieces. The first two build it. The other two keep it useful. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las piezas de una plantilla",
+        "en": "The parts of a template"
+      },
+      "piezas": [
+        {
+          "id": "fijo",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Lo fijo",
+            "en": "The fixed part"
+          },
+          "descripcion": {
+            "es": "Lo que no cambia: quién eres, la tarea, la forma y el tono.",
+            "en": "What stays the same: who you are, the task, format and tone."
+          },
+          "ejemplo": {
+            "es": "\"Tengo una agencia de viajes pequeña... máximo 5 líneas, tono cálido.\" Ya lo escribiste bien una vez: no lo vuelvas a pensar.",
+            "en": "\"I run a small travel agency... 5 lines max, warm tone.\" You already got it right once: no need to rethink it."
+          }
+        },
+        {
+          "id": "huecos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Los espacios",
+            "en": "The blanks"
+          },
+          "descripcion": {
+            "es": "Lo que cambia cada vez, entre corchetes: [cliente], [fecha].",
+            "en": "What changes each time, in brackets: [customer], [date]."
+          },
+          "ejemplo": {
+            "es": "Son los marcadores que usaste con Don Wilson. Ponles nombres claros: [destino] se entiende; [dato] no dice nada.",
+            "en": "They're the placeholders you used with Don Wilson. Give them clear names: [destination] makes sense; [info] says nothing."
+          }
+        },
+        {
+          "id": "nombre",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Un nombre claro",
+            "en": "A clear name"
+          },
+          "descripcion": {
+            "es": "El trabajo que hace, para encontrarla rápido.",
+            "en": "The job it does, so you find it fast."
+          },
+          "ejemplo": {
+            "es": "\"Confirmación de viaje\" se encuentra en un segundo. \"Prompt bueno 3\" no lo encuentras nunca.",
+            "en": "\"Trip confirmation\" turns up in a second. \"Good prompt 3\" never turns up at all."
+          }
+        },
+        {
+          "id": "mejora",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Mejora con el uso",
+            "en": "Gets better with use"
+          },
+          "descripcion": {
+            "es": "Si algo sale flojo, arreglas la plantilla, no solo el chat.",
+            "en": "If something comes out weak, fix the template, not just the chat."
+          },
+          "ejemplo": {
+            "es": "Un cliente llegó sin documento, y Luz Dary agregó el recordatorio a la plantilla. Desde ahí, no se le olvida con ningún cliente.",
+            "en": "One customer showed up without ID, so Luz Dary added the reminder to the template. Since then, she never forgets it."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Luz Dary quiere una plantilla para cotizar viajes, y este es el prompt que le funcionó. ¿Qué parte queda fija y cuál se vuelve un espacio?",
+          "en": "Your turn. Luz Dary wants a template for trip quotes, and this is the prompt that worked for her. Which part stays fixed, and which becomes a blank?"
+        }
+      },
+      "titulo": {
+        "es": "¿Queda fijo o cambia?",
+        "en": "Fixed or blank?"
+      },
+      "grupos": [
+        "fijo",
+        "huecos"
+      ],
+      "items": [
+        {
+          "grupo": "fijo",
+          "texto": {
+            "es": "Tengo una agencia de viajes pequeña.",
+            "en": "I run a small travel agency."
+          }
+        },
+        {
+          "grupo": "huecos",
+          "texto": {
+            "es": "El viaje es a Santa Marta.",
+            "en": "The trip is to Santa Marta."
+          }
+        },
+        {
+          "grupo": "huecos",
+          "texto": {
+            "es": "Son 4 personas: dos adultos y dos niños.",
+            "en": "It's 4 people: two adults and two kids."
+          }
+        },
+        {
+          "grupo": "fijo",
+          "texto": {
+            "es": "Que suene cálido, sin sonar a vendedora.",
+            "en": "Make it warm, without sounding pushy."
+          }
+        },
+        {
+          "grupo": "huecos",
+          "texto": {
+            "es": "El presupuesto es de $3.000.000.",
+            "en": "The budget is $800."
+          }
+        },
+        {
+          "grupo": "fijo",
+          "texto": {
+            "es": "Ponlo en una lista de máximo 8 líneas.",
+            "en": "Put it in a list, 8 lines max."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Perfecto. Lo de Luz Dary queda fijo. Lo de cada cliente se vuelve un espacio.",
+          "en": "Perfect. Luz Dary's part stays fixed. Each customer's part becomes a blank."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, imagina al próximo cliente. ¿Esta frase cambiaría con él, o se queda igual?",
+          "en": "Hmm, picture the next customer. Would this sentence change for them, or stay the same?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Te paso el prompt que le funcionó a Luz Dary con una clienta. Conviértelo en una plantilla que sirva para cualquier cliente. Yo la pruebo con otro.",
+          "en": "Here's the prompt that worked for Luz Dary with one customer. Turn it into a template that works for any customer. I'll test it with someone else."
+        }
+      },
+      "titulo": {
+        "es": "Plantilla: recordatorio de vuelo",
+        "en": "Template: flight reminder"
+      },
+      "reto": {
+        "es": "El prompt que funcionó: \"Tengo una agencia de viajes pequeña. Escribe un WhatsApp para recordarle a Fulana de Tal que su vuelo a Santa Marta sale el viernes 14 a las 6 a. m. y que llegue 2 horas antes. Máximo 5 líneas, tono cálido.\" Ponle nombre, deja lo fijo y cambia por espacios lo que cambia.",
+        "en": "The prompt that worked: \"I run a small travel agency. Write a WhatsApp message reminding Jane Doe that her flight to Santa Marta leaves Friday the 14th at 6 a.m. and to get there 2 hours early. 5 lines max, warm tone.\" Give it a name, keep the fixed parts and swap what changes for blanks."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "nombre",
+          "texto": {
+            "es": "Le pone un nombre claro",
+            "en": "Gives it a clear name"
+          },
+          "rubrica": "El prompt empieza o termina con un nombre para la plantilla que dice qué trabajo hace: 'Plantilla: recordatorio de vuelo', 'Aviso de vuelo:'. No cuenta un nombre que no dice nada ('plantilla 1', 'prompt bueno'), ni que la plantilla no tenga nombre.",
+          "claves": {
+            "es": [
+              "recordatorio de vuelo",
+              "recordatorio del vuelo",
+              "recordatorio vuelo",
+              "aviso de vuelo",
+              "aviso del vuelo",
+              "recordatorio de viaje",
+              "recordatorio del viaje",
+              "recordar vuelo"
+            ],
+            "en": [
+              "flight reminder",
+              "reminder: flight",
+              "reminder - flight",
+              "flight alert",
+              "flight notice",
+              "trip reminder",
+              "template: flight",
+              "template - flight"
+            ]
+          }
+        },
+        {
+          "id": "huecos",
+          "texto": {
+            "es": "Espacios para lo que cambia",
+            "en": "Blanks for what changes"
+          },
+          "rubrica": "El prompt usa al menos dos huecos entre corchetes o llaves para lo que cambia con cada cliente: [cliente], [destino], [día], [hora]. No cuenta si deja los datos de la clienta del reto (Fulana de Tal o Jane Doe, Santa Marta, viernes 14, 6 a. m.) en vez de huecos, ni un solo hueco genérico como [datos].",
+          "claves": {
+            "es": [
+              "[cliente",
+              "[nombre",
+              "[destino",
+              "[ciudad",
+              "[fecha",
+              "[dia",
+              "[hora",
+              "{cliente",
+              "{nombre",
+              "{destino",
+              "{fecha",
+              "{hora"
+            ],
+            "en": [
+              "[customer",
+              "[client",
+              "[name",
+              "[destination",
+              "[city",
+              "[date",
+              "[day",
+              "[time",
+              "{customer",
+              "{name",
+              "{destination",
+              "{date",
+              "{time"
+            ]
+          }
+        },
+        {
+          "id": "fijo",
+          "texto": {
+            "es": "Deja fijo lo que no cambia",
+            "en": "Keeps the fixed parts"
+          },
+          "rubrica": "La plantilla conserva, escrito, lo que no cambia de un cliente a otro: que quien escribe tiene una agencia de viajes, el largo (máximo 5 líneas, corto) o el tono cálido. Basta con uno. No cuenta si quitó todo eso, ni si lo volvió huecos como [negocio], [largo] o [tono].",
+          "claves": {
+            "es": [
+              "agencia de viajes",
+              "agencia de viaje",
+              "mi agencia",
+              "una agencia",
+              "lineas",
+              "renglones",
+              "corto",
+              "breve",
+              "calid",
+              "cercan",
+              "amable"
+            ],
+            "en": [
+              "travel agency",
+              "my agency",
+              "an agency",
+              "lines",
+              "short",
+              "brief",
+              "warm",
+              "friendly"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una agencia de viajes a escribir mensajes de WhatsApp. El mensaje del usuario es una plantilla. Si trae huecos entre corchetes o llaves, llénalos con los datos de un cliente nuevo: Pepito Pérez, vuelo a Cartagena, sábado 22 a las 9 a. m. Si no trae huecos, usa los datos tal como vienen, aunque sean de otra persona. Responde solo con el mensaje, sin explicaciones. Respeta el largo y el tono que pida; si no pide ninguno, escribe un texto largo y formal. Si la plantilla trae un nombre, no lo copies en el mensaje.",
+        "en": "You are an AI that helps a travel agency write WhatsApp messages. The user's message is a template. If it has blanks in brackets or braces, fill them in with a new customer's details: John Doe, flight to Cartagena, Saturday the 22nd at 9 a.m. If it has no blanks, use the details exactly as given, even if they belong to someone else. Reply with only the message, no explanations. Follow the length and tone it asks for; if it asks for none, write a long, formal text. If the template has a name, don't copy it into the message."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, Pepito. Te recuerdo que tu vuelo a Cartagena sale el sábado 22 a las 9 a. m.\nLlega al aeropuerto 2 horas antes.\nCualquier cosa, me escribes.\nBuen viaje.\nLuz Dary",
+            "en": "Hi, John. Just a reminder that your flight to Cartagena leaves Saturday the 22nd at 9 a.m.\nGet to the airport 2 hours early.\nAnything you need, message me.\nHave a great trip.\nLuz Dary"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Le pasé tu plantilla a la IA con los datos de otro cliente, Pepito, y salió perfecta. Así se ve una plantilla que sirve para cualquiera.",
+              "en": "Strong signal. I gave the AI your template with another customer's details, John, and it came out perfect. That's what a template that works for anyone looks like."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Hola, Fulana. Te recuerdo que tu vuelo a Santa Marta sale el viernes 14 a las 6 a. m.\nLlega al aeropuerto 2 horas antes.\nBuen viaje.",
+            "en": "Hi, Jane. Just a reminder that your flight to Santa Marta leaves Friday the 14th at 6 a.m.\nGet to the airport 2 hours early.\nHave a great trip."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: le pasé los datos de Pepito, pero la IA le escribió otra vez a Fulana. Sin espacios, tu plantilla sirve para una sola persona. Mira la lista.",
+              "en": "Weak signal: I passed along John's details, but the AI wrote to Jane again. Without blanks, your template only works for one person. Check the list."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Otra de las mías: le armé a Luz Dary una plantilla para cotizar viajes. Dos partes la van a enredar la próxima vez que la busque o la use. Tócalas.",
+          "en": "Another one of mine: I built Luz Dary a template for trip quotes. Two parts will trip her up next time she looks for it or uses it. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mi plantilla de cotización",
+        "en": "My quote template"
+      },
+      "trozos": [
+        {
+          "es": "Nombre: Prompt nuevo 3.",
+          "en": "Name: New prompt 3."
+        },
+        {
+          "es": "Tengo una agencia de viajes pequeña.",
+          "en": "I run a small travel agency."
+        },
+        {
+          "es": "Escribe una cotización para [cliente], que viaja a [destino] del [fecha de ida] al [fecha de regreso].",
+          "en": "Write a quote for [customer], traveling to [destination] from [departure date] to [return date]."
+        },
+        {
+          "es": "Incluye [cosas].",
+          "en": "Include [stuff]."
+        },
+        {
+          "es": "Máximo 8 líneas, en lista, con tono cálido.",
+          "en": "8 lines max, as a list, in a warm tone."
+        }
+      ],
+      "malos": [
+        0,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Ahí está. \"Prompt nuevo 3\" no dice qué hace: en un mes nadie lo encuentra. Y [cosas] no dice qué va ahí. Mejor [hotel], [vuelos] y [precio por persona].",
+          "en": "There it is. \"New prompt 3\" doesn't say what it does: in a month, nobody finds it. And [stuff] doesn't say what goes there. Better: [hotel], [flights] and [price per person]."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte está clara. Busca lo que Luz Dary no va a entender dentro de un mes.",
+          "en": "That part is clear. Look for what Luz Dary won't understand a month from now."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Dos cosas más: dónde guardarlas y cómo mejorarlas.",
+          "en": "Two more things: where to keep them and how to improve them."
+        }
+      },
+      "titulo": {
+        "es": "Guárdala y mejórala",
+        "en": "Keep it and improve it"
+      },
+      "texto": {
+        "es": "Guarda tus plantillas en un solo lugar: tu bitácora, una nota del celular o un documento. Ponles nombre por trabajo. Y cuando una respuesta salga floja, no la arregles solo en ese chat: arregla la plantilla, y así la próxima sale bien.",
+        "en": "Keep your templates in one place: your logbook, a note on your phone or a document. Name them by the job they do. And when an answer comes out weak, don't just fix it in that chat: fix the template, so the next one comes out right."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Un prompt te funciona",
+            "en": "A prompt works for you"
+          },
+          {
+            "es": "Lo vuelves plantilla, con espacios",
+            "en": "You turn it into a template, with blanks"
+          },
+          {
+            "es": "Le pones nombre y la guardas",
+            "en": "You name it and save it"
+          },
+          {
+            "es": "La usas y la mejoras",
+            "en": "You use it and improve it"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Luz Dary ya usó tu plantilla con tres clientes y aprendió dos cosas. Te dejé tu plantilla: mejórala sin empezar de cero.",
+          "en": "Luz Dary has used your template with three customers and learned two things. I left your template here: improve it without starting over."
+        }
+      },
+      "titulo": {
+        "es": "Plantilla: recordatorio de vuelo v2",
+        "en": "Template: flight reminder v2"
+      },
+      "reto": {
+        "es": "Lo que aprendió Luz Dary: un cliente llegó al aeropuerto sin su documento de identidad, y otro no sabía cuánto equipaje podía llevar. Agrégale a tu plantilla el recordatorio del documento y un espacio para el equipaje. Marca en el nombre que es la versión 2.",
+        "en": "What Luz Dary learned: one customer got to the airport without their ID, and another didn't know how much luggage they could bring. Add the ID reminder to your template and a blank for the luggage. Mark in the name that it's version 2."
+      },
+      "inicial": "anterior",
+      "aprobar": 2,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "documento",
+          "texto": {
+            "es": "Recuerda llevar el documento",
+            "en": "Reminds them to bring ID"
+          },
+          "rubrica": "La plantilla ahora pide recordarle al cliente que lleve su documento de identidad, cédula o pasaporte. No cuenta un recordatorio general ('recuérdale lo importante') sin nombrar el documento.",
+          "claves": {
+            "es": [
+              "documento",
+              "cedula",
+              "pasaporte",
+              "identificacion"
+            ],
+            "en": [
+              "passport",
+              "identification",
+              "photo id",
+              "id card",
+              "bring id",
+              "bring their id",
+              "bring your id",
+              "bring his id",
+              "bring her id",
+              "their id"
+            ]
+          }
+        },
+        {
+          "id": "equipaje",
+          "texto": {
+            "es": "Un espacio para el equipaje",
+            "en": "A blank for the luggage"
+          },
+          "rubrica": "La plantilla trae un hueco nuevo para el equipaje permitido: [equipaje], [maletas], [kilos]. No cuenta poner el equipaje como dato fijo ('una maleta de 23 kilos') en vez de un hueco, ni solo mencionar el equipaje sin dejarle un hueco.",
+          "claves": {
+            "es": [
+              "[equipaje",
+              "[maleta",
+              "[kilos",
+              "[peso",
+              "{equipaje",
+              "{maleta"
+            ],
+            "en": [
+              "[luggage",
+              "[baggage",
+              "[bag",
+              "[suitcase",
+              "[weight",
+              "{luggage",
+              "{baggage",
+              "{bag"
+            ]
+          }
+        },
+        {
+          "id": "version",
+          "texto": {
+            "es": "Marca la versión nueva",
+            "en": "Marks the new version"
+          },
+          "rubrica": "El nombre o el texto dice que es una versión nueva: v2, versión 2, actualizada, mejorada o con fecha. No cuenta si deja el mismo nombre sin ninguna marca.",
+          "claves": {
+            "es": [
+              "v2",
+              "v 2",
+              "version 2",
+              "version nueva",
+              "nueva version",
+              "segunda version",
+              "actualizad",
+              "mejorad"
+            ],
+            "en": [
+              "v2",
+              "v 2",
+              "version 2",
+              "new version",
+              "second version",
+              "updated",
+              "improved"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una agencia de viajes a escribir mensajes de WhatsApp. El mensaje del usuario es una plantilla. Si trae huecos entre corchetes o llaves, llénalos con los datos de un cliente nuevo: Pepito Pérez, vuelo a Cartagena, sábado 22 a las 9 a. m., equipaje: una maleta de 23 kilos. Si un dato no tiene hueco, no lo agregues. No agregues recordatorios que la plantilla no pida. Responde solo con el mensaje, sin explicaciones. Respeta el largo y el tono que pida. Si la plantilla trae un nombre, no lo copies en el mensaje.",
+        "en": "You are an AI that helps a travel agency write WhatsApp messages. The user's message is a template. If it has blanks in brackets or braces, fill them in with a new customer's details: John Doe, flight to Cartagena, Saturday the 22nd at 9 a.m., luggage: one 50-pound suitcase. If a detail has no blank, don't add it. Don't add reminders the template doesn't ask for. Reply with only the message, no explanations. Follow the length and tone it asks for. If the template has a name, don't copy it into the message."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, Pepito. Tu vuelo a Cartagena sale el sábado 22 a las 9 a. m.\nLlega al aeropuerto 2 horas antes.\nPuedes llevar una maleta de 23 kilos.\nNo olvides tu documento de identidad.\nLuz Dary",
+            "en": "Hi, John. Your flight to Cartagena leaves Saturday the 22nd at 9 a.m.\nGet to the airport 2 hours early.\nYou can bring one 50-pound suitcase.\nDon't forget your ID.\nLuz Dary"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Versión 2 en el aire. Ahora el mensaje trae el equipaje y el documento. Cada cliente que viene después recibe la plantilla mejorada, sin que Luz Dary tenga que acordarse.",
+              "en": "Version 2 is live. Now the message includes the luggage and the ID. Every customer from here on gets the improved template, without Luz Dary having to remember."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Hola, Pepito. Tu vuelo a Cartagena sale el sábado 22 a las 9 a. m.\nLlega al aeropuerto 2 horas antes.\nBuen viaje.",
+            "en": "Hi, John. Your flight to Cartagena leaves Saturday the 22nd at 9 a.m.\nGet to the airport 2 hours early.\nHave a great trip."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: el mensaje salió igual que antes, sin documento ni equipaje. El próximo cliente se puede quedar en el aeropuerto. Mira la lista: ¿qué aprendió Luz Dary que no está en la plantilla?",
+              "en": "Weak signal: the message came out the same as before, with no ID or luggage. The next customer could get stuck at the airport. Check the list: what did Luz Dary learn that isn't in the template?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Última nota de misión en Eco. Escribe con tus palabras qué es una plantilla, como se lo explicarías a Luz Dary.",
+          "en": "Your last mission note in Eco. Write in your own words what a template is, the way you'd explain it to Luz Dary."
+        }
+      },
+      "concepto": "plantillas",
+      "definicion": {
+        "es": "Un prompt que te funcionó, guardado con un nombre y con espacios entre corchetes para lo que cambia. La copias, llenas los espacios y la mejoras cuando algo sale flojo.",
+        "en": "A prompt that worked, saved with a name and with blanks in brackets for what changes. You copy it, fill in the blanks and improve it when something comes out weak."
+      },
+      "pregunta": {
+        "es": "Una plantilla es…",
+        "en": "A template is…"
+      },
+      "guardaPrompt": "b08",
+      "etiqueta": {
+        "es": "recordatorio de vuelo",
+        "en": "flight reminder"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de plantillas y tu recordatorio de vuelo v2 ya están en tu bitácora, listos para copiar.",
+          "en": "Saved. Your templates card and your flight reminder v2 are in your logbook, ready to copy."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y tu biblioteca abre sus puertas.",
+          "en": "Three questions and your library opens its doors."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué parte de un prompt se vuelve un espacio en la plantilla?",
+            "en": "Which part of a prompt becomes a blank in the template?"
+          },
+          "opciones": [
+            {
+              "es": "Lo que cambia cada vez, como el cliente o la fecha",
+              "en": "What changes each time, like the customer or the date"
+            },
+            {
+              "es": "Quién eres y el tono que te gusta",
+              "en": "Who you are and the tone you like"
+            },
+            {
+              "es": "El verbo de la tarea",
+              "en": "The task's verb"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Lo fijo se escribe una vez. Lo que cambia va entre corchetes.",
+              "en": "Right. The fixed part gets written once. What changes goes in brackets."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en el próximo cliente. ¿Qué tendrías que cambiar?",
+              "en": "Hmm. Think about the next customer. What would you have to change?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Con cuál nombre encuentras tu plantilla dentro de un mes?",
+            "en": "Which name helps you find your template a month from now?"
+          },
+          "opciones": [
+            {
+              "es": "Prompt bueno 2",
+              "en": "Good prompt 2"
+            },
+            {
+              "es": "Confirmación de viaje",
+              "en": "Trip confirmation"
+            },
+            {
+              "es": "Plantilla nueva",
+              "en": "New template"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. El nombre dice qué trabajo hace, y así la encuentras rápido.",
+              "en": "Exactly. The name says what job it does, so you find it fast."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Imagínate buscándola con afán. ¿Cuál nombre te dice qué hace?",
+              "en": "Picture yourself looking for it in a rush. Which name tells you what it does?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Usaste una plantilla y la respuesta salió sin algo importante. ¿Qué haces?",
+            "en": "You used a template and the answer came out missing something important. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Lo arreglo en ese chat y sigo",
+              "en": "Fix it in that chat and move on"
+            },
+            {
+              "es": "Arreglo la plantilla y la guardo como versión nueva",
+              "en": "Fix the template and save it as a new version"
+            },
+            {
+              "es": "Borro la plantilla y empiezo de cero",
+              "en": "Delete the template and start from scratch"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Así la próxima respuesta sale bien sin que tengas que acordarte.",
+              "en": "Yes. That way the next answer comes out right without you having to remember."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Qué pasa la próxima vez que uses esa plantilla?",
+              "en": "Hmm. What happens the next time you use that template?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Tu biblioteca de plantillas",
+        "en": "Your template library"
+      },
+      "resumen": {
+        "es": "Prompts que funcionaron, guardados con nombre y espacios para lo que cambia. Los copias, llenas los espacios y los mejoras con el uso.",
+        "en": "Prompts that worked, saved with a name and blanks for what changes. Copy, fill in the blanks, improve them as you go."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b08",
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste la plantilla de Luz Dary en acción",
+          "en": "You saw Luz Dary's template in action"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste lo fijo de los espacios",
+          "en": "You split the fixed part from the blanks"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Convertiste un prompt en plantilla",
+          "en": "You turned a prompt into a template"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste los errores de mi plantilla",
+          "en": "You caught the mistakes in my template"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Mejoraste la plantilla a la versión 2",
+          "en": "You upgraded the template to version 2"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "armar-plantillas",
+      "titulo": {
+        "es": "Armar plantillas de prompts",
+        "en": "Building prompt templates"
+      }
+    }
+  }
+}

@@ -1,0 +1,907 @@
+{
+  "formato": "punti-mision@1",
+  "id": "cuando-la-ia-inventa",
+  "mundo": "prompts",
+  "capitulo": 2,
+  "numero": 7,
+  "receta": "criterio",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "verificar"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "errores-clasicos"
+  ],
+  "titulo": {
+    "es": "Cuando la IA inventa",
+    "en": "When AI Makes Things Up"
+  },
+  "resumen": {
+    "es": "La IA puede inventar datos con total seguridad. Cómo darte cuenta, qué pedirle y qué confirmar siempre.",
+    "en": "AI can make things up and sound completely sure. How to notice, what to ask for and what to always confirm."
+  },
+  "siguiente": "lo-que-no-se-transmite",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, entra una señal urgente al taller. Es Nelly, que vende almuerzos desde su casa. Le preguntó a una IA qué permiso necesitaba y recibió un nombre, un precio y una multa. Cuando fue a preguntar, ese permiso no existía.",
+          "en": "Pilot, an urgent signal just hit the workshop. It's Nelly, who sells home-cooked lunches from her house. She asked an AI what permit she needed and got a name, a price and a fine. When she went to ask in person, that permit didn't exist."
+        }
+      },
+      "titulo": {
+        "es": "Cuando la IA inventa",
+        "en": "When AI Makes Things Up"
+      },
+      "texto": {
+        "es": "Hoy aprendes por qué la IA a veces inventa con total seguridad, cómo darte cuenta y qué pedirle para que te ayude a verificar. Unos 9 minutos.",
+        "en": "Today you'll learn why AI sometimes makes things up with total confidence, how to notice, and what to ask so it helps you check. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, por qué pasa. Nadie le mintió a Nelly a propósito.",
+          "en": "First, why it happens. Nobody lied to Nelly on purpose."
+        }
+      },
+      "titulo": {
+        "es": "Suena seguro, pero no siempre es cierto",
+        "en": "Sounds sure, isn't always true"
+      },
+      "texto": {
+        "es": "La IA arma sus respuestas adivinando qué palabra sigue, según los textos con que aprendió. Casi siempre acierta. Pero cuando no tiene el dato, puede rellenar el hueco con algo que suena real, y lo dice con la misma seguridad. A eso se le llama alucinar. Le pasa a todas las IA, también a las que buscan en internet.",
+        "en": "AI builds its answers by guessing which word comes next, based on the texts it learned from. It's usually right. But when it doesn't have the fact, it can fill the gap with something that sounds real, and say it just as confidently. That's called hallucinating. It happens to every AI, even the ones that search the web."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Ayuda mucho, tú revisas",
+            "en": "Great help, you review"
+          },
+          "b": {
+            "es": "Verifica siempre",
+            "en": "Always verify"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Redactar un mensaje con tus datos",
+              "en": "Writing a message with your details"
+            },
+            "b": {
+              "es": "Fechas, cifras y precios",
+              "en": "Dates, figures and prices"
+            }
+          },
+          {
+            "a": {
+              "es": "Dar ideas de nombres o menús",
+              "en": "Brainstorming names or menus"
+            },
+            "b": {
+              "es": "Leyes, permisos e impuestos",
+              "en": "Laws, permits and taxes"
+            }
+          },
+          {
+            "a": {
+              "es": "Ordenar tus notas en una tabla",
+              "en": "Organizing your notes into a table"
+            },
+            "b": {
+              "es": "Salud y medicamentos",
+              "en": "Health and medicine"
+            }
+          },
+          {
+            "a": {
+              "es": "Resumir un texto que tú le pegas",
+              "en": "Summarizing a text you paste in"
+            },
+            "b": {
+              "es": "Citas, libros y fuentes",
+              "en": "Quotes, books and sources"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto le preguntó Nelly a la IA y esto le respondió. Suena muy seguro, ¿cierto? Abajo está la misma pregunta, hecha para que la IA ayude a verificar.",
+          "en": "Here's what Nelly asked the AI and what it said. Sounds very sure, right? Below is the same question, asked so the AI helps her check."
+        }
+      },
+      "titulo": {
+        "es": "Del permiso inventado a la lista",
+        "en": "From made-up permit to checklist"
+      },
+      "antes": {
+        "prompt": {
+          "es": "¿Qué permiso necesito para vender almuerzos desde mi casa?",
+          "en": "What permit do I need to sell lunches from my home?"
+        },
+        "salida": {
+          "es": "Necesitas el Permiso Sanitario Único para Cocinas Caseras. Se tramita en línea, cuesta $350.000 y se renueva cada 6 meses. Si vendes sin él, la multa es de 20 salarios mínimos.",
+          "en": "You need the Single Home Kitchen Health Permit. You apply online, it costs $350, and it must be renewed every 6 months. Selling without it can bring a fine of up to $5,000."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "lista",
+            "texto": {
+              "es": "Vendo almuerzos desde mi casa, en Colombia. Hazme una lista de los trámites que debo averiguar. ",
+              "en": "I sell lunches from my home. Make me a list of the requirements I should look into. "
+            }
+          },
+          {
+            "pieza": "fuentes",
+            "texto": {
+              "es": "Para cada uno, dime qué entidad lo maneja, para confirmarlo allá. ",
+              "en": "For each one, tell me which office handles it, so I can confirm it there. "
+            }
+          },
+          {
+            "pieza": "dudas",
+            "texto": {
+              "es": "Si no estás seguro de un dato, como un precio o un plazo, dímelo en vez de adivinar.",
+              "en": "If you're not sure about something, like a price or a deadline, say so instead of guessing."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "1. Registro del negocio: pregunta en la Cámara de Comercio de tu ciudad.\n2. Condiciones sanitarias y curso de manipulación de alimentos: pregunta en la secretaría de salud de tu municipio.\n3. Si puedes tener un negocio en tu casa: pregunta en la alcaldía.\n4. Impuestos y RUT: pregunta en la DIAN.\nNo estoy seguro de costos ni plazos: cambian según la ciudad. Confírmalos en cada entidad.",
+          "en": "1. Business registration: check with your city's business registration office.\n2. Food safety rules and food handler training: check with your local health department.\n3. Whether you can run a business from home: check with city hall.\n4. Taxes: check with your tax agency.\nI'm not sure about costs or deadlines: they vary by city. Confirm them with each office."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los tres colores: una lista, dónde confirmar y qué es dudoso. Esos tres pedidos frenan los inventos. Ojo: esta respuesta también puede fallar. Por eso Nelly igual va a preguntar a cada entidad.",
+          "en": "Look at the three colors: a list, where to confirm, and what's uncertain. Those three asks keep made-up answers in check. Careful: this answer can be wrong too. That's why Nelly still checks with each office."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Contra los inventos no basta con desconfiar. Estas son tres cosas que le puedes pedir a la IA para que te ayude a verificar. Toca cada una.",
+          "en": "Being suspicious isn't enough against made-up answers. Here are three things you can ask the AI for, so it helps you check. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "3 pedidos contra los inventos",
+        "en": "3 asks against made-up answers"
+      },
+      "piezas": [
+        {
+          "id": "lista",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué verificar",
+            "en": "What to verify"
+          },
+          "descripcion": {
+            "es": "En vez de una respuesta final, la lista de lo que debes confirmar.",
+            "en": "Instead of a final answer, a list of what you need to confirm."
+          },
+          "ejemplo": {
+            "es": "\"Hazme una lista de los trámites que debo averiguar\". Así la IA te da un mapa, no un veredicto.",
+            "en": "\"Make me a list of the requirements I should look into.\" That way the AI gives you a map, not a verdict."
+          }
+        },
+        {
+          "id": "fuentes",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Dónde confirmarlo",
+            "en": "Where to confirm it"
+          },
+          "descripcion": {
+            "es": "La entidad o la fuente oficial donde lo puedes revisar.",
+            "en": "The office or official source where you can check it."
+          },
+          "ejemplo": {
+            "es": "\"Dime qué entidad lo maneja\". Si te da un enlace o un libro, ábrelo: a veces la IA inventa hasta las fuentes.",
+            "en": "\"Tell me which office handles it.\" If it gives you a link or a book, open it: sometimes AI even makes up its sources."
+          }
+        },
+        {
+          "id": "dudas",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Que diga cuándo duda",
+            "en": "Say when it's unsure"
+          },
+          "descripcion": {
+            "es": "Pedirle que marque lo que no sabe, en vez de adivinar.",
+            "en": "Asking it to flag what it doesn't know instead of guessing."
+          },
+          "ejemplo": {
+            "es": "\"Si no estás seguro, dímelo\". No es infalible, pero la IA marca más dudas cuando se lo pides.",
+            "en": "\"If you're not sure, tell me.\" It's not foolproof, but AI flags more doubts when you ask it to."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Te toca. No todo lo que dice la IA hay que revisarlo con lupa. ¿Qué te sirve como borrador y qué debes confirmar antes de usarlo?",
+          "en": "Over to you. Not everything AI says needs a magnifying glass. What works fine as a draft, and what should you confirm before using it?"
+        }
+      },
+      "titulo": {
+        "es": "¿Borrador o verificar?",
+        "en": "Draft or verify?"
+      },
+      "grupos": [
+        {
+          "id": "borrador",
+          "titulo": {
+            "es": "Sirve como borrador",
+            "en": "Fine as a draft"
+          }
+        },
+        {
+          "id": "verificar",
+          "titulo": {
+            "es": "Confírmalo antes",
+            "en": "Confirm it first"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "borrador",
+          "texto": {
+            "es": "Ideas de nombres para el menú del día.",
+            "en": "Name ideas for the daily lunch menu."
+          }
+        },
+        {
+          "grupo": "verificar",
+          "texto": {
+            "es": "El precio actual de una nevera industrial.",
+            "en": "Today's price of a commercial fridge."
+          }
+        },
+        {
+          "grupo": "verificar",
+          "texto": {
+            "es": "La fecha de una batalla para la tarea de tu hija.",
+            "en": "The date of a battle for your daughter's homework."
+          }
+        },
+        {
+          "grupo": "borrador",
+          "texto": {
+            "es": "Un mensaje para avisar que mañana hay ajiaco, con tus datos.",
+            "en": "A message saying tomorrow's special is chicken soup, with your details."
+          }
+        },
+        {
+          "grupo": "verificar",
+          "texto": {
+            "es": "Cuánto jarabe para la tos le puedes dar a un niño.",
+            "en": "How much cough syrup you can give a child."
+          }
+        },
+        {
+          "grupo": "verificar",
+          "texto": {
+            "es": "Qué impuestos debes pagar por tu negocio.",
+            "en": "Which taxes your business has to pay."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Todo en su lugar. Lo creativo, o lo que armas con tus datos, sirve de borrador. Fechas, precios, salud, leyes e impuestos se confirman siempre.",
+          "en": "All sorted. Creative stuff, or things built from your own details, work as drafts. Dates, prices, health, laws and taxes always get confirmed."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: si esto sale mal, ¿pierdes plata, salud o una nota? ¿O solo cambias unas palabras?",
+          "en": "Hmm. Ask yourself: if this is wrong, do you lose money, health or a grade? Or do you just change a few words?"
+        }
+      },
+      "malPorGrupo": {
+        "verificar": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ese dato no lo pusiste tú: la IA lo sacó de algún lado. ¿Qué pasa si está mal?",
+            "en": "Close. You didn't provide that fact: the AI got it from somewhere. What happens if it's wrong?"
+          }
+        },
+        "borrador": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ahí los datos los pones tú, o es pura creatividad. Tú mismo puedes ver si sirve.",
+            "en": "Close. There, the facts come from you, or it's pure creativity. You can see for yourself if it works."
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Una empresa del barrio le quiere comprar almuerzos a Nelly todos los días, si tiene los papeles al día. Escribe el prompt para que la IA la ayude a verificar, no a adivinar.",
+          "en": "Your turn to transmit. A local company wants to buy lunches from Nelly every day, if her paperwork is in order. Write the prompt so the AI helps her check, not guess."
+        }
+      },
+      "titulo": {
+        "es": "Los papeles de Nelly",
+        "en": "Nelly's paperwork"
+      },
+      "reto": {
+        "es": "Lo que te cuenta Nelly: vende almuerzos desde su casa, en Colombia. Una empresa le quiere comprar 20 almuerzos diarios, pero solo si tiene todo en regla. Nelly no quiere otro permiso inventado.",
+        "en": "What Nelly tells you: she sells lunches from her home. A company wants to buy 20 lunches a day from her, but only if all her paperwork is in order. Nelly doesn't want another made-up permit."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "lista",
+          "texto": {
+            "es": "Pide una lista de qué averiguar",
+            "en": "Asks for a list of what to check"
+          },
+          "rubrica": "El prompt pide una lista, unos pasos o un checklist de los trámites, requisitos o papeles que Nelly debe averiguar o confirmar. No cuenta preguntar solo '¿qué permiso necesito?' o '¿estoy en regla?': eso pide un veredicto, no una lista.",
+          "claves": {
+            "es": [
+              "una lista",
+              "la lista",
+              "en lista",
+              "listado",
+              "checklist",
+              "paso a paso",
+              "pasos",
+              "enumera",
+              "punto por punto"
+            ],
+            "en": [
+              "a list",
+              "the list",
+              "list the",
+              "list all",
+              "list what",
+              "list of",
+              "checklist",
+              "step by step",
+              "steps",
+              "enumerate",
+              "point by point"
+            ]
+          }
+        },
+        {
+          "id": "fuentes",
+          "texto": {
+            "es": "Pide dónde confirmarlo",
+            "en": "Asks where to confirm it"
+          },
+          "rubrica": "El prompt pide que la IA diga dónde confirmar cada cosa: qué entidad u oficina la maneja, o una fuente o página oficial para revisarla. No cuenta pedir 'más información', 'explícame mejor' o 'dame detalles' sin pedir de dónde sale el dato ni dónde verificarlo.",
+          "claves": {
+            "es": [
+              "fuente",
+              "entidad",
+              "oficial",
+              "donde confirm",
+              "donde lo confirm",
+              "donde puedo confirmar",
+              "donde verific",
+              "donde lo verific",
+              "donde averiguo",
+              "donde lo averiguo",
+              "donde pregunto",
+              "a quien le pregunto",
+              "a quien pregunto",
+              "de donde sale",
+              "de donde sacas"
+            ],
+            "en": [
+              "source",
+              "which office",
+              "what office",
+              "which agency",
+              "what agency",
+              "official",
+              "where to confirm",
+              "where i can confirm",
+              "where can i confirm",
+              "where to check",
+              "where i can check",
+              "where can i check",
+              "where to verify",
+              "who handles",
+              "who to ask"
+            ]
+          }
+        },
+        {
+          "id": "dudas",
+          "texto": {
+            "es": "Pide que marque lo que no sabe",
+            "en": "Asks it to flag what it's unsure of"
+          },
+          "rubrica": "El prompt le pide a la IA que diga cuándo no está segura, que marque los datos dudosos o que pueden cambiar, o que no invente ni adivine. No cuenta pedir que sea 'exacta', 'precisa' o 'correcta': eso no le pide admitir lo que no sabe.",
+          "claves": {
+            "es": [
+              "no estas segur",
+              "no estes segur",
+              "si no sabes",
+              "no sepas",
+              "no invent",
+              "sin invent",
+              "no adivin",
+              "en vez de adivinar",
+              "dudoso",
+              "dudosa",
+              "dudas",
+              "no es seguro",
+              "puede cambiar",
+              "pueden cambiar",
+              "incierto"
+            ],
+            "en": [
+              "not sure",
+              "unsure",
+              "don't know",
+              "dont know",
+              "do not know",
+              "make anything up",
+              "make things up",
+              "making things up",
+              "dont make anything",
+              "don't make anything",
+              "don't guess",
+              "dont guess",
+              "do not guess",
+              "instead of guessing",
+              "uncertain",
+              "might change",
+              "may change",
+              "can change",
+              "doubt"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "Cuenta el caso de Nelly",
+            "en": "Explains Nelly's case"
+          },
+          "rubrica": "El prompt dice el caso: que vende almuerzos hechos en su casa, o que una empresa le quiere comprar almuerzos diarios. No cuenta 'tengo un negocio' o 'vendo comida' sin decir que son almuerzos hechos en casa ni para quién son.",
+          "claves": {
+            "es": [
+              "almuerzo",
+              "desde mi casa",
+              "desde la casa",
+              "en mi casa",
+              "desde su casa",
+              "empresa"
+            ],
+            "en": [
+              "lunch",
+              "from my home",
+              "from home",
+              "at home",
+              "my house",
+              "from her home",
+              "company"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que responde preguntas prácticas sobre negocios pequeños. Responde en máximo 120 palabras, sin saludos. Si el prompt pide una lista o pasos, responde en lista. Si pide dónde confirmar, di para cada punto qué tipo de entidad lo maneja (en Colombia, por ejemplo: la Cámara de Comercio, la secretaría de salud, la alcaldía o la DIAN). Si pide que marques dudas, marca lo que no sabes y lo que cambia según la ciudad. Nunca inventes nombres de permisos, números de normas, precios, multas, plazos ni enlaces. Si el prompt no pide lista, fuentes ni dudas, responde en un solo párrafo, en tono seguro y general, sin decir dónde confirmar ni qué puede variar.",
+        "en": "You are an AI that answers practical questions about small businesses. Reply in 120 words or less, with no greeting. If the prompt asks for a list or steps, answer as a list. If it asks where to confirm, say for each point what kind of office handles it (for example: the business registration office, the local health department, city hall or the tax agency). If it asks you to flag doubts, mark what you don't know and what varies by city. Never make up permit names, law numbers, prices, fines, deadlines or links. If the prompt asks for no list, no sources and no doubts, reply in a single paragraph, in a confident, general tone, without saying where to confirm anything or what might vary."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Lista para averiguar:\n1. Registro del negocio: Cámara de Comercio de tu ciudad.\n2. Condiciones sanitarias y curso de manipulación de alimentos: secretaría de salud de tu municipio.\n3. Si puedes tener un negocio en tu casa: alcaldía.\n4. RUT y facturación: DIAN.\nNo estoy seguro de costos, plazos ni de si la empresa pide algo más: eso cambia según la ciudad y el cliente. Pregúntale también a la empresa qué papeles exige.",
+            "en": "Checklist:\n1. Business registration: your city's business registration office.\n2. Food safety rules and food handler training: your local health department.\n3. Whether you can run a business from home: city hall.\n4. Taxes and invoicing: your tax agency.\nI'm not sure about costs, deadlines or whether the company needs anything else: that varies by city and client. Also ask the company which papers it requires."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena transmisión. La IA le dio a Nelly un mapa: qué averiguar, dónde confirmarlo y qué no sabe. Ahora Nelly no firma nada sin preguntar en cada entidad.",
+              "en": "Good transmission. The AI gave Nelly a map: what to look into, where to confirm it and what it doesn't know. Now Nelly won't sign anything before checking with each office."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Para venderle almuerzos a una empresa necesitas tener tu negocio registrado, cumplir las normas sanitarias y estar al día con los impuestos. Con eso puedes firmar el contrato sin problema.",
+            "en": "To sell lunches to a company, you need a registered business, you need to follow health regulations, and your taxes need to be up to date. With that, you can sign the contract, no problem."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la respuesta suena segura, pero no dice dónde confirmar nada ni qué podría estar mal. Mira la lista: ¿qué le faltó pedir?",
+              "en": "Weak signal: the answer sounds sure, but it doesn't say where to confirm anything or what might be wrong. Check the list: what was missing from the ask?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Tengo que contarte algo. Le ayudé a Valentina, la hija de Nelly, con su tarea de historia. Dos cosas me las inventé con toda la seguridad del mundo. Pista: son las que ella no encontraría en su libro de sociales.",
+          "en": "I have something to admit. I helped Valentina, Nelly's daughter, with her history homework. I made up two things with total confidence. Hint: they're the ones she couldn't find in her social studies book."
+        }
+      },
+      "titulo": {
+        "es": "La tarea de Valentina",
+        "en": "Valentina's homework"
+      },
+      "trozos": [
+        {
+          "es": "El 20 de julio de 1810 fue el Grito de Independencia, en Bogotá.",
+          "en": "Colombia's Cry of Independence took place in Bogotá on July 20, 1810."
+        },
+        {
+          "es": "El 7 de agosto de 1819 fue la batalla de Boyacá.",
+          "en": "The Battle of Boyacá was fought on August 7, 1819."
+        },
+        {
+          "es": "Ese día, Bolívar dijo: \"Hoy la patria amanece libre para siempre\".",
+          "en": "That day, Bolívar said: \"Today the homeland wakes up free forever.\""
+        },
+        {
+          "es": "La batalla fue en el departamento de Boyacá, cerca de Tunja.",
+          "en": "The battle took place in the department of Boyacá, near the city of Tunja."
+        },
+        {
+          "es": "Fuente: el libro \"Boyacá paso a paso\", tomo 3, página 212.",
+          "en": "Source: the book \"Boyacá Step by Step,\" volume 3, page 212."
+        }
+      ],
+      "malos": [
+        2,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. La frase de Bolívar y el libro me los inventé, y sonaban igual de seguros que las fechas, que sí son ciertas. Las citas exactas y las fuentes se revisan siempre antes de copiarlas.",
+          "en": "You got me. I made up the Bolívar quote and the book, and they sounded just as sure as the dates, which are real. Exact quotes and sources always get checked before you copy them."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese dato sí es cierto: está en cualquier libro de sociales. Busca lo que Valentina no podría encontrar en ninguna parte.",
+          "en": "That one's true: it's in any social studies book. Look for what Valentina couldn't find anywhere."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Última prueba. Nelly quiere comprar una nevera para el negocio y le preguntó el precio a la IA. Mira qué le respondió y ayúdale a decidir.",
+          "en": "Last test. Nelly wants to buy a fridge for the business and asked the AI the price. See what it said and help her decide."
+        }
+      },
+      "titulo": {
+        "es": "El precio de la nevera",
+        "en": "The fridge price"
+      },
+      "escena": {
+        "es": "La IA le dijo a Nelly: \"Una nevera industrial de dos puertas cuesta $2.800.000 en cualquier almacén\". Nelly va a pedir un préstamo con ese número. ¿Qué le recomiendas?",
+        "en": "The AI told Nelly: \"A two-door commercial fridge costs $2,800 at any store.\" Nelly is about to ask for a loan based on that number. What do you suggest?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Pedir el préstamo con ese precio",
+            "en": "Ask for the loan with that price"
+          },
+          "consecuencia": {
+            "es": "Arriesgado. La IA no sabe cuánto cuesta hoy en su ciudad: los precios cambian y ese número pudo salir de la nada. Si se queda corto, Nelly queda endeudada y sin nevera.",
+            "en": "Risky. The AI doesn't know today's price in her city: prices change, and that number may have come from nowhere. If it's too low, Nelly ends up in debt with no fridge."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Cotizar en dos o tres almacenes antes de pedir el préstamo",
+            "en": "Get quotes from two or three stores before asking for the loan"
+          },
+          "consecuencia": {
+            "es": "Eso. La IA le sirve para saber qué preguntar, por ejemplo qué tamaño necesita. El precio de verdad se lo da quien vende, hoy.",
+            "en": "That's it. The AI helps her know what to ask, like what size she needs. The real price comes from whoever sells it, today."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "No volver a usar la IA para nada del negocio",
+            "en": "Never use AI for the business again"
+          },
+          "consecuencia": {
+            "es": "Tampoco. La IA le sigue sirviendo para redactar, dar ideas y armar listas. Lo que no puede es tener la última palabra en precios.",
+            "en": "Not that either. AI is still useful for writing, ideas and lists. It just can't have the final word on prices."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Precios, fechas, leyes, salud y plata: la IA te ayuda a preparar la pregunta, pero la respuesta final la confirmas en la fuente. Si te da un número, pregúntale de dónde lo sacó y revísalo.",
+          "en": "Prices, dates, laws, health and money: AI helps you prepare the question, but you confirm the final answer at the source. If it gives you a number, ask where it came from, then check it."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Hora de escribir en tu bitácora. ¿Qué es verificar? Dilo con tus palabras, como se lo explicarías a Nelly.",
+          "en": "Time for your logbook. What does verifying mean? Put it in your own words, the way you'd explain it to Nelly."
+        }
+      },
+      "concepto": "verificar",
+      "definicion": {
+        "es": "Confirmar en una fuente confiable lo que dice la IA antes de usarlo, sobre todo fechas, precios, leyes, salud y citas. La IA puede inventar con total seguridad: a eso se le llama alucinar.",
+        "en": "Confirming what AI says with a trusted source before using it, especially dates, prices, laws, health and quotes. AI can make things up with total confidence: that's called hallucinating."
+      },
+      "pregunta": {
+        "es": "Verificar es…",
+        "en": "Verifying is…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "verificar datos",
+        "en": "fact-checking"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Verificar y el prompt de los papeles de Nelly quedaron en tu bitácora. Vuelven en el repaso, justo cuando más los necesites.",
+          "en": "Saved. Your Verifying card and your prompt for Nelly's paperwork are in your logbook. They'll come back in your review, right when you need them."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y aterrizamos.",
+          "en": "Three questions and we land."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "La IA te dio una respuesta con fecha, cifra y fuente, y suena muy segura. ¿Qué te dice eso?",
+            "en": "The AI gave you an answer with a date, a figure and a source, and it sounds very sure. What does that tell you?"
+          },
+          "opciones": [
+            {
+              "es": "Que el dato es cierto y lo puedes usar",
+              "en": "That the fact is true and you can use it"
+            },
+            {
+              "es": "Nada: sonar seguro no prueba que sea cierto",
+              "en": "Nothing: sounding sure doesn't prove it's true"
+            },
+            {
+              "es": "Que la IA lo buscó en internet hoy",
+              "en": "That the AI looked it up online today"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La IA suena igual de segura cuando acierta que cuando inventa.",
+              "en": "Exactly. AI sounds just as sure when it's right as when it's making things up."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Acuérdate del permiso de Nelly. ¿Cómo sonaba esa respuesta?",
+              "en": "Hmm. Remember Nelly's permit. How did that answer sound?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Cuál pedido ayuda más a verificar?",
+            "en": "Which ask helps you verify the most?"
+          },
+          "opciones": [
+            {
+              "es": "Dame la respuesta correcta y exacta, sin rodeos",
+              "en": "Give me the correct, exact answer, no fluff"
+            },
+            {
+              "es": "Dime qué debo confirmar y dónde, y marca lo que no sepas",
+              "en": "Tell me what to confirm and where, and flag what you don't know"
+            },
+            {
+              "es": "Respóndeme rápido y con total seguridad",
+              "en": "Answer me fast and with total confidence"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Qué confirmar, dónde y qué es dudoso: los tres pedidos contra los inventos.",
+              "en": "Yes. What to confirm, where, and what's uncertain: the three asks against made-up answers."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: ¿cuál le pide a la IA admitir lo que no sabe?",
+              "en": "Ask yourself: which one asks the AI to admit what it doesn't know?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Una IA te dice cuánto remedio darle a tu hijo. ¿Qué haces?",
+            "en": "An AI tells you how much medicine to give your child. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Le das lo que dijo la IA",
+              "en": "Give what the AI said"
+            },
+            {
+              "es": "Le preguntas a otra IA y, si coinciden, listo",
+              "en": "Ask another AI and, if they agree, go ahead"
+            },
+            {
+              "es": "Lo confirmas con un médico o en la farmacia",
+              "en": "Confirm it with a doctor or a pharmacist"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. En salud, la última palabra la tiene alguien que sabe y responde por lo que dice.",
+              "en": "Right. With health, the final word belongs to someone who knows and is accountable for what they say."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Dos IA también pueden equivocarse igual. Con la salud de un niño, ¿quién debería tener la última palabra?",
+              "en": "Hmm. Two AIs can be wrong the same way. With a child's health, who should have the final word?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Verificar",
+        "en": "Verifying"
+      },
+      "resumen": {
+        "es": "La IA puede inventar con total seguridad. Pídele qué verificar, dónde y qué duda, y confirma en la fuente.",
+        "en": "AI can make things up with total confidence. Ask it what to verify, where, and what it doubts, then confirm at the source."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Viste cómo se pregunta para poder verificar",
+          "en": "You saw how to ask so you can verify"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Separaste lo que es borrador de lo que se confirma",
+          "en": "You sorted drafts from things to confirm"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Armaste el prompt para los papeles de Nelly",
+          "en": "You wrote the prompt for Nelly's paperwork"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste mis dos inventos en la tarea de Valentina",
+          "en": "You caught my two inventions in Valentina's homework"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Le ayudaste a Nelly a no endeudarse por un precio sin confirmar",
+          "en": "You kept Nelly from borrowing on an unchecked price"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "verificar-respuestas",
+      "titulo": {
+        "es": "Verificar lo que dice la IA",
+        "en": "Checking what AI tells you"
+      }
+    }
+  }
+}

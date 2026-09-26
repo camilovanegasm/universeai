@@ -1,0 +1,835 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-tombola",
+  "mundo": "modelos-de-lenguaje",
+  "capitulo": 1,
+  "numero": 3,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "probabilidad"
+  ],
+  "usaConceptos": [
+    "modelo-de-lenguaje",
+    "token"
+  ],
+  "titulo": {
+    "es": "La tómbola",
+    "en": "The Raffle Drum"
+  },
+  "resumen": {
+    "es": "Por qué la misma pregunta da respuestas distintas y cuándo te conviene pedir varias versiones.",
+    "en": "Why the same question gets different answers, and when it pays to ask for several versions."
+  },
+  "siguiente": "radiografia-de-una-respuesta",
+  "fuentes": [
+    {
+      "titulo": "Google AI for Developers, Prompt design strategies (temperatura, topK y topP: cómo se escoge la siguiente ficha)",
+      "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "CSET Georgetown, The Surprising Power of Next Word Prediction: Large Language Models Explained, Part 1",
+      "url": "https://cset.georgetown.edu/article/the-surprising-power-of-next-word-prediction-large-language-models-explained-part-1/",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, la tómbola de la fábrica se volvió loca: le pidieron lo mismo tres veces a la máquina y dio tres respuestas distintas. Ven, que hoy la abrimos por dentro.",
+          "en": "Pilot, the factory's raffle drum has gone wild: someone asked the machine the same thing three times and got three different answers. Come on, today we open it up."
+        }
+      },
+      "titulo": {
+        "es": "La tómbola",
+        "en": "The Raffle Drum"
+      },
+      "texto": {
+        "es": "Señal desde Valledupar. Didier compone vallenatos y le pide versos a la IA. Cada vez le salen otros, y a veces el que más le gusta es el tercero. Hoy descubres por qué. Unos 9 minutos.",
+        "en": "Signal from Valledupar. Didier writes vallenato songs and asks AI for lines. Every time he gets different ones, and sometimes his favorite is the third. Today you find out why. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Didier le escribió lo mismo a la IA en tres chats nuevos: \"Sigue este verso: Cuando suena el acordeón en la orilla del Guatapurí\". Mira lo que salió.",
+          "en": "Didier typed the same thing into three new chats: \"Continue this line: When the accordion plays on the banks of the Guatapurí\". Look what came out."
+        }
+      },
+      "titulo": {
+        "es": "Tres chats, tres versos",
+        "en": "Three chats, three lines"
+      },
+      "texto": {
+        "es": "Misma pregunta, tres versos. La máquina no está dañada. Después de cada ficha tiene varias candidatas, unas más probables que otras. No toma siempre la primera: gira una tómbola donde las más probables tienen más balotas. Si al principio sale otra balota, todo lo que sigue cambia.",
+        "en": "Same question, three lines. The machine isn't broken. After each token it has several candidates, some more likely than others. It doesn't always take the top one: it spins a raffle drum where the likelier ones have more tickets. If a different ticket comes out early on, everything after it changes."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Chat nuevo",
+            "en": "New chat"
+          },
+          "b": {
+            "es": "Cómo siguió el verso",
+            "en": "How the line went on"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Chat 1",
+              "en": "Chat 1"
+            },
+            "b": {
+              "es": "…me acuerdo de tu risa y del canto que me diste.",
+              "en": "…I remember your laughter and the song you gave to me."
+            }
+          },
+          {
+            "a": {
+              "es": "Chat 2",
+              "en": "Chat 2"
+            },
+            "b": {
+              "es": "…el río me cuenta historias que no quiero repetir.",
+              "en": "…the river tells me stories I would rather not repeat."
+            }
+          },
+          {
+            "a": {
+              "es": "Chat 3",
+              "en": "Chat 3"
+            },
+            "b": {
+              "es": "…hasta la luna se asoma para verte a ti.",
+              "en": "…even the moon leans closer just to catch a glimpse of you."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Le expliqué a Didier por qué le salieron tres versos. Él se rio y me dijo que dos partes de mi explicación no suenan. Tócalas.",
+          "en": "I explained to Didier why he got three lines. He laughed and said two parts of my explanation are off-key. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "La explicación desafinada",
+        "en": "The off-key explanation"
+      },
+      "trozos": [
+        {
+          "es": "Didier, tus versos salieron distintos",
+          "en": "Didier, your lines came out different"
+        },
+        {
+          "es": "porque la IA se aburre de repetir lo mismo",
+          "en": "because the AI gets bored of repeating itself"
+        },
+        {
+          "es": "y porque en cada chat nuevo te atiende una IA diferente.",
+          "en": "and because each new chat gives you a different AI."
+        },
+        {
+          "es": "En cada ficha tiene varias candidatas buenas, y la tómbola escoge una.",
+          "en": "At each token it has several good candidates, and the drum picks one."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Es la misma máquina en los tres chats, y no se aburre. En cada ficha gira la tómbola entre candidatas probables. Un giro distinto al principio cambia todo el verso.",
+          "en": "You got me. It's the same machine in all three chats, and it doesn't get bored. At each token it spins the drum among likely candidates. One different spin early on changes the whole line."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte suena bien. Busca las que le ponen ánimo a la máquina o se inventan otra máquina.",
+          "en": "That part sounds right. Look for the ones that give the machine moods or invent a second machine."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Si la tómbola gira igual, mejor aprovecharla. Mira dos formas de pedirle un verso a la IA.",
+          "en": "If the drum is going to spin anyway, you might as well use it. Look at two ways of asking AI for a line."
+        }
+      },
+      "titulo": {
+        "es": "Una balota o la tómbola entera",
+        "en": "One ticket or the whole drum"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Hazme un verso para mi canción.",
+          "en": "Write me a line for my song."
+        },
+        "salida": {
+          "es": "Tu mirada es un lucero que ilumina mi camino.",
+          "en": "Your eyes are a bright star that lights up my way."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "el-verso",
+            "texto": {
+              "es": "Sigue este verso de mi vallenato: \"Cuando suena el acordeón en la orilla del Guatapurí\". ",
+              "en": "Continue this line from my vallenato song: \"When the accordion plays on the banks of the Guatapurí\". "
+            }
+          },
+          {
+            "pieza": "cuantas",
+            "texto": {
+              "es": "Dame cinco formas de seguirlo, ",
+              "en": "Give me five ways to go on, "
+            }
+          },
+          {
+            "pieza": "perilla",
+            "texto": {
+              "es": "de la más predecible a la más sorpresiva.",
+              "en": "from the most predictable to the most surprising."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "1. …me acuerdo de tu risa y del canto que me diste.\n2. …se me alegra el corazón y me acuerdo de ti.\n3. …el río me cuenta historias que no quiero repetir.\n4. …hasta la luna se asoma para verte a ti.\n5. …se me olvida que la plata no me alcanza pa' ir.",
+          "en": "1. …I remember your laughter and the song you gave to me.\n2. …my heart starts dancing and I think of you again.\n3. …the river tells me stories I would rather not repeat.\n4. …even the moon leans closer just to catch a glimpse of you.\n5. …I forget my wallet's empty and the bus fare's due."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? Con un solo pedido te quedas con la balota que salió. Pidiendo cinco, y en orden, ves la tómbola entera y escoges tú.",
+          "en": "See the colors? With a single request you get whatever ticket came out. Ask for five, in order, and you see the whole drum and pick for yourself."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ese segundo pedido tiene tres piezas, y cada una mueve la tómbola a tu favor. Toca cada una.",
+          "en": "That second request has three pieces, and each one works the drum in your favor. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Cómo pedirle a la tómbola",
+        "en": "How to work the drum"
+      },
+      "piezas": [
+        {
+          "id": "el-verso",
+          "color": "#ffb347",
+          "titulo": {
+            "es": "El comienzo",
+            "en": "The opening"
+          },
+          "descripcion": {
+            "es": "El texto que la máquina tiene que seguir.",
+            "en": "The text the machine has to continue."
+          },
+          "ejemplo": {
+            "es": "Con el verso de Didier en el pedido, cada balota que sale tiene que sonar a ese verso y no a cualquier canción.",
+            "en": "With Didier's line in the request, every ticket that comes out has to fit that line, not just any song."
+          }
+        },
+        {
+          "id": "cuantas",
+          "color": "#4fc3ff",
+          "titulo": {
+            "es": "Cuántas versiones",
+            "en": "How many versions"
+          },
+          "descripcion": {
+            "es": "Varias opciones en vez de una sola.",
+            "en": "Several options instead of just one."
+          },
+          "ejemplo": {
+            "es": "\"Dame cinco\" es como girar la tómbola cinco veces de una. Didier ya no depende de un solo giro.",
+            "en": "\"Give me five\" is like spinning the drum five times at once. Didier no longer depends on a single spin."
+          }
+        },
+        {
+          "id": "perilla",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "De segura a sorpresiva",
+            "en": "From safe to surprising"
+          },
+          "descripcion": {
+            "es": "Un orden, de lo más esperable a lo más raro.",
+            "en": "An order, from most expected to most unusual."
+          },
+          "ejemplo": {
+            "es": "Pedir el orden te deja ver dónde está lo seguro y dónde se arriesga. Didier suele quedarse con la del medio.",
+            "en": "Asking for an order shows you where the safe options are and where it takes risks. Didier often picks one from the middle."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ahora, la perilla que decide cuánto se arriesga la tómbola.",
+          "en": "Now for the dial that decides how much risk the drum takes."
+        }
+      },
+      "titulo": {
+        "es": "La perilla",
+        "en": "The dial"
+      },
+      "texto": {
+        "es": "Después de \"en la orilla del\", la máquina tiene candidatas como estas (números de ejemplo). Una perilla decide cuánto se arriesga: baja, casi siempre sale la favorita; alta, salen más sorpresas. Los técnicos la llaman temperatura. En la mayoría de apps de chat no la ves, pero sí puedes pedir con palabras lo más seguro o algo que sorprenda.",
+        "en": "After \"on the banks of the\", the machine has candidates like these (example numbers). A dial sets how much risk it takes: low, the favorite almost always wins; high, you get more surprises. Engineers call it temperature. Most chat apps don't show it, but you can ask in words for the safest option or something surprising."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Ficha candidata",
+            "en": "Candidate token"
+          },
+          "b": {
+            "es": "Balotas en la tómbola (ejemplo)",
+            "en": "Tickets in the drum (example)"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "río",
+              "en": "river"
+            },
+            "b": {
+              "es": "40 de cada 100",
+              "en": "40 out of 100"
+            }
+          },
+          {
+            "a": {
+              "es": "mar",
+              "en": "stream"
+            },
+            "b": {
+              "es": "30 de cada 100",
+              "en": "30 out of 100"
+            }
+          },
+          {
+            "a": {
+              "es": "Guatapurí",
+              "en": "Guatapurí"
+            },
+            "b": {
+              "es": "25 de cada 100",
+              "en": "25 out of 100"
+            }
+          },
+          {
+            "a": {
+              "es": "camino",
+              "en": "canal"
+            },
+            "b": {
+              "es": "5 de cada 100",
+              "en": "5 out of 100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Didier tiene tres trabajos para la IA esta semana. Ayúdale a decidir dónde dejar girar la tómbola.",
+          "en": "Didier has three jobs for the AI this week. Help him decide where to let the drum spin."
+        }
+      },
+      "titulo": {
+        "es": "¿Dónde gira libre?",
+        "en": "Where does it spin free?"
+      },
+      "escena": {
+        "es": "Didier necesita ideas de rima para el coro de una canción nueva, un resumen de las reglas de un concurso de canción inédita y la cuenta de cuánto le toca a cada uno de los cinco músicos del conjunto por una presentación. ¿En cuáles le sirve que la tómbola gire libre?",
+        "en": "Didier needs rhyme ideas for the chorus of a new song, a summary of the rules for a new-song contest, and the math on how much each of the five musicians in his band gets for a gig. In which of these does a free-spinning drum help him?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "En las tres: entre más variedad, mejor",
+            "en": "All three: the more variety, the better"
+          },
+          "consecuencia": {
+            "es": "Las rimas salen lindas, pero el resumen de las reglas y la cuenta cambian cada vez que pregunta. Donde hay una sola respuesta correcta, la variedad es un riesgo.",
+            "en": "The rhymes come out great, but the rules summary and the math change every time he asks. Where there's only one right answer, variety is a risk."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Solo en las rimas; en las reglas y la cuenta, lo seguro",
+            "en": "Only the rhymes; the rules and the math need the safe answer"
+          },
+          "consecuencia": {
+            "es": "Eso. En las rimas pide varias versiones y escoge. En las reglas y la cuenta pide lo más exacto, lo compara con el documento y revisa la suma.",
+            "en": "That's it. For rhymes he asks for several versions and picks. For the rules and the math he asks for the most exact answer, checks it against the document and double-checks the sum."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "En ninguna: una IA seria siempre responde igual",
+            "en": "None: a serious AI always answers the same way"
+          },
+          "consecuencia": {
+            "es": "Se pierde lo mejor para un compositor: muchas ideas distintas para escoger. Y aunque la respuesta saliera igual, la cuenta igual toca revisarla.",
+            "en": "He loses the best part for a songwriter: lots of different ideas to choose from. And even if the answer came out the same, he'd still need to check the math."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Lo creativo y lo exacto son dos puntos de la misma perilla. Para crear, deja girar la tómbola y pide varias. Para reglas y cuentas, pide lo seguro y revísalo.",
+          "en": "Creative and exact are two settings on the same dial. To create, let the drum spin and ask for several. For rules and math, ask for the safe answer and check it."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Didier tiene un verso nuevo y quiere ver la tómbola entera antes de escoger. Escribe el pedido.",
+          "en": "Your turn. Didier has a new line and wants to see the whole drum before he picks. Write the request."
+        }
+      },
+      "titulo": {
+        "es": "La tómbola de Didier",
+        "en": "Didier's raffle drum"
+      },
+      "reto": {
+        "es": "Verso nuevo de Didier: \"La parranda se acabó y yo sigo en la ventana\". Pídele a la IA cinco maneras de seguirlo, de la más predecible a la más sorpresiva.",
+        "en": "Didier's new line: \"The party's over now and I'm still here at the window\". Ask the AI for five ways to continue it, from the most predictable to the most surprising."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "verso",
+          "texto": {
+            "es": "Trae el verso de Didier",
+            "en": "Includes Didier's line"
+          },
+          "rubrica": "El prompt incluye el verso copiado dentro del prompt (el del reto u otro verso escrito completo) para que la IA lo siga. No cuenta decir 'el verso de Didier' o 'un verso de vallenato' sin escribirlo, ni pedir 'una canción' desde cero.",
+          "claves": {
+            "es": [
+              "la parranda se acabo",
+              "sigo en la ventana"
+            ],
+            "en": [
+              "the party's over",
+              "party is over",
+              "still here at the window",
+              "at the window"
+            ]
+          }
+        },
+        {
+          "id": "varias",
+          "texto": {
+            "es": "Pide varias opciones",
+            "en": "Asks for several options"
+          },
+          "rubrica": "El prompt pide varias continuaciones distintas del verso (al menos tres). No cuenta pedir una sola continuación, ni pedir una canción larga con varias estrofas.",
+          "claves": {
+            "es": [
+              "cinco formas",
+              "5 formas",
+              "cinco maneras",
+              "5 maneras",
+              "cinco opciones",
+              "5 opciones",
+              "cinco versiones",
+              "5 versiones",
+              "cinco continuaciones",
+              "5 continuaciones",
+              "cinco versos",
+              "5 versos",
+              "tres opciones",
+              "3 opciones",
+              "tres formas",
+              "3 formas",
+              "tres maneras",
+              "3 maneras",
+              "tres versiones",
+              "3 versiones",
+              "cuatro opciones",
+              "4 opciones",
+              "varias opciones",
+              "varias formas",
+              "varias maneras",
+              "varias versiones",
+              "varios versos",
+              "cinco posibles",
+              "5 posibles"
+            ],
+            "en": [
+              "five ways",
+              "5 ways",
+              "five options",
+              "5 options",
+              "five versions",
+              "5 versions",
+              "five continuations",
+              "5 continuations",
+              "five lines",
+              "5 lines",
+              "three ways",
+              "3 ways",
+              "three options",
+              "3 options",
+              "three versions",
+              "3 versions",
+              "four options",
+              "4 options",
+              "several ways",
+              "several options",
+              "several versions",
+              "five possible",
+              "5 possible",
+              "five different",
+              "5 different"
+            ]
+          }
+        },
+        {
+          "id": "orden",
+          "texto": {
+            "es": "Pide ordenarlas de segura a sorpresiva",
+            "en": "Asks to order them, safe to surprising"
+          },
+          "rubrica": "El prompt pide ordenar las opciones de la más predecible o esperable a la más sorpresiva (o al revés), o marcar cuál es la más esperable. No cuenta pedir opciones 'sorpresivas' o 'creativas' sin pedir un orden, ni ordenarlas por otro criterio (la más bonita, la más corta).",
+          "claves": {
+            "es": [
+              "mas predecible",
+              "menos predecible",
+              "predecible a",
+              "de predecible",
+              "mas esperable",
+              "menos esperable",
+              "mas probable",
+              "mas sorpresiva",
+              "mas sorprendente",
+              "mas comun a",
+              "mas segura a"
+            ],
+            "en": [
+              "most predictable",
+              "least predictable",
+              "predictable to",
+              "from predictable",
+              "most expected",
+              "least expected",
+              "most likely",
+              "most surprising",
+              "least surprising",
+              "safest to"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un modelo de lenguaje que ayuda a un compositor a seguir un verso. Si el prompt trae un verso y pide varias continuaciones, responde solo con continuaciones cortas de un verso cada una, numeradas, sin repetir el verso original. Si pide un orden de predecible a sorpresiva, respétalo y agrega al final una línea que diga que el orden es una estimación de qué tan esperable suena cada una, no un porcentaje medido. Si no trae el verso, escribe un solo verso genérico. Escribe versos originales: nunca copies letras de canciones existentes ni nombres de artistas reales.",
+        "en": "You are a language model helping a songwriter continue a line. If the prompt includes a line and asks for several continuations, reply only with short continuations, one line each, numbered, without repeating the original line. If it asks for an order from predictable to surprising, follow it and add a final line saying the order is an estimate of how expected each one sounds, not a measured percentage. If there is no line to continue, write a single generic line. Write original lines only: never copy lyrics from existing songs or name real artists."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. …esperando que amanezca pa' volverte a ver.\n2. …con el eco del acordeón sonando en el pecho.\n3. …contando las estrellas que dejaste al pasar.\n4. …y la luna me pregunta si te fuiste de verdad.\n5. …y hasta el gallo, de la pena, se negó a cantar.\n\nEl orden es una estimación de qué tan esperable suena cada una, no un porcentaje medido.",
+            "en": "1. …waiting for the sun to rise so I can see you again.\n2. …with the echo of the accordion still ringing in my chest.\n3. …counting all the stars you left behind you on your way.\n4. …and the moon keeps asking me if you're really gone for good.\n5. …and even the rooster's too heartbroken to crow.\n\nThe order is an estimate of how expected each one sounds, not a measured percentage."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Ahí está la tómbola entera, de lo seguro a lo loco. Didier ya puede escoger, y apuesto a que se queda con el gallo.",
+              "en": "There's the whole drum, from safe to wild. Now Didier gets to choose, and I bet he goes for the rooster."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "…esperando que amanezca pa' volverte a ver.",
+            "en": "…waiting for the sun to rise so I can see you again."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Salió una sola balota, y la más predecible. Mira la lista: ¿le pegaste el verso? ¿Pediste varias y en orden?",
+              "en": "Only one ticket came out, and the most predictable one. Check the list: did you paste the line? Did you ask for several, in order?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Explica con tus palabras la tómbola, como se la explicarías a Didier entre dos canciones.",
+          "en": "Logbook time. Explain the raffle drum in your own words, the way you'd explain it to Didier between two songs."
+        }
+      },
+      "concepto": "probabilidad",
+      "definicion": {
+        "es": "En cada ficha, la máquina tiene varias candidatas, unas más probables que otras. No siempre escoge la primera: gira una tómbola. Por eso la misma pregunta puede dar respuestas distintas.",
+        "en": "At each token, the machine has several candidates, some likelier than others. It doesn't always pick the top one: it spins a drum. That's why the same question can get different answers."
+      },
+      "pregunta": {
+        "es": "La tómbola de la IA es…",
+        "en": "The AI's raffle drum is…"
+      },
+      "guardaPrompt": "b08",
+      "etiqueta": {
+        "es": "pedir versiones",
+        "en": "ask for versions"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado, con tu prompt de las cinco versiones. La próxima vez que una IA te dé algo distinto, ya sabes que giró la tómbola.",
+          "en": "Saved, with your five-versions prompt. Next time an AI gives you something different, you'll know the drum spun."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y Didier vuelve al acordeón.",
+          "en": "Three questions and Didier gets back to his accordion."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Didier pregunta lo mismo en dos chats nuevos y le salen versos distintos. ¿Por qué?",
+            "en": "Didier asks the same thing in two new chats and gets different lines. Why?"
+          },
+          "opciones": [
+            {
+              "es": "La máquina gira la tómbola entre fichas probables",
+              "en": "The machine spins the drum among likely tokens"
+            },
+            {
+              "es": "Una de las dos respuestas tiene un error",
+              "en": "One of the two answers has a mistake"
+            },
+            {
+              "es": "Cada chat usa una máquina que piensa distinto",
+              "en": "Each chat uses a machine that thinks differently"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Misma máquina, otro giro.",
+              "en": "Right. Same machine, different spin."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Acuérdate de la explicación desafinada: ¿qué pasaba en cada ficha?",
+              "en": "Hmm. Remember the off-key explanation: what happened at each token?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué pasa con la ficha que tiene más balotas en la tómbola?",
+            "en": "What happens to the token with the most tickets in the drum?"
+          },
+          "opciones": [
+            {
+              "es": "Sale muchas veces, pero no siempre",
+              "en": "It comes out often, but not always"
+            },
+            {
+              "es": "Sale siempre, sin excepción",
+              "en": "It always comes out, no exceptions"
+            },
+            {
+              "es": "Casi nunca sale, para no repetir",
+              "en": "It rarely comes out, to avoid repeating"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Tiene más balotas, pero no gana todas las rifas.",
+              "en": "Exactly. More tickets, but it doesn't win every draw."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en una rifa de verdad: ¿el que compra más boletas gana siempre?",
+              "en": "Think of a real raffle: does the person with the most tickets always win?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Para cuál tarea de Didier conviene pedir la respuesta más segura?",
+            "en": "For which of Didier's jobs should he ask for the safest answer?"
+          },
+          "opciones": [
+            {
+              "es": "Ideas de rima para el coro",
+              "en": "Rhyme ideas for the chorus"
+            },
+            {
+              "es": "Repartir el pago entre los músicos",
+              "en": "Splitting the pay among the musicians"
+            },
+            {
+              "es": "Nombres para su próximo disco",
+              "en": "Names for his next album"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Así es. En las cuentas no quieres sorpresas, y aun así se revisa la suma.",
+              "en": "That's it. You don't want surprises in the math, and you still check the sum."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Esa tarea gana con variedad. Busca la que tiene una sola respuesta correcta.",
+              "en": "That job benefits from variety. Look for the one with only one right answer."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "La tómbola",
+        "en": "The raffle drum"
+      },
+      "resumen": {
+        "es": "La IA escoge cada ficha entre varias probables, como en una tómbola. Por eso varía, y por eso vale la pena pedir varias versiones.",
+        "en": "AI picks each token from several likely ones, like a raffle drum. That's why it varies, and why it pays to ask for several versions."
+      }
+    },
+    "piezas": "b05",
+    "mejorPrompt": [
+      "b08"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Afinaste la explicación de Punti",
+          "en": "You tuned up Punti's explanation"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Decidiste dónde dejar girar la tómbola",
+          "en": "You decided where to let the drum spin"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Viste la tómbola entera del verso de Didier",
+          "en": "You saw the whole drum for Didier's line"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Explicaste por qué la misma pregunta varía",
+          "en": "You explained why the same question varies"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-versiones",
+      "titulo": {
+        "es": "Pedir varias versiones",
+        "en": "Asking for several versions"
+      }
+    }
+  }
+}

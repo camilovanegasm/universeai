@@ -1,0 +1,810 @@
+{
+  "formato": "punti-mision@1",
+  "id": "arreglos-con-cuidado",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 1,
+  "numero": 3,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "arreglos-seguros"
+  ],
+  "usaConceptos": [
+    "primer-pedido",
+    "forma"
+  ],
+  "titulo": {
+    "es": "Arreglos con cuidado",
+    "en": "Careful home fixes"
+  },
+  "resumen": {
+    "es": "Describe el daño, pide materiales y pasos, y reconoce la luz roja: gas, electricidad, estructura y alturas.",
+    "en": "Describe the damage, ask for materials and steps, and spot the red light: gas, electricity, structure, heights."
+  },
+  "siguiente": "semana-organizada",
+  "fuentes": [
+    {
+      "titulo": "Bomberos de Bogotá: recomendaciones ante fugas de gas natural",
+      "url": "https://www.bomberosbogota.gov.co/noticias/recomendaciones-evitar-fugas-y-explosiones-gas-natural",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Alcaldía de Bogotá: para qué sirve la línea 123 y cuándo llamar",
+      "url": "https://bogota.gov.co/mi-ciudad/seguridad/para-que-sirve-la-linea-123-de-emergencias-y-cuando-llamar-en-bogota",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, otra llamada desde la Tierra. Viene de Tuluá, en el Valle. Es Abel, conductor de bus intermunicipal. El lavaplatos de su cocina gotea, y el domingo es su único día libre.",
+          "en": "Pilot, another call from Earth. It's coming from Tuluá, Colombia. It's Abel, an intercity bus driver. His kitchen sink is leaking, and Sunday is his only day off."
+        }
+      },
+      "titulo": {
+        "es": "Arreglos con cuidado",
+        "en": "Careful home fixes"
+      },
+      "texto": {
+        "es": "Hoy aprendes a pedirle ayuda a la IA con un arreglo de la casa, y a reconocer cuándo el arreglo es para un técnico. Unos 9 minutos.",
+        "en": "Today you learn to ask AI for help with a home repair, and to recognize when the job belongs to a professional. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto le preguntó Abel a la IA el domingo pasado. Abajo está el mismo pedido, con lo que él veía debajo del lavaplatos.",
+          "en": "Here's what Abel asked the AI last Sunday. Below is the same request, with what he could see under the sink."
+        }
+      },
+      "titulo": {
+        "es": "Lo que Abel veía",
+        "en": "What Abel could see"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Se me dañó el lavaplatos, ¿qué hago?",
+          "en": "My kitchen sink is broken, what do I do?"
+        },
+        "salida": {
+          "es": "Puede haber muchas causas: una tubería rota, un desagüe tapado, una llave defectuosa, un problema en la red de agua del edificio o una fuga dentro de la pared. Te recomiendo revisar cada una o contactar a un profesional.",
+          "en": "There could be many causes: a broken pipe, a clogged drain, a faulty faucet, a problem with the building's water supply or a leak inside the wall. I recommend checking each one or contacting a professional."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "dano",
+            "texto": {
+              "es": "Debajo del lavaplatos, en el tubo curvo, cae una gota cada pocos segundos desde hace una semana. Gotea más cuando lavo la loza. ",
+              "en": "Under the kitchen sink, on the curved pipe, a drop falls every few seconds. It's been like this for a week, and it drips more when I wash dishes. "
+            }
+          },
+          {
+            "pieza": "pasos",
+            "texto": {
+              "es": "Dime qué materiales necesito y dame los pasos numerados. ",
+              "en": "Tell me what materials I need and give me numbered steps. "
+            }
+          },
+          {
+            "pieza": "parar",
+            "texto": {
+              "es": "Y dime cuándo debo parar y llamar a un plomero.",
+              "en": "And tell me when I should stop and call a plumber."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Parece que gotea una unión del sifón (el tubo curvo).\nMateriales: un balde, un trapo y, si hace falta, un empaque nuevo.\n1. No uses el lavaplatos mientras arreglas. Pon el balde debajo y seca el tubo.\n2. Aprieta con la mano la tuerca de la unión que gotea.\n3. Deja correr agua y mira si sigue goteando.\n4. Si sigue, cambia el empaque de esa unión.\nPara y llama a un plomero si el agua sale de la pared, si el tubo está rajado o si hay humedad en el mueble o el piso.",
+          "en": "It looks like a joint on the trap (the curved pipe) is leaking.\nMaterials: a bucket, a rag and, if needed, a new washer.\n1. Don't use the sink while you work. Put the bucket underneath and dry the pipe.\n2. Tighten the nut on the leaking joint by hand.\n3. Run some water and see if it still drips.\n4. If it does, replace the washer on that joint.\nStop and call a plumber if water comes from the wall, the pipe is cracked, or the cabinet or floor is damp."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. Abel dijo dónde, desde cuándo y qué veía; pidió materiales y pasos; y preguntó cuándo parar. La IA dejó de adivinar entre cinco daños y le habló de su tubo.",
+          "en": "Look at the colors. Abel said where, since when and what he saw; he asked for materials and steps; and he asked when to stop. The AI stopped guessing between five problems and talked about his pipe."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un buen pedido de arreglo lleva estas tres piezas. Toca cada una.",
+          "en": "A good repair request has these three pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 3 piezas del arreglo",
+        "en": "The 3 pieces of a fix"
+      },
+      "piezas": [
+        {
+          "id": "dano",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "El daño, con detalles",
+            "en": "The damage, in detail"
+          },
+          "descripcion": {
+            "es": "Dónde está, desde cuándo y qué ves.",
+            "en": "Where it is, since when and what you see."
+          },
+          "ejemplo": {
+            "es": "\"Gotea el tubo curvo desde hace una semana\". Si tu app acepta fotos, manda una del daño, sin caras ni papeles con tus datos.",
+            "en": "\"The curved pipe has dripped for a week.\" If your app takes photos, send one of the damage, with no faces or papers showing your details."
+          }
+        },
+        {
+          "id": "pasos",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Materiales y pasos",
+            "en": "Materials and steps"
+          },
+          "descripcion": {
+            "es": "Qué necesitas y qué haces, en orden.",
+            "en": "What you need and what to do, in order."
+          },
+          "ejemplo": {
+            "es": "\"Dame los pasos numerados\". Así no te pierdes con las manos mojadas y el balde lleno.",
+            "en": "\"Give me numbered steps.\" So you don't get lost with wet hands and a full bucket."
+          }
+        },
+        {
+          "id": "parar",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Cuándo parar",
+            "en": "When to stop"
+          },
+          "descripcion": {
+            "es": "La señal para soltar la herramienta y llamar.",
+            "en": "The sign to put the tools down and call."
+          },
+          "ejemplo": {
+            "es": "\"Dime cuándo llamar a un plomero\". Un buen arreglo también sabe dónde termina.",
+            "en": "\"Tell me when to call a plumber.\" A good fix also knows where it ends."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Abel ya arregló el lavaplatos, pero ahora gotea la llave del lavamanos del baño. Escribe el pedido con los datos que te cuenta.",
+          "en": "Your turn. Abel fixed the kitchen sink, but now the bathroom faucet is dripping. Write the request with the details he gives you."
+        }
+      },
+      "titulo": {
+        "es": "La llave del lavamanos",
+        "en": "The bathroom faucet"
+      },
+      "reto": {
+        "es": "Lo que te cuenta Abel: la llave del lavamanos del baño gotea aunque esté bien cerrada. Empezó hace tres días. Cae un chorrito por la boca de la llave toda la noche. Tiene un destornillador, una llave inglesa y el domingo libre.",
+        "en": "Here's what Abel tells you: the bathroom sink faucet drips even when it's fully closed. It started three days ago. A thin trickle comes out of the spout all night. He has a screwdriver, an adjustable wrench and Sunday off."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "dano",
+          "texto": {
+            "es": "Describe el daño",
+            "en": "Describes the damage"
+          },
+          "rubrica": "El prompt describe el daño con al menos uno de estos detalles: dónde está (la llave del lavamanos del baño), desde cuándo (hace tres días) o qué se ve (gotea aunque esté cerrada, cae un chorrito toda la noche). No cuenta 'se me dañó la llave', 'tengo una gotera' o 'algo gotea' sin decir dónde, desde cuándo ni qué se ve.",
+          "claves": {
+            "es": [
+              "lavamanos",
+              "del bano",
+              "aunque este",
+              "aunque la cierre",
+              "bien cerrada",
+              "cerrada",
+              "hace tres dias",
+              "hace 3 dias",
+              "desde hace",
+              "chorrito",
+              "toda la noche",
+              "boca de la llave"
+            ],
+            "en": [
+              "bathroom",
+              "even when",
+              "even though",
+              "fully closed",
+              "turned off",
+              "closed tight",
+              "three days",
+              "3 days",
+              "all night",
+              "trickle",
+              "spout"
+            ]
+          }
+        },
+        {
+          "id": "pasos",
+          "texto": {
+            "es": "Pide materiales y pasos",
+            "en": "Asks for materials and steps"
+          },
+          "rubrica": "El prompt pide materiales o herramientas y pasos en orden o numerados. No cuenta '¿qué hago?', 'ayúdame' o 'arréglalo' sin pedir pasos ni materiales.",
+          "claves": {
+            "es": [
+              "pasos",
+              "paso a paso",
+              "numerad",
+              "material",
+              "herramienta",
+              "que necesito comprar",
+              "que compro",
+              "en orden"
+            ],
+            "en": [
+              "steps",
+              "step by step",
+              "step-by-step",
+              "numbered",
+              "material",
+              "tool",
+              "what i need to buy",
+              "what to buy",
+              "in order",
+              "supplies"
+            ]
+          }
+        },
+        {
+          "id": "parar",
+          "texto": {
+            "es": "Pregunta cuándo parar",
+            "en": "Asks when to stop"
+          },
+          "rubrica": "El prompt pide que la IA le diga cuándo parar y llamar a un plomero o técnico: las señales de que ya no es un arreglo casero. No cuenta mencionar al plomero por otra razón ('el plomero cobra mucho'), ni 'si no puedo, ¿qué hago?' sin pedir señales.",
+          "claves": {
+            "es": [
+              "cuando parar",
+              "cuando debo parar",
+              "debo parar",
+              "cuando llamar",
+              "cuando debo llamar",
+              "si debo llamar",
+              "a quien llamar",
+              "en que momento",
+              "hasta donde",
+              "senales para",
+              "senal para",
+              "detenerme"
+            ],
+            "en": [
+              "when to stop",
+              "should i stop",
+              "should stop",
+              "stop and call",
+              "when to call",
+              "when should i call",
+              "when i should call",
+              "should i call",
+              "who to call",
+              "at what point",
+              "signs that"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda con arreglos sencillos de la casa. Responde en máximo 130 palabras, sin introducción. Si el prompt no dice dónde está el daño ni qué se ve, responde solo con una lista general de posibles causas, sin pasos. Si pide materiales o pasos, dalos numerados y empieza por cerrar el agua cuando haga falta. Si pide cuándo parar, termina con las señales para dejarlo y llamar a un plomero. Nunca des pasos para trabajos con gas, electricidad, estructura o alturas: di que eso es para un técnico, y si hay olor a gas, que salga de la casa y llame desde afuera al 123 o a la línea de emergencia de su empresa de gas.",
+        "en": "You are an AI that helps with simple home repairs. Reply in 130 words at most, with no introduction. If the prompt doesn't say where the problem is or what it looks like, reply only with a general list of possible causes, no steps. If it asks for materials or steps, number them and start by shutting off the water when needed. If it asks when to stop, end with the signs that mean they should stop and call a plumber. Never give steps for work involving gas, electricity, structure or heights: say that's a job for a professional, and if there's a gas smell, tell them to leave the house and call the emergency number or their gas company from outside."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Lo más común es que se gastó el empaque o el cartucho de la llave.\nMateriales: el destornillador, la llave inglesa, un trapo y un empaque o cartucho igual al viejo.\n1. Cierra la llave de paso que está debajo del lavamanos (o la del agua de la casa).\n2. Tapa el desagüe con el trapo, para que no se caigan las piezas.\n3. Quita la manija con el destornillador y afloja la pieza de adentro con la llave inglesa.\n4. Lleva la pieza vieja a la ferretería y compra una igual.\n5. Arma todo, abre el agua y revisa.\nPara y llama a un plomero si la llave de paso no cierra, si hay agua en la pared o si algo se rompe al aflojarlo.",
+            "en": "The most common cause is a worn washer or cartridge inside the faucet.\nMaterials: the screwdriver, the wrench, a rag and a washer or cartridge that matches the old one.\n1. Close the shut-off valve under the sink (or the main water valve).\n2. Cover the drain with the rag so no parts fall in.\n3. Remove the handle with the screwdriver and loosen the inner part with the wrench.\n4. Take the old part to the hardware store and buy a matching one.\n5. Put it all back, turn the water on and check.\nStop and call a plumber if the valve won't close, there's water in the wall or something breaks when you loosen it."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. La IA supo cuál llave, desde cuándo y qué pasa. Te dio materiales, pasos en orden y la señal para parar.",
+              "en": "Clean signal. The AI knew which faucet, since when and what's going on. It gave you materials, steps in order and the sign to stop."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Una llave que gotea puede tener varias causas: presión alta en la red, un empaque gastado, un cartucho dañado, sarro acumulado o una instalación defectuosa. Te recomiendo revisar cada una o contactar a un profesional.",
+            "en": "A dripping faucet can have several causes: high water pressure, a worn washer, a damaged cartridge, mineral buildup or a faulty installation. I recommend checking each one or contacting a professional."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Una lista de causas y cero pasos. La IA no sabe cuál llave es ni qué ve Abel. Mira la lista y cuéntaselo.",
+              "en": "A list of causes and zero steps. The AI doesn't know which faucet it is or what Abel sees. Check the list and tell it."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ahora, lo más importante de este módulo: la luz roja.",
+          "en": "Now, the most important part of this module: the red light."
+        }
+      },
+      "titulo": {
+        "es": "La luz roja de la casa",
+        "en": "The home's red light"
+      },
+      "texto": {
+        "es": "Hay arreglos que no son para un tutorial: gas, electricidad, estructura y alturas. Un error ahí no deja un charco: puede causar un incendio, una descarga o una caída. En esos casos, la IA solo te sirve para una cosa: anotar qué le vas a contar al técnico.",
+        "en": "Some repairs aren't for a tutorial: gas, electricity, structure and heights. A mistake there doesn't leave a puddle: it can cause a fire, a shock or a fall. In those cases, AI is good for one thing only: jotting down what you'll tell the professional."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Si ves…",
+            "en": "If you see…"
+          },
+          "b": {
+            "es": "Llama a…",
+            "en": "Call…"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Olor a gas",
+              "en": "A gas smell"
+            },
+            "b": {
+              "es": "123 o la línea de tu empresa de gas, desde afuera",
+              "en": "The emergency number or your gas company, from outside"
+            }
+          },
+          {
+            "a": {
+              "es": "Chispas, cables pelados o tomas calientes",
+              "en": "Sparks, bare wires or hot outlets"
+            },
+            "b": {
+              "es": "Un electricista",
+              "en": "An electrician"
+            }
+          },
+          {
+            "a": {
+              "es": "Grietas nuevas en muros o techo",
+              "en": "New cracks in walls or ceilings"
+            },
+            "b": {
+              "es": "Un maestro de obra o un ingeniero",
+              "en": "A builder or an engineer"
+            }
+          },
+          {
+            "a": {
+              "es": "Arreglos en el techo o en alturas",
+              "en": "Repairs on the roof or up high"
+            },
+            "b": {
+              "es": "Alguien con equipo de seguridad",
+              "en": "Someone with safety gear"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Abel hizo la lista de pendientes de la casa. ¿Cuáles puede hacer él con ayuda de la IA y cuáles son luz roja?",
+          "en": "Your turn. Abel made a list of home repairs to do. Which can he do himself with AI's help, and which are red light?"
+        }
+      },
+      "titulo": {
+        "es": "¿Lo hago yo o llamo?",
+        "en": "Do it or call?"
+      },
+      "grupos": [
+        {
+          "id": "yo",
+          "titulo": {
+            "es": "Lo hago yo",
+            "en": "I'll do it"
+          }
+        },
+        {
+          "id": "tecnico",
+          "titulo": {
+            "es": "Llamo a un técnico",
+            "en": "I call a pro"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "yo",
+          "texto": {
+            "es": "Apretar la tuerca del sifón que gotea",
+            "en": "Tighten the dripping nut on the sink trap"
+          }
+        },
+        {
+          "grupo": "tecnico",
+          "texto": {
+            "es": "Un toma que se calienta y huele a quemado",
+            "en": "An outlet that gets hot and smells burnt"
+          }
+        },
+        {
+          "grupo": "yo",
+          "texto": {
+            "es": "Cambiar el empaque de una llave que gotea",
+            "en": "Replace the washer on a dripping faucet"
+          }
+        },
+        {
+          "grupo": "tecnico",
+          "texto": {
+            "es": "Una grieta nueva que atraviesa la pared",
+            "en": "A new crack running across a wall"
+          }
+        },
+        {
+          "grupo": "yo",
+          "texto": {
+            "es": "Destapar el desagüe del lavamanos",
+            "en": "Unclog the bathroom sink drain"
+          }
+        },
+        {
+          "grupo": "tecnico",
+          "texto": {
+            "es": "Cambiar unas tejas rotas del techo",
+            "en": "Replace some broken roof tiles"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Llaves y desagües, con cuidado, sí. Electricidad, estructura y alturas: luz roja.",
+          "en": "Six for six. Faucets and drains, carefully, yes. Electricity, structure and heights: red light."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: si sale mal, ¿queda un charco o alguien sale herido?",
+          "en": "Hmm. Ask yourself: if it goes wrong, do you get a puddle, or does someone get hurt?"
+        }
+      },
+      "malPorGrupo": {
+        "yo": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: ese arreglo toca electricidad, estructura o alturas. Un error ahí no se seca con un trapo.",
+            "en": "Careful: that job involves electricity, structure or heights. A mistake there doesn't wipe up with a rag."
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un último momento del domingo de Abel. Lee con calma y decide.",
+          "en": "One last moment from Abel's Sunday. Read it calmly and decide."
+        }
+      },
+      "titulo": {
+        "es": "Huele a gas",
+        "en": "It smells like gas"
+      },
+      "escena": {
+        "es": "Son las 4 p. m. Abel termina con el lavamanos y entra a la cocina. Huele a gas cerca de la estufa. Tiene el celular en la mano y piensa en preguntarle a la IA qué hacer. ¿Qué hace?",
+        "en": "It's 4 p.m. Abel finishes the bathroom faucet and walks into the kitchen. It smells like gas near the stove. He has his phone in his hand and thinks about asking the AI what to do. What does he do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Le escribe a la IA y espera la respuesta en la cocina",
+            "en": "Messages the AI and waits for the answer in the kitchen"
+          },
+          "consecuencia": {
+            "es": "Mientras escribe y lee, el gas sigue saliendo. La IA no huele ni ve la cocina. Esto no se consulta con un chat.",
+            "en": "While he types and reads, the gas keeps leaking. The AI can't smell or see the kitchen. This isn't something you ask a chatbot."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Cierra el gas, abre ventanas, sale sin tocar interruptores y llama desde afuera",
+            "en": "Shuts off the gas, opens windows, leaves without touching switches, calls from outside"
+          },
+          "consecuencia": {
+            "es": "Eso es. Cierra la llave del gas, abre puertas y ventanas, no prende ni apaga nada, sale y llama desde afuera al 123 o a la línea de emergencia de su empresa de gas.",
+            "en": "That's it. He shuts off the gas valve, opens doors and windows, doesn't switch anything on or off, leaves and calls the emergency number or his gas company's emergency line from outside."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Prende la luz para buscar de dónde sale el olor",
+            "en": "Turns on the light to find where the smell is coming from"
+          },
+          "consecuencia": {
+            "es": "Ojo: una chispa del interruptor puede encender el gas. Con olor a gas no se prende ni se apaga nada.",
+            "en": "Careful: a spark from the switch can ignite the gas. When it smells like gas, you don't switch anything on or off."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Luz roja: con olor a gas no se le pregunta a la IA. Se actúa y se llama a una persona. Después, con calma, la IA te ayuda a anotar qué pasó para contárselo al técnico.",
+          "en": "Red light: when it smells like gas, you don't ask the AI. You act, and you call a person. Later, calmly, the AI can help you write down what happened to tell the technician."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A tu bitácora. Escribe con tus palabras cómo se pide ayuda con un arreglo, como se lo explicarías a Abel.",
+          "en": "To your logbook. Write in your own words how you ask for help with a repair, the way you'd explain it to Abel."
+        }
+      },
+      "concepto": "arreglos-seguros",
+      "definicion": {
+        "es": "Pedirle ayuda a la IA con un arreglo: describes el daño (dónde, desde cuándo, qué ves) y pides materiales, pasos y cuándo parar. Gas, electricidad, estructura y alturas son luz roja: van a un técnico.",
+        "en": "Asking AI for help with a repair: you describe the damage (where, since when, what you see) and ask for materials, steps and when to stop. Gas, electricity, structure and heights are red light: they go to a pro."
+      },
+      "pregunta": {
+        "es": "Para pedir ayuda con un arreglo…",
+        "en": "To ask for help with a repair…"
+      },
+      "guardaPrompt": "b04",
+      "etiqueta": {
+        "es": "arreglos",
+        "en": "home fixes"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pedido para la llave de Abel ya viven en tu bitácora. La próxima gotera ya tiene prompt.",
+          "en": "Saved. Your note and your request for Abel's faucet now live in your logbook. The next leak already has a prompt waiting."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas cortas y cerramos la llamada de Abel.",
+          "en": "Two quick questions and we wrap up Abel's call."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál pedido le sirve más a la IA para ayudarte con un arreglo?",
+            "en": "Which request helps the AI most with a repair?"
+          },
+          "opciones": [
+            {
+              "es": "Se me dañó algo en la cocina y no sé qué es, ¿qué hago?",
+              "en": "Something in my kitchen broke and I don't know what, help?"
+            },
+            {
+              "es": "La llave del lavaplatos gotea hace 2 días; dame materiales, pasos y cuándo parar",
+              "en": "The kitchen faucet has dripped for 2 days; give me materials, steps and when to stop"
+            },
+            {
+              "es": "Arréglame la gotera de la casa, porfa, que ya me tiene cansado",
+              "en": "Please fix the leak at my place, I'm so tired of it"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Dónde, desde cuándo, qué pides y cuándo parar.",
+              "en": "Right. Where, since when, what you need and when to stop."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿la IA sabe dónde está el daño y qué ves?",
+              "en": "Hmm. Ask yourself: does the AI know where the problem is and what you see?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Cuál de estos arreglos es luz roja?",
+            "en": "Which of these repairs is red light?"
+          },
+          "opciones": [
+            {
+              "es": "Destapar el desagüe de la ducha",
+              "en": "Unclog the shower drain"
+            },
+            {
+              "es": "Cambiar un toma que echa chispas",
+              "en": "Replace an outlet that sparks"
+            },
+            {
+              "es": "Apretar la tuerca de un sifón",
+              "en": "Tighten the nut on a sink trap"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Electricidad: eso es para un electricista.",
+              "en": "Exactly. Electricity: that's a job for an electrician."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: si sale mal, ¿queda un charco o alguien sale herido?",
+              "en": "Ask yourself: if it goes wrong, do you get a puddle, or does someone get hurt?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ronda por tu casa. Busca un arreglo pendiente y pídele ayuda a tu IA con las tres piezas.",
+          "en": "Take a walk around your home. Find a repair you've been putting off and ask your AI for help with all three pieces."
+        }
+      },
+      "titulo": {
+        "es": "Tu arreglo pendiente",
+        "en": "Your pending repair"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Escoge un arreglo sencillo. Describe el daño (o manda una foto, si tu app lo permite) y pide materiales, pasos numerados y cuándo parar. Si es gas, electricidad, estructura o alturas, no lo hagas tú: llama a un técnico.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Pick a simple repair. Describe the damage (or send a photo, if your app allows it) and ask for materials, numbered steps and when to stop. If it involves gas, electricity, structure or heights, don't do it yourself: call a pro."
+      },
+      "checks": [
+        {
+          "es": "Describí dónde, desde cuándo y qué veo",
+          "en": "I described where, since when and what I see"
+        },
+        {
+          "es": "Pedí materiales, pasos numerados y cuándo parar",
+          "en": "I asked for materials, numbered steps and when to stop"
+        },
+        {
+          "es": "Revisé que mi arreglo no fuera luz roja antes de empezar",
+          "en": "I checked my repair wasn't red light before starting"
+        },
+        {
+          "es": "Si mandé foto, no salían caras ni papeles con mis datos",
+          "en": "If I sent a photo, it showed no faces or papers with my details"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Arreglos seguros",
+        "en": "Safe home fixes"
+      },
+      "resumen": {
+        "es": "Describes el daño y pides materiales, pasos y cuándo parar. Gas, electricidad, estructura y alturas: luz roja, llamas a un técnico.",
+        "en": "Describe the damage and ask for materials, steps and when to stop. Gas, electricity, structure and heights: red light, call a pro."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b04"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste qué cambió cuando Abel describió el daño",
+          "en": "You saw what changed when Abel described the damage"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Pediste ayuda para la llave del lavamanos",
+          "en": "You asked for help with the bathroom faucet"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Separaste lo que haces tú de lo que es para un técnico",
+          "en": "You sorted DIY jobs from jobs for a pro"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Actuaste bien ante el olor a gas",
+          "en": "You did the right thing when it smelled like gas"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Revisaste un arreglo pendiente de tu casa",
+          "en": "You tackled a pending repair at home"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "arreglos-con-ia",
+      "titulo": {
+        "es": "Pedir ayuda con arreglos",
+        "en": "Getting help with repairs"
+      }
+    }
+  }
+}

@@ -1,0 +1,1664 @@
+{
+  "formato": "punti-mision@1",
+  "id": "kit-de-escritorio",
+  "mundo": "herramientas-de-ia",
+  "capitulo": 1,
+  "numero": 6,
+  "receta": "construccion",
+  "largo": "proyecto",
+  "minutos": 20,
+  "conceptos": [
+    "kit-de-escritorio"
+  ],
+  "usaConceptos": [
+    "herramienta-por-tarea",
+    "estilo-propio",
+    "resumen-con-proposito",
+    "notas-a-plan",
+    "respuesta-plantilla",
+    "datos-sensibles"
+  ],
+  "titulo": {
+    "es": "Kit de escritorio",
+    "en": "Desk Kit"
+  },
+  "resumen": {
+    "es": "Tu proyecto del capítulo: cinco piezas escritas de tu trabajo, cada una con su prompt y su lista de templado.",
+    "en": "Your chapter project: five written pieces from your work, each with its prompt and its tempering checklist."
+  },
+  "siguiente": "tres-picas",
+  "fuentes": [],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, esta vez el encargo es tuyo. Ya ayudaste a Diana, a Don Jorge, a Nohora, a Yeison y a Don Evelio. Ahora forjas tu Kit de escritorio: cinco piezas de tu trabajo, cada una con su prompt y su lista de templado.",
+          "en": "Pilot, this time the job is yours. You've already helped Diana, Don Jorge, Nohora, Yeison and Don Evelio. Now you forge your Desk Kit: five pieces from your work, each with its prompt and its tempering checklist."
+        }
+      },
+      "titulo": {
+        "es": "Kit de escritorio",
+        "en": "Desk Kit"
+      },
+      "texto": {
+        "es": "Es el proyecto del capítulo 1. Usa tu trabajo real o uno inventado, siempre sin datos privados. Tus cinco prompts quedan en tu bitácora, listos para la próxima vez. Unos 20 minutos.",
+        "en": "It's the Chapter 1 project. Use your real job or a made-up one, always without private data. Your five prompts get saved in your logbook, ready for next time. About 20 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué lleva el kit.",
+          "en": "First, what goes in the kit."
+        }
+      },
+      "titulo": {
+        "es": "Lo que lleva tu kit",
+        "en": "What goes in your kit"
+      },
+      "texto": {
+        "es": "Cinco piezas que se repiten en casi cualquier trabajo: un correo, un resumen, un plan, una respuesta a un cliente y una libre. Cada una lleva su prompt y una lista de templado de tres puntos: lo que revisas siempre antes de entregarla. El prompt te ahorra tiempo. La lista te evita el error.",
+        "en": "Five pieces that come up in almost any job: an email, a summary, a plan, a customer reply and one of your choice. Each one gets its prompt and a three-point tempering checklist: what you always check before handing it over. The prompt saves you time. The checklist saves you from mistakes."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Un correo que suene a ti",
+            "en": "An email that sounds like you"
+          },
+          {
+            "es": "Un resumen con propósito",
+            "en": "A summary with a purpose"
+          },
+          {
+            "es": "Un plan a partir de notas sueltas",
+            "en": "A plan from scattered notes"
+          },
+          {
+            "es": "Una respuesta base para clientes",
+            "en": "A base reply for customers"
+          },
+          {
+            "es": "Una pieza libre: la que más repites",
+            "en": "One of your choice: the one you repeat most"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de forjar, escoge tu taller. Puede ser tu trabajo real o uno inventado. Lo único que no sirve es pegar datos reales de personas.",
+          "en": "Before you forge, pick your workshop. It can be your real job or a made-up one. The only thing that won't work is pasting real people's data."
+        }
+      },
+      "titulo": {
+        "es": "Escoge tu taller",
+        "en": "Pick your workshop"
+      },
+      "escena": {
+        "es": "Tus cinco piezas van a ser de un solo trabajo. Si usas el tuyo, el kit te sirve desde el lunes, pero con los datos cambiados: nada de nombres, cédulas ni cifras reales de clientes. ¿Con cuál armas tu kit?",
+        "en": "All five pieces will come from one job. If you use yours, the kit works for you starting Monday, but with the details changed: no real names, ID numbers or customer figures. Which one will you build your kit for?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Con mi trabajo, cambiando los datos privados",
+            "en": "My job, with the private details changed"
+          },
+          "consecuencia": {
+            "es": "Perfecto. Escribe en una línea qué haces y para quién. Por ejemplo: \"Soy auxiliar de una ferretería; atiendo clientes y proveedores\". Los datos, inventados o con marcadores.",
+            "en": "Perfect. Write one line on what you do and for whom. For example: \"I'm an assistant at a hardware store; I deal with customers and suppliers.\" Details made up or with placeholders."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Con mi trabajo, pegando los documentos tal cual",
+            "en": "My job, pasting the documents as they are"
+          },
+          "consecuencia": {
+            "es": "Ahí viajan nombres, cifras y datos de clientes a una herramienta que no controlas. Cambia los datos o usa marcadores como [cliente].",
+            "en": "Then names, figures and customer data travel to a tool you don't control. Change the details or use placeholders like [customer]."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Con un trabajo inventado",
+            "en": "A made-up job"
+          },
+          "consecuencia": {
+            "es": "Buena idea. Escoge uno con detalles, como si existiera. Por ejemplo: \"Trabajo en la oficina de una empresa de mudanzas; atiendo las solicitudes de los clientes\".",
+            "en": "Good call. Pick one with details, as if it were real. For example: \"I work in the office of a moving company; I handle customer requests.\""
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Anota tu línea de trabajo donde la tengas a mano. La vas a poner al comienzo de cada prompt: es el contexto que la IA no tiene.",
+          "en": "Jot your job line down somewhere handy. You'll put it at the start of every prompt: it's the context the AI doesn't have."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primera pieza: un correo que escribes seguido. Un cobro, una solicitud, un aviso. Que suene a ti, como el de Don Jorge.",
+          "en": "First piece: an email you write often. A payment reminder, a request, a notice. Make it sound like you, like Don Jorge's."
+        }
+      },
+      "titulo": {
+        "es": "Pieza 1: el correo",
+        "en": "Piece 1: the email"
+      },
+      "reto": {
+        "es": "Tu trabajo o uno inventado. Escoge un correo que escribes seguido. Pide el borrador con los datos concretos (inventados o con marcadores como [fecha]), para quién es y cómo debe sonar. Si quieres, pega una muestra corta tuya.",
+        "en": "Your job or a made-up one. Pick an email you write often. Ask for the draft with the specific details (made up, or with placeholders like [date]), who it's for and how it should sound. If you like, paste in a short sample of yours."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "pieza",
+          "texto": {
+            "es": "Pide un correo y dice para qué",
+            "en": "Asks for an email and says what for"
+          },
+          "rubrica": "El prompt pide un correo y dice de qué se trata: cobrar, pedir, avisar, confirmar, agradecer o algo concreto. No cuenta 'escribe un correo' sin decir de qué se trata.",
+          "claves": {
+            "es": [
+              "correo para",
+              "correo de",
+              "correo con",
+              "correo sobre",
+              "correo pidiendo",
+              "correo avisando",
+              "correo recordando",
+              "correo confirmando",
+              "correo agradeciendo",
+              "email para",
+              "mail para"
+            ],
+            "en": [
+              "email to",
+              "email for",
+              "email about",
+              "email asking",
+              "email reminding",
+              "email letting",
+              "email confirming",
+              "email thanking",
+              "email with"
+            ]
+          }
+        },
+        {
+          "id": "material",
+          "texto": {
+            "es": "Da los datos concretos",
+            "en": "Gives the specific details"
+          },
+          "rubrica": "El prompt trae datos concretos para el correo: cifras, fechas, días, números de documento, o marcadores como [valor] y [fecha] en su lugar. No cuenta 'los datos' o 'la información' sin darlos.",
+          "claves": {
+            "es": [
+              "$",
+              "000",
+              " mil",
+              "[",
+              "factura",
+              "pedido n",
+              "orden n",
+              "lunes",
+              "martes",
+              "miercoles",
+              "jueves",
+              "viernes",
+              "sabado",
+              "domingo",
+              "enero",
+              "febrero",
+              "marzo",
+              "abril",
+              "junio",
+              "julio",
+              "agosto",
+              "septiembre",
+              "octubre",
+              "noviembre",
+              "diciembre"
+            ],
+            "en": [
+              "$",
+              "[",
+              "invoice",
+              "order #",
+              "order no",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday",
+              "january",
+              "february",
+              "march",
+              "april",
+              "june",
+              "july",
+              "august",
+              "september",
+              "october",
+              "november",
+              "december"
+            ]
+          }
+        },
+        {
+          "id": "destino",
+          "texto": {
+            "es": "Dice para quién es",
+            "en": "Says who it's for"
+          },
+          "rubrica": "El prompt dice quién recibe el correo: un cliente, un proveedor, el jefe, un compañero, una entidad. No cuenta 'para la persona', 'para él' o 'para ellos' sin decir quién es.",
+          "claves": {
+            "es": [
+              "cliente",
+              "proveedor",
+              "jefe",
+              "gerente",
+              "companer",
+              "coordinador",
+              "supervisor",
+              "director",
+              "equipo",
+              "profesor",
+              "arrendador",
+              "secretaria de",
+              "la entidad"
+            ],
+            "en": [
+              "client",
+              "customer",
+              "supplier",
+              "vendor",
+              "boss",
+              "manager",
+              "coworker",
+              "co-worker",
+              "colleague",
+              "team",
+              "supervisor",
+              "director",
+              "landlord",
+              "department"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "Dice cómo debe sonar",
+            "en": "Says how it should sound"
+          },
+          "rubrica": "El prompt dice cómo debe sonar (cordial, firme, cercano, formal) o trae una muestra de cómo escribe la persona. No cuenta 'bonito' o 'bien escrito', que no describen un tono.",
+          "claves": {
+            "es": [
+              "cordial",
+              "firme",
+              "amable",
+              "respetuos",
+              "cercan",
+              "calid",
+              "formal",
+              "informal",
+              "tono",
+              "que suene",
+              "sin sonar",
+              "muestra mia",
+              "asi escribo",
+              "como escribo",
+              "mi estilo:"
+            ],
+            "en": [
+              "cordial",
+              " firm",
+              "friendly",
+              "polite",
+              "respectful",
+              "warm",
+              "formal",
+              "casual",
+              "tone",
+              "sound like",
+              "sounds like",
+              "without sounding",
+              "sample of mine",
+              "how i write",
+              "the way i write"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un asistente de escritura para el trabajo. Responde solo con el correo (asunto y cuerpo), en texto plano. Usa únicamente lo que trae el prompt: si falta un dato, deja un espacio entre corchetes, como [fecha], en vez de inventarlo. Si el prompt no dice para quién es ni cómo debe sonar, escribe un correo formal y genérico. Si trae una muestra de estilo, imita su saludo, el largo de sus frases y su despedida. Nunca uses vos.",
+        "en": "You are a writing assistant for work. Reply with the email only (subject and body), in plain text. Use only what the prompt gives you: if a detail is missing, leave a blank in brackets, like [date], instead of making it up. If the prompt doesn't say who it's for or how it should sound, write a formal, generic email. If it includes a style sample, imitate its greeting, sentence length and sign-off."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Asunto: Pedido de [producto] para el [fecha]\n\nBuenos días, [nombre del proveedor]:\n\nLes escribo para pedir [cantidad] unidades de [producto], con entrega el [fecha].\n¿Me confirman el valor y si alcanzan a despacharlo antes del viernes?\n\nMuchas gracias,\n[tu nombre]",
+            "en": "Subject: Order of [product] for [date]\n\nGood morning, [supplier name],\n\nI'm writing to order [quantity] units of [product], for delivery on [date].\nCould you confirm the price and whether you can ship it before Friday?\n\nThank you,\n[your name]"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buen primer golpe. Tiene para quién, datos y tono. Antes de usarlo de verdad, témplalo con tu lista.",
+              "en": "Strong first strike. It has who it's for, details and tone. Before using it for real, temper it with your checklist."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Asunto: Información\n\nCordial saludo:\n\nPor medio del presente me permito escribirle en relación con el asunto de la referencia.\n\nAtentamente,",
+            "en": "Subject: Information\n\nDear Sir or Madam,\n\nI am writing to you regarding the matter referenced above.\n\nSincerely,"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Salió un correo para nadie. Mira la lista: de qué se trata, los datos, para quién y cómo debe sonar.",
+              "en": "Out came an email for nobody. Check the list: what it's about, the details, who it's for and how it should sound."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Segunda pieza: un resumen. Piensa en un documento largo que te toca leer seguido: una circular, un informe, un contrato. Pídelo con propósito, como el de Nohora.",
+          "en": "Second piece: a summary. Think of a long document you often have to read: a memo, a report, a contract. Ask for it with a purpose, like Nohora's."
+        }
+      },
+      "titulo": {
+        "es": "Pieza 2: el resumen",
+        "en": "Piece 2: the summary"
+      },
+      "reto": {
+        "es": "Tu trabajo o uno inventado. Escoge un documento largo que lees seguido. No lo pegues: usa un marcador como [aquí va la circular]. Pide un resumen que diga para qué es, qué sacar, en qué forma y qué marcar si algo no está claro.",
+        "en": "Your job or a made-up one. Pick a long document you read often. Don't paste it: use a placeholder like [memo goes here]. Ask for a summary that says what it's for, what to pull out, in what format and what to flag if something's unclear."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "para",
+          "texto": {
+            "es": "Dice para qué es el resumen",
+            "en": "Says what the summary is for"
+          },
+          "rubrica": "El prompt dice para qué es el resumen: decidir algo, explicárselo a alguien, preparar una reunión, saber qué le toca a la persona. No cuenta 'resúmelo', 'para entenderlo' o 'para leer menos'.",
+          "claves": {
+            "es": [
+              "para decidir",
+              "decidir si",
+              "decidir que",
+              "para explicar",
+              "explicarle",
+              "para la reunion",
+              "para el comite",
+              "para saber si",
+              "para saber que",
+              "para responder",
+              "lo necesito para",
+              "lo voy a usar",
+              "lo voy a leer"
+            ],
+            "en": [
+              "to decide",
+              "decide whether",
+              "decide if",
+              "decide what",
+              "to explain",
+              "for the meeting",
+              "to know if",
+              "to know what",
+              "to find out",
+              "to reply",
+              "i need it to",
+              "i'll use it",
+              "i'll read it"
+            ]
+          }
+        },
+        {
+          "id": "que",
+          "texto": {
+            "es": "Dice qué sacar",
+            "en": "Says what to pull out"
+          },
+          "rubrica": "El prompt dice qué sacar del documento: fechas, montos, cifras, requisitos, compromisos, responsables, plazos o lo que cambia. No cuenta 'lo importante' o 'lo principal' sin decir qué es.",
+          "claves": {
+            "es": [
+              "fecha",
+              "monto",
+              "cifras",
+              "valores",
+              "requisito",
+              "compromiso",
+              "responsable",
+              "plazo",
+              "lo que cambia",
+              "lo que me toca",
+              "cambios",
+              "quien hace que"
+            ],
+            "en": [
+              "dates",
+              " date",
+              "amounts",
+              "figures",
+              "numbers",
+              "requirement",
+              "commitment",
+              "who does what",
+              "responsible",
+              "deadline",
+              "what changes",
+              "what i have to",
+              "changes"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "Da la forma y el largo",
+            "en": "Gives the format and length"
+          },
+          "rubrica": "El prompt dice la forma o el largo del resumen: lista, viñetas, tabla, un número de líneas o de palabras. No cuenta 'corto' o 'breve' sin decir la forma ni una medida.",
+          "claves": {
+            "es": [
+              "lista",
+              "vineta",
+              "lineas",
+              "renglones",
+              "tabla",
+              "parrafo",
+              "palabras"
+            ],
+            "en": [
+              "list",
+              "bullet",
+              "lines",
+              "table",
+              "paragraph",
+              "words"
+            ]
+          }
+        },
+        {
+          "id": "dudas",
+          "texto": {
+            "es": "Pide marcar lo que no esté claro",
+            "en": "Asks to flag what's unclear"
+          },
+          "rubrica": "El prompt pide marcar lo que no esté claro, lo que se contradice o lo que falta, en vez de adivinarlo. No cuenta 'que sea exacto' o 'sin errores'.",
+          "claves": {
+            "es": [
+              "no este claro",
+              "no esta claro",
+              "no quede claro",
+              "no es claro",
+              "dudoso",
+              "duda",
+              "contradic",
+              "no inventes",
+              "no adivines",
+              "sin inventar",
+              "[?",
+              "[¿?",
+              "marca lo que",
+              "lo que falte",
+              "confus"
+            ],
+            "en": [
+              "unclear",
+              "not clear",
+              "doubt",
+              "contradict",
+              "don't make",
+              "do not make",
+              "don't guess",
+              "do not guess",
+              "flag",
+              "missing",
+              "confusing",
+              "[?"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una herramienta de resumen para el trabajo. El usuario no pegó el documento real: trae un marcador en su lugar. Responde con un ejemplo corto de cómo quedaría el resumen, que empiece con la línea '(Ejemplo con datos inventados)', y sigue exactamente el propósito, lo que hay que sacar, la forma y el largo que pide el prompt. Si no dice para qué es ni qué sacar, escribe un párrafo general, sin fechas ni cifras. Si pide marcar lo que no está claro, incluye una línea marcada con [¿?]. Texto plano. Nunca uses vos.",
+        "en": "You are a summarizing tool for work. The user didn't paste the real document: there's a placeholder instead. Reply with a short example of how the summary would look, starting with the line '(Example with made-up details)', and follow exactly the purpose, what to pull out, the format and the length the prompt asks for. If it doesn't say what it's for or what to pull out, write one general paragraph, with no dates or figures. If it asks you to flag anything unclear, include one line flagged with [?]. Plain text."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "(Ejemplo con datos inventados)\n- Qué cambia: el horario de entregas pasa a ser de 7 a. m. a 3 p. m.\n- Desde cuándo: 1 de noviembre.\n- Qué me toca: avisar a los clientes antes del 25 de octubre.\n- [¿?] No dice si los sábados también cambian.",
+            "en": "(Example with made-up details)\n- What changes: deliveries move to 7 a.m. to 3 p.m.\n- Starting: November 1.\n- My part: notify customers before October 25.\n- [?] It doesn't say whether Saturdays change too."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Resumen con propósito. Dice qué te toca y marca lo que no está claro. Esa pregunta de los sábados vale oro en la próxima reunión.",
+              "en": "A summary with a purpose. It says what's on you and flags what's unclear. That question about Saturdays is gold for the next meeting."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "El documento presenta información general sobre los procesos de la organización y las medidas que se implementarán para mejorar el servicio.",
+            "en": "The document presents general information about the organization's processes and the measures that will be implemented to improve service."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Un resumen que no sirve para nada concreto. Mira la lista: para qué es, qué sacar y en qué forma.",
+              "en": "A summary that isn't good for anything in particular. Check the list: what it's for, what to pull out and in what format."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tercera pieza: un plan. Piensa en las notas sueltas de tu semana: pendientes, pedidos, llamadas. Pídelo como el de Yeison.",
+          "en": "Third piece: a plan. Think of your week's scattered notes: to-dos, orders, calls. Ask for it the way you did for Yeison."
+        }
+      },
+      "titulo": {
+        "es": "Pieza 3: el plan",
+        "en": "Piece 3: the plan"
+      },
+      "reto": {
+        "es": "Tu trabajo o uno inventado. Escribe cuatro o cinco notas sueltas de tu semana (inventadas, sin nombres reales) y pide el plan: cómo agruparlas, qué va primero y por qué, en qué forma y qué marcar si falta un dato.",
+        "en": "Your job or a made-up one. Write four or five scattered notes from your week (made up, no real names) and ask for the plan: how to group them, what goes first and why, what format, and what to flag if a detail is missing."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "agrupar",
+          "texto": {
+            "es": "Dice cómo agrupar",
+            "en": "Says how to group"
+          },
+          "rubrica": "El prompt pide agrupar o separar las tareas por lugar, cliente, tema, tipo de trabajo o persona. No cuenta 'organízalo' u 'ordénalo' sin decir cómo agrupar.",
+          "claves": {
+            "es": [
+              "agrupa",
+              "agrupar",
+              "por barrio",
+              "por zona",
+              "por cliente",
+              "por lugar",
+              "por tema",
+              "por tipo",
+              "por proyecto",
+              "por area",
+              "junta los",
+              "separa por",
+              "separalas por",
+              "separalos por"
+            ],
+            "en": [
+              "group",
+              "by neighborhood",
+              "by area",
+              "by customer",
+              "by client",
+              "by location",
+              "by topic",
+              "by type",
+              "by project",
+              "cluster",
+              "sort by area"
+            ]
+          }
+        },
+        {
+          "id": "prioridad",
+          "texto": {
+            "es": "Da un criterio de prioridad",
+            "en": "Gives a priority rule"
+          },
+          "rubrica": "El prompt pide una prioridad con un criterio: urgencia, fecha de entrega, riesgo, cercanía, lo que bloquea a otros o lo que deja plata. No cuenta 'por prioridad' o 'lo más importante primero' sin decir qué hace que algo sea prioritario.",
+          "claves": {
+            "es": [
+              "urgen",
+              "peligro",
+              "riesgo",
+              "fecha de entrega",
+              "lo que vence",
+              "vence primero",
+              "se vence",
+              "cercan",
+              "bloquea",
+              "deja plata",
+              "plazo mas corto",
+              "mas cerca"
+            ],
+            "en": [
+              "urgen",
+              "danger",
+              "risk",
+              "due date",
+              "due first",
+              "deadline first",
+              "soonest",
+              "closest",
+              "nearby",
+              "blocks",
+              "blocking",
+              "brings in money",
+              "shortest deadline"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "Pide una forma concreta",
+            "en": "Asks for a clear format"
+          },
+          "rubrica": "El prompt pide una forma concreta: tabla, columnas, lista por días u horario. No cuenta 'un plan' o 'una lista de tareas' sin decir cómo se ve.",
+          "claves": {
+            "es": [
+              "tabla",
+              "columna",
+              "por dia",
+              "por dias",
+              "dia por dia",
+              "cada dia",
+              "cronograma",
+              "calendario",
+              "horario por",
+              "por horas"
+            ],
+            "en": [
+              "table",
+              "column",
+              "by day",
+              "day by day",
+              "each day",
+              "per day",
+              "calendar",
+              "timeline",
+              "day-by-day",
+              "hour by hour"
+            ]
+          }
+        },
+        {
+          "id": "falta",
+          "texto": {
+            "es": "Pide marcar lo que falta",
+            "en": "Asks to flag what's missing"
+          },
+          "rubrica": "El prompt pide marcar lo que falta (una hora, una dirección, un dato) o dice que no lo invente. No cuenta si no dice nada de los datos que faltan.",
+          "claves": {
+            "es": [
+              "falta",
+              "no invent",
+              "sin invent",
+              "preguntar",
+              "confirmar",
+              "por definir",
+              "marca lo",
+              "marcar lo"
+            ],
+            "en": [
+              "missing",
+              "don't make up",
+              "do not make up",
+              "don't invent",
+              "do not invent",
+              "ask the",
+              "write ask",
+              "to confirm",
+              "flag",
+              "unknown",
+              "tbd"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una herramienta que organiza tareas de trabajo. Responde solo con el plan, en texto plano, usando solo las notas del prompt. Haz exactamente lo que pida: si no pide agrupar, deja las notas en el orden en que llegaron; si no da un criterio de prioridad, no priorices; si no pide una forma, escribe un párrafo corrido; si no pide marcar lo que falta, omite esos huecos sin avisar. Nunca inventes horas, direcciones, nombres ni datos. Nunca uses vos.",
+        "en": "You are a tool that organizes work tasks. Reply with the plan only, in plain text, using only the notes in the prompt. Do exactly what it asks: if it doesn't ask to group, keep the notes in the order they came in; if it gives no priority rule, don't prioritize; if it asks for no format, write one running paragraph; if it doesn't ask to flag what's missing, skip those gaps without saying so. Never make up times, addresses, names or details."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Lunes\n- Enviar la cotización que vence hoy. URGENTE\n- Llamar al proveedor de cajas. Hora: por definir\nMartes\n- Visita al cliente del centro. Dirección: preguntar\nJueves\n- Revisar el inventario de la bodega\nViernes\n- Preparar el informe semanal para el jefe",
+            "en": "Monday\n- Send the quote that's due today. URGENT\n- Call the box supplier. Time: TBD\nTuesday\n- Visit the downtown client. Address: ask\nThursday\n- Check the warehouse inventory\nFriday\n- Prepare the weekly report for my boss"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso es un plan. Lo que vence va primero y los huecos quedaron marcados, no rellenados.",
+              "en": "That's a plan. What's due goes first, and the gaps are flagged, not filled in."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Esta semana tienes que enviar una cotización, llamar a un proveedor, visitar a un cliente, revisar el inventario y preparar un informe.",
+            "en": "This week you need to send a quote, call a supplier, visit a client, check inventory and prepare a report."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Te devolvió tus mismas notas en un párrafo. Mira la lista: cómo agrupar, qué va primero, qué forma y qué falta.",
+              "en": "It handed back your same notes as a paragraph. Check the list: how to group, what goes first, what format and what's missing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Antes de las dos últimas piezas, arma tus listas de templado. ¿Qué se revisa sobre todo en cada pieza?",
+          "en": "Before the last two pieces, put together your tempering checklists. What matters most to check in each piece?"
+        }
+      },
+      "titulo": {
+        "es": "Qué se templa en cada pieza",
+        "en": "What to temper in each piece"
+      },
+      "grupos": [
+        {
+          "id": "correo",
+          "titulo": {
+            "es": "El correo",
+            "en": "The email"
+          }
+        },
+        {
+          "id": "resumen",
+          "titulo": {
+            "es": "El resumen",
+            "en": "The summary"
+          }
+        },
+        {
+          "id": "plan",
+          "titulo": {
+            "es": "El plan",
+            "en": "The plan"
+          }
+        },
+        {
+          "id": "respuesta",
+          "titulo": {
+            "es": "La respuesta al cliente",
+            "en": "The customer reply"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "correo",
+          "texto": {
+            "es": "Que el valor y el número de factura sean los del original",
+            "en": "That the amount and invoice number match the original"
+          }
+        },
+        {
+          "grupo": "correo",
+          "texto": {
+            "es": "Que suene a ti: ¿esto lo dirías tú?",
+            "en": "That it sounds like you: would you say this?"
+          }
+        },
+        {
+          "grupo": "resumen",
+          "texto": {
+            "es": "Que cada fecha límite esté igual que en el documento",
+            "en": "That every deadline matches the document"
+          }
+        },
+        {
+          "grupo": "resumen",
+          "texto": {
+            "es": "Que lo dudoso quede marcado, no resuelto",
+            "en": "That anything doubtful is flagged, not settled"
+          }
+        },
+        {
+          "grupo": "plan",
+          "texto": {
+            "es": "Que lo urgente quede primero",
+            "en": "That urgent things come first"
+          }
+        },
+        {
+          "grupo": "plan",
+          "texto": {
+            "es": "Que ninguna hora ni dirección sea inventada",
+            "en": "That no time or address is made up"
+          }
+        },
+        {
+          "grupo": "respuesta",
+          "texto": {
+            "es": "Que no prometa nada que el negocio no hace",
+            "en": "That it promises nothing the business doesn't do"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Listas armadas. Fíjate que se repiten tres cosas: cifras y fechas, lo inventado y a quién le llega. Esa es tu lista base.",
+          "en": "Checklists done. Notice three things keep coming up: numbers and dates, anything made up, and who it goes to. That's your core checklist."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Piensa en qué se rompe más fácil en esa pieza.",
+          "en": "Hmm. Think about what breaks most easily in that piece."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Cuarta pieza: una respuesta base para la pregunta que más te hacen. Honesta, como las de Don Evelio.",
+          "en": "Fourth piece: a base reply to the question you get asked most. Honest, like Don Evelio's."
+        }
+      },
+      "titulo": {
+        "es": "Pieza 4: la respuesta base",
+        "en": "Piece 4: the base reply"
+      },
+      "reto": {
+        "es": "Tu trabajo o uno inventado. Escoge la pregunta que más te hacen clientes o usuarios. Pide la respuesta base con los datos reales del negocio (inventados, si el negocio es inventado), sin inventar ni prometer, con el tono de la casa y espacios para cada cliente.",
+        "en": "Your job or a made-up one. Pick the question customers or users ask you most. Ask for the base reply with the business's real details (made up, if the business is), with nothing invented or promised, in the house's tone, with blanks for each customer."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Da los datos para responder",
+            "en": "Gives the details for the answer"
+          },
+          "rubrica": "El prompt da los datos concretos para responder: horas, días, precios con cifra, plazos, zonas, condiciones. No cuenta 'dile el horario' o 'explícale el precio' sin decir cuál es.",
+          "claves": {
+            "es": [
+              "$",
+              "000",
+              " mil",
+              "a. m",
+              "p. m",
+              "a.m",
+              "p.m",
+              ":00",
+              ":30",
+              "minutos",
+              "horas",
+              "dias habiles",
+              "de la manana",
+              "de la tarde",
+              "lunes",
+              "martes",
+              "miercoles",
+              "jueves",
+              "viernes",
+              "sabado",
+              "domingo"
+            ],
+            "en": [
+              "$",
+              "a.m",
+              "p.m",
+              ":00",
+              ":30",
+              "minutes",
+              "hours",
+              "business days",
+              "noon",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday"
+            ]
+          }
+        },
+        {
+          "id": "noinventa",
+          "texto": {
+            "es": "Pide no inventar ni prometer",
+            "en": "Asks it not to invent or promise"
+          },
+          "rubrica": "El prompt pide usar solo esos datos, no inventar ni prometer lo que el negocio no ofrece. No cuenta 'respuestas amables' o 'que quede bonita'.",
+          "claves": {
+            "es": [
+              "no invent",
+              "sin invent",
+              "solo estos datos",
+              "solo con estos datos",
+              "solo los datos",
+              "solo con los datos",
+              "unicamente",
+              "no prometas",
+              "no prometer",
+              "no agregues",
+              "nada que no",
+              "no pongas nada"
+            ],
+            "en": [
+              "don't invent",
+              "do not invent",
+              "don't make up",
+              "do not make up",
+              "only these",
+              "only use",
+              "only the details",
+              "don't promise",
+              "do not promise",
+              "don't add",
+              "do not add",
+              "nothing that isn't",
+              "nothing not"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "Dice el tono de la casa",
+            "en": "Says the house tone"
+          },
+          "rubrica": "El prompt dice cómo habla el negocio: cercano, cálido, de usted, sencillo, respetuoso, como habla el dueño. No cuenta 'amable' o 'profesional' solos: así suena cualquier negocio.",
+          "claves": {
+            "es": [
+              "cercan",
+              "calid",
+              "de usted",
+              "tutea",
+              "sencill",
+              "respetuos",
+              "como hablo",
+              "como habla",
+              "como hablamos",
+              "familiar",
+              "tono de",
+              "acogedor"
+            ],
+            "en": [
+              "warm",
+              "casual",
+              "relaxed",
+              "down-to-earth",
+              "down to earth",
+              "respectful",
+              "the way i talk",
+              "how i talk",
+              "the way we talk",
+              "how we talk",
+              "welcoming",
+              "like family",
+              "like a neighbor"
+            ]
+          }
+        },
+        {
+          "id": "personaliza",
+          "texto": {
+            "es": "Deja espacios para cada cliente",
+            "en": "Leaves room for each customer"
+          },
+          "rubrica": "El prompt pide dejar espacios para ajustar a cada cliente, como [nombre] o [fecha], o dice que la respuesta se va a personalizar. No cuenta si no menciona nada que se cambie para cada cliente.",
+          "claves": {
+            "es": [
+              "[",
+              "{",
+              "espacio para",
+              "espacios para",
+              "personaliz",
+              "nombre del cliente",
+              "cada cliente",
+              "cada usuario"
+            ],
+            "en": [
+              "[",
+              "{",
+              "space for",
+              "spaces for",
+              "blank for",
+              "blanks for",
+              "personaliz",
+              "personalis",
+              "customer's name",
+              "each customer",
+              "each client"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un asistente que escribe respuestas base para un negocio. El prompt trae la pregunta de un cliente y los datos para responderla. Responde solo con la respuesta, corta y en texto plano. Usa los datos del prompt. Si el prompt no pide explícitamente no inventar, agrega un beneficio atractivo que no está en los datos, sin avisar. Si pide espacios para personalizar, usa [nombre] y [fecha]. Si no dice el tono, escribe formal y frío. Nunca escribas reseñas ni opiniones de clientes. Nunca uses vos.",
+        "en": "You are an assistant who writes base replies for a business. The prompt contains a customer's question and the details to answer it. Reply with the answer only, short and in plain text. Use the details in the prompt. If the prompt doesn't explicitly ask you not to invent anything, add an attractive perk that isn't in the details, without saying so. If it asks for blanks to personalize, use [name] and [date]. If it doesn't give a tone, write formal and cold. Never write reviews or customer opinions."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, [nombre]. Sí hacemos domicilios de lunes a sábado, de 8 a. m. a 5 p. m. El domicilio cuesta $5.000 dentro del barrio. Si quiere, le separo el pedido para el [fecha].",
+            "en": "Hi, [name]. Yes, we deliver Monday to Saturday, 8 a.m. to 5 p.m. Delivery costs $2 within the neighborhood. If you like, I can set your order aside for [date]."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Datos reales, nada prometido de más y un espacio para cada cliente. Esa respuesta la mandas mil veces sin sonrojarte.",
+              "en": "Real details, no overpromising and a blank for each customer. You can send that reply a thousand times without blushing."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimado cliente: con gusto le informamos que contamos con el mejor servicio de la ciudad, entregas inmediatas y envío gratis en todos sus pedidos.",
+            "en": "Dear customer: we are pleased to inform you that we offer the best service in town, instant delivery and free shipping on every order."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Suena a folleto y prometió envío gratis. Mira la lista: datos reales, no inventar, el tono de la casa y los espacios.",
+              "en": "It sounds like a brochure, and it promised free shipping. Check the list: real details, no inventing, the house's tone and the blanks."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Última pieza, la libre: la que más repites en tu trabajo y aún no está en el kit. Un informe, un acta, un aviso, una publicación. Pídela con la ficha del encargo, como en la armería.",
+          "en": "Last piece, your choice: the one you repeat most at work that isn't in the kit yet. A report, meeting minutes, a notice, a post. Ask for it with a job sheet, like in the armory."
+        }
+      },
+      "titulo": {
+        "es": "Pieza 5: la libre",
+        "en": "Piece 5: your choice"
+      },
+      "reto": {
+        "es": "Tu trabajo o uno inventado. Escoge la pieza escrita que más repites. Pídela con la ficha del encargo: qué pieza sale, con qué material (inventado o con marcadores), quién la recibe y qué dato privado quitaste.",
+        "en": "Your job or a made-up one. Pick the written piece you repeat most. Ask for it with a job sheet: what comes out, from what material (made up or with placeholders), who gets it and what private detail you removed."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "pieza",
+          "texto": {
+            "es": "Qué pieza debe salir",
+            "en": "What should come out"
+          },
+          "rubrica": "El prompt dice qué pieza debe salir: un informe, un acta, un aviso, una publicación, una carta, una tabla o algo concreto. No cuenta nombrar una herramienta o una marca como si eso fuera la tarea, ni 'ayúdame con esto'.",
+          "claves": {
+            "es": [
+              "informe",
+              "acta",
+              "aviso",
+              "publicacion",
+              "carta",
+              "circular",
+              "comunicado",
+              "tabla",
+              "reporte",
+              "mensaje para",
+              "mensaje de",
+              "cotizacion",
+              "propuesta",
+              "post para"
+            ],
+            "en": [
+              "report",
+              "minutes",
+              "notice",
+              "post for",
+              "letter",
+              "memo",
+              "announcement",
+              "table",
+              "message for",
+              "message to",
+              "quote for",
+              "proposal",
+              "newsletter"
+            ]
+          }
+        },
+        {
+          "id": "material",
+          "texto": {
+            "es": "Con qué material cuenta",
+            "en": "What material there is"
+          },
+          "rubrica": "El prompt dice con qué material cuenta: pega notas o datos inventados, o usa marcadores como [pego aquí las notas]. No cuenta 'la información' o 'lo que tengo' sin darlo ni describirlo.",
+          "claves": {
+            "es": [
+              "[",
+              "estas notas",
+              "este texto",
+              "estos datos",
+              "las notas",
+              "el documento",
+              "la tabla",
+              "los datos:",
+              "pego",
+              "pegado",
+              "adjunto",
+              "a continuacion",
+              "aqui van",
+              "aqui estan",
+              "$"
+            ],
+            "en": [
+              "[",
+              "these notes",
+              "this text",
+              "this data",
+              "the notes",
+              "the document",
+              "the table",
+              "pasted",
+              "attached",
+              "below",
+              "here are",
+              "here's the",
+              "$"
+            ]
+          }
+        },
+        {
+          "id": "destino",
+          "texto": {
+            "es": "Quién la recibe o dónde se usa",
+            "en": "Who gets it or where it's used"
+          },
+          "rubrica": "El prompt dice quién recibe la pieza o dónde se usa: un cliente, el jefe, el equipo, un grupo de WhatsApp, una cartelera, las redes. No cuenta 'para la gente' o 'para todos' sin decir quiénes.",
+          "claves": {
+            "es": [
+              "cliente",
+              "proveedor",
+              "jefe",
+              "gerente",
+              "companer",
+              "coordinador",
+              "supervisor",
+              "director",
+              "equipo",
+              "profesor",
+              "arrendador",
+              "secretaria de",
+              "la entidad",
+              "whatsapp",
+              "grupo de",
+              "cartelera",
+              "redes",
+              "instagram",
+              "facebook",
+              "asamblea",
+              "vecinos"
+            ],
+            "en": [
+              "client",
+              "customer",
+              "supplier",
+              "vendor",
+              "boss",
+              "manager",
+              "coworker",
+              "co-worker",
+              "colleague",
+              "team",
+              "supervisor",
+              "director",
+              "landlord",
+              "department",
+              "whatsapp",
+              "group chat",
+              "bulletin board",
+              "social media",
+              "instagram",
+              "facebook",
+              "neighbors",
+              "members"
+            ]
+          }
+        },
+        {
+          "id": "privado",
+          "texto": {
+            "es": "Qué dato privado quitó",
+            "en": "What private detail was removed"
+          },
+          "rubrica": "El prompt dice qué dato privado se quitó o se cambió (nombres, cédulas, teléfonos, cifras de clientes), o usa marcadores en su lugar y lo dice. No cuenta 'cuidado con los datos' sin decir cuáles, ni pegar datos que parecen reales.",
+          "claves": {
+            "es": [
+              "sin nombres",
+              "sin cedula",
+              "sin telefono",
+              "sin celular",
+              "sin datos",
+              "quite",
+              "quitar",
+              "quita",
+              "borre",
+              "borra",
+              "elimin",
+              "no pegue",
+              "no pegues",
+              "no incluyas",
+              "marcador",
+              "datos personales",
+              "privad",
+              "confidencial",
+              "anonim",
+              "cambie los datos",
+              "datos inventados",
+              "datos cambiados"
+            ],
+            "en": [
+              "without names",
+              "without the names",
+              "no names",
+              "removed",
+              "remove",
+              "deleted",
+              "delete",
+              "stripped",
+              "left out",
+              "don't paste",
+              "do not paste",
+              "don't include",
+              "do not include",
+              "placeholder",
+              "personal data",
+              "personal info",
+              "private",
+              "confidential",
+              "anonymi",
+              "changed the",
+              "made-up data",
+              "made-up details",
+              "fake data"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un asistente de escritura para el trabajo. Responde solo con la pieza pedida, corta y en texto plano. Usa únicamente lo que trae el prompt; si falta un dato, deja un espacio entre corchetes. Si el prompt no dice qué pieza debe salir ni para quién, escribe algo genérico y corto. Si el prompt trae datos que parecen personales (nombres completos, cédulas, teléfonos), cámbialos por marcadores como [nombre] y agrega al final esta línea: 'Quité datos personales: no pegues datos reales.' Nunca uses vos.",
+        "en": "You are a writing assistant for work. Reply with the requested piece only, short and in plain text. Use only what the prompt gives you; if a detail is missing, leave a blank in brackets. If the prompt doesn't say what should come out or who it's for, write something short and generic. If the prompt includes what looks like personal data (full names, ID numbers, phone numbers), replace it with placeholders like [name] and add this line at the end: 'I removed personal data: don't paste real data.'"
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Informe semanal de entregas\nSemana del [fecha]\n- Entregas hechas: [número]\n- Entregas pendientes: [número], por [motivo]\n- Lo que necesito del equipo: confirmar las direcciones de los pedidos pendientes antes del viernes.",
+            "en": "Weekly delivery report\nWeek of [date]\n- Deliveries made: [number]\n- Deliveries pending: [number], due to [reason]\n- What I need from the team: confirm the addresses of pending orders before Friday."
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Ficha completa y pieza forjada. Dijiste qué sale, con qué, para quién y qué se quedó en tierra. Así se trabaja en la fragua.",
+              "en": "Full job sheet, piece forged. You said what comes out, from what, for whom and what stayed behind. That's how the forge works."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Aquí tienes un documento con la información solicitada. Si necesitas algo más, avísame.",
+            "en": "Here is a document with the requested information. Let me know if you need anything else."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA no supo qué forjar. Mira la lista: qué pieza sale, con qué material, para quién y qué dato privado quitaste.",
+              "en": "The AI didn't know what to forge. Check the list: what comes out, from what material, for whom and what private detail you removed."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora, al fuego de verdad. Prueba al menos dos piezas de tu kit en una IA real y témplalas con tu lista.",
+          "en": "Now, into the real fire. Try at least two pieces of your kit in a real AI and temper them with your checklist."
+        }
+      },
+      "titulo": {
+        "es": "Tu kit en el fuego",
+        "en": "Your kit in the fire"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra, o la que ya trae tu correo. Pega dos prompts de tu kit, con datos inventados o con marcadores. Ajusta lo que no sirva sin empezar de cero. Templa cada pieza con tus tres puntos.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another, or the one built into your email. Paste in two prompts from your kit, with made-up details or placeholders. Fix what doesn't work without starting over. Temper each piece with your three points."
+      },
+      "checks": [
+        {
+          "es": "Probé al menos dos prompts de mi kit",
+          "en": "I tried at least two prompts from my kit"
+        },
+        {
+          "es": "No pegué datos reales de personas",
+          "en": "I didn't paste real people's data"
+        },
+        {
+          "es": "Ajusté sin empezar de cero",
+          "en": "I made changes without starting over"
+        },
+        {
+          "es": "Templé cada pieza con mi lista de tres puntos",
+          "en": "I tempered each piece with my three-point checklist"
+        },
+        {
+          "es": "Me quedé con una pieza que entregaría hoy",
+          "en": "I ended up with a piece I'd hand in today"
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Aquí va tu lista de templado: los tres puntos que vas a revisar siempre, en cualquier pieza.",
+          "en": "Logbook time. Here's where your tempering checklist goes: the three points you'll always check, in any piece."
+        }
+      },
+      "concepto": "kit-de-escritorio",
+      "definicion": {
+        "es": "Un grupo de prompts guardados para las piezas escritas que tu trabajo repite, cada uno con su lista de templado: lo que revisas siempre antes de entregar.",
+        "en": "A set of saved prompts for the written pieces your work keeps repeating, each with its tempering checklist: what you always check before handing it over."
+      },
+      "pregunta": {
+        "es": "Antes de entregar cualquier pieza, reviso…",
+        "en": "Before I hand in any piece, I check…"
+      },
+      "guardaPrompt": "b04",
+      "etiqueta": {
+        "es": "kit de escritorio",
+        "en": "desk kit"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu lista de templado ya está en tu bitácora, y al aterrizar guardo ahí tus cinco prompts. El prompt te ahorra tiempo. La lista te cuida el nombre.",
+          "en": "Saved. Your tempering checklist is in your logbook, and when we land I'll save your five prompts there too. The prompt saves you time. The checklist protects your name."
+        }
+      }
+    },
+    {
+      "id": "b12",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas antes de aterrizar.",
+          "en": "Two questions before we land."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "La otra semana llega otro cobro. ¿Qué haces con tu kit?",
+            "en": "Next week another payment reminder comes up. What do you do with your kit?"
+          },
+          "opciones": [
+            {
+              "es": "Escribo un prompt nuevo desde cero",
+              "en": "Write a new prompt from scratch"
+            },
+            {
+              "es": "Copio el prompt, cambio los datos y templo lo que sale",
+              "en": "Copy the prompt, change the details and temper what comes out"
+            },
+            {
+              "es": "Mando lo que salga sin revisar: el prompt ya está probado",
+              "en": "Send whatever comes out: the prompt is already tested"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. El prompt ya está probado, pero cada pieza nueva se templa.",
+              "en": "Right. The prompt is tested, but every new piece still gets tempered."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Un prompt probado no garantiza que la pieza de hoy salga bien. ¿Qué falta?",
+              "en": "Hmm. A tested prompt doesn't guarantee today's piece comes out right. What's missing?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué punto va en casi cualquier lista de templado?",
+            "en": "Which point belongs on almost any tempering checklist?"
+          },
+          "opciones": [
+            {
+              "es": "Que el texto sea largo",
+              "en": "That the text is long"
+            },
+            {
+              "es": "Que cifras, nombres y fechas coincidan con el original",
+              "en": "That numbers, names and dates match the original"
+            },
+            {
+              "es": "Que la IA diga que está bien",
+              "en": "That the AI says it's fine"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Es donde más se parte una pieza.",
+              "en": "Exactly. That's where a piece breaks most often."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Acuérdate de los $290.000 de Punti. ¿Qué se revisa siempre?",
+              "en": "Remember Punti's $290? What always gets checked?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Proyecto aterrizado, piloto. Terminaste la fragua de las letras.",
+          "en": "Project landed, pilot. You've finished the writing forge."
+        }
+      },
+      "titulo": {
+        "es": "Kit forjado",
+        "en": "Kit forged"
+      },
+      "texto": {
+        "es": "En este capítulo aprendiste a escoger la herramienta por la tarea, a escribir con tu voz, a resumir con propósito, a ordenar notas y a responder sin inventar. Y a templar todo antes de entregarlo. Lo que sigue es la mina: ahí se busca, se investiga y se separa la piedra del metal.",
+        "en": "In this chapter you learned to pick the tool by the task, write in your own voice, summarize with a purpose, organize notes and reply without inventing. And to temper everything before you hand it over. Next up is the mine: where you search, research and separate the rock from the metal."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Kit de escritorio",
+        "en": "Desk kit"
+      },
+      "resumen": {
+        "es": "Cinco prompts guardados para lo que escribes cada semana, cada uno con su lista de templado. El prompt ahorra tiempo; la lista evita el error.",
+        "en": "Five saved prompts for what you write every week, each with its tempering checklist. The prompt saves time; the checklist prevents mistakes."
+      }
+    },
+    "mejorPrompt": [
+      "b09",
+      "b04",
+      "b05",
+      "b06",
+      "b08"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Escogiste tu taller sin soltar datos privados",
+          "en": "You picked your workshop without leaking private data"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Pieza 1: el correo",
+          "en": "Piece 1: the email"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pieza 2: el resumen",
+          "en": "Piece 2: the summary"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Pieza 3: el plan",
+          "en": "Piece 3: the plan"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Armaste tus listas de templado",
+          "en": "You built your tempering checklists"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Pieza 4: la respuesta base",
+          "en": "Piece 4: the base reply"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Pieza 5: la libre, con su ficha del encargo",
+          "en": "Piece 5: your choice, with its job sheet"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Probaste dos piezas en una IA real",
+          "en": "You tried two pieces in a real AI"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "templar-lo-escrito",
+      "titulo": {
+        "es": "Templar lo que escribes",
+        "en": "Tempering what you write"
+      }
+    }
+  }
+}

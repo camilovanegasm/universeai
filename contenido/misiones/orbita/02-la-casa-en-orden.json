@@ -1,0 +1,781 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-casa-en-orden",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 1,
+  "numero": 2,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "organizar-la-casa"
+  ],
+  "usaConceptos": [
+    "primer-pedido",
+    "forma",
+    "iterar"
+  ],
+  "titulo": {
+    "es": "La casa en orden",
+    "en": "A tidy home"
+  },
+  "resumen": {
+    "es": "Turnos, rutinas y mercado: tablas y listas con las reglas reales de tu casa, repartidas parejo.",
+    "en": "Chores, routines and groceries: tables and lists built on your home's real rules, shared out fairly."
+  },
+  "siguiente": "arreglos-con-cuidado",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, la estación dio otra vuelta y entró una llamada desde Itagüí. Es Marleny, operaria de confecciones. Tiene tres hijos adolescentes, y en su casa nadie sabe a quién le toca qué.",
+          "en": "Pilot, the station finished another lap and a call came in from Itagüí, Colombia. It's Marleny, a garment factory worker. She has three teenagers, and nobody in her house knows whose turn it is."
+        }
+      },
+      "titulo": {
+        "es": "La casa en orden",
+        "en": "A tidy home"
+      },
+      "texto": {
+        "es": "Stiven, Mayerli y Thiago discuten cada noche por la loza. Hoy aprendes a pedirle a la IA tablas y listas con las reglas reales de una casa. Unos 8 minutos.",
+        "en": "Stiven, Mayerli and Thiago argue every night about the dishes. Today you learn to ask AI for tables and lists built on a home's real rules. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Marleny ya lo había intentado con las mañanas, que en su casa son un corre corre. Esto le escribió a la IA y esto le devolvió. Abajo, el mismo pedido con las reglas reales de su casa.",
+          "en": "Marleny had already tried it for the mornings, which are pure chaos at her place. Here's what she wrote to the AI and what she got. Below, the same request with her home's real rules."
+        }
+      },
+      "titulo": {
+        "es": "De consejos a horario",
+        "en": "From tips to a timetable"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Organízame las mañanas.",
+          "en": "Organize my mornings."
+        },
+        "salida": {
+          "es": "¡Claro! Aquí tienes algunos consejos para tener mañanas más organizadas:\n1. Levántate 15 minutos antes.\n2. Deja la ropa lista desde la noche anterior.\n3. Prepara un desayuno saludable.\n4. Evita mirar el celular al despertar.\n5. Involucra a toda la familia.",
+          "en": "Sure! Here are some tips for more organized mornings:\n1. Get up 15 minutes earlier.\n2. Lay out your clothes the night before.\n3. Make a healthy breakfast.\n4. Avoid checking your phone when you wake up.\n5. Get the whole family involved."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "quienes",
+            "texto": {
+              "es": "Somos cuatro. Yo salgo a las 5:30 a. m.; Mayerli y Thiago salen al colegio a las 6:10; Stiven estudia en la tarde. ",
+              "en": "There are four of us. I leave at 5:30 a.m.; Mayerli and Thiago leave for school at 6:10; Stiven has school in the afternoon. "
+            }
+          },
+          {
+            "pieza": "tareas",
+            "texto": {
+              "es": "Hay un solo baño y todos desayunamos en casa. ",
+              "en": "We have one bathroom and we all eat breakfast at home. "
+            }
+          },
+          {
+            "pieza": "tabla",
+            "texto": {
+              "es": "Hazme una tabla de 5:00 a 6:10 a. m. con los turnos de baño y de desayuno.",
+              "en": "Make me a table from 5:00 to 6:10 a.m. with bathroom and breakfast turns."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Hora | Baño | Desayuno\n5:00 | Marleny | -\n5:15 | Mayerli | Marleny\n5:35 | Thiago | Mayerli\n5:55 | - | Thiago\n6:10 | Mayerli y Thiago salen | Stiven sigue durmiendo",
+          "en": "Time | Bathroom | Breakfast\n5:00 | Marleny | -\n5:15 | Mayerli | Marleny\n5:35 | Thiago | Mayerli\n5:55 | - | Thiago\n6:10 | Mayerli and Thiago leave | Stiven's still asleep"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. Quiénes y a qué horas, qué hay que hacer, y en qué forma. Con las reglas reales de la casa, la IA pasó de dar consejos de revista a repartir turnos.",
+          "en": "Look at the colors. Who and when, what needs doing, and in what format. With the home's real rules, the AI went from magazine tips to handing out turns."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Para que la IA organice una casa, necesita estas tres piezas. Toca cada una.",
+          "en": "For the AI to organize a home, it needs these three pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 3 piezas de la tabla",
+        "en": "The 3 pieces of the table"
+      },
+      "piezas": [
+        {
+          "id": "quienes",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Quiénes y cuándo",
+            "en": "Who and when"
+          },
+          "descripcion": {
+            "es": "Quién vive en la casa y a qué horas está.",
+            "en": "Who lives there and when they're home."
+          },
+          "ejemplo": {
+            "es": "\"Stiven estudia en la tarde\". Sin eso, la IA le pone la loza del almuerzo a alguien que está en clase.",
+            "en": "\"Stiven has school in the afternoon.\" Without that, the AI gives the lunch dishes to someone who's in class."
+          }
+        },
+        {
+          "id": "tareas",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Las tareas",
+            "en": "The chores"
+          },
+          "descripcion": {
+            "es": "Los oficios de verdad, con sus días.",
+            "en": "The real chores, with their days."
+          },
+          "ejemplo": {
+            "es": "\"La basura sale martes, jueves y sábado\". La IA no sabe cuándo pasa el carro por tu cuadra.",
+            "en": "\"Trash goes out Tuesday, Thursday and Saturday.\" The AI doesn't know when the truck comes down your street."
+          }
+        },
+        {
+          "id": "tabla",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Tabla y reparto parejo",
+            "en": "A table, split fairly"
+          },
+          "descripcion": {
+            "es": "Pides una tabla y que la carga quede pareja.",
+            "en": "Ask for a table and an even load."
+          },
+          "ejemplo": {
+            "es": "\"En tabla, repartida parejo\". Así cabe en la nevera y nadie dice que a él le toca todo.",
+            "en": "\"In a table, split evenly.\" It fits on the fridge, and nobody can say they got stuck with everything."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Marleny anotó varias frases para la IA. ¿Cuáles le sirven para armar la tabla y cuáles la dejan adivinando?",
+          "en": "Your turn. Marleny jotted down some lines for the AI. Which ones help it build the table, and which leave it guessing?"
+        }
+      },
+      "titulo": {
+        "es": "¿Sirve o adivina?",
+        "en": "Useful or guesswork?"
+      },
+      "grupos": [
+        {
+          "id": "sirve",
+          "titulo": {
+            "es": "Le sirve a la IA",
+            "en": "Helps the AI"
+          }
+        },
+        {
+          "id": "adivina",
+          "titulo": {
+            "es": "La deja adivinando",
+            "en": "Leaves it guessing"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "Thiago sale del colegio a la 1 p. m.",
+            "en": "Thiago gets out of school at 1 p.m."
+          }
+        },
+        {
+          "grupo": "adivina",
+          "texto": {
+            "es": "Que todos colaboren más.",
+            "en": "Everyone should help out more."
+          }
+        },
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "El domingo nadie hace oficio: es día de descanso.",
+            "en": "No chores on Sunday: it's a rest day."
+          }
+        },
+        {
+          "grupo": "adivina",
+          "texto": {
+            "es": "Hazlo como en una casa organizada.",
+            "en": "Do it the way organized homes do."
+          }
+        },
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "La basura sale martes, jueves y sábado a las 7 p. m.",
+            "en": "Trash goes out Tuesday, Thursday and Saturday at 7 p.m."
+          }
+        },
+        {
+          "grupo": "adivina",
+          "texto": {
+            "es": "Ponle las tareas normales de una casa.",
+            "en": "Just add the usual household chores."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Las reglas reales de la casa le sirven a la IA; los deseos generales la dejan adivinando.",
+          "en": "Six for six. A home's real rules help the AI; general wishes leave it guessing."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, lee otra vez. Pregúntate: ¿la IA podría poner eso en una casilla de la tabla?",
+          "en": "Hmm, read it again. Ask yourself: could the AI put that in a box on the table?"
+        }
+      },
+      "malPorGrupo": {
+        "sirve": {
+          "estado": "error",
+          "texto": {
+            "es": "Suena bien, pero ¿qué día, qué hora o qué tarea le dice a la IA?",
+            "en": "Sounds nice, but what day, time or chore does it give the AI?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Marleny quiere acabar con la pelea de cada noche. Escribe el pedido para la tabla de oficios de la semana, con las reglas de su casa.",
+          "en": "Your turn. Marleny wants to end the nightly argument. Write the request for the week's chore table, using her home's rules."
+        }
+      },
+      "titulo": {
+        "es": "Los turnos de Marleny",
+        "en": "Marleny's chore table"
+      },
+      "reto": {
+        "es": "Lo que te cuenta Marleny: trabaja de 6 a. m. a 2 p. m. Stiven (17) estudia en la tarde; Mayerli (15) y Thiago (13), en la mañana. Oficios: loza después de la comida, barrer, lavar el baño y sacar la basura martes, jueves y sábado. El domingo se descansa.",
+        "en": "Here's what Marleny tells you: she works 6 a.m. to 2 p.m. Stiven (17) has school in the afternoon; Mayerli (15) and Thiago (13), in the morning. Chores: dishes after dinner, sweeping, cleaning the bathroom and taking out the trash Tuesday, Thursday and Saturday. Sunday is a rest day."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "quienes",
+          "texto": {
+            "es": "Quiénes son y sus horarios",
+            "en": "Who they are and their hours"
+          },
+          "rubrica": "El prompt dice quiénes se reparten los oficios (los tres hijos, por nombre o como 'mis tres hijos') y cuándo está cada uno: quién estudia en la mañana y quién en la tarde, o el horario de Marleny. No cuenta 'mis hijos' o 'la familia' sin decir cuántos son ni cuándo están, ni los nombres solos sin ningún horario.",
+          "claves": {
+            "es": [
+              "en la tarde",
+              "en la manana",
+              "por la tarde",
+              "por la manana",
+              "de la tarde",
+              "de la manana",
+              "jornada",
+              "a. m",
+              "p. m",
+              "a.m",
+              "p.m",
+              "trabajo de",
+              "trabaja de",
+              "estudia en"
+            ],
+            "en": [
+              "in the afternoon",
+              "in the morning",
+              "a.m",
+              "p.m",
+              "has school in",
+              "have school in",
+              "school in the",
+              "at school",
+              "works from",
+              "work from",
+              "i work",
+              "she works"
+            ]
+          }
+        },
+        {
+          "id": "tareas",
+          "texto": {
+            "es": "Las tareas de la casa",
+            "en": "The household chores"
+          },
+          "rubrica": "El prompt nombra al menos dos oficios concretos: lavar la loza, barrer, lavar el baño, sacar la basura (mejor si dice sus días). No cuenta 'los oficios', 'las tareas de la casa' o 'lo normal' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "loza",
+              "platos",
+              "barrer",
+              "trapear",
+              "basura",
+              "bano",
+              "camas",
+              "ropa"
+            ],
+            "en": [
+              "dishes",
+              "sweep",
+              "mop",
+              "trash",
+              "garbage",
+              "bathroom",
+              "beds",
+              "laundry"
+            ]
+          }
+        },
+        {
+          "id": "tabla",
+          "texto": {
+            "es": "Tabla y reparto parejo",
+            "en": "A table, split fairly"
+          },
+          "rubrica": "El prompt pide la respuesta en tabla o cuadro y que la carga quede pareja entre los tres (repartida parejo, justa, que roten, que a nadie le toque más). Hacen falta las dos cosas. No cuenta 'organízalo' u 'ordénalo' sin decir la forma, ni pedir una tabla sin decir nada del reparto.",
+          "claves": {
+            "es": [
+              "parej",
+              "justa",
+              "equitativ",
+              "roten",
+              "rotar",
+              "rotando",
+              "que a nadie",
+              "nadie haga mas",
+              "igual para todos",
+              "lo mismo cada"
+            ],
+            "en": [
+              "evenly",
+              "even split",
+              "fair",
+              "equally",
+              "rotate",
+              "take turns",
+              "no one does more",
+              "nobody does more",
+              "same amount"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a organizar los oficios de una casa. Responde solo con lo que te pidan, sin consejos extra. Usa únicamente las personas, horarios y tareas del prompt; si faltan, escribe [persona] o [tarea] en vez de inventarlos. Si pide una tabla, escríbela en texto plano con las columnas separadas por el signo |. Si no pide tabla, responde con un párrafo largo de consejos generales para organizar un hogar. Si no pide que el reparto sea parejo, no te preocupes por repartir igual.",
+        "en": "You are an AI that helps organize household chores. Reply only with what you're asked for, with no extra tips. Use only the people, hours and chores in the prompt; if something is missing, write [person] or [chore] instead of making it up. If it asks for a table, write it in plain text with columns separated by the | sign. If it doesn't ask for a table, reply with a long paragraph of general tips for running a home. If it doesn't ask for an even split, don't worry about sharing the work equally."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Día | Loza | Barrer | Baño o basura\nLunes | Mayerli | Stiven | Thiago (baño)\nMartes | Thiago | Mayerli | Stiven (basura)\nMiércoles | Stiven | Thiago | Mayerli (baño)\nJueves | Mayerli | Stiven | Thiago (basura)\nViernes | Thiago | Mayerli | Stiven (baño)\nSábado | Stiven | Thiago | Mayerli (basura)\nDomingo: descanso para todos.",
+            "en": "Day | Dishes | Sweep | Bathroom or trash\nMonday | Mayerli | Stiven | Thiago (bathroom)\nTuesday | Thiago | Mayerli | Stiven (trash)\nWednesday | Stiven | Thiago | Mayerli (bathroom)\nThursday | Mayerli | Stiven | Thiago (trash)\nFriday | Thiago | Mayerli | Stiven (bathroom)\nSaturday | Stiven | Thiago | Mayerli (trash)\nSunday: rest day for everyone."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Tabla lista para la nevera. Cada uno tiene seis turnos, la basura sale los días del carro y el domingo se descansa. La IA lo logró porque le diste las reglas de la casa.",
+              "en": "Table ready for the fridge. Everyone gets six turns, the trash goes out on truck days and Sunday is for rest. The AI pulled it off because you gave it the house rules."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Para organizar tu hogar, es importante establecer rutinas claras y que cada miembro de la familia asuma responsabilidades según su edad. Puedes hacer reuniones familiares cada semana, usar un tablero visible y premiar el esfuerzo. Recuerda que la comunicación es la base de una casa en armonía.",
+            "en": "To organize your home, it's important to set clear routines and have each family member take on responsibilities that fit their age. You can hold weekly family meetings, use a visible chore board and reward effort. Remember that communication is the foundation of a harmonious home."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Consejos de revista y cero turnos. La IA no sabe quién vive ahí, qué oficios hay ni en qué forma lo quieres. Mira la lista y cuéntaselo.",
+              "en": "Magazine tips and zero turns. The AI doesn't know who lives there, what the chores are or what format you want. Check the list and tell it."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le armé a Marleny otra tabla y la iba a pegar en la nevera sin mirarla. Dos renglones no funcionan en esa casa. Tócalos.",
+          "en": "Confession time. I made Marleny another table and almost stuck it on the fridge without looking. Two lines don't work in that house. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mi tabla sin revisar",
+        "en": "My unchecked table"
+      },
+      "trozos": [
+        {
+          "es": "Lunes: Mayerli lava la loza y Thiago barre.",
+          "en": "Monday: Mayerli does the dishes and Thiago sweeps."
+        },
+        {
+          "es": "Martes: Stiven saca la basura y Mayerli lava el baño.",
+          "en": "Tuesday: Stiven takes out the trash and Mayerli cleans the bathroom."
+        },
+        {
+          "es": "Miércoles a sábado: Thiago lava la loza, barre y lava el baño.",
+          "en": "Wednesday to Saturday: Thiago does the dishes, sweeps and cleans the bathroom."
+        },
+        {
+          "es": "Jueves: Stiven barre a las 3 p. m.",
+          "en": "Thursday: Stiven sweeps at 3 p.m."
+        },
+        {
+          "es": "Domingo: descanso para todos.",
+          "en": "Sunday: rest day for everyone."
+        }
+      ],
+      "malos": [
+        2,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Le cargué cuatro días seguidos a Thiago, y a las 3 p. m. Stiven está en clase. Por eso nada sale de la estación sin revisarlo: la tabla se mira antes de pegarla.",
+          "en": "You got me. I loaded four days in a row onto Thiago, and at 3 p.m. Stiven is in class. That's why nothing leaves the station unchecked: you look at the table before you stick it up."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese renglón cuadra con la casa. Busca uno injusto y uno que choca con un horario.",
+          "en": "That line fits the house. Look for one that's unfair and one that clashes with someone's hours."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "El mismo truco sirve para más cosas de la casa.",
+          "en": "The same trick works for more things at home."
+        }
+      },
+      "titulo": {
+        "es": "Rutinas y mercado",
+        "en": "Routines and groceries"
+      },
+      "texto": {
+        "es": "Con las reglas reales de tu casa, la IA también arma la rutina de la mañana y la lista del mercado. El truco del mercado: pídele la lista agrupada por tienda o por pasillo. Así compras en la plaza lo de la plaza, en la tienda lo de la tienda, y no das vueltas.",
+        "en": "With your home's real rules, AI can also build the morning routine and the grocery list. The grocery trick: ask for the list grouped by store or by aisle. That way you buy the produce at the market, the rest at the corner store, and skip the extra trips."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Para",
+            "en": "For"
+          },
+          "b": {
+            "es": "Pídele así",
+            "en": "Ask like this"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Turnos",
+              "en": "Chores"
+            },
+            "b": {
+              "es": "\"En tabla, parejo, con los horarios de cada uno\"",
+              "en": "\"In a table, split evenly, with everyone's hours\""
+            }
+          },
+          {
+            "a": {
+              "es": "Mañanas",
+              "en": "Mornings"
+            },
+            "b": {
+              "es": "\"Turnos de baño y desayuno de 5 a 6:10 a. m.; somos 4 y hay un baño\"",
+              "en": "\"Bathroom and breakfast turns, 5 to 6:10 a.m.; four of us, one bathroom\""
+            }
+          },
+          {
+            "a": {
+              "es": "Mercado",
+              "en": "Groceries"
+            },
+            "b": {
+              "es": "\"Esta lista, agrupada por tienda: plaza, supermercado y droguería\"",
+              "en": "\"This list, grouped by store: market, supermarket and pharmacy\""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A tu bitácora. Escribe con tus palabras cómo se organiza una casa con la IA, como se lo explicarías a Marleny.",
+          "en": "To your logbook. Write in your own words how you organize a home with AI, the way you'd explain it to Marleny."
+        }
+      },
+      "concepto": "organizar-la-casa",
+      "definicion": {
+        "es": "Pedirle a la IA tablas y listas con las reglas reales de tu casa: quiénes están y cuándo, qué tareas hay y en qué forma. Antes de pegarla en la nevera, revisas que quede justa.",
+        "en": "Asking AI for tables and lists built on your home's real rules: who's home and when, what the chores are and what format you want. Before it goes on the fridge, you check that it's fair."
+      },
+      "pregunta": {
+        "es": "Para organizar la casa con la IA…",
+        "en": "To organize your home with AI…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "casa",
+        "en": "home"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pedido de la tabla de oficios ya viven en tu bitácora. Cuando cambien los horarios, cambias los datos y lo vuelves a mandar.",
+          "en": "Saved. Your note and your chore-table request now live in your logbook. When the schedules change, you swap in the new details and send it again."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas rápidas antes de seguir la vuelta.",
+          "en": "Two quick questions before we continue our lap."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué le falta a \"Organízame la casa\" para que la IA dé una tabla útil?",
+            "en": "What does \"Organize my house\" need for the AI to give a useful table?"
+          },
+          "opciones": [
+            {
+              "es": "Nada, la IA ya sabe cómo es una casa",
+              "en": "Nothing, the AI already knows what a home is like"
+            },
+            {
+              "es": "Quiénes viven, sus horarios, las tareas y la forma",
+              "en": "Who lives there, their hours, the chores and the format"
+            },
+            {
+              "es": "Decirlo con más amabilidad",
+              "en": "Saying it more politely"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Con las reglas reales, la IA reparte; sin ellas, da consejos.",
+              "en": "Right. With the real rules, the AI hands out turns; without them, it gives tips."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿la IA sabe quién vive en tu casa y a qué horas?",
+              "en": "Hmm. Ask yourself: does the AI know who lives in your home and when?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA te dio la tabla y a uno de tus hijos le tocó el doble. ¿Qué haces?",
+            "en": "The AI gave you the table, and one of your kids got twice the work. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "La pego igual, la IA sabe más",
+              "en": "Stick it up anyway, the AI knows best"
+            },
+            {
+              "es": "Le pido que la reparta parejo y la reviso otra vez",
+              "en": "Ask it to split things evenly and check it again"
+            },
+            {
+              "es": "Borro todo y no vuelvo a usar la IA",
+              "en": "Delete it all and never use AI again"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Ajustas, revisas, y ahí sí va para la nevera.",
+              "en": "Exactly. You adjust, you check, and then it goes on the fridge."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Ojo: ¿qué dice la regla de la escotilla antes de pegar algo en la nevera?",
+              "en": "Careful: what does the hatch rule say before anything goes on the fridge?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora tu casa. Arma tu tabla con tu IA y ponla donde todos la vean.",
+          "en": "Now your own home. Build your table with your AI and put it where everyone can see it."
+        }
+      },
+      "titulo": {
+        "es": "La tabla de tu casa",
+        "en": "Your home's chore table"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Dile quiénes viven en tu casa, sus horarios y los oficios, y pídele una tabla pareja. Usa solo nombres de pila: nada de apellidos, colegio ni dirección. Revísala en familia y pégala en la nevera o mándala al grupo familiar.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Tell it who lives in your home, their hours and the chores, and ask for a fair table. Use first names only: no last names, schools or addresses. Go over it as a family, then stick it on the fridge or send it to the family group chat."
+      },
+      "checks": [
+        {
+          "es": "Di quiénes, horarios y oficios, sin apellidos ni dirección",
+          "en": "I gave who, hours and chores, with no last names or address"
+        },
+        {
+          "es": "Pedí una tabla repartida parejo",
+          "en": "I asked for a table split evenly"
+        },
+        {
+          "es": "La revisé con mi familia antes de pegarla",
+          "en": "I went over it with my family before sticking it up"
+        },
+        {
+          "es": "La pegué en la nevera o la mandé al grupo familiar",
+          "en": "I put it on the fridge or sent it to the family chat"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Organizar la casa",
+        "en": "Organizing your home"
+      },
+      "resumen": {
+        "es": "Tablas y listas con las reglas reales de tu casa: quiénes y cuándo, qué tareas y en qué forma. Justas y revisadas.",
+        "en": "Tables and lists built on your home's real rules: who and when, what chores and what format. Fair, and checked."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste cómo la IA pasó de consejos a un horario",
+          "en": "You saw the AI go from tips to a timetable"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste las reglas reales de los deseos generales",
+          "en": "You sorted real rules from general wishes"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Armaste la tabla de oficios de Marleny",
+          "en": "You built Marleny's chore table"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste dos errores en la tabla de Punti",
+          "en": "You caught two mistakes in Punti's table"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Armaste la tabla de tu propia casa",
+          "en": "You built your own home's chore table"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "organizar-con-ia",
+      "titulo": {
+        "es": "Organizar la casa con IA",
+        "en": "Organizing your home with AI"
+      }
+    }
+  }
+}

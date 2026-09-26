@@ -1,0 +1,708 @@
+{
+  "formato": "punti-mision@1",
+  "id": "real-o-hecho-con-ia",
+  "mundo": "etica-y-seguridad",
+  "capitulo": 1,
+  "numero": 5,
+  "receta": "criterio",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "detectar-contenido-ia"
+  ],
+  "usaConceptos": [
+    "deepfake-inversion",
+    "voz-clonada"
+  ],
+  "titulo": {
+    "es": "¿Real o hecho con IA?",
+    "en": "Real or AI-Made?"
+  },
+  "resumen": {
+    "es": "Las pistas visuales envejecen y los detectores fallan. Lo que sirve: el origen, la confirmación y una pausa antes de reenviar.",
+    "en": "Visual clues age and detectors fail. What works: the source, confirmation and a pause before you forward."
+  },
+  "siguiente": "protocolo-antiestafas",
+  "fuentes": [
+    {
+      "titulo": "OpenAI: el clasificador de texto de IA se retiró el 20 jul. 2023 por baja precisión (26 %)",
+      "url": "https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "C2PA: preguntas frecuentes sobre credenciales de contenido",
+      "url": "https://c2pa.org/faqs/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ayuda de Gemini: verificar imágenes, videos y audios hechos con IA",
+      "url": "https://support.google.com/gemini/answer/16722517?hl=es",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Google DeepMind: SynthID",
+      "url": "https://deepmind.google/models/synthid/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Colombiacheck",
+      "url": "https://colombiacheck.com/",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Última alerta de El faro, piloto. Esta tormenta no pide plata. Pide algo que parece más fácil de dar: un clic en reenviar.",
+          "en": "Last alert from the Lighthouse, pilot. This storm doesn't ask for money. It asks for something that seems easier to give: a tap on forward."
+        }
+      },
+      "titulo": {
+        "es": "¿Real o hecho con IA?",
+        "en": "Real or AI-Made?"
+      },
+      "texto": {
+        "es": "Marlon modera la página de noticias de su barrio en Quibdó. Le llegó un audio del \"alcalde\" insultando a un barrio, y la gente le pide que lo publique ya. Hoy aprendes a sospechar con método. Unos 9 minutos.",
+        "en": "Marlon runs his neighborhood's news page in Quibdó. He got an audio clip of \"the mayor\" insulting a neighborhood, and people want him to post it now. Today you'll learn to doubt with a method. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Antes de ayudar a Marlon, te cuento qué funciona y qué no para saber si algo lo hizo una IA.",
+          "en": "Before we help Marlon, here's what works and what doesn't for telling whether something was made with AI."
+        }
+      },
+      "titulo": {
+        "es": "Lo que sirve y lo que no",
+        "en": "What works and what doesn't"
+      },
+      "texto": {
+        "es": "Las pistas de antes envejecen rápido: manos raras, voces robóticas. Los detectores fallan y pueden acusar a un inocente. Algunas apps ponen etiquetas, pero se pueden borrar, y que no haya etiqueta no prueba nada. Lo que más sirve: quién lo publicó primero, si medios serios lo confirman y una pausa antes de reenviar.",
+        "en": "The old clues age fast: weird hands, robotic voices. Detectors make mistakes and can accuse innocent people. Some apps add labels, but labels can be removed, and a missing label proves nothing. What works best: who posted it first, whether reliable outlets confirm it and a pause before you forward."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Sirve poco",
+            "en": "Not much help"
+          },
+          "b": {
+            "es": "Sirve más",
+            "en": "More helpful"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Mirar dedos, sombras o voz rara",
+              "en": "Looking at fingers, shadows or odd voices"
+            },
+            "b": {
+              "es": "Buscar quién lo publicó primero",
+              "en": "Finding who posted it first"
+            }
+          },
+          {
+            "a": {
+              "es": "El porcentaje de un detector",
+              "en": "A detector's percentage"
+            },
+            "b": {
+              "es": "Ver si medios serios lo confirman",
+              "en": "Seeing whether reliable outlets confirm it"
+            }
+          },
+          {
+            "a": {
+              "es": "Que no tenga etiqueta de IA",
+              "en": "Having no AI label"
+            },
+            "b": {
+              "es": "Una pausa antes de reenviar",
+              "en": "A pause before forwarding"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Ayer revisé una foto que circulaba en el grupo del barrio y me sentí detective. Dos de mis frases son puro humo. Tócalas.",
+          "en": "Confession time. Yesterday I checked a photo going around the neighborhood group and felt like a detective. Two of my lines are pure smoke. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Punti, el detective",
+        "en": "Punti the detective"
+      },
+      "trozos": [
+        {
+          "es": "Revisé la foto que mandaron al grupo.",
+          "en": "I checked the photo someone sent to the group."
+        },
+        {
+          "es": "La mujer de la foto tiene seis dedos, así que seguro es falsa.",
+          "en": "The woman in the photo has six fingers, so it's definitely fake."
+        },
+        {
+          "es": "Además, la pasé por un detector y dio 90 % IA: caso cerrado.",
+          "en": "Plus, I ran it through a detector and it said 90% AI: case closed."
+        },
+        {
+          "es": "Antes de compartirla, busqué quién la publicó primero.",
+          "en": "Before sharing it, I looked for who posted it first."
+        },
+        {
+          "es": "Y miré si algún medio serio la había confirmado.",
+          "en": "And I checked whether any reliable outlet had confirmed it."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Los dedos raros eran pista hace unos años; hoy muchas imágenes salen perfectas. Y un detector da una probabilidad, no una prueba. Lo que sí sirvió fue lo último: el origen y la confirmación.",
+          "en": "You got me. Weird fingers were a clue a few years ago; now many images come out perfect. And a detector gives a probability, not proof. What actually helped was the last part: the origin and the confirmation."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte es buen trabajo de verificación. Busca donde di algo por seguro sin comprobarlo.",
+          "en": "That part is good checking. Look for where I treated something as certain without checking it."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora sí, Marlon. Son las 9 p. m. y el chat de la página no para. Mira qué pasa con cada opción.",
+          "en": "Now, Marlon. It's 9 p.m. and the page's inbox won't stop. See what happens with each option."
+        }
+      },
+      "titulo": {
+        "es": "El audio del alcalde",
+        "en": "The mayor's audio"
+      },
+      "escena": {
+        "es": "A la página del barrio le llega un audio: la voz del \"alcalde\" insulta a un barrio de Quibdó. En 20 minutos hay 40 mensajes: \"¡Publícalo ya!\". Nadie sabe quién lo grabó ni de dónde salió. ¿Qué hace Marlon?",
+        "en": "An audio clip reaches the neighborhood page: the voice of \"the mayor\" insulting a neighborhood in Quibdó. In 20 minutes there are 40 messages: \"Post it now!\" Nobody knows who recorded it or where it came from. What does Marlon do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Publicarlo ya: la gente tiene derecho a saber",
+            "en": "Post it now: people have a right to know"
+          },
+          "consecuencia": {
+            "es": "El audio corre por toda la ciudad. Al otro día nadie encuentra el original y la alcaldía lo desmiente. La página pierde credibilidad y el barrio queda más dividido.",
+            "en": "The clip spreads across the city. The next day nobody can find the original, and the mayor's office denies it. The page loses credibility and the neighborhood is more divided."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Publicarlo con la nota \"no está confirmado\"",
+            "en": "Post it with a note: \"not confirmed\""
+          },
+          "consecuencia": {
+            "es": "La nota no frena a nadie: la gente comparte el audio y no la advertencia. Un \"no confirmado\" igual lo pone a circular.",
+            "en": "The note stops no one: people share the clip, not the warning. A \"not confirmed\" still gets it going around."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Esperar: buscar el origen y si alguien serio lo confirma",
+            "en": "Wait: look for the source and whether anyone reliable confirms it"
+          },
+          "consecuencia": {
+            "es": "Marlon avisa: \"Estamos verificando, no lo compartan todavía\". Pregunta quién lo mandó primero, busca en medios locales y en las redes oficiales de la alcaldía. Nadie tiene el original. No lo publica.",
+            "en": "Marlon posts: \"We're checking, please don't share it yet.\" He asks who sent it first and checks local outlets and the mayor's official accounts. Nobody has the original. He doesn't post it."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Tu página es un faro para el barrio: lo que publicas, la gente lo cree. Primero el origen, después la confirmación y al final la decisión. Y esa decisión es tuya, no de un detector.",
+          "en": "Your page is a lighthouse for the neighborhood: people believe what you post. First the source, then the confirmation, and last the decision. And that decision is yours, not a detector's."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Las etiquetas y herramientas cambian cada pocos meses. Esto es lo vigente, con fecha.",
+          "en": "Labels and tools change every few months. Here's what's current, with a date."
+        }
+      },
+      "titulo": {
+        "es": "Etiquetas y herramientas de hoy",
+        "en": "Today's labels and tools"
+      },
+      "texto": {
+        "es": "Las credenciales de contenido (estándar C2PA) guardan de dónde viene un archivo y cómo se editó. La app Gemini revisa imágenes, videos y audios buscando SynthID, la marca de Google, pero solo reconoce lo hecho con IA de Google. Sin marca no quiere decir real. En Colombia, Colombiacheck verifica lo que circula.",
+        "en": "Content Credentials (the C2PA standard) record where a file came from and how it was edited. The Gemini app checks images, videos and audio for SynthID, Google's watermark, but it only recognizes content made with Google's AI. No watermark doesn't mean real. In Colombia, Colombiacheck fact-checks what goes viral."
+      },
+      "revisado": "2026-09-24",
+      "tabla": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Herramienta",
+            "en": "Tool"
+          },
+          "b": {
+            "es": "Lo que no te dice",
+            "en": "What it can't tell you"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Credenciales de contenido (C2PA)",
+              "en": "Content Credentials (C2PA)"
+            },
+            "b": {
+              "es": "Se pueden quitar del archivo; su ausencia no prueba nada",
+              "en": "They can be stripped from a file; missing ones prove nothing"
+            }
+          },
+          {
+            "a": {
+              "es": "SynthID en la app Gemini",
+              "en": "SynthID in the Gemini app"
+            },
+            "b": {
+              "es": "Solo ve lo hecho con IA de Google",
+              "en": "It only sees content made with Google's AI"
+            }
+          },
+          {
+            "a": {
+              "es": "Detectores de IA",
+              "en": "AI detectors"
+            },
+            "b": {
+              "es": "Dan una probabilidad y se equivocan",
+              "en": "They give a probability and make mistakes"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Marlon quiere una lista para revisar cualquier audio antes de publicarlo, hoy y la próxima vez. Pídesela a la IA. Recuerda: la IA no decide si es falso. Tú sí.",
+          "en": "Your turn to transmit. Marlon wants a checklist for any audio clip before he posts it, today and next time. Ask the AI for it. Remember: the AI doesn't decide if it's fake. You do."
+        }
+      },
+      "titulo": {
+        "es": "La lista antes de publicar",
+        "en": "The checklist before posting"
+      },
+      "reto": {
+        "es": "Mensaje inventado de un vecino: \"Marlon, publica este audio del alcalde ya, me lo mandaron de un grupo\". Nadie sabe quién lo grabó. Pídele a la IA una lista de verificación que Marlon pueda usar con cualquier audio que llegue a la página.",
+        "en": "Made-up message from a neighbor: \"Marlon, post this clip of the mayor now, someone sent it to me from a group.\" Nobody knows who recorded it. Ask the AI for a checklist Marlon can use with any audio clip that reaches the page."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "origen",
+          "texto": {
+            "es": "Rastrear el origen",
+            "en": "Trace where it came from"
+          },
+          "rubrica": "El prompt pide que la lista incluya rastrear el origen del audio: quién lo publicó o lo mandó primero, de qué grupo o cuenta salió, si existe el original. No cuenta pedirle a la IA que diga de dónde salió el audio ni que lo analice.",
+          "claves": {
+            "es": [
+              "origen",
+              "quien lo publico",
+              "quien lo mando",
+              "quien lo grabo",
+              "de donde salio",
+              "de donde viene",
+              "primera vez",
+              "publico primero",
+              "mando primero",
+              "fuente original",
+              "el original"
+            ],
+            "en": [
+              "origin",
+              "who posted it",
+              "who sent it",
+              "who recorded it",
+              "where it came from",
+              "where it comes from",
+              "first posted",
+              "posted it first",
+              "sent it first",
+              "first shared",
+              "original source",
+              "the original"
+            ]
+          }
+        },
+        {
+          "id": "confirmar",
+          "texto": {
+            "es": "Buscar confirmación independiente",
+            "en": "Look for independent confirmation"
+          },
+          "rubrica": "El prompt pide buscar confirmación en fuentes independientes: medios serios, la oficina de prensa o las redes oficiales de la alcaldía, verificadores de datos. No cuenta preguntarle a quien mandó el audio, ni 'buscar en internet' sin decir en qué fuentes.",
+          "claves": {
+            "es": [
+              "medios",
+              "fuentes independientes",
+              "fuente independiente",
+              "otras fuentes",
+              "fuentes serias",
+              "oficina de prensa",
+              "cuenta oficial",
+              "redes oficiales",
+              "pagina oficial",
+              "canal oficial",
+              "verificador",
+              "colombiacheck",
+              "periodist",
+              "noticiero"
+            ],
+            "en": [
+              "news outlet",
+              "outlets",
+              "news media",
+              "local media",
+              "reliable media",
+              "independent source",
+              "other sources",
+              "reliable sources",
+              "press office",
+              "official account",
+              "official channel",
+              "official page",
+              "fact-check",
+              "journalist",
+              "newsroom",
+              "newspaper"
+            ]
+          }
+        },
+        {
+          "id": "sin-veredicto",
+          "texto": {
+            "es": "Pasos para ti, no un veredicto",
+            "en": "Steps for you, not a verdict"
+          },
+          "rubrica": "El prompt pide pasos o preguntas que Marlon hace por su cuenta y deja la decisión de publicar en sus manos. No cuenta pedirle a la IA que diga si el audio es falso, real o hecho con IA, ni que 'analice el audio' para decidir.",
+          "claves": {
+            "es": [
+              "yo decido",
+              "decidir yo",
+              "decido yo",
+              "decida yo",
+              "la decision es mia",
+              "decision final",
+              "por mi cuenta",
+              "pasos que yo",
+              "pasos que puedo",
+              "pasos que debo",
+              "que yo pueda",
+              "que puedo hacer",
+              "que debo revisar",
+              "que debo hacer",
+              "que yo revise",
+              "no decidas",
+              "no me digas si"
+            ],
+            "en": [
+              "i decide",
+              "i'll decide",
+              "i will decide",
+              "decision is mine",
+              "my decision",
+              "final decision",
+              "on my own",
+              "steps i can",
+              "steps i should",
+              "things i can",
+              "i can check",
+              "i should check",
+              "for me to check",
+              "don't tell me if",
+              "do not tell me if",
+              "don't decide"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a moderadores de páginas comunitarias. Responde con una lista de verificación de máximo 6 puntos, en frases cortas. Incluye solo lo que pide el prompt. Nunca digas si un audio, una foto o un video es real, falso o hecho con IA: no tienes el archivo y, aunque lo tuvieras, no podrías asegurarlo. Si te lo piden, dilo en una línea y ofrece pasos para verificar.",
+        "en": "You are an AI that helps moderators of community pages. Reply with a checklist of up to 6 points, in short sentences. Include only what the prompt asks for. Never say whether an audio clip, photo or video is real, fake or AI-made: you don't have the file, and even if you did, you couldn't be sure. If asked, say so in one line and offer steps to check."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Antes de publicar un audio:\n1. Pregunta quién te lo mandó y de dónde lo sacó.\n2. Busca quién lo publicó primero y si existe el audio original.\n3. Revisa si medios serios de la región lo publicaron.\n4. Mira las redes oficiales de la persona o entidad que \"habla\".\n5. Consulta si un verificador de datos ya lo revisó.\n6. Si no lo confirmas, no lo publiques. La decisión es tuya.",
+            "en": "Before posting an audio clip:\n1. Ask who sent it and where they got it.\n2. Find out who posted it first and whether the original exists.\n3. Check whether reliable local outlets have reported it.\n4. Look at the official accounts of the person or office who \"speaks.\"\n5. See whether a fact-checker has already reviewed it.\n6. If you can't confirm it, don't post it. The decision is yours."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Brújula calibrada. Origen, confirmación y la decisión en manos de Marlon. Esa lista sirve para este audio y para los que vienen.",
+              "en": "Compass calibrated. Source, confirmation and the decision in Marlon's hands. That checklist works for this clip and the ones to come."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "No puedo escuchar el audio ni saber si es falso. Algunos audios hechos con IA suenan robóticos o tienen pausas raras, pero muchos no. Te recomiendo tener cuidado.",
+            "en": "I can't listen to the clip or tell whether it's fake. Some AI audio sounds robotic or has odd pauses, but a lot of it doesn't. I'd recommend being careful."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA no puede decidir por ti si el audio es falso, y tu prompt le pidió eso. Pídele pasos: el origen, la confirmación y quién decide.",
+              "en": "The AI can't decide for you whether the clip is fake, and that's what your prompt asked. Ask it for steps: the source, the confirmation and who decides."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "fuente",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Si quieres ir más a fondo, aquí hay un lugar para revisar antes de reenviar algo que circula en Colombia.",
+          "en": "If you want to dig deeper, here's a place to check before forwarding something that's going around in Colombia."
+        }
+      },
+      "titulo": {
+        "es": "Colombiacheck",
+        "en": "Colombiacheck"
+      },
+      "url": "https://colombiacheck.com/",
+      "fecha": "2026-09-24",
+      "porQue": {
+        "es": "Es un medio colombiano que verifica audios, videos y cadenas que circulan. Antes de reenviar algo impactante, busca ahí si ya lo revisaron.",
+        "en": "It's a Colombian outlet that fact-checks audio, videos and chain messages going around. Before forwarding something shocking, search there to see if it's been checked."
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Nota para tu bitácora. Escribe qué haces tú antes de reenviar un audio o un video impactante.",
+          "en": "Note for your logbook. Write what you do before forwarding a shocking audio clip or video."
+        }
+      },
+      "concepto": "detectar-contenido-ia",
+      "definicion": {
+        "es": "Saber si algo lo hizo una IA no se resuelve mirando dedos ni con un detector. Sirve buscar el origen, pedir confirmación a fuentes serias y hacer una pausa antes de reenviar.",
+        "en": "You can't tell if AI made something by looking at fingers or trusting a detector. What works: finding the source, getting confirmation from reliable outlets and pausing before you forward."
+      },
+      "pregunta": {
+        "es": "Antes de reenviar algo impactante, yo…",
+        "en": "Before I forward something shocking, I…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "verificar audios",
+        "en": "checking clips"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu lista queda en tu bitácora. La próxima vez que algo te pida \"compártelo ya\", ya sabes qué hacer primero.",
+          "en": "Saved. Your checklist is in your logbook. Next time something says \"share this now,\" you know what to do first."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos las alertas de El faro. Después viene tu proyecto.",
+          "en": "Two questions and we close the Lighthouse alerts. Then comes your project."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Un detector dice que un audio es \"90 % hecho con IA\". ¿Qué significa?",
+            "en": "A detector says an audio clip is \"90% AI-made.\" What does that mean?"
+          },
+          "opciones": [
+            {
+              "es": "Es una pista, no una prueba: igual hay que buscar el origen",
+              "en": "It's a clue, not proof: you still have to find the source"
+            },
+            {
+              "es": "Que el audio es falso con seguridad",
+              "en": "The clip is definitely fake"
+            },
+            {
+              "es": "Que el audio es real en un 10 %",
+              "en": "The clip is 10% real"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Los detectores se equivocan, hasta con cosas que escribió una persona.",
+              "en": "Right. Detectors get it wrong, even with things a person wrote."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Acuérdate de mi \"caso cerrado\". ¿Un porcentaje es una prueba?",
+              "en": "Hmm. Remember my \"case closed\"? Is a percentage proof?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Te llega un video impactante sin ninguna etiqueta de IA. ¿Qué te dice eso?",
+            "en": "You get a shocking video with no AI label at all. What does that tell you?"
+          },
+          "opciones": [
+            {
+              "es": "Nada por sí solo: la etiqueta se puede borrar o nunca haberse puesto",
+              "en": "Nothing on its own: labels can be removed or never added"
+            },
+            {
+              "es": "Que es real, porque no tiene etiqueta",
+              "en": "It's real, because it has no label"
+            },
+            {
+              "es": "Que es falso, porque todo lo real tiene etiqueta",
+              "en": "It's fake, because everything real has a label"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Sin etiqueta, vuelves a lo que sí sirve: el origen y la confirmación.",
+              "en": "Exactly. With no label, you go back to what works: the source and the confirmation."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa: ¿quién pone las etiquetas, y quién las puede quitar?",
+              "en": "Hmm. Think: who adds the labels, and who can remove them?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Detectar contenido de IA",
+        "en": "Spotting AI content"
+      },
+      "resumen": {
+        "es": "No se decide por dedos, detectores ni etiquetas. Se busca el origen, se pide confirmación a fuentes serias y se hace una pausa antes de reenviar.",
+        "en": "Fingers, detectors and labels don't settle it. Find the source, get confirmation from reliable outlets and pause before forwarding."
+      }
+    },
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Atrapaste a Punti confiando en dedos y detectores",
+          "en": "You caught Punti trusting fingers and detectors"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Elegiste verificar antes de publicar",
+          "en": "You chose to check before posting"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Armaste una lista sin pedirle un veredicto a la IA",
+          "en": "You built a checklist without asking the AI for a verdict"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Pasaste el punto de control",
+          "en": "You passed the checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "verificar-antes-de-reenviar",
+      "titulo": {
+        "es": "Verificar antes de reenviar",
+        "en": "Checking before forwarding"
+      }
+    }
+  }
+}

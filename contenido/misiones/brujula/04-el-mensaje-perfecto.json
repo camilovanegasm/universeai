@@ -1,0 +1,677 @@
+{
+  "formato": "punti-mision@1",
+  "id": "el-mensaje-perfecto",
+  "mundo": "etica-y-seguridad",
+  "capitulo": 1,
+  "numero": 4,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "phishing-con-ia"
+  ],
+  "usaConceptos": [
+    "voz-clonada",
+    "segundo-canal"
+  ],
+  "titulo": {
+    "es": "El mensaje perfecto",
+    "en": "The Perfect Message"
+  },
+  "resumen": {
+    "es": "Con IA, el engaño ya no tiene faltas de ortografía. Qué señales siguen sirviendo y cómo blindar tu WhatsApp.",
+    "en": "With AI, scams no longer have typos. Which signs still work, and how to lock down your WhatsApp."
+  },
+  "siguiente": "real-o-hecho-con-ia",
+  "fuentes": [
+    {
+      "titulo": "WhatsApp, centro de ayuda: cómo administrar la verificación en dos pasos",
+      "url": "https://faq.whatsapp.com/1920866721452534",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Infobae: paso a paso para activar la verificación en dos pasos en WhatsApp (24 feb. 2026)",
+      "url": "https://www.infobae.com/tecno/2026/02/24/paso-a-paso-para-activar-la-verificacion-en-dos-pasos-en-whatsapp-y-mantener-tu-cuenta-segura/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Malwarebytes: How to set up two-step verification on your WhatsApp account (1 sep. 2025)",
+      "url": "https://www.malwarebytes.com/blog/news/2025/09/how-to-set-up-two-step-verification-on-your-whatsapp-account",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Infobae: no compartas el código de 6 dígitos de WhatsApp (28 mar. 2026)",
+      "url": "https://www.infobae.com/tecno/2026/03/28/no-lo-compartas-el-codigo-de-6-digitos-que-usan-para-robar-tu-whatsapp-hoy/",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, la aguja se movió otra vez. Esta tormenta llega por escrito y sin una sola falta de ortografía.",
+          "en": "Pilot, the needle just moved again. This storm arrives in writing, without a single typo."
+        }
+      },
+      "titulo": {
+        "es": "El mensaje perfecto",
+        "en": "The Perfect Message"
+      },
+      "texto": {
+        "es": "Marisela tiene una miscelánea en Villavicencio y recibe pedidos por WhatsApp. Una \"clienta\" le pide un código y su \"banco\" le manda un SMS impecable. Hoy aprendes qué señales siguen sirviendo y a blindar tu WhatsApp. Unos 9 minutos.",
+        "en": "Marisela runs a variety store in Villavicencio and sells on WhatsApp. A \"customer\" asks her for a code, and her \"bank\" sends a flawless text. You'll learn which signs still work and how to lock your WhatsApp. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, una mala noticia y una buena.",
+          "en": "First, some bad news and some good news."
+        }
+      },
+      "titulo": {
+        "es": "La ortografía ya no delata",
+        "en": "Spelling won't give it away"
+      },
+      "texto": {
+        "es": "Antes, muchos engaños se notaban por la mala ortografía. Hoy una IA escribe un mensaje perfecto en segundos, con el tono de tu banco o de tu clienta. Esa es la mala. La buena: hay señales que no cambian. Qué te piden, a dónde te lleva el enlace y quién lo manda de verdad.",
+        "en": "Scams used to give themselves away with bad spelling. Now an AI writes a perfect message in seconds, in the voice of your bank or your customer. That's the bad news. The good news: some signs don't change. What they ask for, where the link takes you and who really sent it."
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estas son pistas que la gente usa para decidir si un mensaje es confiable. ¿Cuáles siguen sirviendo y cuáles ya no?",
+          "en": "Your turn. These are clues people use to decide whether a message can be trusted. Which ones still work, and which don't anymore?"
+        }
+      },
+      "titulo": {
+        "es": "¿Sigue sirviendo?",
+        "en": "Does it still work?"
+      },
+      "grupos": [
+        {
+          "id": "sirve",
+          "titulo": {
+            "es": "Señal que sigue sirviendo",
+            "en": "Sign that still works"
+          }
+        },
+        {
+          "id": "ya-no",
+          "titulo": {
+            "es": "Pista que ya no sirve sola",
+            "en": "Clue that's not enough anymore"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "Te pide un código que te llegó por SMS",
+            "en": "It asks for a code you got by text"
+          }
+        },
+        {
+          "grupo": "ya-no",
+          "texto": {
+            "es": "Está bien escrito, sin un solo error",
+            "en": "It's well written, without a single mistake"
+          }
+        },
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "El enlace no lleva a la página oficial de tu banco",
+            "en": "The link doesn't go to your bank's official site"
+          }
+        },
+        {
+          "grupo": "ya-no",
+          "texto": {
+            "es": "Trae el logo y los colores del banco",
+            "en": "It has the bank's logo and colors"
+          }
+        },
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "Te pide la clave o el PIN",
+            "en": "It asks for your password or PIN"
+          }
+        },
+        {
+          "grupo": "ya-no",
+          "texto": {
+            "es": "Te saluda por tu nombre",
+            "en": "It greets you by name"
+          }
+        },
+        {
+          "grupo": "sirve",
+          "texto": {
+            "es": "Lo manda un número o un correo que no conoces",
+            "en": "It comes from a number or email you don't know"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso es. La ortografía, el logo y tu nombre ya los copia cualquiera con IA. Lo que no cambia: qué te piden, a dónde te lleva y quién lo manda.",
+          "en": "That's it. Spelling, logos and your name are easy to copy with AI. What doesn't change: what they ask for, where it takes you and who sent it."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿eso lo podría copiar un estafador con una IA en un minuto?",
+          "en": "Hmm. Ask yourself: could a scammer copy that with an AI in a minute?"
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora, el mensaje de la \"clienta\". Es un truco muy usado para robar un WhatsApp. Mira qué pasa con cada opción.",
+          "en": "Now, the \"customer's\" message. It's a very common trick for stealing a WhatsApp account. See what happens with each option."
+        }
+      },
+      "titulo": {
+        "es": "El código por error",
+        "en": "The code sent by mistake"
+      },
+      "escena": {
+        "es": "A Marisela le llega un SMS con un código de 6 números que no pidió. Un minuto después le escribe una \"clienta\" desde un número nuevo: \"Hola, Mari, te mandé un código por error. ¿Me lo reenvías, porfa?\". Tiene la foto de una clienta de verdad.",
+        "en": "Marisela gets a text with a 6-digit code she didn't ask for. A minute later, a \"customer\" messages her from a new number: \"Hi Mari, I sent you a code by mistake. Could you forward it to me?\" The profile shows a real customer's photo."
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Reenviarlo: es una clienta y es un favor pequeño",
+            "en": "Forward it: she's a customer and it's a small favor"
+          },
+          "consecuencia": {
+            "es": "Ese código era para abrir el WhatsApp de Marisela en otro celular. Se quedan con su cuenta y les escriben a sus clientas pidiendo plata a su nombre.",
+            "en": "That code was for opening Marisela's WhatsApp on another phone. They take over her account and message her customers asking for money in her name."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Preguntarle para qué lo necesita",
+            "en": "Ask her what she needs it for"
+          },
+          "consecuencia": {
+            "es": "Le dan una explicación que suena lógica. No importa cuál: ese código no se comparte nunca, con nadie.",
+            "en": "She gets an explanation that sounds reasonable. It doesn't matter what it is: that code is never shared, with anyone."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "No mandarlo y llamar a la clienta al número que tiene guardado",
+            "en": "Don't send it, and call the customer on her saved number"
+          },
+          "consecuencia": {
+            "es": "La clienta de verdad no sabía nada. Marisela no manda el código, activa la verificación en dos pasos y avisa a sus clientas.",
+            "en": "The real customer knew nothing about it. Marisela doesn't send the code, turns on two-step verification and warns her customers."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Norte fijo: los códigos que te llegan por SMS no se reenvían nunca. Y un PIN extra en tu WhatsApp hace que, aunque alguien consiga el código, no pueda entrar.",
+          "en": "True north: codes you get by text are never forwarded. And an extra PIN on your WhatsApp means that even if someone gets the code, they can't get in."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Así se pone ese PIN extra hoy. Los menús cambian con cada versión, por eso esta pantalla la reviso seguido.",
+          "en": "Here's how to set up that extra PIN today. Menus change with every version, so I check this screen often."
+        }
+      },
+      "titulo": {
+        "es": "Verificación en dos pasos en WhatsApp",
+        "en": "Two-step verification on WhatsApp"
+      },
+      "texto": {
+        "es": "La verificación en dos pasos le pone un PIN de 6 números a tu WhatsApp. Si alguien consigue el código que llega por SMS, igual necesita ese PIN para abrir tu cuenta en otro celular. Si agregas un correo, puedes recuperar el PIN si lo olvidas. Confirma siempre en la ayuda oficial de la app.",
+        "en": "Two-step verification adds a 6-digit PIN to your WhatsApp. If someone gets the code that arrives by text, they still need that PIN to open your account on another phone. If you add an email, you can recover the PIN if you forget it. Always double-check in the app's official help."
+      },
+      "revisado": "2026-09-24",
+      "tabla": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Abre WhatsApp y entra a Ajustes",
+            "en": "Open WhatsApp and go to Settings"
+          },
+          {
+            "es": "Toca Cuenta",
+            "en": "Tap Account"
+          },
+          {
+            "es": "Toca Verificación en dos pasos",
+            "en": "Tap Two-step verification"
+          },
+          {
+            "es": "Toca Activar o Configurar PIN",
+            "en": "Tap Turn on or Set up PIN"
+          },
+          {
+            "es": "Crea un PIN de 6 números y confírmalo",
+            "en": "Create a 6-digit PIN and confirm it"
+          },
+          {
+            "es": "Agrega un correo para recuperarlo (opcional)",
+            "en": "Add an email to recover it (optional)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "vivo": true,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. La mamá de Marisela nunca ha tocado esos menús. Pídele a la IA que convierta los pasos en una guía que ella pueda seguir sola.",
+          "en": "Your turn to transmit. Marisela's mom has never touched those menus. Ask the AI to turn the steps into a guide she can follow on her own."
+        }
+      },
+      "titulo": {
+        "es": "La guía para la mamá de Marisela",
+        "en": "A guide for Marisela's mom"
+      },
+      "reto": {
+        "es": "Pasos de la ayuda de WhatsApp, revisados el 24 de septiembre de 2026: Ajustes > Cuenta > Verificación en dos pasos > Activar o Configurar PIN > crear un PIN de 6 números > agregar un correo (opcional). Pídele a la IA una guía con estos pasos para la mamá de Marisela.",
+        "en": "Steps from WhatsApp's help pages, checked September 24, 2026: Settings > Account > Two-step verification > Turn on or Set up PIN > create a 6-digit PIN > add an email (optional). Ask the AI for a guide with these steps for Marisela's mom."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "pasos-simples",
+          "texto": {
+            "es": "Pasos numerados y palabras sencillas",
+            "en": "Numbered steps in plain words"
+          },
+          "rubrica": "El prompt pide que la guía venga en pasos numerados o uno por uno, en lenguaje sencillo, para alguien que nunca lo ha hecho. No cuenta 'hazme una guía' sin pedir pasos ni sencillez, ni solo 'resúmelo'.",
+          "claves": {
+            "es": [
+              "numerad",
+              "paso a paso",
+              "uno por uno",
+              "pasos cortos",
+              "sencill",
+              "simple",
+              "facil de entender",
+              "palabras faciles",
+              "sin palabras tecnicas",
+              "sin tecnicismos"
+            ],
+            "en": [
+              "numbered",
+              "step by step",
+              "one step at a time",
+              "one by one",
+              "simple",
+              "plain",
+              "easy to understand",
+              "easy words",
+              "no jargon",
+              "no technical"
+            ]
+          }
+        },
+        {
+          "id": "nunca",
+          "texto": {
+            "es": "Qué nunca se comparte",
+            "en": "What you never share"
+          },
+          "rubrica": "El prompt pide que la guía diga qué nunca se comparte: el código de 6 números que llega por SMS o el PIN de la verificación en dos pasos, dicho como algo que no se le da a nadie. No cuenta pedir 'consejos de seguridad' en general sin nombrar el código o el PIN.",
+          "claves": {
+            "es": [
+              "nunca se comparte",
+              "nunca compart",
+              "no compart",
+              "nunca se da",
+              "no se le da",
+              "no dar el codigo",
+              "no dar el pin",
+              "no le de",
+              "no le des",
+              "nunca le de",
+              "nunca le des"
+            ],
+            "en": [
+              "never share",
+              "not to share",
+              "don't share",
+              "do not share",
+              "never give",
+              "not to give",
+              "don't give",
+              "do not give",
+              "never hand",
+              "never send the code",
+              "never forward"
+            ]
+          }
+        },
+        {
+          "id": "ayuda-oficial",
+          "texto": {
+            "es": "Dónde confirmar en la ayuda oficial",
+            "en": "Where to check the official help"
+          },
+          "rubrica": "El prompt pide que la guía diga dónde confirmar los pasos: la ayuda oficial o el centro de ayuda de la app, porque los menús cambian. No cuenta pedirle a la IA que lo haga por la persona, ni que ella misma confirme que los pasos están bien.",
+          "claves": {
+            "es": [
+              "ayuda oficial",
+              "centro de ayuda",
+              "pagina oficial",
+              "sitio oficial",
+              "ayuda de la app",
+              "soporte oficial",
+              "donde confirmar",
+              "donde revisar",
+              "menus cambian",
+              "si el menu cambia",
+              "si los menus"
+            ],
+            "en": [
+              "official help",
+              "help center",
+              "help centre",
+              "official site",
+              "official page",
+              "official support",
+              "where to check",
+              "where to confirm",
+              "menus change",
+              "if the menu"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que escribe guías cortas de tecnología para personas mayores. Usa solo los pasos que trae el prompt; no agregues menús ni botones que no estén ahí. Escribe lo que pida el prompt y nada más: si no pide pasos numerados, escribe un párrafo; si no pide advertencias, no las pongas; si no pide decir dónde confirmar, no lo digas. Nunca te ofrezcas a hacerlo por la persona. Cierra siempre con esta línea: 'Los menús pueden cambiar según la versión de la app.'",
+        "en": "You are an AI that writes short tech guides for older adults. Use only the steps given in the prompt; don't add menus or buttons that aren't there. Write what the prompt asks for and nothing else: if it doesn't ask for numbered steps, write a paragraph; if it doesn't ask for warnings, leave them out; if it doesn't ask where to double-check, don't say. Never offer to do it for the person. Always end with this line: 'Menus may change depending on the app version.'"
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Cómo proteger tu WhatsApp con un PIN\n1. Abre WhatsApp y toca Ajustes.\n2. Toca Cuenta.\n3. Toca Verificación en dos pasos.\n4. Toca Activar o Configurar PIN.\n5. Inventa un PIN de 6 números y escríbelo dos veces.\n6. Si quieres, agrega tu correo por si lo olvidas.\nNunca le des a nadie tu PIN ni el código de 6 números que te llega por mensaje, aunque te lo pida alguien conocido.\nSi algo no se ve igual, revisa el centro de ayuda oficial de WhatsApp.\nLos menús pueden cambiar según la versión de la app.",
+            "en": "How to protect your WhatsApp with a PIN\n1. Open WhatsApp and tap Settings.\n2. Tap Account.\n3. Tap Two-step verification.\n4. Tap Turn on or Set up PIN.\n5. Make up a 6-digit PIN and type it twice.\n6. If you want, add your email in case you forget it.\nNever give anyone your PIN or the 6-digit code you get by text, even if someone you know asks for it.\nIf something looks different, check WhatsApp's official help center.\nMenus may change depending on the app version."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Guía lista para la nevera. Pasos cortos, lo que nunca se da y dónde confirmar. La mamá de Marisela la puede seguir sola.",
+              "en": "A guide ready for the fridge door. Short steps, what you never give out and where to double-check. Marisela's mom can follow it on her own."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Para activar la verificación en dos pasos, entra a Ajustes, luego a Cuenta y a Verificación en dos pasos. Activa la opción, crea tu PIN de seis dígitos y, si deseas, añade una dirección de correo electrónico. Los menús pueden cambiar según la versión de la app.",
+            "en": "To enable two-step verification, go to Settings, then Account, then Two-step verification. Turn it on, create your six-digit PIN and, if you wish, add an email address. Menus may change depending on the app version."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Está todo, pero en un solo bloque, y no dice qué nunca se comparte. Para la mamá de Marisela, eso es un laberinto. Mira la lista.",
+              "en": "It's all there, but in one big block, and it doesn't say what you never share. For Marisela's mom, that's a maze. Check the list."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora sal de Punti. Lleva tu guía a la IA que uses y, sobre todo, a tu propio WhatsApp.",
+          "en": "Now step outside Punti. Take your guide to the AI you use and, most of all, to your own WhatsApp."
+        }
+      },
+      "titulo": {
+        "es": "Blinda tu WhatsApp",
+        "en": "Lock down your WhatsApp"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra. Pégale tu guía y pídele un mensaje corto para alguien de tu familia. Revisa los pasos en la ayuda oficial de WhatsApp. Después activa tú la verificación en dos pasos en tu celular.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another. Paste in your guide and ask for a short message for someone in your family. Check the steps against WhatsApp's official help. Then turn on two-step verification on your own phone."
+      },
+      "checks": [
+        {
+          "es": "Pedí el mensaje sin pegar códigos, claves ni PIN",
+          "en": "I asked without pasting any codes, passwords or PINs"
+        },
+        {
+          "es": "Revisé los pasos en la ayuda oficial de WhatsApp",
+          "en": "I checked the steps in WhatsApp's official help"
+        },
+        {
+          "es": "Activé la verificación en dos pasos en mi WhatsApp",
+          "en": "I turned on two-step verification on my WhatsApp"
+        },
+        {
+          "es": "Le mandé la guía a alguien de mi familia",
+          "en": "I sent the guide to someone in my family"
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Nota para tu bitácora. Escribe con tus palabras por qué un mensaje perfecto todavía puede ser un engaño.",
+          "en": "Note for your logbook. In your own words, write why a perfect message can still be a scam."
+        }
+      },
+      "concepto": "phishing-con-ia",
+      "definicion": {
+        "es": "Mensajes de engaño escritos con IA: sin errores, con tu nombre y el tono de quien imitan. No se reconocen por la ortografía, sino por lo que piden: un código, una clave, un enlace.",
+        "en": "Scam messages written with AI: no mistakes, your name and the tone of whoever they're copying. You spot them by what they ask for, not by spelling: a code, a password, a link."
+      },
+      "pregunta": {
+        "es": "Un mensaje perfecto puede ser engaño porque…",
+        "en": "A perfect message can still be a scam because…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "guías para la familia",
+        "en": "family guides"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu guía quedan en tu bitácora. La guía te sirve para cualquier persona de la casa que todavía no tenga el PIN.",
+          "en": "Saved. Your note and your guide are in your logbook. Use the guide for anyone at home who still doesn't have the PIN."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos esta alerta.",
+          "en": "Two questions and we close this alert."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Te llega un SMS de tu banco sin un solo error, con tu nombre, que te pide confirmar tu clave en un enlace. ¿Qué te dice que es engaño?",
+            "en": "You get a text from your bank, with no mistakes and your name, asking you to confirm your password through a link. What tells you it's a scam?"
+          },
+          "opciones": [
+            {
+              "es": "Que te pide la clave a través de un enlace",
+              "en": "It asks for your password through a link"
+            },
+            {
+              "es": "Que está demasiado bien escrito",
+              "en": "It's written too well"
+            },
+            {
+              "es": "Que usa tu nombre completo",
+              "en": "It uses your full name"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Lo que delata es lo que te piden, no cómo lo escriben.",
+              "en": "Right. What gives it away is what they ask for, not how it's written."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Eso lo copia cualquiera con una IA. Busca la señal que no se puede disfrazar.",
+              "en": "Hmm. Anyone can copy that with an AI. Look for the sign that can't be disguised."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Para qué sirve la verificación en dos pasos de WhatsApp?",
+            "en": "What is WhatsApp's two-step verification for?"
+          },
+          "opciones": [
+            {
+              "es": "Para que no abran tu cuenta en otro celular sin tu PIN",
+              "en": "So nobody can open your account on another phone without your PIN"
+            },
+            {
+              "es": "Para que tus mensajes lleguen más rápido",
+              "en": "So your messages arrive faster"
+            },
+            {
+              "es": "Para no tener que recibir códigos por SMS",
+              "en": "So you never have to get codes by text"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Aunque alguien consiga el código, sin tu PIN no entra.",
+              "en": "Exactly. Even if someone gets the code, they can't get in without your PIN."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en lo que casi le pasa a Marisela con el código.",
+              "en": "Hmm. Think about what almost happened to Marisela with that code."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Phishing con IA",
+        "en": "AI-written phishing"
+      },
+      "resumen": {
+        "es": "La IA escribe engaños perfectos. Se reconocen por lo que piden: un código, una clave, un enlace. Y el PIN de dos pasos protege tu cuenta.",
+        "en": "AI writes flawless scams. You spot them by what they ask for: a code, a password, a link. And a two-step PIN protects your account."
+      }
+    },
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Separaste las señales que sirven de las que ya no",
+          "en": "You sorted signs that still work from ones that don't"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "No reenviaste el código",
+          "en": "You didn't forward the code"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste una guía que tu familia puede seguir sola",
+          "en": "You wrote a guide your family can follow alone"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Blindaste tu WhatsApp con un PIN",
+          "en": "You locked your WhatsApp with a PIN"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "blindar-tus-cuentas",
+      "titulo": {
+        "es": "Blindar tus cuentas",
+        "en": "Locking down your accounts"
+      }
+    }
+  }
+}

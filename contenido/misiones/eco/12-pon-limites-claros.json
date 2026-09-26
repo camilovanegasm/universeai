@@ -1,0 +1,989 @@
+{
+  "formato": "punti-mision@1",
+  "id": "pon-limites-claros",
+  "mundo": "prompts",
+  "capitulo": 3,
+  "numero": 12,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "limites"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "forma",
+    "verificar",
+    "paso-a-paso"
+  ],
+  "titulo": {
+    "es": "Pon límites claros",
+    "en": "Set Clear Limits"
+  },
+  "resumen": {
+    "es": "Límites de largo, qué va y qué no, \"no inventes\" y topes de plata. Y por qué decir qué hacer rinde más que solo prohibir.",
+    "en": "Length limits, what's in and what's out, \"don't make things up\" and budget caps. Plus why saying what to do beats only forbidding."
+  },
+  "siguiente": "divide-lo-grande",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, otra señal en la zona de trucos. Es Jhon, domiciliario en moto. Los domingos hace domicilios por su cuenta en el barrio. Le pidió a una IA un mensaje para ofrecerlos y le salió una empresa que no existe.",
+          "en": "Pilot, another signal in the tricks zone. It's Jhon, a delivery rider on a motorbike. On Sundays he does his own deliveries around the neighborhood. He asked an AI for a message to offer them and got a company that doesn't exist."
+        }
+      },
+      "titulo": {
+        "es": "Pon límites claros",
+        "en": "Set Clear Limits"
+      },
+      "texto": {
+        "es": "Hoy aprendes el tercer truco: ponerle límites a la IA. Cuánto puede escribir, qué va y qué no, qué no puede inventar y cuánta plata hay. Unos 10 minutos.",
+        "en": "Today you learn the third trick: setting limits for the AI. How much it can write, what's in and what's out, what it can't make up and how much money there is. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto pidió Jhon y esto le llegó. Mira todo lo que la IA agregó por su cuenta. Abajo está el mismo pedido, con límites.",
+          "en": "Here's what Jhon asked for and what he got. Look at everything the AI added on its own. Below is the same request, with limits."
+        }
+      },
+      "titulo": {
+        "es": "De empresa inventada a Jhon de verdad",
+        "en": "From a made-up company to the real Jhon"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Escribe un mensaje para ofrecer mis domicilios en el grupo de WhatsApp del barrio.",
+          "en": "Write a message offering my delivery service in the neighborhood WhatsApp group."
+        },
+        "salida": {
+          "es": "¡Llegó el servicio de domicilios que estabas esperando! Atendemos 24 horas, los 7 días de la semana, en toda la ciudad. Entrega garantizada en 15 minutos o no pagas. Contamos con una flota de motos y personal capacitado para llevar lo que necesites, desde mercado hasta documentos importantes. ¡Escríbenos ya!",
+          "en": "The delivery service you've been waiting for is here! We're open 24/7 and cover the whole city. Delivery guaranteed in 15 minutes or it's free. Our fleet of bikes and trained staff will bring you anything, from groceries to important documents. Message us now!"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "incluye",
+            "texto": {
+              "es": "Escribe un mensaje para ofrecer mis domicilios en el grupo de WhatsApp del barrio. Incluye solo esto: domingos de 8 a. m. a 6 p. m., en este barrio y los dos vecinos, $4.000 el domicilio. ",
+              "en": "Write a message offering my delivery service in the neighborhood WhatsApp group. Include only this: Sundays 8 a.m. to 6 p.m., this neighborhood and the two next to it, $4 per delivery. "
+            }
+          },
+          {
+            "pieza": "no-inventes",
+            "texto": {
+              "es": "No agregues horarios, zonas ni promesas que no te di. ",
+              "en": "Don't add hours, areas or promises I didn't give you. "
+            }
+          },
+          {
+            "pieza": "largo",
+            "texto": {
+              "es": "Máximo 4 líneas.",
+              "en": "4 lines max."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Vecinos, los domingos les hago domicilios en moto.\nDe 8 a. m. a 6 p. m., en este barrio y los dos vecinos.\nCada domicilio vale $4.000.\nEscríbanme por aquí. Jhon",
+          "en": "Neighbors, I do deliveries by motorbike on Sundays.\nFrom 8 a.m. to 6 p.m., in this neighborhood and the two next to it.\nEach delivery is $4.\nMessage me here. Jhon"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Tres colores: qué va, qué no se inventa y cuánto puede ocupar. Sin límites, la IA llenó los huecos con promesas que Jhon no puede cumplir. Con límites, suena a él.",
+          "en": "Three colors: what goes in, what can't be made up and how much room it has. Without limits, the AI filled the gaps with promises Jhon can't keep. With limits, it sounds like him."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un límite es una regla que la IA no puede pasar. Estos son los cuatro que más uso. Toca cada uno.",
+          "en": "A limit is a rule the AI can't cross. These are the four I use most. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Los 4 límites",
+        "en": "The 4 limits"
+      },
+      "piezas": [
+        {
+          "id": "largo",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Límite de largo",
+            "en": "Length limit"
+          },
+          "descripcion": {
+            "es": "Un número: líneas, palabras o puntos. No solo \"corto\".",
+            "en": "A number: lines, words or points. Not just \"short.\""
+          },
+          "ejemplo": {
+            "es": "Ya lo usas en la forma. \"Máximo 4 líneas\" no deja dudas; para la IA, \"corto\" puede ser un párrafo entero.",
+            "en": "You already use it in the format. \"4 lines max\" leaves no doubt; to an AI, \"short\" can mean a whole paragraph."
+          }
+        },
+        {
+          "id": "incluye",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué va y qué no",
+            "en": "What's in, what's out"
+          },
+          "descripcion": {
+            "es": "Lo que sí debe aparecer y lo que se queda por fuera.",
+            "en": "What must show up and what stays out."
+          },
+          "ejemplo": {
+            "es": "\"Incluye solo horario, zona y precio. No menciones la empresa donde trabajo entre semana.\" Lo que no dices, lo decide la IA.",
+            "en": "\"Include only hours, area and price. Don't mention the company I work for on weekdays.\" Whatever you leave open, the AI decides."
+          }
+        },
+        {
+          "id": "no-inventes",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "No inventes",
+            "en": "Don't make things up"
+          },
+          "descripcion": {
+            "es": "Que use solo tus datos y pregunte si falta algo.",
+            "en": "Use only your details and ask if something's missing."
+          },
+          "ejemplo": {
+            "es": "\"Usa solo los datos que te di. Si falta algo, pregúntame.\" Así es más difícil que aparezcan garantías que no existen. Igual revisas.",
+            "en": "\"Use only the details I gave you. If something's missing, ask me.\" That makes made-up guarantees less likely. You still check."
+          }
+        },
+        {
+          "id": "tope",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Un tope",
+            "en": "A cap"
+          },
+          "descripcion": {
+            "es": "Plata, tiempo o cantidad que no se puede pasar.",
+            "en": "Money, time or amount it can't go over."
+          },
+          "ejemplo": {
+            "es": "\"El presupuesto es de máximo $300.000.\" Sin tope, la IA te arma un plan precioso que no puedes pagar.",
+            "en": "\"The budget is $300 max.\" Without a cap, the AI builds you a lovely plan you can't afford."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Te toca. Jhon ahora también hace mandados entre semana, por la noche. Pídele a la IA el mensaje para el grupo del barrio, con límites claros para que no invente nada.",
+          "en": "Your turn. Jhon now also runs errands on weeknights. Ask the AI for the message to the neighborhood group, with clear limits so it doesn't make anything up."
+        }
+      },
+      "titulo": {
+        "es": "Los mandados de Jhon",
+        "en": "Jhon's errands"
+      },
+      "reto": {
+        "es": "Datos de Jhon: hace mandados de lunes a viernes, de 6 a 9 p. m., solo en el barrio. Cada mandado vale $5.000. No lleva cilindros de gas ni cosas de más de 10 kilos. Va para el grupo de WhatsApp: máximo 4 líneas.",
+        "en": "Jhon's details: he runs errands Monday to Friday, 6 to 9 p.m., only in the neighborhood. Each errand is $5. He doesn't carry gas cylinders or anything over 10 kilos. It's for the WhatsApp group: 4 lines max."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "largo",
+          "texto": {
+            "es": "Límite de largo con número",
+            "en": "A length limit with a number"
+          },
+          "rubrica": "El prompt pone un largo con número: máximo 4 líneas, o un número de palabras o renglones. No cuenta 'corto', 'breve', 'en pocas líneas' o 'que no sea largo' sin un número.",
+          "claves": {
+            "es": [
+              "2 lineas",
+              "3 lineas",
+              "4 lineas",
+              "5 lineas",
+              "dos lineas",
+              "tres lineas",
+              "cuatro lineas",
+              "3 renglones",
+              "4 renglones",
+              "tres renglones",
+              "cuatro renglones",
+              "0 palabras",
+              "5 palabras"
+            ],
+            "en": [
+              "2 lines",
+              "3 lines",
+              "4 lines",
+              "5 lines",
+              "two lines",
+              "three lines",
+              "four lines",
+              "3-line",
+              "4-line",
+              "0 words",
+              "5 words"
+            ]
+          }
+        },
+        {
+          "id": "incluye",
+          "texto": {
+            "es": "Dice lo que Jhon no lleva",
+            "en": "Says what Jhon won't carry"
+          },
+          "rubrica": "El prompt deja claro lo que queda por fuera: Jhon no lleva cilindros de gas ni cosas de más de 10 kilos. No cuenta si solo trae horario, zona y precio, ni un 'no llevo cosas raras' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "cilindro",
+              "pipeta",
+              "de gas",
+              "10 kilos",
+              "10 kg",
+              "diez kilos",
+              "10 kilogramos"
+            ],
+            "en": [
+              "gas cylinder",
+              "gas tank",
+              "propane",
+              "10 kilos",
+              "10 kg",
+              "ten kilos",
+              "22 pounds",
+              "22 lb"
+            ]
+          }
+        },
+        {
+          "id": "no-inventes",
+          "texto": {
+            "es": "Le pide no inventar",
+            "en": "Tells it not to make things up"
+          },
+          "rubrica": "El prompt le pide a la IA usar solo los datos que le dan, no agregar horarios, zonas, precios ni promesas, o preguntar si falta algo. No cuenta 'hazlo bien', 'que sea verdad' o 'que sea bonito' sin decir que se limite a los datos.",
+          "claves": {
+            "es": [
+              "no inventes",
+              "no invente",
+              "no agregues",
+              "no anadas",
+              "no le agregues",
+              "solo los datos",
+              "solo con los datos",
+              "solo estos datos",
+              "solo esos datos",
+              "solo con estos",
+              "solo con esos",
+              "solo lo que te",
+              "solo la informacion",
+              "usa solo",
+              "usa unicamente",
+              "nada que no",
+              "preguntame",
+              "si falta"
+            ],
+            "en": [
+              "don't make up",
+              "do not make up",
+              "don't make anything",
+              "don't make things",
+              "don't invent",
+              "do not invent",
+              "don't add",
+              "do not add",
+              "only the details",
+              "only these details",
+              "only the info",
+              "only what i",
+              "use only",
+              "only use",
+              "nothing i didn't",
+              "ask me",
+              "if anything is missing",
+              "if something is missing",
+              "made up",
+              "make anything up"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Trae horario y precio",
+            "en": "Includes hours and price"
+          },
+          "rubrica": "El prompt trae al menos dos de estos datos: lunes a viernes, de 6 a 9 p. m., solo en el barrio, $5.000 el mandado. No cuenta 'entre semana' o 'barato' sin horario ni precio.",
+          "claves": {
+            "es": [
+              "6 a 9",
+              "6 p",
+              "9 p",
+              "6pm",
+              "9pm",
+              "lunes a viernes",
+              "5.000",
+              "5000",
+              "5 mil",
+              "cinco mil"
+            ],
+            "en": [
+              "6 to 9",
+              "6 p",
+              "9 p",
+              "6pm",
+              "9pm",
+              "monday to friday",
+              "$5",
+              "5 dollars"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que escribe mensajes para el grupo de WhatsApp de un barrio. Responde solo con el mensaje. Respeta todos los límites que ponga el prompt: el largo, lo que va y lo que no. Si el prompt no pone un largo con número, escribe un mensaje de 6 o 7 líneas. Si no pide que te limites a sus datos, agrega por tu cuenta promesas llamativas, como atención 24 horas, cobertura en toda la ciudad o entrega garantizada. Si no dice qué no se lleva, ofrece llevar de todo.",
+        "en": "You are an AI that writes messages for a neighborhood WhatsApp group. Reply with the message only. Respect every limit the prompt sets: the length, what goes in and what stays out. If the prompt doesn't set a length with a number, write a 6 or 7 line message. If it doesn't ask you to stick to its details, add eye-catching promises on your own, like 24/7 service, citywide coverage or guaranteed delivery times. If it doesn't say what's not carried, offer to carry anything."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Vecinos, ahora también hago mandados de lunes a viernes, de 6 a 9 p. m.\nSolo aquí en el barrio, a $5.000 cada uno.\nNo llevo cilindros de gas ni cosas de más de 10 kilos.\nEscríbanme por aquí. Jhon",
+            "en": "Neighbors, I now run errands Monday to Friday, 6 to 9 p.m.\nJust here in the neighborhood, $5 each.\nNo gas cylinders or anything over 10 kilos.\nMessage me here. Jhon"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Así suena Jhon. Cuatro líneas, sus datos y nada más. Hasta lo que no lleva quedó claro, y eso le ahorra discusiones.",
+              "en": "That sounds like Jhon. Four lines, his details and nothing else. Even what he won't carry is clear, which saves him arguments."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Nuevo servicio de mandados express! Llevamos lo que necesites, cuando lo necesites: mercado, medicamentos, cilindros de gas, trasteos pequeños y mucho más. Atención 24 horas en toda la ciudad, con entrega garantizada en 20 minutos. ¡Pide ya y tu primer mandado es gratis!",
+            "en": "New express errand service! We'll bring whatever you need, whenever you need it: groceries, medicine, gas cylinders, small moves and more. Open 24/7 citywide, with delivery guaranteed in 20 minutes. Order now and your first errand is free!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. La IA prometió cilindros de gas, atención 24 horas y un mandado gratis. Jhon no ofrece nada de eso. Mira la lista y ponle límites.",
+              "en": "Weak signal. The AI promised gas cylinders, 24/7 service and a free errand. Jhon offers none of that. Check the list and set some limits."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Un secreto de piloto sobre cómo se escriben los límites.",
+          "en": "A pilot secret about how to write limits."
+        }
+      },
+      "titulo": {
+        "es": "Di qué hacer, no solo qué evitar",
+        "en": "Say what to do, not just what to avoid"
+      },
+      "texto": {
+        "es": "\"No lo hagas largo\" le dice a la IA qué evitar, pero no qué hacer. Mejor: \"máximo 4 líneas\". \"No seas formal\" funciona peor que \"escríbelo como le hablas a un vecino\". Guarda el \"no\" para lo que de verdad no puede aparecer, y acompáñalo de lo que sí quieres.",
+        "en": "\"Don't make it long\" tells the AI what to avoid, but not what to do. Better: \"4 lines max.\" \"Don't be formal\" works worse than \"write it the way you'd talk to a neighbor.\" Save \"don't\" for what truly can't appear, and pair it with what you do want."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Solo prohíbe",
+            "en": "Only forbids"
+          },
+          "b": {
+            "es": "Dice qué hacer",
+            "en": "Says what to do"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "No lo hagas largo",
+              "en": "Don't make it long"
+            },
+            "b": {
+              "es": "Máximo 4 líneas",
+              "en": "4 lines max"
+            }
+          },
+          {
+            "a": {
+              "es": "No seas formal",
+              "en": "Don't be formal"
+            },
+            "b": {
+              "es": "Como le hablo a un vecino",
+              "en": "Like I'd talk to a neighbor"
+            }
+          },
+          {
+            "a": {
+              "es": "No pongas cosas raras",
+              "en": "Don't add weird stuff"
+            },
+            "b": {
+              "es": "Solo horario, zona y precio",
+              "en": "Only hours, area and price"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estos son límites que Jhon escribió en otros pedidos. ¿Cuáles le dicen a la IA qué hacer y cuáles solo le prohíben algo?",
+          "en": "Your turn. These are limits Jhon wrote in other requests. Which ones tell the AI what to do, and which only forbid something?"
+        }
+      },
+      "titulo": {
+        "es": "¿Dice qué hacer?",
+        "en": "Does it say what to do?"
+      },
+      "grupos": [
+        {
+          "id": "que-hacer",
+          "titulo": {
+            "es": "Dice qué hacer",
+            "en": "Says what to do"
+          }
+        },
+        {
+          "id": "solo-prohibe",
+          "titulo": {
+            "es": "Solo prohíbe",
+            "en": "Only forbids"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "que-hacer",
+          "texto": {
+            "es": "Responde en máximo 3 líneas.",
+            "en": "Answer in 3 lines max."
+          }
+        },
+        {
+          "grupo": "solo-prohibe",
+          "texto": {
+            "es": "No te extiendas mucho.",
+            "en": "Don't go on too long."
+          }
+        },
+        {
+          "grupo": "que-hacer",
+          "texto": {
+            "es": "Usa solo los precios que te di; si falta uno, pregúntame.",
+            "en": "Use only the prices I gave you; if one's missing, ask me."
+          }
+        },
+        {
+          "grupo": "solo-prohibe",
+          "texto": {
+            "es": "No me pongas nada raro.",
+            "en": "Don't put anything weird in."
+          }
+        },
+        {
+          "grupo": "que-hacer",
+          "texto": {
+            "es": "Arma el plan con máximo $200.000 al mes.",
+            "en": "Build the plan with $200 a month max."
+          }
+        },
+        {
+          "grupo": "solo-prohibe",
+          "texto": {
+            "es": "Que no suene aburrido.",
+            "en": "Don't make it sound boring."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso es. Los que dicen qué hacer traen un número, una lista o una salida. Los otros dejan a la IA adivinando.",
+          "en": "That's it. The ones that say what to do bring a number, a list or a way out. The others leave the AI guessing."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: si fueras la IA, ¿sabrías exactamente qué hacer con esa frase?",
+          "en": "Hmm. Ask yourself: if you were the AI, would you know exactly what to do with that line?"
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Última prueba. Se vienen las lluvias y Jhon tiene $150.000 para prepararse. Pídele a la IA qué comprar, con un tope que no pueda pasar. Usa lo que acabas de ver: di qué hacer.",
+          "en": "Last test. Rainy season is coming and Jhon has $150 to get ready. Ask the AI what to buy, with a cap it can't go over. Use what you just saw: say what to do."
+        }
+      },
+      "titulo": {
+        "es": "Listo para la lluvia",
+        "en": "Ready for the rain"
+      },
+      "reto": {
+        "es": "Datos de Jhon: tiene máximo $150.000. Averiguó estos precios en el barrio: impermeable $70.000, guantes $25.000, forro de lluvia para la maleta $30.000 y soporte de celular contra agua $40.000. Todo junto pasa del tope. Quiere saber qué compra ya y qué deja para después.",
+        "en": "Jhon's details: he has $150 max. He checked these prices around the neighborhood: rain suit $70, gloves $25, rain cover for his delivery bag $30 and a waterproof phone mount $40. All together it's over the cap. He wants to know what to buy now and what can wait."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tope",
+          "texto": {
+            "es": "Pone el tope de plata",
+            "en": "Sets the money cap"
+          },
+          "rubrica": "El prompt pone el tope con la cifra: máximo $150.000, 'no más de 150 mil' o parecido. No cuenta 'algo barato', 'económico' o 'que no sea caro' sin una cifra.",
+          "claves": {
+            "es": [
+              "150.000",
+              "150000",
+              "150 mil",
+              "ciento cincuenta"
+            ],
+            "en": [
+              "$150",
+              "150 dollars",
+              "150 bucks",
+              "hundred and fifty",
+              "hundred fifty"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Da los precios que averiguó",
+            "en": "Gives the prices he found"
+          },
+          "rubrica": "El prompt trae las cosas y los precios que Jhon averiguó, al menos dos: impermeable $70.000, guantes $25.000, forro $30.000, soporte $40.000. No cuenta nombrar las cosas sin precios.",
+          "claves": {
+            "es": [
+              "70.000",
+              "25.000",
+              "30.000",
+              "40.000",
+              "70000",
+              "25000",
+              "30000",
+              "40000",
+              "70 mil",
+              "25 mil",
+              "30 mil",
+              "40 mil"
+            ],
+            "en": [
+              "$70",
+              "$25",
+              "$30",
+              "$40"
+            ]
+          }
+        },
+        {
+          "id": "no-inventes",
+          "texto": {
+            "es": "Pide usar solo esos precios",
+            "en": "Asks it to use only those prices"
+          },
+          "rubrica": "El prompt le pide a la IA usar solo esos precios o esas cosas, sin inventar otros precios ni recomendar productos que no están en la lista. No cuenta 'dame buenos precios' ni 'recomiéndame lo mejor'.",
+          "claves": {
+            "es": [
+              "no inventes",
+              "no agregues",
+              "no anadas",
+              "solo esos",
+              "solo estos",
+              "solo esas",
+              "solo estas",
+              "solo con esos",
+              "solo con estos",
+              "solo con esas",
+              "solo con estas",
+              "usa solo",
+              "usa unicamente",
+              "de la lista",
+              "nada que no",
+              "otros precios",
+              "otras cosas",
+              "otros productos",
+              "no me recomiendes"
+            ],
+            "en": [
+              "don't make up",
+              "do not make up",
+              "don't make anything",
+              "don't make things",
+              "don't invent",
+              "do not invent",
+              "don't add",
+              "do not add",
+              "only these",
+              "only those",
+              "only use",
+              "use only",
+              "from the list",
+              "on the list",
+              "other prices",
+              "other products",
+              "nothing else",
+              "don't suggest",
+              "do not suggest",
+              "don't recommend"
+            ]
+          }
+        },
+        {
+          "id": "suma",
+          "texto": {
+            "es": "Pide ver la suma o lo que sobra",
+            "en": "Asks to see the sum or what's left"
+          },
+          "rubrica": "El prompt pide que muestre la suma, el total o cuánto sobra, para poder revisarlo, como en la misión Paso a paso. No cuenta pedir solo 'qué compro' sin cuentas.",
+          "claves": {
+            "es": [
+              "la suma",
+              "sumame",
+              "suma cuanto",
+              "suma paso",
+              "cuanto suma",
+              "cuanto da",
+              "cuanto sobra",
+              "cuanto me sobra",
+              "lo que sobra",
+              "cuanto queda",
+              "cuanto me queda",
+              "muestrame las cuentas",
+              "muestra las cuentas",
+              "dime el total",
+              "muestrame el total",
+              "paso a paso",
+              "sumalos",
+              "sumalas",
+              "suma todo",
+              "suma los",
+              "suma las"
+            ],
+            "en": [
+              "the sum",
+              "add up",
+              "adds up",
+              "add it up",
+              "add them up",
+              "how much is left",
+              "what's left",
+              "left over",
+              "leftover",
+              "show the math",
+              "show me the math",
+              "show the total",
+              "tell me the total",
+              "step by step",
+              "add these",
+              "sum it",
+              "sum them"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un domiciliario a decidir compras. Responde en pocas líneas. Si el prompt da un tope de plata, no lo pases nunca y di qué queda para después. Si el prompt da precios, usa solo esos. Si pide la suma o lo que sobra, muéstralo. Si no da tope, recomienda un equipo completo aunque salga caro. Si no pide que te limites a sus precios y productos, agrega uno o dos productos más con un precio aproximado.",
+        "en": "You are an AI that helps a delivery rider decide what to buy. Reply in a few lines. If the prompt gives a money cap, never go over it, and say what waits for later. If the prompt gives prices, use only those. If it asks for the sum or what's left, show it. If there's no cap, recommend a full kit even if it's expensive. If it doesn't ask you to stick to its prices and products, add one or two more products with a rough price."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Con $150.000:\n1. Impermeable: $70.000\n2. Forro de lluvia para la maleta: $30.000\n3. Guantes: $25.000\nSuma: $125.000. Te sobran $25.000.\nEl soporte de celular ($40.000) queda para después.",
+            "en": "With $150:\n1. Rain suit: $70\n2. Rain cover for the bag: $30\n3. Gloves: $25\nTotal: $125. You have $25 left.\nThe phone mount ($40) can wait."
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Así se hace. La IA no pasó el tope, usó solo los precios de Jhon y mostró la suma. Él la revisa en diez segundos.",
+              "en": "That's how it's done. The AI stayed under the cap, used only Jhon's prices and showed the math. He can check it in ten seconds."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Para la temporada de lluvias te recomiendo un equipo completo: impermeable de dos piezas, botas de caucho, guantes térmicos, forro para la maleta, soporte de celular y un casco con visera antiempañante. Todo junto te sale por unos $600.000, pero es una inversión en tu seguridad.",
+            "en": "For rainy season I recommend a full kit: a two-piece rain suit, rubber boots, thermal gloves, a bag cover, a phone mount and a helmet with an anti-fog visor. All together it's about $600, but it's an investment in your safety."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. Un plan precioso de $600.000 para un bolsillo de $150.000, y con precios inventados. Mira la lista: falta el tope o pedirle que use solo tus precios.",
+              "en": "Weak signal. A lovely $600 plan for a $150 pocket, with made-up prices. Check the list: it's missing the cap, or the ask to use only your prices."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Tu bitácora te espera. Escribe con tus palabras qué es poner límites claros, como se lo explicarías a Jhon.",
+          "en": "Your logbook is waiting. Write in your own words what setting clear limits means, the way you'd explain it to Jhon."
+        }
+      },
+      "concepto": "limites",
+      "definicion": {
+        "es": "Reglas que la IA no puede pasar: cuánto escribe, qué va y qué no, que no invente y un tope de plata o tiempo. Mejor con números, diciendo qué hacer y no solo qué evitar.",
+        "en": "Rules the AI can't cross: how much it writes, what's in and out, no making things up, and a cap on money or time. Best with numbers, saying what to do, not just what to avoid."
+      },
+      "pregunta": {
+        "es": "Poner límites claros es…",
+        "en": "Setting clear limits means…"
+      },
+      "guardaPrompt": "b04",
+      "etiqueta": {
+        "es": "mensajes con límites",
+        "en": "messages with limits"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de los límites y el prompt de los mandados quedaron en tu bitácora. Vuelven en el repaso, cuando más sirven.",
+          "en": "Saved. Your Limits card and the errands prompt are in your logbook. They'll be back in your review, right when they help most."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y cerramos el tercer truco.",
+          "en": "Three questions and we wrap up the third trick."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué límite de largo funciona mejor?",
+            "en": "Which length limit works best?"
+          },
+          "opciones": [
+            {
+              "es": "Que sea cortico",
+              "en": "Keep it nice and short"
+            },
+            {
+              "es": "Máximo 4 líneas",
+              "en": "4 lines max"
+            },
+            {
+              "es": "No te extiendas",
+              "en": "Don't go on too long"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Un número no se presta para dudas.",
+              "en": "Right. A number leaves no room for doubt."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Cuál de esas se puede medir?",
+              "en": "Hmm. Which of those can you measure?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA le agregó a Jhon \"entrega garantizada en 15 minutos\". ¿Qué límite faltó?",
+            "en": "The AI added \"delivery guaranteed in 15 minutes\" to Jhon's message. Which limit was missing?"
+          },
+          "opciones": [
+            {
+              "es": "Un tope de plata",
+              "en": "A money cap"
+            },
+            {
+              "es": "Pedirle que use solo sus datos",
+              "en": "Asking it to use only his details"
+            },
+            {
+              "es": "Un límite de largo",
+              "en": "A length limit"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Sin ese límite, la IA rellena con promesas que suenan bien.",
+              "en": "Exactly. Without that limit, the AI fills in with promises that sound good."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. La garantía no tenía que ver con el largo ni con la plata. ¿De dónde salió?",
+              "en": "Hmm. The guarantee had nothing to do with length or money. Where did it come from?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Cuál instrucción le dice a la IA qué hacer?",
+            "en": "Which instruction tells the AI what to do?"
+          },
+          "opciones": [
+            {
+              "es": "No seas tan formal",
+              "en": "Don't be so formal"
+            },
+            {
+              "es": "No pongas cosas raras",
+              "en": "Don't add weird stuff"
+            },
+            {
+              "es": "Escríbelo como le hablas a un vecino",
+              "en": "Write it the way you'd talk to a neighbor"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. El \"no\" solo cierra una puerta. Esta abre la correcta.",
+              "en": "Right. A \"don't\" only closes a door. This one opens the right one."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Esa solo prohíbe. Busca la que muestra el camino.",
+              "en": "That one only forbids. Look for the one that points the way."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Límites claros",
+        "en": "Clear limits"
+      },
+      "resumen": {
+        "es": "Pon límites con números: el largo, qué va y qué no, que no invente y un tope. Di qué hacer, no solo qué evitar.",
+        "en": "Set limits with numbers: length, what's in and out, no making things up, and a cap. Say what to do, not just what to avoid."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b04",
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste la empresa inventada que sale sin límites",
+          "en": "You saw the made-up company that shows up without limits"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Le pusiste límites al mensaje de los mandados",
+          "en": "You set limits on the errands message"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Separaste los límites que dicen qué hacer",
+          "en": "You picked out the limits that say what to do"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Armaste las compras de lluvia sin pasar el tope",
+          "en": "You planned the rain gear without going over the cap"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "poner-limites",
+      "titulo": {
+        "es": "Poner límites claros",
+        "en": "Setting clear limits"
+      }
+    }
+  }
+}

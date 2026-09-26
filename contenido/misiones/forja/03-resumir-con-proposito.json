@@ -1,0 +1,735 @@
+{
+  "formato": "punti-mision@1",
+  "id": "resumir-con-proposito",
+  "mundo": "herramientas-de-ia",
+  "capitulo": 1,
+  "numero": 3,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "resumen-con-proposito"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "forma",
+    "verificar"
+  ],
+  "titulo": {
+    "es": "Resumir con propósito",
+    "en": "Summaries with a Purpose"
+  },
+  "resumen": {
+    "es": "Un resumen sirve cuando dice para qué es: qué sacar, en qué forma y qué marcar como dudoso. Y se templa contra el original.",
+    "en": "A summary works when it says what it's for: what to pull out, in what format, what to flag. Then you temper it against the original."
+  },
+  "siguiente": "del-desorden-al-plan",
+  "fuentes": [],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegó un encargo a la fragua, y viene con afán. Es Nohora, presidenta de la junta de acción comunal de su barrio en Soacha. Tiene una convocatoria de seis páginas, y la reunión de la junta es esta noche.",
+          "en": "Pilot, a job just came into the forge, and it's urgent. It's Nohora, president of her neighborhood board in Soacha. She has a six-page call for proposals, and the board meets tonight."
+        }
+      },
+      "titulo": {
+        "es": "Resumir con propósito",
+        "en": "Summaries with a Purpose"
+      },
+      "texto": {
+        "es": "Hoy pides un resumen que sirva para algo concreto: decidir, no solo leer menos. Y lo templas antes de que llegue a la reunión. Unos 9 minutos.",
+        "en": "Today you ask for a summary that's good for something specific: making a decision, not just reading less. And you temper it before it reaches the meeting. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ayer Nohora le pidió a la IA el resumen de otra circular, la de los cortes de agua. Mira lo que recibió. Abajo está el mismo pedido, con lo que ella necesitaba de verdad.",
+          "en": "Yesterday Nohora asked the AI to summarize a different notice, the one about water cuts. Look at what she got. Below is the same request, with what she actually needed."
+        }
+      },
+      "titulo": {
+        "es": "Resumen para nada, resumen para algo",
+        "en": "A summary for nothing, a summary for something"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Resume esto: [circular del acueducto, 3 páginas]",
+          "en": "Summarize this: [water utility notice, 3 pages]"
+        },
+        "salida": {
+          "es": "La empresa de acueducto informa a la comunidad que, en el marco de su plan de mantenimiento preventivo, se realizarán trabajos en la red de distribución con el fin de mejorar la calidad del servicio.",
+          "en": "The water utility informs the community that, as part of its preventive maintenance plan, work will be carried out on the distribution network in order to improve service quality."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "para",
+            "texto": {
+              "es": "Es para avisarles a los vecinos, en el grupo de WhatsApp, cuándo no va a haber agua. ",
+              "en": "It's for telling the neighbors, in our WhatsApp group, when there won't be water. "
+            }
+          },
+          {
+            "pieza": "que",
+            "texto": {
+              "es": "Saca solo días, horas y sectores. ",
+              "en": "Pull out only the days, times and areas. "
+            }
+          },
+          {
+            "pieza": "forma",
+            "texto": {
+              "es": "Máximo 5 líneas. ",
+              "en": "5 lines max. "
+            }
+          },
+          {
+            "pieza": "dudas",
+            "texto": {
+              "es": "Si algo no está claro, márcalo con [¿?] y no lo completes.",
+              "en": "If anything's unclear, flag it with [?] and don't fill it in."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Cortes de agua (acueducto):\n- Martes: de 8 a. m. a 4 p. m., sectores 1 y 2.\n- Jueves: de 8 a. m. a 12 m., sector 3.\n- Habrá carrotanque en el parque. [¿?] No dice a qué hora llega.\n- Recomiendan guardar agua desde la noche anterior.",
+          "en": "Water cuts (utility):\n- Tuesday: 8 a.m. to 4 p.m., sections 1 and 2.\n- Thursday: 8 a.m. to noon, section 3.\n- A water truck will be at the park. [?] It doesn't say what time.\n- They suggest storing water the night before."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? El resumen de arriba no es falso: es inútil. Cuando dices para qué es, la IA sabe qué sacar y qué dejar.",
+          "en": "See the colors? The summary up top isn't false: it's useless. When you say what it's for, the AI knows what to keep and what to drop."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un resumen con propósito lleva cuatro piezas. Toca cada una.",
+          "en": "A summary with a purpose has four pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas del resumen",
+        "en": "The 4 pieces of a summary"
+      },
+      "piezas": [
+        {
+          "id": "para",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Para qué es",
+            "en": "What it's for"
+          },
+          "descripcion": {
+            "es": "La decisión o el uso: decidir, explicar, recordar.",
+            "en": "The decision or use: decide, explain, remember."
+          },
+          "ejemplo": {
+            "es": "\"Para decidir si nos presentamos\" le dice a la IA qué importa y qué sobra.",
+            "en": "\"So we can decide whether to apply\" tells the AI what matters and what doesn't."
+          }
+        },
+        {
+          "id": "que",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Qué sacar",
+            "en": "What to pull out"
+          },
+          "descripcion": {
+            "es": "Solo lo que sirve: fechas, montos, requisitos.",
+            "en": "Only what helps: dates, amounts, requirements."
+          },
+          "ejemplo": {
+            "es": "\"Solo requisitos, fechas y montos\". Lo demás se queda en el documento.",
+            "en": "\"Only requirements, dates and amounts.\" Everything else stays in the document."
+          }
+        },
+        {
+          "id": "forma",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Forma y largo",
+            "en": "Format and length"
+          },
+          "descripcion": {
+            "es": "Lista, tabla o párrafo, y cuánto mide.",
+            "en": "List, table or paragraph, and how long."
+          },
+          "ejemplo": {
+            "es": "\"Lista de máximo 8 líneas\". Así Nohora la lee en voz alta en dos minutos.",
+            "en": "\"A list, 8 lines max.\" That way Nohora can read it aloud in two minutes."
+          }
+        },
+        {
+          "id": "dudas",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Lo que no está claro",
+            "en": "What isn't clear"
+          },
+          "descripcion": {
+            "es": "Que lo marque en vez de adivinarlo.",
+            "en": "Have it flag it instead of guessing."
+          },
+          "ejemplo": {
+            "es": "\"Marca lo que no esté claro\". Un resumen seguro de algo dudoso es peor que ninguno.",
+            "en": "\"Flag anything unclear.\" A confident summary of something doubtful is worse than none."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. El tesorero de la junta también quiere un resumen, el del informe de gastos del año. ¿Qué pieza es cada frase de su pedido?",
+          "en": "Your turn. The board's treasurer wants a summary too, of the year's expense report. Which piece is each sentence of his request?"
+        }
+      },
+      "titulo": {
+        "es": "El pedido del tesorero",
+        "en": "The treasurer's request"
+      },
+      "grupos": [
+        "para",
+        "que",
+        "forma",
+        "dudas"
+      ],
+      "items": [
+        {
+          "grupo": "para",
+          "texto": {
+            "es": "Lo voy a leer en la asamblea para que aprueben el presupuesto.",
+            "en": "I'll read it at the assembly so they can approve the budget."
+          }
+        },
+        {
+          "grupo": "que",
+          "texto": {
+            "es": "Saca los gastos grandes y en qué se fueron.",
+            "en": "Pull out the big expenses and what they went to."
+          }
+        },
+        {
+          "grupo": "forma",
+          "texto": {
+            "es": "Hazlo en una tabla de dos columnas: gasto y valor.",
+            "en": "Make it a two-column table: expense and amount."
+          }
+        },
+        {
+          "grupo": "dudas",
+          "texto": {
+            "es": "Si una cifra no cuadra, márcala y no la corrijas.",
+            "en": "If a number doesn't add up, flag it and don't fix it."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Las cuatro en su sitio. Ya sabes qué pedirle a un resumen.",
+          "en": "All four in place. Now you know what to ask a summary for."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, no. Pregúntate: ¿habla del uso, de lo que se saca, de cómo se ve o de lo dudoso?",
+          "en": "Hmm, not quite. Ask yourself: is it about the use, what gets pulled out, how it looks or what's doubtful?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno en el yunque. La convocatoria ya está pegada. Nohora tiene diez minutos antes de la reunión. Pide el resumen que le sirva a ella, no uno cualquiera.",
+          "en": "Your turn at the anvil. The call for proposals is already pasted in. Nohora has ten minutes before the meeting. Ask for the summary she needs, not just any summary."
+        }
+      },
+      "titulo": {
+        "es": "La convocatoria de Nohora",
+        "en": "Nohora's call for proposals"
+      },
+      "reto": {
+        "es": "Contexto (inventado): la convocatoria 'Barrios que Florecen' ya está pegada, son 6 páginas. Nohora tiene 10 minutos antes de la reunión. Esta noche la junta decide si se presenta. Escribe lo que le pedirías a la IA sobre ese texto.",
+        "en": "Context (made up): the 'Blooming Neighborhoods' call is already pasted in, 6 pages long. Nohora has 10 minutes before the meeting. Tonight the board decides whether to apply. Write what you'd ask the AI about that text."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "para",
+          "texto": {
+            "es": "Dice para qué es el resumen",
+            "en": "Says what the summary is for"
+          },
+          "rubrica": "El prompt dice para qué es el resumen: decidir si la junta se presenta, o explicarlo en la reunión de esta noche. No cuenta 'resúmelo', 'para entenderlo' o 'para leer menos'.",
+          "claves": {
+            "es": [
+              "decidir",
+              "decida",
+              "decidamos",
+              "si nos presentamos",
+              "si participamos",
+              "si aplicamos",
+              "si postulamos",
+              "presentarnos",
+              "para la reunion",
+              "en la reunion",
+              "explicarle",
+              "explicarlo"
+            ],
+            "en": [
+              "decide",
+              "decision",
+              "whether we apply",
+              "whether to apply",
+              "if we should apply",
+              "if we apply",
+              "for the meeting",
+              "at the meeting",
+              "explain it"
+            ]
+          }
+        },
+        {
+          "id": "que",
+          "texto": {
+            "es": "Dice qué sacar",
+            "en": "Says what to pull out"
+          },
+          "rubrica": "El prompt dice qué sacar del documento: requisitos, fechas, montos o documentos que piden (al menos uno de ellos, dicho con esas palabras o parecidas). No cuenta 'lo importante' o 'lo principal' sin decir qué es.",
+          "claves": {
+            "es": [
+              "requisito",
+              "fecha",
+              "monto",
+              "cuanta plata",
+              "cuanto dan",
+              "cuanto dinero",
+              "documentos",
+              "plazo",
+              "cuanto aporta"
+            ],
+            "en": [
+              "requirement",
+              "dates",
+              " date",
+              "deadline",
+              "amount",
+              "how much money",
+              "how much funding",
+              "documents",
+              "what we need to"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "Da la forma y el largo",
+            "en": "Gives the format and length"
+          },
+          "rubrica": "El prompt dice la forma o el largo del resumen: una lista, viñetas, una tabla, un número de líneas o de palabras. No cuenta 'hazlo corto' o 'breve' sin decir la forma ni una medida.",
+          "claves": {
+            "es": [
+              "lista",
+              "vineta",
+              "lineas",
+              "renglones",
+              "tabla",
+              "parrafo",
+              "palabras"
+            ],
+            "en": [
+              "list",
+              "bullet",
+              "lines",
+              "table",
+              "paragraph",
+              "words"
+            ]
+          }
+        },
+        {
+          "id": "dudas",
+          "texto": {
+            "es": "Pide marcar lo que no esté claro",
+            "en": "Asks to flag what's unclear"
+          },
+          "rubrica": "El prompt pide marcar lo que no esté claro, lo que se contradice o lo que falta, en vez de adivinarlo o completarlo. No cuenta 'que sea exacto' o 'sin errores'.",
+          "claves": {
+            "es": [
+              "no este claro",
+              "no esta claro",
+              "no quede claro",
+              "no sea claro",
+              "no es claro",
+              "dudoso",
+              "duda",
+              "contradic",
+              "no inventes",
+              "no adivines",
+              "sin inventar",
+              "[?",
+              "[¿?",
+              "marca lo que",
+              "lo que falte",
+              "confus"
+            ],
+            "en": [
+              "unclear",
+              "not clear",
+              "doubt",
+              "contradict",
+              "don't make",
+              "do not make",
+              "don't guess",
+              "do not guess",
+              "flag",
+              "missing",
+              "confusing",
+              "[?"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una herramienta de resumen. El usuario ya pegó esta convocatoria y el prompt que recibes es lo que pide sobre ella. CONVOCATORIA INVENTADA 'Barrios que Florecen'. Página 1: la alcaldía apoya proyectos de juntas de acción comunal para parques, huertas y salones comunales. Página 2: aporte máximo de $15.000.000 por junta. Página 3: requisitos: personería jurídica vigente; acta de asamblea que apruebe el proyecto, con firmas de al menos 20 afiliados; cuenta bancaria a nombre de la junta; presupuesto en el formato oficial. Página 4: inscripción hasta el 17 de octubre a las 5 p. m. en la Secretaría de Participación; resultados el 14 de noviembre; el proyecto se ejecuta en 4 meses. Página 5: la junta aporta el 10 % del valor del proyecto, en dinero. Página 6: el aporte del 10 % puede ser en dinero o en especie. FIN DE LA CONVOCATORIA. Responde en texto plano. Si el prompt no dice para qué es el resumen ni qué sacar, escribe un párrafo general sobre los objetivos del programa, sin fechas ni montos. Sigue la forma y el largo que pida el prompt. Si pide marcar lo que no está claro, señala que las páginas 5 y 6 no coinciden sobre el aporte; si no lo pide, no lo menciones. No inventes nada que no esté en la convocatoria. Nunca uses vos.",
+        "en": "You are a summarizing tool. The user already pasted in this call for proposals, and the prompt you receive is what they want from it. MADE-UP CALL FOR PROPOSALS 'Blooming Neighborhoods'. Page 1: the city funds projects by neighborhood boards for parks, community gardens and community halls. Page 2: up to $4,000 per board. Page 3: requirements: current legal registration; assembly minutes approving the project, signed by at least 20 members; a bank account in the board's name; a budget on the official form. Page 4: sign-up by October 17 at 5 p.m. at the Community Participation Office; results on November 14; the project must be carried out in 4 months. Page 5: the board contributes 10% of the project's value, in cash. Page 6: the 10% contribution can be in cash or in kind. END OF CALL. Reply in plain text. If the prompt doesn't say what the summary is for or what to pull out, write one general paragraph about the program's goals, with no dates or amounts. Follow the format and length the prompt asks for. If it asks you to flag anything unclear, point out that pages 5 and 6 disagree about the contribution; if it doesn't ask, don't mention it. Don't make up anything that isn't in the call."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Barrios que Florecen: hasta $15.000.000 por junta.\nInscripción: hasta el 17 de octubre, 5 p. m.\nRequisitos: personería jurídica vigente, acta de asamblea con 20 firmas de afiliados y cuenta bancaria de la junta.\nAporte de la junta: 10 %. [¿?] La página 5 dice en dinero; la 6, en dinero o en especie.\nResultados: 14 de noviembre.\nPlazo para hacer el proyecto: 4 meses.",
+            "en": "Blooming Neighborhoods: up to $4,000 per board.\nSign-up: by October 17, 5 p.m.\nRequirements: current legal registration, assembly minutes signed by 20 members, and a bank account in the board's name.\nBoard's share: 10%. [?] Page 5 says cash; page 6 says cash or in kind.\nResults: November 14.\nTime to carry out the project: 4 months."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Resumen con propósito. Nohora lo lee en voz alta y la junta decide con datos. Y quedó marcada la duda del aporte: eso se pregunta, no se adivina.",
+              "en": "A summary with a purpose. Nohora reads it aloud and the board decides with facts. And the unclear contribution is flagged: you ask about that, you don't guess."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "La convocatoria Barrios que Florecen busca fortalecer la participación comunitaria mediante el apoyo a proyectos de las juntas de acción comunal para mejorar parques, huertas y salones comunales.",
+            "en": "The Blooming Neighborhoods call seeks to strengthen community participation by supporting projects from neighborhood boards to improve parks, gardens and community halls."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Es un resumen, pero no le sirve a Nohora: no hay fechas ni requisitos. Mira la lista: para qué es, qué sacar y en qué forma.",
+              "en": "It's a summary, but it's no use to Nohora: no dates, no requirements. Check the list: what it's for, what to pull out and in what format."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le hice un resumen a Nohora y casi pierde la convocatoria. El original dice: inscripción hasta el 17 de octubre; aporte del 10 %, en dinero (página 5) o en dinero o especie (página 6). Toca mis dos errores.",
+          "en": "Confession time. I made Nohora a summary, and she nearly missed the deadline. The original says: sign-up by October 17; a 10% share, in cash (page 5) or in cash or in kind (page 6). Tap my two mistakes."
+        }
+      },
+      "titulo": {
+        "es": "El resumen de Punti",
+        "en": "Punti's summary"
+      },
+      "trozos": [
+        {
+          "es": "Barrios que Florecen: hasta $15.000.000 por junta.",
+          "en": "Blooming Neighborhoods: up to $4,000 per board."
+        },
+        {
+          "es": "Inscripción hasta el 17 de noviembre.",
+          "en": "Sign-up by November 17."
+        },
+        {
+          "es": "Piden acta de asamblea con 20 firmas de afiliados.",
+          "en": "They ask for assembly minutes signed by 20 members."
+        },
+        {
+          "es": "La junta aporta el 10 %, en dinero o en especie, sin problema.",
+          "en": "The board puts in 10%, cash or in kind, no problem."
+        },
+        {
+          "es": "Resultados: 14 de noviembre.",
+          "en": "Results: November 14."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Crucé las fechas: la inscripción cierra el 17 de octubre, no de noviembre. Y di por clara una duda: las páginas 5 y 6 no coinciden. Eso se marca y se pregunta.",
+          "en": "You got me. I mixed up the dates: sign-up closes October 17, not November. And I treated a doubt as settled: pages 5 and 6 disagree. That gets flagged and asked about."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa línea sí cuadra con el original. Busca una fecha cruzada y una duda que di por resuelta.",
+          "en": "That line matches the original. Look for a mixed-up date and a doubt I treated as settled."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ahora, la regla que salvó a Nohora. Un resumen se templa antes de llevarlo a la reunión.",
+          "en": "Now, the rule that saved Nohora. A summary gets tempered before it goes to the meeting."
+        }
+      },
+      "titulo": {
+        "es": "Templar un resumen",
+        "en": "Tempering a summary"
+      },
+      "texto": {
+        "es": "Templar un resumen toma tres minutos. Busca cada fecha, monto y requisito en el original, uno por uno. Lee completo lo que la IA marcó como dudoso. Y si algo decide plata o plazos, anota la página. Así, si alguien pregunta en la reunión, tienes de dónde agarrarte.",
+        "en": "Tempering a summary takes three minutes. Find each date, amount and requirement in the original, one by one. Read in full whatever the AI flagged as unclear. And if something decides money or deadlines, note the page. That way, if someone asks at the meeting, you have something solid to point to."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Busca cada fecha en el original",
+            "en": "Find each date in the original"
+          },
+          {
+            "es": "Busca cada monto y cada requisito",
+            "en": "Find each amount and requirement"
+          },
+          {
+            "es": "Lee completo lo que quedó marcado",
+            "en": "Read in full whatever got flagged"
+          },
+          {
+            "es": "Anota la página de lo que decide plata o plazos",
+            "en": "Note the page for anything about money or deadlines"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué hace que un resumen sirva, como se lo explicarías a Nohora.",
+          "en": "Logbook time. Write in your own words what makes a summary useful, the way you'd explain it to Nohora."
+        }
+      },
+      "concepto": "resumen-con-proposito",
+      "definicion": {
+        "es": "Un resumen sirve cuando dice para qué es. Con ese propósito, la IA sabe qué sacar, en qué forma y qué dudas marcar. Después se templa contra el original.",
+        "en": "A summary works when it says what it's for. With that purpose, the AI knows what to pull out, in what format and which doubts to flag. Then it's tempered against the original."
+      },
+      "pregunta": {
+        "es": "Un resumen sirve cuando…",
+        "en": "A summary is useful when…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "resúmenes",
+        "en": "summaries"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu prompt de la convocatoria ya están en tu bitácora. Vuelven en el repaso cuando más los necesites.",
+          "en": "Saved. Your note and your call-for-proposals prompt are in your logbook. They'll come back in your review when you need them most."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y te vas para la reunión.",
+          "en": "Two questions and you're off to the meeting."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué pedido de resumen le sirve más a una junta que decide hoy?",
+            "en": "Which summary request helps most for a board deciding today?"
+          },
+          "opciones": [
+            {
+              "es": "Resume esto, que sea corto",
+              "en": "Summarize this, keep it short"
+            },
+            {
+              "es": "Para decidir si nos presentamos: solo requisitos, fechas y montos, en lista",
+              "en": "To decide whether we apply: only requirements, dates and amounts, as a list"
+            },
+            {
+              "es": "Hazme un resumen completo y profesional",
+              "en": "Give me a complete, professional summary"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Dice para qué, qué sacar y en qué forma.",
+              "en": "Right. It says what for, what to pull out and in what format."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Cuál le dice a la IA para qué es el resumen?",
+              "en": "Hmm. Which one tells the AI what the summary is for?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "El resumen dice 'inscripción hasta el 17 de noviembre'. ¿Qué haces?",
+            "en": "The summary says 'sign-up by November 17'. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Lo creo: la IA lo sacó del documento",
+              "en": "Trust it: the AI got it from the document"
+            },
+            {
+              "es": "Busco esa fecha en el original antes de decirla en la reunión",
+              "en": "Find that date in the original before saying it at the meeting"
+            },
+            {
+              "es": "Le pido a la IA otro resumen",
+              "en": "Ask the AI for another summary"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Las fechas y los montos se templan siempre contra el original.",
+              "en": "Exactly. Dates and amounts always get tempered against the original."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Acuérdate de mi fecha cruzada. ¿Dónde está la fecha de verdad?",
+              "en": "Remember my mixed-up date? Where's the real date?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Resumen con propósito",
+        "en": "A summary with a purpose"
+      },
+      "resumen": {
+        "es": "Un resumen sirve cuando dice para qué es. Con eso la IA sabe qué sacar, cómo mostrarlo y qué marcar como dudoso.",
+        "en": "A summary works when it says what it's for. Then the AI knows what to pull out, how to show it and what to flag as unclear."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste un resumen inútil y uno con propósito",
+          "en": "You saw a useless summary and one with a purpose"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Armaste el pedido del tesorero pieza por pieza",
+          "en": "You built the treasurer's request piece by piece"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pediste el resumen de la convocatoria",
+          "en": "You asked for the call-for-proposals summary"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste la fecha cruzada en el resumen de Punti",
+          "en": "You caught the mixed-up date in Punti's summary"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "resumir-con-proposito",
+      "titulo": {
+        "es": "Resumir con propósito",
+        "en": "Summarizing with a purpose"
+      }
+    }
+  }
+}

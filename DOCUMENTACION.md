@@ -1034,6 +1034,15 @@ forma" es "format". Están en la semilla (ADMIN → MISIONES → USAR SEMILLA) e
 Cami las revisa, corrige textos si quiere y publica. Notas del editor: el Laboratorio de la misión 2
 pasa con 4 de 5 piezas; "Tu turno de transmitir" y "Me atrapaste" quedan como muletillas de Punti.
 
+**Contenido de toda la escuela en paralelo (2026-09-26).** Doce temarios propuestos
+(`contenido/temarios/`, índice y decisiones abiertas en `INDICE.md`) y producción por tandas de
+agentes con una guía común (`contenido/misiones/GUIA-DE-PRODUCCION.md`). Van 88 paquetes; el estado
+por mundo y capítulo, y el orden para seguir, están en **`contenido/ESTADO-CONTENIDO.md`**. Acuerdo
+con Cami: tandas de 3 o 4 agentes, y al cerrar cada una se valida, se copia al computador y se
+actualiza el estado. **La semilla ya no va dentro de la app** (con 240 misiones habrían sido más de
+8 MB en el celular): `scripts/generar-semilla.mjs` genera `semilla.ts` (solo servidor) y el sitio
+publica cada misión como archivo estático en `/semilla/<id>`; la app descarga solo la que necesita.
+
 **Costo estimado del Laboratorio** (precios verificados 2026-09-23): por uso ~USD 0,0004 con
 Gemini 2.5 Flash-Lite y ~USD 0,005 con Claude Haiku 4.5; con 100 pilotos diarios y 10 usos,
 ~USD 13 o ~USD 150 al mes. El proveedor se elige en C0 con prueba real y criterio neutral.

@@ -1,0 +1,883 @@
+{
+  "formato": "punti-mision@1",
+  "id": "instrucciones-que-recuerda",
+  "mundo": "prompts",
+  "capitulo": 4,
+  "numero": 18,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "instrucciones"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "contexto",
+    "forma",
+    "datos-sensibles"
+  ],
+  "titulo": {
+    "es": "Instrucciones que recuerda",
+    "en": "Instructions It Remembers"
+  },
+  "resumen": {
+    "es": "Escribir una vez quién eres y cómo te gustan las respuestas, para no repetirlo en cada chat.",
+    "en": "Write down once who you are and how you like answers, so you stop repeating it in every chat."
+  },
+  "siguiente": "tu-biblioteca-de-plantillas",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, entra una señal cansada. Es Esteban, profe particular de inglés. Cada vez que abre un chat nuevo, le explica otra vez a la IA quién es, cómo son sus alumnos y cómo quiere las respuestas. Todos los días, lo mismo.",
+          "en": "Pilot, a tired signal is coming in. It's Esteban, a private English tutor. Every time he opens a new chat, he explains all over again who he is, what his students are like and how he wants answers. Every single day."
+        }
+      },
+      "titulo": {
+        "es": "Instrucciones que recuerda",
+        "en": "Instructions It Remembers"
+      },
+      "texto": {
+        "es": "Hoy aprendes a dejarle a la IA instrucciones guardadas: qué va ahí y qué no va nunca. Unos 10 minutos.",
+        "en": "Today you'll learn to leave the AI saved instructions: what goes in them and what never does. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, el truco que Esteban no conoce.",
+          "en": "First, the trick Esteban doesn't know about."
+        }
+      },
+      "titulo": {
+        "es": "Una nota que la IA lee siempre",
+        "en": "A note the AI always reads"
+      },
+      "texto": {
+        "es": "Muchos asistentes de IA tienen, en su configuración, un espacio para instrucciones personalizadas. Lo que escribes ahí, la IA lo lee al empezar cada chat. Algunos también tienen memoria, o proyectos con sus propias instrucciones. Los nombres y los menús cambian de una herramienta a otra: búscalos en la configuración de la tuya.",
+        "en": "Many AI assistants have a spot in their settings for custom instructions. Whatever you write there, the AI reads at the start of every chat. Some also have memory, or projects with their own instructions. The names and menus differ from tool to tool: look for them in your own tool's settings."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Sin instrucciones",
+            "en": "No instructions"
+          },
+          "b": {
+            "es": "Con instrucciones",
+            "en": "With instructions"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Explicas quién eres en cada chat",
+              "en": "You explain who you are in every chat"
+            },
+            "b": {
+              "es": "Lo escribes una sola vez",
+              "en": "You write it down once"
+            }
+          },
+          {
+            "a": {
+              "es": "La IA arranca de cero",
+              "en": "The AI starts from zero"
+            },
+            "b": {
+              "es": "La IA arranca sabiendo lo básico",
+              "en": "The AI starts knowing the basics"
+            }
+          },
+          {
+            "a": {
+              "es": "Si un día se te olvida algo, sale flojo",
+              "en": "Forget something one day and it comes out weak"
+            },
+            "b": {
+              "es": "Lo básico ya está ahí",
+              "en": "The basics are already there"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto escribe Esteban en un chat nuevo, sin nada guardado. Abajo, la misma frase corta, pero con sus instrucciones ya guardadas en la configuración.",
+          "en": "This is what Esteban types into a new chat, with nothing saved. Below, the same short line, but with his instructions already saved in the settings."
+        }
+      },
+      "titulo": {
+        "es": "La misma frase, otro resultado",
+        "en": "Same line, different result"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Hazme un ejercicio de verbos en pasado.",
+          "en": "Make me a past tense verb exercise."
+        },
+        "salida": {
+          "es": "Ejercicio: Simple Past vs. Present Perfect\nInstrucciones: identifique el aspecto verbal y conjugue los verbos irregulares en participio.\n1. By the time she (arrive), we (already / leave)...\n2. I (never / see) such a thing before...\n(18 puntos más)",
+          "en": "Exercise: Simple Past vs. Present Perfect\nInstructions: identify the verbal aspect and conjugate the irregular verbs in their participle form.\n1. By the time she (arrive), we (already / leave)...\n2. I (never / see) such a thing before...\n(18 more items)"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "quien",
+            "texto": {
+              "es": "Soy profe particular de inglés. Mis alumnos son adultos que empiezan desde cero. ",
+              "en": "I'm a private English tutor. My students are adults starting from zero. "
+            }
+          },
+          {
+            "pieza": "como",
+            "texto": {
+              "es": "Dame respuestas cortas, con ejemplos de la vida diaria. ",
+              "en": "Keep answers short, with everyday examples. "
+            }
+          },
+          {
+            "pieza": "evitar",
+            "texto": {
+              "es": "No uses términos de gramática sin explicarlos.",
+              "en": "Don't use grammar terms without explaining them."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Ejercicio: ¿qué hiciste ayer?\nCompleta con el verbo en pasado:\n1. Yesterday I (cook) ___ rice.\n2. We (watch) ___ a movie.\n3. She (walk) ___ to work.\nPista: casi todos terminan en -ed.",
+          "en": "Exercise: What did you do yesterday?\nFill in the past tense:\n1. Yesterday I (cook) ___ rice.\n2. We (watch) ___ a movie.\n3. She (walk) ___ to work.\nHint: most of them end in -ed."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Esteban escribió la misma frase corta. Lo que cambió es lo que la IA ya sabía: quién es, cómo le gustan las respuestas y qué evitar. Y eso lo escribió una sola vez.",
+          "en": "Esteban typed the same short line. What changed is what the AI already knew: who he is, how he likes answers and what to avoid. And he only wrote that once."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Unas buenas instrucciones tienen tres partes. La cuarta pieza es una advertencia: lo que nunca va ahí. Toca cada una.",
+          "en": "Good instructions have three parts. The fourth piece is a warning: what never goes in there. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Qué va en tus instrucciones",
+        "en": "What goes in your instructions"
+      },
+      "piezas": [
+        {
+          "id": "quien",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Quién eres",
+            "en": "Who you are"
+          },
+          "descripcion": {
+            "es": "Tu oficio, a quién atiendes y para qué usas la IA.",
+            "en": "Your job, who you serve and what you use AI for."
+          },
+          "ejemplo": {
+            "es": "\"Soy profe de inglés; mis alumnos son adultos que empiezan.\" Es tu contexto de siempre, escrito una sola vez.",
+            "en": "\"I'm an English tutor; my students are adult beginners.\" It's your everyday context, written down once."
+          }
+        },
+        {
+          "id": "como",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Cómo te gustan",
+            "en": "How you like answers"
+          },
+          "descripcion": {
+            "es": "El largo, la forma y el tono de las respuestas.",
+            "en": "The length, format and tone of the answers."
+          },
+          "ejemplo": {
+            "es": "\"Respuestas cortas, en listas, en palabras sencillas.\" Lo que siempre terminabas pidiendo en cada chat.",
+            "en": "\"Short answers, in lists, in plain words.\" The stuff you kept asking for in every chat."
+          }
+        },
+        {
+          "id": "evitar",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué evitar",
+            "en": "What to avoid"
+          },
+          "descripcion": {
+            "es": "Lo que no quieres ver nunca en una respuesta.",
+            "en": "What you never want to see in an answer."
+          },
+          "ejemplo": {
+            "es": "\"No uses términos de gramática sin explicarlos.\" Si algo te molesta cada vez, va aquí.",
+            "en": "\"Don't use grammar terms without explaining them.\" If something bugs you every time, it goes here."
+          }
+        },
+        {
+          "id": "fuera",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Lo que no va",
+            "en": "What stays out"
+          },
+          "descripcion": {
+            "es": "Datos sensibles y tareas de un solo día.",
+            "en": "Sensitive data and one-day tasks."
+          },
+          "ejemplo": {
+            "es": "Cédulas, teléfonos, claves, datos de plata o de salud: nada de eso, como viste en el capítulo 2. Si tu IA tiene memoria, revisa qué guardó.",
+            "en": "ID numbers, phone numbers, passwords, money or health info: none of it, just like in Chapter 2. If your AI has memory, check what it saved."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Esteban anotó varias cosas para sus instrucciones. ¿A qué pieza pertenece cada una? Ojo: algunas no deberían ir.",
+          "en": "Your turn. Esteban jotted down a few things for his instructions. Which piece does each one belong to? Careful: some shouldn't go in at all."
+        }
+      },
+      "titulo": {
+        "es": "Las notas de Esteban",
+        "en": "Esteban's notes"
+      },
+      "grupos": [
+        "quien",
+        "como",
+        "evitar",
+        "fuera"
+      ],
+      "items": [
+        {
+          "grupo": "quien",
+          "texto": {
+            "es": "Doy clases de inglés a domicilio, a adultos que trabajan.",
+            "en": "I teach English in students' homes, to working adults."
+          }
+        },
+        {
+          "grupo": "como",
+          "texto": {
+            "es": "Prefiero respuestas cortas, con viñetas.",
+            "en": "I prefer short answers, with bullet points."
+          }
+        },
+        {
+          "grupo": "fuera",
+          "texto": {
+            "es": "Mi alumna Fulana de Tal: cel. 300 123 4567, calle 00 # 00-00.",
+            "en": "My student Jane Doe: cell 555-0123, 00 Any Street."
+          }
+        },
+        {
+          "grupo": "evitar",
+          "texto": {
+            "es": "No me des listas de más de 10 palabras nuevas.",
+            "en": "Don't give me lists of more than 10 new words."
+          }
+        },
+        {
+          "grupo": "fuera",
+          "texto": {
+            "es": "Hoy necesito el examen del martes para el grupo de la mañana.",
+            "en": "Today I need Tuesday's test for the morning group."
+          }
+        },
+        {
+          "grupo": "como",
+          "texto": {
+            "es": "Háblame de tú, en un tono tranquilo.",
+            "en": "Talk to me casually, in a calm tone."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Así se hace. Lo que vale siempre se guarda. Lo sensible y lo de un solo día se quedan por fuera.",
+          "en": "That's how it's done. What's always true gets saved. Sensitive stuff and one-day tasks stay out."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, míralo otra vez. ¿Esa nota dice quién es, cómo quiere las respuestas, qué evitar, o no debería ir?",
+          "en": "Hmm, look again. Does that note say who he is, how he wants answers, what to avoid, or should it stay out?"
+        }
+      },
+      "malPorGrupo": {
+        "fuera": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. ¿Esa nota sirve en todos los chats de Esteban, todos los días? ¿Trae datos de alguien más?",
+            "en": "Close. Does that note work in all of Esteban's chats, every day? Does it carry someone else's details?"
+          }
+        },
+        "evitar": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Fíjate si la nota pide algo o prohíbe algo.",
+            "en": "Close. Check whether the note asks for something or rules something out."
+          }
+        },
+        "como": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. ¿La nota habla de Esteban, o de cómo quiere que le respondan?",
+            "en": "Close. Is the note about Esteban himself, or about how he wants to be answered?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora escribes tú las instrucciones personalizadas de Esteban, las que va a guardar en la configuración. Yo le mando a la IA su frase de siempre para probarlas.",
+          "en": "Now you write Esteban's custom instructions, the ones he'll save in his settings. I'll send the AI his usual line to test them."
+        }
+      },
+      "titulo": {
+        "es": "Las instrucciones de Esteban",
+        "en": "Esteban's instructions"
+      },
+      "reto": {
+        "es": "Lo que te cuenta Esteban: da clases particulares de inglés a adultos que empiezan desde cero. Usa la IA para preparar ejercicios y explicaciones. Le gustan las respuestas cortas, con ejemplos de la vida diaria. Le choca que la IA use palabras de gramática sin explicarlas. Escribe sus instrucciones, sin datos de sus alumnos.",
+        "en": "Here's what Esteban tells you: he gives private English lessons to adults starting from zero. He uses AI to prepare exercises and explanations. He likes short answers with everyday examples. It drives him crazy when the AI uses grammar terms without explaining them. Write his instructions, with no details about his students."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "quien",
+          "texto": {
+            "es": "Quién es: su oficio",
+            "en": "Who he is: his job"
+          },
+          "rubrica": "Las instrucciones dicen quién es Esteban por su oficio: profe, profesor o tutor de inglés, que da clases particulares. No cuenta 'soy profe' sin decir de qué, ni 'enseño' sin decir qué enseña, ni solo su nombre.",
+          "claves": {
+            "es": [
+              "profe de ingles",
+              "profesor de ingles",
+              "profesora de ingles",
+              "tutor de ingles",
+              "clases de ingles",
+              "particular de ingles",
+              "particulares de ingles",
+              "enseno ingles",
+              "ensenar ingles",
+              "ensena ingles"
+            ],
+            "en": [
+              "english tutor",
+              "english teacher",
+              "teach english",
+              "teaching english",
+              "tutor english",
+              "english lessons",
+              "english classes"
+            ]
+          }
+        },
+        {
+          "id": "alumnos",
+          "texto": {
+            "es": "Cómo son sus alumnos",
+            "en": "What his students are like"
+          },
+          "rubrica": "Las instrucciones dicen cómo son sus alumnos en general: adultos, principiantes o que empiezan desde cero. No cuenta 'mis alumnos' o 'mis estudiantes' sin decir cómo son, ni nombres o datos de un alumno en particular.",
+          "claves": {
+            "es": [
+              "adultos",
+              "adultas",
+              "principiante",
+              "desde cero",
+              "empiezan",
+              "nivel basico",
+              "que trabajan"
+            ],
+            "en": [
+              "adult",
+              "beginner",
+              "from zero",
+              "from scratch",
+              "starting out",
+              "just starting",
+              "basic level"
+            ]
+          }
+        },
+        {
+          "id": "como",
+          "texto": {
+            "es": "Cómo le gustan las respuestas",
+            "en": "How he likes answers"
+          },
+          "rubrica": "Las instrucciones dicen cómo quiere las respuestas: el largo (cortas, breves), la forma (listas, viñetas) o el estilo (ejemplos de la vida diaria, palabras sencillas). No cuenta 'buenas respuestas' o 'respuestas útiles' sin decir cómo son.",
+          "claves": {
+            "es": [
+              "cortas",
+              "corto",
+              "breve",
+              "vinetas",
+              "en lista",
+              "listas",
+              "ejemplos de la vida",
+              "ejemplos cotidianos",
+              "vida diaria",
+              "vida real",
+              "palabras sencillas",
+              "palabras simples"
+            ],
+            "en": [
+              "short",
+              "brief",
+              "bullet",
+              "lists",
+              "in a list",
+              "everyday",
+              "daily life",
+              "real life",
+              "plain words",
+              "simple words",
+              "simple language"
+            ]
+          }
+        },
+        {
+          "id": "evitar",
+          "texto": {
+            "es": "Qué debe evitar",
+            "en": "What to avoid"
+          },
+          "rubrica": "Las instrucciones dicen algo que la IA no debe hacer, con una prohibición clara: no usar términos o palabras de gramática sin explicarlos, evitar la jerga, nada de respuestas largas. No cuenta pedir 'palabras sencillas' o 'respuestas claras' sin decir qué evitar.",
+          "claves": {
+            "es": [
+              "no uses",
+              "no utilices",
+              "evita",
+              "nunca",
+              "no me des",
+              "no pongas",
+              "no quiero",
+              "no incluyas",
+              "nada de",
+              "sin jerga"
+            ],
+            "en": [
+              "don't",
+              "do not",
+              "avoid",
+              "never",
+              "no jargon"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un asistente de IA. El mensaje del usuario son sus instrucciones personalizadas, como si estuvieran guardadas en la configuración: no las comentes ni las repitas. Con esas instrucciones, responde a este pedido corto: \"Hazme un ejercicio de verbos en pasado.\" Sigue solo lo que digan las instrucciones. Si no dicen para quién es, haz un ejercicio de nivel avanzado. Si no piden un largo, haz uno largo, de 10 puntos o más. Si no prohíben la jerga, usa términos técnicos de gramática sin explicarlos.",
+        "en": "You are an AI assistant. The user's message is their custom instructions, as if they were saved in the settings: don't comment on them or repeat them. Using those instructions, answer this short request: \"Make me a past tense verb exercise.\" Follow only what the instructions say. If they don't say who it's for, make an advanced-level exercise. If they don't ask for a length, make a long one, 10 items or more. If they don't rule out jargon, use technical grammar terms without explaining them."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Ejercicio: ¿qué hiciste ayer?\nCompleta con el verbo en pasado:\n1. Yesterday I (cook) ___ rice.\n2. We (watch) ___ a movie.\n3. She (walk) ___ to work.\nPista: casi todos terminan en -ed.",
+            "en": "Exercise: What did you do yesterday?\nFill in the past tense:\n1. Yesterday I (cook) ___ rice.\n2. We (watch) ___ a movie.\n3. She (walk) ___ to work.\nHint: most of them end in -ed."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Con su frase corta de siempre salió un ejercicio para sus alumnos, corto y sin jerga. Esteban ya no tiene que explicar nada al empezar cada chat.",
+              "en": "Strong signal. His usual short line got an exercise made for his students, short and jargon-free. Esteban doesn't have to explain anything at the start of each chat anymore."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Ejercicio: Simple Past vs. Present Perfect\nInstrucciones: identifique el aspecto verbal y conjugue los verbos irregulares en participio.\n1. By the time she (arrive), we (already / leave)...\n2. I (never / see) such a thing before...\n(18 puntos más)",
+            "en": "Exercise: Simple Past vs. Present Perfect\nInstructions: identify the verbal aspect and conjugate the irregular verbs in their participle form.\n1. By the time she (arrive), we (already / leave)...\n2. I (never / see) such a thing before...\n(18 more items)"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA no sabía para quién era ni cómo lo quería Esteban, y salió un ejercicio avanzado y lleno de jerga. Mira la lista: ¿qué les falta a sus instrucciones?",
+              "en": "Weak signal: the AI didn't know who it was for or how Esteban wanted it, so out came an advanced exercise full of jargon. Check the list: what are his instructions missing?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Mi error del día: le ayudé a Esteban con una primera versión de sus instrucciones y se colaron dos frases que no debían ir. Tócalas.",
+          "en": "My mistake of the day: I helped Esteban with a first draft of his instructions, and two sentences slipped in that didn't belong. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mis instrucciones para Esteban",
+        "en": "My instructions for Esteban"
+      },
+      "trozos": [
+        {
+          "es": "Soy profe particular de inglés y mis alumnos son adultos que empiezan.",
+          "en": "I'm a private English tutor and my students are adult beginners."
+        },
+        {
+          "es": "Mis alumnos son Fulana de Tal, cel. 300 123 4567, y Pepito Pérez, cel. 300 987 6543.",
+          "en": "My students are Jane Doe, cell 555-0123, and John Doe, cell 555-0187."
+        },
+        {
+          "es": "Respóndeme corto y con ejemplos de la vida diaria.",
+          "en": "Keep answers short, with everyday examples."
+        },
+        {
+          "es": "Hazme ya el examen del martes para el grupo de la mañana.",
+          "en": "Make Tuesday's test for the morning group right now."
+        },
+        {
+          "es": "No uses palabras de gramática sin explicarlas.",
+          "en": "Don't use grammar terms without explaining them."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Los nombres y celulares de los alumnos son datos de otros: no viajan, como viste en el capítulo 2. Y el examen del martes es de un solo día: va en un chat, no en lo que la IA lee siempre.",
+          "en": "You got me. The students' names and phone numbers are other people's data: they don't travel, just like in Chapter 2. And Tuesday's test is a one-day task: it goes in a chat, not in what the AI reads every time."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa frase sirve en todos los chats de Esteban. Busca las que traen datos de otras personas o sirven para un solo día.",
+          "en": "That sentence works in all of Esteban's chats. Look for the ones with other people's data, or that only matter for one day."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esteban ya guardó sus instrucciones. Pero le llegó un alumno distinto a los demás. Ayúdale a decidir.",
+          "en": "Esteban saved his instructions. But now he has a student who's different from the rest. Help him decide."
+        }
+      },
+      "titulo": {
+        "es": "Un alumno distinto",
+        "en": "A different student"
+      },
+      "escena": {
+        "es": "Llegó un alumno que no es principiante: tiene una entrevista de trabajo en inglés en un mes. Las instrucciones de Esteban dicen \"alumnos que empiezan desde cero\". Algunos asistentes dejan crear proyectos: grupos de chats con sus propias instrucciones y archivos. ¿Qué hace Esteban?",
+        "en": "A new student showed up who isn't a beginner: he has a job interview in English in a month. Esteban's instructions say \"students starting from zero.\" Some assistants let you create projects: groups of chats with their own instructions and files. What does Esteban do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Cambia sus instrucciones generales cada vez que prepara esa clase",
+            "en": "Change his general instructions every time he preps that class"
+          },
+          "consecuencia": {
+            "es": "Funciona un día, pero se le olvida devolverlas. Al otro día, sus alumnos que empiezan reciben ejercicios de entrevista. Las generales son para lo que vale siempre.",
+            "en": "It works for a day, but he forgets to switch them back. Next day, his beginners get job interview drills. General instructions are for what's always true."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Crea un proyecto para ese alumno, con sus propias instrucciones",
+            "en": "Create a project for that student, with its own instructions"
+          },
+          "consecuencia": {
+            "es": "Eso. Sus instrucciones generales siguen igual, y el proyecto guarda lo de ese alumno: nivel intermedio, entrevista en un mes. Cada cosa en su lugar.",
+            "en": "That's it. His general instructions stay the same, and the project holds what's specific to that student: intermediate level, interview in a month. Everything in its place."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Mete en las generales todo sobre cada alumno",
+            "en": "Put everything about every student in the general ones"
+          },
+          "consecuencia": {
+            "es": "Las instrucciones se llenan de cosas que chocan: \"desde cero\" y \"nivel intermedio\" al mismo tiempo. La IA no sabe cuál seguir y las respuestas salen a medias.",
+            "en": "The instructions fill up with things that clash: \"from zero\" and \"intermediate\" at the same time. The AI can't tell which to follow, and the answers come out half right."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Instrucciones generales: lo que vale en todos tus chats. Un proyecto: lo que vale para un solo trabajo. Si tu IA no tiene proyectos, guarda ese texto aparte y pégalo al empezar ese chat.",
+          "en": "General instructions: what's true in all your chats. A project: what's true for one job. If your AI has no projects, keep that text somewhere and paste it at the start of that chat."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Una nota que Esteban agradecería: escribe con tus palabras qué son las instrucciones personalizadas, como se lo explicarías a él.",
+          "en": "A note Esteban would appreciate: write in your own words what custom instructions are, the way you'd explain them to him."
+        }
+      },
+      "concepto": "instrucciones",
+      "definicion": {
+        "es": "Un texto que guardas en la configuración de tu IA y que ella lee al empezar cada chat: quién eres, cómo te gustan las respuestas y qué evitar. Sin datos sensibles.",
+        "en": "Text you save in your AI's settings that it reads at the start of every chat: who you are, how you like answers and what to avoid. No sensitive data."
+      },
+      "pregunta": {
+        "es": "Las instrucciones personalizadas son…",
+        "en": "Custom instructions are…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "instrucciones guardadas",
+        "en": "saved instructions"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de instrucciones y las de Esteban quedaron en tu bitácora. En el proyecto final de Eco vas a escribir las tuyas.",
+          "en": "Saved. Your instructions card and Esteban's instructions are in your logbook. In Eco's final project, you'll write your own."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y Esteban deja de repetirse.",
+          "en": "Three questions and Esteban can stop repeating himself."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué va en tus instrucciones personalizadas?",
+            "en": "What goes in your custom instructions?"
+          },
+          "opciones": [
+            {
+              "es": "Quién eres, cómo te gustan las respuestas y qué evitar",
+              "en": "Who you are, how you like answers and what to avoid"
+            },
+            {
+              "es": "La tarea que necesitas hoy, con todos sus datos",
+              "en": "Today's task, with all its details"
+            },
+            {
+              "es": "Tus claves, para tenerlas siempre a mano",
+              "en": "Your passwords, so they're always handy"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Lo que vale para todos tus chats, todos los días.",
+              "en": "Right. What's true for all your chats, every day."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en algo que la IA va a leer en todos tus chats. ¿Te sirve ahí?",
+              "en": "Hmm. Think about something the AI will read in every chat. Does it belong there?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "En tu IA no ves nada que se llame \"instrucciones personalizadas\". ¿Qué haces?",
+            "en": "Your AI has nothing called \"custom instructions.\" What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Busco en la configuración algo parecido, como personalización",
+              "en": "Look in the settings for something similar, like personalization"
+            },
+            {
+              "es": "Dejo de darle contexto: igual no lo va a recordar",
+              "en": "Stop giving it context: it won't remember anyway"
+            },
+            {
+              "es": "Le pego mis claves para que me reconozca",
+              "en": "Paste in my passwords so it recognizes me"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Cada herramienta lo llama distinto. Y si no existe, guardas tu texto y lo pegas al empezar el chat.",
+              "en": "Exactly. Every tool calls it something different. And if it doesn't exist, you keep your text and paste it at the start of the chat."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No tan rápido. Los nombres cambian de una herramienta a otra. ¿Dónde se guardan las cosas que valen siempre?",
+              "en": "Not so fast. Names differ from tool to tool. Where do things that are always true get saved?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Esteban también traduce textos para una fábrica de muebles pequeña. ¿Dónde va \"los textos de la fábrica van en tono formal\"?",
+            "en": "Esteban also translates texts for a small furniture maker. Where does \"the furniture maker's texts use a formal tone\" go?"
+          },
+          "opciones": [
+            {
+              "es": "En sus instrucciones generales, junto a lo de las clases",
+              "en": "In his general instructions, next to the tutoring stuff"
+            },
+            {
+              "es": "En un proyecto de las traducciones, con sus propias instrucciones",
+              "en": "In a translation project, with its own instructions"
+            },
+            {
+              "es": "En ningún lado: la IA ya se lo sabe",
+              "en": "Nowhere: the AI already knows"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Vale para un solo trabajo, así que va en su proyecto. Las generales siguen siendo de todo Esteban.",
+              "en": "Yes. It's true for one job only, so it goes in that project. The general ones stay about Esteban as a whole."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Eso vale para todos sus chats, o solo para un trabajo?",
+              "en": "Hmm. Is that true for all his chats, or just for one job?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Instrucciones que recuerda",
+        "en": "Instructions it remembers"
+      },
+      "resumen": {
+        "es": "Escribe una vez quién eres, cómo te gustan las respuestas y qué evitar. Sin datos sensibles ni tareas de un día.",
+        "en": "Write down once who you are, how you like answers and what to avoid. No sensitive data, no one-day tasks."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Viste lo que cambia con instrucciones guardadas",
+          "en": "You saw what saved instructions change"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Separaste lo que va y lo que no va",
+          "en": "You sorted what goes in and what stays out"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste las instrucciones de Esteban",
+          "en": "You wrote Esteban's instructions"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste las frases que se me colaron",
+          "en": "You caught the sentences I slipped in"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Supiste cuándo conviene un proyecto",
+          "en": "You knew when a project makes sense"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "escribir-instrucciones",
+      "titulo": {
+        "es": "Escribir instrucciones personalizadas",
+        "en": "Writing custom instructions"
+      }
+    }
+  }
+}

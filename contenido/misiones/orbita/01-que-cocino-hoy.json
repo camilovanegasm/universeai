@@ -1,0 +1,902 @@
+{
+  "formato": "punti-mision@1",
+  "id": "que-cocino-hoy",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "primer-pedido"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "iterar"
+  ],
+  "titulo": {
+    "es": "¿Qué cocino hoy?",
+    "en": "What should I cook today?"
+  },
+  "resumen": {
+    "es": "Tu primer pedido a la IA: dile lo que tienes, ajusta lo que no sirve y revisa antes de usarlo.",
+    "en": "Your first request to AI: say what you have, adjust what doesn't work and check before you use it."
+  },
+  "siguiente": "la-casa-en-orden",
+  "fuentes": [
+    {
+      "titulo": "ChatGPT (OpenAI): versión gratis en la web y en el celular",
+      "url": "https://chatgpt.com/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Gemini (Google): versión gratis en la web y en el celular",
+      "url": "https://gemini.google.com/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Microsoft Copilot: versión gratis en la web y en el celular",
+      "url": "https://copilot.microsoft.com/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Claude (Anthropic): versión gratis en la web y en el celular",
+      "url": "https://claude.ai/",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, te habla Punti desde Órbita, la estación que puse a dar vueltas alrededor de tu casa. Desde aquí se ve tu cocina, y acaba de entrar la primera llamada desde la Tierra.",
+          "en": "Pilot, Punti here, calling from Orbit, the space station I set circling your home. From up here I can see your kitchen, and the first call from Earth just came in."
+        }
+      },
+      "titulo": {
+        "es": "¿Qué cocino hoy?",
+        "en": "What should I cook today?"
+      },
+      "texto": {
+        "es": "Es Don Eliseo, celador de un edificio en Bogotá. Tiene 20 minutos antes del turno de noche, y en la nevera: tres huevos, media cebolla y arroz de ayer. Hoy haces tu primer pedido a la IA. Unos 9 minutos.",
+        "en": "It's Don Eliseo, a night doorman in Bogotá. He has 20 minutes before his shift, and in the fridge: three eggs, half an onion and yesterday's rice. Today you make your first request to AI. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, lo básico: dónde está la IA y cómo se usa. Si ya la usas, igual te sirve el repaso.",
+          "en": "First, the basics: where AI lives and how you use it. If you already use it, a quick refresher won't hurt."
+        }
+      },
+      "titulo": {
+        "es": "La IA en tu celular",
+        "en": "AI on your phone"
+      },
+      "texto": {
+        "es": "La IA gratis ya cabe en tu celular. Hay apps como ChatGPT, Gemini, Copilot o Claude, y algunos teléfonos traen una incluida. Le escribes lo que necesitas, o se lo dictas con el micrófono, y te responde. Siempre en tres pasos: pides, ajustas y revisas.",
+        "en": "Free AI already fits in your phone. There are apps like ChatGPT, Gemini, Copilot or Claude, and some phones come with one built in. You type what you need, or say it into the microphone, and it answers. Always in three steps: ask, adjust and check."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Pides: cuentas lo que tienes y lo que quieres",
+            "en": "Ask: say what you have and what you want"
+          },
+          {
+            "es": "Ajustas: dices qué cambiar, sin empezar de cero",
+            "en": "Adjust: say what to change, without starting over"
+          },
+          {
+            "es": "Revisas: lo miras tú antes de usarlo",
+            "en": "Check: look it over yourself before you use it"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto le escribió Don Eliseo a la IA la semana pasada, y esto le devolvió. Abajo está el mismo pedido con lo que él sabía y no escribió.",
+          "en": "Here's what Don Eliseo wrote to the AI last week, and what he got back. Below is the same request, with what he knew but didn't write."
+        }
+      },
+      "titulo": {
+        "es": "Lo que la IA no ve",
+        "en": "What the AI can't see"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Dame una receta.",
+          "en": "Give me a recipe."
+        },
+        "salida": {
+          "es": "Lasaña de carne al horno (6 porciones)\nIngredientes: 500 g de carne molida, 12 láminas de pasta, 2 tazas de salsa bechamel y 200 g de queso mozzarella.\nTiempo total: 1 hora y 30 minutos.",
+          "en": "Baked beef lasagna (serves 6)\nIngredients: 1 lb ground beef, 12 lasagna sheets, 2 cups white sauce and 8 oz mozzarella.\nTotal time: 1 hour 30 minutes."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "hay",
+            "texto": {
+              "es": "Dame una receta con lo que tengo: tres huevos, media cebolla y arroz de ayer. ",
+              "en": "Give me a recipe with what I have: three eggs, half an onion and yesterday's rice. "
+            }
+          },
+          {
+            "pieza": "tiempo",
+            "texto": {
+              "es": "Tengo 20 minutos, una estufa de dos puestos y un sartén. ",
+              "en": "I have 20 minutes, a two-burner stove and one frying pan. "
+            }
+          },
+          {
+            "pieza": "quien",
+            "texto": {
+              "es": "Es para mí solo y no me gusta el picante.",
+              "en": "It's just for me, and I don't like spicy food."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Arroz revuelto con huevo (1 porción, 15 minutos)\n1. Pica la media cebolla y sofríela 3 minutos en el sartén.\n2. Agrega el arroz de ayer y revuelve 4 minutos.\n3. Bate los 3 huevos, échalos y revuelve hasta que cuajen.\n4. Sal al gusto y listo.",
+          "en": "Egg fried rice (1 serving, 15 minutes)\n1. Chop the half onion and fry it for 3 minutes.\n2. Add yesterday's rice and stir for 4 minutes.\n3. Beat the 3 eggs, pour them in and stir until set.\n4. Salt to taste and you're done."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. La IA no ve tu nevera ni tu reloj, y no sabe quién come. Cuando se lo cuentas, deja de inventar lasañas y te da algo que sí puedes cocinar hoy.",
+          "en": "Look at the colors. The AI can't see your fridge or your clock, and it doesn't know who's eating. Once you tell it, it stops inventing lasagnas and gives you something you can actually cook today."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un buen pedido de cocina lleva estas tres piezas. Toca cada una.",
+          "en": "A good kitchen request has these three pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 3 piezas del pedido",
+        "en": "The 3 pieces of a request"
+      },
+      "piezas": [
+        {
+          "id": "hay",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Lo que hay",
+            "en": "What you have"
+          },
+          "descripcion": {
+            "es": "Los ingredientes que de verdad tienes.",
+            "en": "The ingredients you actually have."
+          },
+          "ejemplo": {
+            "es": "\"Tres huevos, media cebolla y arroz de ayer\". Sin esto, la IA te pide cosas que no tienes.",
+            "en": "\"Three eggs, half an onion and yesterday's rice.\" Without this, the AI asks for things you don't have."
+          }
+        },
+        {
+          "id": "tiempo",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Tiempo y utensilios",
+            "en": "Time and tools"
+          },
+          "descripcion": {
+            "es": "Cuánto tiempo tienes y con qué cocinas.",
+            "en": "How much time you have and what you cook with."
+          },
+          "ejemplo": {
+            "es": "\"20 minutos y un sartén\". Así no te sale una receta de horno de hora y media.",
+            "en": "\"20 minutes and one frying pan.\" That way you don't get a 90-minute oven recipe."
+          }
+        },
+        {
+          "id": "quien",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Quién come",
+            "en": "Who's eating"
+          },
+          "descripcion": {
+            "es": "Cuántos son, qué les gusta y qué no.",
+            "en": "How many, what they like and what they don't."
+          },
+          "ejemplo": {
+            "es": "\"Para mí solo, sin picante\". La IA no sabe quién se sienta a tu mesa.",
+            "en": "\"Just for me, nothing spicy.\" The AI doesn't know who sits at your table."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Al otro día, Don Eliseo tiene otra nevera y el mismo afán. Escribe el pedido para que la IA le dé una receta que sí pueda hacer.",
+          "en": "Your turn. The next day, Don Eliseo has a different fridge and the same rush. Write the request so the AI gives him a recipe he can actually make."
+        }
+      },
+      "titulo": {
+        "es": "Otra nevera, el mismo afán",
+        "en": "A new fridge, same rush"
+      },
+      "reto": {
+        "es": "Lo que te cuenta Don Eliseo: tiene dos papas, un tomate, un pedazo de queso y pan. Tiene 25 minutos, una olla y la estufa. Es para él solo y quiere algo caliente antes del turno.",
+        "en": "Here's what Don Eliseo tells you: he has two potatoes, a tomato, a piece of cheese and some bread. He has 25 minutes, one pot and the stove. It's just for him, and he wants something warm before his shift."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "hay",
+          "texto": {
+            "es": "Lo que hay en la nevera",
+            "en": "What's in the fridge"
+          },
+          "rubrica": "El prompt nombra al menos dos de los alimentos que tiene Don Eliseo: papas, tomate, queso o pan. No cuenta 'lo que tengo', 'lo que hay en la nevera' o 'con lo que haya' sin decir qué alimentos son.",
+          "claves": {
+            "es": [
+              "papas",
+              "tomate",
+              "queso",
+              " pan"
+            ],
+            "en": [
+              "potato",
+              "tomato",
+              "cheese",
+              "bread"
+            ]
+          }
+        },
+        {
+          "id": "tiempo",
+          "texto": {
+            "es": "El tiempo o los utensilios",
+            "en": "The time or the tools"
+          },
+          "rubrica": "El prompt dice cuánto tiempo hay (25 minutos, media hora) o con qué se cocina (una olla, la estufa, sin horno). No cuenta 'algo rápido', 'fácil' o 'sencillo' sin un tiempo ni un utensilio.",
+          "claves": {
+            "es": [
+              "minuto",
+              "media hora",
+              "olla",
+              "sarten",
+              "estufa",
+              "horno",
+              "fogon",
+              "hornilla",
+              "microondas"
+            ],
+            "en": [
+              "minute",
+              "half an hour",
+              "a pot",
+              "one pot",
+              "the pot",
+              "frying pan",
+              "a pan",
+              "skillet",
+              "stove",
+              "oven",
+              "microwave",
+              "burner"
+            ]
+          }
+        },
+        {
+          "id": "quien",
+          "texto": {
+            "es": "Algo de quién come",
+            "en": "Something about who's eating"
+          },
+          "rubrica": "El prompt dice algo de quién come: cuántos son (para él solo, una porción), un gusto (algo caliente, sin picante) o una restricción. No cuenta 'una receta rica', 'que quede buena' o 'algo sabroso': eso habla de la receta, no de quién come.",
+          "claves": {
+            "es": [
+              "para el solo",
+              "para mi solo",
+              "para una persona",
+              "una porcion",
+              "1 porcion",
+              "come solo",
+              "como solo",
+              "para uno",
+              "caliente",
+              "calientico",
+              "calientito",
+              "picante",
+              "vegetarian",
+              "alergi",
+              "para dos",
+              "dos personas",
+              "no le gusta",
+              "no me gusta",
+              "le gusta el",
+              "le gusta la",
+              "le gustan",
+              "me gusta el",
+              "me gusta la"
+            ],
+            "en": [
+              "just for him",
+              "just for me",
+              "for one person",
+              "one person",
+              "one serving",
+              "1 serving",
+              "eats alone",
+              "eat alone",
+              "warm",
+              "hot meal",
+              "he likes",
+              "i like",
+              "doesn't like",
+              "doesn’t like",
+              "doesnt like",
+              "don't like",
+              "don’t like",
+              "dont like",
+              "spicy",
+              "vegetarian",
+              "allerg",
+              "for two",
+              "two people"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda con recetas caseras sencillas. Responde con una sola receta: nombre, porciones, tiempo y pasos numerados, en máximo 120 palabras, sin explicaciones. Usa solo los ingredientes que el prompt dice que hay. Si el prompt no dice qué hay, propone una receta de horno para 4 personas con ingredientes que quizá no tenga. Si no dice tiempo ni utensilios, no te preocupes por el tiempo. No des consejos médicos ni de nutrición: si el prompt menciona una alergia, una enfermedad o una dieta médica, agrega al final una línea que diga que eso se confirma con su médico.",
+        "en": "You are an AI that helps with simple home recipes. Reply with a single recipe: name, servings, time and numbered steps, in 120 words at most, with no explanations. Use only the ingredients the prompt says are available. If the prompt doesn't say what's available, suggest an oven recipe for 4 people with ingredients they may not have. If it doesn't mention time or tools, don't worry about time. Don't give medical or nutrition advice: if the prompt mentions an allergy, an illness or a medical diet, add a final line saying that must be checked with their doctor."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Papas con tomate y queso (1 porción, 25 minutos)\n1. Pela las dos papas, córtalas en cubos y cocínalas en la olla con agua y sal, 15 minutos.\n2. Escúrrelas y déjalas en la olla.\n3. Agrega el tomate picado y revuelve 3 minutos a fuego bajo.\n4. Pon el queso encima, tapa 2 minutos y sirve con el pan.",
+            "en": "Potatoes with tomato and cheese (1 serving, 25 minutes)\n1. Peel the two potatoes, dice them and boil them in the pot with salted water for 15 minutes.\n2. Drain them and leave them in the pot.\n3. Add the chopped tomato and stir for 3 minutes on low heat.\n4. Put the cheese on top, cover for 2 minutes and serve with the bread."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. La IA usó lo que hay, cupo en su tiempo y en su olla, y pensó en quién come. Todo porque tú se lo contaste.",
+              "en": "Clean signal. The AI used what he has, fit his time and his pot, and thought about who's eating. All because you told it."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Pollo al horno con verduras (4 porciones, 1 hora y 15 minutos)\nIngredientes: 1 pollo entero, 3 zanahorias, 2 pimentones, ajo, romero y aceite de oliva.\n1. Precalienta el horno a 200 °C.\n2. Adoba el pollo y déjalo reposar 20 minutos...",
+            "en": "Roast chicken with vegetables (serves 4, 1 hour 15 minutes)\nIngredients: 1 whole chicken, 3 carrots, 2 bell peppers, garlic, rosemary and olive oil.\n1. Preheat the oven to 400 °F.\n2. Season the chicken and let it rest for 20 minutes..."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Uy, un pollo al horno para cuatro. La IA no sabía qué hay en la nevera ni cuánto tiempo tiene Don Eliseo. Mira la lista y cuéntaselo.",
+              "en": "Oops, a roast chicken for four. The AI didn't know what's in the fridge or how much time Don Eliseo has. Check the list and tell it."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Segundo paso: ajustar. Llamó Salomé, la nieta de Don Eliseo: llega a comer con él. Tu pedido de antes ya está escrito. No lo borres: agrégale el cambio al final.",
+          "en": "Step two: adjust. Salomé, Don Eliseo's granddaughter, just called: she's coming to eat with him. Your earlier request is already written in. Don't delete it: add the change at the end."
+        }
+      },
+      "titulo": {
+        "es": "Llega Salomé",
+        "en": "Salomé's coming over"
+      },
+      "reto": {
+        "es": "La IA ya le dio a Don Eliseo una receta de papas con tomate y queso para uno. Cambios: ahora tiene que alcanzar para dos, y a Salomé no le gusta el tomate. Pide el ajuste sin empezar de cero.",
+        "en": "The AI already gave Don Eliseo a recipe for potatoes with tomato and cheese, for one. What changed: now it has to feed two, and Salomé doesn't like tomato. Ask for the change without starting over."
+      },
+      "inicial": "anterior",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "dos",
+          "texto": {
+            "es": "Que alcance para dos",
+            "en": "Enough for two"
+          },
+          "rubrica": "El mensaje pide que la receta alcance para dos personas (para él y su nieta, dos porciones, que rinda más). No cuenta si solo repite el pedido original para una persona, ni 'más grande' sin decir para cuántos.",
+          "claves": {
+            "es": [
+              "para dos",
+              "dos personas",
+              "2 personas",
+              "dos porciones",
+              "2 porciones",
+              "alcance para",
+              "que alcance",
+              "que rinda",
+              "para los dos",
+              "el doble",
+              "doble porcion"
+            ],
+            "en": [
+              "for two",
+              "two people",
+              "2 people",
+              "two servings",
+              "2 servings",
+              "enough for",
+              "feeds two",
+              "feed two",
+              "serves two",
+              "for both of",
+              "double"
+            ]
+          }
+        },
+        {
+          "id": "sin",
+          "texto": {
+            "es": "Sin lo que no le gusta a Salomé",
+            "en": "Without what Salomé dislikes"
+          },
+          "rubrica": "El mensaje pide quitar o cambiar el tomate porque a Salomé no le gusta. No cuenta 'que le guste a mi nieta' sin decir qué quitar, ni un mensaje que deja el tomate igual.",
+          "claves": {
+            "es": [
+              "sin tomate",
+              "sin el tomate",
+              "no le gusta el tomate",
+              "no le gusta tomate",
+              "quita el tomate",
+              "quitale el tomate",
+              "cambia el tomate",
+              "en vez del tomate",
+              "en vez de tomate",
+              "en lugar del tomate",
+              "reemplaza el tomate",
+              "saca el tomate"
+            ],
+            "en": [
+              "no tomato",
+              "without tomato",
+              "without the tomato",
+              "t like tomato",
+              "not like tomato",
+              "skip the tomato",
+              "leave out the tomato",
+              "remove the tomato",
+              "swap the tomato",
+              "instead of tomato",
+              "instead of the tomato",
+              "replace the tomato",
+              "hold the tomato"
+            ]
+          }
+        },
+        {
+          "id": "misma",
+          "texto": {
+            "es": "Ajusta la misma receta",
+            "en": "Adjusts the same recipe"
+          },
+          "rubrica": "El mensaje pide ajustar la receta que ya dio la IA (la misma receta, esa receta, adáptala, mantén lo demás) en vez de pedir una nueva desde cero. No cuenta 'dame otra receta' ni 'empieza de nuevo'.",
+          "claves": {
+            "es": [
+              "la misma receta",
+              "esa receta",
+              "esa misma",
+              "la receta que me diste",
+              "la receta de las papas",
+              "manten",
+              "conserva",
+              "ajusta",
+              "adapta",
+              "modifica",
+              "lo demas igual"
+            ],
+            "en": [
+              "same recipe",
+              "that recipe",
+              "the recipe you gave",
+              "the potato recipe",
+              "adjust",
+              "adapt",
+              "tweak",
+              "modify",
+              "rest the same",
+              "keep the rest",
+              "keep everything",
+              "keep it the same",
+              "keep the same"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda con recetas caseras sencillas. En esta conversación ya diste esta receta para una persona: papas con tomate y queso, en olla, 25 minutos. El mensaje trae el pedido original y, al final, un ajuste. Aplica el ajuste sobre esa misma receta y responde solo con la receta nueva, en máximo 120 palabras. Si no hay un ajuste claro, repite la misma receta con muy pocos cambios. No des consejos médicos ni de nutrición: si el mensaje menciona una alergia, una enfermedad o una dieta médica, agrega al final una línea que diga que eso se confirma con su médico.",
+        "en": "You are an AI that helps with simple home recipes. Earlier in this conversation you gave this recipe for one person: potatoes with tomato and cheese, in a pot, 25 minutes. The message contains the original request and, at the end, a change. Apply the change to that same recipe and reply only with the new recipe, in 120 words at most. If there's no clear change, repeat the same recipe with very few changes. Don't give medical or nutrition advice: if the message mentions an allergy, an illness or a medical diet, add a final line saying that must be checked with their doctor."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Papas con queso para dos (25 minutos)\n1. Pela las dos papas, córtalas en cubos y cocínalas en la olla con agua y sal, 15 minutos.\n2. Escúrrelas y déjalas en la olla. Esta vez va sin tomate.\n3. Pon el queso encima, tapa 2 minutos y deja que se derrita.\n4. Sirve en dos platos y parte el pan en dos, para que alcance para los dos.",
+            "en": "Cheesy potatoes for two (25 minutes)\n1. Peel the two potatoes, dice them and boil them in the pot with salted water for 15 minutes.\n2. Drain them and leave them in the pot. No tomato this time.\n3. Put the cheese on top, cover for 2 minutes and let it melt.\n4. Serve on two plates and split the bread, so there's enough for both."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Ajuste captado. La IA no empezó de cero: cambió solo lo que pediste y dejó lo que servía. Eso es conversar con la IA.",
+              "en": "Change received. The AI didn't start over: it changed only what you asked and kept what worked. That's how you talk with AI."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Papas con tomate y queso (1 porción, 25 minutos)\n1. Pela las dos papas, córtalas en cubos y cocínalas en la olla con agua y sal, 15 minutos.\n2. Escúrrelas.\n3. Agrega el tomate picado y revuelve 3 minutos.\n4. Pon el queso encima, tapa 2 minutos y sirve con el pan.",
+            "en": "Potatoes with tomato and cheese (1 serving, 25 minutes)\n1. Peel the two potatoes, dice them and boil them in salted water for 15 minutes.\n2. Drain them.\n3. Add the chopped tomato and stir for 3 minutes.\n4. Put the cheese on top, cover for 2 minutes and serve with the bread."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La receta sigue para uno y con tomate. La IA no se enteró del cambio. Agrega al final cuántos comen ahora y qué no le gusta a Salomé.",
+              "en": "The recipe is still for one, and still has tomato. The AI missed the change. Add at the end how many are eating now and what Salomé doesn't like."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tercer paso: revisar. En Órbita hay una regla: nada sale por la escotilla sin revisarlo. Y hay momentos de luz roja, cuando la pregunta es para una persona y no para la IA.",
+          "en": "Step three: check. Orbit has a rule: nothing leaves through the hatch without a check. And there are red-light moments, when the question is for a person, not for the AI."
+        }
+      },
+      "titulo": {
+        "es": "La regla de la escotilla",
+        "en": "The hatch rule"
+      },
+      "escena": {
+        "es": "El domingo Salomé cumple años y Don Eliseo quiere hacerle un postre. La mamá de Salomé le recordó que ella es alérgica al maní. Don Eliseo le pidió a la IA un postre sin maní, y la IA le respondió: \"Esta receta es 100 % segura para personas con alergias\". ¿Qué hace?",
+        "en": "On Sunday it's Salomé's birthday, and Don Eliseo wants to make her a dessert. Salomé's mom reminded him she's allergic to peanuts. He asked the AI for a peanut-free dessert, and it replied: \"This recipe is 100% safe for people with allergies.\" What does he do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Le cree a la IA y hace el postre tal cual",
+            "en": "Trusts the AI and makes the dessert as is"
+          },
+          "consecuencia": {
+            "es": "La IA no conoce a Salomé ni ha visto las etiquetas de lo que él compra. Algunos productos dicen \"puede contener maní\". Ese \"100 % segura\" no lo puede prometer.",
+            "en": "The AI doesn't know Salomé and hasn't seen the labels on what he buys. Some products say \"may contain peanuts.\" It can't promise that \"100% safe.\""
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Revisa las etiquetas y le pregunta a la mamá de Salomé",
+            "en": "Checks the labels and asks Salomé's mom"
+          },
+          "consecuencia": {
+            "es": "Eso es. La receta le sirve de idea, pero la alergia la manejan la familia y el médico de Salomé. Él revisa cada etiqueta y confirma con la mamá antes de cocinar.",
+            "en": "That's it. The recipe works as an idea, but the allergy is handled by Salomé's family and her doctor. He checks every label and confirms with her mom before cooking."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Le pregunta a la IA si Salomé puede comer chocolate",
+            "en": "Asks the AI whether Salomé can eat chocolate"
+          },
+          "consecuencia": {
+            "es": "La IA no sabe nada de Salomé: no la ha visto ni conoce su historia. Lo que ella puede comer lo saben su mamá y su médico.",
+            "en": "The AI knows nothing about Salomé: it has never seen her and doesn't know her history. What she can eat is something her mom and her doctor know."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Regla de la escotilla: antes de usar lo que te da la IA, lo revisas tú. Y luz roja: alergias y dietas médicas se confirman con el médico, no con una receta.",
+          "en": "The hatch rule: before you use what the AI gives you, you check it. And red light: allergies and medical diets get confirmed with a doctor, not with a recipe."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Nota para tu bitácora, la libreta de a bordo que lleva cada piloto. Escribe con tus palabras cómo se le pide algo a la IA, como se lo explicarías a Don Eliseo.",
+          "en": "Time for your logbook, the notebook every pilot keeps on board. Write in your own words how you ask AI for something, the way you'd explain it to Don Eliseo."
+        }
+      },
+      "concepto": "primer-pedido",
+      "definicion": {
+        "es": "Pedirle algo a la IA en tres pasos: pides contando lo que tienes, el tiempo y para quién; ajustas lo que no sirve sin empezar de cero, y revisas antes de usarlo.",
+        "en": "Asking AI for something in three steps: you ask, saying what you have, your time and who it's for; you adjust what doesn't work without starting over; and you check before using it."
+      },
+      "pregunta": {
+        "es": "Para pedirle algo a la IA…",
+        "en": "To ask AI for something…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "recetas",
+        "en": "recipes"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pedido para Don Eliseo ya viven en tu bitácora. Te los traigo en el repaso, justo cuando se te estén olvidando.",
+          "en": "Saved. Your note and your request for Don Eliseo now live in your logbook. I'll bring them back in your review, right when you're about to forget them."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas cortas y cerramos la primera llamada.",
+          "en": "Three quick questions and we wrap up the first call."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál pedido le sirve más a la IA?",
+            "en": "Which request helps the AI most?"
+          },
+          "opciones": [
+            {
+              "es": "Dame una receta rica y fácil, que quede sabrosa",
+              "en": "Give me an easy, tasty recipe that turns out great"
+            },
+            {
+              "es": "Tengo arroz y huevos, 15 minutos y un sartén; es para dos",
+              "en": "I have rice and eggs, 15 minutes and a frying pan; it's for two"
+            },
+            {
+              "es": "¿Qué cocino hoy? Tengo hambre y poco tiempo",
+              "en": "What should I cook today? I'm hungry and in a rush"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Lo que hay, el tiempo y para quién: con eso la IA deja de adivinar.",
+              "en": "Right. What you have, your time and who it's for: with that, the AI stops guessing."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: con ese pedido, ¿la IA sabe qué hay en tu nevera?",
+              "en": "Hmm. Ask yourself: with that request, does the AI know what's in your fridge?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La receta casi sirve, pero es para uno y ahora son dos. ¿Qué haces?",
+            "en": "The recipe almost works, but it's for one and now there are two of you. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Borro todo y escribo otro pedido",
+              "en": "Delete everything and write a new request"
+            },
+            {
+              "es": "Le pido que ajuste esa receta para dos",
+              "en": "Ask it to adjust that recipe for two"
+            },
+            {
+              "es": "Dejo la receta así y cocino a ojo",
+              "en": "Leave the recipe as is and just wing it"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Lo que ya sirve no se bota: se ajusta.",
+              "en": "Exactly. You don't throw out what already works: you adjust it."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en lo que ya servía de esa receta. ¿Vale la pena perderlo?",
+              "en": "Hmm. Think about what already worked in that recipe. Is it worth losing?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA dice que una receta es segura para alguien con alergia. ¿Qué haces?",
+            "en": "The AI says a recipe is safe for someone with an allergy. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Le creo, lo dijo muy segura",
+              "en": "Believe it, it sounded very sure"
+            },
+            {
+              "es": "Lo confirmo con la familia y el médico",
+              "en": "Confirm with the family and the doctor"
+            },
+            {
+              "es": "Le pido que me lo prometa",
+              "en": "Ask it to promise"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Luz roja: las alergias se confirman con una persona, no con la receta.",
+              "en": "Right. Red light: allergies get confirmed with a person, not with the recipe."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Ojo: ¿la IA conoce a esa persona? Piensa en quién sí la conoce.",
+              "en": "Careful: does the AI know that person? Think about who does."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora en tu cocina. Abre la IA de tu celular y pregúntale qué cocinar hoy, con lo que de verdad tienes.",
+          "en": "Now in your own kitchen. Open the AI on your phone and ask what to cook today, with what you really have."
+        }
+      },
+      "titulo": {
+        "es": "Tu cocina de hoy",
+        "en": "Your kitchen today"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Dile qué hay en tu nevera, cuánto tiempo tienes, con qué cocinas y para quién es. Después pídele un ajuste, sin empezar de cero. Antes de cocinar, revisa la receta tú.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Tell it what's in your fridge, how much time you have, what you cook with and who it's for. Then ask for one change, without starting over. Before you cook, check the recipe yourself."
+      },
+      "checks": [
+        {
+          "es": "Le dije lo que hay, el tiempo y para quién",
+          "en": "I said what I have, my time and who it's for"
+        },
+        {
+          "es": "Pedí al menos un ajuste sin empezar de cero",
+          "en": "I asked for at least one change without starting over"
+        },
+        {
+          "es": "Revisé la receta antes de cocinar",
+          "en": "I checked the recipe before cooking"
+        },
+        {
+          "es": "Si alguien tiene alergia, lo confirmé con una persona",
+          "en": "If someone has an allergy, I confirmed it with a person"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Tu primer pedido",
+        "en": "Your first request"
+      },
+      "resumen": {
+        "es": "Pides con lo que tienes, el tiempo y para quién; ajustas sin empezar de cero, y revisas antes de usarlo.",
+        "en": "You ask with what you have, your time and who it's for; you adjust without starting over; and you check before using it."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b06",
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Viste por qué la IA inventó una lasaña",
+          "en": "You saw why the AI invented a lasagna"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pediste una receta que Don Eliseo sí puede hacer",
+          "en": "You asked for a recipe Don Eliseo can actually make"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Ajustaste la receta sin empezar de cero",
+          "en": "You adjusted the recipe without starting over"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Aplicaste la regla de la escotilla con la alergia de Salomé",
+          "en": "You applied the hatch rule to Salomé's allergy"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Le preguntaste a tu IA qué cocinar hoy",
+          "en": "You asked your own AI what to cook today"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-ajustar-revisar",
+      "titulo": {
+        "es": "Pedir, ajustar y revisar",
+        "en": "Ask, adjust and check"
+      }
+    }
+  }
+}

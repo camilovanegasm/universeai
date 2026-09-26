@@ -1,0 +1,800 @@
+{
+  "formato": "punti-mision@1",
+  "id": "que-suene-a-ti",
+  "mundo": "herramientas-de-ia",
+  "capitulo": 1,
+  "numero": 2,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "estilo-propio"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "ejemplos",
+    "iterar",
+    "herramienta-por-tarea"
+  ],
+  "titulo": {
+    "es": "Que suene a ti",
+    "en": "Make It Sound Like You"
+  },
+  "resumen": {
+    "es": "Pedir un borrador con los datos exactos y darle tu estilo con una muestra tuya, sin que cambien las cifras.",
+    "en": "Asking for a draft with the exact details, then giving it your style with a sample of yours, without the numbers changing."
+  },
+  "siguiente": "resumir-con-proposito",
+  "fuentes": [],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegó un encargo a la fragua. Es Don Jorge, 58 años, contador independiente en Pereira. Un cliente de diez años se atrasó con una factura y él no sabe cómo cobrarle sin dañar la relación.",
+          "en": "Pilot, a job just came into the forge. It's Don Jorge, 58, a freelance accountant in Pereira. A client of ten years is late on an invoice, and he doesn't know how to ask for payment without hurting the relationship."
+        }
+      },
+      "titulo": {
+        "es": "Que suene a ti",
+        "en": "Make It Sound Like You"
+      },
+      "texto": {
+        "es": "Hoy forjas un correo de cobro con los datos exactos. Después le das el estilo de Don Jorge, para que no suene a robot ni a abogado. Unos 9 minutos.",
+        "en": "Today you forge a payment reminder with the exact details. Then you give it Don Jorge's style, so it doesn't sound like a robot or a lawyer. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primero, el metal en bruto. Pedir bien ya lo sabes: lo aprendiste en Eco. Pídele a la IA el correo de cobro con los datos de Don Jorge.",
+          "en": "First, the raw metal. You already know how to ask well: you learned it in Eco. Ask the AI for the payment reminder with Don Jorge's details."
+        }
+      },
+      "titulo": {
+        "es": "El correo de cobro",
+        "en": "The payment reminder"
+      },
+      "reto": {
+        "es": "Datos de Don Jorge (inventados): el cliente es la Distribuidora La Ceiba. La factura 0231, por $1.850.000, es de la contabilidad de julio y venció el 30 de agosto. Quiere cobrar sin perder al cliente. Pueden pagar por transferencia, a más tardar el 15 de octubre.",
+        "en": "Don Jorge's details (made up): the client is La Ceiba Distributors. Invoice 0231, for $1,850, covers July's bookkeeping and was due August 30. He wants to get paid without losing the client. They can pay by bank transfer, by October 15 at the latest."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "Pide un cobro o recordatorio de pago",
+            "en": "Asks for a payment reminder"
+          },
+          "rubrica": "El prompt pide un correo o mensaje para cobrar o recordar un pago pendiente. No cuenta 'escribe un correo al cliente' sin decir que es para cobrar, ni pegar los datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "cobr",
+              "recordatorio de pago",
+              "recordar el pago",
+              "recordarle el pago",
+              "recordarles el pago",
+              "pago pendiente",
+              "factura vencida",
+              "factura pendiente",
+              "que paguen",
+              "que pague"
+            ],
+            "en": [
+              "payment reminder",
+              "reminder to pay",
+              "remind them to pay",
+              "remind the client to pay",
+              "collect",
+              "overdue",
+              "past due",
+              "past-due",
+              "unpaid",
+              "outstanding",
+              "get paid"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Trae los datos de la factura",
+            "en": "Includes the invoice details"
+          },
+          "rubrica": "El prompt trae al menos dos datos del reto: el número de factura (0231), el valor (1.850.000 en español, 1,850 en inglés), la fecha de vencimiento (30 de agosto) o el mes (julio). No cuenta 'la factura' o 'lo que debe' sin cifras ni fechas.",
+          "claves": {
+            "es": [
+              "0231",
+              "1.850",
+              "1850",
+              "30 de agosto",
+              "julio"
+            ],
+            "en": [
+              "0231",
+              "1,850",
+              "1850",
+              "august 30",
+              "aug 30",
+              "july"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "Dice cómo debe sonar",
+            "en": "Says how it should sound"
+          },
+          "rubrica": "El prompt dice cómo debe sonar: cordial y firme, amable pero claro, respetuoso, sin perder al cliente. No cuenta 'profesional' o 'formal' solos: no dicen si debe ser cercano ni si debe ser firme.",
+          "claves": {
+            "es": [
+              "cordial",
+              "firme",
+              "amable",
+              "respetuos",
+              "cercan",
+              "sin perder al cliente",
+              "sin perder la relacion",
+              "sin danar",
+              "sin sonar",
+              "sin ser grosero",
+              "sin presionar"
+            ],
+            "en": [
+              "cordial",
+              " firm",
+              "friendly",
+              "polite",
+              "respectful",
+              "warm",
+              "without losing",
+              "without hurting",
+              "without sounding",
+              "not rude",
+              "not pushy"
+            ]
+          }
+        },
+        {
+          "id": "siguiente",
+          "texto": {
+            "es": "Dice qué hacer después",
+            "en": "Says what happens next"
+          },
+          "rubrica": "El prompt dice qué debe hacer el cliente: la forma de pago (transferencia) o la nueva fecha límite (15 de octubre). No cuenta 'que pague pronto' o 'lo antes posible' sin forma ni fecha.",
+          "claves": {
+            "es": [
+              "transferencia",
+              "15 de octubre",
+              "octubre",
+              "fecha limite",
+              "forma de pago",
+              "consignacion",
+              "a mas tardar"
+            ],
+            "en": [
+              "transfer",
+              "october 15",
+              "oct 15",
+              "october",
+              "deadline",
+              "payment method",
+              "at the latest"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un asistente de escritura que redacta correos para un contador independiente. Responde solo con el correo (asunto y cuerpo), en texto plano, sin explicaciones. Usa únicamente los datos del prompt; si falta un dato, deja un espacio entre corchetes, como [valor] o [fecha], en vez de inventarlo. No agregues intereses, multas ni amenazas que el prompt no pida. Si el prompt no dice cómo debe sonar, escribe formal y frío, como una carta de cobranza. Trata al lector de usted y nunca uses vos.",
+        "en": "You are a writing assistant who drafts emails for a freelance accountant. Reply with the email only (subject and body), in plain text, no explanations. Use only the details in the prompt; if a detail is missing, leave a blank in brackets, like [amount] or [date], instead of making it up. Don't add interest, fees or threats the prompt didn't ask for. If the prompt doesn't say how it should sound, write it formal and cold, like a collections letter."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Asunto: Recordatorio de pago, factura 0231\n\nBuenos días:\n\nLes escribo para recordarles que la factura 0231, por $1.850.000, de la contabilidad de julio, venció el 30 de agosto.\n\nEntiendo que a veces se cruzan las fechas. ¿Me ayudan a dejarla al día a más tardar el 15 de octubre? Pueden pagar por transferencia.\n\nGracias por la confianza de siempre.\n\nJorge",
+            "en": "Subject: Payment reminder, invoice 0231\n\nGood morning,\n\nI'm writing to remind you that invoice 0231, for $1,850, covering July's bookkeeping, was due on August 30.\n\nI know dates can slip. Could you settle it by October 15 at the latest? You can pay by bank transfer.\n\nThank you for your continued trust.\n\nJorge"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buen golpe de martillo. Cordial, firme y con todos los datos. Todavía suena a cualquiera, pero eso lo arreglamos en un momento.",
+              "en": "Good hammer blow. Cordial, firm and with every detail. It still sounds like anyone could have written it, but we'll fix that in a minute."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Asunto: Recordatorio\n\nEstimado cliente:\n\nPor medio de la presente nos permitimos recordarle que presenta un saldo pendiente por valor de [valor]. Agradecemos su pronta cancelación.\n\nAtentamente,",
+            "en": "Subject: Reminder\n\nDear client,\n\nPlease be advised that your account shows an outstanding balance of [amount]. We appreciate your prompt payment.\n\nSincerely,"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Salió una carta de cobranza que nadie quiere recibir. Mira la lista: faltan datos, tono o qué hacer después.",
+              "en": "Out came a collections letter nobody wants to get. Check the list: it's missing details, tone or what happens next."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le forjé a Don Jorge otro cobro y casi lo manda sin templar. Los datos eran: factura 0198, $920.000, vencida el 15 de agosto. Hay dos errores. Tócalos.",
+          "en": "Confession time. I forged another payment reminder for Don Jorge, and he almost sent it untempered. The real details: invoice 0198, $920, due August 15. There are two mistakes. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Templa el borrador",
+        "en": "Temper the draft"
+      },
+      "trozos": [
+        {
+          "es": "Buenos días. Les escribo por la factura 0198,",
+          "en": "Good morning. I'm writing about invoice 0198,"
+        },
+        {
+          "es": "por $290.000, que venció el 15 de agosto.",
+          "en": "for $290, which was due on August 15."
+        },
+        {
+          "es": "Como ya pasó el plazo, se cobrará un interés del 5 % mensual.",
+          "en": "Since it's past due, a 5% monthly interest charge will apply."
+        },
+        {
+          "es": "¿Me ayudan a dejarla al día esta semana?",
+          "en": "Could you settle it this week?"
+        },
+        {
+          "es": "Quedo atento. Gracias.",
+          "en": "Thank you, I look forward to hearing from you."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Cambié $920.000 por $290.000 y me inventé un interés que Don Jorge nunca cobra. Templar es eso: comparar cada cifra con el original y quitar lo que nadie pidió.",
+          "en": "You got me. I turned $920 into $290 and made up an interest charge Don Jorge never applies. That's tempering: checking every number against the original and cutting what nobody asked for."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte cuadra con los datos. Compara cifra por cifra, y busca algo que nadie pidió.",
+          "en": "That part matches the details. Compare number by number, and look for something nobody asked for."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora, el estilo. Don Jorge le pidió a la IA que el correo sonara humano, y mira lo que le salió. Abajo está el mismo pedido con una muestra de cómo escribe él.",
+          "en": "Now, the style. Don Jorge asked the AI to make the email sound human, and look what he got. Below is the same request with a sample of how he actually writes."
+        }
+      },
+      "titulo": {
+        "es": "Humano no es lo mismo que tú",
+        "en": "Human isn't the same as you"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Reescribe el correo de cobro para que suene más humano.",
+          "en": "Rewrite the payment reminder so it sounds more human."
+        },
+        "salida": {
+          "es": "¡Hola! Espero que este correo te encuentre de maravilla. Solo quería recordarte, con muchísimo cariño, que tenemos una facturita pendiente. ¡Mil gracias por todo, eres lo máximo!",
+          "en": "Hi there! I hope this email finds you wonderfully well. Just a teeny reminder, with lots of love, that we have a little invoice pending. A million thanks, you're the best!"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "muestra",
+            "texto": {
+              "es": "Así les escribo a mis clientes: \"Buenas, ¿cómo va todo? Le cuento cortico: ya quedó lista la declaración. Cualquier cosa me timbra. Un abrazo, Jorge.\" ",
+              "en": "This is how I write to clients: \"Hi, how's everything going? Quick one: your tax return is ready. Anything you need, just call. Best, Jorge.\" "
+            }
+          },
+          {
+            "pieza": "rasgos",
+            "texto": {
+              "es": "Copia mi saludo, mis frases cortas y mi despedida. ",
+              "en": "Copy my greeting, my short sentences and my sign-off. "
+            }
+          },
+          {
+            "pieza": "datos",
+            "texto": {
+              "es": "No cambies la factura, el valor ni las fechas.",
+              "en": "Don't change the invoice, the amount or the dates."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Buenas, ¿cómo va todo?\nLes cuento cortico: la factura 0231, por $1.850.000, venció el 30 de agosto.\n¿Me ayudan a dejarla al día antes del 15 de octubre? Puede ser por transferencia.\nCualquier cosa me timbran. Un abrazo,\nJorge",
+          "en": "Hi, how's everything going?\nQuick one: invoice 0231, for $1,850, was due on August 30.\nCould you settle it by October 15? A bank transfer works.\nAnything you need, just call. Best,\nJorge"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? \"Que suene humano\" no le dice nada a la IA. Una muestra sí: tu saludo, tu largo de frase, tu despedida. Y los datos quedaron quietos.",
+          "en": "See the colors? \"Sound human\" tells the AI nothing. A sample does: your greeting, your sentence length, your sign-off. And the details stayed put."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Para que un borrador suene a ti hacen falta tres piezas. Toca cada una.",
+          "en": "To make a draft sound like you, you need three pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 3 piezas del estilo",
+        "en": "The 3 pieces of style"
+      },
+      "piezas": [
+        {
+          "id": "muestra",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Una muestra tuya",
+            "en": "A sample of yours"
+          },
+          "descripcion": {
+            "es": "Un texto corto que tú escribiste, sin datos privados.",
+            "en": "A short text you wrote, with no private data."
+          },
+          "ejemplo": {
+            "es": "Un correo viejo o un mensaje de WhatsApp tuyo. Tres o cuatro líneas bastan.",
+            "en": "An old email or a WhatsApp message of yours. Three or four lines is enough."
+          }
+        },
+        {
+          "id": "rasgos",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué copiar",
+            "en": "What to copy"
+          },
+          "descripcion": {
+            "es": "El saludo, el largo de las frases, la despedida.",
+            "en": "The greeting, sentence length, the sign-off."
+          },
+          "ejemplo": {
+            "es": "\"Copia mi saludo y mis frases cortas\" le dice a la IA qué mirar en la muestra.",
+            "en": "\"Copy my greeting and my short sentences\" tells the AI what to look for in the sample."
+          }
+        },
+        {
+          "id": "datos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Qué no se toca",
+            "en": "What stays put"
+          },
+          "descripcion": {
+            "es": "Cifras, fechas y nombres quedan iguales.",
+            "en": "Numbers, dates and names stay the same."
+          },
+          "ejemplo": {
+            "es": "Cuando la IA cambia el estilo, a veces también cambia un número. Dile que no.",
+            "en": "When AI changes the style, it sometimes changes a number too. Tell it not to."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Último golpe. Tu prompt del cobro ya está aquí. No lo borres: agrégale la muestra de Don Jorge y dile a la IA qué copiar y qué no tocar.",
+          "en": "Last strike. Your payment reminder prompt is already here. Don't delete it: add Don Jorge's sample and tell the AI what to copy and what to leave alone."
+        }
+      },
+      "titulo": {
+        "es": "El cobro con su voz",
+        "en": "The reminder in his voice"
+      },
+      "reto": {
+        "es": "Muestra de Don Jorge (inventada): \"Buenas, ¿cómo va todo? Le cuento cortico: ya quedó lista la declaración. Cualquier cosa me timbra. Un abrazo, Jorge.\" Agrégala a tu prompt y pide que el cobro suene así, sin cambiar los datos.",
+        "en": "Don Jorge's sample (made up): \"Hi, how's everything going? Quick one: your tax return is ready. Anything you need, just call. Best, Jorge.\" Add it to your prompt and ask for the reminder to sound like that, without changing the details."
+      },
+      "inicial": "anterior",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "muestra",
+          "texto": {
+            "es": "Incluye la muestra",
+            "en": "Includes the sample"
+          },
+          "rubrica": "El prompt incluye la muestra de Don Jorge, completa o una parte reconocible ('le cuento cortico', 'me timbra', 'un abrazo'). No cuenta 'con mi estilo' o 'como escribo yo' sin dar la muestra.",
+          "claves": {
+            "es": [
+              "cortico",
+              "me timbra",
+              "un abrazo",
+              "como va todo",
+              "la declaracion"
+            ],
+            "en": [
+              "quick one",
+              "just call",
+              "best, jorge",
+              "how's everything",
+              "hows everything",
+              "tax return"
+            ]
+          }
+        },
+        {
+          "id": "rasgos",
+          "texto": {
+            "es": "Dice qué rasgos copiar",
+            "en": "Names what to copy"
+          },
+          "rubrica": "El prompt pide imitar rasgos concretos de la muestra: el saludo, el largo de las frases, la despedida o las palabras que usa. No cuenta 'que suene humano', 'natural' o 'con mi estilo' sin decir qué rasgos.",
+          "claves": {
+            "es": [
+              "saludo",
+              "despedida",
+              "frases cortas",
+              "oraciones cortas",
+              "largo de las frases",
+              "palabras que uso",
+              "como saludo",
+              "como me despido",
+              "mismas palabras",
+              "expresiones"
+            ],
+            "en": [
+              "greeting",
+              "sign-off",
+              "sign off",
+              "short sentences",
+              "sentence length",
+              "the words i use",
+              "how i greet",
+              "how i sign",
+              "same words",
+              "expressions",
+              "phrases i use"
+            ]
+          }
+        },
+        {
+          "id": "fijos",
+          "texto": {
+            "es": "Pide no cambiar los datos",
+            "en": "Keeps the details fixed"
+          },
+          "rubrica": "El prompt pide mantener los datos: no cambiar el valor, la factura ni las fechas. No cuenta si solo repite los datos sin pedir que se conserven.",
+          "claves": {
+            "es": [
+              "no cambies",
+              "sin cambiar",
+              "no cambiar",
+              "manten los datos",
+              "manten las cifras",
+              "manten el valor",
+              "manten las fechas",
+              "manten la factura",
+              "conserva los",
+              "conserva las",
+              "conserva el valor",
+              "deja igual",
+              "deja los mismos",
+              "mismos datos",
+              "no toques",
+              "datos iguales",
+              "cifras iguales"
+            ],
+            "en": [
+              "don't change",
+              "do not change",
+              "without changing",
+              "keep the numbers",
+              "keep the details",
+              "keep the dates",
+              "keep the amount",
+              "keep all the",
+              "same numbers",
+              "same details",
+              "leave the numbers",
+              "leave the details",
+              "don't touch",
+              "unchanged"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un asistente de escritura que redacta correos para un contador independiente. Responde solo con el correo en texto plano, sin explicaciones. Si el prompt trae una muestra de cómo escribe la persona y dice qué copiar, imita de la muestra el saludo, el largo de las frases y la despedida. Si solo pide 'que suene humano' o 'natural', escribe un correo efusivo, lleno de frases hechas y signos de exclamación. Usa solo los datos del prompt: si pide conservarlos, cópialos exactos; si no lo pide, puedes resumirlos como 'el saldo pendiente'. No agregues intereses ni multas. Nunca uses vos.",
+        "en": "You are a writing assistant who drafts emails for a freelance accountant. Reply with the email only, in plain text, no explanations. If the prompt includes a sample of how the person writes and says what to copy, imitate the sample's greeting, sentence length and sign-off. If it only asks to 'sound human' or 'natural', write a gushing email full of clichés and exclamation marks. Use only the details in the prompt: if it asks to keep them, copy them exactly; if it doesn't, you may sum them up as 'the outstanding balance'. Don't add interest or fees."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Buenas, ¿cómo va todo?\nLes cuento cortico: la factura 0231, por $1.850.000, venció el 30 de agosto.\n¿Me ayudan a dejarla al día antes del 15 de octubre? Puede ser por transferencia.\nCualquier cosa me timbran. Un abrazo,\nJorge",
+            "en": "Hi, how's everything going?\nQuick one: invoice 0231, for $1,850, was due on August 30.\nCould you settle it by October 15? A bank transfer works.\nAnything you need, just call. Best,\nJorge"
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Así se forja. Suena a Don Jorge y los datos quedaron quietos. Ahora sí: a templar y a enviar.",
+              "en": "That's how you forge it. It sounds like Don Jorge and the details stayed put. Now: temper it and send it."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Hola! Espero que estés súper bien. Te escribo con mucho cariño para recordarte el saldo pendiente. ¡Gracias, eres lo máximo!",
+            "en": "Hi! Hope you're doing amazing. Just writing with lots of love to remind you about the outstanding balance. Thanks, you're the best!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Salió humano, pero no suena a Don Jorge, y se perdieron los datos. Revisa la lista: la muestra, qué copiar y qué no tocar.",
+              "en": "It came out human, but it doesn't sound like Don Jorge, and the details got lost. Check the list: the sample, what to copy and what to leave alone."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cómo logras que un borrador suene a ti, como se lo explicarías a Don Jorge.",
+          "en": "Logbook time. Write in your own words how you get a draft to sound like you, the way you'd explain it to Don Jorge."
+        }
+      },
+      "concepto": "estilo-propio",
+      "definicion": {
+        "es": "Lograr que la IA escriba como tú: le pegas una muestra corta tuya, le dices qué copiar (saludo, largo de frases, despedida) y qué no tocar (cifras y fechas).",
+        "en": "Getting AI to write like you: you paste in a short sample of yours, say what to copy (greeting, sentence length, sign-off) and what to leave alone (numbers and dates)."
+      },
+      "pregunta": {
+        "es": "Para que un borrador suene a mí…",
+        "en": "To make a draft sound like me…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "cobros",
+        "en": "payment reminders"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu prompt del cobro ya están en tu bitácora. Te los traigo en el repaso, justo antes de que se te olviden.",
+          "en": "Saved. Your note and your payment reminder prompt are in your logbook. I'll bring them back in your review, right before you'd forget them."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas rápidas y apagamos el fuego.",
+          "en": "Two quick questions and we bank the fire."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué pedido hace que el borrador suene a ti?",
+            "en": "Which request makes the draft sound like you?"
+          },
+          "opciones": [
+            {
+              "es": "Que suene humano y natural",
+              "en": "Make it sound human and natural"
+            },
+            {
+              "es": "Esta es una muestra mía: copia el saludo y las frases cortas",
+              "en": "Here's a sample of mine: copy the greeting and the short sentences"
+            },
+            {
+              "es": "Que suene profesional pero cercano",
+              "en": "Make it sound professional but friendly"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Una muestra y qué copiar de ella. Lo demás es adivinar.",
+              "en": "Right. A sample and what to copy from it. Anything else is guesswork."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Cuál de esos pedidos le muestra a la IA cómo escribes tú de verdad?",
+              "en": "Hmm. Which of those requests shows the AI how you actually write?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "El borrador ya suena a Don Jorge. ¿Qué falta antes de enviarlo?",
+            "en": "The draft sounds just like Don Jorge. What's left before sending it?"
+          },
+          "opciones": [
+            {
+              "es": "Nada, ya suena a él",
+              "en": "Nothing, it sounds like him"
+            },
+            {
+              "es": "Templarlo: comparar valor, factura y fechas con el original",
+              "en": "Temper it: check amount, invoice and dates against the original"
+            },
+            {
+              "es": "Pedirle a la IA otra versión",
+              "en": "Ask the AI for another version"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Cuando la IA cambia el estilo, a veces también cambia un número.",
+              "en": "Exactly. When AI changes the style, it sometimes changes a number too."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Acuérdate de mis $290.000. ¿Qué se revisa siempre?",
+              "en": "Remember my $290? What always gets checked?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora con tu propia voz. Lleva esto a una IA real, con un correo que tengas que escribir esta semana.",
+          "en": "Now with your own voice. Take this to a real AI, with an email you have to write this week."
+        }
+      },
+      "titulo": {
+        "es": "Tu voz en tu IA",
+        "en": "Your voice in your AI"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra. Pega un mensaje corto que hayas escrito tú, sin datos privados. Pide el borrador de un correo real, di qué copiar de tu muestra y qué datos no tocar. Después témplalo.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another. Paste in a short message you wrote, with no private data. Ask for a draft of a real email, say what to copy from your sample and which details to leave alone. Then temper it."
+      },
+      "checks": [
+        {
+          "es": "Pegué una muestra mía, sin datos privados",
+          "en": "I pasted a sample of mine, with no private data"
+        },
+        {
+          "es": "Dije qué copiar: saludo, frases o despedida",
+          "en": "I said what to copy: greeting, sentences or sign-off"
+        },
+        {
+          "es": "Pedí no cambiar cifras ni fechas",
+          "en": "I asked it not to change numbers or dates"
+        },
+        {
+          "es": "Templé: comparé cada dato con el original",
+          "en": "I tempered it: I checked every detail against the original"
+        },
+        {
+          "es": "Me pregunté: ¿esto lo diría yo?",
+          "en": "I asked myself: would I actually say this?"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Tu estilo propio",
+        "en": "Your own style"
+      },
+      "resumen": {
+        "es": "La IA escribe como tú si le das una muestra tuya, le dices qué copiar y qué datos no tocar.",
+        "en": "AI writes like you when you give it a sample of yours, say what to copy and which details to leave alone."
+      }
+    },
+    "piezas": "b05",
+    "mejorPrompt": [
+      "b06",
+      "b02"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Forjaste el cobro con datos, tono y siguiente paso",
+          "en": "You forged the reminder with details, tone and next step"
+        }
+      },
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Templaste el borrador y atrapaste dos errores",
+          "en": "You tempered the draft and caught two mistakes"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Viste la diferencia entre sonar humano y sonar a ti",
+          "en": "You saw the difference between sounding human and sounding like you"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Le diste al cobro la voz de Don Jorge",
+          "en": "You gave the reminder Don Jorge's voice"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "escribir-con-tu-estilo",
+      "titulo": {
+        "es": "Escribir con tu estilo",
+        "en": "Writing in your own style"
+      }
+    }
+  }
+}

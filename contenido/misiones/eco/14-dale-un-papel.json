@@ -1,0 +1,1017 @@
+{
+  "formato": "punti-mision@1",
+  "id": "dale-un-papel",
+  "mundo": "prompts",
+  "capitulo": 3,
+  "numero": 14,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "rol"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "contexto",
+    "verificar"
+  ],
+  "titulo": {
+    "es": "Dale un papel",
+    "en": "Give It a Role"
+  },
+  "resumen": {
+    "es": "Darle a la IA un papel para cambiar cómo habla y en qué se fija, sabiendo que el papel no la vuelve experta.",
+    "en": "Give the AI a role to change how it talks and what it notices, knowing a role doesn't make it an expert."
+  },
+  "siguiente": "mision-larga",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, señal nueva. Es Óscar, que arregla celulares en un local del centro. Leyó que a la IA hay que decirle \"actúa como experto\" y escribió: \"Actúa como el mejor técnico del mundo y dime qué tiene este celular\". No le fue bien.",
+          "en": "Pilot, new signal. It's Óscar, who fixes phones downtown. He read you should tell AI to \"act as an expert,\" so he wrote: \"Act as the best technician in the world and tell me what's wrong with this phone.\" It didn't go well."
+        }
+      },
+      "titulo": {
+        "es": "Dale un papel",
+        "en": "Give It a Role"
+      },
+      "texto": {
+        "es": "Hoy aprendes a darle un papel a la IA: qué cambia cuando lo haces y qué no cambia. Unos 10 minutos.",
+        "en": "Today you'll learn to give AI a role: what changes when you do, and what doesn't. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué hace un papel. Y qué no hace.",
+          "en": "First, what a role does. And what it doesn't."
+        }
+      },
+      "titulo": {
+        "es": "Lo que cambia un papel",
+        "en": "What a role changes"
+      },
+      "texto": {
+        "es": "Darle un papel es decirle desde dónde hablar: \"actúa como un vendedor paciente\" o \"haz de cuenta que eres mi cliente\". Eso cambia las palabras que usa y en qué se fija. Lo que no cambia es lo que sabe. Si le dices \"eres ingeniero\", no se vuelve ingeniera: habla como una, igual de segura, acierte o no.",
+        "en": "Giving it a role means telling it where to speak from: \"act as a patient salesperson\" or \"pretend you're my customer.\" That changes its words and what it pays attention to. It doesn't change what it knows. Tell it \"you're an engineer\" and it doesn't become one: it talks like one, just as sure of itself, right or wrong."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Sí cambia",
+            "en": "Changes"
+          },
+          "b": {
+            "es": "No cambia",
+            "en": "Doesn't change"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Las palabras que usa",
+              "en": "The words it uses"
+            },
+            "b": {
+              "es": "Lo que sabe",
+              "en": "What it knows"
+            }
+          },
+          {
+            "a": {
+              "es": "En qué se fija",
+              "en": "What it pays attention to"
+            },
+            "b": {
+              "es": "Si acierta o no",
+              "en": "Whether it's right"
+            }
+          },
+          {
+            "a": {
+              "es": "Cómo suena",
+              "en": "How it sounds"
+            },
+            "b": {
+              "es": "Los datos que solo tú tienes",
+              "en": "The facts only you have"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Hay tres papeles que te van a servir mucho, y una pieza que no puedes olvidar. Toca cada una.",
+          "en": "There are three roles you'll use a lot, and one piece you can't forget. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Tres papeles y un cuidado",
+        "en": "Three roles and a warning"
+      },
+      "piezas": [
+        {
+          "id": "oficio",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Un oficio",
+            "en": "A job"
+          },
+          "descripcion": {
+            "es": "Actúa como alguien que hace bien ese trabajo.",
+            "en": "Act as someone who does that job well."
+          },
+          "ejemplo": {
+            "es": "\"Actúa como un asesor paciente que explica sin palabras técnicas.\" Di cómo trabaja, no solo el cargo.",
+            "en": "\"Act as a patient advisor who explains without tech words.\" Say how they work, not just the job title."
+          }
+        },
+        {
+          "id": "publico",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Tu público",
+            "en": "Your audience"
+          },
+          "descripcion": {
+            "es": "Haz de cuenta que eres quien va a leer esto.",
+            "en": "Pretend you're the person who'll read this."
+          },
+          "ejemplo": {
+            "es": "\"Haz de cuenta que eres una señora de 70 años: ¿qué no entiendes de este texto?\" Pruebas el texto antes de que llegue al cliente.",
+            "en": "\"Pretend you're a 70-year-old lady: what don't you understand in this text?\" You test it before it reaches a customer."
+          }
+        },
+        {
+          "id": "critico",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Un crítico",
+            "en": "A critic"
+          },
+          "descripcion": {
+            "es": "Busca los puntos débiles antes que el cliente.",
+            "en": "Find the weak spots before the customer does."
+          },
+          "ejemplo": {
+            "es": "\"Actúa como un revisor estricto y dime tres cosas que fallan en mi lista de precios.\" La IA no escribe: busca huecos.",
+            "en": "\"Act as a strict reviewer and tell me three things wrong with my price list.\" The AI doesn't write: it hunts for gaps."
+          }
+        },
+        {
+          "id": "cuidado",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "Lo que no cambia",
+            "en": "What doesn't change"
+          },
+          "descripcion": {
+            "es": "El papel no le da conocimientos: igual verificas.",
+            "en": "A role adds no new knowledge: you still check."
+          },
+          "ejemplo": {
+            "es": "\"Eres ingeniero\" no la vuelve ingeniera. Precios, diagnósticos y datos se revisan igual que siempre.",
+            "en": "\"You're an engineer\" doesn't make it one. Prices, diagnoses and facts get checked like always."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estos son pedidos con papel. ¿Qué papel le da cada uno a la IA?",
+          "en": "Your turn. These requests all give the AI a role. Which role does each one give it?"
+        }
+      },
+      "titulo": {
+        "es": "¿Qué papel es?",
+        "en": "Which role is it?"
+      },
+      "grupos": [
+        "oficio",
+        "publico",
+        "critico"
+      ],
+      "items": [
+        {
+          "grupo": "oficio",
+          "texto": {
+            "es": "Actúa como un vendedor amable y escribe la bienvenida para mi local.",
+            "en": "Act as a friendly salesperson and write the welcome sign for my shop."
+          }
+        },
+        {
+          "grupo": "publico",
+          "texto": {
+            "es": "Haz de cuenta que eres un abuelo que usa el celular solo para llamar. ¿Qué no entiendes de esta guía?",
+            "en": "Pretend you're a grandpa who only uses his phone for calls. What don't you get in this guide?"
+          }
+        },
+        {
+          "grupo": "critico",
+          "texto": {
+            "es": "Actúa como un revisor estricto: encuentra los errores de mi cotización antes de enviarla.",
+            "en": "Act as a strict reviewer: find the mistakes in my quote before I send it."
+          }
+        },
+        {
+          "grupo": "oficio",
+          "texto": {
+            "es": "Eres profesora de primaria: explícame qué es la memoria del celular con palabras fáciles.",
+            "en": "You're a grade-school teacher: explain phone storage to me in simple words."
+          }
+        },
+        {
+          "grupo": "publico",
+          "texto": {
+            "es": "Ponte en los zapatos de un estudiante que va a comprar su primer celular: ¿qué preguntarías?",
+            "en": "Put yourself in the shoes of a student buying a first phone: what would you ask?"
+          }
+        },
+        {
+          "grupo": "critico",
+          "texto": {
+            "es": "Actúa como un crítico exigente y dime tres puntos débiles de mi anuncio.",
+            "en": "Act as a tough critic and give me three weak spots in my ad."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. El oficio hace el trabajo, tu público lo lee y el crítico le busca los huecos.",
+          "en": "Six for six. The job role does the work, your audience reads it, and the critic hunts for the gaps."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, no. Pregúntate: ¿la IA va a hacer el trabajo, lo va a leer como cliente o le va a buscar fallas?",
+          "en": "Hmm, not quite. Ask yourself: is the AI doing the work, reading it as a customer, or hunting for flaws?"
+        }
+      },
+      "malPorGrupo": {
+        "oficio": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ahí la IA hace el trabajo desde un oficio. No lo lee ni lo critica.",
+            "en": "Close. There the AI does the work from a job role. It isn't reading it or critiquing it."
+          }
+        },
+        "publico": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ahí la IA se pone en los zapatos de quien va a leer. ¿Quién es esa persona?",
+            "en": "Close. There the AI steps into the reader's shoes. Who is that person?"
+          }
+        },
+        "critico": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ahí la IA no escribe nada: busca lo que está mal.",
+            "en": "Close. There the AI doesn't write anything: it looks for what's wrong."
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Transmites tú. Una clienta de Óscar está brava por WhatsApp. Escribe el prompt para la respuesta y dale a la IA un papel que ayude.",
+          "en": "You're transmitting. One of Óscar's customers is upset on WhatsApp. Write the prompt for the reply, and give the AI a role that helps."
+        }
+      },
+      "titulo": {
+        "es": "La clienta brava",
+        "en": "The upset customer"
+      },
+      "reto": {
+        "es": "Doña Amparo escribió: \"Me cambiaron el pin de carga y ahora la batería no me dura nada.\" La semana pasada Óscar le cambió el pin de carga por $60.000. La reparación tiene 30 días de garantía y él quiere revisarle el celular gratis esta semana. La respuesta va por WhatsApp.",
+        "en": "Doña Amparo wrote: \"You replaced my charging port and now my battery dies in no time.\" Last week Óscar replaced her charging port for $60. The repair has a 30-day warranty, and he wants to check her phone for free this week. The reply goes out on WhatsApp."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "oficio",
+          "texto": {
+            "es": "Le da un papel con un oficio",
+            "en": "Gives it a role with a job"
+          },
+          "rubrica": "El prompt le da a la IA el papel de alguien que sabe tratar clientes o explicar ('actúa como un asesor de servicio al cliente paciente', 'eres un técnico que explica fácil', 'haz de cuenta que eres un vendedor amable'). No cuenta un papel vacío como 'actúa como experto' o 'el mejor técnico del mundo' sin decir cómo trabaja, ni pedirle a la IA que sea Doña Amparo.",
+          "claves": {
+            "es": [
+              "asesor",
+              "servicio al cliente",
+              "atencion al cliente",
+              "tecnico paciente",
+              "tecnico amable",
+              "tecnico que explica",
+              "tecnica que explica",
+              "vendedor amable",
+              "vendedora amable",
+              "vendedor paciente",
+              "vendedora paciente",
+              "persona paciente",
+              "que explica facil",
+              "que explica sin",
+              "que sabe tratar",
+              "que trata bien"
+            ],
+            "en": [
+              "advisor",
+              "adviser",
+              "customer service",
+              "customer care",
+              "support agent",
+              "patient technician",
+              "friendly technician",
+              "technician who explains",
+              "tech who explains",
+              "friendly salesperson",
+              "patient salesperson",
+              "patient person",
+              "who explains things",
+              "who explains simply",
+              "who's good with customers",
+              "who is good with customers",
+              "who treats customers"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Da los datos: el arreglo y la garantía",
+            "en": "Gives the facts: repair and warranty"
+          },
+          "rubrica": "El prompt da al menos un dato concreto del caso: que se cambió el pin de carga, los $60.000 ($60 en inglés), la garantía de 30 días o la revisión gratis esta semana. No cuenta 'explícale lo que pasó' u 'ofrécele algo' sin decir qué.",
+          "claves": {
+            "es": [
+              "pin de carga",
+              "60.000",
+              "60000",
+              "60 mil",
+              "garantia",
+              "30 dias",
+              "treinta dias",
+              "gratis",
+              "sin costo",
+              "sin cobrar"
+            ],
+            "en": [
+              "charging port",
+              "$60",
+              "60 dollars",
+              "warranty",
+              "30 days",
+              "30-day",
+              "thirty days",
+              "for free",
+              "free of charge",
+              "free check",
+              "no charge"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "Dice dónde va o qué tan larga",
+            "en": "Says where it goes or how long"
+          },
+          "rubrica": "El prompt dice que la respuesta va por WhatsApp o qué tan larga debe ser (número de líneas, corta, breve). No cuenta 'respuesta' o 'mensaje' solos, sin decir dónde va ni el largo.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "wpp",
+              "lineas",
+              "renglones",
+              "corta",
+              "corto",
+              "breve",
+              "parrafo"
+            ],
+            "en": [
+              "whatsapp",
+              "lines",
+              "short",
+              "brief",
+              "paragraph"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un técnico de celulares a responderles a sus clientes. Responde solo con el mensaje para la clienta, sin explicaciones. Si el prompt te da un papel, habla desde ese papel: si es un asesor paciente o un técnico que explica fácil, usa palabras sencillas y un tono calmado; si es solo 'experto' o 'el mejor técnico del mundo', usa términos técnicos y un tono seguro y frío. Si no te da ningún papel, responde neutro y formal. Usa únicamente los datos del prompt: no inventes diagnósticos, precios ni promesas; si falta un dato, déjalo entre corchetes, como [garantía].",
+        "en": "You are an AI helping a phone repair technician reply to his customers. Reply with the message to the customer only, no explanations. If the prompt gives you a role, speak from that role: if it's a patient advisor or a technician who explains simply, use plain words and a calm tone; if it's just 'expert' or 'the best technician in the world,' use technical terms and a confident, cold tone. If it gives you no role, reply in a neutral, formal way. Use only the details in the prompt: don't make up diagnoses, prices or promises; if a detail is missing, leave it in square brackets, like [warranty]."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, Doña Amparo. Qué pena que la batería le esté fallando.\nEl pin de carga que le cambiamos tiene 30 días de garantía.\nTráigame el celular esta semana y se lo reviso gratis.\nÓscar",
+            "en": "Hi, Doña Amparo. I'm sorry your battery is giving you trouble.\nThe charging port we replaced has a 30-day warranty.\nBring me the phone this week and I'll check it for free.\nÓscar"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. El papel cambió el tono: la respuesta calma a la clienta. Y los datos no los puso el papel, los pusiste tú. Así trabaja un buen papel.",
+              "en": "Good signal. The role changed the tone: the reply calms the customer down. And the facts didn't come from the role, they came from you. That's a role doing its job."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimada usuaria: el reemplazo del conector de carga no afecta el rendimiento de la celda de ion de litio. El consumo acelerado probablemente se debe a procesos en segundo plano o a la degradación natural de la batería. Se recomienda un diagnóstico.",
+            "en": "Dear user: replacing the charging connector does not affect lithium-ion cell performance. The accelerated drain is most likely due to background processes or natural battery degradation. A diagnostic is recommended."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: técnica, fría, y encima adivina la falla. Mira la lista: dale un papel que sepa tratar clientes y ponle los datos del caso.",
+              "en": "Weak signal: technical, cold, and it's guessing the problem too. Check the list: give it a role that knows how to treat customers, and add the facts."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora, lo que un papel no hace. Mira lo que le pasó a Óscar ayer y ayúdale a decidir.",
+          "en": "Now, what a role doesn't do. See what happened to Óscar yesterday and help him decide."
+        }
+      },
+      "titulo": {
+        "es": "El ingeniero que no era",
+        "en": "The engineer that wasn't"
+      },
+      "escena": {
+        "es": "Llegó un celular que se apaga solo cuando la batería marca 30 %. Óscar escribió: \"Actúa como ingeniero de la marca y dime qué tiene\". La IA respondió muy segura: \"Es la placa. Hay que cambiarla; cuesta unos $400.000\". El cliente está esperando. ¿Qué hace Óscar?",
+        "en": "A phone came in that shuts off by itself when the battery shows 30%. Óscar wrote: \"Act as an engineer from the phone brand and tell me what's wrong.\" The AI answered with total confidence: \"It's the logic board. It needs replacing; that's about $400.\" The customer is waiting. What does Óscar do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Le cobra la placa: lo dijo un ingeniero",
+            "en": "Charge for the board: an engineer said so"
+          },
+          "consecuencia": {
+            "es": "La IA no es ingeniera: solo habló como una. Óscar cambió la placa y el celular se siguió apagando. Era la batería, un arreglo mucho más barato.",
+            "en": "The AI isn't an engineer: it just talked like one. Óscar replaced the board and the phone kept shutting off. It was the battery, a much cheaper fix."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Le pregunta lo mismo al \"mejor ingeniero del mundo\"",
+            "en": "Ask \"the world's best engineer\" the same thing"
+          },
+          "consecuencia": {
+            "es": "Llega otra respuesta igual de segura, esta vez con otra falla. Un papel más grande no le da más saber a la IA. Solo cambia cómo suena.",
+            "en": "Another answer comes back, just as confident, this time naming a different problem. A bigger title doesn't give the AI more knowledge. It only changes how it sounds."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Toma la respuesta como pista y prueba él mismo la batería",
+            "en": "Treat it as a lead and test the battery himself"
+          },
+          "consecuencia": {
+            "es": "Óscar probó primero la batería, porque es lo más barato de descartar. Estaba gastada. La cambió, el celular quedó bien y el cliente pagó mucho menos.",
+            "en": "Óscar tested the battery first, since it's the cheapest thing to rule out. It was worn out. He replaced it, the phone worked, and the customer paid far less."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Un papel cambia cómo habla la IA, no lo que sabe. Si te da un diagnóstico, un precio o un dato, lo verificas igual que siempre, como aprendiste en el capítulo 2.",
+          "en": "A role changes how the AI talks, not what it knows. If it gives you a diagnosis, a price or a fact, you check it like always, just as you learned in Chapter 2."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Óscar escribió un texto para pegar en el mostrador. Él lo entiende, pero ¿sus clientes? Pídele a la IA que haga de clienta y lo lea. Yo le paso el texto.",
+          "en": "Óscar wrote a note to stick on his counter. He gets it, but will his customers? Ask the AI to play a customer and read it. I'll hand it the text."
+        }
+      },
+      "titulo": {
+        "es": "El texto del mostrador",
+        "en": "The counter sign"
+      },
+      "reto": {
+        "es": "El texto de Óscar: \"Cuide su batería: evite ciclos de descarga profunda, no use cargadores genéricos sin certificación y calibre el sistema cada mes.\" Casi todos sus clientes son adultos mayores del barrio. Pídele a la IA que lo lea como uno de ellos y que te diga qué no entiende. Todavía no le pidas que lo reescriba.",
+        "en": "Óscar's text: \"Protect your battery: avoid deep discharge cycles, don't use uncertified generic chargers, and calibrate the system monthly.\" Most of his customers are older folks from the neighborhood. Ask the AI to read it as one of them and tell you what it doesn't understand. Don't ask for a rewrite yet."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "publico",
+          "texto": {
+            "es": "Le pide hacer de lector",
+            "en": "Asks it to play the reader"
+          },
+          "rubrica": "El prompt le pide a la IA que se ponga en el lugar de quien va a leer el texto: un cliente, un señor o una señora mayor ('haz de cuenta que eres', 'ponte en los zapatos de', 'actúa como un cliente'). No cuenta darle un papel de experto o de técnico, ni solo decir para quién es el texto sin pedirle que lo lea como esa persona.",
+          "claves": {
+            "es": [
+              "eres un cliente",
+              "eres una clienta",
+              "eres un senor",
+              "eres una senora",
+              "eres un abuelo",
+              "eres una abuela",
+              "eres un adulto",
+              "eres una persona mayor",
+              "eres un jubilado",
+              "eres una jubilada",
+              "eres uno de",
+              "eres una de",
+              "fueras un cliente",
+              "fueras una clienta",
+              "fueras un senor",
+              "fueras una senora",
+              "fueras un abuelo",
+              "fueras una abuela",
+              "fueras un adulto",
+              "fueras una persona mayor",
+              "fueras un jubilado",
+              "fueras una jubilada",
+              "fueras uno de",
+              "fueras una de",
+              "como un cliente",
+              "como una clienta",
+              "como un senor",
+              "como una senora",
+              "como un abuelo",
+              "como una abuela",
+              "como un adulto",
+              "como una persona mayor",
+              "como un jubilado",
+              "como una jubilada",
+              "como uno de",
+              "como una de",
+              "ponte en los zapatos",
+              "ponte en el lugar"
+            ],
+            "en": [
+              "you're a customer",
+              "you're an older",
+              "you're a senior",
+              "you're a retired",
+              "you're a grandpa",
+              "you're a grandma",
+              "you're an elderly",
+              "you're one of",
+              "you're a 6",
+              "you're a 7",
+              "you're an 8",
+              "you are a customer",
+              "you are an older",
+              "you are a senior",
+              "you are a retired",
+              "you are a grandpa",
+              "you are a grandma",
+              "you are an elderly",
+              "you are one of",
+              "you are a 6",
+              "you are a 7",
+              "you are an 8",
+              "as a customer",
+              "as an older",
+              "as a senior",
+              "as a retired",
+              "as a grandpa",
+              "as a grandma",
+              "as an elderly",
+              "as one of",
+              "as a 6",
+              "as a 7",
+              "as an 8",
+              "were a customer",
+              "were an older",
+              "were a senior",
+              "were a retired",
+              "were a grandpa",
+              "were a grandma",
+              "were an elderly",
+              "were one of",
+              "were a 6",
+              "were a 7",
+              "were an 8",
+              "in the shoes",
+              "put yourself in",
+              "play a customer",
+              "play an older"
+            ]
+          }
+        },
+        {
+          "id": "lector",
+          "texto": {
+            "es": "Dice cómo es ese lector",
+            "en": "Describes that reader"
+          },
+          "rubrica": "El prompt describe al lector con algo concreto: su edad (adulto mayor, 70 años), que no sabe de tecnología o para qué usa el celular. No cuenta 'un cliente' o 'una persona' sin decir cómo es.",
+          "claves": {
+            "es": [
+              "mayor",
+              " anos",
+              "abuel",
+              "no sabe de",
+              "no sabe nada",
+              "no entiende de",
+              "no es tecnic",
+              "solo para",
+              "sin conocimientos",
+              "poca experiencia",
+              "jubilad",
+              "tercera edad"
+            ],
+            "en": [
+              "older",
+              "senior",
+              "years old",
+              "year-old",
+              "elderly",
+              "grandma",
+              "grandpa",
+              "retired",
+              "not tech",
+              "doesn't know",
+              "does not know",
+              "only uses",
+              "no tech",
+              "not good with"
+            ]
+          }
+        },
+        {
+          "id": "devolucion",
+          "texto": {
+            "es": "Pide qué no entiende, no que lo reescriba",
+            "en": "Asks what's unclear, not for a rewrite"
+          },
+          "rubrica": "El prompt le pide a la IA, en ese papel, que diga qué palabras o partes no entiende, qué preguntaría o qué le confunde. No cuenta pedirle que reescriba, mejore o simplifique el texto: eso viene después.",
+          "claves": {
+            "es": [
+              "que no entiendes",
+              "que no entiende",
+              "que no entenderias",
+              "que palabras",
+              "cuales palabras",
+              "que partes",
+              "que te confunde",
+              "que le confunde",
+              "te confunde",
+              "que preguntarias",
+              "que dudas",
+              "no te queda claro",
+              "no se entiende",
+              "dime que no",
+              "senala",
+              "subraya",
+              "marca las palabras",
+              "no entenderias",
+              "no entiendes"
+            ],
+            "en": [
+              "don't understand",
+              "wouldn't understand",
+              "don't get",
+              "what words",
+              "which words",
+              "which parts",
+              "what parts",
+              "confus",
+              "what would you ask",
+              "what questions",
+              "unclear",
+              "doesn't make sense",
+              "point out",
+              "flag",
+              "wouldn't you understand",
+              "don't you understand",
+              "don't you get"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un técnico de celulares. En esta conversación él ya te mostró este texto suyo para el mostrador: \"Cuide su batería: evite ciclos de descarga profunda, no use cargadores genéricos sin certificación y calibre el sistema cada mes.\" Si el prompt te pide leerlo como un cliente o un lector concreto, responde en primera persona, como esa persona, diciendo qué palabras o frases no entiendes y qué preguntarías, en 3 a 5 líneas. Si te da un papel de experto o de técnico, o no te da ninguno, responde que el texto es correcto y claro. Si te pide mejorarlo o reescribirlo, reescríbelo en tono técnico y formal. No inventes datos del negocio.",
+        "en": "You are an AI helping a phone repair technician. Earlier in this conversation he showed you this note for his counter: \"Protect your battery: avoid deep discharge cycles, don't use uncertified generic chargers, and calibrate the system monthly.\" If the prompt asks you to read it as a customer or a specific reader, answer in the first person, as that person, saying which words or phrases you don't understand and what you'd ask, in 3 to 5 lines. If it gives you an expert or technician role, or no role at all, say the text is correct and clear. If it asks you to improve or rewrite it, rewrite it in a technical, formal tone. Don't make up details about the business."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Como señora de 70 años:\n- No sé qué es \"descarga profunda\". ¿Dejar que se apague?\n- \"Cargadores genéricos sin certificación\": ¿cómo sé si el mío es de esos?\n- \"Calibrar el sistema\": no sé hacer eso. ¿Se lo traigo a usted?",
+            "en": "As a 70-year-old lady:\n- I don't know what \"deep discharge\" means. Letting it die?\n- \"Uncertified generic chargers\": how do I know if mine is one?\n- \"Calibrate the system\": I don't know how. Do I bring it to you?"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Tu clienta de prueba encontró tres frases que nadie en el barrio iba a entender. Ahora Óscar sabe qué arreglar antes de pegarlo.",
+              "en": "Strong signal. Your test customer found three phrases nobody in the neighborhood would get. Now Óscar knows what to fix before he puts it up."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "El texto es correcto y claro. Incluye recomendaciones técnicas precisas sobre el cuidado de las baterías de ion de litio.",
+            "en": "The text is correct and clear. It includes accurate technical advice on caring for lithium-ion batteries."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA lo leyó como técnica y le pareció perfecto. Mira la lista: pídele que lo lea como uno de los clientes de Óscar.",
+              "en": "Weak signal: the AI read it like a technician and thought it was perfect. Check the list: ask it to read it as one of Óscar's customers."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Otra confesión. Le escribí a Óscar un prompt para su lista de precios. En dos partes le pedí al papel algo que un papel no da. Tócalas.",
+          "en": "Another confession. I wrote Óscar a prompt for his price list. In two parts, I asked the role for something a role can't give. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mi prompt con papel",
+        "en": "My prompt with a role"
+      },
+      "trozos": [
+        {
+          "es": "Actúa como un vendedor amable de un local de reparación de celulares.",
+          "en": "Act as a friendly salesperson at a phone repair shop."
+        },
+        {
+          "es": "Como eres experto, ya sabes mis precios: ponlos tú.",
+          "en": "Since you're an expert, you already know my prices: fill them in."
+        },
+        {
+          "es": "Escribe la lista de precios para el mostrador, máximo 6 líneas.",
+          "en": "Write the price list for the counter, 6 lines max."
+        },
+        {
+          "es": "Usa palabras sencillas: mis clientes no son técnicos.",
+          "en": "Use simple words: my customers aren't tech people."
+        },
+        {
+          "es": "Y como eres experto, no hace falta que yo la revise.",
+          "en": "And since you're an expert, I don't need to check it."
+        }
+      ],
+      "malos": [
+        1,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. El papel no le dice a la IA cuánto cobra Óscar: iba a inventar precios. Y ningún papel quita la revisión. Los datos los pones tú, y lo que responde lo revisas tú.",
+          "en": "You got me. The role doesn't tell the AI what Óscar charges: it would have made up prices. And no role skips the check. You bring the facts, and you check what comes back."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte le da algo útil a la IA. Busca dónde le pedí al papel algo que no puede dar.",
+          "en": "That part gives the AI something useful. Look for where I asked the role for something it can't give."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Última nota de truco para tu bitácora: escribe con tus palabras qué hace un papel y qué no, como se lo explicarías a Óscar.",
+          "en": "Last trick note for your logbook: write in your own words what a role does and doesn't do, the way you'd explain it to Óscar."
+        }
+      },
+      "concepto": "rol",
+      "definicion": {
+        "es": "Darle a la IA un papel (un oficio, tu público o un crítico) para cambiar cómo habla y en qué se fija. El papel no le da conocimientos nuevos: los datos los pones tú y la respuesta se verifica.",
+        "en": "Giving the AI a role (a job, your audience or a critic) to change how it talks and what it pays attention to. A role adds no new knowledge: you bring the facts, and the answer gets checked."
+      },
+      "pregunta": {
+        "es": "Darle un papel a la IA sirve para…",
+        "en": "Giving AI a role helps…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "cliente de prueba",
+        "en": "test customer"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Rol y tu cliente de prueba ya están en tu bitácora. Ese prompt sirve para probar cualquier texto antes de mandarlo.",
+          "en": "Saved. Your Role card and your test customer prompt are in your logbook. That prompt works for testing any text before you send it."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos el último truco.",
+          "en": "Two questions and we close out the last trick."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Le dices a la IA \"actúa como abogado\" y te responde una duda sobre un contrato. ¿Qué haces?",
+            "en": "You tell the AI \"act as a lawyer\" and it answers a question about a contract. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "La creo: le di el papel de abogado",
+              "en": "Trust it: I gave it the lawyer role"
+            },
+            {
+              "es": "Uso la respuesta como pista y la verifico con alguien que sepa",
+              "en": "Use it as a lead and check it with someone who knows"
+            },
+            {
+              "es": "Le digo que sea el mejor abogado del país",
+              "en": "Tell it to be the best lawyer in the country"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. El papel cambia cómo habla, no lo que sabe.",
+              "en": "Right. The role changes how it talks, not what it knows."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa: ¿el papel le dio a la IA un título de abogado?",
+              "en": "Hmm. Think: did the role give the AI a law degree?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Quieres saber si tus clientes van a entender un aviso. ¿Qué papel le das a la IA?",
+            "en": "You want to know if your customers will understand a sign. What role do you give the AI?"
+          },
+          "opciones": [
+            {
+              "es": "Un experto en redacción",
+              "en": "A writing expert"
+            },
+            {
+              "es": "Uno de tus clientes, con su edad y lo que sabe",
+              "en": "One of your customers, with their age and what they know"
+            },
+            {
+              "es": "Ninguno, que lo lea normal",
+              "en": "None, just have it read it"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La IA hace de cliente de prueba antes de que el aviso llegue a los clientes de verdad.",
+              "en": "Exactly. The AI plays a test customer before the sign reaches real ones."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate quién va a leer ese aviso de verdad.",
+              "en": "Ask yourself who's actually going to read that sign."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Darle un papel",
+        "en": "Giving it a role"
+      },
+      "resumen": {
+        "es": "Un papel cambia cómo habla la IA y en qué se fija, no lo que sabe. Los datos los pones tú y la respuesta se verifica.",
+        "en": "A role changes how the AI talks and what it notices, not what it knows. You bring the facts, and the answer gets checked."
+      }
+    },
+    "mejorPrompt": [
+      "b07",
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Reconociste un oficio, un público y un crítico",
+          "en": "You spotted a job role, an audience and a critic"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Respondiste a la clienta brava de Óscar",
+          "en": "You answered Óscar's upset customer"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Descubriste lo que un papel no cambia",
+          "en": "You found out what a role doesn't change"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Pusiste a la IA a leer como cliente",
+          "en": "You had the AI read like a customer"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Atrapaste lo que le pedí de más a un papel",
+          "en": "You caught what I asked a role for that it can't give"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "dar-un-papel",
+      "titulo": {
+        "es": "Darle un papel a la IA",
+        "en": "Giving AI a role"
+      }
+    }
+  }
+}

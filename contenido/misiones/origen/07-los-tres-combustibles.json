@@ -1,0 +1,784 @@
+{
+  "formato": "punti-mision@1",
+  "id": "los-tres-combustibles",
+  "mundo": "que-es-la-ia",
+  "capitulo": 2,
+  "numero": 7,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "tres-combustibles"
+  ],
+  "usaConceptos": [
+    "inviernos-de-la-ia",
+    "ia"
+  ],
+  "titulo": {
+    "es": "Los tres combustibles",
+    "en": "The Three Fuels"
+  },
+  "resumen": {
+    "es": "Por qué la IA despegó ahora: se juntaron muchísimos datos, mucho cómputo y mejores métodos. De 2012 a hoy.",
+    "en": "Why AI took off now: tons of data, lots of computing power and better methods came together. From 2012 to today."
+  },
+  "siguiente": "la-linea-de-tiempo-de-tu-familia",
+  "fuentes": [
+    {
+      "titulo": "AlexNet (Krizhevsky, Sutskever y Hinton, 2012; ImageNet con 1,2 millones de fotos de entrenamiento; dos tarjetas de video)",
+      "url": "https://en.wikipedia.org/wiki/AlexNet",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google DeepMind, AlphaGo (4 a 1 contra Lee Sedol, Seúl, marzo de 2016)",
+      "url": "https://deepmind.google/research/breakthroughs/alphago/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Vaswani et al. (2017), Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI, Introducing ChatGPT (30 de noviembre de 2022)",
+      "url": "https://openai.com/index/chatgpt/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Euronews, ChatGPT: 100 millones de usuarios mensuales estimados en enero de 2023, según un análisis de UBS (2 de febrero de 2023)",
+      "url": "https://www.euronews.com/next/2023/02/02/openai-chatgpt",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "UIT, Facts and Figures 2024: Mobile phone ownership",
+      "url": "https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-mobile-phone-ownership/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "NobelPrize.org, Premio Nobel de Física 2024 (Hopfield y Hinton)",
+      "url": "https://www.nobelprize.org/prizes/physics/2024/press-release/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "NobelPrize.org, Premio Nobel de Química 2024 (Baker, Hassabis y Jumper)",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2024/summary/",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegamos a la última sala del museo, la más iluminada. Y entró una señal de Montería. Brayan, mecánico de motos, oyó el programa de Doña Teresa y tiene una pregunta de taller.",
+          "en": "Pilot, we've reached the last room of the museum, the brightest one. And a signal came in from Montería. Brayan, a motorcycle mechanic, heard Doña Teresa's show and has a shop-floor question."
+        }
+      },
+      "titulo": {
+        "es": "Los tres combustibles",
+        "en": "The three fuels"
+      },
+      "texto": {
+        "es": "Brayan arregla motos en Montería. Para él, sin gasolina, sin cilindraje o sin buen carburador, nada arranca. Hoy ves los tres combustibles que por fin hicieron arrancar a la IA. Unos 9 minutos.",
+        "en": "Brayan fixes motorcycles in Montería. As he sees it, without fuel, engine power or a good carburetor, nothing starts. Today you'll see the three fuels that finally got AI started. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "La pregunta de Brayan: si la idea es de 1950, ¿por qué arrancó hace tan poco? Te respondo en idioma de taller.",
+          "en": "Brayan's question: if the idea dates from 1950, why did it only start recently? I'll answer in shop talk."
+        }
+      },
+      "titulo": {
+        "es": "Le faltaba combustible",
+        "en": "It was out of fuel"
+      },
+      "texto": {
+        "es": "Durante años, a la IA le faltó combustible. Hacia 2012 se juntaron tres: muchísimos datos, porque internet se llenó de fotos y textos; mucho cómputo, con chips que hacen miles de cuentas a la vez; y mejores métodos para aprender de esos datos. Con uno solo no arranca. Con los tres, despegó.",
+        "en": "For years, AI was short on fuel. Around 2012, three came together: tons of data, because the internet filled up with photos and text; lots of computing power, with chips that do thousands of calculations at once; and better methods to learn from that data. With just one, it won't start. With all three, it took off."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Muchísimos datos",
+            "en": "Tons of data"
+          },
+          {
+            "es": "Mucho cómputo",
+            "en": "Lots of computing power"
+          },
+          {
+            "es": "Mejores métodos",
+            "en": "Better methods"
+          },
+          {
+            "es": "La IA despega",
+            "en": "AI takes off"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estos son los tres combustibles, con su color. Toca cada uno. Te lo explico como se lo explicaría a Brayan en su taller.",
+          "en": "These are the three fuels, each with its color. Tap each one. I'll explain it the way I'd explain it to Brayan in his shop."
+        }
+      },
+      "titulo": {
+        "es": "Los tres combustibles",
+        "en": "The three fuels"
+      },
+      "piezas": [
+        {
+          "id": "datos",
+          "color": "#ffb300",
+          "titulo": {
+            "es": "Datos",
+            "en": "Data"
+          },
+          "descripcion": {
+            "es": "Ejemplos para aprender: fotos, textos, audios.",
+            "en": "Examples to learn from: photos, text, audio."
+          },
+          "ejemplo": {
+            "es": "Es la gasolina. Con internet aparecieron millones de fotos y textos para aprender. Sin gasolina, ni el mejor motor se mueve.",
+            "en": "It's the gasoline. The internet brought millions of photos and texts to learn from. Without gas, even the best engine won't move."
+          }
+        },
+        {
+          "id": "computo",
+          "color": "#ff5252",
+          "titulo": {
+            "es": "Cómputo",
+            "en": "Computing power"
+          },
+          "descripcion": {
+            "es": "Chips que hacen miles de cuentas a la vez.",
+            "en": "Chips that do thousands of calculations at once."
+          },
+          "ejemplo": {
+            "es": "Es el cilindraje. Unos chips hechos para videojuegos resultaron perfectos para entrenar IA. Ojo: gastan mucha energía, y eso lo vemos en el mundo Horizonte.",
+            "en": "It's the engine power. Chips made for video games turned out to be perfect for training AI. Heads-up: they use a lot of energy, which we cover on Horizon."
+          }
+        },
+        {
+          "id": "metodos",
+          "color": "#40c4ff",
+          "titulo": {
+            "es": "Mejores métodos",
+            "en": "Better methods"
+          },
+          "descripcion": {
+            "es": "Formas más listas de aprender de los datos.",
+            "en": "Smarter ways to learn from the data."
+          },
+          "ejemplo": {
+            "es": "Es el carburador bien calibrado: la misma gasolina rinde mucho más. Las redes de muchas capas, que vas a ver en el vivero, son uno de esos métodos.",
+            "en": "It's a well-tuned carburetor: the same gas goes much further. Networks with many layers, which you'll see in the nursery, are one of those methods."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Brayan dejó estas piezas sueltas en el taller. ¿Qué combustible es cada una?",
+          "en": "Your turn. Brayan left these parts lying around the shop. Which fuel is each one?"
+        }
+      },
+      "titulo": {
+        "es": "¿Qué combustible es?",
+        "en": "Which fuel is it?"
+      },
+      "grupos": [
+        "datos",
+        "computo",
+        "metodos"
+      ],
+      "items": [
+        {
+          "grupo": "datos",
+          "texto": {
+            "es": "Más de un millón de fotos, cada una con el nombre de lo que muestra",
+            "en": "Over a million photos, each labeled with what it shows"
+          }
+        },
+        {
+          "grupo": "computo",
+          "texto": {
+            "es": "Una tarjeta de video que hace miles de cuentas al mismo tiempo",
+            "en": "A graphics card that does thousands of calculations at the same time"
+          }
+        },
+        {
+          "grupo": "metodos",
+          "texto": {
+            "es": "El Transformer, una pieza nueva para entender cómo se relacionan las palabras",
+            "en": "The Transformer, a new part for working out how words relate to each other"
+          }
+        },
+        {
+          "grupo": "datos",
+          "texto": {
+            "es": "Todo lo que la gente escribe y publica en internet",
+            "en": "Everything people write and post on the internet"
+          }
+        },
+        {
+          "grupo": "computo",
+          "texto": {
+            "es": "Salas llenas de computadores trabajando juntos",
+            "en": "Rooms full of computers working together"
+          }
+        },
+        {
+          "grupo": "metodos",
+          "texto": {
+            "es": "Una red de muchas capas que se corrige un poquito cada vez que se equivoca",
+            "en": "A network with many layers that corrects itself a little each time it's wrong"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Motor completo. Gasolina, cilindraje y carburador: si falta uno, la moto de Brayan no arranca, y la IA tampoco.",
+          "en": "Engine complete. Gas, engine power and carburetor: if one's missing, Brayan's bike won't start, and neither will AI."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿son los ejemplos, la fuerza para hacer cuentas o la forma de aprender?",
+          "en": "Hmm. Ask yourself: is it the examples, the power to do the math, or the way of learning?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira las vitrinas de esta sala. Cada una es un año en que se notaron los tres combustibles juntos.",
+          "en": "Look at the display cases in this room. Each one is a year when the three fuels showed what they could do together."
+        }
+      },
+      "titulo": {
+        "es": "Las vitrinas del despegue",
+        "en": "The takeoff display cases"
+      },
+      "texto": {
+        "es": "Con los tres combustibles juntos, los saltos llegaron seguidos. Ojo con 2022: la cifra de usuarios es una estimación de analistas, no una cuenta oficial.",
+        "en": "With all three fuels together, the leaps came one after another. Careful with 2022: the user figure is an analysts' estimate, not an official count."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Año",
+            "en": "Year"
+          },
+          "b": {
+            "es": "Qué pasó",
+            "en": "What happened"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "2012",
+              "en": "2012"
+            },
+            "b": {
+              "es": "Una red reconoce fotos mucho mejor que todo lo anterior",
+              "en": "A network recognizes photos far better than anything before"
+            }
+          },
+          {
+            "a": {
+              "es": "2016",
+              "en": "2016"
+            },
+            "b": {
+              "es": "AlphaGo le gana 4 a 1 al campeón de Go Lee Sedol",
+              "en": "AlphaGo beats Go champion Lee Sedol 4 to 1"
+            }
+          },
+          {
+            "a": {
+              "es": "2017",
+              "en": "2017"
+            },
+            "b": {
+              "es": "Investigadores de Google presentan el Transformer, la pieza de los modelos de lenguaje",
+              "en": "Google researchers present the Transformer, the key part of language models"
+            }
+          },
+          {
+            "a": {
+              "es": "2022",
+              "en": "2022"
+            },
+            "b": {
+              "es": "Llega ChatGPT: unos 100 millones de usuarios estimados en dos meses",
+              "en": "ChatGPT arrives: an estimated 100 million users in two months"
+            }
+          },
+          {
+            "a": {
+              "es": "2024",
+              "en": "2024"
+            },
+            "b": {
+              "es": "Los premios Nobel de Física y de Química premian trabajos ligados a la IA",
+              "en": "The Nobel Prizes in Physics and Chemistry honor work tied to AI"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "debate",
+      "xp": 8,
+      "vivo": true,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Aquí no hay respuesta correcta. Te muestro dos posturas, cada una con su dato y su fuente. Léelas con calma y vota.",
+          "en": "There's no right answer here. I'll show you two positions, each with its fact and source. Read them calmly and vote."
+        }
+      },
+      "titulo": {
+        "es": "¿La más rápida de la historia?",
+        "en": "The fastest ever?"
+      },
+      "pregunta": {
+        "es": "¿La IA es la tecnología que más rápido ha llegado a la gente?",
+        "en": "Is AI the technology that has reached people the fastest?"
+      },
+      "posturas": [
+        {
+          "titulo": {
+            "es": "Sí: nada llegó tan rápido",
+            "en": "Yes: nothing spread so fast"
+          },
+          "argumento": {
+            "es": "Según un análisis del banco UBS, ChatGPT llegó a unos 100 millones de usuarios al mes en solo dos meses. A TikTok le tomó unos nueve meses y a Instagram, unos dos años y medio. Los analistas no recordaban una app que creciera tan rápido.",
+            "en": "According to an analysis by the bank UBS, ChatGPT reached about 100 million monthly users in just two months. TikTok took about nine months and Instagram about two and a half years. Analysts couldn't recall any app growing that fast."
+          },
+          "fuente": "https://www.euronews.com/next/2023/02/02/openai-chatgpt"
+        },
+        {
+          "titulo": {
+            "es": "Rápido no es lo mismo que a todos",
+            "en": "Fast isn't the same as everyone"
+          },
+          "argumento": {
+            "es": "Probar una app no es lo mismo que cambiarle la vida a la gente. El celular tardó décadas en llegar a la mayoría, pero hoy cuatro de cada cinco personas de 10 años o más en el mundo tienen uno, según la UIT.",
+            "en": "Trying an app isn't the same as changing people's lives. Cell phones took decades to reach most people, but today four out of five people aged 10 and over worldwide own one, according to the ITU."
+          },
+          "fuente": "https://www.itu.int/itu-d/reports/statistics/2024/11/10/ff24-mobile-phone-ownership/"
+        }
+      ],
+      "cierre": {
+        "estado": "info",
+        "texto": {
+          "es": "Listo tu voto. Yo no voto: esa decisión es tuya. Un consejo de museo: mira siempre qué mide cada dato. Usuarios en dos meses no es lo mismo que gente en todo el mundo.",
+          "en": "Your vote's in. I don't vote: that call is yours. A tip from the museum: always check what each number measures. Users in two months isn't the same as people all over the world."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Pídele a la IA que le explique a Brayan por qué la IA despegó ahora, comparándola con una moto. Que nombre los tres combustibles y dé un hito con su año.",
+          "en": "Your turn. Ask the AI to explain to Brayan why AI took off now, comparing it to a motorcycle. Have it name the three fuels and give one milestone with its year."
+        }
+      },
+      "titulo": {
+        "es": "La IA explicada en el taller",
+        "en": "AI explained in the shop"
+      },
+      "reto": {
+        "es": "Datos de Brayan: tiene 24 años y es mecánico de motos en Montería. Su pregunta: si la idea de la IA es de 1950, ¿por qué despegó apenas en estos años? Quiere entenderlo en su idioma de taller. Escribe tu mensaje para la IA.",
+        "en": "About Brayan: he's 24 and works as a motorcycle mechanic in Montería. His question: if the idea of AI dates from 1950, why did it only take off in recent years? He wants it in shop talk. Write your message to the AI."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "combustibles",
+          "texto": {
+            "es": "Nombra los tres combustibles",
+            "en": "Names the three fuels"
+          },
+          "rubrica": "El prompt nombra los tres combustibles: datos, cómputo (chips, computadores potentes, capacidad de cálculo) y mejores métodos (algoritmos, formas de aprender), o pide 'los tres combustibles' y los nombra. No cuenta pedir solo 'por qué despegó' sin nombrarlos, ni nombrar solo uno o dos.",
+          "claves": {
+            "es": [
+              "tres combustibles",
+              "3 combustibles",
+              "computo",
+              "algoritmo",
+              "metodos",
+              "chips",
+              "procesador",
+              "potencia de calculo",
+              "capacidad de calculo",
+              "computadores potentes",
+              "computadoras potentes"
+            ],
+            "en": [
+              "three fuels",
+              "3 fuels",
+              "compute",
+              "computing power",
+              "algorithm",
+              "methods",
+              "chips",
+              "processing power",
+              "processors",
+              "powerful computers"
+            ]
+          }
+        },
+        {
+          "id": "moto",
+          "texto": {
+            "es": "Pide la comparación con la moto",
+            "en": "Asks for the motorcycle comparison"
+          },
+          "rubrica": "El prompt pide que la explicación compare la IA con una moto, un motor o el taller (gasolina, cilindraje, carburador). No cuenta que el prompt solo diga que Brayan es mecánico, sin pedir la comparación.",
+          "claves": {
+            "es": [
+              "como una moto",
+              "como un motor",
+              "con una moto",
+              "con la moto",
+              "con el motor",
+              "con un motor",
+              "comparalo con",
+              "comparacion con",
+              "gasolina",
+              "cilindraje",
+              "carburador",
+              "comparacion con el taller"
+            ],
+            "en": [
+              "like a motorcycle",
+              "like a motorbike",
+              "like an engine",
+              "like a bike",
+              "to a motorcycle",
+              "to an engine",
+              "compare it to",
+              "comparison to",
+              "gasoline",
+              "petrol",
+              "carburetor",
+              "bike parts"
+            ]
+          }
+        },
+        {
+          "id": "hito",
+          "texto": {
+            "es": "Pide un hito con su año",
+            "en": "Asks for a milestone with its year"
+          },
+          "rubrica": "El prompt pide al menos un hito concreto con su año (por ejemplo 2012, 2016, 2017 o 2022), o nombra uno. No cuenta 'dame ejemplos' sin pedir un año, ni el año 1950 que ya trae la pregunta.",
+          "claves": {
+            "es": [
+              "2012",
+              "2016",
+              "2017",
+              "2022",
+              "2024",
+              "un hito",
+              "hitos",
+              "con su ano",
+              "con el ano",
+              "un ano concreto",
+              "con fecha"
+            ],
+            "en": [
+              "2012",
+              "2016",
+              "2017",
+              "2022",
+              "2024",
+              "milestone",
+              "with the year",
+              "with its year",
+              "a specific year",
+              "with a date"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que explica tecnología con comparaciones de la vida diaria. Responde en máximo 7 frases cortas, sin palabras técnicas. Usa solo la comparación que pida el prompt; si no pide ninguna, explica sin comparaciones. Si das un hito, usa solo uno de estos, con su año: 2012 (una red reconoce fotos mucho mejor que antes), 2016 (AlphaGo le gana al campeón de Go), 2017 (el Transformer), 2022 (llega ChatGPT). No inventes cifras.",
+        "en": "You are an AI that explains technology with everyday comparisons. Reply in 7 short sentences at most, with no technical words. Use only the comparison the prompt asks for; if it asks for none, explain without comparisons. If you give a milestone, use only one of these, with its year: 2012 (a network recognizes photos far better than before), 2016 (AlphaGo beats the Go champion), 2017 (the Transformer), 2022 (ChatGPT arrives). Don't invent figures."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Brayan, piénsalo como una moto. La idea de la IA es de 1950, pero no tenía con qué arrancar. Necesitaba tres cosas a la vez. Gasolina: muchísimos datos, y eso llegó con internet, lleno de fotos y textos. Cilindraje: chips que hacen miles de cuentas al mismo tiempo. Y un carburador bien calibrado: mejores métodos para aprender. En 2012 se juntaron los tres y una red aprendió a reconocer fotos mucho mejor que todo lo anterior. Desde ahí, la moto no ha parado.",
+            "en": "Brayan, think of it like a motorcycle. The idea of AI dates from 1950, but it had nothing to start with. It needed three things at once. Gas: tons of data, which came with the internet, full of photos and text. Engine power: chips that do thousands of calculations at the same time. And a well-tuned carburetor: better methods for learning. In 2012 all three came together, and a network learned to recognize photos far better than anything before. Since then, the bike hasn't stopped."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso Brayan lo entiende al primer arranque. Tres combustibles, su moto y un año concreto. Explicación lista para el taller.",
+              "en": "Brayan gets that on the first kick. Three fuels, his bike and a real year. An explanation ready for the shop."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "La IA avanzó gracias al desarrollo tecnológico y a la investigación de muchos científicos a lo largo de las décadas.",
+            "en": "AI advanced thanks to technological development and the research of many scientists over the decades."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Cierto, pero Brayan sigue sin saber por qué ahora. Revisa la lista: nombra los tres combustibles, pide la comparación con la moto y un año concreto.",
+              "en": "True, but Brayan still doesn't know why now. Check the list: name the three fuels, ask for the motorcycle comparison and a real year."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cuáles son los tres combustibles de la IA. Si quieres, con tu propia comparación.",
+          "en": "Logbook time. Write in your own words what AI's three fuels are. Use your own comparison if you like."
+        }
+      },
+      "concepto": "tres-combustibles",
+      "definicion": {
+        "es": "La IA despegó cuando se juntaron tres cosas: muchísimos datos, mucho cómputo (chips que hacen miles de cuentas a la vez) y mejores métodos para aprender. Con uno solo no arranca.",
+        "en": "AI took off when three things came together: tons of data, lots of computing power (chips that do thousands of calculations at once) and better methods for learning. With just one, it won't start."
+      },
+      "pregunta": {
+        "es": "Los tres combustibles de la IA son…",
+        "en": "AI's three fuels are…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "tres combustibles",
+        "en": "three fuels"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Con esta nota ya tienes las tres salas del museo encendidas. Falta una cosa: meter a tu familia en la historia.",
+          "en": "Saved. With this note, all three rooms of the museum are lit. One thing left: putting your family into the story."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y apagamos el motor.",
+          "en": "Three questions and we switch off the engine."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Si la idea es de 1950, ¿por qué la IA despegó hacia 2012?",
+            "en": "If the idea dates from 1950, why did AI take off around 2012?"
+          },
+          "opciones": [
+            {
+              "es": "Porque alguien por fin la inventó ese año",
+              "en": "Because someone finally invented it that year"
+            },
+            {
+              "es": "Porque se juntaron datos, cómputo y mejores métodos",
+              "en": "Because data, computing power and better methods came together"
+            },
+            {
+              "es": "Porque una ley acabó con los inviernos",
+              "en": "Because a law put an end to the winters"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. La idea ya existía; le faltaba combustible.",
+              "en": "Right. The idea already existed; it was missing fuel."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en la moto de Brayan: ¿qué le faltaba para arrancar?",
+              "en": "Hmm. Think of Brayan's bike: what did it need to start?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La red de 2012 aprendió de más de un millón de fotos con su nombre. ¿Qué combustible es ese?",
+            "en": "The 2012 network learned from over a million labeled photos. Which fuel is that?"
+          },
+          "opciones": [
+            {
+              "es": "Datos",
+              "en": "Data"
+            },
+            {
+              "es": "Cómputo",
+              "en": "Computing power"
+            },
+            {
+              "es": "Mejores métodos",
+              "en": "Better methods"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Las fotos son ejemplos: la gasolina de la IA.",
+              "en": "Exactly. The photos are examples: AI's gasoline."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es ese. Las fotos, ¿son la fuerza para calcular, la forma de aprender o los ejemplos?",
+              "en": "Not that one. Are the photos the power to calculate, the way of learning, or the examples?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué dice de verdad el dato de ChatGPT en 2022?",
+            "en": "What does the 2022 ChatGPT figure really say?"
+          },
+          "opciones": [
+            {
+              "es": "Que ya lo usa todo el mundo",
+              "en": "That everyone in the world uses it"
+            },
+            {
+              "es": "Que fue la primera IA de la historia",
+              "en": "That it was the first AI in history"
+            },
+            {
+              "es": "Que llegó a unos 100 millones de usuarios estimados en dos meses",
+              "en": "That it reached an estimated 100 million users in two months"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Estimados, en dos meses. Leer bien el dato es la mitad del trabajo.",
+              "en": "Right. Estimated, in two months. Reading the number carefully is half the job."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Vuelve al consejo del debate: ¿qué mide exactamente ese número?",
+              "en": "Hmm. Go back to the tip from the debate: what exactly does that number measure?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Los tres combustibles",
+        "en": "The three fuels"
+      },
+      "resumen": {
+        "es": "La IA despegó cuando se juntaron muchísimos datos, mucho cómputo y mejores métodos. Con uno solo no arranca.",
+        "en": "AI took off when tons of data, lots of computing power and better methods came together. With just one, it won't start."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Pusiste cada pieza en su combustible",
+          "en": "You matched each part to its fuel"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Leíste las dos posturas del debate y votaste",
+          "en": "You read both sides of the debate and voted"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Le explicaste a Brayan por qué la IA despegó ahora",
+          "en": "You explained to Brayan why AI took off now"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "contar-la-historia-de-la-ia",
+      "titulo": {
+        "es": "Contar la historia de la IA",
+        "en": "Telling AI's story"
+      }
+    }
+  }
+}

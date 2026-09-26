@@ -1,0 +1,850 @@
+{
+  "formato": "punti-mision@1",
+  "id": "mi-mapa-de-ia-de-un-dia",
+  "mundo": "que-es-la-ia",
+  "capitulo": 1,
+  "numero": 5,
+  "receta": "construccion",
+  "largo": "proyecto",
+  "minutos": 15,
+  "conceptos": [
+    "mapa-de-ia"
+  ],
+  "usaConceptos": [
+    "ia",
+    "reglas-vs-ejemplos",
+    "oficios-de-la-ia",
+    "ia-o-no"
+  ],
+  "titulo": {
+    "es": "Mi mapa de IA de un día",
+    "en": "My One-Day AI Map"
+  },
+  "resumen": {
+    "es": "Proyecto del capítulo 1: los momentos de tu día en que una IA trabajó para ti, con su oficio y de qué aprendió.",
+    "en": "Chapter 1 project: the moments in your day when an AI worked for you, with its job and what it learned from."
+  },
+  "siguiente": "la-pregunta-de-turing",
+  "fuentes": [
+    {
+      "titulo": "Google for Developers, Introduction to Machine Learning: What is ML?",
+      "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegó la señal más importante del capítulo: la tuya. Ya ayudaste a Doña Gilma, a Nubia, a Wilmer y a Marisol. Ahora armas tu propio mapa: la IA que trabajó para ti en un solo día.",
+          "en": "Pilot, the most important signal of the chapter just came in: yours. You've already helped Doña Gilma, Nubia, Wilmer and Marisol. Now you build your own map: the AI that worked for you in a single day."
+        }
+      },
+      "titulo": {
+        "es": "Mi mapa de IA de un día",
+        "en": "My one-day AI map"
+      },
+      "texto": {
+        "es": "Es el proyecto del capítulo 1. Vas a anotar momentos de tu día, ponerle a cada uno su oficio y averiguar de qué ejemplos aprendió. Queda guardado en tu bitácora, junto a tu primera nota. Unos 15 minutos.",
+        "en": "It's the Chapter 1 project. You'll note down moments from your day, give each one its job and find out what examples it learned from. It goes into your logbook, next to your first entry. About 15 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Así se arma un mapa de IA. Son tres pasos.",
+          "en": "Here's how you build an AI map. Three steps."
+        }
+      },
+      "titulo": {
+        "es": "Lo que lleva tu mapa",
+        "en": "What goes in your map"
+      },
+      "texto": {
+        "es": "Primero, los momentos: cada vez que algo en tu día reconoció, te recomendó, predijo o creó algo. Segundo, el oficio de cada uno, con los colores del taller. Tercero, la pregunta que casi nadie se hace: ¿de qué ejemplos aprendió esa IA? Y si alguno solo sigue una regla, se sale del mapa.",
+        "en": "First, the moments: every time something in your day recognized, recommended, predicted or created something. Second, each one's job, with the workshop colors. Third, the question almost nobody asks: what examples did that AI learn from? And if one just follows a rule, it's off the map."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Anota los momentos",
+            "en": "Note the moments"
+          },
+          {
+            "es": "Ponles su oficio",
+            "en": "Give each its job"
+          },
+          {
+            "es": "Pregunta de qué aprendió",
+            "en": "Ask what it learned from"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primero, los momentos. Si hiciste tu diario de IA en la misión 1, úsalo. Si no, repasa tu día de ayer, desde que te despertaste.",
+          "en": "First, the moments. If you kept your AI diary from Mission 1, use it. If not, go back over yesterday, from the moment you woke up."
+        }
+      },
+      "titulo": {
+        "es": "Tus momentos",
+        "en": "Your moments"
+      },
+      "instruccion": {
+        "es": "Escribe en tus notas o en un papel por lo menos cinco momentos de un día en que una IA trabajó para ti. Una línea por momento: la hora y qué pasó. Busca en el celular, pero también fuera: el televisor, el correo, el banco.",
+        "en": "In your notes or on paper, write down at least five moments from one day when an AI worked for you. One line per moment: the time and what happened. Look in your phone, but outside it too: the TV, your email, your bank."
+      },
+      "checks": [
+        {
+          "es": "Anoté por lo menos cinco momentos",
+          "en": "I wrote down at least five moments"
+        },
+        {
+          "es": "Busqué en el teclado, la cámara, el mapa y las apps",
+          "en": "I checked the keyboard, the camera, the map and my apps"
+        },
+        {
+          "es": "Busqué también fuera del celular",
+          "en": "I looked outside my phone too"
+        },
+        {
+          "es": "Cada momento tiene su hora",
+          "en": "Each moment has its time"
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Aquí están otra vez los cuatro oficios, con sus colores de siempre. Tócalos para refrescar la memoria.",
+          "en": "Here are the four jobs again, in their usual colors. Tap them to refresh your memory."
+        }
+      },
+      "titulo": {
+        "es": "Los cuatro oficios",
+        "en": "The four jobs"
+      },
+      "piezas": [
+        {
+          "id": "reconocer",
+          "color": "#4fc3ff",
+          "titulo": {
+            "es": "Reconocer",
+            "en": "Recognize"
+          },
+          "descripcion": {
+            "es": "Dice qué es algo que ve u oye.",
+            "en": "Tells what something it sees or hears is."
+          },
+          "ejemplo": {
+            "es": "La cámara encuentra las caras para enfocar. Vio tantas fotos con caras que ya sabe dónde hay una.",
+            "en": "The camera finds faces to focus on. It has seen so many photos with faces that it knows where one is."
+          }
+        },
+        {
+          "id": "recomendar",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Recomendar",
+            "en": "Recommend"
+          },
+          "descripcion": {
+            "es": "Te propone algo que quizás te guste.",
+            "en": "Suggests something you might like."
+          },
+          "ejemplo": {
+            "es": "El televisor te propone una serie. Aprendió de lo que has visto tú y de lo que ve gente parecida.",
+            "en": "The TV suggests a show. It learned from what you've watched and what similar people watch."
+          }
+        },
+        {
+          "id": "predecir",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Predecir",
+            "en": "Predict"
+          },
+          "descripcion": {
+            "es": "Calcula lo que probablemente va a pasar.",
+            "en": "Works out what will probably happen."
+          },
+          "ejemplo": {
+            "es": "La app de domicilios calcula en cuánto llega tu pedido. Aprendió de muchísimos pedidos anteriores.",
+            "en": "The delivery app works out when your order will arrive. It learned from huge numbers of past orders."
+          }
+        },
+        {
+          "id": "generar",
+          "color": "#39ff88",
+          "titulo": {
+            "es": "Generar",
+            "en": "Generate"
+          },
+          "descripcion": {
+            "es": "Crea algo nuevo: un texto, una imagen, una voz.",
+            "en": "Creates something new: text, an image, a voice."
+          },
+          "ejemplo": {
+            "es": "Un chat de IA te escribe un saludo de cumpleaños. Lo arma nuevo, con lo que aprendió de muchísimos textos.",
+            "en": "An AI chat writes you a birthday message. It makes it fresh, from what it learned from tons of text."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Antes de hacer el tuyo, practica con un mapa de muestra. Es el día de un piloto de prueba. Ojo: uno de los momentos no es IA.",
+          "en": "Before you do yours, practice with a sample map. It's a test pilot's day. Careful: one of the moments isn't AI."
+        }
+      },
+      "titulo": {
+        "es": "El mapa de muestra",
+        "en": "The sample map"
+      },
+      "grupos": [
+        "reconocer",
+        "recomendar",
+        "predecir",
+        "generar",
+        {
+          "id": "no-ia",
+          "titulo": {
+            "es": "No es IA",
+            "en": "Not AI"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "reconocer",
+          "texto": {
+            "es": "6:00 a. m. La cámara le dice el nombre de una planta que fotografió",
+            "en": "6:00 a.m. The camera tells him the name of a plant he photographed"
+          }
+        },
+        {
+          "grupo": "no-ia",
+          "texto": {
+            "es": "6:30 a. m. La cafetera se prende sola a la hora programada",
+            "en": "6:30 a.m. The coffee maker turns on by itself at the set time"
+          }
+        },
+        {
+          "grupo": "predecir",
+          "texto": {
+            "es": "7:15 a. m. El mapa calcula que llega al trabajo a las 8:05",
+            "en": "7:15 a.m. The map works out he'll get to work at 8:05"
+          }
+        },
+        {
+          "grupo": "generar",
+          "texto": {
+            "es": "12:30 p. m. Un chat de IA le escribe un mensaje para felicitar a una compañera",
+            "en": "12:30 p.m. An AI chat writes him a message to congratulate a coworker"
+          }
+        },
+        {
+          "grupo": "recomendar",
+          "texto": {
+            "es": "8:00 p. m. El televisor le propone una serie parecida a la que vio",
+            "en": "8:00 p.m. The TV suggests a show like the one he just watched"
+          }
+        },
+        {
+          "grupo": "reconocer",
+          "texto": {
+            "es": "9:00 p. m. El correo reconoce un mensaje de estafa y lo manda a spam",
+            "en": "9:00 p.m. His email spots a scam message and sends it to spam"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Mapa de muestra listo. Y viste la trampa: la cafetera sigue una hora fija, no aprendió nada. Esa se queda fuera del mapa.",
+          "en": "Sample map done. And you spotted the trap: the coffee maker follows a set time, it didn't learn anything. That one stays off the map."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate primero si aprendió de ejemplos. Si sí, ¿reconoce, recomienda, predice o genera?",
+          "en": "Hmm. First ask whether it learned from examples. If so, does it recognize, recommend, predict or generate?"
+        }
+      },
+      "malPorGrupo": {
+        "no-ia": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: esa sí tuvo que aprender de muchos ejemplos. No es una regla fija.",
+            "en": "Careful: that one did have to learn from lots of examples. It's not a fixed rule."
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora el tuyo. Escribe tus momentos en el mensaje y pídele a la IA que ponga cada uno en su oficio y adivine de qué ejemplos aprendió.",
+          "en": "Now yours. Write your moments in the message and ask the AI to put each one in its job and guess what examples it learned from."
+        }
+      },
+      "titulo": {
+        "es": "Tu mapa, con la IA",
+        "en": "Your map, with the AI"
+      },
+      "reto": {
+        "es": "Usa tus momentos del paso anterior. Si no tienes, usa estos: 7:00 a. m. el celular se desbloquea con mi cara. 8:00 a. m. el mapa calcula mi hora de llegada. 1:00 p. m. la app de música me propone una canción. 6:00 p. m. el teclado me sugiere palabras. 9:00 p. m. el televisor me propone una serie.",
+        "en": "Use your moments from the last step. If you don't have any, use these: 7:00 a.m. my phone unlocks with my face. 8:00 a.m. the map works out my arrival time. 1:00 p.m. the music app suggests a song. 6:00 p.m. the keyboard suggests words. 9:00 p.m. the TV suggests a show."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "momentos",
+          "texto": {
+            "es": "Al menos cinco momentos de tu día",
+            "en": "At least five moments from your day"
+          },
+          "rubrica": "El prompt trae al menos cinco momentos concretos de un día en que una IA trabajó (propios o los de muestra), cada uno con lo que pasó. No cuenta 'mis momentos' o 'mi día' sin escribirlos, ni una lista de menos de cinco.",
+          "claves": {
+            "es": [
+              "5.",
+              "5)",
+              "5-",
+              "quinto",
+              "me propone una serie"
+            ],
+            "en": [
+              "5.",
+              "5)",
+              "5-",
+              "fifth",
+              "suggests a show"
+            ]
+          }
+        },
+        {
+          "id": "oficio",
+          "texto": {
+            "es": "Pide el oficio de cada momento",
+            "en": "Asks for each moment's job"
+          },
+          "rubrica": "El prompt pide poner cada momento en uno de los cuatro oficios de la IA (reconocer, recomendar, predecir o generar) y los nombra, o dice 'los cuatro oficios'. No cuenta 'clasifícalos' u 'ordénalos' sin decir en qué grupos.",
+          "claves": {
+            "es": [
+              "oficio",
+              "reconocer",
+              "recomendar",
+              "predecir",
+              "que predice",
+              "que recomienda",
+              "y generar",
+              "o generar",
+              "generar,"
+            ],
+            "en": [
+              "four jobs",
+              "4 jobs",
+              "its job",
+              "which job",
+              "each job",
+              "recognize",
+              "recognise",
+              "recommend",
+              "predict",
+              "or generate",
+              "and generate",
+              "generate,",
+              "one's job",
+              "their job",
+              "job of each"
+            ]
+          }
+        },
+        {
+          "id": "aprendio",
+          "texto": {
+            "es": "Pregunta de qué ejemplos aprendió",
+            "en": "Asks what examples it learned from"
+          },
+          "rubrica": "El prompt pide que la IA diga o adivine de qué ejemplos o datos aprendió cada una. No cuenta preguntar solo qué hace cada una o si es IA.",
+          "claves": {
+            "es": [
+              "de que aprend",
+              "que ejemplos",
+              "cuales ejemplos",
+              "de que ejemplos",
+              "aprendio de",
+              "aprendieron de",
+              "con que ejemplos",
+              "de donde aprend",
+              "que datos",
+              "de que datos"
+            ],
+            "en": [
+              "learned from",
+              "learnt from",
+              "learn from",
+              "what examples",
+              "which examples",
+              "what data",
+              "which data",
+              "examples it",
+              "examples each"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a hacer un mapa de la IA de su día. Responde con una lista corta, un momento por línea, sin palabras técnicas. Si el prompt nombra grupos, usa esos grupos. Si pide de qué aprendió cada una, dilo como una suposición razonable, sin inventar datos de empresas. Si algo no es IA, como una alarma o un temporizador, dilo.",
+        "en": "You are an AI that helps a person map the AI in their day. Reply with a short list, one moment per line, with no technical words. If the prompt names groups, use those groups. If it asks what each one learned from, give a reasonable guess without making up company facts. If something isn't AI, like an alarm or a timer, say so."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "7:00 a. m. Se desbloquea con tu cara. Oficio: reconocer. Aprendió de muchísimas fotos de caras y de la tuya, cuando lo configuraste.\n8:00 a. m. Tu hora de llegada. Oficio: predecir. Aprendió de muchísimos viajes y mira el tráfico del momento.\n1:00 p. m. La canción. Oficio: recomendar. Aprendió de lo que escuchas tú y de lo que escucha gente con gustos parecidos.\n6:00 p. m. Las palabras del teclado. Oficio: predecir la próxima palabra. Aprendió de montones de frases y de cómo escribes tú.\n9:00 p. m. La serie. Oficio: recomendar. Aprendió de lo que has visto y de lo que ven otras personas.",
+            "en": "7:00 a.m. Unlocks with your face. Job: recognize. It learned from tons of photos of faces, and from yours when you set it up.\n8:00 a.m. Your arrival time. Job: predict. It learned from huge numbers of trips and checks current traffic.\n1:00 p.m. The song. Job: recommend. It learned from what you listen to and what people with similar taste listen to.\n6:00 p.m. The keyboard's words. Job: predict the next word. It learned from piles of sentences and from how you type.\n9:00 p.m. The show. Job: recommend. It learned from what you've watched and what other people watch."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Mapa armado. Cada momento con su color y con la pregunta que casi nadie se hace: de dónde aprendió. Ya tiene su lugar en tu bitácora.",
+              "en": "Map built. Every moment has its color and the question almost nobody asks: where did it learn? It has its own place in your logbook now."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "1. Celular: tecnología de reconocimiento.\n2. Mapa: GPS.\n3. Música: aplicación de entretenimiento.\n4. Teclado: autocorrector.\n5. Televisor: servicio de streaming.",
+            "en": "1. Phone: recognition technology.\n2. Map: GPS.\n3. Music: entertainment app.\n4. Keyboard: autocorrect.\n5. TV: streaming service."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA puso etiquetas técnicas, no los oficios. Y nadie le preguntó de qué aprendió cada una. Pide las dos cosas.",
+              "en": "The AI stuck on tech labels, not the jobs. And nobody asked what each one learned from. Ask for both."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Una revisión más, como hizo Marisol en el almacén. Agrégale a tu mensaje una pregunta: ¿alguno de mis momentos no es IA de verdad?",
+          "en": "One more check, like Marisol did at the store. Add a question to your message: are any of my moments not really AI?"
+        }
+      },
+      "titulo": {
+        "es": "¿Se coló alguno?",
+        "en": "Did one sneak in?"
+      },
+      "reto": {
+        "es": "Parte de tu mensaje anterior. Agrégale al final: que la IA revise si alguno de tus momentos solo sigue una regla fija o una hora programada, y que lo saque del mapa.",
+        "en": "Start from your last message. Add at the end: have the AI check whether any of your moments just follows a fixed rule or a set time, and take it off the map."
+      },
+      "inicial": "anterior",
+      "aprobar": 2,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "colado",
+          "texto": {
+            "es": "Pregunta si alguno no es IA",
+            "en": "Asks if any of them isn't AI"
+          },
+          "rubrica": "El prompt pide revisar si alguno de los momentos no es IA de verdad, o que saque del mapa los que no lo son. No cuenta repetir la clasificación anterior sin esa pregunta.",
+          "claves": {
+            "es": [
+              "no es ia",
+              "no son ia",
+              "no es realmente",
+              "no es de verdad",
+              "no sea ia",
+              "no sean ia",
+              "cual no",
+              "cuales no",
+              "se colo",
+              "sobra",
+              "saca",
+              "quita"
+            ],
+            "en": [
+              "not ai",
+              "isn't ai",
+              "aren't ai",
+              "isn't really",
+              "not really",
+              "which one isn't",
+              "which ones aren't",
+              "doesn't belong",
+              "snuck in",
+              "sneaked in",
+              "take it off",
+              "remove",
+              "leave out"
+            ]
+          }
+        },
+        {
+          "id": "prueba",
+          "texto": {
+            "es": "Dice cómo decidir: ¿aprende o es regla?",
+            "en": "Says how to decide: learns or rule?"
+          },
+          "rubrica": "El prompt dice con qué pregunta decidir: si aprendió de datos o si solo sigue una regla fija, un temporizador o una hora programada. No cuenta 'revisa si todo está bien' sin decir con qué pregunta.",
+          "claves": {
+            "es": [
+              " regla",
+              "reglas",
+              "temporizador",
+              "hora fija",
+              "hora programada",
+              "programad",
+              "aprende de datos",
+              "aprendio de datos"
+            ],
+            "en": [
+              " rule",
+              "rules",
+              "timer",
+              "fixed",
+              "set time",
+              "preset",
+              "programmed",
+              "learns from data",
+              "learned from data"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a revisar el mapa de la IA de su día. Responde con una lista corta, sin palabras técnicas. Si te piden revisar si algo no es IA, usa esta prueba: si aprendió de datos, es IA; si solo sigue una hora, un límite o una regla fija, no lo es. No inventes datos.",
+        "en": "You are an AI that helps a person review the map of AI in their day. Reply with a short list, with no technical words. If asked to check whether something isn't AI, use this test: if it learned from data, it's AI; if it only follows a time, a limit or a fixed rule, it isn't. Don't make things up."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Revisé tus cinco momentos con la prueba: ¿aprendió de datos o sigue una regla fija?\n- Tu cara, tu hora de llegada, la canción, las palabras del teclado y la serie: todos aprendieron de datos. Son IA.\n- Ninguno se coló.\nOjo: si agregas la alarma de las 6 o una cafetera que se prende a una hora, esas siguen una regla fija. No van en el mapa.",
+            "en": "I checked your five moments with the test: did it learn from data, or does it follow a fixed rule?\n- Your face, your arrival time, the song, the keyboard's words and the show: all learned from data. They're AI.\n- None snuck in.\nHeads-up: if you add your 6 a.m. alarm or a coffee maker that turns on at a set time, those follow a fixed rule. They stay off the map."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Revisión completa. Tu mapa solo tiene IA de verdad. Y si algo se cuela, ya sabes con qué pregunta sacarlo.",
+              "en": "Check complete. Your map only has real AI. And if something sneaks in, you know which question kicks it out."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Todos tus momentos usan tecnología inteligente. ¡Tu día está lleno de IA!",
+            "en": "All your moments use smart technology. Your day is full of AI!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA dijo que todo es IA, sin revisar nada. Dile con qué pregunta decidir: ¿aprende de datos o sigue una regla fija?",
+              "en": "The AI called everything AI without checking a thing. Tell it how to decide: does it learn from data or follow a fixed rule?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Yo también hice mi mapa. Bueno, lo intenté. Tiene dos errores de este capítulo. Tócalos.",
+          "en": "I made my map too. Well, I tried. It has two mistakes from this chapter. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "El mapa de Punti",
+        "en": "Punti's map"
+      },
+      "trozos": [
+        {
+          "es": "6:00 a. m. La galería reconoce mi cara en las fotos: reconocer.",
+          "en": "6:00 a.m. The gallery recognizes my face in photos: recognize."
+        },
+        {
+          "es": "7:00 a. m. La calculadora suma mis tornillos: predecir.",
+          "en": "7:00 a.m. The calculator adds up my screws: predict."
+        },
+        {
+          "es": "12:30 p. m. La app de música me propone una canción: recomendar.",
+          "en": "12:30 p.m. The music app suggests a song: recommend."
+        },
+        {
+          "es": "3:00 p. m. Un chat de IA me escribe un poema: generar.",
+          "en": "3:00 p.m. An AI chat writes me a poem: generate."
+        },
+        {
+          "es": "10:00 p. m. La alarma aprendió a qué hora me acuesto: predecir.",
+          "en": "10:00 p.m. The alarm learned what time I go to bed: predict."
+        }
+      ],
+      "malos": [
+        1,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. La calculadora sigue reglas: no aprendió nada. Y mi alarma no aprendió mis horarios: suena a la hora que yo le puse. Dos reglas colándose en mi mapa.",
+          "en": "You got me. The calculator follows rules: it never learned anything. And my alarm didn't learn my schedule: it rings at the time I set. Two rules sneaking onto my map."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese momento está bien: aprendió de ejemplos y su oficio es el correcto. Busca los que solo siguen una regla.",
+          "en": "That moment is fine: it learned from examples and has the right job. Look for the ones that just follow a rule."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Tu mapa queda guardado ahí. Escribe con tus palabras qué descubriste al hacerlo.",
+          "en": "Logbook time. Your map gets saved there. Write in your own words what you discovered while making it."
+        }
+      },
+      "concepto": "mapa-de-ia",
+      "definicion": {
+        "es": "Un mapa de IA muestra los momentos de un día en que una IA trabajó para ti, con su oficio y los ejemplos de los que aprendió. Lo que solo sigue una regla no entra.",
+        "en": "An AI map shows the moments in a day when an AI worked for you, with its job and the examples it learned from. Anything that just follows a rule stays out."
+      },
+      "pregunta": {
+        "es": "Al hacer mi mapa de IA descubrí que…",
+        "en": "Making my AI map, I discovered that…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "mi mapa de IA",
+        "en": "my AI map"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado en tu bitácora, con tu mapa adentro. Cuando termines Origen, vuelve a mirarlo: vas a ver cuánto aprendiste.",
+          "en": "Saved in your logbook, with your map inside. When you finish Origin, look at it again: you'll see how much you've learned."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas rápidas antes de cerrar el taller.",
+          "en": "Two quick questions before we close the workshop."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "En tu mapa, el televisor te propuso una serie. ¿Qué oficio es y de qué aprendió?",
+            "en": "On your map, the TV suggested a show. Which job is that, and what did it learn from?"
+          },
+          "opciones": [
+            {
+              "es": "Generar: escribió la serie para ti",
+              "en": "Generate: it wrote the show for you"
+            },
+            {
+              "es": "Predecir: sabe qué vas a hacer mañana",
+              "en": "Predict: it knows what you'll do tomorrow"
+            },
+            {
+              "es": "Recomendar: de lo que viste tú y gente parecida",
+              "en": "Recommend: from what you and similar people watched"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Te propone algo para escoger, según lo que ya vieron tú y otros.",
+              "en": "Right. It offers you something to pick, based on what you and others watched."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿La serie ya existía? ¿Te la están ofreciendo para que escojas?",
+              "en": "Hmm. Did the show already exist? Is it being offered for you to pick?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Cuál de estos momentos NO entra en tu mapa de IA?",
+            "en": "Which of these moments does NOT go on your AI map?"
+          },
+          "opciones": [
+            {
+              "es": "El teclado te sugiere la próxima palabra",
+              "en": "The keyboard suggests your next word"
+            },
+            {
+              "es": "La lavadora termina a los 40 minutos que marcaste",
+              "en": "The washer finishes after the 40 minutes you set"
+            },
+            {
+              "es": "La cámara encuentra las caras para enfocar",
+              "en": "The camera finds faces to focus on"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Los 40 minutos los pusiste tú. Es una regla, no aprendizaje.",
+              "en": "Exactly. You set those 40 minutes. It's a rule, not learning."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Esa sí aprendió de ejemplos. Busca la que solo cumple una orden tuya.",
+              "en": "That one did learn from examples. Look for the one that just follows your order."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Capítulo 1 aterrizado, piloto. Terminaste el taller.",
+          "en": "Chapter 1 landed, pilot. You've finished the workshop."
+        }
+      },
+      "titulo": {
+        "es": "Taller terminado",
+        "en": "Workshop complete"
+      },
+      "texto": {
+        "es": "En este capítulo viste qué es la IA, en qué se diferencia de un programa de reglas, sus cuatro oficios y cómo leer una etiqueta \"con IA\". Y ahora tienes tu propio mapa. Lo que sigue es el museo de mis ancestros, en el sótano del taller. La primera vitrina es de 1950.",
+        "en": "This chapter you saw what AI is, how it differs from a rule-based program, its four jobs and how to read a \"with AI\" label. And now you have your own map. Next up is the museum of my ancestors, in the workshop basement. The first display case is from 1950."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Mi mapa de IA",
+        "en": "My AI map"
+      },
+      "resumen": {
+        "es": "Los momentos de un día en que una IA trabajó para ti, con su oficio y los ejemplos de los que aprendió.",
+        "en": "The moments in a day when an AI worked for you, with its job and the examples it learned from."
+      }
+    },
+    "mejorPrompt": [
+      "b06",
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Anotaste los momentos de IA de tu día",
+          "en": "You noted the AI moments in your day"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Encontraste la regla que se coló en el mapa de muestra",
+          "en": "You found the rule that snuck into the sample map"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Armaste tu mapa de IA con su oficio y su origen",
+          "en": "You built your AI map with each job and source"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Revisaste que tu mapa solo tenga IA de verdad",
+          "en": "You checked that your map only has real AI"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Atrapaste los dos errores del mapa de Punti",
+          "en": "You caught both mistakes on Punti's map"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "reconocer-la-ia",
+      "titulo": {
+        "es": "Reconocer la IA",
+        "en": "Spotting AI"
+      }
+    }
+  }
+}

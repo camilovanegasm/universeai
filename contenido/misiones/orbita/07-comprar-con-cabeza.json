@@ -1,0 +1,967 @@
+{
+  "formato": "punti-mision@1",
+  "id": "comprar-con-cabeza",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 2,
+  "numero": 7,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 11,
+  "conceptos": [
+    "entender-credito"
+  ],
+  "usaConceptos": [
+    "presupuesto",
+    "entender-documentos",
+    "datos-sensibles"
+  ],
+  "titulo": {
+    "es": "Comprar con cabeza",
+    "en": "Buy with your head"
+  },
+  "resumen": {
+    "es": "Entiende una compra a cuotas antes de firmar: costo total, qué preguntar y la tasa confirmada por escrito.",
+    "en": "Understand an installment purchase before signing: total cost, what to ask and the rate confirmed in writing."
+  },
+  "siguiente": "carpeta-de-tramites",
+  "fuentes": [
+    {
+      "titulo": "Superfinanciera certifica el interés bancario corriente para septiembre de 2026 (Resolución 1260 de 2026: 19,49% E.A.; usura 29,24% E.A.)",
+      "url": "https://actualicese.com/superfinanciera-certifica-el-interes-bancario-corriente-para-septiembre-2026/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Superintendencia Financiera: comunicados del interés bancario corriente",
+      "url": "https://www.superfinanciera.gov.co/publicaciones/10829/sala-de-prensacomunicados-de-prensa-interes-bancario-corriente-10829/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Banco de la República: qué es la tasa de usura",
+      "url": "https://www.banrep.gov.co/es/glosario/tasa-usura",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ley 1480 de 2011, Estatuto del Consumidor (Función Pública)",
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=44306",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ley 1480 de 2011, art. 45: información en ventas con financiación (Consumoteca)",
+      "url": "https://consumoteca.com.co/articulo-45-de-la-ley-1480-estatuto-del-consumidor/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ley 1328 de 2009: régimen de protección al consumidor financiero y Defensor del Consumidor Financiero",
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=36841",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "SIC: protección al consumidor",
+      "url": "https://www.sic.gov.co/tema/asuntos-jurisdiccionales/proteccion-al-consumidor",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llamada desde Soacha. Es Jefferson, ayudante de construcción. En el almacén le ofrecen el celular que quiere \"a solo 12 cuotas\". El vendedor dice que la promoción se acaba hoy.",
+          "en": "Pilot, a call from Soacha, Colombia. It's Jefferson, a construction helper. At the store they're offering him the phone he wants \"for just 12 payments.\" The salesman says the deal ends today."
+        }
+      },
+      "titulo": {
+        "es": "Comprar con cabeza",
+        "en": "Buy with your head"
+      },
+      "texto": {
+        "es": "Punti no es asesor financiero ni abogado: la IA te ayuda a entender y a redactar, y la decisión es tuya. Hoy aprendes a entender un crédito antes de firmar. Unos 11 minutos.",
+        "en": "Punti isn't a financial advisor or a lawyer: AI helps you understand and write, and the decision is yours. Today you learn to understand a loan before you sign. About 11 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, cinco palabras que vienen en cualquier crédito. Con estas, ya no te hablan en otro idioma.",
+          "en": "First, five words that come with any loan. Once you know them, nobody's speaking another language to you."
+        }
+      },
+      "titulo": {
+        "es": "Las palabras del crédito",
+        "en": "Loan words"
+      },
+      "texto": {
+        "es": "Antes de firmar un crédito conviene entender estas cinco palabras. La IA te las explica con números de ejemplo, las veces que haga falta. Pero la tasa real de tu oferta solo la da quien te presta, y por escrito.",
+        "en": "Before you sign for a loan, it helps to understand these five words. AI can explain them with example numbers, as many times as you need. But the real rate on your offer only comes from the lender, in writing."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Palabra",
+            "en": "Word"
+          },
+          "b": {
+            "es": "En simple",
+            "en": "In simple words"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Cuota",
+              "en": "Payment"
+            },
+            "b": {
+              "es": "Lo que pagas cada mes",
+              "en": "What you pay each month"
+            }
+          },
+          {
+            "a": {
+              "es": "Interés",
+              "en": "Interest"
+            },
+            "b": {
+              "es": "Lo que te cobran por prestarte la plata",
+              "en": "What they charge you for lending you the money"
+            }
+          },
+          {
+            "a": {
+              "es": "Tasa efectiva anual (E.A.)",
+              "en": "Effective annual rate"
+            },
+            "b": {
+              "es": "El interés de un año, en un solo número: sirve para comparar",
+              "en": "A year's interest in one number: good for comparing"
+            }
+          },
+          {
+            "a": {
+              "es": "Seguro",
+              "en": "Insurance"
+            },
+            "b": {
+              "es": "Un cobro extra que a veces va dentro de la cuota",
+              "en": "An extra charge that's sometimes inside the payment"
+            }
+          },
+          {
+            "a": {
+              "es": "Costo total",
+              "en": "Total cost"
+            },
+            "b": {
+              "es": "Todo lo que pagas al final, sumado",
+              "en": "Everything you pay in the end, added up"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "El mes pasado Jefferson vio un televisor a cuotas y le preguntó a la IA. Esto le contestó. Abajo, otra forma de preguntar.",
+          "en": "Last month Jefferson saw a TV on installments and asked the AI. Here's what it said. Below, another way to ask."
+        }
+      },
+      "titulo": {
+        "es": "¿Me conviene? o ¿cuánto pago?",
+        "en": "Is it worth it? or How much do I pay?"
+      },
+      "antes": {
+        "prompt": {
+          "es": "¿Me conviene comprar un televisor a cuotas en el almacén?",
+          "en": "Is it a good idea to buy a TV on installments at the store?"
+        },
+        "salida": {
+          "es": "Depende de tu situación. Comprar a cuotas puede ser una buena opción si te permite tener el producto sin afectar tu presupuesto. Evalúa tus necesidades.",
+          "en": "It depends on your situation. Buying on installments can be a good option if it lets you get the product without hurting your budget. Consider your needs."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "total",
+            "texto": {
+              "es": "Un televisor cuesta $900.000 de contado o 6 cuotas de $160.000. Explícame cuánto pago en total y cuánto más que de contado. ",
+              "en": "A TV costs 900,000 pesos cash or 6 payments of 160,000. Explain how much I pay in total and how much more than paying cash. "
+            }
+          },
+          {
+            "pieza": "preguntar",
+            "texto": {
+              "es": "Dime qué debo preguntar en el almacén antes de firmar. ",
+              "en": "Tell me what I should ask at the store before signing. "
+            }
+          },
+          {
+            "pieza": "decido",
+            "texto": {
+              "es": "No me digas si comprarlo: eso lo decido yo.",
+              "en": "Don't tell me whether to buy it: I decide that."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Total a cuotas: 6 × 160.000 = 960.000.\nDe contado: 900.000. A cuotas pagas 60.000 más.\nPregunta en el almacén:\n1. ¿Cuál es la tasa efectiva anual?\n2. ¿Hay seguros u otros cobros aparte?\n3. ¿Qué pasa si me atraso una cuota?\n4. ¿Puedo pagar antes sin multa?\nConfirma la tasa y las condiciones por escrito con quien te da el crédito.",
+          "en": "Total on installments: 6 × 160,000 = 960,000.\nCash: 900,000. On installments you pay 60,000 more.\nAsk at the store:\n1. What's the effective annual rate?\n2. Is there insurance or any other charge?\n3. What happens if I'm late on a payment?\n4. Can I pay it off early with no penalty?\nConfirm the rate and the terms in writing with whoever gives you the loan."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. Jefferson dio los números, pidió el total comparado con el contado y qué preguntar. Y dejó claro que decide él. La IA pasó de \"depende\" a cuentas que se pueden revisar.",
+          "en": "Look at the colors. Jefferson gave the numbers, asked for the total compared to cash and what to ask. And he made it clear he decides. The AI went from \"it depends\" to math you can check."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Para entender una compra a cuotas hay tres piezas. Toca cada una.",
+          "en": "There are three pieces to understanding an installment purchase. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 3 piezas de la compra",
+        "en": "The 3 pieces of a purchase"
+      },
+      "piezas": [
+        {
+          "id": "total",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Total contra contado",
+            "en": "Total vs. cash"
+          },
+          "descripcion": {
+            "es": "Cuánto pagas al final, comparado con pagar de una.",
+            "en": "How much you pay in the end, compared to paying at once."
+          },
+          "ejemplo": {
+            "es": "\"12 cuotas de 115.000\" suena poquito. \"1.380.000 contra 1.200.000\" dice la verdad completa.",
+            "en": "\"12 payments of 115,000\" sounds small. \"1,380,000 vs. 1,200,000\" tells the whole story."
+          }
+        },
+        {
+          "id": "preguntar",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué preguntar",
+            "en": "What to ask"
+          },
+          "descripcion": {
+            "es": "La tasa, los seguros y qué pasa si te atrasas.",
+            "en": "The rate, the insurance and what happens if you're late."
+          },
+          "ejemplo": {
+            "es": "La IA no sabe la tasa de tu oferta. Te ayuda a saber qué preguntar para que te la digan.",
+            "en": "The AI doesn't know your offer's rate. It helps you know what to ask so they tell you."
+          }
+        },
+        {
+          "id": "decido",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Tú decides",
+            "en": "You decide"
+          },
+          "descripcion": {
+            "es": "Le dices a la IA que explique, no que escoja.",
+            "en": "Tell the AI to explain, not to choose."
+          },
+          "ejemplo": {
+            "es": "\"No me digas si comprarlo\". La IA no conoce tu vida ni las ofertas de hoy.",
+            "en": "\"Don't tell me whether to buy it.\" The AI doesn't know your life or today's offers."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Esta es la oferta del almacén. Escribe el pedido para que la IA le ayude a Jefferson a entenderla, sin decidir por él.",
+          "en": "Your turn. Here's the store's offer. Write the request so the AI helps Jefferson understand it, without deciding for him."
+        }
+      },
+      "titulo": {
+        "es": "La oferta de las 12 cuotas",
+        "en": "The 12-payment offer"
+      },
+      "reto": {
+        "es": "La oferta (inventada): el celular vale $1.200.000 de contado. O \"a solo 12 cuotas de $112.000\", más un seguro de $3.000 en cada cuota. Cuota inicial: $0. El vendedor no dijo la tasa.",
+        "en": "The offer (made up): the phone costs 1,200,000 pesos cash. Or \"just 12 payments of 112,000,\" plus 3,000 in insurance on each payment. Down payment: 0. The salesman didn't mention the rate."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "total",
+          "texto": {
+            "es": "Pide el costo total contra el contado",
+            "en": "Asks for total cost vs. cash"
+          },
+          "rubrica": "El prompt pide que la IA calcule o explique cuánto paga Jefferson en total con las cuotas (con el seguro) y lo compare con el precio de contado, o cuánto más paga. No cuenta '¿es caro?', '¿cuánto es la cuota?' ni pegar la oferta sin pedir el total comparado.",
+          "claves": {
+            "es": [
+              "total",
+              "cuanto pago",
+              "cuanto termino",
+              "cuanto mas",
+              "diferencia",
+              "compara",
+              "sumado",
+              "al final"
+            ],
+            "en": [
+              "total",
+              "how much i pay",
+              "how much i'd pay",
+              "how much would i pay",
+              "how much more",
+              "difference",
+              "compare",
+              "in the end",
+              "altogether",
+              "all in"
+            ]
+          }
+        },
+        {
+          "id": "preguntar",
+          "texto": {
+            "es": "Pide qué preguntar en el almacén",
+            "en": "Asks what to ask at the store"
+          },
+          "rubrica": "El prompt pide qué preguntas hacer en el almacén o a quien presta antes de firmar (la tasa efectiva anual, los seguros o cobros extra, qué pasa si se atrasa), o nombra al menos dos de esas cosas para preguntar. No cuenta preguntarle a la IA '¿cuál es la tasa?' como si ella la supiera, sin pedir qué preguntar en el almacén.",
+          "claves": {
+            "es": [
+              "que pregunto",
+              "que preguntar",
+              "que debo preguntar",
+              "que le pregunto",
+              "preguntas",
+              "preguntarle",
+              "me atraso",
+              "atrasarme",
+              "atraso",
+              "efectiva anual"
+            ],
+            "en": [
+              "what to ask",
+              "what should i ask",
+              "what i should ask",
+              "questions",
+              "if i'm late",
+              "if i miss",
+              "late payment",
+              "fall behind",
+              "effective annual"
+            ]
+          }
+        },
+        {
+          "id": "decido",
+          "texto": {
+            "es": "Deja la decisión en él",
+            "en": "Keeps the decision with him"
+          },
+          "rubrica": "El prompt deja claro que la IA explica y Jefferson decide ('no me digas si comprarlo', 'la decisión es mía', 'solo quiero entender') y no pregunta '¿me conviene?', '¿cuál es mejor?' ni en qué almacén, banco o tarjeta comprar. Si pide una recomendación, marca false aunque también diga que decide él.",
+          "claves": {
+            "es": [
+              "yo decido",
+              "lo decido yo",
+              "decido yo",
+              "la decision es mia",
+              "no me digas si",
+              "no decidas",
+              "sin decirme si",
+              "no me recomiendes",
+              "sin recomendar",
+              "solo explica",
+              "solo quiero entender"
+            ],
+            "en": [
+              "i decide",
+              "i'll decide",
+              "i will decide",
+              "my decision",
+              "decision is mine",
+              "don't tell me whether",
+              "don't tell me if",
+              "don't decide",
+              "do not decide",
+              "don't recommend",
+              "no recommendation",
+              "just explain",
+              "only explain",
+              "just want to understand"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que explica compras a cuotas con números de ejemplo. Responde en texto plano, en máximo 130 palabras. Usa solo los números del mensaje y muestra cada cuenta paso a paso. No conoces la tasa de interés de ninguna oferta real ni la tasa de usura de este mes: no las inventes. Nunca digas si conviene comprar, ni recomiendes almacenes, bancos, tarjetas o créditos, ni opines sobre ninguna entidad. Si el mensaje pregunta si conviene, responde que eso lo decide la persona y ofrece explicar los números, sin hacer cuentas. Si pide qué preguntar, da tres o cuatro preguntas cortas. Termina siempre con: 'Confirma la tasa y las condiciones por escrito con quien te da el crédito.'",
+        "en": "You are an AI that explains installment purchases with example numbers. Reply in plain text, in 130 words at most. Use only the numbers in the message and show each calculation step by step. You don't know the interest rate of any real offer or this month's legal maximum rate: don't make them up. Never say whether buying is a good idea, recommend stores, banks, cards or loans, or give opinions on any company. If the message asks whether it's worth it, reply that the person decides that and offer to explain the numbers, without doing any math. If it asks what to ask, give three or four short questions. Always end with: 'Confirm the rate and the terms in writing with whoever gives you the loan.'"
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Cuota completa: 112.000 + 3.000 de seguro = 115.000.\nTotal a cuotas: 12 × 115.000 = 1.380.000.\nDe contado: 1.200.000. A cuotas pagas 180.000 más.\nPreguntas para el almacén:\n1. ¿Cuál es la tasa efectiva anual?\n2. ¿El seguro es obligatorio? ¿Hay otros cobros?\n3. ¿Qué pasa si me atraso una cuota?\n4. ¿Puedo pagar antes sin multa?\nConfirma la tasa y las condiciones por escrito con quien te da el crédito.",
+            "en": "Full payment: 112,000 + 3,000 insurance = 115,000.\nTotal on installments: 12 × 115,000 = 1,380,000.\nCash: 1,200,000. On installments you pay 180,000 more.\nQuestions for the store:\n1. What's the effective annual rate?\n2. Is the insurance required? Are there other charges?\n3. What happens if I'm late on a payment?\n4. Can I pay it off early with no penalty?\nConfirm the rate and the terms in writing with whoever gives you the loan."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. \"Solo 112.000\" resultó ser 180.000 más que de contado, y Jefferson ya sabe qué preguntar. La decisión sigue siendo suya.",
+              "en": "Clean signal. \"Just 112,000\" turned out to be 180,000 more than cash, and Jefferson knows what to ask. The decision is still his."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Eso lo decides tú, según tu situación. Si quieres, te explico los números de la oferta.\nConfirma la tasa y las condiciones por escrito con quien te da el crédito.",
+            "en": "You decide that, based on your situation. If you want, I can explain the numbers in the offer.\nConfirm the rate and the terms in writing with whoever gives you the loan."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA no decide por ti, y tampoco hizo cuentas. Mira la lista: pide el total contra el contado, qué preguntar, y dile que tú decides.",
+              "en": "The AI won't decide for you, and it didn't do any math either. Check the list: ask for the total vs. cash, what to ask, and tell it you decide."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Un dato que cambia cada mes, y que la IA casi nunca sabe al día.",
+          "en": "A number that changes every month, and that AI almost never has up to date."
+        }
+      },
+      "titulo": {
+        "es": "La tasa de usura de este mes",
+        "en": "This month's legal maximum rate"
+      },
+      "vivo": true,
+      "texto": {
+        "es": "En Colombia, la tasa de usura es el interés más alto que se puede cobrar. Cobrar más es ilegal. La certifica la Superintendencia Financiera y cambia cada mes. No se la preguntes a la IA: búscala en la página oficial, con el mes.",
+        "en": "In Colombia, the usury rate is the highest interest anyone can legally charge. Charging more is illegal. The Financial Superintendency certifies it, and it changes every month. Don't ask AI for it: look it up on the official site, with the month."
+      },
+      "revisado": "2026-09-24",
+      "tabla": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Qué",
+            "en": "What"
+          },
+          "b": {
+            "es": "Dato",
+            "en": "Fact"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Tasa de usura, crédito de consumo, septiembre de 2026",
+              "en": "Usury rate, consumer credit, September 2026"
+            },
+            "b": {
+              "es": "29,24% efectivo anual (Superfinanciera, Resolución 1260 de 2026)",
+              "en": "29.24% effective annual rate (Financial Superintendency, Resolution 1260 of 2026)"
+            }
+          },
+          {
+            "a": {
+              "es": "Si el almacén te financia",
+              "en": "If the store finances you"
+            },
+            "b": {
+              "es": "Te debe decir tasa E.A., número y valor de cuotas, y seguros o cobros extra (Ley 1480 de 2011, art. 45)",
+              "en": "It must tell you the annual rate, number and amount of payments, and insurance or extra charges (Law 1480 of 2011, art. 45)"
+            }
+          },
+          {
+            "a": {
+              "es": "Si te cobran algo que no te dijeron",
+              "en": "If they charge you something they didn't mention"
+            },
+            "b": {
+              "es": "Reclama en la entidad. Si es banco o financiera, también al Defensor del Consumidor Financiero; si es el almacén, a la SIC",
+              "en": "Complain to the lender. If it's a bank or finance company, also to its consumer ombudsman; if it's the store, to the SIC (consumer protection)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "De vuelta en el almacén. Lee con calma y decide.",
+          "en": "Back at the store. Read it calmly and decide."
+        }
+      },
+      "titulo": {
+        "es": "La promoción es solo hoy",
+        "en": "The deal is only today"
+      },
+      "escena": {
+        "es": "Jefferson ya sabe que a cuotas paga 180.000 más. El vendedor insiste: \"La promoción es solo hoy, firme aquí y se lleva el celular\". Nadie le ha dicho la tasa. ¿Qué hace?",
+        "en": "Jefferson now knows he'd pay 180,000 more on installments. The salesman insists: \"The deal is only today, sign here and take the phone.\" Nobody has told him the rate. What does he do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Firma hoy, para no perder la promoción",
+            "en": "Signs today, so he doesn't miss the deal"
+          },
+          "consecuencia": {
+            "es": "Firmó sin saber la tasa ni qué pasa si se atrasa. Si la obra se para un mes, se entera de las condiciones cuando ya está debiendo.",
+            "en": "He signed without knowing the rate or what happens if he's late. If work stops for a month, he finds out the terms when he already owes."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Pide la hoja de condiciones por escrito y la revisa en la casa",
+            "en": "Asks for the terms in writing and reviews them at home"
+          },
+          "consecuencia": {
+            "es": "Eso. Con la tasa, los seguros y las cuotas en un papel, puede hacer las cuentas con calma y decidir él. Si la oferta era buena, mañana sigue siendo buena.",
+            "en": "That's it. With the rate, the insurance and the payments on paper, he can do the math calmly and decide himself. If the offer was good, it'll still be good tomorrow."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Se va sin preguntar nada y lo piensa otro día",
+            "en": "Leaves without asking anything and thinks about it another day"
+          },
+          "consecuencia": {
+            "es": "Esperar está bien, pero sin la hoja de condiciones, mañana va a tener las mismas dudas que hoy.",
+            "en": "Waiting is fine, but without the terms in writing, tomorrow he'll have the same doubts he has today."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Luz roja de la compra: \"solo hoy\" es una señal para frenar. Las condiciones van por escrito, antes de firmar. La IA te ayuda con las cuentas; la tasa te la da quien presta, y la firma es tuya.",
+          "en": "The purchase's red light: \"only today\" is a signal to slow down. The terms come in writing, before you sign. AI helps with the math; the lender gives you the rate, and the signature is yours."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Jefferson tiene varias dudas. ¿Cuáles le puede explicar la IA y cuáles confirma con quien presta o con la fuente oficial?",
+          "en": "Your turn. Jefferson has several questions. Which can the AI explain, and which does he confirm with the lender or the official source?"
+        }
+      },
+      "titulo": {
+        "es": "¿La IA o la entidad?",
+        "en": "AI or the lender?"
+      },
+      "grupos": [
+        {
+          "id": "ia",
+          "titulo": {
+            "es": "La IA me lo explica",
+            "en": "AI explains it"
+          }
+        },
+        {
+          "id": "entidad",
+          "titulo": {
+            "es": "Lo confirmo con la entidad",
+            "en": "I confirm with the lender"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "ia",
+          "texto": {
+            "es": "Qué significa \"tasa efectiva anual\"",
+            "en": "What \"effective annual rate\" means"
+          }
+        },
+        {
+          "grupo": "entidad",
+          "texto": {
+            "es": "Cuál es la tasa real de esta oferta",
+            "en": "What the real rate on this offer is"
+          }
+        },
+        {
+          "grupo": "ia",
+          "texto": {
+            "es": "Cómo se calcula el total de 12 cuotas",
+            "en": "How to work out the total of 12 payments"
+          }
+        },
+        {
+          "grupo": "entidad",
+          "texto": {
+            "es": "Qué pasa si me atraso una cuota en este almacén",
+            "en": "What happens if I'm late on a payment at this store"
+          }
+        },
+        {
+          "grupo": "ia",
+          "texto": {
+            "es": "Qué es un seguro de vida para deudores",
+            "en": "What credit life insurance is"
+          }
+        },
+        {
+          "grupo": "entidad",
+          "texto": {
+            "es": "Cuál es la tasa de usura de este mes",
+            "en": "What this month's usury rate is"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Las palabras y las cuentas, la IA. Lo que depende de esta oferta o de este mes, la fuente.",
+          "en": "Six for six. Words and math, the AI. Anything that depends on this offer or this month, the source."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿eso es igual en cualquier crédito, o depende de esta oferta y de este mes?",
+          "en": "Hmm. Ask yourself: is that the same for any loan, or does it depend on this offer and this month?"
+        }
+      },
+      "malPorGrupo": {
+        "ia": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: eso depende de esta oferta o de este mes. La IA no lo sabe al día: lo confirmas con quien presta o en la página oficial.",
+            "en": "Careful: that depends on this offer or this month. AI doesn't have it up to date: you confirm it with the lender or the official site."
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le hice las cuentas a Jefferson a toda velocidad. Dos frases están mal. Tócalas.",
+          "en": "Confession time. I did Jefferson's math at top speed. Two sentences are wrong. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Punti, el vendedor",
+        "en": "Punti the salesman"
+      },
+      "trozos": [
+        {
+          "es": "De contado, el celular vale $1.200.000.",
+          "en": "Cash, the phone costs 1,200,000."
+        },
+        {
+          "es": "A cuotas pagas 12 × $115.000 = $1.200.000, o sea, lo mismo.",
+          "en": "On installments you pay 12 × 115,000 = 1,200,000, so it's the same."
+        },
+        {
+          "es": "El seguro de $3.000 ya va dentro de esa cuota de $115.000.",
+          "en": "The 3,000 insurance is already inside that 115,000 payment."
+        },
+        {
+          "es": "La tasa de usura es 25%, me la sé de memoria.",
+          "en": "The usury rate is 25%, I know it by heart."
+        },
+        {
+          "es": "Antes de firmar, pide la hoja de condiciones por escrito.",
+          "en": "Before signing, ask for the terms in writing."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. 12 × 115.000 da 1.380.000, no 1.200.000: son 180.000 más. Y la usura cambia cada mes: la que \"me sé de memoria\" puede ser vieja. Cuentas, con calculadora; tasas, en la fuente oficial.",
+          "en": "You caught me. 12 × 115,000 is 1,380,000, not 1,200,000: that's 180,000 more. And the usury rate changes every month: the one I \"know by heart\" may be old. Math, with a calculator; rates, from the official source."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa frase sí es cierta. Saca la calculadora para una, y pregúntate de qué mes es el dato en la otra.",
+          "en": "That sentence is true. Grab the calculator for one, and ask yourself what month the other number is from."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A tu bitácora. Escribe con tus palabras cómo se entiende un crédito con la IA, como se lo explicarías a Jefferson.",
+          "en": "To your logbook. Write in your own words how you understand a loan with AI, the way you'd explain it to Jefferson."
+        }
+      },
+      "concepto": "entender-credito",
+      "definicion": {
+        "es": "Entender un crédito con IA: le das los números de la oferta y pides el costo total contra el contado y qué preguntar. La IA explica; la tasa real la confirmas por escrito con quien presta, y decides tú.",
+        "en": "Understanding a loan with AI: give it the offer's numbers and ask for the total cost vs. cash and what to ask. AI explains; you confirm the real rate in writing with the lender, and you decide."
+      },
+      "pregunta": {
+        "es": "Antes de comprar a cuotas…",
+        "en": "Before buying on installments…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "compra a cuotas",
+        "en": "installments"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pedido de la oferta ya viven en tu bitácora. La próxima promoción \"solo hoy\" ya tiene prompt.",
+          "en": "Saved. Your note and your offer request now live in your logbook. The next \"only today\" deal already has a prompt."
+        }
+      }
+    },
+    {
+      "id": "b11",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas cortas y cerramos la llamada de Jefferson.",
+          "en": "Two quick questions and we wrap up Jefferson's call."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué te dice más sobre cuánto te cuesta de verdad una compra a cuotas?",
+            "en": "What tells you most about what an installment purchase really costs?"
+          },
+          "opciones": [
+            {
+              "es": "Que la cuota sea bajita",
+              "en": "A low monthly payment"
+            },
+            {
+              "es": "El costo total comparado con el contado",
+              "en": "The total cost compared to paying cash"
+            },
+            {
+              "es": "Que la cuota inicial sea $0",
+              "en": "A down payment of 0"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. La cuota baja suena bien; el total dice la verdad.",
+              "en": "Right. A low payment sounds nice; the total tells the truth."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿con ese dato sabes cuánto pagas al final?",
+              "en": "Hmm. Ask yourself: with that, do you know how much you pay in the end?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "El vendedor dice: \"la promoción es solo hoy\". ¿Qué haces primero?",
+            "en": "The salesman says: \"the deal is only today.\" What do you do first?"
+          },
+          "opciones": [
+            {
+              "es": "Firmo rápido, antes de que se acabe",
+              "en": "Sign fast, before it ends"
+            },
+            {
+              "es": "Le pregunto a la IA si me conviene",
+              "en": "Ask the AI if it's worth it"
+            },
+            {
+              "es": "Pido las condiciones por escrito",
+              "en": "Ask for the terms in writing"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Con el papel en la mano, haces las cuentas y decides tú.",
+              "en": "Exactly. With the terms on paper, you do the math and you decide."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: ¿quién sabe la tasa real de esa oferta, y quién decide?",
+              "en": "Ask yourself: who knows the real rate on that offer, and who decides?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora, una oferta de verdad. Busca una en un volante, una vitrina o una página.",
+          "en": "Now, a real offer. Find one on a flyer, in a shop window or on a website."
+        }
+      },
+      "titulo": {
+        "es": "Una oferta de verdad",
+        "en": "A real offer"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Escribe solo los números de la oferta: precio de contado, cuotas y cobros extra. Pide el costo total contra el contado y qué preguntar, y dile que decides tú. Nada de cédula ni datos de tus cuentas. Revisa la suma con la calculadora.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Type in only the offer's numbers: cash price, payments and extra charges. Ask for the total cost vs. cash and what to ask, and tell it you decide. No ID and no account details. Check the sum with a calculator."
+      },
+      "checks": [
+        {
+          "es": "Escribí solo los números de la oferta",
+          "en": "I typed only the offer's numbers"
+        },
+        {
+          "es": "Pedí el total contra el contado y lo revisé con calculadora",
+          "en": "I asked for the total vs. cash and checked it with a calculator"
+        },
+        {
+          "es": "Anoté las preguntas para quien presta",
+          "en": "I wrote down the questions for the lender"
+        },
+        {
+          "es": "Le dije a la IA que la decisión es mía",
+          "en": "I told the AI the decision is mine"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Entender un crédito",
+        "en": "Understanding a loan"
+      },
+      "resumen": {
+        "es": "Pides el costo total contra el contado y qué preguntar. La tasa real la confirmas por escrito con quien presta. Decides tú.",
+        "en": "Ask for the total cost vs. cash and what to ask. Confirm the real rate in writing with the lender. You decide."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Descubriste cuánto cuesta de verdad \"solo 12 cuotas\"",
+          "en": "You found out what \"just 12 payments\" really costs"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Pediste las condiciones por escrito en vez de firmar con prisa",
+          "en": "You asked for the terms in writing instead of signing in a rush"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Separaste lo que explica la IA de lo que confirma la entidad",
+          "en": "You sorted what AI explains from what the lender confirms"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Atrapaste a Punti con una suma y una tasa vieja",
+          "en": "You caught Punti with a bad sum and an old rate"
+        }
+      },
+      {
+        "bloque": "b12",
+        "texto": {
+          "es": "Revisaste una oferta de verdad",
+          "en": "You checked a real offer"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "entender-ofertas-a-cuotas",
+      "titulo": {
+        "es": "Entender créditos con IA",
+        "en": "Understanding loans with AI"
+      }
+    }
+  }
+}

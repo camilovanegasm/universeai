@@ -1,0 +1,678 @@
+{
+  "formato": "punti-mision@1",
+  "id": "una-ia-en-tu-bolsillo",
+  "mundo": "que-es-la-ia",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 7,
+  "conceptos": [
+    "ia"
+  ],
+  "usaConceptos": [],
+  "titulo": {
+    "es": "Una IA en tu bolsillo",
+    "en": "An AI in Your Pocket"
+  },
+  "resumen": {
+    "es": "Qué es la IA: un programa que aprende de muchos ejemplos. Y dónde se esconde en tu celular.",
+    "en": "What AI is: a program that learns from lots of examples. And where it hides in your phone."
+  },
+  "siguiente": "reglas-o-ejemplos",
+  "fuentes": [
+    {
+      "titulo": "Google for Developers, Introduction to Machine Learning: What is ML?",
+      "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Google DeepMind, Traffic prediction with advanced Graph Neural Networks (2020)",
+      "url": "https://deepmind.google/discover/blog/traffic-prediction-with-advanced-graph-neural-networks/",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Hola, piloto. Soy Punti. Este es Origen, el planeta donde me encendí por primera vez. Aquí tengo mi taller. Y acaba de llegar una señal de Barranquilla: Doña Gilma dice que la IA es cosa de oficina.",
+          "en": "Hi, pilot. I'm Punti. This is Origin, the planet where I first switched on. My workshop is here. And a signal just came in from Barranquilla: Doña Gilma says AI is only for office people."
+        }
+      },
+      "titulo": {
+        "es": "Una IA en tu bolsillo",
+        "en": "An AI in your pocket"
+      },
+      "texto": {
+        "es": "Doña Gilma vende arepas de huevo en un puesto. Su nieta le dice que el celular tiene IA. Ella no le cree. Hoy descubres qué es la IA y dónde se esconde. Unos 7 minutos.",
+        "en": "Doña Gilma sells egg arepas from a street stand. Her granddaughter says her phone has AI. She doesn't buy it. Today you'll find out what AI is and where it hides. About 7 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, la idea en una frase. Te la muestro en el tablero del taller.",
+          "en": "First, the idea in one sentence. Let me show you on the workshop board."
+        }
+      },
+      "titulo": {
+        "es": "¿Qué es la IA?",
+        "en": "What is AI?"
+      },
+      "texto": {
+        "es": "La IA, o inteligencia artificial, es un programa que aprende mirando muchísimos ejemplos. Con lo que aprendió, hace tareas que antes solo hacía una persona: reconocer una cara, adivinar la próxima palabra, calcular un trancón. Nadie le escribió cada paso. Lo sacó de los ejemplos.",
+        "en": "AI, or artificial intelligence, is a program that learns by looking at tons of examples. With what it learned, it does tasks that used to need a person: recognizing a face, guessing your next word, spotting a traffic jam. Nobody wrote every step for it. It worked them out from the examples."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Muchísimos ejemplos",
+            "en": "Tons of examples"
+          },
+          {
+            "es": "El programa encuentra patrones",
+            "en": "The program finds patterns"
+          },
+          {
+            "es": "Hace la tarea con algo que nunca vio",
+            "en": "It does the task with something new"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Le pedí prestado el celular a Doña Gilma y encontré tres IA escondidas. Toca cada una para ver de qué ejemplos aprendió.",
+          "en": "I borrowed Doña Gilma's phone and found three hidden AIs. Tap each one to see what examples it learned from."
+        }
+      },
+      "titulo": {
+        "es": "Tres IA en el celular de Gilma",
+        "en": "Three AIs in Gilma's phone"
+      },
+      "piezas": [
+        {
+          "id": "teclado",
+          "color": "#ff9f1c",
+          "titulo": {
+            "es": "El teclado que adivina",
+            "en": "The guessing keyboard"
+          },
+          "descripcion": {
+            "es": "Te sugiere la próxima palabra mientras escribes.",
+            "en": "Suggests your next word as you type."
+          },
+          "ejemplo": {
+            "es": "Aprendió de montones de frases escritas por personas, y también de lo que escribe Gilma. Por eso, después de \"arepas de\", le sugiere \"huevo\".",
+            "en": "It learned from piles of sentences people wrote, and from what Gilma types too. That's why after \"egg\", it suggests \"arepas\"."
+          }
+        },
+        {
+          "id": "filtro",
+          "color": "#b388ff",
+          "titulo": {
+            "es": "El filtro de fotos",
+            "en": "The photo filter"
+          },
+          "descripcion": {
+            "es": "Le pone orejas de conejo que siguen su cara.",
+            "en": "Adds bunny ears that follow her face."
+          },
+          "ejemplo": {
+            "es": "Aprendió de muchísimas fotos de caras. Por eso encuentra los ojos y la boca de Gilma, aunque ella se mueva.",
+            "en": "It learned from tons of photos of faces. That's why it finds Gilma's eyes and mouth, even when she moves."
+          }
+        },
+        {
+          "id": "mapa",
+          "color": "#00e5d0",
+          "titulo": {
+            "es": "El mapa del trancón",
+            "en": "The traffic map"
+          },
+          "descripcion": {
+            "es": "Calcula a qué hora llegas, según el tráfico.",
+            "en": "Works out when you'll arrive, given the traffic."
+          },
+          "ejemplo": {
+            "es": "Aprendió de muchísimos viajes pasados y mira el tráfico de ahora. Por eso le avisa a Gilma que hoy llega tarde al mercado.",
+            "en": "It learned from huge numbers of past trips and checks today's traffic. That's why it warns Gilma she'll be late to the market today."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estas son cosas que hace el celular de Doña Gilma. ¿Cuáles usan IA y cuáles no? Pista: pregúntate si tuvo que aprender de ejemplos.",
+          "en": "Your turn. These are things Doña Gilma's phone does. Which ones use AI and which don't? Hint: ask yourself if it had to learn from examples."
+        }
+      },
+      "titulo": {
+        "es": "¿Usa IA o no?",
+        "en": "AI or not?"
+      },
+      "grupos": [
+        {
+          "id": "si",
+          "titulo": {
+            "es": "Usa IA",
+            "en": "Uses AI"
+          }
+        },
+        {
+          "id": "no",
+          "titulo": {
+            "es": "No usa IA",
+            "en": "No AI"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "La alarma suena todos los días a las 5 a. m.",
+            "en": "The alarm goes off every day at 5 a.m."
+          }
+        },
+        {
+          "grupo": "si",
+          "texto": {
+            "es": "El celular convierte en texto lo que ella dice en voz alta",
+            "en": "The phone turns what she says out loud into text"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "La calculadora suma lo que vendió en el día",
+            "en": "The calculator adds up what she sold that day"
+          }
+        },
+        {
+          "grupo": "si",
+          "texto": {
+            "es": "La galería junta todas las fotos donde sale su nieta",
+            "en": "The photo gallery groups every picture of her granddaughter"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "La linterna se prende cuando ella toca el botón",
+            "en": "The flashlight turns on when she taps the button"
+          }
+        },
+        {
+          "grupo": "si",
+          "texto": {
+            "es": "Le llega un \"gracias\" y el celular le sugiere responder \"con gusto\"",
+            "en": "A \"thank you\" comes in and the phone suggests replying \"you're welcome\""
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso. La alarma, la calculadora y la linterna siguen órdenes fijas. Las otras tuvieron que aprender de muchísimos ejemplos de voces, caras y palabras.",
+          "en": "That's it. The alarm, the calculator and the flashlight follow fixed orders. The others had to learn from tons of examples of voices, faces and words."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, mira otra vez. ¿Esa tarea cabe en una orden fija, o necesita haber visto muchos ejemplos?",
+          "en": "Hmm, look again. Does that task fit in one fixed order, or does it need to have seen lots of examples?"
+        }
+      },
+      "malPorGrupo": {
+        "si": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: eso es útil, pero útil no es lo mismo que IA. ¿Tuvo que aprender algo, o solo sigue una orden?",
+            "en": "Careful: that's useful, but useful isn't the same as AI. Did it have to learn anything, or does it just follow an order?"
+          }
+        },
+        "no": {
+          "estado": "error",
+          "texto": {
+            "es": "Mira bien: para entender una voz o una cara hay que haber visto muchísimos ejemplos. Ninguna orden fija alcanza.",
+            "en": "Look closely: understanding a voice or a face takes seeing tons of examples. No fixed order is enough."
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Y ahora, lo que Doña Gilma no sabía: ella también aprende así.",
+          "en": "And now, what Doña Gilma didn't know: she learns this way too."
+        }
+      },
+      "titulo": {
+        "es": "Gilma también aprende de ejemplos",
+        "en": "Gilma learns from examples too"
+      },
+      "texto": {
+        "es": "Doña Gilma sabe cuándo la masa está lista sin medir nada. Lo aprendió después de miles de arepas. Nadie le dio una regla exacta. La IA aprende parecido, pero con muchísimos más ejemplos y sin entender lo que hace: encuentra patrones y los repite.",
+        "en": "Doña Gilma knows when the dough is ready without measuring anything. She learned it after thousands of arepas. Nobody gave her an exact rule. AI learns in a similar way, but with far more examples and without understanding what it does: it finds patterns and repeats them."
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Pídele a la IA que le explique a Doña Gilma qué es la IA. Que lo haga con algo de su puesto o de su celular, para que se lo crea.",
+          "en": "Your turn. Ask the AI to explain to Doña Gilma what AI is. Have it use something from her stand or her phone, so she'll believe it."
+        }
+      },
+      "titulo": {
+        "es": "Explícaselo a Doña Gilma",
+        "en": "Explain it to Doña Gilma"
+      },
+      "reto": {
+        "es": "Datos de Doña Gilma: tiene 61 años y vende arepas de huevo en un puesto en Barranquilla. Usa el celular para WhatsApp, fotos y el mapa. Cree que la IA es cosa de oficina. Escribe tu mensaje para la IA.",
+        "en": "About Doña Gilma: she's 61 and sells egg arepas from a street stand in Barranquilla. She has a phone she uses for WhatsApp, photos and maps. She thinks AI is only for office people. Write your message to the AI."
+      },
+      "inicial": "vacio",
+      "aprobar": 2,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "para-quien",
+          "texto": {
+            "es": "Para quién es: Doña Gilma",
+            "en": "Who it's for: Doña Gilma"
+          },
+          "rubrica": "El prompt pide que la explicación sea para Doña Gilma o para alguien sin estudios de tecnología (una persona mayor, una vendedora, alguien que nunca ha usado una IA). No cuenta 'explícame qué es la IA' a secas, ni pedir que sea 'corta' o 'sencilla' sin decir para quién es.",
+          "claves": {
+            "es": [
+              "gilma",
+              "sin estudios",
+              "no sabe de tecnologia",
+              "no sabe nada de",
+              "no sabe mucho de",
+              "poco de tecnologia",
+              "persona mayor",
+              "senora",
+              "abuela",
+              "vendedora",
+              "nunca ha usado",
+              "sin conocimientos"
+            ],
+            "en": [
+              "gilma",
+              "no tech",
+              "non-tech",
+              "not tech",
+              "no background",
+              "older",
+              "elderly",
+              "grandma",
+              "grandmother",
+              "street vendor",
+              "never used",
+              "never studied"
+            ]
+          }
+        },
+        {
+          "id": "ejemplo",
+          "texto": {
+            "es": "Un ejemplo de su día: puesto o celular",
+            "en": "An example from her day: stand or phone"
+          },
+          "rubrica": "El prompt pide que la explicación use un ejemplo de la vida diaria de Doña Gilma: su celular (teclado, fotos, mapa, WhatsApp), su puesto, sus arepas o sus ventas. No cuenta 'da un ejemplo' sin decir de qué, ni ejemplos de oficina, de robots o de películas.",
+          "claves": {
+            "es": [
+              "ejemplo de su",
+              "ejemplos de su",
+              "ejemplo con su",
+              "ejemplo del puesto",
+              "ejemplo del celular",
+              "ejemplo con el celular",
+              "ejemplo de las arepas",
+              "ejemplo con las arepas",
+              "su celular",
+              "su telefono",
+              "su puesto",
+              "sus arepas",
+              "sus ventas",
+              "sus clientes",
+              "su whatsapp",
+              "su dia"
+            ],
+            "en": [
+              "example from her",
+              "examples from her",
+              "example of her",
+              "example with her",
+              "her phone",
+              "her stand",
+              "her stall",
+              "her arepas",
+              "her sales",
+              "her customers",
+              "her whatsapp",
+              "her day",
+              "her keyboard",
+              "her photos"
+            ]
+          }
+        },
+        {
+          "id": "aprende",
+          "texto": {
+            "es": "Que diga que la IA aprende de ejemplos",
+            "en": "Say that AI learns from examples"
+          },
+          "rubrica": "El prompt pide que la explicación diga que la IA aprende de ejemplos (o de muchos datos, o viendo muchos casos). No cuenta pedir solo 'qué es la IA' o 'cómo funciona' sin mencionar que aprende.",
+          "claves": {
+            "es": [
+              "aprende de",
+              "aprenden de",
+              "aprendio de",
+              "aprendieron de",
+              "aprender de",
+              "como aprende",
+              "que aprende",
+              "aprende viendo",
+              "aprende mirando",
+              "a partir de ejemplos",
+              "viendo ejemplos",
+              "mirando ejemplos",
+              "muchos ejemplos",
+              "miles de ejemplos",
+              "de muchos datos"
+            ],
+            "en": [
+              "learns from",
+              "learned from",
+              "learnt from",
+              "learn from",
+              "learning from",
+              "how it learns",
+              "how ai learns",
+              "that learns",
+              "it learns",
+              "from examples",
+              "lots of examples",
+              "many examples",
+              "thousands of examples",
+              "lots of data"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que explica cosas con palabras sencillas. Responde en máximo 6 frases cortas, sin palabras técnicas. Usa solo lo que dice el prompt: si no dice para quién es la explicación, explica de forma general. No inventes datos de la persona.",
+        "en": "You are an AI that explains things in simple words. Reply in 6 short sentences at most, with no technical words. Use only what the prompt says: if it doesn't say who the explanation is for, explain in general terms. Don't make up details about the person."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Doña Gilma, ¿cómo sabe usted que la masa ya está lista? No la mide: lo aprendió después de hacer miles de arepas. La IA es un programa que aprende parecido, mirando muchísimos ejemplos. Su celular tiene una: cuando usted escribe \"arepas de\", el teclado le sugiere \"huevo\". Aprendió de montones de mensajes. No es cosa de oficina: ya la lleva en el bolsillo.",
+            "en": "Doña Gilma, how do you know the dough is ready? You don't measure it: you learned after making thousands of arepas. AI is a program that learns in a similar way, by looking at tons of examples. Your phone has one: when you type \"egg\", the keyboard suggests \"arepas\". It learned from piles of messages. It's not just for office people: it's already in your pocket."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal clara. La IA le habló a Gilma, con su celular y con la idea de los ejemplos. Esa explicación sí la convence.",
+              "en": "Clear signal. The AI spoke to Gilma, used her phone and got the idea of examples across. That explanation will win her over."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "La inteligencia artificial (IA) es un campo de la informática que desarrolla sistemas capaces de realizar tareas que requieren inteligencia humana, como el razonamiento y la percepción, mediante algoritmos y modelos computacionales.",
+            "en": "Artificial intelligence (AI) is a field of computer science that develops systems capable of performing tasks that require human intelligence, such as reasoning and perception, through algorithms and computational models."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Todo es cierto, pero Gilma quedó igual. La IA no sabía para quién era. Dile quién es Gilma y pide un ejemplo de su celular.",
+              "en": "It's all true, but Gilma is none the wiser. The AI didn't know who it was for. Tell it who Gilma is and ask for an example from her phone."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Tu primera nota en la bitácora, piloto. Escribe con tus palabras qué es la IA, como se lo dirías a Doña Gilma. Al final de Origen vas a volver a leer esta frase.",
+          "en": "Your first logbook entry, pilot. Write what AI is in your own words, the way you'd tell Doña Gilma. At the end of Origin you'll read this sentence again."
+        }
+      },
+      "concepto": "ia",
+      "definicion": {
+        "es": "Un programa que aprende mirando muchísimos ejemplos. Con eso hace tareas que antes solo hacía una persona, como reconocer una cara o adivinar la próxima palabra.",
+        "en": "A program that learns by looking at tons of examples. That lets it do tasks that used to need a person, like recognizing a face or guessing your next word."
+      },
+      "pregunta": {
+        "es": "La IA es…",
+        "en": "AI is…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "explicar la IA",
+        "en": "explaining AI"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Esta es la primera página de tu bitácora. Al final de Origen la comparamos con lo que sepas entonces.",
+          "en": "Saved. This is the first page of your logbook. At the end of Origin we'll compare it with what you know by then."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas cortas y cerramos.",
+          "en": "Two quick questions and we're done."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué tiene de especial un programa con IA?",
+            "en": "What's special about a program with AI?"
+          },
+          "opciones": [
+            {
+              "es": "Aprende de muchos ejemplos, en vez de seguir solo pasos escritos",
+              "en": "It learns from lots of examples instead of only following written steps"
+            },
+            {
+              "es": "Funciona sin internet",
+              "en": "It works without internet"
+            },
+            {
+              "es": "Es un robot con cuerpo",
+              "en": "It's a robot with a body"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Los ejemplos son la gasolina de la IA.",
+              "en": "Right. Examples are what AI runs on."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Piensa en cómo aprendió Gilma a saber cuándo está lista la masa.",
+              "en": "Not that. Think about how Gilma learned when the dough is ready."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "El mapa del celular le avisa a Gilma que hoy hay trancón hacia el mercado. ¿De dónde lo sacó?",
+            "en": "Gilma's phone map warns her there's traffic on the way to the market today. Where did that come from?"
+          },
+          "opciones": [
+            {
+              "es": "Alguien lo escribe a mano cada mañana",
+              "en": "Someone types it in by hand every morning"
+            },
+            {
+              "es": "De muchísimos viajes pasados y del tráfico de ahora",
+              "en": "From huge numbers of past trips and today's traffic"
+            },
+            {
+              "es": "Lo adivina al azar",
+              "en": "It guesses at random"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Aprendió de viajes pasados y mira lo que pasa ahora.",
+              "en": "Exactly. It learned from past trips and checks what's happening now."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Recuerda lo que viste al tocar el mapa en el celular de Gilma.",
+              "en": "Hmm. Remember what you saw when you tapped the map on Gilma's phone."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Una tarea para hoy, fuera de Punti. Mira tu propio celular. ¿Dónde está trabajando una IA sin que la veas? Lo vas a usar en el proyecto del capítulo.",
+          "en": "A task for today, outside Punti. Look at your own phone. Where is an AI working without you noticing? You'll use this in the chapter project."
+        }
+      },
+      "titulo": {
+        "es": "Tu diario de IA",
+        "en": "Your AI diary"
+      },
+      "instruccion": {
+        "es": "Hoy, cada vez que tu celular adivine, reconozca o te sugiera algo, anótalo en tus notas o en un papel. Una línea basta: qué hizo y a qué hora. Busca por lo menos tres momentos.",
+        "en": "Today, every time your phone guesses, recognizes or suggests something, jot it down in your notes or on paper. One line is enough: what it did and what time. Look for at least three moments."
+      },
+      "checks": [
+        {
+          "es": "Anoté por lo menos tres momentos",
+          "en": "I wrote down at least three moments"
+        },
+        {
+          "es": "Busqué en el teclado, en las fotos y en el mapa",
+          "en": "I checked the keyboard, the photos and the map"
+        },
+        {
+          "es": "Anoté a qué hora pasó cada uno",
+          "en": "I noted what time each one happened"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "La IA",
+        "en": "AI"
+      },
+      "resumen": {
+        "es": "Un programa que aprende mirando muchísimos ejemplos. Ya la usas: en el teclado, en las fotos y en el mapa.",
+        "en": "A program that learns by looking at tons of examples. You already use it: in your keyboard, your photos and your map."
+      }
+    },
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Encontraste tres IA en el celular de Doña Gilma",
+          "en": "You found three AIs in Doña Gilma's phone"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste lo que usa IA de lo que no",
+          "en": "You sorted what uses AI from what doesn't"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Le explicaste la IA a Doña Gilma",
+          "en": "You explained AI to Doña Gilma"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Empezaste tu diario de IA",
+          "en": "You started your AI diary"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "reconocer-la-ia",
+      "titulo": {
+        "es": "Reconocer la IA",
+        "en": "Spotting AI"
+      }
+    }
+  }
+}

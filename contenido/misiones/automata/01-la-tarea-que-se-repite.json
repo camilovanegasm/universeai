@@ -1,0 +1,765 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-tarea-que-se-repite",
+  "mundo": "automatizaciones",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "tarea-repetitiva"
+  ],
+  "usaConceptos": [
+    "cuando-usar-agente"
+  ],
+  "titulo": {
+    "es": "La tarea que se repite",
+    "en": "The task that repeats"
+  },
+  "resumen": {
+    "es": "Reconocer qué tarea vale la pena automatizar: la que pasa seguido, siempre igual y te cuesta.",
+    "en": "Spot which tasks are worth automating: the ones that happen often, the same way, and cost you."
+  },
+  "siguiente": "sensor-y-estacion",
+  "fuentes": [],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, bienvenido a Autómata, el planeta-fábrica. Llegó una señal a la sala de engranajes: Don Albeiro reparte agua en botellón en Tunja y cada viernes se le pierde un pedido. Vamos a ver qué le pasa.",
+          "en": "Pilot, welcome to Automaton, the factory planet. A signal reached the gear room: Don Albeiro delivers bottled water in Tunja, and every Friday an order goes missing. Let's see what's going on."
+        }
+      },
+      "titulo": {
+        "es": "La tarea que se repite",
+        "en": "The task that repeats"
+      },
+      "texto": {
+        "es": "Hoy aprendes a reconocer qué tarea vale la pena pasarle a una máquina y cuál no. Es la primera pieza de todo flujo. Unos 8 minutos.",
+        "en": "Today you'll learn to spot which tasks are worth handing to a machine and which aren't. It's the first piece of every flow. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué es esta fábrica.",
+          "en": "First, what this factory is."
+        }
+      },
+      "titulo": {
+        "es": "Una receta fija",
+        "en": "A fixed recipe"
+      },
+      "texto": {
+        "es": "Don Albeiro recibe unos 30 pedidos al día por WhatsApp y los copia a mano en un cuaderno. Un flujo automático es una receta fija: decides los pasos una vez y la máquina los repite igual cada vez. Aquí lo verás como una banda: un sensor que la arranca, estaciones que trabajan y cajas que viajan.",
+        "en": "Don Albeiro gets about 30 orders a day on WhatsApp and copies them by hand into a notebook. An automated flow is a fixed recipe: you decide the steps once and the machine repeats them the same way every time. Here it's a conveyor belt: a sensor starts it, stations do the work, boxes travel."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Sensor: llegó un pedido",
+            "en": "Sensor: an order came in"
+          },
+          {
+            "es": "Estación: anotarlo en la lista del día",
+            "en": "Station: add it to today's list"
+          },
+          {
+            "es": "Estación: avisarle al repartidor",
+            "en": "Station: tell the delivery driver"
+          },
+          {
+            "es": "La caja llega: pedido entregado",
+            "en": "The box arrives: order delivered"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "No toda tarea sirve para la banda. Una buena candidata tiene estas tres señales. Toca cada una.",
+          "en": "Not every task belongs on the belt. A good candidate shows these three signs. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 3 señales de una tarea",
+        "en": "The 3 signs of a good task"
+      },
+      "piezas": [
+        {
+          "id": "seguido",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "Pasa seguido",
+            "en": "It happens often"
+          },
+          "descripcion": {
+            "es": "Todos los días o cada semana, no una vez al año.",
+            "en": "Every day or every week, not once a year."
+          },
+          "ejemplo": {
+            "es": "Anotar pedidos pasa 30 veces al día. Eso sí vale una banda.",
+            "en": "Writing down orders happens 30 times a day. That's worth a belt."
+          }
+        },
+        {
+          "id": "igual",
+          "color": "#ff9f40",
+          "titulo": {
+            "es": "Siempre igual",
+            "en": "Always the same"
+          },
+          "descripcion": {
+            "es": "Los mismos pasos, en el mismo orden.",
+            "en": "The same steps, in the same order."
+          },
+          "ejemplo": {
+            "es": "Nombre, dirección, cuántos botellones. Siempre lo mismo: una máquina lo puede repetir.",
+            "en": "Name, address, how many jugs. Always the same: a machine can repeat that."
+          }
+        },
+        {
+          "id": "cuesta",
+          "color": "#ff6b6b",
+          "titulo": {
+            "es": "Te cuesta",
+            "en": "It costs you"
+          },
+          "descripcion": {
+            "es": "Te quita tiempo o se te olvida.",
+            "en": "It eats your time or slips your mind."
+          },
+          "ejemplo": {
+            "es": "Dos minutos por pedido suman una hora al día. Y el viernes, cansado, se pierde uno.",
+            "en": "Two minutes per order adds up to an hour a day. And on Friday, tired, one gets lost."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estas son tareas de la semana de Don Albeiro. ¿Cuáles van para la banda y cuáles se quedan a mano?",
+          "en": "Your turn. These are tasks from Don Albeiro's week. Which ones go on the belt and which stay by hand?"
+        }
+      },
+      "titulo": {
+        "es": "¿A la banda o a mano?",
+        "en": "Belt or by hand?"
+      },
+      "grupos": [
+        {
+          "id": "banda",
+          "titulo": {
+            "es": "Para la banda",
+            "en": "On the belt"
+          }
+        },
+        {
+          "id": "mano",
+          "titulo": {
+            "es": "A mano",
+            "en": "By hand"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "banda",
+          "texto": {
+            "es": "Anotar cada pedido que llega por WhatsApp en la lista del día",
+            "en": "Adding each WhatsApp order to today's list"
+          }
+        },
+        {
+          "grupo": "mano",
+          "texto": {
+            "es": "Calmar a un cliente al que le llegó un botellón roto",
+            "en": "Calming down a customer who got a cracked jug"
+          }
+        },
+        {
+          "grupo": "banda",
+          "texto": {
+            "es": "Mandar el aviso de \"su pedido va en camino\"",
+            "en": "Sending the \"your order is on its way\" message"
+          }
+        },
+        {
+          "grupo": "mano",
+          "texto": {
+            "es": "Negociar el precio con un proveedor nuevo de tapas",
+            "en": "Negotiating prices with a new cap supplier"
+          }
+        },
+        {
+          "grupo": "banda",
+          "texto": {
+            "es": "Recordarles el pago del mes a los clientes que tienen cuenta",
+            "en": "Reminding customers with a tab about the monthly payment"
+          }
+        },
+        {
+          "grupo": "mano",
+          "texto": {
+            "es": "Decidir si abre una segunda ruta el año que viene",
+            "en": "Deciding whether to open a second route next year"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Lo que se repite igual va a la banda. Lo que es distinto cada vez, o delicado, se queda contigo.",
+          "en": "Six for six. What repeats the same way goes on the belt. What's different every time, or delicate, stays with you."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, revisa las tres señales: ¿pasa seguido, siempre igual y te cuesta? Si falla una, piénsalo dos veces.",
+          "en": "Hmm, check the three signs: does it happen often, always the same way, and cost you? If one fails, think twice."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Una aclaración antes de tu turno.",
+          "en": "One thing before your turn."
+        }
+      },
+      "titulo": {
+        "es": "Cuatro puertas",
+        "en": "Four doors"
+      },
+      "texto": {
+        "es": "Una tarea puede entrar por cuatro puertas: un prompt, un flujo fijo, un agente o tus propias manos. En Nexo se ven a fondo. Autómata es la puerta del flujo fijo: tareas que pasan seguido y siempre igual. Si cada vez cambian los pasos o hay algo delicado, no es para la banda.",
+        "en": "A task can go through four doors: a prompt, a fixed flow, an agent or your own hands. Nexus covers them in depth. Automaton is the fixed-flow door: tasks that happen often and always the same way. If the steps change every time, or something delicate is involved, it's not for the belt."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Si la tarea…",
+            "en": "If the task…"
+          },
+          "b": {
+            "es": "Puerta",
+            "en": "Door"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Pasa seguido y siempre igual",
+              "en": "Happens often, always the same"
+            },
+            "b": {
+              "es": "Flujo fijo (Autómata)",
+              "en": "Fixed flow (Automaton)"
+            }
+          },
+          {
+            "a": {
+              "es": "Tiene pasos que cambian cada vez",
+              "en": "Has steps that change each time"
+            },
+            "b": {
+              "es": "Agente (Nexo)",
+              "en": "Agent (Nexus)"
+            }
+          },
+          {
+            "a": {
+              "es": "Pasa una sola vez",
+              "en": "Happens only once"
+            },
+            "b": {
+              "es": "Un prompt, o a mano",
+              "en": "A prompt, or by hand"
+            }
+          },
+          {
+            "a": {
+              "es": "Es delicada o personal",
+              "en": "Is delicate or personal"
+            },
+            "b": {
+              "es": "Tú mismo",
+              "en": "You"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Descríbele al inspector de la fábrica una tarea que se repite, tuya o de Don Albeiro. Dile qué es, cada cuánto pasa, si siempre se hace igual y cuánto te toma.",
+          "en": "Your turn. Describe a repeating task to the factory inspector, yours or Don Albeiro's. Say what it is, how often it happens, whether it's always done the same way and how long it takes."
+        }
+      },
+      "titulo": {
+        "es": "Al inspector de la fábrica",
+        "en": "To the factory inspector"
+      },
+      "reto": {
+        "es": "Escoge una tarea que se repite en tu trabajo o en tu casa. Si no se te ocurre, usa esta: Don Albeiro anota a mano unos 30 pedidos al día, 2 minutos cada uno, y siempre copia lo mismo: nombre, dirección y cuántos botellones. Descríbela sin nombres ni datos de clientes.",
+        "en": "Pick a task that repeats at work or at home. If nothing comes to mind, use this one: Don Albeiro writes down about 30 orders a day by hand, 2 minutes each, always copying the same things: name, address and how many jugs. Describe it without customer names or details."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "Una tarea concreta",
+            "en": "A specific task"
+          },
+          "rubrica": "El mensaje nombra una tarea concreta, con lo que se hace: anotar pedidos, mandar recordatorios, confirmar citas, pasar datos a una hoja, cobrar. No cuenta 'ahorrar tiempo', 'ser más productivo', 'organizar mi negocio' ni 'automatizar todo' sin decir qué tarea es.",
+          "claves": {
+            "es": [
+              "anot",
+              "copi",
+              "pasar los",
+              "paso los",
+              "mand",
+              "envi",
+              "respond",
+              "contest",
+              "confirm",
+              "registr",
+              "recordator",
+              "cobr",
+              "llenar",
+              "actualiz"
+            ],
+            "en": [
+              "write down",
+              "writes down",
+              "copy",
+              "copies",
+              "log ",
+              "logs",
+              "send",
+              "reply",
+              "replies",
+              "answer",
+              "confirm",
+              "record",
+              "remind",
+              "bill",
+              "fill",
+              "updat",
+              "enter"
+            ]
+          }
+        },
+        {
+          "id": "seguido",
+          "texto": {
+            "es": "Cada cuánto pasa",
+            "en": "How often it happens"
+          },
+          "rubrica": "El mensaje dice cada cuánto pasa la tarea, con una frecuencia concreta: todos los días, 30 veces al día, cada lunes, una vez al mes. No cuenta 'seguido', 'a veces' o 'mucho' sin decir cada cuánto.",
+          "claves": {
+            "es": [
+              "al dia",
+              "a la semana",
+              "al mes",
+              "por dia",
+              "por semana",
+              "por mes",
+              "cada dia",
+              "cada semana",
+              "cada mes",
+              "cada lunes",
+              "cada martes",
+              "cada miercoles",
+              "cada jueves",
+              "cada viernes",
+              "cada sabado",
+              "cada domingo",
+              "todos los dias",
+              "todas las semanas",
+              "todos los meses",
+              "diario",
+              "diaria",
+              "semanal",
+              "mensual"
+            ],
+            "en": [
+              "a day",
+              "a week",
+              "a month",
+              "per day",
+              "per week",
+              "per month",
+              "every day",
+              "every week",
+              "every month",
+              "every monday",
+              "every tuesday",
+              "every wednesday",
+              "every thursday",
+              "every friday",
+              "every saturday",
+              "every sunday",
+              "daily",
+              "weekly",
+              "monthly"
+            ]
+          }
+        },
+        {
+          "id": "igual",
+          "texto": {
+            "es": "Si siempre se hace igual",
+            "en": "Whether it's always the same"
+          },
+          "rubrica": "El mensaje dice si los pasos son siempre los mismos o si cambian: 'siempre igual', 'los mismos pasos', 'siempre copio lo mismo', 'cada vez es distinto'. Cuenta también si dice que cambian: lo que importa es que lo diga. No cuenta si no dice nada de cómo se hace la tarea.",
+          "claves": {
+            "es": [
+              "igual",
+              "mismo",
+              "misma",
+              "siempre copio",
+              "siempre anoto",
+              "siempre hago",
+              "siempre mando",
+              "cambia",
+              "distint",
+              "diferente"
+            ],
+            "en": [
+              "same",
+              "always",
+              "every time",
+              "differ",
+              "changes",
+              "varies"
+            ]
+          }
+        },
+        {
+          "id": "cuesta",
+          "texto": {
+            "es": "Cuánto te cuesta",
+            "en": "What it costs you"
+          },
+          "rubrica": "El mensaje dice cuánto tiempo toma la tarea o qué se pierde con ella, con una cifra o un ejemplo: 2 minutos por pedido, una hora al día, se me olvida uno por semana. No cuenta 'me quita mucho tiempo' sin una cifra ni un ejemplo.",
+          "claves": {
+            "es": [
+              "minuto",
+              "una hora",
+              "media hora",
+              "horas",
+              "segundos",
+              "se me olvida",
+              "se me pierde",
+              "se pierde"
+            ],
+            "en": [
+              "minute",
+              "an hour",
+              "half an hour",
+              "hours",
+              "seconds",
+              "i forget",
+              "gets lost",
+              "lose one",
+              "miss one"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres el inspector de la fábrica de Autómata, un juego para aprender a automatizar tareas. La persona describe una tarea que se repite. Responde en texto plano, máximo 6 renglones. Renglón 1, 'Tarea:' con la tarea en pocas palabras. Luego 'Seguido:', 'Siempre igual:' y 'Te cuesta:' con lo que dijo la persona; si no lo dijo, escribe 'no lo sé' en ese renglón. Después 'Veredicto:': va para la banda, todavía no (faltan datos) o no (pasa poco, cada vez es distinta o es delicada). Si faltan datos, termina con una sola pregunta sobre el que más importa. No inventes cifras de tiempo ni de ahorro que la persona no dio. Si el mensaje no nombra una tarea concreta, di que la banda no sabe qué repetir y pide un ejemplo. Si el mensaje trae nombres, teléfonos o direcciones de personas, no los repitas.",
+        "en": "You are the factory inspector on Automaton, a game for learning to automate tasks. The person describes a task that repeats. Reply in plain text, 6 lines at most. Line 1, 'Task:' with the task in a few words. Then 'Often:', 'Always the same:' and 'Costs you:' with what the person said; if they didn't say it, write 'I don't know' on that line. Then 'Verdict:': goes on the belt, not yet (details missing) or no (rarely happens, different every time, or delicate). If details are missing, end with a single question about the one that matters most. Don't make up time or savings figures the person didn't give. If the message names no specific task, say the belt doesn't know what to repeat and ask for an example. If the message includes people's names, phone numbers or addresses, don't repeat them."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Tarea: anotar los pedidos de botellón que llegan por WhatsApp.\nSeguido: unos 30 al día.\nSiempre igual: sí, nombre, dirección y cuántos botellones.\nTe cuesta: 2 minutos por pedido, cerca de una hora al día.\nVeredicto: va para la banda.\n¿Los pedidos llegan siempre por WhatsApp o también por llamada?",
+            "en": "Task: logging the water-jug orders that come in on WhatsApp.\nOften: about 30 a day.\nAlways the same: yes, name, address and number of jugs.\nCosts you: 2 minutes per order, about an hour a day.\nVerdict: goes on the belt.\nDo orders always come in on WhatsApp, or by phone too?"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal clara. El inspector pudo decidir porque le diste las señales: cada cuánto, siempre igual y cuánto cuesta. Esa tarea ya tiene cara de banda.",
+              "en": "Clear signal. The inspector could decide because you gave it the signs: how often, always the same, and what it costs. That task already looks like a belt."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Tarea: no lo sé.\nSeguido: no lo sé.\nSiempre igual: no lo sé.\nTe cuesta: no lo sé.\nVeredicto: todavía no. La banda no sabe qué repetir.\n¿Qué tarea concreta te quita tiempo?",
+            "en": "Task: I don't know.\nOften: I don't know.\nAlways the same: I don't know.\nCosts you: I don't know.\nVerdict: not yet. The belt doesn't know what to repeat.\nWhich specific task eats your time?"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "El inspector quedó con cuatro \"no lo sé\". \"Ahorrar tiempo\" no es una tarea. Mira la lista: di qué haces, cada cuánto y si siempre es igual.",
+              "en": "The inspector ended up with four \"I don't know\"s. \"Saving time\" isn't a task. Check the list: say what you do, how often and whether it's always the same."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le hice a Don Albeiro la lista de lo que yo pondría en la banda. Dos cosas no debieron entrar. Tócalas.",
+          "en": "Confession time. I made Don Albeiro a list of what I'd put on the belt. Two things shouldn't be there. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "La lista de Punti",
+        "en": "Punti's list"
+      },
+      "trozos": [
+        {
+          "es": "1. Anotar cada pedido en la lista del día.",
+          "en": "1. Add each order to today's list."
+        },
+        {
+          "es": "2. Mandar el aviso de \"su pedido va en camino\".",
+          "en": "2. Send the \"your order is on its way\" message."
+        },
+        {
+          "es": "3. Escoger el regalo de Navidad para sus diez mejores clientes.",
+          "en": "3. Choose the Christmas gift for his ten best customers."
+        },
+        {
+          "es": "4. Recordar el pago del mes a los que tienen cuenta.",
+          "en": "4. Remind customers with a tab about the monthly payment."
+        },
+        {
+          "es": "5. Responder las quejas por botellones rotos con un mensaje automático.",
+          "en": "5. Answer complaints about cracked jugs with an automatic message."
+        }
+      ],
+      "malos": [
+        2,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. El regalo de Navidad pasa una vez al año: no vale una banda. Y cada queja es distinta y trae un cliente molesto: esa la responde Don Albeiro.",
+          "en": "You got me. The Christmas gift happens once a year: not worth a belt. And every complaint is different and comes with an upset customer: Don Albeiro answers those himself."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa sí pasa seguido y siempre igual. Busca una que pasa una vez al año y una donde cada caso es distinto.",
+          "en": "That one does happen often and always the same way. Look for one that happens once a year and one where every case is different."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cuándo una tarea vale la pena para la banda, como se lo explicarías a Don Albeiro.",
+          "en": "Into the logbook. Write in your own words when a task is worth putting on the belt, the way you'd explain it to Don Albeiro."
+        }
+      },
+      "concepto": "tarea-repetitiva",
+      "definicion": {
+        "es": "Una tarea es buena para automatizar cuando pasa seguido, se hace siempre igual y te cuesta tiempo o errores. Si pasa una vez o cada caso es distinto, se queda a mano.",
+        "en": "A task is a good fit for automation when it happens often, is always done the same way and costs you time or mistakes. If it happens once or every case is different, keep it by hand."
+      },
+      "pregunta": {
+        "es": "Una tarea vale para la banda cuando…",
+        "en": "A task belongs on the belt when…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "tareas que se repiten",
+        "en": "repeating tasks"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu tarea quedan en la bitácora. Esa tarea puede ser la primera de tu Mapa de tareas, el proyecto del capítulo.",
+          "en": "Saved. Your note and your task are in your logbook. That task could be the first one on your Task map, this chapter's project."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos la primera banda.",
+          "en": "Two questions and we close the first belt."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál de estas tareas es mejor candidata para un flujo automático?",
+            "en": "Which of these tasks is the best candidate for an automated flow?"
+          },
+          "opciones": [
+            {
+              "es": "Planear la fiesta de fin de año del negocio",
+              "en": "Planning the business's end-of-year party"
+            },
+            {
+              "es": "Confirmar cada cita que llega, siempre con los mismos datos",
+              "en": "Confirming every appointment that comes in, always with the same details"
+            },
+            {
+              "es": "Responderle a un cliente que está molesto",
+              "en": "Replying to a customer who is upset"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Pasa seguido y siempre igual: tiene cara de banda.",
+              "en": "Right. It happens often and always the same way: that's a belt."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Cuál pasa seguido y se hace igual cada vez?",
+              "en": "Hmm. Which one happens often and is done the same way every time?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Alguien dice: \"Quiero automatizar para ser más productivo\". ¿Qué le falta?",
+            "en": "Someone says: \"I want to automate to be more productive.\" What's missing?"
+          },
+          "opciones": [
+            {
+              "es": "Nombrar una tarea concreta y cada cuánto pasa",
+              "en": "Naming a specific task and how often it happens"
+            },
+            {
+              "es": "Usar una herramienta más cara",
+              "en": "Using a more expensive tool"
+            },
+            {
+              "es": "Nada, ya está claro",
+              "en": "Nothing, it's already clear"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Sin una tarea concreta, la banda no sabe qué repetir.",
+              "en": "Exactly. Without a specific task, the belt doesn't know what to repeat."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa: con esa frase, ¿qué va a repetir la máquina?",
+              "en": "Think: with that sentence, what would the machine repeat?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "La tarea que se repite",
+        "en": "The task that repeats"
+      },
+      "resumen": {
+        "es": "Una tarea va para la banda cuando pasa seguido, se hace siempre igual y te cuesta tiempo o errores.",
+        "en": "A task goes on the belt when it happens often, is always done the same way and costs you time or mistakes."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste las tareas de banda de las que van a mano",
+          "en": "You sorted belt tasks from by-hand tasks"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Le describiste una tarea al inspector de la fábrica",
+          "en": "You described a task to the factory inspector"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste las dos tareas que Punti coló en la banda",
+          "en": "You caught the two tasks Punti snuck onto the belt"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "reconocer-tareas-repetidas",
+      "titulo": {
+        "es": "Reconocer qué automatizar",
+        "en": "Spotting what to automate"
+      }
+    }
+  }
+}

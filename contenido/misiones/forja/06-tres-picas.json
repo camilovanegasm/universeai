@@ -1,0 +1,890 @@
+{
+  "formato": "punti-mision@1",
+  "id": "tres-picas",
+  "mundo": "herramientas-de-ia",
+  "capitulo": 2,
+  "numero": 6,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "tipos-de-busqueda"
+  ],
+  "usaConceptos": [
+    "fecha-de-corte",
+    "herramienta-por-tarea",
+    "verificar"
+  ],
+  "titulo": {
+    "es": "Tres picas",
+    "en": "Three Pickaxes"
+  },
+  "resumen": {
+    "es": "Buscador, búsqueda con IA o investigación profunda: cuál usar según la pregunta, y cómo pedir fuentes y fechas.",
+    "en": "Search engine, AI search or deep research: which to use for each question, and how to ask for sources and dates."
+  },
+  "siguiente": "sigue-la-veta",
+  "fuentes": [
+    {
+      "titulo": "OpenAI: planes de ChatGPT (búsqueda en todos; investigación profunda limitada en Free y Go, ampliada en Plus, máxima en Pro)",
+      "url": "https://chatgpt.com/pricing/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI: preguntas frecuentes de deep research (plan revisable antes de empezar, informes con citas, uso según el plan)",
+      "url": "https://help.openai.com/en/articles/10500283-deep-research-faq",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google: planes de Gemini (Deep Research en el plan gratis, con límites más altos en los planes de pago)",
+      "url": "https://gemini.google/subscriptions/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google: Gemini Deep Research (plan que tú puedes ajustar antes de empezar)",
+      "url": "https://gemini.google/overview/deep-research/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Anthropic: planes de Claude (búsqueda web en todos los planes; Research desde Pro)",
+      "url": "https://claude.com/pricing",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Microsoft: Copilot gratis responde con búsqueda web",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google: el Modo IA de la Búsqueda llega en español (23 sep. 2025; respuestas con enlaces a la web)",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-spanish/",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, bajamos a la mina, la segunda zona de Forja. Aquí se saca el mineral, que es la información. Llegó un encargo: Esperanza, 45 años, secretaria de un colegio público en Tunja, tiene tres dudas y una sola mañana.",
+          "en": "Pilot, we're heading down into the mine, Forge's second zone. This is where we dig out ore, and the ore is information. A job just came in: Esperanza, 45, secretary at a public school in Tunja, has three questions and one morning."
+        }
+      },
+      "titulo": {
+        "es": "Tres picas",
+        "en": "Three Pickaxes"
+      },
+      "texto": {
+        "es": "Hoy escoges la pica para cada pregunta: buscador, búsqueda con IA o investigación profunda. Y aprendes a pedir fuentes y fechas. Unos 10 minutos.",
+        "en": "Today you pick the right pickaxe for each question: search engine, AI search or deep research. And you learn to ask for sources and dates. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Antes de explicarte nada, adivina. En la mina hay tres picas. Estas son las dudas de Esperanza y otras de su semana. ¿Con cuál pica sacas cada una?",
+          "en": "Before I explain anything, take a guess. There are three pickaxes in the mine. Here are Esperanza's questions and a few more from her week. Which pickaxe digs out each one?"
+        }
+      },
+      "titulo": {
+        "es": "Las dudas de Esperanza",
+        "en": "Esperanza's questions"
+      },
+      "grupos": [
+        {
+          "id": "buscador",
+          "titulo": {
+            "es": "Buscador normal",
+            "en": "Regular search engine"
+          }
+        },
+        {
+          "id": "busqueda",
+          "titulo": {
+            "es": "Búsqueda con IA",
+            "en": "AI search"
+          }
+        },
+        {
+          "id": "profunda",
+          "titulo": {
+            "es": "Investigación profunda",
+            "en": "Deep research"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "buscador",
+          "texto": {
+            "es": "La fecha oficial de matrículas que publicó la Secretaría de Educación",
+            "en": "The official enrollment date the education department published"
+          }
+        },
+        {
+          "grupo": "busqueda",
+          "texto": {
+            "es": "Entender qué cambió en una norma del colegio y a quién afecta",
+            "en": "Understand what changed in a school rule and who it affects"
+          }
+        },
+        {
+          "grupo": "profunda",
+          "texto": {
+            "es": "Comparar plataformas de notas: costos, ventajas y experiencias de otros colegios",
+            "en": "Compare grading platforms: costs, pros and other schools' experiences"
+          }
+        },
+        {
+          "grupo": "buscador",
+          "texto": {
+            "es": "El teléfono de atención de la Secretaría de Educación",
+            "en": "The education department's help line number"
+          }
+        },
+        {
+          "grupo": "busqueda",
+          "texto": {
+            "es": "Que le expliquen en palabras sencillas un trámite nuevo de certificados",
+            "en": "Get a new certificate procedure explained in plain words"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Cinco de cinco. Lo exacto y oficial, en su página. Lo que hay que entender, con búsqueda con IA. Lo grande, con investigación profunda.",
+          "en": "Five for five. Exact, official facts come from their page. Things to understand, from AI search. Big questions, from deep research."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, no. Pregúntate: ¿es un dato exacto, algo que quiero entender o una pregunta grande con muchas partes?",
+          "en": "Hmm, not quite. Ask yourself: is it one exact fact, something I want to understand, or a big question with lots of parts?"
+        }
+      },
+      "malPorGrupo": {
+        "buscador": {
+          "estado": "error",
+          "texto": {
+            "es": "Pista: ese dato ya existe, exacto, en una página oficial. Nadie tiene que resumírtelo.",
+            "en": "Hint: that fact already exists, exactly, on an official page. Nobody needs to summarize it for you."
+          }
+        },
+        "profunda": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. La investigación profunda es para preguntas grandes, de muchas fuentes. Esta es más corta.",
+            "en": "Close. Deep research is for big questions with many sources. This one is smaller."
+          }
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Así funciona cada pica.",
+          "en": "Here's how each pickaxe works."
+        }
+      },
+      "titulo": {
+        "es": "Tres picas, tres vetas",
+        "en": "Three pickaxes, three veins"
+      },
+      "texto": {
+        "es": "El buscador te da enlaces: tú abres la página oficial y lees el dato exacto. La búsqueda con IA lee varias páginas y te arma una respuesta con enlaces. La investigación profunda tarda minutos, lee muchas fuentes y entrega un informe. Un asistente que no busca solo sabe hasta su fecha de corte, como viste en Lexia.",
+        "en": "A search engine gives you links: you open the official page and read the exact fact. AI search reads several pages and builds you an answer with links. Deep research takes minutes, reads many sources and hands you a report. An assistant that doesn't search only knows up to its cutoff date, as you saw in Lexia."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Pica",
+            "en": "Pickaxe"
+          },
+          "b": {
+            "es": "Cuándo usarla",
+            "en": "When to use it"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Buscador normal",
+              "en": "Regular search engine"
+            },
+            "b": {
+              "es": "Un dato exacto y de hoy: fechas, teléfonos, trámites",
+              "en": "One exact, current fact: dates, phone numbers, procedures"
+            }
+          },
+          {
+            "a": {
+              "es": "Búsqueda con IA",
+              "en": "AI search"
+            },
+            "b": {
+              "es": "Entender un tema, con fuentes para revisar",
+              "en": "Understanding a topic, with sources to check"
+            }
+          },
+          {
+            "a": {
+              "es": "Investigación profunda",
+              "en": "Deep research"
+            },
+            "b": {
+              "es": "Una pregunta grande, con tiempo para leer el informe",
+              "en": "A big question, with time to read the report"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esperanza probó la búsqueda con IA para entender la norma nueva. Mira lo que preguntó y lo que le salió. Abajo, la misma duda bien preguntada.",
+          "en": "Esperanza tried AI search to understand the new rule. Look at what she asked and what she got. Below, the same question asked well."
+        }
+      },
+      "titulo": {
+        "es": "Lo último, pero ¿de cuándo?",
+        "en": "The latest, but from when?"
+      },
+      "antes": {
+        "prompt": {
+          "es": "¿Qué es lo último sobre la norma de convivencia escolar?",
+          "en": "What's the latest on the school conduct rules?"
+        },
+        "salida": {
+          "es": "Recientemente se han presentado cambios importantes en la normativa de convivencia escolar, que buscan fortalecer el bienestar de la comunidad educativa.",
+          "en": "Important changes have recently been made to school conduct regulations, aimed at strengthening the well-being of the school community."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "concreta",
+            "texto": {
+              "es": "Explícame qué cambió en la norma de convivencia de este año y qué le toca hacer a la secretaría de un colegio público. ",
+              "en": "Explain what changed in this year's school conduct rules and what the secretary of a public school has to do. "
+            }
+          },
+          {
+            "pieza": "fuentes",
+            "texto": {
+              "es": "Dame las fuentes con enlace, mejor si son oficiales. ",
+              "en": "Give me the sources with links, official ones if possible. "
+            }
+          },
+          {
+            "pieza": "fecha",
+            "texto": {
+              "es": "Di la fecha de cada fuente. ",
+              "en": "Give the date of each source. "
+            }
+          },
+          {
+            "pieza": "nosabe",
+            "texto": {
+              "es": "Si algo no lo encuentras, dilo.",
+              "en": "If you can't find something, say so."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "(Ejemplo con datos inventados)\nQué cambió: el colegio debe actualizar su manual de convivencia antes del [fecha].\nQué le toca a la secretaría: recibir las actas firmadas y enviarlas a la Secretaría de Educación.\nFuente 1: [página oficial de la Secretaría de Educación], publicada el [fecha].\nFuente 2: [circular en PDF], del [fecha].\nNo encontré: si hay una multa por entregar tarde.",
+          "en": "(Example with made-up details)\nWhat changed: the school must update its conduct handbook by [date].\nThe secretary's part: collect the signed forms and send them to the education department.\nSource 1: [education department's official page], published on [date].\nSource 2: [PDF memo], dated [date].\nNot found: whether there's a penalty for turning it in late."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? \"Lo último\" no dice de cuándo, ni de dónde. Con fuentes y fechas, Esperanza sabe qué abrir y qué preguntar.",
+          "en": "See the colors? \"The latest\" doesn't say from when, or from where. With sources and dates, Esperanza knows what to open and what to ask."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Una buena pregunta para la búsqueda con IA lleva cuatro piezas. Toca cada una.",
+          "en": "A good question for AI search has four pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas de la pregunta",
+        "en": "The 4 pieces of the question"
+      },
+      "piezas": [
+        {
+          "id": "concreta",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Una pregunta concreta",
+            "en": "A specific question"
+          },
+          "descripcion": {
+            "es": "Qué quieres saber y para qué.",
+            "en": "What you want to know and why."
+          },
+          "ejemplo": {
+            "es": "\"Qué le toca hacer a la secretaría\" es más útil que \"háblame de la norma\".",
+            "en": "\"What the secretary has to do\" beats \"tell me about the rule\"."
+          }
+        },
+        {
+          "id": "fuentes",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Fuentes con enlace",
+            "en": "Sources with links"
+          },
+          "descripcion": {
+            "es": "De dónde salió cada cosa.",
+            "en": "Where each part came from."
+          },
+          "ejemplo": {
+            "es": "Sin enlace no hay nada que abrir. Y lo que no abres, no lo has comprobado.",
+            "en": "No link, nothing to open. And what you don't open, you haven't checked."
+          }
+        },
+        {
+          "id": "fecha",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "La fecha",
+            "en": "The date"
+          },
+          "descripcion": {
+            "es": "De cuándo es cada fuente.",
+            "en": "When each source is from."
+          },
+          "ejemplo": {
+            "es": "Una norma de hace tres años puede ya no valer. La fecha te lo dice.",
+            "en": "A rule from three years ago may no longer apply. The date tells you."
+          }
+        },
+        {
+          "id": "nosabe",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Lo que no se sabe",
+            "en": "What isn't known"
+          },
+          "descripcion": {
+            "es": "Que diga lo que no encontró.",
+            "en": "That it says what it didn't find."
+          },
+          "ejemplo": {
+            "es": "\"No encontré si hay multa\" vale más que una multa inventada.",
+            "en": "\"I couldn't find if there's a penalty\" beats a made-up penalty."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno con la pica. Esperanza quiere entender una circular nueva sobre certificados de estudio. Escribe la pregunta que le harías a la búsqueda con IA.",
+          "en": "Your turn with the pickaxe. Esperanza wants to understand a new memo about school certificates. Write the question you'd ask AI search."
+        }
+      },
+      "titulo": {
+        "es": "La pregunta de Esperanza",
+        "en": "Esperanza's question"
+      },
+      "reto": {
+        "es": "Caso (inventado): salió una circular nueva de la Secretaría de Educación sobre cómo se entregan los certificados de estudio. Esperanza quiere entender qué cambió y qué le toca hacer a ella. Escribe la pregunta para una búsqueda con IA.",
+        "en": "Case (made up): the education department put out a new memo on how school certificates are issued. Esperanza wants to understand what changed and what she has to do. Write the question for an AI search."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "concreta",
+          "texto": {
+            "es": "Hace una pregunta concreta",
+            "en": "Asks a specific question"
+          },
+          "rubrica": "El prompt dice qué quiere saber de la circular: qué cambió, qué le toca hacer a la secretaría o a quién afecta. No cuenta 'háblame de la circular', 'lo último sobre certificados' o 'infórmame' sin decir qué quiere saber.",
+          "claves": {
+            "es": [
+              "que cambio",
+              "que cambia",
+              "que cambian",
+              "que cambios",
+              "que me toca",
+              "que le toca",
+              "que debo hacer",
+              "que tengo que",
+              "que debe hacer",
+              "a quien afecta",
+              "como afecta",
+              "como me afecta"
+            ],
+            "en": [
+              "what changed",
+              "what changes",
+              "what's changed",
+              "what has changed",
+              "what i have to",
+              "what i need to",
+              "what do i have to",
+              "what she has to",
+              "what should i",
+              "who it affects",
+              "how it affects",
+              "how does it affect"
+            ]
+          }
+        },
+        {
+          "id": "fuentes",
+          "texto": {
+            "es": "Pide fuentes con enlace",
+            "en": "Asks for sources with links"
+          },
+          "rubrica": "El prompt pide las fuentes de la respuesta, con enlace o diciendo de qué página sale cada cosa. No cuenta pedir 'información confiable' o 'datos verídicos' sin pedir las fuentes.",
+          "claves": {
+            "es": [
+              "fuente",
+              "enlace",
+              "link",
+              "de donde sale",
+              "de donde saca",
+              "de donde lo saca",
+              "pagina oficial",
+              "cita"
+            ],
+            "en": [
+              "source",
+              "link",
+              "cite",
+              "citation",
+              "where it comes from",
+              "where you got",
+              "official page",
+              "url"
+            ]
+          }
+        },
+        {
+          "id": "fecha",
+          "texto": {
+            "es": "Pide la fecha de la información",
+            "en": "Asks for the date of the info"
+          },
+          "rubrica": "El prompt pide la fecha de las fuentes o de la información (cuándo se publicó, si está vigente). No cuenta pedir 'lo último', 'lo más reciente' o 'lo nuevo' sin pedir la fecha.",
+          "claves": {
+            "es": [
+              "fecha",
+              "de que ano",
+              "cuando se public",
+              "cuando salio",
+              "vigente",
+              "desde cuando",
+              "que tan reciente"
+            ],
+            "en": [
+              "date",
+              "what year",
+              "when it was published",
+              "when was it published",
+              "publication",
+              "still in effect",
+              "in force",
+              "since when",
+              "how recent"
+            ]
+          }
+        },
+        {
+          "id": "nosabe",
+          "texto": {
+            "es": "Pide decir qué no se sabe",
+            "en": "Asks what isn't known"
+          },
+          "rubrica": "El prompt pide que diga lo que no encontró, lo que no está claro o que no invente. No cuenta 'que sea exacto' o 'que sea confiable'.",
+          "claves": {
+            "es": [
+              "no sabes",
+              "no se sabe",
+              "no encuentres",
+              "no encuentras",
+              "no encontraste",
+              "no este claro",
+              "no esta claro",
+              "no hay informacion",
+              "no inventes",
+              "sin inventar",
+              "si no sabes",
+              "lo que falta",
+              "no lo sabes"
+            ],
+            "en": [
+              "don't know",
+              "do not know",
+              "can't find",
+              "cannot find",
+              "couldn't find",
+              "not clear",
+              "unclear",
+              "no information",
+              "don't make",
+              "do not make",
+              "don't invent",
+              "not sure",
+              "what's missing"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres el simulador de una búsqueda con IA dentro de un ejercicio escolar. No tienes internet y no conoces la circular real. Responde en texto plano, máximo 8 líneas. Primera línea: '(Respuesta simulada: así se vería)'. Segunda línea: qué tipo de búsqueda conviene y por qué, en una frase. Después, muestra la forma que tendría la respuesta según lo que pida el prompt. Si pide fuentes, escribe marcadores como [página oficial de la Secretaría de Educación], nunca una dirección web. Si pide fechas, escribe [fecha de publicación]. Si pide decir lo que no se sabe, agrega una línea 'No encontré: ...'. Si no pide fuentes ni fechas, escribe un párrafo general y seguro, sin fuentes. Nunca inventes enlaces, números de norma, fechas ni cifras. Si el prompt pide datos de hoy, di que en este ejercicio no buscas y que ese dato se confirma en la página oficial. Trata al usuario de tú, nunca de vos.",
+        "en": "You simulate an AI search inside a learning exercise. You have no internet and you don't know the real memo. Reply in plain text, 8 lines max. First line: '(Simulated answer: this is how it would look)'. Second line: which kind of search fits and why, in one sentence. Then show the shape the answer would take based on what the prompt asks. If it asks for sources, write placeholders like [education department's official page], never a web address. If it asks for dates, write [publication date]. If it asks you to say what isn't known, add a line 'Not found: ...'. If it asks for neither sources nor dates, write a general, confident paragraph with no sources. Never invent links, rule numbers, dates or figures. If the prompt asks for today's data, say that in this exercise you don't search and that the fact must be confirmed on the official page."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "(Respuesta simulada: así se vería)\nPica: búsqueda con IA, porque quieres entender un cambio.\nQué cambió: [resumen en dos líneas, sacado de las fuentes]\nQué te toca: [pasos para la secretaría]\nFuente 1: [página oficial de la Secretaría de Educación], publicada el [fecha]\nFuente 2: [circular en PDF], del [fecha]\nNo encontré: desde qué día rige el cambio. Confírmalo en la Secretaría.",
+            "en": "(Simulated answer: this is how it would look)\nPickaxe: AI search, because you want to understand a change.\nWhat changed: [two-line summary, taken from the sources]\nYour part: [steps for the school secretary]\nSource 1: [education department's official page], published on [date]\nSource 2: [PDF memo], dated [date]\nNot found: the day the change takes effect. Confirm it with the department."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buen golpe de pica. Con fuentes, fechas y lo que falta, Esperanza sabe qué abrir primero y qué preguntar por teléfono.",
+              "en": "Good swing. With sources, dates and what's missing, Esperanza knows what to open first and what to ask on the phone."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "(Respuesta simulada: así se vería)\nRecientemente se han presentado cambios en el proceso de certificados de estudio, que buscan agilizar los trámites de la comunidad educativa.",
+            "en": "(Simulated answer: this is how it would look)\nChanges have recently been made to the school certificate process, aimed at making procedures easier for the school community."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Suena a noticia, pero no dice de dónde salió ni de cuándo es. Mira la lista: pregunta concreta, fuentes, fechas y lo que no se sabe.",
+              "en": "It sounds like news, but it doesn't say where it came from or when. Check the list: a specific question, sources, dates and what isn't known."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Ayudé a Esperanza con sus tres dudas y usé mal la pica dos veces. Toca mis dos errores.",
+          "en": "Confession time. I helped Esperanza with her three questions and swung the wrong pickaxe twice. Tap my two mistakes."
+        }
+      },
+      "titulo": {
+        "es": "Las picas de Punti",
+        "en": "Punti's pickaxes"
+      },
+      "trozos": [
+        {
+          "es": "Para la fecha de matrículas, le pregunté a un asistente que no busca en internet.",
+          "en": "For the enrollment date, I asked an assistant that doesn't search the web."
+        },
+        {
+          "es": "Para entender la circular, usé la búsqueda con IA y pedí fuentes con fecha.",
+          "en": "To understand the memo, I used AI search and asked for dated sources."
+        },
+        {
+          "es": "Para las plataformas de notas, lancé una investigación profunda.",
+          "en": "For the grading platforms, I started a deep research job."
+        },
+        {
+          "es": "Y copié el informe tal cual, sin abrir ninguno de sus enlaces.",
+          "en": "And I copied the report as is, without opening any of its links."
+        }
+      ],
+      "malos": [
+        0,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Un asistente sin búsqueda no sabe la fecha de este año: esa se lee en la página oficial. Y un informe con enlaces que nadie abrió no está comprobado. Eso lo vemos en la próxima misión.",
+          "en": "You got me. An assistant without search can't know this year's date: you read that on the official page. And a report with links nobody opened isn't checked. That's the next mission."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa pica sí iba con esa duda. Busca una pica equivocada y un paso que me salté.",
+          "en": "That pickaxe did fit that question. Look for a wrong pickaxe and a step I skipped."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Aquí van nombres, con fecha. Son ejemplos de hoy, no recomendaciones. Los planes cambian seguido y reviso esta pantalla cada semana.",
+          "en": "Names go here, with a date. They're today's examples, not recommendations. Plans change often, and I check this screen every week."
+        }
+      },
+      "titulo": {
+        "es": "Las picas hoy",
+        "en": "The pickaxes today"
+      },
+      "texto": {
+        "es": "Casi todos los asistentes ya buscan en internet, también en el plan gratis. La investigación profunda viene con límites que dependen del plan, y esos límites cambian. Antes de pagar, prueba lo que trae tu plan.",
+        "en": "Almost every assistant searches the web now, free plans included. Deep research comes with limits that depend on the plan, and those limits change. Before paying, try what your plan already includes."
+      },
+      "revisado": "2026-09-26",
+      "tabla": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Pica",
+            "en": "Pickaxe"
+          },
+          "b": {
+            "es": "Ejemplos (septiembre de 2026)",
+            "en": "Examples (September 2026)"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Búsqueda con IA",
+              "en": "AI search"
+            },
+            "b": {
+              "es": "El Modo IA de Google, en español desde 2025; la búsqueda web de ChatGPT, Claude y Copilot, también gratis",
+              "en": "Google's AI Mode, in Spanish since 2025; web search in ChatGPT, Claude and Copilot, free plans included"
+            }
+          },
+          {
+            "a": {
+              "es": "Investigación profunda",
+              "en": "Deep research"
+            },
+            "b": {
+              "es": "ChatGPT (limitada en el plan gratis), Gemini (incluida en el plan gratis, con límites) y Claude (desde el plan Pro)",
+              "en": "ChatGPT (limited on the free plan), Gemini (on the free plan, with limits) and Claude (from the Pro plan)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cómo escoges la pica, como se lo explicarías a Esperanza.",
+          "en": "Logbook time. Write in your own words how you pick the pickaxe, the way you'd explain it to Esperanza."
+        }
+      },
+      "concepto": "tipos-de-busqueda",
+      "definicion": {
+        "es": "Hay tres formas de buscar. El buscador, para un dato exacto y de hoy en su página oficial. La búsqueda con IA, para entender un tema con fuentes y fechas. La investigación profunda, para preguntas grandes.",
+        "en": "There are three ways to search. A search engine, for one exact, current fact on its official page. AI search, to understand a topic with sources and dates. Deep research, for big questions."
+      },
+      "pregunta": {
+        "es": "Para escoger cómo buscar…",
+        "en": "To choose how to search…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "preguntas de búsqueda",
+        "en": "search questions"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pregunta de búsqueda ya están en tu bitácora. Te las traigo en el repaso, justo cuando empiecen a oxidarse.",
+          "en": "Saved. Your note and your search question are in your logbook. I'll bring them back in your review, right when they start to rust."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y salimos del túnel.",
+          "en": "Two questions and we're out of the tunnel."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Necesitas el horario de atención de una oficina pública este mes. ¿Qué pica usas?",
+            "en": "You need a public office's opening hours for this month. Which pickaxe do you use?"
+          },
+          "opciones": [
+            {
+              "es": "Un asistente de chat, sin búsqueda",
+              "en": "A chat assistant, without search"
+            },
+            {
+              "es": "El buscador, para leerlo en la página oficial",
+              "en": "A search engine, to read it on the official page"
+            },
+            {
+              "es": "Una investigación profunda",
+              "en": "A deep research job"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Un dato exacto y de hoy se lee en su fuente oficial.",
+              "en": "Right. An exact, current fact is read at its official source."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Es una pregunta grande o un solo dato que cambia?",
+              "en": "Hmm. Is it a big question or one fact that changes?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué pregunta le sirve más a una búsqueda con IA?",
+            "en": "Which question works best for an AI search?"
+          },
+          "opciones": [
+            {
+              "es": "¿Qué es lo último sobre certificados?",
+              "en": "What's the latest on certificates?"
+            },
+            {
+              "es": "Qué cambió en la circular y qué me toca, con fuentes, fechas y lo que no encuentres",
+              "en": "What changed in the memo and my part, with sources, dates and what you can't find"
+            },
+            {
+              "es": "Dame información confiable sobre la circular",
+              "en": "Give me reliable information about the memo"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Concreta, con fuentes, con fechas y honesta con lo que falta.",
+              "en": "Exactly. Specific, with sources and dates, and honest about what's missing."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Repasa las cuatro piezas: ¿cuál opción las trae?",
+              "en": "Go over the four pieces: which option has them?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Tres formas de buscar",
+        "en": "Three ways to search"
+      },
+      "resumen": {
+        "es": "Buscador para lo exacto y de hoy, búsqueda con IA para entender con fuentes y fechas, investigación profunda para lo grande.",
+        "en": "Search engine for exact, current facts; AI search to understand, with sources and dates; deep research for big questions."
+      }
+    },
+    "piezas": "b05",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Escogiste la pica para cada duda de Esperanza",
+          "en": "You picked the pickaxe for each of Esperanza's questions"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste una pregunta con fuentes y fechas",
+          "en": "You wrote a question with sources and dates"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste las picas equivocadas de Punti",
+          "en": "You caught Punti's wrong pickaxes"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Pasaste el punto de control de la mina",
+          "en": "You passed the mine's checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "escoger-como-buscar",
+      "titulo": {
+        "es": "Escoger cómo buscar",
+        "en": "Choosing how to search"
+      }
+    }
+  }
+}

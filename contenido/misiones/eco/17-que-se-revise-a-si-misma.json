@@ -1,0 +1,897 @@
+{
+  "formato": "punti-mision@1",
+  "id": "que-se-revise-a-si-misma",
+  "mundo": "prompts",
+  "capitulo": 4,
+  "numero": 17,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "autorrevision"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "verificar",
+    "revisar-respuesta",
+    "mejorar-prompt"
+  ],
+  "titulo": {
+    "es": "Que se revise a sí misma",
+    "en": "Let It Check Its Own Work"
+  },
+  "resumen": {
+    "es": "Pedirle a la IA que revise su propia respuesta con tu lista, sabiendo que eso no reemplaza tu verificación.",
+    "en": "Ask the AI to check its own answer against your list, knowing that doesn't replace your own checking."
+  },
+  "siguiente": "instrucciones-que-recuerda",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, entra una señal llena de números. Es Tatiana, contadora independiente: les lleva las cuentas a varios negocios del barrio. La IA le hizo un resumen de gastos, ella le preguntó \"¿está bien?\" y la IA dijo que sí. No estaba bien.",
+          "en": "Pilot, a signal full of numbers is coming in. It's Tatiana, a freelance accountant who keeps the books for several neighborhood businesses. The AI wrote her an expense summary, she asked \"is it right?\" and the AI said yes. It wasn't."
+        }
+      },
+      "titulo": {
+        "es": "Que se revise a sí misma",
+        "en": "Let It Check Its Own Work"
+      },
+      "texto": {
+        "es": "Hoy aprendes a pedirle a la IA que revise su propia respuesta con tu lista, y por qué eso no reemplaza tu revisión. Unos 9 minutos.",
+        "en": "Today you'll learn to ask the AI to check its own answer against your list, and why that doesn't replace your own check. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "La IA ya había hecho el resumen de gastos de octubre para Don Ramiro, que tiene una carnicería. Esto le preguntó Tatiana después. Abajo, la misma revisión, pedida con una lista.",
+          "en": "The AI had already written the October expense summary for Don Ramiro, who runs a butcher shop. This is what Tatiana asked next. Below, the same check, asked for with a list."
+        }
+      },
+      "titulo": {
+        "es": "De \"¿está bien?\" a una revisión de verdad",
+        "en": "From \"is it right?\" to a real check"
+      },
+      "antes": {
+        "prompt": {
+          "es": "¿Está bien el resumen?",
+          "en": "Is the summary right?"
+        },
+        "salida": {
+          "es": "Sí, el resumen está correcto. Total de gastos de octubre: $3.450.000.",
+          "en": "Yes, the summary is correct. Total October expenses: $3,450."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "revisa",
+            "texto": {
+              "es": "Antes de que se lo mande a Don Ramiro, revisa tu resumen ",
+              "en": "Before I send it to Don Ramiro, check your summary "
+            }
+          },
+          {
+            "pieza": "criterios",
+            "texto": {
+              "es": "con esta lista: ¿están los cuatro gastos que te di?, ¿la suma da el total?, ¿usaste solo mis números? ",
+              "en": "against this list: are all four expenses I gave you there? Do they add up to the total? Did you use only my numbers? "
+            }
+          },
+          {
+            "pieza": "corrige",
+            "texto": {
+              "es": "Si algo falla, corrígelo y dime qué cambiaste. ",
+              "en": "If something fails, fix it and tell me what you changed. "
+            }
+          },
+          {
+            "pieza": "dudas",
+            "texto": {
+              "es": "Y dime qué no puedes comprobar tú.",
+              "en": "And tell me what you can't check yourself."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Revisé punto por punto:\n- Los cuatro gastos: sí están.\n- La suma: $900.000 + $1.200.000 + $350.000 + $1.300.000 da $3.750.000, no $3.450.000. Corregido.\n- Solo tus números: sí.\nNo puedo comprobar que estos números sean los de las facturas de Don Ramiro. Eso míralo tú.",
+          "en": "I checked point by point:\n- All four expenses: yes, they're there.\n- The sum: $900 + $1,200 + $350 + $1,300 comes to $3,750, not $3,450. Fixed.\n- Only your numbers: yes.\nI can't check that these numbers match Don Ramiro's receipts. You'll need to look at that."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Cuatro colores: que se revise, tu lista, que corrija y cuente qué cambió, y que diga qué no puede comprobar. Con un simple \"¿está bien?\", la IA casi siempre dice que sí.",
+          "en": "Four colors: check itself, your list, fix it and say what changed, and say what it can't check. With a plain \"is it right?\", the AI almost always says yes."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "En la misión anterior, la IA revisó tu prompt antes de responder. Hoy revisa su propia respuesta, después. Una buena autorrevisión tiene estas piezas; la última, otra vez, te toca a ti. Toca cada una.",
+          "en": "Last mission, the AI reviewed your prompt before answering. Today it checks its own answer, afterward. A good self-check has these pieces; the last one, once again, is on you. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las piezas de la autorrevisión",
+        "en": "The pieces of a self-check"
+      },
+      "piezas": [
+        {
+          "id": "revisa",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Que se revise",
+            "en": "It checks itself"
+          },
+          "descripcion": {
+            "es": "Pídele que revise su respuesta antes de usarla.",
+            "en": "Ask it to check its answer before you use it."
+          },
+          "ejemplo": {
+            "es": "\"Antes de entregármelo, revisa tu respuesta.\" Una segunda mirada atrapa muchos descuidos, como una suma mal hecha.",
+            "en": "\"Before you hand it over, check your answer.\" A second look catches plenty of slips, like a bad sum."
+          }
+        },
+        {
+          "id": "criterios",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Tu lista",
+            "en": "Your list"
+          },
+          "descripcion": {
+            "es": "Criterios concretos que se puedan comprobar.",
+            "en": "Concrete criteria that can be checked."
+          },
+          "ejemplo": {
+            "es": "\"¿La suma da el total? ¿Están los cuatro gastos?\" Con \"¿está bien?\", la IA no sabe qué mirar y dice que sí.",
+            "en": "\"Does it add up to the total? Are all four expenses there?\" With \"is it right?\", the AI doesn't know what to look at, so it says yes."
+          }
+        },
+        {
+          "id": "corrige",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Que corrija y cuente",
+            "en": "It fixes and tells"
+          },
+          "descripcion": {
+            "es": "Que arregle lo que falle y diga qué cambió.",
+            "en": "It fixes what fails and says what changed."
+          },
+          "ejemplo": {
+            "es": "\"Dime qué cambiaste.\" Así ves el error, en vez de recibir una respuesta nueva sin saber qué pasó.",
+            "en": "\"Tell me what you changed.\" That way you see the mistake, instead of getting a new answer without knowing what happened."
+          }
+        },
+        {
+          "id": "dudas",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Lo que no puede ver",
+            "en": "What it can't see"
+          },
+          "descripcion": {
+            "es": "Que diga qué no puede comprobar desde el chat.",
+            "en": "What it can't check from inside the chat."
+          },
+          "ejemplo": {
+            "es": "La IA no ve las facturas de Don Ramiro. Si se lo pides, te dice qué te toca revisar a ti.",
+            "en": "The AI can't see Don Ramiro's receipts. If you ask, it tells you what you need to check yourself."
+          }
+        },
+        {
+          "id": "tu-revision",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "Tu revisión",
+            "en": "Your check"
+          },
+          "descripcion": {
+            "es": "Revisarse no es verificar: lo importante lo miras tú.",
+            "en": "Self-checking isn't verifying: you check what matters."
+          },
+          "ejemplo": {
+            "es": "Es la misma IA mirando su trabajo, y puede repetir el error. Las cifras que importan se comparan con la fuente, como en el capítulo 2.",
+            "en": "It's the same AI looking at its own work, and it can repeat the mistake. Numbers that matter get compared with the source, like in Chapter 2."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Tatiana escribió criterios para que la IA revise sus resúmenes. ¿Cuáles se pueden comprobar y cuáles dejan a la IA adivinando?",
+          "en": "Your turn. Tatiana wrote criteria for the AI to check her summaries against. Which ones can be checked, and which leave the AI guessing?"
+        }
+      },
+      "titulo": {
+        "es": "¿Se puede comprobar?",
+        "en": "Can it be checked?"
+      },
+      "grupos": [
+        {
+          "id": "claro",
+          "titulo": {
+            "es": "Se puede comprobar",
+            "en": "Can be checked"
+          }
+        },
+        {
+          "id": "vago",
+          "titulo": {
+            "es": "Le toca opinar",
+            "en": "Needs an opinion"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "claro",
+          "texto": {
+            "es": "¿La suma de los gastos da el total?",
+            "en": "Do the expenses add up to the total?"
+          }
+        },
+        {
+          "grupo": "vago",
+          "texto": {
+            "es": "¿Está bien hecho?",
+            "en": "Is it done right?"
+          }
+        },
+        {
+          "grupo": "claro",
+          "texto": {
+            "es": "¿Aparecen los 6 gastos de la lista?",
+            "en": "Are all 6 expenses from the list there?"
+          }
+        },
+        {
+          "grupo": "vago",
+          "texto": {
+            "es": "¿Quedó profesional?",
+            "en": "Does it look professional?"
+          }
+        },
+        {
+          "grupo": "claro",
+          "texto": {
+            "es": "¿Usaste solo los números que te di?",
+            "en": "Did you use only the numbers I gave you?"
+          }
+        },
+        {
+          "grupo": "vago",
+          "texto": {
+            "es": "¿Está completo?",
+            "en": "Is it complete?"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso es. Un criterio claro tiene una respuesta de sí o no que se puede comprobar. A uno vago, la IA le contesta que sí.",
+          "en": "That's it. A clear criterion has a yes-or-no answer you can check. A vague one, the AI just answers with a yes."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿la IA lo puede comprobar mirando la respuesta, o tiene que opinar?",
+          "en": "Hmm. Ask yourself: can the AI check it by looking at the answer, or does it have to give an opinion?"
+        }
+      },
+      "malPorGrupo": {
+        "claro": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Ese se puede comprobar: tiene una respuesta de sí o no.",
+            "en": "Close. That one can be checked: it has a yes-or-no answer."
+          }
+        },
+        "vago": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. ¿Cómo sabría la IA si eso se cumple? Ahí le toca opinar.",
+            "en": "Close. How would the AI know if that's met? It would have to give an opinion."
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora pruébalo tú. La IA ya le hizo a Tatiana el resumen de ventas de la semana de Doña Inés, que tiene una tienda de mascotas. Pídele que se revise antes de mandarlo. Yo ya le pasé los datos.",
+          "en": "Now you try it. The AI already wrote Tatiana the weekly sales summary for Doña Inés, who runs a pet shop. Ask it to check itself before it goes out. I already handed it the numbers."
+        }
+      },
+      "titulo": {
+        "es": "Las ventas de Doña Inés",
+        "en": "Doña Inés's sales"
+      },
+      "reto": {
+        "es": "Tatiana le dio a la IA las ventas de cinco días, de lunes a viernes. La IA respondió con un resumen y un total, y Tatiana no lo ha revisado. Escríbele a la IA para que revise su propio resumen antes de que Tatiana se lo mande a Doña Inés.",
+        "en": "Tatiana gave the AI five days of sales, Monday to Friday. The AI replied with a summary and a total, and Tatiana hasn't checked it yet. Write to the AI so it checks its own summary before Tatiana sends it to Doña Inés."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "revisa",
+          "texto": {
+            "es": "Le pide revisar su propia respuesta",
+            "en": "Asks it to check its own answer"
+          },
+          "rubrica": "El prompt le pide a la IA que revise, verifique o compruebe su propia respuesta o su resumen ('revisa tu resumen', 'verifica lo que escribiste'). No cuenta pedir un resumen nuevo desde cero, ni pedirle que revise el negocio de Doña Inés en vez de su respuesta.",
+          "claves": {
+            "es": [
+              "revisa tu",
+              "revisa el resumen",
+              "revisa lo que",
+              "revisa la respuesta",
+              "revisalo",
+              "revisala",
+              "revises",
+              "verifica tu",
+              "verifica el resumen",
+              "verifica lo que",
+              "verifica la respuesta",
+              "verificalo",
+              "comprueba tu",
+              "comprueba el resumen",
+              "compruebalo",
+              "vuelve a revisar",
+              "repasa tu"
+            ],
+            "en": [
+              "check your",
+              "check the summary",
+              "check it",
+              "check what you",
+              "review your",
+              "review the summary",
+              "review it",
+              "review what you",
+              "double-check",
+              "double check",
+              "verify your",
+              "verify the summary",
+              "verify it",
+              "go over your",
+              "look over your"
+            ]
+          }
+        },
+        {
+          "id": "criterios",
+          "texto": {
+            "es": "Le da criterios concretos",
+            "en": "Gives it concrete criteria"
+          },
+          "rubrica": "El prompt le da a la IA al menos un criterio concreto para revisar: que estén los cinco días, que la suma dé el total o que use solo los números que le dieron. No cuenta 'revisa que esté bien', 'que quede profesional' o 'que esté completo' sin decir qué debe estar.",
+          "claves": {
+            "es": [
+              "la suma",
+              "las sumas",
+              "suma de",
+              "suma bien",
+              "suma da",
+              "cuadra",
+              "total",
+              "5 dias",
+              "cinco dias",
+              "cada dia",
+              "lunes",
+              "viernes",
+              "solo mis numeros",
+              "solo los numeros",
+              "numeros que te di",
+              "datos que te di",
+              "cifras que te di"
+            ],
+            "en": [
+              "add up",
+              "adds up",
+              "the sum is",
+              "the sum matches",
+              "sum of",
+              "sums",
+              "total",
+              "5 days",
+              "five days",
+              "each day",
+              "every day",
+              "monday",
+              "friday",
+              "only my numbers",
+              "only the numbers",
+              "numbers i gave",
+              "figures i gave"
+            ]
+          }
+        },
+        {
+          "id": "corrige",
+          "texto": {
+            "es": "Pide corregir y decir qué cambió",
+            "en": "Asks it to fix and say what changed"
+          },
+          "rubrica": "El prompt pide que, si la IA encuentra algo mal, lo corrija y diga qué cambió o cuál era el error. No cuenta solo 'dime si está bien': eso pide una opinión, no un arreglo.",
+          "claves": {
+            "es": [
+              "corrige",
+              "corrigelo",
+              "corregir",
+              "arregla",
+              "arreglalo",
+              "que cambiaste",
+              "que corregiste",
+              "que arreglaste",
+              "cual era el error",
+              "donde estaba el error",
+              "senala el error",
+              "senala los errores",
+              "dime el error",
+              "dime los errores"
+            ],
+            "en": [
+              "fix",
+              "correct it",
+              "correct them",
+              "correct any",
+              "correct the",
+              "what you changed",
+              "what you fixed",
+              "what changed",
+              "what was wrong",
+              "where the error",
+              "where the mistake",
+              "point out the error",
+              "point out any error",
+              "point out the mistake",
+              "point out any mistake"
+            ]
+          }
+        },
+        {
+          "id": "dudas",
+          "texto": {
+            "es": "Pide lo que no puede comprobar",
+            "en": "Asks what it can't check"
+          },
+          "rubrica": "El prompt le pide a la IA que diga qué no puede comprobar o de qué no está segura (por ejemplo, si las cifras son las del cuaderno de Doña Inés). No cuenta 'asegúrate de que todo esté bien': eso le pide seguridad, no que marque sus límites.",
+          "claves": {
+            "es": [
+              "no puedes comprobar",
+              "no puedas comprobar",
+              "no puedes verificar",
+              "no puedas verificar",
+              "no puedes revisar",
+              "no puedas revisar",
+              "no puedes saber",
+              "no estas segur",
+              "no estes segur",
+              "no sabes",
+              "no sepas",
+              "tus dudas",
+              "que dudas"
+            ],
+            "en": [
+              "can't check",
+              "cannot check",
+              "can't verify",
+              "cannot verify",
+              "can't confirm",
+              "cannot confirm",
+              "unable to check",
+              "unable to verify",
+              "not sure",
+              "unsure",
+              "don't know",
+              "do not know"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una contadora independiente. En esta conversación ella te dio las ventas de la semana de la tienda de mascotas de Doña Inés: lunes $180.000, martes $150.000, miércoles $210.000, jueves $160.000 y viernes $300.000. Tú ya le entregaste este resumen, que tiene dos errores: \"Ventas de la semana: lunes $180.000, martes $150.000, miércoles $210.000, jueves $160.000. Total: $760.000.\" Falta el viernes, y la suma de esos cuatro días da $700.000; con los cinco días, el total es $1.000.000. Si el prompt te pide revisar tu resumen con criterios concretos, revísalo punto por punto, corrige lo que falle y di qué cambiaste. Si te pide decir qué no puedes comprobar, di que no puedes saber si esas cifras son las del cuaderno de Doña Inés. Si solo te pide revisar sin criterios, o te pregunta si está bien, responde que el resumen está correcto. Si no te pide revisar, repite el mismo resumen. No inventes datos.",
+        "en": "You are an AI helping a freelance accountant. Earlier in this conversation she gave you the week's sales for Doña Inés's pet shop: Monday $180, Tuesday $150, Wednesday $210, Thursday $160 and Friday $300. You already gave her this summary, which has two mistakes: \"Sales this week: Monday $180, Tuesday $150, Wednesday $210, Thursday $160. Total: $760.\" Friday is missing, and those four days add up to $700; with all five days, the total is $1,000. If the prompt asks you to check your summary against concrete criteria, go through it point by point, fix what fails and say what you changed. If it asks what you can't check, say you can't know whether those figures match Doña Inés's own records. If it just asks you to check without criteria, or asks whether it's right, say the summary is correct. If it doesn't ask you to check anything, repeat the same summary. Don't make up any details."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Revisé mi resumen punto por punto:\n- Los cinco días: faltaba el viernes ($300.000). Lo agregué.\n- La suma: decía $760.000. Con los cinco días da $1.000.000. Corregido.\n- Solo tus números: sí.\nLo que no puedo comprobar: que estas cifras sean las del cuaderno de Doña Inés. Eso te toca a ti.",
+            "en": "I checked my summary point by point:\n- All five days: Friday was missing ($300). I added it.\n- The sum: it said $760. With all five days, it's $1,000. Fixed.\n- Only your numbers: yes.\nWhat I can't check: whether these figures match Doña Inés's own records. That part is on you."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Con tu lista, la IA encontró dos errores suyos: un día que faltaba y una suma mal hecha. Y te dijo qué te toca revisar a ti.",
+              "en": "Strong signal. With your list, the AI caught two of its own mistakes: a missing day and a bad sum. And it told you what you still need to check."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Revisé el resumen y está correcto. Ventas de la semana: $760.000.",
+            "en": "I checked the summary and it's correct. Sales this week: $760."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA dijo que todo estaba bien, y le falta un día entero. Mira la lista: dale criterios concretos y pídele que corrija y cuente qué cambió.",
+              "en": "Weak signal: the AI said it was all fine, and a whole day is missing. Check the list: give it concrete criteria and ask it to fix things and say what changed."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ojo, piloto. Que la IA se revise ayuda mucho, pero tiene un límite.",
+          "en": "Heads up, pilot. Having the AI check itself helps a lot, but it has a limit."
+        }
+      },
+      "titulo": {
+        "es": "Revisarse no es verificar",
+        "en": "Self-checking isn't verifying"
+      },
+      "texto": {
+        "es": "La que revisa es la misma IA que se equivocó. Atrapa descuidos, como una suma o un dato que se le quedó. Pero si tú copiaste mal un número, lo va a repetir, porque solo ve lo que hay en el chat. Lo que importa lo comparas tú con la fuente, como en el capítulo 2.",
+        "en": "The one checking is the same AI that made the mistake. It catches slips, like a sum or a detail it left out. But if you copied a number wrong, it'll repeat it, because it only sees what's in the chat. What matters, you compare with the source yourself, like in Chapter 2."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "La IA sí puede revisar",
+            "en": "The AI can check"
+          },
+          "b": {
+            "es": "Solo tú puedes revisar",
+            "en": "Only you can check"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Que la suma dé el total",
+              "en": "That the sum matches the total"
+            },
+            "b": {
+              "es": "Que los números sean los de las facturas",
+              "en": "That the numbers match the receipts"
+            }
+          },
+          {
+            "a": {
+              "es": "Que no falte nada de tu lista",
+              "en": "That nothing on your list is missing"
+            },
+            "b": {
+              "es": "Que el dato sea cierto en la vida real",
+              "en": "That the fact is true in real life"
+            }
+          },
+          {
+            "a": {
+              "es": "Que siga tus criterios",
+              "en": "That it follows your criteria"
+            },
+            "b": {
+              "es": "Si ya se puede mandar al cliente",
+              "en": "Whether it's ready for the client"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Tatiana ya usa la autorrevisión, y hoy le llegó una revisión perfecta. ¿Perfecta de verdad? Ayúdale a decidir.",
+          "en": "Tatiana uses self-checks now, and today she got a perfect check back. Really perfect? Help her decide."
+        }
+      },
+      "titulo": {
+        "es": "Revisado por la IA",
+        "en": "Checked by the AI"
+      },
+      "escena": {
+        "es": "Tatiana le pidió a la IA el resumen de gastos de Don Ramiro y que lo revisara con su lista. La IA respondió: \"Revisé: están los cuatro gastos, la suma cuadra y usé solo tus números.\" Don Ramiro la espera en 10 minutos. ¿Qué hace Tatiana?",
+        "en": "Tatiana asked the AI for Don Ramiro's expense summary and had it check the summary against her list. The AI replied: \"Checked: all four expenses are there, the sum adds up and I used only your numbers.\" Don Ramiro is expecting her in 10 minutes. What does Tatiana do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Lo manda: la IA ya lo revisó",
+            "en": "Send it: the AI already checked it"
+          },
+          "consecuencia": {
+            "es": "La IA revisó bien la suma, pero Tatiana había escrito el arriendo como $900.000 y en la factura dice $950.000. Don Ramiro lo notó en la reunión.",
+            "en": "The AI checked the sum just fine, but Tatiana had typed the rent as $900 and the receipt says $950. Don Ramiro caught it in the meeting."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Le pide a la IA que lo revise tres veces más",
+            "en": "Ask the AI to check it three more times"
+          },
+          "consecuencia": {
+            "es": "La IA dijo \"todo cuadra\" tres veces. No puede ver la factura del arriendo, así que el error siguió ahí.",
+            "en": "The AI said \"it all adds up\" three times. It can't see the rent receipt, so the mistake stayed put."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Compara las cifras grandes con las facturas",
+            "en": "Compare the big numbers with the receipts"
+          },
+          "consecuencia": {
+            "es": "En dos minutos vio que el arriendo era $950.000, no $900.000. Lo corrigió, pidió la suma de nuevo y llegó a la reunión con las cuentas bien.",
+            "en": "In two minutes she saw the rent was $950, not $900. She fixed it, asked for the sum again and walked into the meeting with the numbers right."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "La autorrevisión atrapa errores de la IA. Los tuyos, y lo que no está en el chat, solo los atrapas tú. Primero que se revise; después, verificas lo que importa.",
+          "en": "A self-check catches the AI's mistakes. Yours, and anything that isn't in the chat, only you can catch. First it checks itself; then you verify what matters."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora ponlo en tus palabras: ¿qué es pedirle a la IA que se revise? Escríbelo como se lo explicarías a Tatiana.",
+          "en": "Now put it in your own words: what does it mean to have the AI check itself? Write it the way you'd explain it to Tatiana."
+        }
+      },
+      "concepto": "autorrevision",
+      "definicion": {
+        "es": "Pedirle a la IA que revise su propia respuesta con tu lista de criterios concretos, que corrija lo que falle y diga qué no puede comprobar. Ayuda, pero no reemplaza tu verificación.",
+        "en": "Asking the AI to check its own answer against your list of concrete criteria, fix what fails and say what it can't check. It helps, but it doesn't replace your own verifying."
+      },
+      "pregunta": {
+        "es": "Pedirle a la IA que se revise sirve para…",
+        "en": "Having the AI check itself helps…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "autorrevisión",
+        "en": "self-check"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Autorrevisión y tu prompt ya están en tu bitácora. Pégalo después de cualquier respuesta con números.",
+          "en": "Saved. Your Self-Check card and your prompt are in your logbook. Paste it after any answer with numbers in it."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas, y esta vez revisas tú.",
+          "en": "Three questions, and this time you do the checking."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál pedido de revisión le sirve más a la IA?",
+            "en": "Which check request helps the AI most?"
+          },
+          "opciones": [
+            {
+              "es": "¿Está bien?",
+              "en": "Is it right?"
+            },
+            {
+              "es": "Revisa que quede profesional",
+              "en": "Check that it looks professional"
+            },
+            {
+              "es": "Revisa que la suma dé el total y que estén los 5 días",
+              "en": "Check that it adds up to the total and all 5 days are there"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Criterios que se pueden comprobar, con respuesta de sí o no.",
+              "en": "Right. Criteria that can be checked, with a yes-or-no answer."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Busca el que le dice a la IA exactamente qué mirar.",
+              "en": "Hmm. Look for the one that tells the AI exactly what to look at."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "La IA revisó su respuesta con tu lista y dice que todo cuadra. ¿Qué sigue?",
+            "en": "The AI checked its answer against your list and says it all adds up. What's next?"
+          },
+          "opciones": [
+            {
+              "es": "Mandarlo sin mirar: ya se revisó",
+              "en": "Send it without looking: it's been checked"
+            },
+            {
+              "es": "Comparar los datos importantes con la fuente",
+              "en": "Compare the important numbers with the source"
+            },
+            {
+              "es": "Pedirle que se revise otra vez",
+              "en": "Ask it to check itself again"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La IA revisa lo que hay en el chat. La fuente la miras tú.",
+              "en": "Exactly. The AI checks what's in the chat. You look at the source."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en el arriendo de Don Ramiro. ¿Qué podía ver la IA y qué no?",
+              "en": "Think of Don Ramiro's rent. What could the AI see, and what couldn't it?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Para qué le pides a la IA que diga qué cambió al corregirse?",
+            "en": "Why ask the AI to say what it changed when it fixes something?"
+          },
+          "opciones": [
+            {
+              "es": "Para ver el error y revisar ese punto tú",
+              "en": "To see the mistake and check that spot yourself"
+            },
+            {
+              "es": "Para que la respuesta sea más larga",
+              "en": "To make the answer longer"
+            },
+            {
+              "es": "Para que no se vuelva a equivocar nunca",
+              "en": "So it never makes a mistake again"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Si sabes qué cambió, sabes dónde mirar.",
+              "en": "Right. If you know what changed, you know where to look."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Qué ganas tú al ver el error, en vez de recibir una respuesta nueva sin más?",
+              "en": "Hmm. What do you gain by seeing the mistake, instead of just getting a new answer?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Que la IA se revise",
+        "en": "Letting the AI check itself"
+      },
+      "resumen": {
+        "es": "Pídele que revise su respuesta con tu lista, que corrija y diga qué no puede comprobar. Lo que importa lo verificas tú.",
+        "en": "Have it check its answer against your list, fix it and say what it can't check. What matters, you verify."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste la diferencia entre \"¿está bien?\" y una lista",
+          "en": "You saw the difference between \"is it right?\" and a list"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste los criterios claros de los vagos",
+          "en": "You sorted clear criteria from vague ones"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pusiste a la IA a revisar las ventas de Doña Inés",
+          "en": "You had the AI check Doña Inés's sales"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste el error que la IA no podía ver",
+          "en": "You caught the mistake the AI couldn't see"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-autorrevision",
+      "titulo": {
+        "es": "Pedir que la IA se revise",
+        "en": "Having the AI check itself"
+      }
+    }
+  }
+}

@@ -1,0 +1,861 @@
+{
+  "formato": "punti-mision@1",
+  "id": "el-reclamo-bien-hecho",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 2,
+  "numero": 6,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 10,
+  "conceptos": [
+    "reclamo-formal"
+  ],
+  "usaConceptos": [
+    "datos-sensibles",
+    "entender-documentos"
+  ],
+  "titulo": {
+    "es": "El reclamo bien hecho",
+    "en": "A complaint done right"
+  },
+  "resumen": {
+    "es": "Hechos con fechas y valores, qué pides y respuesta por escrito, con marcadores. La IA redacta; tú radicas.",
+    "en": "Facts with dates and amounts, what you want and a written reply, with placeholders. AI drafts; you file."
+  },
+  "siguiente": "comprar-con-cabeza",
+  "fuentes": [
+    {
+      "titulo": "Ley 142 de 1994, régimen de servicios públicos: arts. 154 a 159 (normograma de la Cancillería)",
+      "url": "https://www.cancilleria.gov.co/sites/default/files/Normograma/docs/ley_0142_1994_pr005.htm",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Superservicios, Concepto 161 de 2025: plazo de cinco meses para reclamar una factura y recursos",
+      "url": "https://gestornormativo.creg.gov.co/gestor/entorno/docs/concepto_superservicios_0000161_2025.htm",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ley 1755 de 2015, derecho de petición (Función Pública)",
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=65334",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ley 1755 de 2015, texto compilado: arts. 14 y 32 (normograma)",
+      "url": "https://normograma.com/documentospdf/esu/compilacion/docs/ley_1755_2015.htm",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Personería de Medellín: servicios gratuitos, incluido el escrito de derecho de petición",
+      "url": "https://www.personeriamedellin.gov.co/servicios/preguntas-frecuentes/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ley 2113 de 2021: consultorios jurídicos gratuitos",
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=168026",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llamada desde Montería. Es Doña Gladys, 70 años, maestra pensionada. Vive sola, y la factura de energía de este mes le llegó al doble. En su casa no cambió nada.",
+          "en": "Pilot, a call from Montería, Colombia. It's Doña Gladys, 70, a retired teacher. She lives alone, and this month's electricity bill came in at double. Nothing changed in her house."
+        }
+      },
+      "titulo": {
+        "es": "El reclamo bien hecho",
+        "en": "A complaint done right"
+      },
+      "texto": {
+        "es": "Punti no es asesor financiero ni abogado: la IA te ayuda a entender y a redactar, y la decisión es tuya. Hoy escribes con la IA un reclamo que se radica y se responde. Unos 10 minutos.",
+        "en": "Punti isn't a financial advisor or a lawyer: AI helps you understand and write, and the decision is yours. Today you write a complaint with AI that gets filed and answered. About 10 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "El año pasado a Doña Gladys le cobraron una reconexión del gas que nunca pidió. Esto le escribió a la IA con rabia. Abajo, el mismo reclamo, bien hecho.",
+          "en": "Last year Doña Gladys was charged for a gas reconnection she never asked for. Here's what she typed to the AI, angry. Below, the same complaint, done right."
+        }
+      },
+      "titulo": {
+        "es": "Con rabia o con hechos",
+        "en": "Angry, or with facts"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Escríbele a la empresa del gas que son unos ladrones, que me cobraron lo que no es.",
+          "en": "Write to the gas company that they're thieves and charged me for something that isn't mine."
+        },
+        "salida": {
+          "es": "Señores empresa de gas: les escribo para manifestar mi total inconformidad con sus cobros abusivos. Exijo una solución inmediata.",
+          "en": "Dear gas company: I am writing to express my complete dissatisfaction with your abusive charges. I demand an immediate solution."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "marcadores",
+            "texto": {
+              "es": "Escribe un reclamo de [NOMBRE], contrato [CONTRATO], a la empresa del gas. ",
+              "en": "Write a complaint from [NAME], account [ACCOUNT], to the gas company. "
+            }
+          },
+          {
+            "pieza": "hechos",
+            "texto": {
+              "es": "En la factura de agosto me cobraron $45.000 de reconexión. Nunca me cortaron el servicio. ",
+              "en": "My August bill charged me 45,000 pesos for a reconnection. My service was never cut off. "
+            }
+          },
+          {
+            "pieza": "pide",
+            "texto": {
+              "es": "Pido que quiten ese cobro y que me respondan por escrito.",
+              "en": "I ask them to remove that charge and reply in writing."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Asunto: reclamo por cobro de reconexión. Contrato [CONTRATO]\nYo, [NOMBRE], presento este reclamo:\n1. En la factura de agosto aparece un cobro de $45.000 por reconexión.\n2. El servicio nunca fue suspendido.\nSolicito: retirar ese cobro de la factura.\nPido respuesta por escrito.\n[FIRMA]",
+          "en": "Subject: complaint about a reconnection charge. Account [ACCOUNT]\nI, [NAME], file this complaint:\n1. My August bill includes a 45,000-peso reconnection charge.\n2. My service was never suspended.\nRequest: remove that charge from the bill.\nI request a written reply.\n[SIGNATURE]"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. Los datos van como marcadores, los hechos tienen mes y valor, y el pedido es concreto, con respuesta por escrito. Con rabia se desahoga; con hechos se responde.",
+          "en": "Look at the colors. The personal details are placeholders, the facts have a month and an amount, and the request is specific, with a written reply. Anger lets off steam; facts get an answer."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un reclamo bien hecho lleva estas cuatro piezas. Toca cada una.",
+          "en": "A complaint done right has these four pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas del reclamo",
+        "en": "The 4 pieces of a complaint"
+      },
+      "piezas": [
+        {
+          "id": "marcadores",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Marcadores, no datos",
+            "en": "Placeholders, not data"
+          },
+          "descripcion": {
+            "es": "[NOMBRE], [CONTRATO], [CÉDULA]: los llenas tú en la carta.",
+            "en": "[NAME], [ACCOUNT], [ID]: you fill them in on the letter."
+          },
+          "ejemplo": {
+            "es": "Tus datos sí van en la carta que radicas, pero no en el chat. Los escribes tú al final.",
+            "en": "Your details do go on the letter you file, but not in the chat. You write them in at the end."
+          }
+        },
+        {
+          "id": "hechos",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Hechos con fecha y valor",
+            "en": "Facts with dates and amounts"
+          },
+          "descripcion": {
+            "es": "Qué pasó, en orden, con meses y cifras.",
+            "en": "What happened, in order, with months and amounts."
+          },
+          "ejemplo": {
+            "es": "\"La de julio llegó por $184.000; las anteriores, de $90.000\". Eso se revisa. \"Llegó carísima\", no.",
+            "en": "\"July's bill came to 184,000; the ones before, 90,000.\" That can be checked. \"It was super expensive\" can't."
+          }
+        },
+        {
+          "id": "pide",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué pides y cómo",
+            "en": "What you ask for, and how"
+          },
+          "descripcion": {
+            "es": "Algo concreto, y respuesta por escrito.",
+            "en": "Something specific, and a written reply."
+          },
+          "ejemplo": {
+            "es": "\"Revisen el medidor, ajusten la factura y respóndanme por escrito\". Sin pedido claro, no hay respuesta clara.",
+            "en": "\"Check the meter, adjust the bill and reply in writing.\" No clear request, no clear answer."
+          }
+        },
+        {
+          "id": "pruebas",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Tus pruebas",
+            "en": "Your evidence"
+          },
+          "descripcion": {
+            "es": "Copias de facturas, fotos del medidor.",
+            "en": "Copies of bills, photos of the meter."
+          },
+          "ejemplo": {
+            "es": "Guarda copia de todo lo que radicas y anota el número de radicado. Es tu constancia.",
+            "en": "Keep a copy of everything you file and write down the filing number. That's your proof."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Doña Gladys tiene muchas cosas que decir. ¿Cuáles van en el reclamo y cuáles no?",
+          "en": "Your turn. Doña Gladys has a lot to say. Which things go in the complaint, and which don't?"
+        }
+      },
+      "titulo": {
+        "es": "¿Va en el reclamo?",
+        "en": "Does it go in?"
+      },
+      "grupos": [
+        {
+          "id": "va",
+          "titulo": {
+            "es": "Va en el reclamo",
+            "en": "Goes in"
+          }
+        },
+        {
+          "id": "no",
+          "titulo": {
+            "es": "No va",
+            "en": "Stays out"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "va",
+          "texto": {
+            "es": "La de julio llegó por $184.000 y las de abril a junio, por unos $90.000",
+            "en": "July's bill was 184,000 pesos and April to June were about 90,000"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "Que la empresa es una ladrona que abusa de los pensionados",
+            "en": "That the company is a thief that takes advantage of retirees"
+          }
+        },
+        {
+          "grupo": "va",
+          "texto": {
+            "es": "Pido que revisen el medidor y ajusten el cobro",
+            "en": "I ask them to check the meter and adjust the charge"
+          }
+        },
+        {
+          "grupo": "no",
+          "texto": {
+            "es": "Una foto de su cédula, pegada en el chat de la IA",
+            "en": "A photo of her ID, pasted into the AI chat"
+          }
+        },
+        {
+          "grupo": "va",
+          "texto": {
+            "es": "Pido respuesta por escrito",
+            "en": "I request a written reply"
+          }
+        },
+        {
+          "grupo": "va",
+          "texto": {
+            "es": "[NOMBRE] y [CONTRATO] donde van sus datos",
+            "en": "[NAME] and [ACCOUNT] where her details go"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Hechos, pedido y marcadores, sí. Insultos y fotos de la cédula, no.",
+          "en": "Six for six. Facts, a request and placeholders, yes. Insults and ID photos, no."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿eso le ayuda a la empresa a revisar el caso, o solo desahoga o expone un dato?",
+          "en": "Hmm. Ask yourself: does that help the company review the case, or does it just vent or expose a detail?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Los plazos del reclamo, según la ley colombiana. Los reviso seguido, pero confírmalos antes de contar los días.",
+          "en": "Complaint deadlines, according to Colombian law. I check them often, but confirm them before you count the days."
+        }
+      },
+      "titulo": {
+        "es": "Los plazos, al día",
+        "en": "Deadlines, up to date"
+      },
+      "vivo": true,
+      "texto": {
+        "es": "Días hábiles son de lunes a viernes, sin festivos. Radica el reclamo en la oficina, la página o la línea de la empresa, y pide el número de radicado. Las leyes pueden cambiar: si tienes dudas, pregunta en la empresa o en la Personería.",
+        "en": "Business days are Monday to Friday, not counting holidays. File the complaint at the company's office, website or phone line, and ask for the filing number. Laws can change: if in doubt, ask the company or the local ombudsman's office (Personería)."
+      },
+      "revisado": "2026-09-24",
+      "tabla": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Qué",
+            "en": "What"
+          },
+          "b": {
+            "es": "Plazo",
+            "en": "Deadline"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Reclamar una factura de servicios públicos",
+              "en": "Complain about a utility bill"
+            },
+            "b": {
+              "es": "Hasta 5 meses después de expedida (Ley 142 de 1994, art. 154)",
+              "en": "Up to 5 months after it's issued (Law 142 of 1994, art. 154)"
+            }
+          },
+          {
+            "a": {
+              "es": "Respuesta de la empresa",
+              "en": "The company's reply"
+            },
+            "b": {
+              "es": "15 días hábiles; si no responde, se entiende a tu favor (art. 158)",
+              "en": "15 business days; if it doesn't reply, it counts in your favor (art. 158)"
+            }
+          },
+          {
+            "a": {
+              "es": "Derecho de petición, por regla general",
+              "en": "Right of petition, as a general rule"
+            },
+            "b": {
+              "es": "15 días hábiles (Ley 1755 de 2015)",
+              "en": "15 business days (Law 1755 of 2015)"
+            }
+          },
+          {
+            "a": {
+              "es": "Si la respuesta no te sirve",
+              "en": "If the reply doesn't help"
+            },
+            "b": {
+              "es": "Recurso ante la empresa y apelación ante la Superservicios. Son pocos días",
+              "en": "An appeal to the company, then to the utilities regulator (Superservicios). Only a few days"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Doña Gladys te cuenta su caso. Escribe el pedido para que la IA redacte el reclamo, sin que viajen sus datos.",
+          "en": "Your turn. Doña Gladys tells you her case. Write the request so the AI drafts the complaint, without her details traveling."
+        }
+      },
+      "titulo": {
+        "es": "La factura de Doña Gladys",
+        "en": "Doña Gladys's bill"
+      },
+      "reto": {
+        "es": "Lo que te cuenta Doña Gladys (inventado): vive sola. La factura de energía de julio llegó por $184.000. Las de abril, mayo y junio fueron de unos $90.000. En la casa no cambió nada. Quiere que revisen el medidor y ajusten el cobro. Su nombre y su contrato van en la carta, no en el chat.",
+        "en": "What Doña Gladys tells you (made up): she lives alone. July's electricity bill came to 184,000 pesos. April, May and June were about 90,000. Nothing changed at home. She wants them to check the meter and adjust the charge. Her name and account number go on the letter, not in the chat."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "marcadores",
+          "texto": {
+            "es": "Marcadores en vez de datos",
+            "en": "Placeholders instead of data"
+          },
+          "rubrica": "El prompt usa al menos un marcador donde van los datos personales, para llenarlo después: [NOMBRE], [CONTRATO], [CÉDULA], [DIRECCIÓN], {nombre} o XXX. No cuenta si junto al marcador aparece un nombre completo, una cédula o un número de contrato, ni describir a la persona sin dejarle un lugar al dato ('una señora' solo no es un marcador).",
+          "claves": {
+            "es": [
+              "[",
+              "{",
+              "(nombre",
+              "(contrato",
+              "xxx"
+            ],
+            "en": [
+              "[",
+              "{",
+              "(name",
+              "(account",
+              "xxx"
+            ]
+          }
+        },
+        {
+          "id": "hechos",
+          "texto": {
+            "es": "Hechos con meses y valores",
+            "en": "Facts with months and amounts"
+          },
+          "rubrica": "El prompt cuenta lo que pasó con meses y valores: la factura de julio por 184.000 y las de abril a junio por unos 90.000 (basta con el mes y el valor de la factura alta y el de las normales). No cuenta 'me llegó muy cara' o 'me llegó al doble' sin meses ni valores.",
+          "claves": {
+            "es": [
+              "184",
+              "90.000",
+              "90 mil",
+              "julio",
+              "abril",
+              "junio"
+            ],
+            "en": [
+              "184",
+              "90,000",
+              "90 thousand",
+              "july",
+              "april",
+              "june"
+            ]
+          }
+        },
+        {
+          "id": "pide",
+          "texto": {
+            "es": "Qué pide y respuesta por escrito",
+            "en": "The request, and a written reply"
+          },
+          "rubrica": "El prompt dice qué pide Doña Gladys en concreto (revisar el medidor o el cobro y ajustar la factura) Y pide respuesta por escrito. Hacen falta las dos cosas. No cuenta 'que me solucionen', 'quiero quejarme' o 'que me respondan' sin decir qué pide ni que sea por escrito.",
+          "claves": {
+            "es": [
+              "por escrito",
+              "respuesta escrita",
+              "respondan por escrito",
+              "responda por escrito"
+            ],
+            "en": [
+              "in writing",
+              "written reply",
+              "written response",
+              "written answer"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a escribir reclamos formales a empresas de servicios públicos en Colombia. Responde solo con la carta, en texto plano, en máximo 150 palabras. Usa solo los hechos del mensaje; no inventes fechas, valores ni números de contrato. Si el mensaje trae marcadores como [NOMBRE] o [CONTRATO], déjalos tal cual. Si trae nombres, cédulas o números de contrato, reemplázalos por marcadores y agrega al final: 'Tus datos los escribes tú en la carta, no en el chat.' Si el mensaje no dice qué pide, termina la carta con 'Solicito que revisen mi caso', sin más. Si pide respuesta por escrito, inclúyelo. Si el mensaje no trae hechos con meses y valores, escribe una carta corta de inconformidad general. No des consejo legal ni cites artículos: si preguntan por plazos, di que se confirman con la empresa o la Personería.",
+        "en": "You are an AI that helps write formal complaints to utility companies in Colombia. Reply only with the letter, in plain text, in 150 words at most. Use only the facts in the message; don't invent dates, amounts or account numbers. If the message has placeholders like [NAME] or [ACCOUNT], keep them as they are. If it has names, ID numbers or account numbers, replace them with placeholders and add at the end: 'You write your details on the letter, not in the chat.' If the message doesn't say what it's asking for, end the letter with 'I ask you to review my case', nothing more. If it asks for a written reply, include that. If the message has no facts with months and amounts, write a short letter of general dissatisfaction. Don't give legal advice or cite articles: if asked about deadlines, say to confirm them with the company or the local ombudsman's office (Personería)."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Montería, [FECHA]\nSeñores [EMPRESA DE ENERGÍA]\nAsunto: reclamo por la factura de julio. Contrato [CONTRATO]\nYo, [NOMBRE], presento este reclamo:\n1. De abril a junio mis facturas fueron de unos $90.000.\n2. La factura de julio llegó por $184.000.\n3. En mi casa no cambió nada: vivo sola y uso los mismos aparatos.\nSolicito: revisar el medidor y el cobro de julio, y ajustar la factura.\nPido respuesta por escrito a [DIRECCIÓN O CORREO].\nAdjunto: copia de las facturas de abril a julio.\n[FIRMA]",
+            "en": "Montería, [DATE]\nTo: [ELECTRICITY COMPANY]\nSubject: complaint about the July bill. Account [ACCOUNT]\nI, [NAME], file this complaint:\n1. From April to June my bills were about 90,000 pesos.\n2. The July bill came to 184,000 pesos.\n3. Nothing changed in my home: I live alone and use the same appliances.\nRequest: check the meter and the July charge, and adjust the bill.\nI request a written reply at [ADDRESS OR EMAIL].\nAttached: copies of the April to July bills.\n[SIGNATURE]"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. Hechos con meses y valores, un pedido concreto y respuesta por escrito. Los datos de Doña Gladys los pone ella, con su letra, antes de radicar.",
+              "en": "Clean signal. Facts with months and amounts, a specific request and a written reply. Doña Gladys fills in her details herself, before filing."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Señores empresa de energía: estoy muy molesta porque la factura llegó carísima y no es justo con una pensionada. Solicito que revisen mi caso.",
+            "en": "Dear electricity company: I'm very upset because the bill was extremely high and that's not fair to a retiree. I ask you to review my case."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La empresa lee eso y no sabe qué revisar. Mira la lista: ¿hay meses y valores? ¿Qué pide exactamente? ¿Por escrito? ¿Y los datos, como marcadores?",
+              "en": "The company reads that and doesn't know what to check. Look at the list: months and amounts? What exactly is she asking for? In writing? And the details, as placeholders?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Yo también le hice un borrador a Doña Gladys, y casi lo radica así. Dos renglones no pueden salir de la estación. Tócalos.",
+          "en": "Confession time. I drafted a letter for Doña Gladys too, and she almost filed it like this. Two lines can't leave the station. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "El borrador de Punti",
+        "en": "Punti's draft"
+      },
+      "trozos": [
+        {
+          "es": "Asunto: reclamo por la factura de julio, contrato [CONTRATO].",
+          "en": "Subject: complaint about the July bill, account [ACCOUNT]."
+        },
+        {
+          "es": "Firma: Gladys Pérez, C.C. 12.345.678, celular 300 123 4567.",
+          "en": "Signed: Gladys Pérez, ID 12-345-678, cell 555-0100."
+        },
+        {
+          "es": "Las facturas de abril a junio fueron de unos $90.000 y la de julio, de $184.000.",
+          "en": "The April to June bills were about 90,000 pesos, and July's was 184,000."
+        },
+        {
+          "es": "La empresa tiene tres meses para responder, así que hay que tener paciencia.",
+          "en": "The company has three months to reply, so be patient."
+        },
+        {
+          "es": "Pido que revisen el medidor, ajusten el cobro y me respondan por escrito.",
+          "en": "I ask them to check the meter, adjust the charge and reply in writing."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Los datos van como marcadores y Doña Gladys los llena en la carta. Y el plazo no es de tres meses: por regla general son 15 días hábiles. La IA también se equivoca con plazos. Confírmalos.",
+          "en": "You caught me. Personal details go in as placeholders, and Doña Gladys fills them in on the letter. And the deadline isn't three months: as a rule it's 15 business days. AI gets deadlines wrong too. Confirm them."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese renglón sí sirve en el reclamo. Busca uno con datos que no debían viajar y uno con un plazo que no cuadra con la pantalla de los plazos.",
+          "en": "That line belongs in the complaint. Look for one with details that shouldn't travel, and one with a deadline that doesn't match the deadlines screen."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres semanas después. Lee con calma y decide.",
+          "en": "Three weeks later. Read it calmly and decide."
+        }
+      },
+      "titulo": {
+        "es": "La respuesta dice que no",
+        "en": "The answer is no"
+      },
+      "escena": {
+        "es": "Llegó la respuesta por escrito. La empresa dice que el cobro está bien y no explica por qué. Doña Gladys está segura de que en su casa no cambió nada. ¿Qué hace?",
+        "en": "The written reply arrived. The company says the charge is correct and doesn't explain why. Doña Gladys is sure nothing changed in her home. What does she do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Le pide a la IA que le diga si debe demandar a la empresa",
+            "en": "Asks the AI whether she should sue the company"
+          },
+          "consecuencia": {
+            "es": "La IA no conoce su caso completo ni la ley al día. Demandar o no es una decisión para hablarla con una persona que sepa.",
+            "en": "The AI doesn't know her whole case or the current law. Whether to sue is a decision to talk through with someone who knows."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Lleva la respuesta a la Personería o a un consultorio jurídico, rápido",
+            "en": "Takes the reply to the Personería or a legal aid clinic, quickly"
+          },
+          "consecuencia": {
+            "es": "Eso. Allí le explican cómo apelar ante la empresa y la Superservicios, a tiempo. Después, la IA le ayuda a pasar en limpio lo que le dijeron.",
+            "en": "That's it. There they explain how to appeal to the company and to Superservicios, on time. Then the AI helps her write up what they told her."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Deja pasar unos meses, a ver si la factura baja sola",
+            "en": "Waits a few months to see if the bill goes down on its own"
+          },
+          "consecuencia": {
+            "es": "Los días para apelar corren desde que le llega la respuesta. Si espera, puede perder la oportunidad.",
+            "en": "The days to appeal start counting when the reply arrives. If she waits, she may lose her chance."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Luz roja del reclamo: si la respuesta es no, si no llega o si hay plazos corriendo, busca a una persona. La Personería o un consultorio jurídico te dicen el camino; la IA te ayuda a escribirlo.",
+          "en": "The complaint's red light: if the answer is no, if it never comes or if deadlines are running, find a person. The Personería or a legal aid clinic shows you the way; AI helps you write it down."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A tu bitácora. Escribe con tus palabras qué lleva un reclamo bien hecho, como se lo explicarías a Doña Gladys.",
+          "en": "To your logbook. Write in your own words what a complaint done right includes, the way you'd explain it to Doña Gladys."
+        }
+      },
+      "concepto": "reclamo-formal",
+      "definicion": {
+        "es": "Un reclamo formal con IA: hechos en orden con fechas y valores, qué pides en concreto, tus pruebas y respuesta por escrito. Tus datos van como marcadores. La IA redacta; tú revisas, radicas y cuentas los días.",
+        "en": "A formal complaint with AI: facts in order with dates and amounts, a specific request, your evidence and a written reply. Your details go in as placeholders you fill in. AI drafts; you review, file and count the days."
+      },
+      "pregunta": {
+        "es": "Un reclamo bien hecho lleva…",
+        "en": "A complaint done right includes…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "reclamo",
+        "en": "complaint"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pedido del reclamo ya viven en tu bitácora. El próximo cobro raro ya tiene carta.",
+          "en": "Saved. Your note and your complaint request now live in your logbook. The next strange charge already has a letter."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas cortas y cerramos la llamada de Doña Gladys.",
+          "en": "Two quick questions and we wrap up Doña Gladys's call."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál frase le sirve más a la empresa para revisar el caso?",
+            "en": "Which sentence helps the company most to review the case?"
+          },
+          "opciones": [
+            {
+              "es": "La factura llegó carísima y eso es un abuso",
+              "en": "The bill was outrageous and that's abuse"
+            },
+            {
+              "es": "La de julio llegó por $184.000 y las anteriores, por $90.000",
+              "en": "July's was 184,000 and the ones before were 90,000"
+            },
+            {
+              "es": "Ustedes siempre cobran lo que les da la gana",
+              "en": "You always charge whatever you feel like"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Mes y valor: algo que se puede revisar.",
+              "en": "Right. A month and an amount: something that can be checked."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿con esa frase la empresa sabe qué factura revisar?",
+              "en": "Hmm. Ask yourself: with that sentence, does the company know which bill to check?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Dónde van tu nombre y tu número de contrato?",
+            "en": "Where do your name and account number go?"
+          },
+          "opciones": [
+            {
+              "es": "En el chat, para que la IA los ponga en la carta",
+              "en": "In the chat, so the AI puts them in the letter"
+            },
+            {
+              "es": "En ningún lado: el reclamo va sin nombre",
+              "en": "Nowhere: the complaint goes unsigned"
+            },
+            {
+              "es": "En la carta que radicas, y los escribes tú",
+              "en": "On the letter you file, written in by you"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La IA deja [NOMBRE] y [CONTRATO]; tú los llenas.",
+              "en": "Exactly. The AI leaves [NAME] and [ACCOUNT]; you fill them in."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: la empresa necesita saber quién reclama, pero ¿la IA también?",
+              "en": "Ask yourself: the company needs to know who's complaining, but does the AI?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora, un reclamo tuyo. Si hoy no tienes ninguno, practica con el de Doña Gladys.",
+          "en": "Now, a complaint of your own. If you don't have one today, practice with Doña Gladys's."
+        }
+      },
+      "titulo": {
+        "es": "Tu reclamo con marcadores",
+        "en": "Your complaint with placeholders"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Piensa en un cobro o un servicio que no te cuadra. Pide el reclamo con marcadores, hechos con fechas y valores, qué pides y respuesta por escrito. Léelo completo, llena tus datos a mano y guarda el número de radicado.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Think of a charge or a service that doesn't add up. Ask for the complaint with placeholders, facts with dates and amounts, what you want and a written reply. Read it all, fill in your details by hand and keep the filing number."
+      },
+      "checks": [
+        {
+          "es": "Usé marcadores en vez de mis datos",
+          "en": "I used placeholders instead of my details"
+        },
+        {
+          "es": "Conté los hechos con fechas y valores",
+          "en": "I gave the facts with dates and amounts"
+        },
+        {
+          "es": "Dije qué pido y pedí respuesta por escrito",
+          "en": "I said what I want and asked for a written reply"
+        },
+        {
+          "es": "Leí la carta completa antes de radicarla",
+          "en": "I read the whole letter before filing it"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Reclamo formal",
+        "en": "Formal complaint"
+      },
+      "resumen": {
+        "es": "Hechos con fechas y valores, un pedido concreto, pruebas y respuesta por escrito. Tus datos como marcadores. La IA redacta; tú radicas.",
+        "en": "Facts with dates and amounts, a specific request, evidence and a written reply. Your details as placeholders. AI drafts; you file."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste lo que va en el reclamo de lo que no",
+          "en": "You sorted what goes in the complaint from what doesn't"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Pediste el reclamo de Doña Gladys con marcadores",
+          "en": "You asked for Doña Gladys's complaint with placeholders"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste un dato suelto y un plazo equivocado",
+          "en": "You caught a loose detail and a wrong deadline"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Supiste a quién acudir cuando la respuesta es no",
+          "en": "You knew who to turn to when the answer is no"
+        }
+      },
+      {
+        "bloque": "b11",
+        "texto": {
+          "es": "Escribiste tu propio reclamo con marcadores",
+          "en": "You wrote your own complaint with placeholders"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "reclamar-por-escrito",
+      "titulo": {
+        "es": "Reclamar por escrito con IA",
+        "en": "Filing written complaints with AI"
+      }
+    }
+  }
+}

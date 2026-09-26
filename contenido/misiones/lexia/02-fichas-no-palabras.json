@@ -1,0 +1,703 @@
+{
+  "formato": "punti-mision@1",
+  "id": "fichas-no-palabras",
+  "mundo": "modelos-de-lenguaje",
+  "capitulo": 1,
+  "numero": 2,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "token"
+  ],
+  "usaConceptos": [
+    "modelo-de-lenguaje"
+  ],
+  "titulo": {
+    "es": "Fichas, no palabras",
+    "en": "Tokens, Not Words"
+  },
+  "resumen": {
+    "es": "Qué es un token, por qué una palabra puede gastar varias fichas y por qué los límites y precios se cuentan así.",
+    "en": "What a token is, why one word can use several tokens, and why limits and prices are counted that way."
+  },
+  "siguiente": "la-tombola",
+  "fuentes": [
+    {
+      "titulo": "OpenAI Help Center, What are tokens and how to count them? (en inglés, 1 ficha ≈ 4 caracteres o ¾ de palabra)",
+      "url": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "OpenAI, tiktoken (tokenizador público; las frases y palabras de la misión se cortaron con o200k_base y se compararon con cl100k_base)",
+      "url": "https://github.com/openai/tiktoken",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Petrov et al. (2023), Language Model Tokenizers Introduce Unfairness Between Languages (NeurIPS)",
+      "url": "https://arxiv.org/abs/2305.15425",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Google for Developers, Introduction to Large Language Models (un token puede ser una palabra, un pedazo de palabra o un carácter)",
+      "url": "https://developers.google.com/machine-learning/resources/intro-llms",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, en la fábrica de fichas hay una cortadora. Todo texto pasa por ella antes de llegar a la máquina. Hoy la vemos trabajar.",
+          "en": "Pilot, the token factory has a cutter. Every text goes through it before it reaches the machine. Today we watch it work."
+        }
+      },
+      "titulo": {
+        "es": "Fichas, no palabras",
+        "en": "Tokens, Not Words"
+      },
+      "texto": {
+        "es": "Señal desde Pereira. Valeria es traductora independiente y cobra por palabra. Le dijeron que las IA \"cuentan en tokens\" y no entiende la diferencia. Hoy lo descubres con sus propias frases. Unos 8 minutos.",
+        "en": "Signal from Pereira. Valeria is a freelance translator who charges by the word. She heard AIs \"count in tokens\" and doesn't get the difference. Today you find out, using her own sentences. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Valeria, mira tu frase después de pasar por la cortadora.",
+          "en": "Valeria, here's your sentence after it goes through the cutter."
+        }
+      },
+      "titulo": {
+        "es": "La cortadora de fichas",
+        "en": "The token cutter"
+      },
+      "texto": {
+        "es": "El modelo no lee palabras: lee fichas, que en inglés se llaman tokens. Una palabra corta y común suele ser una ficha. Una larga o rara se parte en dos, tres o más. Esta es la frase de Valeria cortada con un tokenizador real. Otro modelo la cortaría un poco distinto.",
+        "en": "The model doesn't read words: it reads tokens. A short, common word is usually one token. A long or rare one gets split into two, three or more. Here's Valeria's sentence cut by a real tokenizer. Another model would cut it a little differently."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "En español",
+            "en": "In Spanish"
+          },
+          "b": {
+            "es": "En inglés",
+            "en": "In English"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "La traducción del contrato de arrendamiento está lista.",
+              "en": "La traducción del contrato de arrendamiento está lista."
+            },
+            "b": {
+              "es": "The translation of the lease agreement is ready.",
+              "en": "The translation of the lease agreement is ready."
+            }
+          },
+          {
+            "a": {
+              "es": "La | tradu | cción | del | contrato | de | arr | end | amiento | está | lista | .",
+              "en": "La | tradu | cción | del | contrato | de | arr | end | amiento | está | lista | ."
+            },
+            "b": {
+              "es": "The | translation | of | the | lease | agreement | is | ready | .",
+              "en": "The | translation | of | the | lease | agreement | is | ready | ."
+            }
+          },
+          {
+            "a": {
+              "es": "12 fichas",
+              "en": "12 tokens"
+            },
+            "b": {
+              "es": "9 fichas",
+              "en": "9 tokens"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "La cortadora no corta al azar: corta según lo que vio más seguido al aprender. Estos son los cortes que vas a ver. Toca cada uno.",
+          "en": "The cutter doesn't cut at random: it cuts based on what it saw most often while learning. These are the cuts you'll see. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Cómo corta la cortadora",
+        "en": "How the cutter cuts"
+      },
+      "piezas": [
+        {
+          "id": "una-ficha",
+          "color": "#39ff88",
+          "titulo": {
+            "es": "Una ficha",
+            "en": "One token"
+          },
+          "descripcion": {
+            "es": "Palabras cortas o muy comunes entran enteras.",
+            "en": "Short or very common words go in whole."
+          },
+          "ejemplo": {
+            "es": "\"contrato\" y \"lista\" son una ficha cada una. Aparecen tanto en lo que leyó el modelo que tienen ficha propia.",
+            "en": "\"lease\" and \"ready\" are one token each. They show up so often in what the model read that they get their own token."
+          }
+        },
+        {
+          "id": "en-dos",
+          "color": "#4fc3ff",
+          "titulo": {
+            "es": "Partida en dos",
+            "en": "Split in two"
+          },
+          "descripcion": {
+            "es": "Palabras un poco largas o menos comunes.",
+            "en": "Slightly longer or less common words."
+          },
+          "ejemplo": {
+            "es": "\"traducción\" salió como \"tradu\" + \"cción\". Con otro tokenizador sale \"trad\" + \"ucción\".",
+            "en": "Inside a sentence, \"waterproofing\" comes out as \"waterproof\" + \"ing\": a common chunk plus an ending."
+          }
+        },
+        {
+          "id": "en-muchas",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Partida en muchas",
+            "en": "Split into many"
+          },
+          "descripcion": {
+            "es": "Palabras largas, raras o de un oficio.",
+            "en": "Long, rare or specialist words."
+          },
+          "ejemplo": {
+            "es": "\"arrendamiento\" gastó tres fichas: \"arr\" + \"end\" + \"amiento\". \"Otorrinolaringólogo\" gasta cinco o más.",
+            "en": "\"otolaryngologist\" used four tokens: \"ot\" + \"ol\" + \"aryng\" + \"ologist\". Rare words cost more."
+          }
+        },
+        {
+          "id": "signos",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Signos y espacios",
+            "en": "Punctuation and spaces"
+          },
+          "descripcion": {
+            "es": "El punto cuenta, y el espacio viaja pegado a la palabra.",
+            "en": "The period counts, and the space rides along with the word."
+          },
+          "ejemplo": {
+            "es": "El punto final es una ficha. Y \" del\" viaja con su espacio adelante: el espacio casi nunca gasta ficha aparte.",
+            "en": "The final period is a token. And \" the\" carries its space in front: the space almost never costs a token of its own."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. En cada pareja, ¿cuál gasta más fichas? Todas las revisé con un tokenizador real.",
+          "en": "Your turn. In each pair, which one uses more tokens? I checked them all with a real tokenizer."
+        }
+      },
+      "titulo": {
+        "es": "¿Cuál gasta más fichas?",
+        "en": "Which uses more tokens?"
+      },
+      "grupos": [
+        {
+          "id": "primera",
+          "titulo": {
+            "es": "La primera",
+            "en": "The first one"
+          }
+        },
+        {
+          "id": "segunda",
+          "titulo": {
+            "es": "La segunda",
+            "en": "The second one"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "segunda",
+          "texto": {
+            "es": "\"una\" o \"desafortunadamente\"",
+            "en": "\"one\" or \"otolaryngologist\""
+          }
+        },
+        {
+          "grupo": "primera",
+          "texto": {
+            "es": "\"otorrinolaringólogo\" o \"pan\"",
+            "en": "\"hahahahaha\" or \"hello\""
+          }
+        },
+        {
+          "grupo": "primera",
+          "texto": {
+            "es": "Un correo en español o el mismo correo en inglés",
+            "en": "An email in Spanish, or the same email in English"
+          }
+        },
+        {
+          "grupo": "segunda",
+          "texto": {
+            "es": "El apellido Gómez o el apellido Tzompantzi",
+            "en": "The surname Smith or the surname Tzompantzi"
+          }
+        },
+        {
+          "grupo": "segunda",
+          "texto": {
+            "es": "Tu pregunta de una línea o la respuesta de tres párrafos",
+            "en": "Your one-line question or the three-paragraph answer"
+          }
+        },
+        {
+          "grupo": "primera",
+          "texto": {
+            "es": "\"jajajajaja\" o \"hola\"",
+            "en": "\"waterproofing\" or \"ear\""
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Ojo de cortadora. Lo largo, lo raro y lo que no está en inglés gasta más. Y la respuesta también cuenta, no solo tu pregunta.",
+          "en": "Cutter's eye. Long, rare and non-English text uses more. And the answer counts too, not just your question."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate cuál de las dos vio más veces el modelo, enterita, en lo que leyó.",
+          "en": "Hmm. Ask yourself which of the two the model saw more often, whole, in what it read."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Y a Valeria esto en qué la afecta? En dos cosas: el largo y la plata.",
+          "en": "So how does this affect Valeria? In two ways: length and money."
+        }
+      },
+      "titulo": {
+        "es": "Por qué importan las fichas",
+        "en": "Why tokens matter"
+      },
+      "texto": {
+        "es": "Los modelos miden todo en fichas: cuánto texto pueden leer de una vez y cuánto pueden escribir. Las empresas de IA también cobran por fichas a quienes las conectan a sus programas, y cuentan las que entran y las que salen. En inglés, una ficha es más o menos ¾ de palabra. El español suele gastar más.",
+        "en": "Models measure everything in tokens: how much text they can read at once and how much they can write. AI companies also charge by the token when people connect them to their own software, counting tokens in and tokens out. In English, a token is roughly ¾ of a word. Spanish usually takes more."
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Le mandé a Valeria un resumen para tranquilizarla. Ella, que cuenta palabras por oficio, me encontró dos errores. Encuéntralos tú también.",
+          "en": "I sent Valeria a summary to reassure her. She counts words for a living, and she found two mistakes. Find them too."
+        }
+      },
+      "titulo": {
+        "es": "El resumen de Punti",
+        "en": "Punti's summary"
+      },
+      "trozos": [
+        {
+          "es": "Valeria, tranquila: una ficha es lo mismo que una palabra.",
+          "en": "Relax, Valeria: a token is the same as a word."
+        },
+        {
+          "es": "Los modelos cuentan en fichas lo que leen y lo que escriben.",
+          "en": "Models count what they read and write in tokens."
+        },
+        {
+          "es": "Tu frase gasta las mismas fichas en español que en inglés.",
+          "en": "Your sentence uses the same tokens in Spanish as in English."
+        },
+        {
+          "es": "Y cuando cobran por fichas, cuentan tu pregunta y también la respuesta.",
+          "en": "And when they charge by the token, they count your question and the answer too."
+        }
+      ],
+      "malos": [
+        0,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste dos veces. \"Arrendamiento\" solita gastó tres fichas. Y su frase gastó 12 en español y 9 en inglés. Valeria ya me corrige los mensajes.",
+          "en": "You caught me twice. \"Otolaryngologist\" alone took four tokens or more. And her sentence took 12 tokens in Spanish and 9 in English. Valeria proofreads my messages now."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte está bien. Busca las que dicen que todo cuesta igual.",
+          "en": "That part is right. Look for the ones claiming everything costs the same."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Pídele a la IA que pase una frase de Valeria por la cortadora y te muestre dónde partió las palabras. Ojo: que no te venda un número exacto.",
+          "en": "Your turn. Ask the AI to run one of Valeria's sentences through the cutter and show where it split the words. Careful: don't let it sell you an exact number."
+        }
+      },
+      "titulo": {
+        "es": "La frase por la cortadora",
+        "en": "The sentence through the cutter"
+      },
+      "reto": {
+        "es": "Frase de un correo de Valeria: \"Adjunto la traducción del certificado apostillado.\" Pídele a la IA que la parta en fichas aproximadas, que marque qué palabras se partieron en varias y que aclare que es una aproximación.",
+        "en": "Sentence from one of Valeria's emails: \"Attached is the translation of the apostilled certificate.\" Ask the AI to split it into approximate tokens, mark which words got split into several, and say that it's an approximation."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "frase",
+          "texto": {
+            "es": "Trae la frase, con palabras largas",
+            "en": "Includes the sentence, with long words"
+          },
+          "rubrica": "El prompt incluye una frase completa copiada dentro del prompt (la del reto u otra) con al menos una palabra larga o poco común, como 'apostillado' o 'certificado'. No cuenta decir 'la frase de Valeria' o 'una frase' sin escribirla, ni poner solo palabras cortas.",
+          "claves": {
+            "es": [
+              "apostillado",
+              "adjunto la"
+            ],
+            "en": [
+              "apostilled",
+              "attached is"
+            ]
+          }
+        },
+        {
+          "id": "marcar",
+          "texto": {
+            "es": "Pide separar y marcar las fichas",
+            "en": "Asks to split and mark the tokens"
+          },
+          "rubrica": "El prompt pide mostrar dónde se corta la frase: separar las fichas (con barras, guiones o en lista) o marcar las palabras que se partieron en varias. No cuenta pedir solo 'cuántas fichas tiene' sin pedir que las muestre o las separe.",
+          "claves": {
+            "es": [
+              "separa",
+              "partela",
+              "parte la frase",
+              "partas",
+              "partieron",
+              "divide",
+              "dividir",
+              "cortala",
+              "cortes",
+              "cortar",
+              "marca",
+              "marques",
+              "senala",
+              "subraya",
+              "partida",
+              "partidas"
+            ],
+            "en": [
+              "split",
+              "break it",
+              "break the",
+              "break down",
+              "separate",
+              "divide",
+              "mark",
+              "highlight",
+              "show where",
+              "cut it",
+              "cut the"
+            ]
+          }
+        },
+        {
+          "id": "aprox",
+          "texto": {
+            "es": "Pide aclarar que es aproximado",
+            "en": "Asks it to say it's approximate"
+          },
+          "rubrica": "El prompt pide que el corte o el conteo sea aproximado, o que la IA aclare que cada modelo corta distinto. No cuenta pedir 'el número exacto' o 'exactamente cuántas', aunque diga fichas o tokens.",
+          "claves": {
+            "es": [
+              "aproximad",
+              "aproximacion",
+              "mas o menos",
+              "estimad",
+              "estimacion",
+              "no exact",
+              "no tiene que ser exact",
+              "cada modelo",
+              "depende del modelo"
+            ],
+            "en": [
+              "approximate",
+              "approximation",
+              "rough",
+              "estimate",
+              "not exact",
+              "doesn't need to be exact",
+              "each model",
+              "depends on the model",
+              "ballpark"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un modelo de lenguaje que explica cómo se corta un texto en fichas (tokens). Si te dan una frase, pártela en fichas aproximadas separadas con barras verticales y marca con un asterisco las palabras que se partieron en varias. Aclara siempre en una línea que es una aproximación: cada modelo tiene su propia forma de cortar y tú no ves tus fichas exactas. Nunca presentes un conteo como exacto. Si no te dan una frase, pide una. No agregues datos personales.",
+        "en": "You are a language model that explains how text gets cut into tokens. If you're given a sentence, split it into approximate tokens separated by vertical bars, and mark with an asterisk the words that were split into several. Always add one line saying this is an approximation: each model has its own way of cutting, and you can't see your exact tokens. Never present a count as exact. If you're not given a sentence, ask for one. Don't add personal details."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Adj | unto | la | tradu | cción | del | certificado | apost | ill | ado | .\n\nSe partieron en varias: *Adjunto (2), *traducción (2), *apostillado (3).\nEn total, unas 11 fichas.\n\nEs una aproximación: cada modelo corta distinto, y otro podría dar 10 o 12.",
+            "en": "Attached | is | the | translation | of | the | apost | illed | certificate | .\n\nSplit into several: *apostilled (2).\nAbout 10 tokens in total.\n\nThis is an approximation: each model cuts differently, and another one might give 9 or 11."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Ahí está la cortadora trabajando. Viste dónde se partió \"apostillado\" y la IA no te vendió un número exacto. Eso es leer fichas como Valeria lee palabras.",
+              "en": "There's the cutter at work. You saw where \"apostilled\" got split, and the AI didn't sell you an exact number. That's reading tokens the way Valeria reads words."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "La frase tiene exactamente 7 tokens.",
+            "en": "The sentence has exactly 9 tokens."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Un número suelto, y encima \"exacto\". No se ve ningún corte. Mira la lista: ¿le pegaste la frase? ¿Pediste que marcara los cortes y que fuera aproximado?",
+              "en": "A lone number, and \"exact\" at that. No cuts in sight. Check the list: did you paste the sentence? Did you ask it to mark the cuts and keep it approximate?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Explica con tus palabras qué es una ficha, como se lo contarías a Valeria entre dos traducciones.",
+          "en": "Logbook time. Explain what a token is in your own words, the way you'd tell Valeria between two translations."
+        }
+      },
+      "concepto": "token",
+      "definicion": {
+        "es": "Una ficha (token) es el pedacito de texto que lee y escribe un modelo: una palabra entera, un pedazo de palabra o un signo. Con fichas se miden el largo y el precio.",
+        "en": "A token is the small piece of text a model reads and writes: a whole word, part of a word or a punctuation mark. Length and price are measured in tokens."
+      },
+      "pregunta": {
+        "es": "Una ficha (token) es…",
+        "en": "A token is…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "ver las fichas",
+        "en": "see the tokens"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Token queda en la bitácora con tu prompt de la cortadora. Vas a ver esa palabra en casi todos los planetas.",
+          "en": "Saved. Your Token card is in your logbook with your cutter prompt. You'll see that word on almost every planet."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y Valeria vuelve a sus traducciones.",
+          "en": "Two questions and Valeria gets back to her translations."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué es una ficha (token) para un modelo de lenguaje?",
+            "en": "What is a token to a language model?"
+          },
+          "opciones": [
+            {
+              "es": "Un pedacito de texto: palabra, parte de palabra o signo",
+              "en": "A small piece of text: a word, part of a word or a sign"
+            },
+            {
+              "es": "Siempre una palabra completa",
+              "en": "Always one whole word"
+            },
+            {
+              "es": "Una moneda que compras para usar la app",
+              "en": "A coin you buy to use the app"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. A veces coincide con una palabra, y a veces no.",
+              "en": "Right. Sometimes it matches a word, and sometimes it doesn't."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Acuérdate de \"arrendamiento\": ¿cuántas fichas gastó?",
+              "en": "Hmm. Remember \"otolaryngologist\": how many tokens did it take?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Valeria le pide a una IA la misma traducción corta en español y en inglés. ¿Qué pasa con las fichas?",
+            "en": "Valeria asks an AI for the same short translation in Spanish and in English. What happens with the tokens?"
+          },
+          "opciones": [
+            {
+              "es": "Gastan exactamente lo mismo",
+              "en": "They use exactly the same"
+            },
+            {
+              "es": "El español suele gastar más",
+              "en": "Spanish usually uses more"
+            },
+            {
+              "es": "El inglés siempre gasta el doble",
+              "en": "English always uses twice as many"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Suele gastar más, y la cantidad cambia según el modelo.",
+              "en": "Exactly. It usually uses more, and the amount depends on the model."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mira otra vez la frase del contrato en los dos idiomas.",
+              "en": "Look again at the lease sentence in both languages."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "La ficha (token)",
+        "en": "The token"
+      },
+      "resumen": {
+        "es": "El pedacito de texto que lee y escribe un modelo. Una palabra puede ser una ficha o varias, y con fichas se miden el largo y el precio.",
+        "en": "The small piece of text a model reads and writes. A word can be one token or several, and length and price are measured in tokens."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Adivinaste qué gasta más fichas",
+          "en": "You guessed what uses more tokens"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Corregiste a Punti con la regla de una ficha por palabra",
+          "en": "You corrected Punti's one-token-per-word rule"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Pasaste la frase de Valeria por la cortadora",
+          "en": "You ran Valeria's sentence through the cutter"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Explicaste por qué el español gasta más fichas",
+          "en": "You explained why Spanish uses more tokens"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "leer-fichas",
+      "titulo": {
+        "es": "Leer las fichas",
+        "en": "Reading tokens"
+      }
+    }
+  }
+}

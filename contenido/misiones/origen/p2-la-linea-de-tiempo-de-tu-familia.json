@@ -1,0 +1,926 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-linea-de-tiempo-de-tu-familia",
+  "mundo": "que-es-la-ia",
+  "capitulo": 2,
+  "numero": 8,
+  "receta": "construccion",
+  "largo": "proyecto",
+  "minutos": 15,
+  "conceptos": [
+    "linea-de-tiempo-familiar"
+  ],
+  "usaConceptos": [
+    "prueba-de-turing",
+    "inviernos-de-la-ia",
+    "tres-combustibles"
+  ],
+  "titulo": {
+    "es": "La línea de tiempo de tu familia",
+    "en": "Your Family Timeline"
+  },
+  "resumen": {
+    "es": "Proyecto del capítulo 2: seis hitos de la IA y seis hechos de tu familia en una sola línea de tiempo.",
+    "en": "Chapter 2 project: six AI milestones and six moments from your family on a single timeline."
+  },
+  "siguiente": "aprender-con-solucionario",
+  "fuentes": [
+    {
+      "titulo": "Turing, A. M. (1950). Computing Machinery and Intelligence. Mind, 59(236), 433-460",
+      "url": "https://academic.oup.com/mind/article/LIX/236/433/986238",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "ELIZA (Weizenbaum, MIT; artículo en Communications of the ACM, enero de 1966)",
+      "url": "https://en.wikipedia.org/wiki/ELIZA",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "IBM, Deep Blue (historia de IBM)",
+      "url": "https://www.ibm.com/history/deep-blue",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "AlexNet (2012)",
+      "url": "https://en.wikipedia.org/wiki/AlexNet",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Google DeepMind, AlphaGo (2016)",
+      "url": "https://deepmind.google/research/breakthroughs/alphago/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI, Introducing ChatGPT (30 de noviembre de 2022)",
+      "url": "https://openai.com/index/chatgpt/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "AI winter",
+      "url": "https://en.wikipedia.org/wiki/AI_winter",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, antes de salir del museo quedó una vitrina vacía. Es para tu familia. Ya viste a Turing, a ELIZA, los inviernos y los tres combustibles. Ahora juntamos esa historia con la de tu casa.",
+          "en": "Pilot, before we leave the museum, there's one empty display case. It's for your family. You've seen Turing, ELIZA, the winters and the three fuels. Now we put that story together with your home's."
+        }
+      },
+      "titulo": {
+        "es": "La línea de tiempo de tu familia",
+        "en": "Your family timeline"
+      },
+      "texto": {
+        "es": "Es el proyecto del capítulo 2. Vas a juntar seis hitos de la IA con seis hechos de tu familia en una sola línea de tiempo. Queda guardada en tu bitácora. Unos 15 minutos.",
+        "en": "It's the chapter 2 project. You'll combine six AI milestones with six moments from your family on a single timeline. It gets saved in your logbook. About 15 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, los seis hitos de la IA que vas a usar. Ya los viste en las salas del museo.",
+          "en": "First, the six AI milestones you'll use. You've already seen them in the museum's rooms."
+        }
+      },
+      "titulo": {
+        "es": "Dos historias en una",
+        "en": "Two stories in one"
+      },
+      "texto": {
+        "es": "Tu línea de tiempo junta dos historias: la de la IA y la de tu casa. Seis hitos de la IA y seis hechos de tu familia, cada uno con su año. Al mezclarlas salen sorpresas: quizá el primer celular llegó a tu casa antes que la red que reconoce fotos.",
+        "en": "Your timeline brings two stories together: AI's and your home's. Six AI milestones and six moments from your family, each with its year. When you mix them, surprises show up: maybe the first cell phone reached your home before the network that recognizes photos."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Año",
+            "en": "Year"
+          },
+          "b": {
+            "es": "Hito de la IA",
+            "en": "AI milestone"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "1950",
+              "en": "1950"
+            },
+            "b": {
+              "es": "Turing propone su juego de la imitación",
+              "en": "Turing proposes his imitation game"
+            }
+          },
+          {
+            "a": {
+              "es": "1966",
+              "en": "1966"
+            },
+            "b": {
+              "es": "ELIZA conversa devolviendo tus frases como preguntas",
+              "en": "ELIZA chats by handing your sentences back as questions"
+            }
+          },
+          {
+            "a": {
+              "es": "1997",
+              "en": "1997"
+            },
+            "b": {
+              "es": "Deep Blue le gana al campeón mundial de ajedrez",
+              "en": "Deep Blue beats the world chess champion"
+            }
+          },
+          {
+            "a": {
+              "es": "2012",
+              "en": "2012"
+            },
+            "b": {
+              "es": "Una red reconoce fotos mucho mejor que todo lo anterior",
+              "en": "A network recognizes photos far better than anything before"
+            }
+          },
+          {
+            "a": {
+              "es": "2016",
+              "en": "2016"
+            },
+            "b": {
+              "es": "AlphaGo le gana al campeón de Go",
+              "en": "AlphaGo beats the Go champion"
+            }
+          },
+          {
+            "a": {
+              "es": "2022",
+              "en": "2022"
+            },
+            "b": {
+              "es": "Llega ChatGPT",
+              "en": "ChatGPT arrives"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Repaso rápido antes de empezar. ¿En qué sala del museo va cada hito? Esta vez no te doy el año.",
+          "en": "Quick review before we start. Which room of the museum does each milestone belong in? This time I'm not giving you the year."
+        }
+      },
+      "titulo": {
+        "es": "Cada hito a su sala",
+        "en": "Each milestone to its room"
+      },
+      "grupos": [
+        {
+          "id": "suenos",
+          "titulo": {
+            "es": "Los primeros sueños",
+            "en": "The first dreams"
+          }
+        },
+        {
+          "id": "inviernos",
+          "titulo": {
+            "es": "Inviernos y ajedrez",
+            "en": "Winters and chess"
+          }
+        },
+        {
+          "id": "despegue",
+          "titulo": {
+            "es": "El despegue",
+            "en": "The takeoff"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "suenos",
+          "texto": {
+            "es": "Un juego para ver si una máquina pasa por persona",
+            "en": "A game to see whether a machine can pass for a person"
+          }
+        },
+        {
+          "grupo": "suenos",
+          "texto": {
+            "es": "Un programa que devolvía tus frases como preguntas",
+            "en": "A program that handed your sentences back as questions"
+          }
+        },
+        {
+          "grupo": "inviernos",
+          "texto": {
+            "es": "Recortan la plata para investigar porque la IA no cumple",
+            "en": "Research money gets cut because AI doesn't deliver"
+          }
+        },
+        {
+          "grupo": "inviernos",
+          "texto": {
+            "es": "Un computador gana al ajedrez revisando millones de posiciones",
+            "en": "A computer wins at chess by checking millions of positions"
+          }
+        },
+        {
+          "grupo": "despegue",
+          "texto": {
+            "es": "Una red aprende a reconocer fotos mucho mejor que todo lo anterior",
+            "en": "A network learns to recognize photos far better than anything before"
+          }
+        },
+        {
+          "grupo": "despegue",
+          "texto": {
+            "es": "Un chat llega a unos 100 millones de usuarios estimados en dos meses",
+            "en": "A chat reaches an estimated 100 million users in two months"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Museo en orden. Primero los sueños, luego los frenazos y el ajedrez, y al final el despegue con los tres combustibles.",
+          "en": "Museum in order. First the dreams, then the stalls and the chess, and finally the takeoff with the three fuels."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Piensa en qué sala lo viste: ¿la de los años 50 y 60, la sala fría o la más iluminada?",
+          "en": "Hmm. Think about which room you saw it in: the 1950s and 60s, the cold room, or the brightest one?"
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora tu familia. Si no te acuerdas de un año, pregúntale a alguien de la casa. Un año aproximado sirve: ponle \"más o menos\".",
+          "en": "Now your family. If you don't remember a year, ask someone at home. An approximate year is fine: just add \"about\"."
+        }
+      },
+      "titulo": {
+        "es": "Tus seis hechos",
+        "en": "Your six moments"
+      },
+      "instruccion": {
+        "es": "Anota en tus notas seis hechos de tu familia con su año. Por ejemplo: el primer celular en la casa, el primer computador, cuándo llegó internet, el grupo de WhatsApp de la familia, la primera foto digital, la primera vez que alguien usó un chat de IA.",
+        "en": "Write down six moments from your family, each with its year. For example: the first cell phone at home, the first computer, when the internet arrived, the family group chat, the first digital photo, the first time someone used an AI chat."
+      },
+      "checks": [
+        {
+          "es": "Anoté seis hechos de mi familia",
+          "en": "I wrote down six moments from my family"
+        },
+        {
+          "es": "Cada hecho tiene su año, aunque sea aproximado",
+          "en": "Each one has its year, even an approximate one"
+        },
+        {
+          "es": "No puse nombres completos, direcciones ni otros datos personales",
+          "en": "I left out full names, addresses and other personal details"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora la mezcla. Escribe en tu mensaje las dos listas y pídele a la IA que las junte en una sola línea de tiempo, en orden. Usa \"mi mamá\" o \"la casa\", nunca nombres completos.",
+          "en": "Now the mix. Put both lists in your message and ask the AI to merge them into a single timeline, in order. Use \"my mom\" or \"our house\", never full names."
+        }
+      },
+      "titulo": {
+        "es": "Una sola línea de tiempo",
+        "en": "A single timeline"
+      },
+      "reto": {
+        "es": "Hitos de la IA: 1950 Turing, 1966 ELIZA, 1997 Deep Blue, 2012 red de fotos, 2016 AlphaGo, 2022 ChatGPT. Hechos de tu familia: los del paso anterior. Si no tienes, usa estos de muestra: 2004 primer celular en la casa, 2010 primer computador, 2015 grupo de WhatsApp de la familia, 2023 primer chat con IA.",
+        "en": "AI milestones: 1950 Turing, 1966 ELIZA, 1997 Deep Blue, 2012 photo network, 2016 AlphaGo, 2022 ChatGPT. Your family's moments: the ones from the last step. If you don't have any, use these samples: 2004 first cell phone at home, 2010 first computer, 2015 family group chat, 2023 first AI chat."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "hitos",
+          "texto": {
+            "es": "Incluye los hitos de la IA con su año",
+            "en": "Includes the AI milestones with years"
+          },
+          "rubrica": "El prompt trae hitos de la IA con su año (al menos tres, copiados del reto o con sus palabras). No cuenta 'la historia de la IA' o 'los hitos que vimos' sin escribirlos.",
+          "claves": {
+            "es": [
+              "turing",
+              "eliza",
+              "deep blue",
+              "alphago",
+              "chatgpt",
+              "red de fotos",
+              "dartmouth"
+            ],
+            "en": [
+              "turing",
+              "eliza",
+              "deep blue",
+              "alphago",
+              "chatgpt",
+              "photo network",
+              "dartmouth"
+            ]
+          }
+        },
+        {
+          "id": "familia",
+          "texto": {
+            "es": "Incluye los hechos de tu familia con su año",
+            "en": "Includes your family's moments with years"
+          },
+          "rubrica": "El prompt trae hechos de la familia del piloto o los de muestra, con su año (al menos tres). No cuenta 'mi familia' sin escribir los hechos, ni hechos sin año. Tampoco cuenta si solo trae hitos de la IA.",
+          "claves": {
+            "es": [
+              "mi familia",
+              "la familia",
+              "en la casa",
+              "en mi casa",
+              "mi mama",
+              "mi papa",
+              "mi abuel",
+              "primer celular",
+              "primer computador",
+              "primer internet",
+              "whatsapp"
+            ],
+            "en": [
+              "my family",
+              "the family",
+              "family group",
+              "at home",
+              "our house",
+              "my mom",
+              "my dad",
+              "grandm",
+              "grandp",
+              "first cell phone",
+              "first computer",
+              "first phone"
+            ]
+          }
+        },
+        {
+          "id": "orden",
+          "texto": {
+            "es": "Pide juntarlas en orden cronológico",
+            "en": "Asks to merge them in chronological order"
+          },
+          "rubrica": "El prompt pide juntar las dos listas en una sola línea de tiempo ordenada por año, del más antiguo al más reciente. No cuenta pedir 'organízalo' o 'haz algo bonito' sin decir que sea en orden, ni pedir dos listas separadas.",
+          "claves": {
+            "es": [
+              "orden cronologico",
+              "en orden",
+              "ordena",
+              "ordenar",
+              "una sola linea",
+              "linea de tiempo",
+              "del mas antiguo",
+              "por ano",
+              "por fecha",
+              "mezcla",
+              "junta"
+            ],
+            "en": [
+              "chronological",
+              "in order",
+              "order them",
+              "sort",
+              "single timeline",
+              "one timeline",
+              "timeline",
+              "oldest",
+              "by year",
+              "by date",
+              "merge",
+              "combine"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a armar una línea de tiempo. Usa solo los hechos y los años que trae el prompt: no inventes hechos de su familia ni agregues hitos. Si pide una sola línea en orden, ordena todo del más antiguo al más reciente, un hecho por línea, con el año al principio y la marca (IA) o (Familia). Si no pide orden, devuelve las listas como vienen. Sin palabras técnicas.",
+        "en": "You are an AI helping a person build a timeline. Use only the facts and years given in the prompt: don't invent family facts or add milestones. If they ask for one line in order, sort everything from oldest to newest, one item per line, with the year first and the tag (AI) or (Family). If they don't ask for order, return the lists as given. No technical words."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1950 (IA) Turing propone su juego\n1966 (IA) ELIZA conversa\n1997 (IA) Deep Blue gana al ajedrez\n2004 (Familia) Primer celular en la casa\n2010 (Familia) Primer computador\n2012 (IA) Una red reconoce fotos\n2015 (Familia) Grupo de WhatsApp de la familia\n2016 (IA) AlphaGo gana al Go\n2022 (IA) Llega ChatGPT\n2023 (Familia) Primer chat con IA",
+            "en": "1950 (AI) Turing proposes his game\n1966 (AI) ELIZA chats\n1997 (AI) Deep Blue wins at chess\n2004 (Family) First cell phone at home\n2010 (Family) First computer\n2012 (AI) A network recognizes photos\n2015 (Family) Family group chat\n2016 (AI) AlphaGo wins at Go\n2022 (AI) ChatGPT arrives\n2023 (Family) First AI chat"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Una sola línea, en orden y con sus marcas. Mira dónde cae tu familia: la IA tenía décadas cuando llegó a tu casa.",
+              "en": "One line, in order, with its tags. Look where your family lands: AI was decades old by the time it reached your home."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Hitos de la IA: Turing, ELIZA, Deep Blue, red de fotos, AlphaGo, ChatGPT.\nTu familia: primer celular, primer computador, grupo de WhatsApp, primer chat con IA.",
+            "en": "AI milestones: Turing, ELIZA, Deep Blue, photo network, AlphaGo, ChatGPT.\nYour family: first cell phone, first computer, family group chat, first AI chat."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Salieron dos listas separadas y sin años. Revisa la lista: pon el año de cada hecho y pídele que las junte en una sola línea, en orden.",
+              "en": "You got two separate lists with no years. Check the list: give each item its year and ask it to merge them into one line, in order."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora la parte curiosa. Agrégale a tu mensaje una pregunta: para cada hecho de tu familia, ¿qué hito de la IA le quedó más cerca? Y pide una frase con lo que más te sorprenda.",
+          "en": "Now the fun part. Add a question to your message: for each moment in your family, which AI milestone was closest? And ask for one sentence with what surprises you most."
+        }
+      },
+      "titulo": {
+        "es": "¿Qué pasaba en la IA?",
+        "en": "What was AI up to?"
+      },
+      "reto": {
+        "es": "Parte de tu mensaje anterior. Agrégale al final: que la IA diga, para cada hecho de tu familia, qué hito de la IA le quedó más cerca, y que cierre con una frase sobre lo que más llama la atención.",
+        "en": "Start from your last message. Add at the end: ask the AI to say, for each family moment, which AI milestone was closest, and to finish with one sentence about what stands out most."
+      },
+      "inicial": "anterior",
+      "aprobar": 2,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "cruce",
+          "texto": {
+            "es": "Pide el hito más cercano a cada hecho",
+            "en": "Asks for the closest milestone to each"
+          },
+          "rubrica": "El prompt pide cruzar las dos historias: para cada hecho de la familia, qué hito de la IA le quedó más cerca o qué pasaba en la IA ese año. No cuenta repetir la línea de tiempo anterior sin esa pregunta.",
+          "claves": {
+            "es": [
+              "mas cerca",
+              "mas cercano",
+              "mismo ano",
+              "al mismo tiempo",
+              "que pasaba en la ia",
+              "cruza",
+              "cruce",
+              "coincid"
+            ],
+            "en": [
+              "closest",
+              "nearest",
+              "same year",
+              "at the same time",
+              "what was happening",
+              "match up",
+              "line up with",
+              "coincid"
+            ]
+          }
+        },
+        {
+          "id": "frase",
+          "texto": {
+            "es": "Pide una frase con lo que sorprende",
+            "en": "Asks for one line on what stands out"
+          },
+          "rubrica": "El prompt pide cerrar con una frase o conclusión sobre lo que más llama la atención de juntar las dos historias. No cuenta pedir solo la lista.",
+          "claves": {
+            "es": [
+              "una frase",
+              "conclusion",
+              "sorprend",
+              "curios",
+              "llama la atencion",
+              "lo que mas me"
+            ],
+            "en": [
+              "one sentence",
+              "a sentence",
+              "takeaway",
+              "conclusion",
+              "surpris",
+              "curious",
+              "stands out"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a leer su línea de tiempo. Usa solo los hechos y años del prompt, sin inventar nada. Si te pide cruzar, para cada hecho de la familia di el hito de la IA con el año más cercano, en una línea. Si pide una frase, cierra con una sola frase sobre lo que más llama la atención. Sin palabras técnicas.",
+        "en": "You are an AI helping a person read their timeline. Use only the facts and years in the prompt, without inventing anything. If asked to cross them, for each family moment give the AI milestone with the closest year, in one line. If asked for a sentence, finish with a single sentence about what stands out most. No technical words."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "2004, primer celular en la casa: le queda más cerca 1997, Deep Blue.\n2010, primer computador: le queda más cerca 2012, la red que reconoce fotos.\n2015, grupo de WhatsApp: le queda más cerca 2016, AlphaGo.\n2023, primer chat con IA: le queda más cerca 2022, llega ChatGPT.\nLo que más llama la atención: tu familia usó un chat de IA apenas un año después de que llegó ChatGPT, pero la idea ya tenía 73 años.",
+            "en": "2004, first cell phone at home: closest is 1997, Deep Blue.\n2010, first computer: closest is 2012, the network that recognizes photos.\n2015, family group chat: closest is 2016, AlphaGo.\n2023, first AI chat: closest is 2022, ChatGPT arrives.\nWhat stands out: your family used an AI chat just one year after ChatGPT arrived, but the idea was already 73 years old."
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Ahí está tu vitrina. Cada hecho de tu casa, con su vecino en la historia de la IA. Y una frase que vale la pena contarle a alguien.",
+              "en": "There's your display case. Every moment at home, next to its neighbor in AI history. And a line worth telling someone."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "1950 (IA) Turing propone su juego\n1966 (IA) ELIZA conversa\n1997 (IA) Deep Blue gana al ajedrez\n2004 (Familia) Primer celular en la casa\n…",
+            "en": "1950 (AI) Turing proposes his game\n1966 (AI) ELIZA chats\n1997 (AI) Deep Blue wins at chess\n2004 (Family) First cell phone at home\n…"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA repitió la línea de antes. Revisa la lista: pídele el hito más cercano a cada hecho de tu familia y una frase para cerrar.",
+              "en": "The AI repeated the same line as before. Check the list: ask for the closest milestone to each family moment and one closing sentence."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Yo también hice mi línea de tiempo. Bueno, lo intenté. Tiene dos errores de este capítulo. Tócalos.",
+          "en": "I made my timeline too. Well, I tried. It has two mistakes from this chapter. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "La línea de tiempo de Punti",
+        "en": "Punti's timeline"
+      },
+      "trozos": [
+        {
+          "es": "1950: Turing propone su juego de la imitación.",
+          "en": "1950: Turing proposes his imitation game."
+        },
+        {
+          "es": "1966: ELIZA conversa devolviendo tus frases como preguntas.",
+          "en": "1966: ELIZA chats by handing your sentences back as questions."
+        },
+        {
+          "es": "1997: Deep Blue aprende solo y le gana a Kaspárov.",
+          "en": "1997: Deep Blue learns on its own and beats Kasparov."
+        },
+        {
+          "es": "2012: una red reconoce fotos mucho mejor que todo lo anterior.",
+          "en": "2012: a network recognizes photos far better than anything before."
+        },
+        {
+          "es": "2022: llega ChatGPT, la primera IA de la historia.",
+          "en": "2022: ChatGPT arrives, the first AI in history."
+        },
+        {
+          "es": "Y en mi familia: me encendí por primera vez aquí, en Origen.",
+          "en": "And in my family: I switched on for the first time right here, on Origin."
+        }
+      ],
+      "malos": [
+        2,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Deep Blue no aprendió solo: revisaba millones de posiciones con reglas programadas. Y ChatGPT no fue la primera IA: la idea tenía más de 70 años y ya había pasado por dos inviernos.",
+          "en": "You got me. Deep Blue didn't learn on its own: it checked millions of positions using programmed rules. And ChatGPT wasn't the first AI: the idea was over 70 years old and had already been through two winters."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese hito está bien, con su año y todo. Busca los que cuentan mal cómo pasó algo.",
+          "en": "That milestone is right, year and all. Look for the ones that get the how wrong."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Tu línea de tiempo queda guardada ahí. Escribe con tus palabras qué descubriste al juntar las dos historias.",
+          "en": "Logbook time. Your timeline gets saved there. Write in your own words what you discovered by putting the two stories together."
+        }
+      },
+      "concepto": "linea-de-tiempo-familiar",
+      "definicion": {
+        "es": "Una línea de tiempo que junta los hitos de la IA con los hechos de tu familia, cada uno con su año y en orden. Muestra que la idea es vieja, pero llegó a tu casa hace poco.",
+        "en": "A timeline that combines AI milestones with moments from your family, each with its year and in order. It shows the idea is old, but it reached your home only recently."
+      },
+      "pregunta": {
+        "es": "Al juntar las dos historias descubrí que…",
+        "en": "Putting the two stories together, I found that…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "mi línea de tiempo",
+        "en": "my timeline"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado en tu bitácora, junto a tu mapa de IA. Ya tienes dos páginas tuyas: tu día y la historia de tu casa.",
+          "en": "Saved in your logbook, next to your AI map. You now have two pages of your own: your day and your home's story."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "La última tarea es con una persona, no con una máquina. Busca a alguien mayor de tu familia o de tu barrio.",
+          "en": "The last task is with a person, not a machine. Find someone older in your family or your neighborhood."
+        }
+      },
+      "titulo": {
+        "es": "La entrevista",
+        "en": "The interview"
+      },
+      "instruccion": {
+        "es": "Pregúntale a alguien mayor qué pensaba de la inteligencia artificial hace 20 años y qué piensa hoy. Puede ser en persona o por nota de voz. Anota sus dos respuestas y compáralas. Si quieres, muéstrale tu línea de tiempo.",
+        "en": "Ask someone older what they thought about artificial intelligence 20 years ago and what they think today. In person or by voice message is fine. Write down both answers and compare them. If you like, show them your timeline."
+      },
+      "checks": [
+        {
+          "es": "Le pregunté qué pensaba de la IA hace 20 años",
+          "en": "I asked what they thought about AI 20 years ago"
+        },
+        {
+          "es": "Le pregunté qué piensa hoy",
+          "en": "I asked what they think today"
+        },
+        {
+          "es": "Anoté una diferencia entre las dos respuestas",
+          "en": "I wrote down one difference between the two answers"
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas antes de cerrar el museo.",
+          "en": "Three questions before we close the museum."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál de estas líneas está en orden, del más antiguo al más reciente?",
+            "en": "Which of these lines is in order, from oldest to newest?"
+          },
+          "opciones": [
+            {
+              "es": "Turing, Deep Blue, ELIZA, red de fotos, ChatGPT, AlphaGo",
+              "en": "Turing, Deep Blue, ELIZA, photo network, ChatGPT, AlphaGo"
+            },
+            {
+              "es": "Turing, ELIZA, Deep Blue, red de fotos, AlphaGo, ChatGPT",
+              "en": "Turing, ELIZA, Deep Blue, photo network, AlphaGo, ChatGPT"
+            },
+            {
+              "es": "ELIZA, Turing, Deep Blue, AlphaGo, red de fotos, ChatGPT",
+              "en": "ELIZA, Turing, Deep Blue, AlphaGo, photo network, ChatGPT"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso: 1950, 1966, 1997, 2012, 2016 y 2022. El museo completo en una línea.",
+              "en": "Right: 1950, 1966, 1997, 2012, 2016 and 2022. The whole museum on one line."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Revisa la tabla del comienzo y sigue los años uno por uno.",
+              "en": "Hmm. Check the table from the start and follow the years one by one."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Una familia compró su primer computador en 2010. ¿Qué hito de la IA le quedó más cerca?",
+            "en": "A family bought its first computer in 2010. Which AI milestone was closest?"
+          },
+          "opciones": [
+            {
+              "es": "ELIZA, en 1966",
+              "en": "ELIZA, in 1966"
+            },
+            {
+              "es": "Deep Blue, en 1997",
+              "en": "Deep Blue, in 1997"
+            },
+            {
+              "es": "La red que reconoce fotos, en 2012",
+              "en": "The network that recognizes photos, in 2012"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Solo dos años de diferencia: el computador llegó justo antes del despegue.",
+              "en": "Exactly. Just two years apart: the computer arrived right before the takeoff."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Cuenta los años entre 2010 y cada hito. ¿Cuál queda a menos distancia?",
+              "en": "Count the years between 2010 and each milestone. Which is the shortest gap?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué muestra tu línea de tiempo?",
+            "en": "What does your timeline show?"
+          },
+          "opciones": [
+            {
+              "es": "Que la IA se inventó hace cinco años",
+              "en": "That AI was invented five years ago"
+            },
+            {
+              "es": "Que la idea es vieja, pero llegó a las casas hace poco",
+              "en": "That the idea is old, but it reached homes only recently"
+            },
+            {
+              "es": "Que la IA llegó a las casas antes que el celular",
+              "en": "That AI reached homes before the cell phone did"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Más de 70 años de historia, y en tu casa apenas hace poco.",
+              "en": "Right. Over 70 years of history, and in your home only recently."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Mira dónde cayeron los hechos de tu familia frente a 1950.",
+              "en": "Hmm. Look where your family's moments landed compared with 1950."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Capítulo 2 aterrizado, piloto. Terminaste el museo de mis ancestros.",
+          "en": "Chapter 2 landed, pilot. You've finished my ancestors' museum."
+        }
+      },
+      "titulo": {
+        "es": "Museo terminado",
+        "en": "Museum complete"
+      },
+      "texto": {
+        "es": "En este capítulo viste la pregunta de Turing y el truco de ELIZA, los inviernos y la fuerza bruta de Deep Blue, y los tres combustibles del despegue. Y tu familia ya tiene su vitrina. Lo que sigue es el vivero de máquinas, donde crío máquinas pequeñas y les enseño de tres maneras.",
+        "en": "In this chapter you saw Turing's question and ELIZA's trick, the winters and Deep Blue's brute force, and the three fuels of the takeoff. And your family has its own display case now. Next up is the machine nursery, where I raise little machines and teach them in three ways."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Mi línea de tiempo",
+        "en": "My timeline"
+      },
+      "resumen": {
+        "es": "Los hitos de la IA y los hechos de tu familia en una sola línea, en orden. La idea es vieja; en tu casa es nueva.",
+        "en": "AI milestones and your family's moments on one line, in order. The idea is old; in your home it's new."
+      }
+    },
+    "mejorPrompt": [
+      "b06",
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Pusiste cada hito en su sala del museo",
+          "en": "You put each milestone in its museum room"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Anotaste seis hechos de tu familia con su año",
+          "en": "You noted six family moments with their years"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Juntaste las dos historias en una línea de tiempo",
+          "en": "You merged both stories into one timeline"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Encontraste qué pasaba en la IA en cada momento de tu casa",
+          "en": "You found what AI was up to at each moment at home"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste los dos errores de la línea de Punti",
+          "en": "You caught both mistakes on Punti's timeline"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Entrevistaste a alguien mayor sobre la IA",
+          "en": "You interviewed someone older about AI"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "contar-la-historia-de-la-ia",
+      "titulo": {
+        "es": "Contar la historia de la IA",
+        "en": "Telling AI's story"
+      }
+    }
+  }
+}

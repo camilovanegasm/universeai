@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "semilla": "node scripts/generar-semilla.mjs",
+    "predev": "node scripts/generar-semilla.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/generar-semilla.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

@@ -1,0 +1,794 @@
+{
+  "formato": "punti-mision@1",
+  "id": "dale-ejemplos",
+  "mundo": "prompts",
+  "capitulo": 3,
+  "numero": 10,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "ejemplos"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "forma",
+    "iterar"
+  ],
+  "titulo": {
+    "es": "Dale ejemplos",
+    "en": "Give It Examples"
+  },
+  "resumen": {
+    "es": "Un ejemplo de lo que quieres guía a la IA mejor que muchos adjetivos. Y cómo evitar que lo copie de más.",
+    "en": "One example of what you want steers the AI better than a pile of adjectives. Plus how to keep it from copying too much."
+  },
+  "siguiente": "paso-a-paso",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegamos a una zona nueva de Eco: Trucos de piloto. Aquí se aprenden las técnicas de los que ya transmiten bien. Primera señal: Mauricio, que tiene una ferretería en el barrio. Pidió descripciones cortas y le llegaron comerciales de televisión.",
+          "en": "Pilot, we've reached a new zone on Eco: Pilot Tricks. This is where you learn the techniques of people who already transmit well. First signal: Mauricio, who runs a hardware store in the neighborhood. He asked for short descriptions and got TV commercials."
+        }
+      },
+      "titulo": {
+        "es": "Dale ejemplos",
+        "en": "Give It Examples"
+      },
+      "texto": {
+        "es": "Ya sabes armar un pedido completo. Hoy aprendes el primer truco: mostrarle a la IA un ejemplo de lo que quieres, en vez de solo describirlo. Unos 8 minutos.",
+        "en": "You already know how to build a complete request. Today you learn the first trick: showing the AI an example of what you want, instead of only describing it. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Mauricio escribió \"corta y sencilla\". Para él eso es clarísimo. Para la IA, no tanto. Mira lo que recibió y cómo lo arreglamos con un ejemplo.",
+          "en": "Mauricio wrote \"short and simple.\" To him that's crystal clear. To the AI, not so much. See what he got and how we fixed it with an example."
+        }
+      },
+      "titulo": {
+        "es": "De comercial a catálogo de ferretería",
+        "en": "From TV ad to hardware catalog"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Escribe una descripción corta y sencilla de un taladro para el catálogo de WhatsApp de mi ferretería.",
+          "en": "Write a short, simple description of a drill for my hardware store's WhatsApp catalog."
+        },
+        "salida": {
+          "es": "¡Descubre el poder de la perforación con nuestro increíble taladro de última generación! Diseñado para profesionales exigentes y para quienes aman hacer las cosas por sí mismos, este aliado incansable transformará cada uno de tus proyectos en una experiencia inolvidable. ¡No esperes más!",
+          "en": "Discover the power of drilling with our incredible state-of-the-art drill! Designed for demanding professionals and DIY lovers alike, this tireless companion will turn every project into an unforgettable experience. Don't wait any longer!"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "datos-nuevos",
+            "texto": {
+              "es": "Escribe la descripción de este taladro para mi catálogo de WhatsApp: 650 vatios, trae 5 brocas, $189.000. ",
+              "en": "Write a description of this drill for my WhatsApp catalog: 650 watts, comes with 5 drill bits, $189. "
+            }
+          },
+          {
+            "pieza": "marca",
+            "texto": {
+              "es": "Así escribo yo mis descripciones, tómalo como ejemplo: ",
+              "en": "Here's how I write my descriptions, use it as an example: "
+            }
+          },
+          {
+            "pieza": "ejemplo",
+            "texto": {
+              "es": "\"Martillo de uña 16 oz. Mango de caucho que no se resbala. Clava y saca puntillas sin esfuerzo. $25.000.\" ",
+              "en": "\"16 oz claw hammer. Rubber grip that won't slip. Drives and pulls nails with no effort. $25.\" "
+            }
+          },
+          {
+            "pieza": "que-copiar",
+            "texto": {
+              "es": "Copia el estilo y el largo, no las frases.",
+              "en": "Copy the style and length, not the sentences."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Taladro de 650 W. Trae 5 brocas, listo para usar desde el primer día. $189.000.",
+          "en": "650 W drill. Comes with 5 bits, ready to use from day one. $189."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Cuatro colores: los datos nuevos, el aviso de que viene un ejemplo, el ejemplo y qué copiar de él. \"Corta y sencilla\" cabía en mil formas. El martillo le mostró a la IA cuál era.",
+          "en": "Four colors: the new details, the heads-up that an example is coming, the example and what to copy from it. \"Short and simple\" could mean a thousand things. The hammer showed the AI which one."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Un ejemplo vale por muchas explicaciones, pero hay que entregarlo bien. Estas son las cuatro piezas de un pedido con ejemplo. Toca cada una.",
+          "en": "One example is worth a lot of explaining, but you have to hand it over well. These are the four pieces of a request with an example. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las piezas de un buen ejemplo",
+        "en": "Pieces of a good example"
+      },
+      "piezas": [
+        {
+          "id": "ejemplo",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "El ejemplo",
+            "en": "The example"
+          },
+          "descripcion": {
+            "es": "Una muestra real de lo que quieres recibir.",
+            "en": "A real sample of what you want back."
+          },
+          "ejemplo": {
+            "es": "La descripción del martillo. Mejor si es algo que ya escribiste y te gustó: así la IA aprende tu estilo, no uno inventado.",
+            "en": "The hammer description. Best if it's something you already wrote and liked: that way the AI learns your style, not a made-up one."
+          }
+        },
+        {
+          "id": "marca",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "El aviso",
+            "en": "The label"
+          },
+          "descripcion": {
+            "es": "Decir que es un ejemplo y ponerlo entre comillas.",
+            "en": "Say it's an example and put it in quotes."
+          },
+          "ejemplo": {
+            "es": "\"Tómalo como ejemplo:\" y luego el texto entre comillas. Sin ese aviso, la IA puede creer que el martillo también va en el catálogo.",
+            "en": "\"Use this as an example:\" then the text in quotes. Without that label, the AI may think the hammer goes in the catalog too."
+          }
+        },
+        {
+          "id": "que-copiar",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "Qué copiar",
+            "en": "What to copy"
+          },
+          "descripcion": {
+            "es": "El estilo, el largo o el orden. No las frases.",
+            "en": "The style, the length or the order. Not the sentences."
+          },
+          "ejemplo": {
+            "es": "\"Copia el estilo y el largo, no las frases.\" Si no lo dices, la IA puede pegar frases del martillo en un taladro.",
+            "en": "\"Copy the style and length, not the sentences.\" If you don't say it, the AI may paste hammer lines into a drill."
+          }
+        },
+        {
+          "id": "datos-nuevos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Los datos nuevos",
+            "en": "The new details"
+          },
+          "descripcion": {
+            "es": "Lo que sí cambia: el producto, sus datos y su precio.",
+            "en": "What does change: the product, its details and its price."
+          },
+          "ejemplo": {
+            "es": "\"650 vatios, 5 brocas, $189.000.\" El ejemplo pone el molde; los datos nuevos lo llenan.",
+            "en": "\"650 watts, 5 bits, $189.\" The example is the mold; the new details fill it."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Mauricio quiere contestar rápido a los clientes que le preguntan por WhatsApp si hay algo. ¿Qué pieza es cada frase de su pedido?",
+          "en": "Your turn. Mauricio wants to answer quickly when customers ask on WhatsApp if something's in stock. Which piece is each sentence of his request?"
+        }
+      },
+      "titulo": {
+        "es": "Arma el pedido de Mauricio",
+        "en": "Build Mauricio's request"
+      },
+      "grupos": [
+        "ejemplo",
+        "marca",
+        "que-copiar",
+        "datos-nuevos"
+      ],
+      "items": [
+        {
+          "grupo": "marca",
+          "texto": {
+            "es": "Así les contesto a los clientes, tómalo como ejemplo:",
+            "en": "This is how I answer customers, take it as an example:"
+          }
+        },
+        {
+          "grupo": "ejemplo",
+          "texto": {
+            "es": "\"Sí, vecina, hay tornillos de 2 pulgadas. A $300 cada uno. La espero.\"",
+            "en": "\"Yes, neighbor, we have 2-inch screws. 30 cents each. See you soon.\""
+          }
+        },
+        {
+          "grupo": "que-copiar",
+          "texto": {
+            "es": "Imita lo corto y lo amable, no las mismas palabras.",
+            "en": "Match how short and friendly it is, not the exact words."
+          }
+        },
+        {
+          "grupo": "datos-nuevos",
+          "texto": {
+            "es": "Ahora contesta esto: preguntan por pintura blanca de galón. Sí hay, a $68.000.",
+            "en": "Now answer this: someone asks for a gallon of white paint. We have it, $68."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Cuatro de cuatro. Ya distingues el molde de lo que lo llena.",
+          "en": "Four for four. You can tell the mold from what fills it."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, lee otra vez. ¿La frase anuncia el ejemplo, es el ejemplo, dice qué copiar o trae lo nuevo?",
+          "en": "Hmm, read it again. Does it announce the example, is it the example, say what to copy, or bring the new stuff?"
+        }
+      },
+      "malPorGrupo": {
+        "marca": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Esta frase no es el ejemplo ni trae lo nuevo: le avisa algo a la IA. ¿Qué le avisa?",
+            "en": "Close. This line isn't the example and doesn't bring the new stuff: it tells the AI something. What does it tell it?"
+          }
+        },
+        "que-copiar": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Esta frase no trae contenido: le dice a la IA cómo usar otra cosa.",
+            "en": "Close. This line brings no content: it tells the AI how to use something else."
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Una pregunta que me hacen mucho: ¿uno o varios ejemplos?",
+          "en": "A question I get a lot: one example or several?"
+        }
+      },
+      "titulo": {
+        "es": "¿Uno o varios ejemplos?",
+        "en": "One example or several?"
+      },
+      "texto": {
+        "es": "Con un solo ejemplo, la IA a veces lo copia de más: mismas frases, mismo orden, hasta el mismo precio. Con dos o tres ejemplos distintos entre sí, ve qué se repite y se queda con eso: el estilo. Si solo tienes uno, dile qué copiar y qué no.",
+        "en": "With a single example, the AI sometimes copies it too closely: same sentences, same order, even the same price. With two or three examples that differ from each other, it sees what repeats and keeps that: the style. If you only have one, tell it what to copy and what not to."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Un ejemplo",
+            "en": "One example"
+          },
+          "b": {
+            "es": "Dos o tres distintos",
+            "en": "Two or three different ones"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Rápido de armar",
+              "en": "Quick to put together"
+            },
+            "b": {
+              "es": "Toma un poco más",
+              "en": "Takes a bit longer"
+            }
+          },
+          {
+            "a": {
+              "es": "Puede copiarlo de más",
+              "en": "May copy it too closely"
+            },
+            "b": {
+              "es": "Ve qué se repite",
+              "en": "Sees what repeats"
+            }
+          },
+          {
+            "a": {
+              "es": "Dile qué copiar",
+              "en": "Tell it what to copy"
+            },
+            "b": {
+              "es": "El estilo se nota solo",
+              "en": "The style shows on its own"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Llegó un rodillo nuevo a la ferretería y Mauricio necesita su descripción para el catálogo. Él ya escribió otra que le gusta. Úsala como ejemplo.",
+          "en": "Your turn to transmit. A new paint roller just came in and Mauricio needs its catalog description. He already wrote one he likes. Use it as the example."
+        }
+      },
+      "titulo": {
+        "es": "El rodillo nuevo",
+        "en": "The new roller"
+      },
+      "reto": {
+        "es": "Datos que te da Mauricio: rodillo de pintura de 9 pulgadas, felpa para paredes lisas, $18.000. Va para el catálogo de WhatsApp. Su ejemplo favorito: \"Cinta métrica de 5 m. Freno automático y gancho de acero. Mide sin ayudante. $15.000.\"",
+        "en": "Here's what Mauricio gives you: a 9-inch paint roller, cover made for smooth walls, $18. It's for the WhatsApp catalog. His favorite example: \"5 m tape measure. Auto-lock and steel hook. Measure without a helper. $15.\""
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "ejemplo",
+          "texto": {
+            "es": "Trae el ejemplo de Mauricio",
+            "en": "Includes Mauricio's example"
+          },
+          "rubrica": "El prompt incluye el texto de ejemplo de Mauricio sobre la cinta métrica, completo o casi completo (al menos dos de sus frases, como 'freno automático y gancho de acero' o 'mide sin ayudante'). No cuenta pedir 'como en mi catálogo' o 'con mi estilo' sin pegar el ejemplo, ni nombrar la cinta métrica sin copiar su descripción.",
+          "claves": {
+            "es": [
+              "freno automatico",
+              "gancho de acero",
+              "sin ayudante"
+            ],
+            "en": [
+              "auto-lock",
+              "auto lock",
+              "autolock",
+              "steel hook",
+              "without a helper"
+            ]
+          }
+        },
+        {
+          "id": "marca",
+          "texto": {
+            "es": "Dice que es un ejemplo",
+            "en": "Says it's an example"
+          },
+          "rubrica": "El prompt le avisa a la IA que ese texto es un ejemplo o un modelo para imitar ('tómalo como ejemplo', 'así escribo yo', 'hazlo como este'). No cuenta pegar el texto de la cinta métrica sin decir qué es: la IA podría creer que también va en el catálogo.",
+          "claves": {
+            "es": [
+              "ejemplo",
+              "asi escribo",
+              "asi describo",
+              "asi las escribo",
+              "como este",
+              "de modelo",
+              "como modelo",
+              "guiate"
+            ],
+            "en": [
+              "example",
+              "here's how i",
+              "here is how i",
+              "this is how i",
+              "like this one",
+              "sample",
+              "as a model",
+              "as a guide",
+              "follow this"
+            ]
+          }
+        },
+        {
+          "id": "que-copiar",
+          "texto": {
+            "es": "Dice qué copiar del ejemplo",
+            "en": "Says what to copy from it"
+          },
+          "rubrica": "El prompt dice qué debe imitar del ejemplo (el estilo, el largo, el orden, el tono) o qué no debe copiar (las frases, las palabras, los datos de la cinta). No cuenta solo 'hazlo igual', 'imítalo' o 'como el ejemplo' sin decir qué parte copiar.",
+          "claves": {
+            "es": [
+              "estilo",
+              "mismo orden",
+              "misma estructura",
+              "mismo tono",
+              "no copies",
+              "sin copiar",
+              "no repitas",
+              "no las frases",
+              "no las palabras",
+              "no los datos",
+              "mismo largo",
+              "el largo",
+              "su largo",
+              "ese largo"
+            ],
+            "en": [
+              "style",
+              "same order",
+              "same structure",
+              "same format",
+              "same tone",
+              "don't copy",
+              "do not copy",
+              "don't repeat",
+              "not the words",
+              "not the sentences",
+              "not the details",
+              "same length",
+              "the length",
+              "its length",
+              "that length"
+            ]
+          }
+        },
+        {
+          "id": "datos-nuevos",
+          "texto": {
+            "es": "Trae los datos del rodillo",
+            "en": "Includes the roller's details"
+          },
+          "rubrica": "El prompt trae el producto nuevo (rodillo de pintura) y al menos uno de sus datos: 9 pulgadas, felpa para paredes lisas o $18.000. No cuenta si solo trae los datos de la cinta métrica, ni 'un producto nuevo' sin decir cuál.",
+          "claves": {
+            "es": [
+              "rodillo",
+              "9 pulgadas",
+              "nueve pulgadas",
+              "felpa",
+              "18.000",
+              "18000",
+              "18 mil"
+            ],
+            "en": [
+              "roller",
+              "9-inch",
+              "9 inch",
+              "nine-inch",
+              "smooth wall",
+              "$18"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que escribe descripciones de productos para el catálogo de WhatsApp de una ferretería de barrio. Responde solo con la descripción, sin explicaciones. Si el prompt trae un ejemplo, imita su estilo y su largo. Si trae un ejemplo pero no dice qué copiar de él, repite alguna de sus frases tal cual, aunque no le quede al producto nuevo. Si no trae ejemplo, escribe una descripción larga y publicitaria, con adjetivos exagerados. Usa solo los datos del prompt: no inventes medidas ni precios.",
+        "en": "You are an AI that writes product descriptions for a neighborhood hardware store's WhatsApp catalog. Reply with the description only, no explanations. If the prompt includes an example, match its style and length. If it includes an example but doesn't say what to copy from it, repeat one of its sentences word for word, even if it doesn't fit the new product. If there's no example, write a long, salesy description full of over-the-top adjectives. Use only the details in the prompt: don't make up sizes or prices."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Rodillo de pintura de 9 pulgadas. Felpa para paredes lisas. Pinta parejo sin esfuerzo. $18.000.",
+            "en": "9-inch paint roller. Cover made for smooth walls. Paints evenly with no effort. $18."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal perfecta. Mismo largo, mismo estilo y ni una frase de la cinta métrica. La IA copió el molde, no el contenido.",
+              "en": "Perfect signal. Same length, same style, and not one tape-measure line. The AI copied the mold, not the content."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Transforma tus espacios con el rodillo de pintura más increíble del mercado! Su felpa de alta calidad te permitirá lograr acabados profesionales dignos de revista. ¡Tu hogar merece lo mejor!",
+            "en": "Transform your spaces with the most amazing paint roller on the market! Its premium cover delivers professional, magazine-worthy finishes. Your home deserves the best!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. Salió otro comercial de televisión. Sin el ejemplo, la IA no sabe cómo escribe Mauricio. Mira la lista y transmite otra vez.",
+              "en": "Weak signal. Another TV commercial. Without the example, the AI doesn't know how Mauricio writes. Check the list and transmit again."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le ayudé a Mauricio con cuatro descripciones más. Le di a la IA el ejemplo del martillo, pero no le dije qué copiar. Dos descripciones traen frases del martillo que no les quedan. Tócalas.",
+          "en": "Confession time. I helped Mauricio with four more descriptions. I gave the AI the hammer example, but didn't say what to copy. Two descriptions carry hammer lines that don't fit. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Frases de martillo",
+        "en": "Hammer lines"
+      },
+      "trozos": [
+        {
+          "es": "Brocha de 3 pulgadas. Cerdas suaves que no se caen. $9.000.",
+          "en": "3-inch paintbrush. Soft bristles that don't shed. $9."
+        },
+        {
+          "es": "Candado de 40 mm. Mango de caucho que no se resbala. $22.000.",
+          "en": "40 mm padlock. Rubber grip that won't slip. $22."
+        },
+        {
+          "es": "Manguera de 15 metros. No se dobla ni se enreda. $38.000.",
+          "en": "15-meter garden hose. Won't kink or tangle. $38."
+        },
+        {
+          "es": "Llave inglesa de 10 pulgadas. Clava y saca puntillas sin esfuerzo. $31.000.",
+          "en": "10-inch adjustable wrench. Drives and pulls nails with no effort. $31."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Un candado no tiene mango y una llave inglesa no clava puntillas. Con un solo ejemplo y sin decir qué copiar, la IA pegó frases del martillo. La próxima vez: copia el estilo, no las frases.",
+          "en": "You got me. A padlock has no grip, and a wrench doesn't drive nails. With one example and no word on what to copy, the AI pasted hammer lines. Next time: copy the style, not the sentences."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa le queda bien a su producto. Busca frases que suenan a martillo.",
+          "en": "That one fits its product. Look for lines that sound like a hammer."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras para qué sirve un ejemplo en un prompt, como se lo explicarías a Mauricio.",
+          "en": "Logbook time. Write in your own words what an example does in a prompt, the way you'd explain it to Mauricio."
+        }
+      },
+      "concepto": "ejemplos",
+      "definicion": {
+        "es": "Un ejemplo muestra lo que quieres en vez de describirlo. Avísale a la IA que es un ejemplo y dile qué copiar: el estilo o el largo, no las frases ni los datos.",
+        "en": "An example shows what you want instead of describing it. Tell the AI it's an example and what to copy: the style or length, not the sentences or details."
+      },
+      "pregunta": {
+        "es": "Un ejemplo en un prompt sirve para…",
+        "en": "An example in a prompt is for…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "fichas de producto",
+        "en": "product descriptions"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de los ejemplos y el prompt del rodillo ya viven en tu bitácora. En el repaso te los traigo de vuelta.",
+          "en": "Saved. Your Examples card and the roller prompt now live in your logbook. I'll bring them back in your review."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y cerramos el primer truco.",
+          "en": "Three questions and we wrap up the first trick."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Por qué un ejemplo funciona mejor que pedir \"corto y sencillo\"?",
+            "en": "Why does an example work better than asking for \"short and simple\"?"
+          },
+          "opciones": [
+            {
+              "es": "Porque la IA lee los ejemplos más rápido",
+              "en": "Because the AI reads examples faster"
+            },
+            {
+              "es": "Porque le muestra qué es corto y sencillo para ti",
+              "en": "Because it shows what short and simple means to you"
+            },
+            {
+              "es": "Porque así no hace falta dar los datos",
+              "en": "Because then you don't need to give the details"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. \"Corto\" cabe en mil formas; el ejemplo le muestra la tuya.",
+              "en": "Right. \"Short\" can mean a thousand things; the example shows yours."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en el taladro: ¿qué le faltaba a la IA para entender a Mauricio?",
+              "en": "Hmm. Think about the drill: what did the AI need to understand Mauricio?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Pegaste un ejemplo y la IA repitió sus frases en el producto nuevo. ¿Qué agregas?",
+            "en": "You pasted an example and the AI repeated its sentences for the new product. What do you add?"
+          },
+          "opciones": [
+            {
+              "es": "Qué copiar: el estilo y el largo, no las frases",
+              "en": "What to copy: the style and length, not the sentences"
+            },
+            {
+              "es": "Más adjetivos para el producto nuevo",
+              "en": "More adjectives for the new product"
+            },
+            {
+              "es": "El mismo ejemplo, pegado dos veces",
+              "en": "The same example, pasted twice"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. O dale dos o tres ejemplos distintos, para que vea qué se repite.",
+              "en": "Exactly. Or give it two or three different examples so it sees what repeats."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Esa no le quita las ganas de copiar. ¿Qué le falta saber a la IA sobre el ejemplo?",
+              "en": "That won't stop the copying. What does the AI still need to know about the example?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué pedido deja claro cuál es el ejemplo y cuál el producto nuevo?",
+            "en": "Which request makes clear what's the example and what's the new product?"
+          },
+          "opciones": [
+            {
+              "es": "Taladro 650 W, $189.000. Martillo de uña, mango de caucho, $25.000.",
+              "en": "Drill 650 W, $189. Claw hammer, rubber grip, $25."
+            },
+            {
+              "es": "Tómalo como ejemplo: \"Martillo de uña, mango de caucho.\" Ahora haz el taladro.",
+              "en": "Use this as an example: \"Claw hammer, rubber grip.\" Now do the drill."
+            },
+            {
+              "es": "Haz el taladro como siempre, bien bonito.",
+              "en": "Do the drill like always, nice and pretty."
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. El aviso separa el molde de lo nuevo, y la IA no se confunde.",
+              "en": "Right. The label separates the mold from the new stuff, so the AI doesn't mix them up."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "En esa, ¿cómo sabe la IA cuál texto es para imitar y cuál es el producto?",
+              "en": "In that one, how would the AI know which text to imitate and which is the product?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Dale ejemplos",
+        "en": "Give it examples"
+      },
+      "resumen": {
+        "es": "Muestra lo que quieres con un ejemplo, avisa que es un ejemplo y di qué copiar: el estilo, no las frases.",
+        "en": "Show what you want with an example, say it's an example and what to copy: the style, not the sentences."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste cómo un ejemplo cambió la descripción del taladro",
+          "en": "You saw how an example changed the drill description"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Armaste el pedido de Mauricio pieza por pieza",
+          "en": "You built Mauricio's request piece by piece"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste la descripción del rodillo con un ejemplo",
+          "en": "You wrote the roller description using an example"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste las frases de martillo que se colaron",
+          "en": "You caught the hammer lines that slipped in"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "dar-ejemplos",
+      "titulo": {
+        "es": "Guiar con ejemplos",
+        "en": "Guiding with examples"
+      }
+    }
+  }
+}

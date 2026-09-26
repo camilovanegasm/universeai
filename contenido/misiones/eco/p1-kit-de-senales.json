@@ -1,0 +1,2036 @@
+{
+  "formato": "punti-mision@1",
+  "id": "kit-de-senales",
+  "mundo": "prompts",
+  "capitulo": 1,
+  "numero": 6,
+  "receta": "construccion",
+  "largo": "proyecto",
+  "minutos": 20,
+  "conceptos": [
+    "kit-de-senales"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "contexto",
+    "forma",
+    "iterar"
+  ],
+  "titulo": {
+    "es": "Kit de señales",
+    "en": "Signal Kit"
+  },
+  "resumen": {
+    "es": "Tu proyecto del capítulo: cinco prompts completos para un negocio real, tuyo o inventado, listos para reusar.",
+    "en": "Your chapter project: five complete prompts for a real business, yours or made up, ready to reuse."
+  },
+  "siguiente": "los-5-errores-clasicos",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, esta vez la señal es tuya. Ya ayudaste al profe Hernán, a Doña Marta, a Gloria y a Sofía. Ahora armas tu propio Kit de señales: cinco prompts para un negocio real, el tuyo o uno inventado.",
+          "en": "Pilot, this time the signal is yours. You've already helped Coach Hernán, Doña Marta, Gloria and Sofía. Now you build your own Signal Kit: five prompts for a real business, yours or one you make up."
+        }
+      },
+      "titulo": {
+        "es": "Kit de señales",
+        "en": "Signal Kit"
+      },
+      "texto": {
+        "es": "Es el proyecto del capítulo 1. Vas a escribir cinco prompts para cinco trabajos de todos los días, cada uno con las cinco piezas. Quedan guardados en tu bitácora, listos para usar. Unos 20 minutos.",
+        "en": "It's the Chapter 1 project. You'll write five prompts for five everyday jobs, each with all five pieces. They get saved in your logbook, ready to use. About 20 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué lleva el kit.",
+          "en": "First, what goes in the kit."
+        }
+      },
+      "titulo": {
+        "es": "Lo que lleva tu kit",
+        "en": "What goes in your kit"
+      },
+      "texto": {
+        "es": "Un negocio repite los mismos trabajos cada semana: avisar, publicar, responder, promocionar y agradecer. Si cada uno tiene un buen prompt guardado, no empiezas de cero: lo copias, cambias los datos y listo. Esos cinco prompts son tu kit.",
+        "en": "A business repeats the same jobs every week: letting people know, posting, answering, promoting and thanking. If each one has a good prompt saved, you never start from scratch: copy it, change the details, done. Those five prompts are your kit."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Mensaje de WhatsApp a tus clientes",
+            "en": "WhatsApp message to your customers"
+          },
+          {
+            "es": "Post para redes sociales",
+            "en": "Social media post"
+          },
+          {
+            "es": "Respuesta a la pregunta de un cliente",
+            "en": "Reply to a customer's question"
+          },
+          {
+            "es": "Anuncio de una promoción",
+            "en": "Promotion announcement"
+          },
+          {
+            "es": "Mensaje de gracias después de una compra",
+            "en": "Thank-you message after a purchase"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de transmitir, escoge tu negocio. Puede ser el tuyo o uno inventado. Lo único que no sirve es un negocio sin cara.",
+          "en": "Before we transmit, pick your business. It can be yours or one you make up. The only thing that won't work is a business with no face."
+        }
+      },
+      "titulo": {
+        "es": "Escoge tu negocio",
+        "en": "Pick your business"
+      },
+      "escena": {
+        "es": "Tus cinco prompts van a ser para un solo negocio. Si tienes uno, úsalo: el kit te sirve desde mañana. Si no, invéntalo, pero con detalles, como si existiera. ¿Con cuál armas tu kit?",
+        "en": "All five prompts will be for one business. If you have one, use it: the kit works for you starting tomorrow. If not, make one up, but with details, as if it were real. Which one will you build your kit for?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Con mi propio negocio",
+            "en": "My own business"
+          },
+          "consecuencia": {
+            "es": "Perfecto. Escribe en una línea qué vendes, a quién y dónde. Por ejemplo: \"Tengo una remontadora de zapatos en el centro; mis clientes son oficinistas de la zona.\"",
+            "en": "Perfect. Write one line saying what you sell, to whom and where. For example: \"I run a shoe repair shop downtown; my customers are office workers nearby.\""
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Con \"un negocio\", sin decir cuál",
+            "en": "Just \"a business,\" no details"
+          },
+          "consecuencia": {
+            "es": "Ahí la antena tiene que adivinar todo: qué vendes, a quién y cómo hablas. Salen mensajes para nadie. Escoge uno real o uno inventado, con detalles.",
+            "en": "Then the antenna has to guess everything: what you sell, to whom and how you talk. You get messages for nobody. Pick a real one or a made-up one, with details."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Con uno inventado",
+            "en": "One I make up"
+          },
+          "consecuencia": {
+            "es": "Buena idea. Escoge uno: una frutería con domicilios, una venta de arepas o un lavadero de carros. Por ejemplo: \"Tengo una frutería con domicilios; mis clientes son familias del barrio.\"",
+            "en": "Good call. Pick one: a fruit shop that delivers, a street food stand or a car wash. For example: \"I run a fruit shop that delivers; my customers are local families.\""
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Anota tu línea del negocio donde la tengas a mano, en tus notas o en un papel. Vas a ponerla al comienzo de cada prompt: es el contexto que la IA no tiene.",
+          "en": "Jot your business line down somewhere handy, in your notes or on paper. You'll put it at the start of every prompt: it's the context the AI doesn't have."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Esta es tu caja de herramientas: las cinco piezas del pedido completo. Toca cada una para repasarla. Van a estar en la lista de cada laboratorio.",
+          "en": "This is your toolbox: the five pieces of a complete request. Tap each one for a quick refresher. They'll be on the checklist in every lab."
+        }
+      },
+      "titulo": {
+        "es": "Tu caja de herramientas",
+        "en": "Your toolbox"
+      },
+      "piezas": [
+        {
+          "id": "tarea",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "La tarea",
+            "en": "The task"
+          },
+          "descripcion": {
+            "es": "Qué quieres que haga, con un verbo claro.",
+            "en": "What you want it to do, with a clear verb."
+          },
+          "ejemplo": {
+            "es": "\"Escribe un mensaje\", \"responde esta pregunta\", \"haz un post\". Un verbo, un resultado.",
+            "en": "\"Write a message,\" \"answer this question,\" \"make a post.\" One verb, one result."
+          }
+        },
+        {
+          "id": "contexto",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "El contexto",
+            "en": "The context"
+          },
+          "descripcion": {
+            "es": "Quién eres, para quién es y para qué.",
+            "en": "Who you are, who it's for and why."
+          },
+          "ejemplo": {
+            "es": "Aquí va tu línea del negocio: \"Tengo una frutería con domicilios; mis clientes son familias del barrio.\"",
+            "en": "Your business line goes here: \"I run a fruit shop that delivers; my customers are local families.\""
+          }
+        },
+        {
+          "id": "datos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Los datos",
+            "en": "The details"
+          },
+          "descripcion": {
+            "es": "Lo concreto que solo tú sabes: fechas, horas, precios.",
+            "en": "The specifics only you know: dates, times, prices."
+          },
+          "ejemplo": {
+            "es": "\"Mango a $6.000 el kilo, domicilio gratis el sábado\". Sin datos, la IA deja huecos o inventa.",
+            "en": "\"Mangoes at $3 a pound, free delivery on Saturday.\" Without details, the AI leaves gaps or makes things up."
+          }
+        },
+        {
+          "id": "forma",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "La forma",
+            "en": "The format"
+          },
+          "descripcion": {
+            "es": "Dónde va y qué tan largo: WhatsApp, post, 4 líneas.",
+            "en": "Where it goes and how long: WhatsApp, post, 4 lines."
+          },
+          "ejemplo": {
+            "es": "\"Para WhatsApp, máximo 4 líneas\". Mejor con un número: así lo decides tú y no la IA.",
+            "en": "\"For WhatsApp, 4 lines max.\" Best with a number: that way you decide, not the AI."
+          }
+        },
+        {
+          "id": "tono",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "El tono",
+            "en": "The tone"
+          },
+          "descripcion": {
+            "es": "Cómo debe sonar, según quién lo va a leer.",
+            "en": "How it should sound, depending on who will read it."
+          },
+          "ejemplo": {
+            "es": "\"Cercano, como les hablo a mis vecinos\". Si no lo dices, la IA suena a oficina.",
+            "en": "\"Friendly, the way I talk to my neighbors.\" If you don't say it, the AI sounds like an office."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primer prompt del kit. Tu negocio tiene una novedad y quieres contársela a tus clientes por WhatsApp. Escribe el pedido completo, empezando por tu línea del negocio.",
+          "en": "First prompt in the kit. Your business has some news and you want to tell your customers on WhatsApp. Write the complete request, starting with your business line."
+        }
+      },
+      "titulo": {
+        "es": "El mensaje de WhatsApp",
+        "en": "The WhatsApp message"
+      },
+      "reto": {
+        "es": "Tu negocio o uno inventado. Escoge una novedad: un producto nuevo, un horario distinto, un servicio nuevo. Pídele a la IA el mensaje para tus clientes por WhatsApp, con los datos que solo tú sabes: qué, cuándo y cuánto.",
+        "en": "Your business or a made-up one. Pick some news: a new product, new hours, a new service. Ask the AI for the message to your customers on WhatsApp, with the details only you know: what, when and how much."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: un verbo claro",
+            "en": "The task: a clear verb"
+          },
+          "rubrica": "El prompt pide una acción concreta y dice qué producir: escribir, redactar o hacer un mensaje para los clientes (también vale 'necesito un...'). No cuenta 'ayúdame con mi negocio' ni 'algo sobre...', ni un prompt que solo cuenta datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "escribe un",
+              "escribe una",
+              "escribe el",
+              "escribe la",
+              "escribeme",
+              "escribir un",
+              "redacta",
+              "hazme un",
+              "hazme una",
+              "haz un",
+              "haz una",
+              "crea un",
+              "crea una",
+              "arma un",
+              "arma una",
+              "prepara un",
+              "preparame",
+              "necesito un",
+              "quiero un"
+            ],
+            "en": [
+              "write a",
+              "write an",
+              "write me",
+              "write the",
+              "draft",
+              "compose",
+              "create a",
+              "create an",
+              "make a",
+              "make an",
+              "put together a",
+              "prepare a",
+              "i need a",
+              "i want a"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "El contexto: qué negocio es o para quién",
+            "en": "The context: your business or who it's for"
+          },
+          "rubrica": "El prompt dice qué negocio es, con su tipo (qué vende o qué hace: 'tengo una frutería', 'vendo arepas'; puede ser real o inventado), o quiénes son sus clientes (vecinos, familias del barrio, señoras de la zona). No cuenta 'mi negocio', 'mi emprendimiento' o 'mis clientes' solos, sin decir qué tipo de negocio es ni quiénes son.",
+          "claves": {
+            "es": [
+              "tengo un",
+              "tengo una",
+              "soy ",
+              "vendo",
+              "vendemos",
+              "atiendo",
+              "negocio de",
+              "tienda de",
+              "somos un",
+              "somos una",
+              "vecin",
+              "familias",
+              "del barrio",
+              "de la zona"
+            ],
+            "en": [
+              "i run",
+              "i own",
+              "i have a",
+              "i sell",
+              "we sell",
+              "i make",
+              "we make",
+              "i'm a",
+              "i am a",
+              "we are a",
+              "we're a",
+              "my business is",
+              "neighbor",
+              "neighbour",
+              "families",
+              "locals"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos: qué, cuándo, cuánto",
+            "en": "The details: what, when, how much"
+          },
+          "rubrica": "El prompt trae al menos dos datos concretos de la novedad: el producto o servicio con su nombre, un precio con cifra, un día, una fecha, una hora o un lugar. No cuenta 'una novedad', 'el nuevo horario' o 'el precio' sin decir cuál es.",
+          "claves": {
+            "es": [
+              "$",
+              "000",
+              " mil",
+              "pesos",
+              "lunes",
+              "martes",
+              "miercoles",
+              "jueves",
+              "viernes",
+              "sabado",
+              "domingo",
+              "a. m",
+              "p. m",
+              "a.m",
+              "p.m",
+              ":00",
+              ":30",
+              "de la manana",
+              "de la tarde",
+              "de la noche",
+              "desde el",
+              "hasta el",
+              "desde las",
+              "hasta las"
+            ],
+            "en": [
+              "$",
+              "dollars",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday",
+              "a.m",
+              "p.m",
+              ":00",
+              ":30",
+              "noon",
+              "midnight",
+              "starting on",
+              "until the"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: el largo del mensaje",
+            "en": "The format: how long the message is"
+          },
+          "rubrica": "El prompt dice qué tan largo debe ser el mensaje: un número de líneas, un párrafo, corto o breve. No cuenta solo 'WhatsApp' o 'mensaje': eso ya viene en el encargo y no dice el largo.",
+          "claves": {
+            "es": [
+              "lineas",
+              "renglones",
+              "parrafo",
+              "corto",
+              "corta",
+              "breve"
+            ],
+            "en": [
+              "lines",
+              "paragraph",
+              "short",
+              "brief"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "El tono: cómo debe sonar",
+            "en": "The tone: how it should sound"
+          },
+          "rubrica": "El prompt dice cómo debe sonar: cercano, amable, alegre, informal, respetuoso, como habla el dueño, sin sonar a vendedor. No cuenta 'bonito' o 'bueno' solos, porque no describen un tono, ni hablar del largo: 'corto' es forma, no tono.",
+          "claves": {
+            "es": [
+              "cercan",
+              "amable",
+              "alegre",
+              "calid",
+              "informal",
+              "relajad",
+              "tono",
+              "que suene",
+              "como hablo",
+              "como le hablo",
+              "como les hablo",
+              "divertid",
+              "respetuos",
+              "de confianza",
+              "sin sonar"
+            ],
+            "en": [
+              "friendly",
+              "warm",
+              "cheerful",
+              "upbeat",
+              "casual",
+              "relaxed",
+              "tone",
+              "sound like",
+              "sounds like",
+              "the way i talk",
+              "how i talk",
+              "playful",
+              "polite",
+              "respectful",
+              "not formal",
+              "not pushy"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un pequeño negocio a escribir mensajes de WhatsApp para sus clientes. Responde solo con el mensaje, sin explicaciones. Usa únicamente lo que dice el prompt: no supongas qué negocio es, para quién es ni datos que no estén. Si falta un dato, deja un hueco entre corchetes, como [precio] o [fecha], en vez de inventarlo. Si el prompt no pide un largo ni un tono, escribe un texto largo y formal, como una circular.",
+        "en": "You are an AI helping a small business write WhatsApp messages to its customers. Reply with the message only, no explanations. Use only what the prompt says: don't assume what the business is, who it's for, or any details that aren't there. If a detail is missing, leave a blank in square brackets, like [price] or [date], instead of making it up. If the prompt asks for no length and no tone, write a long, formal text, like an official notice."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Vecinos, ¡llegó el mango de azúcar!\nEste sábado está a $6.000 el kilo.\nDomicilio gratis en el barrio, de 8 a. m. a 12 m.\nPídelo por aquí. Frutería de Efraín",
+            "en": "Neighbors, sweet mangoes are in!\nThis Saturday they're $3 a pound.\nFree local delivery, 8 a.m. to noon.\nOrder right here. Efraín's Fruit Shop"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Tu primer prompt del kit tiene las cinco piezas. Mira el ejemplo: así responde la IA cuando sabe quién eres y qué necesitas.",
+              "en": "Strong signal. Your first kit prompt has all five pieces. Look at the example: that's how the AI answers when it knows who you are and what you need."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimados clientes:\nNos permitimos informarles que contamos con novedades en nuestro establecimiento. Los invitamos a visitarnos en el horario [horario] para conocer nuestros productos a [precio].\nAtentamente, la Administración",
+            "en": "Dear Valued Customers:\nWe are pleased to inform you that there is news at our establishment. We invite you to visit us during [hours] to discover our products at [price].\nSincerely, The Management"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: salió una circular con huecos. Mira la lista: cada pieza que falta es algo que la IA tuvo que adivinar.",
+              "en": "Weak signal: out came a memo full of blanks. Check the list: every missing piece is something the AI had to guess."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Segundo prompt. Ahora un post para Instagram o Facebook sobre algo que quieras vender más. Tu línea del negocio va primero, como siempre.",
+          "en": "Second prompt. Now a post for Instagram or Facebook about something you want to sell more of. Your business line goes first, as always."
+        }
+      },
+      "titulo": {
+        "es": "El post para redes",
+        "en": "The social media post"
+      },
+      "reto": {
+        "es": "Tu negocio o uno inventado. Escoge un producto o servicio y pídele a la IA un post para Instagram o Facebook. Cuenta qué tiene de especial, cuánto cuesta y cómo se pide. Di qué tan largo lo quieres y cómo debe sonar.",
+        "en": "Your business or a made-up one. Pick a product or service and ask the AI for an Instagram or Facebook post. Say what makes it special, what it costs and how to order. Say how long you want it and how it should sound."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: un verbo claro",
+            "en": "The task: a clear verb"
+          },
+          "rubrica": "El prompt pide una acción concreta y dice qué producir: escribir, redactar o hacer un post o publicación para redes (también vale 'necesito un...'). No cuenta 'ayúdame con mi negocio' ni 'algo sobre...', ni un prompt que solo cuenta datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "escribe un",
+              "escribe una",
+              "escribe el",
+              "escribe la",
+              "escribeme",
+              "escribir un",
+              "redacta",
+              "hazme un",
+              "hazme una",
+              "haz un",
+              "haz una",
+              "crea un",
+              "crea una",
+              "arma un",
+              "arma una",
+              "prepara un",
+              "preparame",
+              "necesito un",
+              "quiero un"
+            ],
+            "en": [
+              "write a",
+              "write an",
+              "write me",
+              "write the",
+              "draft",
+              "compose",
+              "create a",
+              "create an",
+              "make a",
+              "make an",
+              "put together a",
+              "prepare a",
+              "i need a",
+              "i want a"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "El contexto: qué negocio es o para quién",
+            "en": "The context: your business or who it's for"
+          },
+          "rubrica": "El prompt dice qué negocio es, con su tipo (qué vende o qué hace: 'tengo una frutería', 'vendo arepas'; puede ser real o inventado), o quiénes son sus clientes (vecinos, familias del barrio, señoras de la zona). No cuenta 'mi negocio', 'mi emprendimiento' o 'mis clientes' solos, sin decir qué tipo de negocio es ni quiénes son.",
+          "claves": {
+            "es": [
+              "tengo un",
+              "tengo una",
+              "soy ",
+              "vendo",
+              "vendemos",
+              "atiendo",
+              "negocio de",
+              "tienda de",
+              "somos un",
+              "somos una",
+              "vecin",
+              "familias",
+              "del barrio",
+              "de la zona"
+            ],
+            "en": [
+              "i run",
+              "i own",
+              "i have a",
+              "i sell",
+              "we sell",
+              "i make",
+              "we make",
+              "i'm a",
+              "i am a",
+              "we are a",
+              "we're a",
+              "my business is",
+              "neighbor",
+              "neighbour",
+              "families",
+              "locals"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos: producto, precio, cómo pedir",
+            "en": "The details: product, price, how to order"
+          },
+          "rubrica": "El prompt nombra el producto o servicio y da al menos un dato concreto: precio con cifra, tamaño o cantidad, un día, o cómo se pide (mensaje directo, WhatsApp, domicilio). No cuenta 'mi producto', 'lo que vendo' o 'pon el precio' sin decir cuál es.",
+          "claves": {
+            "es": [
+              "$",
+              "000",
+              " mil",
+              "pesos",
+              "lunes",
+              "martes",
+              "miercoles",
+              "jueves",
+              "viernes",
+              "sabado",
+              "domingo",
+              "el kilo",
+              "la libra",
+              "la docena",
+              "la unidad",
+              "mensaje directo",
+              " dm",
+              "por interno",
+              "al interno",
+              "por privado",
+              "se pide por",
+              "pidelo por",
+              "pidela por",
+              "pedidos por",
+              "pedidos al"
+            ],
+            "en": [
+              "$",
+              "dollars",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday",
+              "a pound",
+              "per pound",
+              "a dozen",
+              "per dozen",
+              "a slice",
+              "direct message",
+              " dm",
+              "order by",
+              "order on",
+              "orders by",
+              "orders on"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: largo, hashtags o emojis",
+            "en": "The format: length, hashtags or emojis"
+          },
+          "rubrica": "El prompt dice cómo se ve el post: un largo (número de líneas, un párrafo, corto) o detalles de formato como hashtags o emojis. No cuenta solo 'Instagram', 'Facebook' o 'post': eso ya lo dice el encargo.",
+          "claves": {
+            "es": [
+              "lineas",
+              "renglones",
+              "parrafo",
+              "corto",
+              "corta",
+              "breve",
+              "hashtag",
+              "emoji"
+            ],
+            "en": [
+              "lines",
+              "paragraph",
+              "short",
+              "brief",
+              "hashtag",
+              "emoji"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "El tono: cómo debe sonar",
+            "en": "The tone: how it should sound"
+          },
+          "rubrica": "El prompt dice cómo debe sonar: cercano, amable, alegre, informal, respetuoso, como habla el dueño, sin sonar a vendedor. No cuenta 'bonito' o 'bueno' solos, porque no describen un tono, ni hablar del largo: 'corto' es forma, no tono.",
+          "claves": {
+            "es": [
+              "cercan",
+              "amable",
+              "alegre",
+              "calid",
+              "informal",
+              "relajad",
+              "tono",
+              "que suene",
+              "como hablo",
+              "como le hablo",
+              "como les hablo",
+              "divertid",
+              "respetuos",
+              "de confianza",
+              "sin sonar"
+            ],
+            "en": [
+              "friendly",
+              "warm",
+              "cheerful",
+              "upbeat",
+              "casual",
+              "relaxed",
+              "tone",
+              "sound like",
+              "sounds like",
+              "the way i talk",
+              "how i talk",
+              "playful",
+              "polite",
+              "respectful",
+              "not formal",
+              "not pushy"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un pequeño negocio a escribir publicaciones para Instagram o Facebook. Responde solo con el texto del post, sin explicaciones. Usa únicamente lo que dice el prompt: no supongas qué negocio es, para quién es ni datos que no estén. Si falta un dato, deja un hueco entre corchetes, como [precio] o [fecha], en vez de inventarlo. Si el prompt no pide un largo ni un tono, escribe un texto largo y formal, como una circular.",
+        "en": "You are an AI helping a small business write Instagram or Facebook posts. Reply with the post text only, no explanations. Use only what the prompt says: don't assume what the business is, who it's for, or any details that aren't there. If a detail is missing, leave a blank in square brackets, like [price] or [date], instead of making it up. If the prompt asks for no length and no tone, write a long, formal text, like an official notice."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Ensalada de frutas de la casa: mango, fresa, banano y un toque de miel.\nVaso grande a $8.000.\nPídela por mensaje directo y te la llevamos.\n#FruteriaDeEfrain #FrutaFresca",
+            "en": "Our house fruit salad: mango, strawberry, banana and a drizzle of honey.\nLarge cup for $4.\nSend us a DM and we'll bring it to you.\n#EfrainsFruitShop #FreshFruit"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Tu prompt dice qué negocio es, qué ofreces y cómo debe sonar. Mira el ejemplo de lo que devuelve la IA así. Van dos de cinco.",
+              "en": "Good signal. Your prompt says what the business is, what you're offering and how it should sound. Look at the example of what the AI sends back. Two down, three to go."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Descubre nuestros increíbles productos! Calidad, frescura y el mejor servicio en un solo lugar. Somos tu mejor opción. ¡Visítanos y vive la experiencia! #calidad #servicio #lomejor",
+            "en": "Discover our amazing products! Quality, freshness and the best service all in one place. We're your best choice. Visit us and live the experience! #quality #service #thebest"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: un post que le sirve a cualquier negocio, o sea, a ninguno. Mira la lista: agrega las piezas que faltan.",
+              "en": "Weak signal: a post that fits any business, which means it fits none. Check the list: add the missing pieces."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tercer prompt. Un cliente te escribió una pregunta que te hacen mucho. Pídele a la IA la respuesta y dale los datos reales, para que no invente.",
+          "en": "Third prompt. A customer sent you a question you get all the time. Ask the AI to write the reply, and give it the real facts so it doesn't make anything up."
+        }
+      },
+      "titulo": {
+        "es": "La respuesta al cliente",
+        "en": "Answering a customer"
+      },
+      "reto": {
+        "es": "Tu negocio o uno inventado. Piensa en una pregunta que te hacen seguido, como \"¿hacen domicilios?\" o \"¿a qué hora abren?\". Copia la pregunta, dale a la IA la respuesta real con sus datos y pídele que redacte la respuesta.",
+        "en": "Your business or a made-up one. Think of a question you get a lot, like \"Do you deliver?\" or \"What time do you open?\" Copy the question, give the AI the real answer with its details, and ask it to write the reply."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: pedir la respuesta",
+            "en": "The task: ask for the reply"
+          },
+          "rubrica": "El prompt pide escribir la respuesta al cliente: responde, contesta, escribe o redacta la respuesta (también vale 'ayúdame a responder'). No cuenta pegar la pregunta del cliente sin pedir nada, ni '¿qué le digo?' o '¿qué hago?'.",
+          "claves": {
+            "es": [
+              "responde",
+              "respondele",
+              "contesta",
+              "contestale",
+              "redacta",
+              "escribe una respuesta",
+              "escribe la respuesta",
+              "escribeme una respuesta",
+              "hazme una respuesta",
+              "ayudame a responder",
+              "ayudame a contestar"
+            ],
+            "en": [
+              "reply to",
+              "write a reply",
+              "write the reply",
+              "write me a reply",
+              "write a response",
+              "write the response",
+              "respond to",
+              "answer this",
+              "answer the",
+              "answer her",
+              "answer him",
+              "answer them",
+              "write back",
+              "help me answer",
+              "help me reply"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "El contexto: qué negocio es o para quién",
+            "en": "The context: your business or who it's for"
+          },
+          "rubrica": "El prompt dice qué negocio es, con su tipo (qué vende o qué hace: 'tengo una frutería', 'vendo arepas'; puede ser real o inventado), o quiénes son sus clientes (vecinos, familias del barrio, señoras de la zona). No cuenta 'mi negocio', 'mi emprendimiento' o 'mis clientes' solos, sin decir qué tipo de negocio es ni quiénes son.",
+          "claves": {
+            "es": [
+              "tengo un",
+              "tengo una",
+              "soy ",
+              "vendo",
+              "vendemos",
+              "atiendo",
+              "negocio de",
+              "tienda de",
+              "somos un",
+              "somos una",
+              "vecin",
+              "familias",
+              "del barrio",
+              "de la zona"
+            ],
+            "en": [
+              "i run",
+              "i own",
+              "i have a",
+              "i sell",
+              "we sell",
+              "i make",
+              "we make",
+              "i'm a",
+              "i am a",
+              "we are a",
+              "we're a",
+              "my business is",
+              "neighbor",
+              "neighbour",
+              "families",
+              "locals"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos: la respuesta real",
+            "en": "The details: the real answer"
+          },
+          "rubrica": "El prompt da los datos reales para responder: horas, días, precio o costo con cifra, zona o barrios, pedido mínimo, tiempo de entrega. No cuenta 'dile que sí', 'explícale el horario' o 'dile el precio' sin decir cuál es.",
+          "claves": {
+            "es": [
+              "$",
+              "000",
+              " mil",
+              "pesos",
+              "lunes",
+              "martes",
+              "miercoles",
+              "jueves",
+              "viernes",
+              "sabado",
+              "domingo",
+              "a. m",
+              "p. m",
+              "a.m",
+              "p.m",
+              ":00",
+              ":30",
+              "de la manana",
+              "de la tarde",
+              "de la noche",
+              "minutos",
+              "pedido minimo",
+              "barrios",
+              "hasta las",
+              "desde las"
+            ],
+            "en": [
+              "$",
+              "dollars",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday",
+              "a.m",
+              "p.m",
+              ":00",
+              ":30",
+              "noon",
+              "midnight",
+              "minutes",
+              "minimum order",
+              "until 5",
+              "until 6",
+              "until 7",
+              "until 8",
+              "until 9",
+              "until 10"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: dónde va y qué tan largo",
+            "en": "The format: where it goes and how long"
+          },
+          "rubrica": "El prompt dice dónde va la respuesta (WhatsApp, chat, mensaje directo) o qué tan larga debe ser (número de líneas, corta, breve). No cuenta solo 'respuesta' sin decir dónde ni qué tan larga.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "wpp",
+              "chat",
+              "mensaje directo",
+              " dm",
+              "lineas",
+              "renglones",
+              "parrafo",
+              "corto",
+              "corta",
+              "breve"
+            ],
+            "en": [
+              "whatsapp",
+              "chat",
+              "text message",
+              " dm",
+              "direct message",
+              "lines",
+              "paragraph",
+              "short",
+              "brief"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "El tono: cómo debe sonar",
+            "en": "The tone: how it should sound"
+          },
+          "rubrica": "El prompt dice cómo debe sonar: cercano, amable, alegre, informal, respetuoso, como habla el dueño, sin sonar a vendedor. No cuenta 'bonito' o 'bueno' solos, porque no describen un tono, ni hablar del largo: 'corto' es forma, no tono.",
+          "claves": {
+            "es": [
+              "cercan",
+              "amable",
+              "alegre",
+              "calid",
+              "informal",
+              "relajad",
+              "tono",
+              "que suene",
+              "como hablo",
+              "como le hablo",
+              "como les hablo",
+              "divertid",
+              "respetuos",
+              "de confianza",
+              "sin sonar",
+              "paciente",
+              "atent",
+              "servicial"
+            ],
+            "en": [
+              "friendly",
+              "warm",
+              "cheerful",
+              "upbeat",
+              "casual",
+              "relaxed",
+              "tone",
+              "sound like",
+              "sounds like",
+              "the way i talk",
+              "how i talk",
+              "playful",
+              "polite",
+              "respectful",
+              "not formal",
+              "not pushy",
+              "patient",
+              "helpful",
+              "kind and"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un pequeño negocio a escribir respuestas a las preguntas de sus clientes. Responde solo con la respuesta al cliente, sin explicaciones. Usa únicamente lo que dice el prompt: no supongas qué negocio es, para quién es ni datos que no estén. Si falta un dato, deja un hueco entre corchetes, como [precio] o [fecha], en vez de inventarlo. Si el prompt no pide un largo ni un tono, escribe un texto largo y formal, como una circular. El prompt trae la pregunta de un cliente: respóndela como si fueras el negocio.",
+        "en": "You are an AI helping a small business write replies to its customers' questions. Reply with the reply to the customer only, no explanations. Use only what the prompt says: don't assume what the business is, who it's for, or any details that aren't there. If a detail is missing, leave a blank in square brackets, like [price] or [date], instead of making it up. If the prompt asks for no length and no tone, write a long, formal text, like an official notice. The prompt includes a customer's question: answer it as if you were the business."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "¡Hola! Sí, hacemos domicilios en el barrio.\nDe lunes a sábado, de 8 a. m. a 6 p. m.\nEl domicilio vale $2.000 y el pedido mínimo es de $15.000.\n¿Qué te mandamos?",
+            "en": "Hi! Yes, we deliver in the neighborhood.\nMonday to Saturday, 8 a.m. to 6 p.m.\nDelivery is $1 and the minimum order is $8.\nWhat can we send you?"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Le diste a la IA la respuesta real, así que no tuvo que inventar nada. Van tres de cinco.",
+              "en": "Good signal. You gave the AI the real answer, so it didn't have to make anything up. Three down, two to go."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimado cliente: agradecemos su interés. Con respecto a su consulta, le informamos que sí contamos con dicho servicio en el horario [horario] y con un costo de [valor]. Quedamos atentos a cualquier inquietud adicional.",
+            "en": "Dear customer: thank you for your interest. Regarding your inquiry, please be advised that we do offer this service during [hours] at a cost of [amount]. Please do not hesitate to reach out with any further questions."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la respuesta suena a oficina y tiene huecos donde iban tus datos. Mira la lista: dale a la IA la respuesta real.",
+              "en": "Weak signal: the reply sounds like an office and has blanks where your facts should be. Check the list: give the AI the real answer."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le escribí a Efraín, el de la frutería, el prompt de su promoción. Dos partes dejan a la IA adivinando. Tócalas antes de escribir la tuya.",
+          "en": "Confession time. I wrote the promo prompt for Efraín, who runs the fruit shop. Two parts leave the AI guessing. Tap them before you write yours."
+        }
+      },
+      "titulo": {
+        "es": "El prompt de Efraín",
+        "en": "Efraín's prompt"
+      },
+      "trozos": [
+        {
+          "es": "Tengo una frutería con domicilios en el barrio.",
+          "en": "I run a fruit shop that delivers in the neighborhood."
+        },
+        {
+          "es": "Haz algo con la promoción.",
+          "en": "Do something with the promo."
+        },
+        {
+          "es": "Es un descuento bueno en algunas frutas.",
+          "en": "It's a good discount on some fruit."
+        },
+        {
+          "es": "Va para el grupo de WhatsApp, máximo 4 líneas,",
+          "en": "It's for the WhatsApp group, 4 lines max,"
+        },
+        {
+          "es": "y que suene alegre y cercano.",
+          "en": "and make it sound upbeat and friendly."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. \"Haz algo\" no dice qué producir, y \"un descuento bueno en algunas frutas\" no dice cuánto, en cuáles ni hasta cuándo. La IA iba a inventar precios.",
+          "en": "You got me. \"Do something\" doesn't say what to make, and \"a good discount on some fruit\" doesn't say how much, on which ones or until when. The AI would have made up prices."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte sí le dice algo claro a la IA. Busca las que la dejan adivinando.",
+          "en": "That part tells the AI something clear. Look for the ones that leave it guessing."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Cuarto prompt: tu promoción. Aquí los datos mandan. Sin cuánto, en qué y hasta cuándo, la IA inventa o deja huecos, como casi me pasa con Efraín.",
+          "en": "Fourth prompt: your promotion. Here the details rule. Without how much, on what and until when, the AI makes things up or leaves gaps, like I almost did with Efraín."
+        }
+      },
+      "titulo": {
+        "es": "La promoción",
+        "en": "The promo"
+      },
+      "reto": {
+        "es": "Tu negocio o uno inventado. Inventa una promoción: un descuento, un 2x1 o un combo. Pídele a la IA el anuncio. Tú decides dónde va (WhatsApp, redes o un cartel), qué tan largo es y hasta cuándo vale la promoción.",
+        "en": "Your business or a made-up one. Come up with a promotion: a discount, a 2-for-1 or a combo deal. Ask the AI for the announcement. You decide where it goes (WhatsApp, social media or a sign), how long it is and how long the deal lasts."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: un verbo claro",
+            "en": "The task: a clear verb"
+          },
+          "rubrica": "El prompt pide una acción concreta y dice qué producir: escribir, redactar o hacer un anuncio o mensaje de la promoción (también vale 'necesito un...'). No cuenta 'ayúdame con mi negocio' ni 'algo sobre...', ni un prompt que solo cuenta datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "escribe un",
+              "escribe una",
+              "escribe el",
+              "escribe la",
+              "escribeme",
+              "escribir un",
+              "redacta",
+              "hazme un",
+              "hazme una",
+              "haz un",
+              "haz una",
+              "crea un",
+              "crea una",
+              "arma un",
+              "arma una",
+              "prepara un",
+              "preparame",
+              "necesito un",
+              "quiero un"
+            ],
+            "en": [
+              "write a",
+              "write an",
+              "write me",
+              "write the",
+              "draft",
+              "compose",
+              "create a",
+              "create an",
+              "make a",
+              "make an",
+              "put together a",
+              "prepare a",
+              "i need a",
+              "i want a"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "El contexto: qué negocio es o para quién",
+            "en": "The context: your business or who it's for"
+          },
+          "rubrica": "El prompt dice qué negocio es, con su tipo (qué vende o qué hace: 'tengo una frutería', 'vendo arepas'; puede ser real o inventado), o quiénes son sus clientes (vecinos, familias del barrio, señoras de la zona). No cuenta 'mi negocio', 'mi emprendimiento' o 'mis clientes' solos, sin decir qué tipo de negocio es ni quiénes son.",
+          "claves": {
+            "es": [
+              "tengo un",
+              "tengo una",
+              "soy ",
+              "vendo",
+              "vendemos",
+              "atiendo",
+              "negocio de",
+              "tienda de",
+              "somos un",
+              "somos una",
+              "vecin",
+              "familias",
+              "del barrio",
+              "de la zona"
+            ],
+            "en": [
+              "i run",
+              "i own",
+              "i have a",
+              "i sell",
+              "we sell",
+              "i make",
+              "we make",
+              "i'm a",
+              "i am a",
+              "we are a",
+              "we're a",
+              "my business is",
+              "neighbor",
+              "neighbour",
+              "families",
+              "locals"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos: cuánto, en qué y hasta cuándo",
+            "en": "The details: how much, on what, until when"
+          },
+          "rubrica": "El prompt trae al menos dos datos concretos: en qué producto es, el descuento o el precio con cifra (20 %, $15.000, 2x1 en tal producto), hasta cuándo va o sus condiciones. No cuenta 'una promoción', 'un descuento' o 'un 2x1' sin decir en qué, cuánto ni hasta cuándo.",
+          "claves": {
+            "es": [
+              "%",
+              "por ciento",
+              "$",
+              "000",
+              " mil",
+              "pesos",
+              "lunes",
+              "martes",
+              "miercoles",
+              "jueves",
+              "viernes",
+              "sabado",
+              "domingo",
+              "hasta el",
+              "hasta que",
+              "esta semana",
+              "este fin de semana",
+              "este mes",
+              "solo por hoy"
+            ],
+            "en": [
+              "%",
+              "percent",
+              "$",
+              "dollars",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday",
+              "until",
+              "through the",
+              "this week",
+              "this month",
+              "today only",
+              "while supplies",
+              "while they last"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: dónde va y qué tan largo",
+            "en": "The format: where it goes and how long"
+          },
+          "rubrica": "El prompt dice dónde va el anuncio (WhatsApp, Instagram, Facebook, redes, un cartel) o qué tan largo debe ser (número de líneas, corto). No cuenta 'anuncio' o 'promoción' solos, sin decir dónde ni el largo.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "wpp",
+              "chat",
+              "mensaje directo",
+              " dm",
+              "lineas",
+              "renglones",
+              "parrafo",
+              "corto",
+              "corta",
+              "breve",
+              "instagram",
+              "facebook",
+              "redes",
+              "cartel",
+              "volante",
+              "puerta",
+              "vitrina"
+            ],
+            "en": [
+              "whatsapp",
+              "chat",
+              "text message",
+              " dm",
+              "direct message",
+              "lines",
+              "paragraph",
+              "short",
+              "brief",
+              "instagram",
+              "facebook",
+              "social media",
+              "sign",
+              "flyer",
+              "poster",
+              "window"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "El tono: cómo debe sonar",
+            "en": "The tone: how it should sound"
+          },
+          "rubrica": "El prompt dice cómo debe sonar: cercano, amable, alegre, informal, respetuoso, como habla el dueño, sin sonar a vendedor. No cuenta 'bonito' o 'bueno' solos, porque no describen un tono, ni hablar del largo: 'corto' es forma, no tono.",
+          "claves": {
+            "es": [
+              "cercan",
+              "amable",
+              "alegre",
+              "calid",
+              "informal",
+              "relajad",
+              "tono",
+              "que suene",
+              "como hablo",
+              "como le hablo",
+              "como les hablo",
+              "divertid",
+              "respetuos",
+              "de confianza",
+              "sin sonar",
+              "emocion",
+              "con ganas",
+              "entusiasm"
+            ],
+            "en": [
+              "friendly",
+              "warm",
+              "cheerful",
+              "upbeat",
+              "casual",
+              "relaxed",
+              "tone",
+              "sound like",
+              "sounds like",
+              "the way i talk",
+              "how i talk",
+              "playful",
+              "polite",
+              "respectful",
+              "not formal",
+              "not pushy",
+              "exciting",
+              "excited",
+              "energetic"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un pequeño negocio a escribir anuncios de sus promociones. Responde solo con el anuncio, sin explicaciones. Usa únicamente lo que dice el prompt: no supongas qué negocio es, para quién es ni datos que no estén. Si falta un dato, deja un hueco entre corchetes, como [precio] o [fecha], en vez de inventarlo. Si el prompt no pide un largo ni un tono, escribe un texto largo y formal, como una circular.",
+        "en": "You are an AI helping a small business write announcements for its promotions. Reply with the announcement only, no explanations. Use only what the prompt says: don't assume what the business is, who it's for, or any details that aren't there. If a detail is missing, leave a blank in square brackets, like [price] or [date], instead of making it up. If the prompt asks for no length and no tone, write a long, formal text, like an official notice."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "¡Fin de semana de fresas!\nLa libra a $4.000, y la segunda a mitad de precio.\nSolo este sábado y domingo, o hasta que se acaben.\nPídelas por WhatsApp. Frutería de Efraín",
+            "en": "Strawberry weekend!\n$2 a pound, and the second pound is half off.\nThis Saturday and Sunday only, or while they last.\nOrder on WhatsApp. Efraín's Fruit Shop"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Con producto, precio y fechas, la IA ya no deja huecos. Van cuatro de cinco.",
+              "en": "Good signal. With the product, price and dates, the AI leaves no blanks. Four down, one to go."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡GRAN PROMOCIÓN! Aprovecha increíbles descuentos de hasta el [porcentaje] en productos seleccionados. Válido hasta [fecha]. ¡No te lo pierdas!",
+            "en": "HUGE SALE! Enjoy amazing discounts of up to [percentage] on selected items. Valid until [date]. Don't miss out!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la promoción tiene más huecos que datos. Mira la lista: di en qué producto, cuánto y hasta cuándo.",
+              "en": "Weak signal: this promo has more blanks than details. Check the list: say which product, how much and until when."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Último prompt del kit. Un cliente te compró y quieres darle las gracias para que vuelva. Es el mensaje que casi nadie manda, y por eso se recuerda.",
+          "en": "Last prompt in the kit. A customer bought from you and you want to thank them so they come back. It's the message almost nobody sends, and that's why people remember it."
+        }
+      },
+      "titulo": {
+        "es": "El mensaje de gracias",
+        "en": "The thank-you message"
+      },
+      "reto": {
+        "es": "Tu negocio o uno inventado. Piensa en un cliente que te compró esta semana: qué se llevó y por qué podría volver. Pídele a la IA un mensaje de gracias y seguimiento que no suene a vendedor insistente.",
+        "en": "Your business or a made-up one. Think of a customer who bought from you this week: what they got and why they might come back. Ask the AI for a thank-you and follow-up message that doesn't sound pushy."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: un verbo claro",
+            "en": "The task: a clear verb"
+          },
+          "rubrica": "El prompt pide una acción concreta y dice qué producir: escribir, redactar o hacer un mensaje de gracias al cliente (también vale 'necesito un...'). No cuenta 'ayúdame con mi negocio' ni 'algo sobre...', ni un prompt que solo cuenta datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "escribe un",
+              "escribe una",
+              "escribe el",
+              "escribe la",
+              "escribeme",
+              "escribir un",
+              "redacta",
+              "hazme un",
+              "hazme una",
+              "haz un",
+              "haz una",
+              "crea un",
+              "crea una",
+              "arma un",
+              "arma una",
+              "prepara un",
+              "preparame",
+              "necesito un",
+              "quiero un",
+              "agradecele",
+              "dale las gracias"
+            ],
+            "en": [
+              "write a",
+              "write an",
+              "write me",
+              "write the",
+              "draft",
+              "compose",
+              "create a",
+              "create an",
+              "make a",
+              "make an",
+              "put together a",
+              "prepare a",
+              "i need a",
+              "i want a",
+              "thank this",
+              "thank my",
+              "thank a"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "El contexto: qué negocio es o para quién",
+            "en": "The context: your business or who it's for"
+          },
+          "rubrica": "El prompt dice qué negocio es, con su tipo (qué vende o qué hace: 'tengo una frutería', 'vendo arepas'; puede ser real o inventado), o quiénes son sus clientes (vecinos, familias del barrio, señoras de la zona). No cuenta 'mi negocio', 'mi emprendimiento' o 'mis clientes' solos, sin decir qué tipo de negocio es ni quiénes son.",
+          "claves": {
+            "es": [
+              "tengo un",
+              "tengo una",
+              "soy ",
+              "vendo",
+              "vendemos",
+              "atiendo",
+              "negocio de",
+              "tienda de",
+              "somos un",
+              "somos una",
+              "vecin",
+              "familias",
+              "del barrio",
+              "de la zona"
+            ],
+            "en": [
+              "i run",
+              "i own",
+              "i have a",
+              "i sell",
+              "we sell",
+              "i make",
+              "we make",
+              "i'm a",
+              "i am a",
+              "we are a",
+              "we're a",
+              "my business is",
+              "neighbor",
+              "neighbour",
+              "families",
+              "locals"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos: qué compró y qué sigue",
+            "en": "The details: what they bought, what's next"
+          },
+          "rubrica": "El prompt dice qué compró el cliente (el producto o servicio concreto) o da una razón concreta para volver: un descuento con cifra, un producto que llega en tal fecha, la próxima cita. No cuenta 'su compra', 'lo que se llevó' o 'invítalo a volver' sin decir qué ni cuándo.",
+          "claves": {
+            "es": [
+              "compro un",
+              "compro una",
+              "compro el",
+              "compro la",
+              "compro los",
+              "compro las",
+              "se llevo",
+              "me pidio",
+              "nos pidio",
+              "pidio un",
+              "pidio una",
+              "encargo un",
+              "encargo una",
+              "%",
+              "$",
+              "000",
+              " mil",
+              "pesos",
+              "lunes",
+              "martes",
+              "miercoles",
+              "jueves",
+              "viernes",
+              "sabado",
+              "domingo",
+              "proxima compra",
+              "proximo pedido",
+              "proxima cita",
+              "la otra semana"
+            ],
+            "en": [
+              "bought a",
+              "bought an",
+              "bought the",
+              "bought two",
+              "bought three",
+              "ordered a",
+              "ordered an",
+              "ordered the",
+              "purchased a",
+              "picked up a",
+              "picked up the",
+              "%",
+              "$",
+              "dollars",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday",
+              "next order",
+              "next visit",
+              "next purchase",
+              "next appointment",
+              "next week"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: dónde va y qué tan largo",
+            "en": "The format: where it goes and how long"
+          },
+          "rubrica": "El prompt dice dónde va el mensaje (WhatsApp, chat, mensaje directo) o qué tan largo debe ser (número de líneas, corto, breve). No cuenta 'mensaje' solo, sin decir dónde ni el largo.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "wpp",
+              "chat",
+              "mensaje directo",
+              " dm",
+              "lineas",
+              "renglones",
+              "parrafo",
+              "corto",
+              "corta",
+              "breve"
+            ],
+            "en": [
+              "whatsapp",
+              "chat",
+              "text message",
+              " dm",
+              "direct message",
+              "lines",
+              "paragraph",
+              "short",
+              "brief"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "El tono: cómo debe sonar",
+            "en": "The tone: how it should sound"
+          },
+          "rubrica": "El prompt dice cómo debe sonar: cercano, amable, alegre, informal, respetuoso, como habla el dueño, sin sonar a vendedor. No cuenta 'bonito' o 'bueno' solos, porque no describen un tono, ni hablar del largo: 'corto' es forma, no tono.",
+          "claves": {
+            "es": [
+              "cercan",
+              "amable",
+              "alegre",
+              "calid",
+              "informal",
+              "relajad",
+              "tono",
+              "que suene",
+              "como hablo",
+              "como le hablo",
+              "como les hablo",
+              "divertid",
+              "respetuos",
+              "de confianza",
+              "sin sonar",
+              "agradecid",
+              "sincer",
+              "sin presionar",
+              "no insistente",
+              "sin ser insistente"
+            ],
+            "en": [
+              "friendly",
+              "warm",
+              "cheerful",
+              "upbeat",
+              "casual",
+              "relaxed",
+              "tone",
+              "sound like",
+              "sounds like",
+              "the way i talk",
+              "how i talk",
+              "playful",
+              "polite",
+              "respectful",
+              "not formal",
+              "not pushy",
+              "grateful",
+              "sincere",
+              "genuine",
+              "without being pushy",
+              "no pressure"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a un pequeño negocio a escribir mensajes de agradecimiento a sus clientes. Responde solo con el mensaje, sin explicaciones. Usa únicamente lo que dice el prompt: no supongas qué negocio es, para quién es ni datos que no estén. Si falta un dato, deja un hueco entre corchetes, como [precio] o [fecha], en vez de inventarlo. Si el prompt no pide un largo ni un tono, escribe un texto largo y formal, como una circular. Si el prompt no pide un tono, termina con una frase de venta insistente.",
+        "en": "You are an AI helping a small business write thank-you messages to its customers. Reply with the message only, no explanations. Use only what the prompt says: don't assume what the business is, who it's for, or any details that aren't there. If a detail is missing, leave a blank in square brackets, like [price] or [date], instead of making it up. If the prompt asks for no length and no tone, write a long, formal text, like an official notice. If the prompt asks for no tone, end with a pushy sales line."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, gracias por llevarte la canasta de frutas el martes.\nOjalá les haya gustado en la casa.\nEl sábado llega mango de azúcar; si quieres, te aparto uno.\nEfraín",
+            "en": "Hi, thanks for picking up the fruit basket on Tuesday.\nHope everyone at home enjoyed it.\nSweet mangoes arrive Saturday; want me to set one aside for you?\nEfraín"
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Señal completa. Cinco prompts, cinco trabajos, un solo negocio: el tuyo. El kit está armado.",
+              "en": "Full signal. Five prompts, five jobs, one business: yours. The kit is built."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimado cliente: le agradecemos sinceramente por su compra. Su satisfacción es nuestra prioridad. Lo invitamos a seguir adquiriendo nuestros productos y a recomendarnos. ¡Compre ya y aproveche nuestras ofertas!",
+            "en": "Dear customer: we sincerely thank you for your purchase. Your satisfaction is our priority. We invite you to keep buying our products and to recommend us. Buy now and take advantage of our deals!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: un gracias de plantilla que termina vendiendo a la fuerza. Mira la lista: di qué compró, qué sigue y cómo debe sonar.",
+              "en": "Weak signal: a form-letter thank-you that ends in a hard sell. Check the list: say what they bought, what's next and how it should sound."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b11",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora pon tu kit a prueba en una IA de verdad. Escoge el prompt que más vas a usar y conversa con la IA hasta que el mensaje quede listo para mandar.",
+          "en": "Now put your kit to the test in a real AI. Pick the prompt you'll use most and talk it through with the AI until the message is ready to send."
+        }
+      },
+      "titulo": {
+        "es": "Prueba tu kit",
+        "en": "Test your kit"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra. Pega uno de tus prompts del kit. Si la respuesta casi sirve, no empieces de cero: di qué te gustó, qué cambiar, qué agregar y qué quitar.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another. Paste one of your kit prompts. If the answer almost works, don't start over: say what you liked, what to change, what to add and what to cut."
+      },
+      "checks": [
+        {
+          "es": "Pegué uno de mis prompts del kit",
+          "en": "I pasted one of my kit prompts"
+        },
+        {
+          "es": "Pedí al menos un ajuste concreto, sin empezar de cero",
+          "en": "I asked for at least one specific tweak, without starting over"
+        },
+        {
+          "es": "Me fijé si a mi prompt le faltaba alguna pieza",
+          "en": "I checked whether my prompt was missing a piece"
+        },
+        {
+          "es": "Me quedé con un mensaje que mandaría hoy",
+          "en": "I ended up with a message I'd send today"
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué es un kit de señales, como se lo explicarías a alguien que tiene un negocio.",
+          "en": "Logbook time. Write what a signal kit is in your own words, the way you'd explain it to someone who runs a business."
+        }
+      },
+      "concepto": "kit-de-senales",
+      "definicion": {
+        "es": "Un grupo de prompts completos y guardados, uno por cada trabajo que tu negocio repite. Cuando vuelve ese trabajo, copias el prompt, cambias los datos y lo mandas.",
+        "en": "A set of complete, saved prompts, one for each job your business repeats. When that job comes back, you copy the prompt, change the details and send it."
+      },
+      "pregunta": {
+        "es": "Un kit de señales es…",
+        "en": "A signal kit is…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "kit de señales",
+        "en": "signal kit"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta del Kit de señales ya está en tu bitácora. Al aterrizar guardo ahí tus cinco prompts, cada uno con su nombre. Tu kit vive ahí, listo para copiar.",
+          "en": "Saved. Your Signal Kit card is in your logbook. When we land, I'll save your five prompts there too, each with its name. Your kit lives there, ready to copy."
+        }
+      }
+    },
+    {
+      "id": "b13",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas rápidas antes de aterrizar.",
+          "en": "Two quick questions before we land."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "La otra semana tienes una promoción nueva. ¿Qué haces con el prompt de tu kit?",
+            "en": "Next week you have a new promotion. What do you do with your kit prompt?"
+          },
+          "opciones": [
+            {
+              "es": "Escribo uno nuevo desde cero",
+              "en": "Write a new one from scratch"
+            },
+            {
+              "es": "Lo copio y cambio solo los datos",
+              "en": "Copy it and change only the details"
+            },
+            {
+              "es": "Lo mando igual, sin cambiarle nada",
+              "en": "Send it as is, without changing anything"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. La tarea, el contexto, la forma y el tono ya sirven. Solo cambian los datos de la promoción.",
+              "en": "Right. The task, context, format and tone already work. Only the promo details change."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa qué partes de tu prompt siguen siendo ciertas la otra semana.",
+              "en": "Hmm. Think about which parts of your prompt will still be true next week."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "\"Tengo un vivero en el barrio. Escribe un post para Instagram, máximo 4 líneas, que suene cercano.\" ¿Qué pieza falta?",
+            "en": "\"I run a plant nursery in the neighborhood. Write an Instagram post, 4 lines max, make it sound friendly.\" Which piece is missing?"
+          },
+          "opciones": [
+            {
+              "es": "El contexto",
+              "en": "The context"
+            },
+            {
+              "es": "La forma",
+              "en": "The format"
+            },
+            {
+              "es": "Los datos",
+              "en": "The details"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. No dice qué se ofrece, cuánto cuesta ni cuándo. La IA llenaría eso con huecos o inventos.",
+              "en": "Exactly. It doesn't say what's on offer, the price or when. The AI would fill that with blanks or made-up stuff."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Esa sí está. Repasa las piezas una por una: ¿cuál no aparece?",
+              "en": "That one's there. Go through the pieces one by one: which one doesn't show up?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Proyecto aterrizado, piloto. Terminaste el capítulo 1.",
+          "en": "Project landed, pilot. You've finished Chapter 1."
+        }
+      },
+      "titulo": {
+        "es": "Kit completo",
+        "en": "Kit complete"
+      },
+      "texto": {
+        "es": "En este capítulo aprendiste a pedir con las cinco piezas, y ahora tienes cinco prompts que sirven para un negocio de verdad. Están en tu bitácora: copias, cambias los datos y listo. Lo que sigue es el taller de interferencias, donde se reparan las señales que salen mal.",
+        "en": "This chapter you learned to ask with all five pieces, and now you have five prompts that work for a real business. They're in your logbook: copy, change the details, done. Up next is the interference workshop, where signals that go wrong get fixed."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Kit de señales",
+        "en": "Signal kit"
+      },
+      "resumen": {
+        "es": "Cinco prompts completos y guardados para los trabajos que tu negocio repite. Copias, cambias los datos y listo.",
+        "en": "Five complete, saved prompts for the jobs your business repeats. Copy, change the details, done."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b09",
+      "b05",
+      "b06",
+      "b07",
+      "b10"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Escogiste el negocio de tu kit",
+          "en": "You picked the business for your kit"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Prompt 1: el mensaje de WhatsApp a tus clientes",
+          "en": "Prompt 1: the WhatsApp message to your customers"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Prompt 2: el post para redes",
+          "en": "Prompt 2: the social media post"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Prompt 3: la respuesta a un cliente",
+          "en": "Prompt 3: the reply to a customer"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Atrapaste los huecos en el prompt de Efraín",
+          "en": "You caught the gaps in Efraín's prompt"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Prompt 4: el anuncio de tu promoción",
+          "en": "Prompt 4: your promo announcement"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Prompt 5: el mensaje de gracias",
+          "en": "Prompt 5: the thank-you message"
+        }
+      },
+      {
+        "bloque": "b11",
+        "texto": {
+          "es": "Probaste tu kit en una IA de verdad",
+          "en": "You tested your kit in a real AI"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "armar-kit-de-prompts",
+      "titulo": {
+        "es": "Armar tu kit de prompts",
+        "en": "Building your prompt kit"
+      }
+    }
+  }
+}

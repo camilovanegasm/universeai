@@ -1,0 +1,837 @@
+{
+  "formato": "punti-mision@1",
+  "id": "los-5-errores-clasicos",
+  "mundo": "prompts",
+  "capitulo": 2,
+  "numero": 6,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "errores-clasicos"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "contexto",
+    "forma",
+    "iterar"
+  ],
+  "titulo": {
+    "es": "Los 5 errores clásicos",
+    "en": "The 5 Classic Mistakes"
+  },
+  "resumen": {
+    "es": "Los cinco errores que más dañan un prompt, cómo reconocerlos por el síntoma y cómo repararlos.",
+    "en": "The five mistakes that break a prompt most often, how to spot them by the symptom and how to fix them."
+  },
+  "siguiente": "cuando-la-ia-inventa",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, te doy la bienvenida al taller de interferencias. Aquí llegan las señales que salieron mal, para repararlas. La primera es de Yolanda, que tiene una peluquería en el barrio. Le escribió a una IA y le llegó un revuelto que no le sirve.",
+          "en": "Pilot, welcome to the interference workshop. This is where broken signals come in to get fixed. The first one is from Yolanda, who runs a hair salon in the neighborhood. She wrote to an AI and got back a jumble she can't use."
+        }
+      },
+      "titulo": {
+        "es": "Los 5 errores clásicos",
+        "en": "The 5 Classic Mistakes"
+      },
+      "texto": {
+        "es": "Casi todas las señales que llegan al taller fallan por uno de cinco errores. Hoy aprendes a reconocerlos y a repararlos con las piezas que ya conoces. Unos 9 minutos.",
+        "en": "Almost every signal that reaches the workshop fails because of one of five mistakes. Today you'll learn to spot them and fix them with the pieces you already know. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto le escribió Yolanda a la IA. Pidió tres cosas en una sola frase y la IA le respondió un poquito de todo. Abajo está el mismo pedido, reparado.",
+          "en": "Here's what Yolanda wrote to the AI. She asked for three things in one sentence, and the AI answered a little bit of everything. Below is the same request, fixed."
+        }
+      },
+      "titulo": {
+        "es": "Del revuelto al mensaje",
+        "en": "From jumble to message"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Algo para las clientas sobre lo de diciembre, y de paso qué productos compro y cómo consigo más seguidores.",
+          "en": "Something for the clients about the December thing, and also what products to buy and how to get more followers."
+        },
+        "salida": {
+          "es": "¡Claro! Aquí tienes algunas ideas:\n1. Ofrece descuentos especiales en temporada navideña.\n2. Compra productos de calidad para tu negocio.\n3. Publica contenido con frecuencia en redes sociales.\n¡Mucho éxito con tu emprendimiento!",
+          "en": "Sure! Here are some ideas:\n1. Offer special holiday season discounts.\n2. Buy quality products for your business.\n3. Post content regularly on social media.\nBest of luck with your venture!"
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "desconocido",
+            "texto": {
+              "es": "Tengo una peluquería de barrio y mis clientas son vecinas del sector. ",
+              "en": "I run a neighborhood hair salon, and most of my clients are neighbors. "
+            }
+          },
+          {
+            "pieza": "sin-verbo",
+            "texto": {
+              "es": "Escribe un mensaje para invitarlas a separar su cita de diciembre. ",
+              "en": "Write a message inviting them to book their December appointment. "
+            }
+          },
+          {
+            "pieza": "huecos",
+            "texto": {
+              "es": "Del 1 al 24 de diciembre también abro los domingos, de 8 a. m. a 2 p. m. ",
+              "en": "From December 1 to 24, I'm also open on Sundays, 8 a.m. to 2 p.m. "
+            }
+          },
+          {
+            "pieza": "sin-forma",
+            "texto": {
+              "es": "Es para mi estado de WhatsApp: máximo 3 líneas, cercano, como hablo yo. ",
+              "en": "It's for my WhatsApp status: 3 lines max, warm, the way I talk. "
+            }
+          },
+          {
+            "pieza": "sancocho",
+            "texto": {
+              "es": "Lo de los productos te lo pregunto después.",
+              "en": "I'll ask you about the products later."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Vecinas, diciembre llegó con todo.\nDel 1 al 24 también abro los domingos, de 8 a. m. a 2 p. m.\nEscríbanme y les separo su cita. Yolanda",
+          "en": "Neighbors, December is here!\nFrom the 1st to the 24th I'm also open Sundays, 8 a.m. to 2 p.m.\nMessage me and I'll save you a spot. Yolanda"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Cada color repara uno de los errores clásicos. Fíjate en la última parte: lo de los productos no se borró, se dejó para otro mensaje.",
+          "en": "Each color fixes one of the classic mistakes. Look at the last part: the products question wasn't deleted, it was saved for another message."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estos son los cinco errores que más llegan al taller. Cuatro se reparan con las piezas del pedido completo; el quinto, pidiendo una cosa a la vez. Toca cada uno.",
+          "en": "These are the five mistakes that show up at the workshop most often. Four get fixed with the pieces of a complete request; the fifth, by asking for one thing at a time. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Los 5 errores clásicos",
+        "en": "The 5 classic mistakes"
+      },
+      "piezas": [
+        {
+          "id": "sin-verbo",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "El pedido sin verbo",
+            "en": "The verbless request"
+          },
+          "descripcion": {
+            "es": "No dice qué hacer. Se repara con la tarea.",
+            "en": "It doesn't say what to do. Fix: the task."
+          },
+          "ejemplo": {
+            "es": "\"Algo para las clientas\". ¿Escribo, resumo, hago una lista? Sin verbo, la IA hace lo más genérico que encuentra.",
+            "en": "\"Something for the clients.\" Should it write, summarize, make a list? With no verb, the AI does the most generic thing it can."
+          }
+        },
+        {
+          "id": "desconocido",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "El desconocido",
+            "en": "The stranger"
+          },
+          "descripcion": {
+            "es": "La IA no sabe quién eres. Se repara con el contexto.",
+            "en": "The AI doesn't know who you are. Fix: the context."
+          },
+          "ejemplo": {
+            "es": "Sin \"tengo una peluquería de barrio\", la IA le escribe a cualquier negocio del mundo, menos al de Yolanda.",
+            "en": "Without \"I run a neighborhood hair salon,\" the AI writes for any business in the world except Yolanda's."
+          }
+        },
+        {
+          "id": "huecos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Los huecos",
+            "en": "The gaps"
+          },
+          "descripcion": {
+            "es": "Faltan fechas, precios o lugares. Se repara con los datos.",
+            "en": "Dates, prices or places are missing. Fix: the details."
+          },
+          "ejemplo": {
+            "es": "Sin datos, la IA deja [corchetes] o, peor, se inventa un precio. De ese peligro hablamos en la próxima misión.",
+            "en": "Without details, the AI leaves [brackets] or, worse, makes up a price. That danger is next mission's topic."
+          }
+        },
+        {
+          "id": "sin-forma",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Sin forma ni tono",
+            "en": "No format, no tone"
+          },
+          "descripcion": {
+            "es": "No dice cómo se ve ni cómo suena. Se repara con la forma y el tono.",
+            "en": "It doesn't say how it looks or sounds. Fix: the format and the tone."
+          },
+          "ejemplo": {
+            "es": "Sin \"estado de WhatsApp, 3 líneas, cercano\", llega un párrafo largo que suena a oficina.",
+            "en": "Without \"WhatsApp status, 3 lines, warm,\" you get a long paragraph that sounds like an office."
+          }
+        },
+        {
+          "id": "sancocho",
+          "color": "#ff8c42",
+          "titulo": {
+            "es": "El sancocho",
+            "en": "The kitchen sink"
+          },
+          "descripcion": {
+            "es": "Varios pedidos revueltos en uno. Se repara pidiendo uno a la vez.",
+            "en": "Several requests piled into one. Fix: one at a time."
+          },
+          "ejemplo": {
+            "es": "Promo, compras y seguidores en un solo mensaje: la IA responde un poquito de todo y nada sirve. Pide una cosa, y después la otra.",
+            "en": "Promo, shopping and followers in one message: the AI answers a little of everything, and none of it helps. Ask for one thing, then the next."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. En el taller se diagnostica por el síntoma: miras qué salió mal y buscas el error. ¿Qué error causó cada una de estas respuestas?",
+          "en": "Your turn. In the workshop, we diagnose by the symptom: look at what went wrong, then find the mistake. Which mistake caused each of these answers?"
+        }
+      },
+      "titulo": {
+        "es": "Diagnostica la señal",
+        "en": "Diagnose the signal"
+      },
+      "grupos": [
+        "sin-verbo",
+        "desconocido",
+        "huecos",
+        "sin-forma",
+        "sancocho"
+      ],
+      "items": [
+        {
+          "grupo": "sin-verbo",
+          "texto": {
+            "es": "Querías un aviso y la IA te dio una explicación general del tema.",
+            "en": "You wanted a notice, and the AI gave you a general explanation of the topic."
+          }
+        },
+        {
+          "grupo": "desconocido",
+          "texto": {
+            "es": "La IA saludó a \"nuestros clientes corporativos\", y tú vendes empanadas.",
+            "en": "The AI greeted \"our valued corporate clients,\" and you sell empanadas."
+          }
+        },
+        {
+          "grupo": "huecos",
+          "texto": {
+            "es": "Llegó un mensaje con [fecha] y [precio] entre corchetes.",
+            "en": "You got a message with [date] and [price] in brackets."
+          }
+        },
+        {
+          "grupo": "sin-forma",
+          "texto": {
+            "es": "Para un estado de WhatsApp, llegaron 12 líneas que suenan a oficina.",
+            "en": "For a WhatsApp status, you got 12 lines that sound like an office."
+          }
+        },
+        {
+          "grupo": "sancocho",
+          "texto": {
+            "es": "Llegó un poquito de promo, un poquito de recetas y un poquito de horarios.",
+            "en": "You got a bit of promo, a bit of recipes and a bit of opening hours."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Diagnóstico perfecto. Ya lees la señal como en el taller: del síntoma llegas al error.",
+          "en": "Spot-on diagnosis. You read signals like a workshop pro now: from the symptom, you get to the mistake."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, mira el síntoma otra vez. ¿Qué tuvo que adivinar la IA para responder así?",
+          "en": "Hmm, look at the symptom again. What did the AI have to guess to answer like that?"
+        }
+      },
+      "malPorGrupo": {
+        "sin-verbo": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. El tema estaba claro, pero ¿la IA sabía qué hacer con él?",
+            "en": "Close. The topic was clear, but did the AI know what to do with it?"
+          }
+        },
+        "desconocido": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. La IA le habló a otra gente. ¿Qué no sabía de quién escribe?",
+            "en": "Close. The AI was talking to the wrong people. What didn't it know about who's writing?"
+          }
+        },
+        "huecos": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Mira lo que quedó entre corchetes. ¿Qué no le dieron a la IA?",
+            "en": "Close. Look at what ended up in brackets. What did nobody give the AI?"
+          }
+        },
+        "sin-forma": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. El contenido puede estar bien. Fíjate en el largo y en cómo suena.",
+            "en": "Close. The content might be fine. Look at the length and how it sounds."
+          }
+        },
+        "sancocho": {
+          "estado": "error",
+          "texto": {
+            "es": "Casi. Cuenta los temas de la respuesta. ¿Cuántas cosas le pidieron a la vez?",
+            "en": "Close. Count the topics in that answer. How many things were asked at once?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Antes de reparar, el truco más útil del taller.",
+          "en": "Before you fix anything, here's the most useful trick in the workshop."
+        }
+      },
+      "titulo": {
+        "es": "Diagnosticar antes de reparar",
+        "en": "Diagnose before you fix"
+      },
+      "texto": {
+        "es": "Cuando una respuesta sale mal, no borres el prompt entero. Mira el síntoma, busca cuál de los cinco errores lo causó y arregla solo esa parte. Así no pierdes lo que ya estaba bien. Y con el tiempo descubres qué pieza se te olvida más.",
+        "en": "When an answer comes out wrong, don't delete the whole prompt. Look at the symptom, find which of the five mistakes caused it, and fix just that part. That way you keep what was already working. Over time, you'll also learn which piece you forget most."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Mira el síntoma",
+            "en": "Look at the symptom"
+          },
+          {
+            "es": "Encuentra el error",
+            "en": "Find the mistake"
+          },
+          {
+            "es": "Repara esa pieza",
+            "en": "Fix that piece"
+          },
+          {
+            "es": "Transmite otra vez",
+            "en": "Send it again"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno en el taller. Repara el pedido de Yolanda para la promo de los martes. Deja lo que sirve, arregla lo que falla y lo del alisado déjalo para otro mensaje.",
+          "en": "Your turn in the workshop. Fix Yolanda's request for her Tuesday deal. Keep what works, repair what's broken, and save the keratin question for another message."
+        }
+      },
+      "titulo": {
+        "es": "La promo de los martes",
+        "en": "The Tuesday deal"
+      },
+      "reto": {
+        "es": "Yolanda escribió: \"Soy Yolanda, tengo una peluquería en el barrio. Algo sobre la promo de los martes, y de paso dime cuánto cobro por un alisado.\" Lo que ella sabe: los martes de octubre, corte y cepillado por $30.000, sin cita. Es para su estado de WhatsApp y quiere que suene cercano.",
+        "en": "Yolanda wrote: \"I'm Yolanda, I run a hair salon in the neighborhood. Something about the Tuesday deal, and also tell me what to charge for a keratin treatment.\" What she knows: Tuesdays in October, haircut and blow-dry for $30, no appointment needed. It's for her WhatsApp status, and she wants it to sound warm."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "Un solo pedido, con verbo claro",
+            "en": "One request, with a clear verb"
+          },
+          "rubrica": "El prompt pide una acción concreta sobre la promo de los martes: escribir, redactar o hacer un mensaje, un estado o un aviso (también vale 'necesito un mensaje para...'). No cuenta 'algo sobre la promo' ni 'ayúdame con la promo'. Tampoco cuenta si el mismo prompt pide además el precio del alisado, una lista de compras u otra tarea: eso es mezclar pedidos.",
+          "claves": {
+            "es": [
+              "escribe un",
+              "escribe el",
+              "escribeme",
+              "escribir un",
+              "redacta",
+              "haz un mensaje",
+              "hazme un mensaje",
+              "haz un estado",
+              "hazme un estado",
+              "haz un aviso",
+              "hazme un aviso",
+              "crea un mensaje",
+              "crea un estado",
+              "arma un mensaje",
+              "necesito un mensaje"
+            ],
+            "en": [
+              "write a",
+              "write me",
+              "write the",
+              "draft",
+              "compose",
+              "create a message",
+              "create a status",
+              "make a message",
+              "make a status",
+              "make a post",
+              "i need a message"
+            ]
+          }
+        },
+        {
+          "id": "contexto",
+          "texto": {
+            "es": "Conserva quién escribe",
+            "en": "Keeps who's writing"
+          },
+          "rubrica": "El prompt dice quién escribe o qué negocio es: Yolanda, una peluquería o un salón de belleza, o que el mensaje es para sus clientas. No cuenta 'mi negocio' o 'mi local' sin decir de qué es.",
+          "claves": {
+            "es": [
+              "peluqueria",
+              "peluquera",
+              "salon de belleza",
+              "yolanda",
+              "clientas",
+              "estilista"
+            ],
+            "en": [
+              "hair salon",
+              "salon",
+              "hairdresser",
+              "yolanda",
+              "stylist",
+              "my clients"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Los datos de la promo",
+            "en": "The deal's details"
+          },
+          "rubrica": "El prompt trae al menos dos datos concretos de la promo: martes, octubre, corte y cepillado, 30.000 (30 en inglés), sin cita. No cuenta 'la promo' o 'un descuento' sin decir qué incluye, cuándo es ni cuánto cuesta. Decir solo 'la promo de los martes', como en el pedido original, no basta.",
+          "claves": {
+            "es": [
+              "30.000",
+              "30000",
+              "30 mil",
+              "treinta mil",
+              "cepillado",
+              "sin cita",
+              "octubre"
+            ],
+            "en": [
+              "$30",
+              "30 dollars",
+              "blow-dry",
+              "blowdry",
+              "blow dry",
+              "no appointment",
+              "october",
+              "walk-in"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma o el tono",
+            "en": "Format or tone"
+          },
+          "rubrica": "El prompt dice dónde va o qué tan largo es (estado de WhatsApp, un número de líneas, corto) o cómo debe sonar (cercano, amable, alegre, como habla ella). No cuenta 'bonito' ni 'que quede bien': no dicen ni la forma ni el tono.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "estado",
+              "lineas",
+              "renglones",
+              "mensaje corto",
+              "mensaje breve",
+              "cercan",
+              "amable",
+              "alegre",
+              "calido",
+              "como hablo",
+              "como habla",
+              "tono"
+            ],
+            "en": [
+              "whatsapp",
+              "status",
+              "lines",
+              "short message",
+              "brief",
+              "warm",
+              "friendly",
+              "cheerful",
+              "upbeat",
+              "the way i talk",
+              "how i talk",
+              "tone"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a escribir textos para negocios. Responde solo con lo que te pidan, sin explicaciones. Usa únicamente lo que dice el prompt: no supongas qué negocio es ni para quién escribe. Si falta un dato, déjalo entre corchetes, como [precio] o [día], en vez de inventarlo. Si el prompt no dice qué hacer, responde con una explicación general del tema. Si mezcla varios pedidos, responde a todos con una lista corta y genérica, sin inventar precios. Si no pide forma ni tono, escribe un párrafo largo y formal.",
+        "en": "You are an AI that helps write texts for businesses. Reply with only what is asked for, no explanations. Use only what the prompt says: don't assume what the business is or who it's for. If a detail is missing, leave it in brackets, like [price] or [day], instead of making it up. If the prompt doesn't say what to do, reply with a general explanation of the topic. If it mixes several requests, answer all of them with a short, generic list, without making up prices. If it asks for no format and no tone, write a long, formal paragraph."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Vecinas, los martes de octubre son para consentirse.\nCorte y cepillado por $30.000, sin cita.\nLas espero en la peluquería. Yolanda",
+            "en": "Neighbors, October Tuesdays are for treating yourself.\nHaircut and blow-dry for $30, no appointment needed.\nSee you at the salon. Yolanda"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal reparada. Un solo pedido, con verbo, datos y forma. Lo del alisado quedó para otro mensaje y la IA pudo concentrarse en la promo.",
+              "en": "Signal fixed. One request, with a verb, details and format. The keratin question waits for another message, so the AI could focus on the deal."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Claro, aquí tienes algunas ideas:\n1. Promoción de los martes: ofrece [descuento] en [servicio].\n2. Precio del alisado: depende de tu zona y de los productos que uses.\nEspero que te sirva.",
+            "en": "Sure, here are some ideas:\n1. Tuesday promotion: offer [discount] on [service].\n2. Keratin treatment price: it depends on your area and the products you use.\nHope this helps."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: volvió el revuelto, con huecos entre corchetes. Mira la lista: cada error sin reparar se nota en la respuesta.",
+              "en": "Weak signal: the jumble is back, with gaps in brackets. Check the list: every mistake left unfixed shows up in the answer."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Hora de confesar. Yolanda me pidió diagnosticar cinco pedidos de otros negocios del barrio y yo fui muy rápido. Dos de mis diagnósticos están mal. Tócalos.",
+          "en": "Time to come clean. Yolanda asked me to diagnose five requests from other businesses in the neighborhood, and I rushed it. Two of my diagnoses are wrong. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mis cinco diagnósticos",
+        "en": "My five diagnoses"
+      },
+      "trozos": [
+        {
+          "es": "\"Algo sobre los precios nuevos\": el pedido sin verbo. No dice qué hacer.",
+          "en": "\"Something about the new prices\": the verbless request. It doesn't say what to do."
+        },
+        {
+          "es": "\"Escribe un aviso de 3 líneas para la puerta\": el sancocho. Tiene demasiados pedidos.",
+          "en": "\"Write a 3-line sign for the door\": the kitchen sink. It has too many requests."
+        },
+        {
+          "es": "\"Escribe un mensaje para las clientas con el horario nuevo\": los huecos. No dice cuál es el horario.",
+          "en": "\"Write a message for my clients with the new hours\": the gaps. It doesn't say what the hours are."
+        },
+        {
+          "es": "\"Escribe la promo, arma la lista de compras y revisa mis precios\": el sancocho. Son tres pedidos en uno.",
+          "en": "\"Write the promo, make my shopping list and check my prices\": the kitchen sink. That's three requests in one."
+        },
+        {
+          "es": "\"Soy peluquera. Escribe un estado de WhatsApp de 2 líneas, cercano, con la promo: corte a $30.000\": el desconocido. La IA no sabe quién escribe.",
+          "en": "\"I'm a hairdresser. Write a warm, 2-line WhatsApp status with the deal: haircut for $30\": the stranger. The AI doesn't know who's writing."
+        }
+      ],
+      "malos": [
+        1,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. El aviso de la puerta es un solo pedido: le faltan datos, no le sobran pedidos. Y el estado sí dice quién escribe: \"soy peluquera\". Un mal diagnóstico repara la pieza equivocada.",
+          "en": "You got me. The door sign is a single request: it's missing details, not overloaded. And the status does say who's writing: \"I'm a hairdresser.\" A wrong diagnosis fixes the wrong piece."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese diagnóstico sí cuadra. Lee cada pedido y pregúntate si el error que le puse de verdad está ahí.",
+          "en": "That diagnosis checks out. Read each request and ask yourself whether the mistake I named is really there."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cuáles son los errores clásicos, como se lo explicarías a Yolanda.",
+          "en": "Logbook time. Write what the classic mistakes are in your own words, the way you'd explain them to Yolanda."
+        }
+      },
+      "concepto": "errores-clasicos",
+      "definicion": {
+        "es": "Los cinco errores que más dañan un prompt: el pedido sin verbo, el desconocido, los huecos, sin forma ni tono y el sancocho. Cuatro se reparan con una pieza del pedido completo; el sancocho, pidiendo una cosa a la vez.",
+        "en": "The five mistakes that break prompts most: the verbless request, the stranger, the gaps, no format or tone, and the kitchen sink. Four are fixed with a piece of the request; the kitchen sink, with one ask at a time."
+      },
+      "pregunta": {
+        "es": "Los errores clásicos son…",
+        "en": "The classic mistakes are…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "reparaciones",
+        "en": "repairs"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de los errores clásicos y tu pedido reparado ya viven en tu bitácora. En el repaso te los traigo de vuelta.",
+          "en": "Saved. Your Classic Mistakes card and your fixed request now live in your logbook. I'll bring them back in your review."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas cortas y cerramos el taller por hoy.",
+          "en": "Three quick questions and we close the workshop for today."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "\"Hazme un post para mi puesto de jugos, y también el menú de la semana y una respuesta para un cliente molesto.\" ¿Qué error tiene?",
+            "en": "\"Make me a post for my juice stand, plus this week's menu and a reply to an upset customer.\" What's the mistake?"
+          },
+          "opciones": [
+            {
+              "es": "El sancocho",
+              "en": "The kitchen sink"
+            },
+            {
+              "es": "El desconocido",
+              "en": "The stranger"
+            },
+            {
+              "es": "El pedido sin verbo",
+              "en": "The verbless request"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Son tres pedidos en uno. Mejor tres mensajes, uno detrás del otro.",
+              "en": "Right. That's three requests in one. Better to send three messages, one after another."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Esa pieza sí está. Cuenta cuántas cosas pide ese mensaje.",
+              "en": "That piece is there. Count how many things that message asks for."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Tu prompt dio una respuesta con los datos bien, pero larguísima. ¿Qué haces?",
+            "en": "Your prompt got an answer with the right details, but way too long. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Reescribes todo el prompt desde cero",
+              "en": "Rewrite the whole prompt from scratch"
+            },
+            {
+              "es": "Agregas solo la forma: dónde va y cuántas líneas",
+              "en": "Add just the format: where it goes and how many lines"
+            },
+            {
+              "es": "Le agregas más datos",
+              "en": "Add more details"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Diagnosticas el error y reparas solo esa pieza. Lo que servía se queda.",
+              "en": "Exactly. Diagnose the mistake and fix only that piece. What worked stays."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Los datos ya estaban bien. ¿Qué síntoma tiene la respuesta y qué pieza lo causa?",
+              "en": "Hmm. The details were already right. What's the symptom, and which piece causes it?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Por qué conviene pedirle a la IA una cosa a la vez?",
+            "en": "Why is it better to ask the AI for one thing at a time?"
+          },
+          "opciones": [
+            {
+              "es": "Porque la IA solo puede leer una frase",
+              "en": "Because the AI can only read one sentence"
+            },
+            {
+              "es": "Porque así cada respuesta sale completa, no un poquito de todo",
+              "en": "Because each answer comes out complete, not a bit of everything"
+            },
+            {
+              "es": "Porque la IA se cansa con los pedidos largos",
+              "en": "Because the AI gets tired with long requests"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Un pedido a la vez, y la IA se concentra en hacerlo bien.",
+              "en": "Yes. One request at a time, and the AI can focus on getting it right."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Acuérdate de la primera respuesta que recibió Yolanda. ¿Qué le pasó?",
+              "en": "Hmm. Think back to the first answer Yolanda got. What went wrong?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Los errores clásicos",
+        "en": "The classic mistakes"
+      },
+      "resumen": {
+        "es": "Cinco errores que dañan un prompt. Se diagnostican por el síntoma y se reparan con la pieza que falta, sin reescribir todo.",
+        "en": "Five mistakes that break a prompt. Diagnose them by the symptom and fix the missing piece, without rewriting everything."
+      }
+    },
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste cómo se repara un pedido revuelto",
+          "en": "You saw how to fix a jumbled request"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Diagnosticaste cinco señales por su síntoma",
+          "en": "You diagnosed five signals by their symptom"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Reparaste el pedido de la promo de Yolanda",
+          "en": "You fixed Yolanda's request for her deal"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste mis dos diagnósticos equivocados",
+          "en": "You caught my two wrong diagnoses"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "diagnosticar-prompts",
+      "titulo": {
+        "es": "Diagnosticar y reparar prompts",
+        "en": "Diagnosing and fixing prompts"
+      }
+    }
+  }
+}

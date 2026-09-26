@@ -1,0 +1,816 @@
+{
+  "formato": "punti-mision@1",
+  "id": "sensor-y-estacion",
+  "mundo": "automatizaciones",
+  "capitulo": 1,
+  "numero": 2,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "disparador-accion"
+  ],
+  "usaConceptos": [
+    "tarea-repetitiva"
+  ],
+  "titulo": {
+    "es": "Sensor y estación",
+    "en": "Sensor and station"
+  },
+  "resumen": {
+    "es": "Todo flujo es un disparador que se puede ver y acciones concretas en orden: cuando pasa esto, haz aquello.",
+    "en": "Every flow is a trigger you can see plus concrete actions in order: when this happens, do that."
+  },
+  "siguiente": "engranajes-que-ya-tienes",
+  "fuentes": [],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, hay una banda quieta en la sala de engranajes. Es la de Sharon, que tiene un estudio de tatuajes en Barranquilla: a medianoche sigue confirmando citas una por una. Su banda nunca arrancó. Vamos a ver por qué.",
+          "en": "Pilot, there's a belt standing still in the gear room. It's Sharon's. She runs a tattoo studio in Barranquilla and is still confirming bookings one by one at midnight. Her belt never started. Let's find out why."
+        }
+      },
+      "titulo": {
+        "es": "Sensor y estación",
+        "en": "Sensor and station"
+      },
+      "texto": {
+        "es": "Hoy aprendes las dos piezas de todo flujo: el sensor que lo arranca y las estaciones que hacen el trabajo. Unos 9 minutos.",
+        "en": "Today you'll learn the two pieces of every flow: the sensor that starts it and the stations that do the work. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Sharon le escribió esto a la fábrica para armar su banda. Mira qué pasó al correrla. Después mira cómo la arreglamos.",
+          "en": "Sharon sent this to the factory to build her belt. Look at what happened when it ran. Then look at how we fixed it."
+        }
+      },
+      "titulo": {
+        "es": "Dos órdenes para la banda",
+        "en": "Two orders for the belt"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Cuando pueda, que el sistema organice todas mis citas.",
+          "en": "Whenever I can, have the system organize all my bookings."
+        },
+        "salida": {
+          "es": "Sensor: \"cuando pueda\". La banda no arranca: la máquina no puede ver cuándo puedes tú.\nEstación: \"organizar todas las citas\". La estación no sabe qué hacer.",
+          "en": "Sensor: \"whenever I can\". The belt doesn't start: the machine can't see when you can.\nStation: \"organize all my bookings\". The station doesn't know what to do."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "sensor",
+            "texto": {
+              "es": "Cuando alguien llena el formulario de citas, ",
+              "en": "When someone fills out the booking form, "
+            }
+          },
+          {
+            "pieza": "estacion",
+            "texto": {
+              "es": "entonces crear la cita en el calendario con su nombre, el diseño y la fecha, ",
+              "en": "then create the appointment in the calendar with their name, design and date, "
+            }
+          },
+          {
+            "pieza": "estacion",
+            "texto": {
+              "es": "y mandarle un mensaje que diga que la cita quedó.",
+              "en": "and send them a message saying the booking is confirmed."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Sensor: alguien llenó el formulario.\nEstación 1: cita creada en el calendario: viernes, 3 p. m., rosa pequeña.\nEstación 2: mensaje enviado: \"Tu cita quedó para el viernes a las 3 p. m.\"\nLa caja llegó.",
+          "en": "Sensor: someone filled out the form.\nStation 1: appointment created in the calendar: Friday, 3 p.m., small rose.\nStation 2: message sent: \"You're booked for Friday at 3 p.m.\"\nThe box arrived."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Ves los colores? Uno marca el sensor: algo que pasa y la máquina puede ver. El otro marca las estaciones: qué se hace, con un verbo claro.",
+          "en": "See the colors? One marks the sensor: something that happens that the machine can see. The other marks the stations: what gets done, with a clear verb."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Todo flujo, del más sencillo al más grande, tiene estas dos piezas. Toca cada una.",
+          "en": "Every flow, from the simplest to the biggest, has these two pieces. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 2 piezas de toda banda",
+        "en": "The 2 pieces of every belt"
+      },
+      "piezas": [
+        {
+          "id": "sensor",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Sensor (disparador)",
+            "en": "Sensor (trigger)"
+          },
+          "descripcion": {
+            "es": "Algo que pasa y la máquina puede ver.",
+            "en": "Something that happens that the machine can see."
+          },
+          "ejemplo": {
+            "es": "Llega un mensaje, alguien llena un formulario, son las 8 a. m. \"Cuando pueda\" no sirve: eso no lo ve ninguna máquina.",
+            "en": "A message arrives, someone fills out a form, it's 8 a.m. \"Whenever I can\" won't work: no machine can see that."
+          }
+        },
+        {
+          "id": "estacion",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Estación (acción)",
+            "en": "Station (action)"
+          },
+          "descripcion": {
+            "es": "Lo que hace la máquina: un verbo y dónde.",
+            "en": "What the machine does: a verb and where."
+          },
+          "ejemplo": {
+            "es": "\"Crear la cita en el calendario\", \"mandar la confirmación\". \"Organizar todo\" no sirve: la estación no sabe por dónde empezar.",
+            "en": "\"Create the appointment in the calendar\", \"send the confirmation\". \"Organize everything\" won't work: the station doesn't know where to start."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estas frases salieron de los apuntes de Sharon. ¿Cuál es un sensor, cuál una estación y cuál no le sirve a la banda?",
+          "en": "Your turn. These lines come from Sharon's notes. Which is a sensor, which is a station, and which is useless to the belt?"
+        }
+      },
+      "titulo": {
+        "es": "Sensor, estación o deseo",
+        "en": "Sensor, station or wish"
+      },
+      "grupos": [
+        "sensor",
+        "estacion",
+        {
+          "id": "deseo",
+          "titulo": {
+            "es": "No le sirve a la banda",
+            "en": "Useless to the belt"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "sensor",
+          "texto": {
+            "es": "Alguien paga el anticipo de la cita",
+            "en": "Someone pays the booking deposit"
+          }
+        },
+        {
+          "grupo": "estacion",
+          "texto": {
+            "es": "Mandar la dirección del estudio y los cuidados antes de tatuarse",
+            "en": "Send the studio address and the pre-tattoo care tips"
+          }
+        },
+        {
+          "grupo": "deseo",
+          "texto": {
+            "es": "Cuando me sienta menos cansada",
+            "en": "When I feel less tired"
+          }
+        },
+        {
+          "grupo": "sensor",
+          "texto": {
+            "es": "Son las 9 a. m. del día antes de la cita",
+            "en": "It's 9 a.m. the day before the appointment"
+          }
+        },
+        {
+          "grupo": "estacion",
+          "texto": {
+            "es": "Anotar la cita en la hoja del mes",
+            "en": "Add the appointment to this month's sheet"
+          }
+        },
+        {
+          "grupo": "deseo",
+          "texto": {
+            "es": "Encargarse de todo lo de las citas",
+            "en": "Take care of everything about bookings"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Un sensor es algo que pasa; una estación, algo que se hace. Lo demás son deseos.",
+          "en": "Six for six. A sensor is something that happens; a station is something that gets done. The rest are wishes."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿es algo que pasa y se puede ver, algo que se hace, o ninguna de las dos?",
+          "en": "Hmm. Ask yourself: is it something that happens and can be seen, something that gets done, or neither?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno en la banda. Escribe el flujo de citas de Sharon en la forma \"Cuando…, entonces…\". La fábrica lo va a correr con una clienta de prueba.",
+          "en": "Your turn on the belt. Write Sharon's booking flow in the form \"When…, then…\". The factory will run it with a test customer."
+        }
+      },
+      "titulo": {
+        "es": "La banda de citas de Sharon",
+        "en": "Sharon's booking belt"
+      },
+      "reto": {
+        "es": "Datos de Sharon (inventados): en su perfil hay un formulario de citas que pide nombre, diseño y fecha. Ella quiere que cada cita quede en su calendario y que la persona reciba un mensaje de confirmación. Escribe el flujo: Cuando…, entonces…",
+        "en": "Sharon's details (made up): her profile links to a booking form that asks for name, design and date. She wants every appointment to land in her calendar and the person to get a confirmation message. Write the flow: When…, then…"
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "sensor",
+          "texto": {
+            "es": "Un sensor que pasa de verdad",
+            "en": "A trigger that really happens"
+          },
+          "rubrica": "El disparador es un hecho que ocurre y la máquina puede ver: alguien llena o envía el formulario, llega un mensaje, se paga el anticipo, es cierta hora. No cuenta un deseo o un momento vago ('cuando pueda', 'cuando quiera', 'siempre', 'todos los días' sin hora).",
+          "claves": {
+            "es": [
+              "cuando alguien",
+              "cuando una persona",
+              "cuando un cliente",
+              "cuando una clienta",
+              "cuando llega",
+              "cuando llegue",
+              "cuando entra",
+              "cuando se llena",
+              "cuando llenan",
+              "cuando llene",
+              "cuando se envia",
+              "cuando envie",
+              "cuando envian",
+              "cuando reciba",
+              "cuando recibo",
+              "cuando me escrib",
+              "cuando pague",
+              "cuando paguen",
+              "llena el formulario",
+              "llenan el formulario",
+              "envia el formulario"
+            ],
+            "en": [
+              "when someone",
+              "when a customer",
+              "when a client",
+              "when a person",
+              "when a form",
+              "when the form",
+              "when a new",
+              "when i get",
+              "when i receive",
+              "when a message",
+              "fills out",
+              "fills in",
+              "submits",
+              "when they pay",
+              "when someone pays"
+            ]
+          }
+        },
+        {
+          "id": "estacion",
+          "texto": {
+            "es": "Una estación concreta",
+            "en": "A concrete station"
+          },
+          "rubrica": "Hay al menos una acción concreta, con un verbo y un lugar o destinatario: crear la cita en el calendario, mandar la confirmación a la clienta, anotarla en la hoja. No cuenta 'organizar', 'gestionar', 'encargarse' o 'hacer lo necesario'. El disparador (alguien envía el formulario) no es una acción.",
+          "claves": {
+            "es": [
+              "crear",
+              "crea la",
+              "crea el",
+              "creame",
+              "anotar",
+              "anota la",
+              "anotala",
+              "mandar",
+              "mandale",
+              "enviar",
+              "enviale",
+              "guardar",
+              "guarda la",
+              "registrar",
+              "registra la",
+              "poner la cita",
+              "pon la cita",
+              "agregar",
+              "agrega la"
+            ],
+            "en": [
+              "create",
+              "add it",
+              "add the",
+              "add an",
+              "send her",
+              "send him",
+              "send them",
+              "send a",
+              "send the",
+              "log it",
+              "save it",
+              "put it",
+              "put the",
+              "record it"
+            ]
+          }
+        },
+        {
+          "id": "entonces",
+          "texto": {
+            "es": "La forma Cuando…, entonces…",
+            "en": "The When…, then… form"
+          },
+          "rubrica": "La orden sigue la forma 'cuando pasa esto, entonces haz esto', con la acción después del disparador (sirven 'entonces', 'luego', 'después', 'y ahí'). No cuenta una lista de acciones sin decir qué las arranca.",
+          "claves": {
+            "es": [
+              "entonces",
+              "luego",
+              "despues",
+              "y ahi"
+            ],
+            "en": [
+              "then",
+              "after that",
+              "next"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres la banda de prueba de la fábrica de Autómata, un juego para aprender a automatizar. El mensaje de la persona describe un flujo para el estudio de tatuajes inventado de Sharon. Responde en texto plano, máximo 8 renglones. Primero 'Sensor:' con el disparador tal como lo entendiste y 'Estaciones:' numeradas. Luego corre el flujo con este caso: Fulana de Tal llena el formulario y pide cita el viernes a las 3 p. m. para una rosa pequeña. Muestra qué hace cada estación con ese caso. Si el disparador es un deseo o algo que la máquina no puede ver ('cuando pueda', 'siempre'), escribe 'La banda no arranca' y di por qué. Si una acción es vaga ('organizar', 'gestionar', 'encargarse'), escribe que esa estación no sabe qué hacer. Termina con 'La caja llegó' solo si todo funcionó. No agregues pasos que la persona no escribió. No nombres herramientas ni marcas.",
+        "en": "You are the test belt in the Automaton factory, a game for learning to automate. The person's message describes a flow for Sharon's made-up tattoo studio. Reply in plain text, 8 lines at most. First 'Sensor:' with the trigger as you understood it, then numbered 'Stations:'. Then run the flow with this case: Jane Doe fills out the form and books Friday at 3 p.m. for a small rose. Show what each station does with that case. If the trigger is a wish or something the machine can't see ('whenever I can', 'always'), write 'The belt doesn't start' and say why. If an action is vague ('organize', 'manage', 'take care of'), write that the station doesn't know what to do. End with 'The box arrived' only if everything worked. Don't add steps the person didn't write. Don't name tools or brands."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Sensor: alguien llena el formulario de citas.\nEstaciones:\n1. Crear la cita en el calendario con nombre, diseño y fecha.\n2. Mandar a la clienta el mensaje de confirmación.\nPrueba: Fulana de Tal pide el viernes a las 3 p. m., rosa pequeña.\n1. Calendario: viernes 3 p. m., Fulana de Tal, rosa pequeña. Hecho.\n2. Mensaje enviado: \"Tu cita quedó para el viernes a las 3 p. m.\" Hecho.\nLa caja llegó.",
+            "en": "Sensor: someone fills out the booking form.\nStations:\n1. Create the appointment in the calendar with name, design and date.\n2. Send the customer a confirmation message.\nTest: Jane Doe books Friday at 3 p.m., small rose.\n1. Calendar: Friday 3 p.m., Jane Doe, small rose. Done.\n2. Message sent: \"You're booked for Friday at 3 p.m.\" Done.\nThe box arrived."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "La banda arrancó a la primera. Un sensor que se ve, estaciones con verbo, y en orden. Sharon ya puede dormir antes de medianoche.",
+              "en": "The belt started on the first try. A sensor you can see, stations with a verb, in order. Sharon can go to bed before midnight now."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Sensor: \"cuando pueda\".\nLa banda no arranca: la máquina no puede ver cuándo puede Sharon.\nEstaciones:\n1. \"Organizar las citas\". Esta estación no sabe qué hacer: ¿crear, anotar, mandar?",
+            "en": "Sensor: \"whenever she can\".\nThe belt doesn't start: the machine can't see when Sharon can.\nStations:\n1. \"Organize the bookings\". This station doesn't know what to do: create, log, send?"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Banda quieta. Le falta un sensor que la máquina pueda ver o una estación con verbo. Mira la lista y escríbelo como \"Cuando…, entonces…\".",
+              "en": "The belt is standing still. It needs a sensor the machine can see or a station with a verb. Check the list and write it as \"When…, then…\"."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Yo le armé una banda a Sharon la semana pasada y no hizo nada en siete días. Tiene dos partes que la traban. Tócalas.",
+          "en": "Confession time. I built Sharon a belt last week and it did nothing for seven days. Two parts are jamming it. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "La banda de Punti",
+        "en": "Punti's belt"
+      },
+      "trozos": [
+        {
+          "es": "Cuando Sharon tenga un rato libre,",
+          "en": "When Sharon has some free time,"
+        },
+        {
+          "es": "revisar si llegó un formulario nuevo,",
+          "en": "check whether a new form came in,"
+        },
+        {
+          "es": "crear la cita en el calendario",
+          "en": "create the appointment in the calendar"
+        },
+        {
+          "es": "y encargarse de lo demás.",
+          "en": "and take care of the rest."
+        }
+      ],
+      "malos": [
+        0,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. \"Cuando tenga un rato\" no es algo que la máquina pueda ver, así que la banda nunca arrancó. Y \"encargarse de lo demás\" no le dice a la estación qué hacer.",
+          "en": "You got me. \"When she has some free time\" isn't something a machine can see, so the belt never started. And \"take care of the rest\" doesn't tell the station what to do."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte sí funciona. Busca el sensor que ninguna máquina puede ver y la estación que no dice qué hacer.",
+          "en": "That part works. Look for the sensor no machine can see and the station that doesn't say what to do."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Sharon quiere algo más: que la clienta reciba un recordatorio el día antes. Ojo: eso no lo arranca el formulario. Te dejé tu flujo: agrega debajo una segunda banda, con su propio sensor.",
+          "en": "Sharon wants one more thing: a reminder for the customer the day before. Careful: the form doesn't start that one. I left your flow here: add a second belt below it, with its own sensor."
+        }
+      },
+      "titulo": {
+        "es": "Una segunda banda",
+        "en": "A second belt"
+      },
+      "reto": {
+        "es": "Sharon quiere que, el día antes de cada cita, la clienta reciba un recordatorio con la hora de la cita y la dirección del estudio. Agrega esa segunda banda debajo de la primera: Cuando…, entonces…",
+        "en": "Sharon wants the customer to get a reminder the day before every appointment, with the appointment time and the studio address. Add that second belt below the first one: When…, then…"
+      },
+      "inicial": "anterior",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "reloj",
+          "texto": {
+            "es": "Un sensor de reloj",
+            "en": "A clock sensor"
+          },
+          "rubrica": "La nueva banda arranca con un momento que la máquina puede medir: el día antes de la cita, 24 horas antes, a las 9 a. m. del día anterior. No cuenta 'cuando se acuerde' ni usar el formulario como sensor del recordatorio (saldría el día de la reserva, no el día antes).",
+          "claves": {
+            "es": [
+              "dia antes",
+              "el dia anterior",
+              "24 horas",
+              "veinticuatro horas",
+              "horas antes",
+              "noche anterior",
+              "la vispera"
+            ],
+            "en": [
+              "day before",
+              "24 hours",
+              "hours before",
+              "the night before",
+              "the evening before"
+            ]
+          }
+        },
+        {
+          "id": "recordatorio",
+          "texto": {
+            "es": "Una estación que manda el recordatorio",
+            "en": "A station that sends the reminder"
+          },
+          "rubrica": "La nueva banda tiene una acción que le manda el recordatorio a la clienta. No cuenta si solo repite las estaciones de la primera banda (crear la cita, confirmar).",
+          "claves": {
+            "es": [
+              "recordatorio",
+              "recordarle",
+              "recordar",
+              "recuerde"
+            ],
+            "en": [
+              "remind",
+              "reminder"
+            ]
+          }
+        },
+        {
+          "id": "dato",
+          "texto": {
+            "es": "Con la hora o la dirección",
+            "en": "With the time or the address"
+          },
+          "rubrica": "El recordatorio dice qué lleva: la hora de la cita o la dirección del estudio (o las dos). No cuenta 'recordarle la cita' sin decir qué datos lleva el mensaje.",
+          "claves": {
+            "es": [
+              "direccion",
+              "ubicacion",
+              "donde queda",
+              "hora de la cita",
+              "hora de su cita"
+            ],
+            "en": [
+              "address",
+              "location",
+              "where the studio",
+              "appointment time",
+              "time of the appointment",
+              "time of her appointment",
+              "time of their appointment"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres la banda de prueba de la fábrica de Autómata, un juego para aprender a automatizar. El mensaje trae uno o dos flujos para el estudio de tatuajes inventado de Sharon. Corre solo la banda del recordatorio. Datos del caso: Fulana de Tal reservó el lunes una cita para el viernes a las 3 p. m.; el estudio queda en la calle 12 # 34-56; hoy es jueves a las 9 a. m. Responde en texto plano, máximo 8 renglones: 'Sensor:' tal como lo entendiste; 'Arranca hoy:' sí o no, y por qué; 'Estaciones:' y el mensaje exacto que recibe la clienta. Si el recordatorio usa el formulario como sensor, explica que habría salido el lunes, no el día antes. Si el sensor es un deseo ('cuando se acuerde'), escribe 'La banda no arranca'. Si no hay una segunda banda, dilo. El mensaje de la clienta lleva solo los datos que la persona pidió. No agregues pasos que la persona no escribió. No nombres herramientas ni marcas.",
+        "en": "You are the test belt in the Automaton factory, a game for learning to automate. The message contains one or two flows for Sharon's made-up tattoo studio. Run only the reminder belt. Case details: on Monday, Jane Doe booked an appointment for Friday at 3 p.m.; the studio is at 100 Example Street; it's now Thursday, 9 a.m. Reply in plain text, 8 lines at most: 'Sensor:' as you understood it; 'Starts today:' yes or no, and why; 'Stations:' and the exact message the customer gets. If the reminder uses the form as its sensor, explain it would have gone out on Monday, not the day before. If the sensor is a wish ('when she remembers'), write 'The belt doesn't start'. If there's no second belt, say so. The customer's message carries only the details the person asked for. Don't add steps the person didn't write. Don't name tools or brands."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Sensor: el día antes de cada cita, a las 9 a. m.\nArranca hoy: sí. Mañana viernes es la cita de Fulana de Tal.\nEstaciones:\n1. Mandar el recordatorio a la clienta.\nMensaje: \"Hola, Fulana de Tal. Te esperamos mañana a las 3 p. m. en la calle 12 # 34-56.\"\nLa caja llegó.",
+            "en": "Sensor: the day before each appointment, at 9 a.m.\nStarts today: yes. Jane Doe's appointment is tomorrow, Friday.\nStations:\n1. Send the customer a reminder.\nMessage: \"Hi, Jane Doe. See you tomorrow at 3 p.m. at 100 Example Street.\"\nThe box arrived."
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Dos bandas funcionando. A la primera la arranca el formulario; a la segunda, el reloj. Cada banda tiene su propio sensor.",
+              "en": "Two belts running. The form starts the first one; the clock starts the second. Every belt has its own sensor."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Sensor: alguien llena el formulario.\nArranca hoy: no. Ese sensor se disparó el lunes, cuando Fulana de Tal reservó. El recordatorio le llegó cuatro días antes, no el día antes.\nEstaciones:\n1. \"Recordarle.\" No dice qué lleva el mensaje.",
+            "en": "Sensor: someone fills out the form.\nStarts today: no. That sensor fired on Monday, when Jane Doe booked. The reminder reached her four days early, not the day before.\nStations:\n1. \"Remind her.\" It doesn't say what the message contains."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "El recordatorio salió cuatro días antes. Esa banda necesita su propio sensor: el reloj. Mira la lista.",
+              "en": "The reminder went out four days early. That belt needs its own sensor: the clock. Check the list."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué tiene todo flujo, como se lo explicarías a Sharon.",
+          "en": "Into the logbook. Write in your own words what every flow has, the way you'd explain it to Sharon."
+        }
+      },
+      "concepto": "disparador-accion",
+      "definicion": {
+        "es": "Todo flujo es un disparador (algo que pasa y la máquina puede ver) seguido de acciones concretas, en orden: cuando pasa esto, entonces haz aquello.",
+        "en": "Every flow is a trigger (something that happens that the machine can see) followed by concrete actions, in order: when this happens, then do that."
+      },
+      "pregunta": {
+        "es": "Todo flujo tiene…",
+        "en": "Every flow has…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "citas",
+        "en": "bookings"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tus dos bandas de citas quedan en la bitácora. En la próxima misión vas a ver que tus apps ya traen algunas armadas.",
+          "en": "Saved. Your two booking belts are in your logbook. Next mission, you'll see that your apps already come with some belts built in."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas rápidas y aterrizamos.",
+          "en": "Three quick questions and we land."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál de estos sirve como disparador de un flujo?",
+            "en": "Which of these works as a flow trigger?"
+          },
+          "opciones": [
+            {
+              "es": "Cuando tenga tiempo",
+              "en": "When I have time"
+            },
+            {
+              "es": "Cuando alguien envía el formulario",
+              "en": "When someone submits the form"
+            },
+            {
+              "es": "Siempre",
+              "en": "Always"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Es algo que pasa y la máquina lo puede ver.",
+              "en": "Right. It happens and the machine can see it."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Cuál de esos puede ver una máquina?",
+              "en": "Hmm. Which of those could a machine actually see?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "\"Cuando llega un pedido, entonces organizar todo.\" ¿Qué falla?",
+            "en": "\"When an order comes in, then organize everything.\" What's wrong?"
+          },
+          "opciones": [
+            {
+              "es": "El sensor: la máquina no puede ver que llega un pedido",
+              "en": "The sensor: the machine can't see an order arrive"
+            },
+            {
+              "es": "La estación: \"organizar todo\" no dice qué hacer",
+              "en": "The station: \"organize everything\" doesn't say what to do"
+            },
+            {
+              "es": "Nada, está completo",
+              "en": "Nothing, it's complete"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. El sensor está bien; a la estación le falta un verbo concreto.",
+              "en": "Exactly. The sensor is fine; the station needs a concrete verb."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mira la segunda mitad: ¿la estación sabe qué hacer?",
+              "en": "Look at the second half: does the station know what to do?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué arranca la banda del recordatorio del día antes?",
+            "en": "What starts the day-before reminder belt?"
+          },
+          "opciones": [
+            {
+              "es": "El reloj: el día antes de la cita",
+              "en": "The clock: the day before the appointment"
+            },
+            {
+              "es": "El formulario de la cita",
+              "en": "The booking form"
+            },
+            {
+              "es": "La clienta, cuando se acuerde",
+              "en": "The customer, when she remembers"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Otra banda, otro sensor: el reloj.",
+              "en": "Right. Another belt, another sensor: the clock."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Si la arranca el formulario, ¿cuándo sale el recordatorio?",
+              "en": "If the form starts it, when does the reminder go out?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Disparador y acción",
+        "en": "Trigger and action"
+      },
+      "resumen": {
+        "es": "Un sensor que la máquina puede ver arranca la banda; las estaciones hacen cosas concretas, en orden.",
+        "en": "A sensor the machine can see starts the belt; the stations do concrete things, in order."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07",
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste sensores, estaciones y deseos",
+          "en": "You sorted sensors, stations and wishes"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Armaste la banda de citas de Sharon",
+          "en": "You built Sharon's booking belt"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Destrabaste la banda de Punti",
+          "en": "You unjammed Punti's belt"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Le sumaste una banda con sensor de reloj",
+          "en": "You added a belt with a clock sensor"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "armar-disparador-accion",
+      "titulo": {
+        "es": "Armar un flujo cuando-entonces",
+        "en": "Building a when-then flow"
+      }
+    }
+  }
+}

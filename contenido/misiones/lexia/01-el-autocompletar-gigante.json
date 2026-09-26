@@ -1,0 +1,681 @@
+{
+  "formato": "punti-mision@1",
+  "id": "el-autocompletar-gigante",
+  "mundo": "modelos-de-lenguaje",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "modelo-de-lenguaje"
+  ],
+  "usaConceptos": [
+    "ia",
+    "reglas-vs-ejemplos"
+  ],
+  "titulo": {
+    "es": "El autocompletar gigante",
+    "en": "The Giant Autocomplete"
+  },
+  "resumen": {
+    "es": "Qué es un modelo de lenguaje: una máquina que predice qué sigue en un texto, ficha por ficha.",
+    "en": "What a language model is: a machine that predicts what comes next in a text, one token at a time."
+  },
+  "siguiente": "fichas-no-palabras",
+  "fuentes": [
+    {
+      "titulo": "Google for Developers, Machine Learning Crash Course: Introduction to Large Language Models",
+      "url": "https://developers.google.com/machine-learning/resources/intro-llms",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "CSET Georgetown, The Surprising Power of Next Word Prediction: Large Language Models Explained, Part 1",
+      "url": "https://cset.georgetown.edu/article/the-surprising-power-of-next-word-prediction-large-language-models-explained-part-1/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "OpenAI, How ChatGPT and our foundation models are developed (no guarda copias de lo que leyó; predice la siguiente palabra)",
+      "url": "https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Google Research, Federated Learning for Mobile Keyboard Prediction (el teclado predice la siguiente palabra con un modelo de lenguaje)",
+      "url": "https://research.google/pubs/federated-learning-for-mobile-keyboard-prediction-2/",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Te doy la bienvenida a Lexia, piloto, el planeta de las palabras. Lo construí alrededor de una fábrica: todo lo que se dice aquí se corta en fichas pequeñas, y una máquina escoge, una por una, la ficha que sigue.",
+          "en": "Welcome to Lexia, pilot, the planet of words. I built it around a factory: everything said here gets cut into small tokens, and a machine picks, one by one, the token that comes next."
+        }
+      },
+      "titulo": {
+        "es": "El autocompletar gigante",
+        "en": "The Giant Autocomplete"
+      },
+      "texto": {
+        "es": "Llega una señal de Tunja. Don Octavio, escribiente de la plaza, ve que su celular le adivina la siguiente palabra. Quiere saber si eso es pariente de las IA que le nombran sus clientes. Unos 8 minutos.",
+        "en": "A signal comes in from Tunja. Don Octavio, who writes letters for people at the town square, notices his phone guesses his next word. He wonders if it's related to the AIs his clients mention. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Don Octavio tiene buen olfato. Mira cómo trabaja la máquina de la fábrica.",
+          "en": "Don Octavio has a good nose for this. Here's how the factory machine works."
+        }
+      },
+      "titulo": {
+        "es": "Una sola habilidad",
+        "en": "One single skill"
+      },
+      "texto": {
+        "es": "Un modelo de lenguaje aprendió una sola habilidad: predecir qué sigue en un texto. Lee tu mensaje, calcula qué ficha (un pedacito de palabra) probablemente va después, la escribe y vuelve a empezar. Ficha tras ficha arma cartas, resúmenes y chistes. Así funcionan por dentro los chats de IA.",
+        "en": "A language model learned one single skill: predicting what comes next in a text. It reads your message, works out which token (a small piece of a word) probably comes next, writes it and starts again. Token after token, it builds letters, summaries and jokes. That's how AI chats work inside."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Tu mensaje entra",
+            "en": "Your message goes in"
+          },
+          {
+            "es": "Se corta en fichas",
+            "en": "It's cut into tokens"
+          },
+          {
+            "es": "Calcula qué ficha probablemente sigue",
+            "en": "It works out which token probably comes next"
+          },
+          {
+            "es": "La escribe y vuelve a empezar",
+            "en": "It writes it and starts again"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Haz de máquina por un momento. Don Octavio empezó una carta con \"Por medio de la presente me permito…\". ¿Qué palabras seguirían muy probablemente y cuáles serían muy raras?",
+          "en": "Be the machine for a moment. Don Octavio started a letter with \"I am writing to…\". Which words would very likely come next, and which would be really odd?"
+        }
+      },
+      "titulo": {
+        "es": "¿Qué sigue?",
+        "en": "What comes next?"
+      },
+      "grupos": [
+        {
+          "id": "probable",
+          "titulo": {
+            "es": "Muy probable",
+            "en": "Very likely"
+          }
+        },
+        {
+          "id": "raro",
+          "titulo": {
+            "es": "Muy raro",
+            "en": "Really odd"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "probable",
+          "texto": {
+            "es": "\"…me permito solicitarle\"",
+            "en": "\"I am writing to request\""
+          }
+        },
+        {
+          "grupo": "raro",
+          "texto": {
+            "es": "\"…me permito bailarle\"",
+            "en": "\"I am writing to dance\""
+          }
+        },
+        {
+          "grupo": "probable",
+          "texto": {
+            "es": "\"…me permito informarle\"",
+            "en": "\"I am writing to inform you\""
+          }
+        },
+        {
+          "grupo": "raro",
+          "texto": {
+            "es": "\"…me permito empanada\"",
+            "en": "\"I am writing to pineapple\""
+          }
+        },
+        {
+          "grupo": "probable",
+          "texto": {
+            "es": "\"…me permito presentarle\"",
+            "en": "\"I am writing to introduce\""
+          }
+        },
+        {
+          "grupo": "raro",
+          "texto": {
+            "es": "\"…me permito cocinarle\"",
+            "en": "\"I am writing to bake\""
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso hace la máquina. No sabe cuál carta quiere Don Octavio: sabe qué suele venir después de esas palabras, porque lo vio muchísimas veces.",
+          "en": "That's what the machine does. It doesn't know which letter Don Octavio wants: it knows what usually follows those words, because it saw it countless times."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, léelo en voz alta. ¿Lo has visto en cartas de verdad o suena a chiste?",
+          "en": "Hmm, read it out loud. Have you seen that in real letters, or does it sound like a joke?"
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora conoce al primo pequeño de la máquina. Lo tienes en el bolsillo: el teclado de tu celular. Un juego de un minuto.",
+          "en": "Now meet the machine's little cousin. It's in your pocket: your phone's keyboard. A one-minute game."
+        }
+      },
+      "titulo": {
+        "es": "El juego del teclado",
+        "en": "The keyboard game"
+      },
+      "instruccion": {
+        "es": "Abre una nota en tu celular, no un chat, para no enviar nada. Escribe \"Mañana voy a\" y toca diez veces seguidas la palabra que te sugiere el teclado arriba de las letras. Lee la frase que salió. Si tu teclado no muestra sugerencias, puedes saltarte este paso.",
+        "en": "Open a note on your phone, not a chat, so nothing gets sent. Type \"Tomorrow I'm going to\" and tap the word your keyboard suggests above the letters ten times in a row. Read the sentence you get. If your keyboard shows no suggestions, you can skip this step."
+      },
+      "checks": [
+        {
+          "es": "Toqué la sugerencia del teclado diez veces",
+          "en": "I tapped the keyboard's suggestion ten times"
+        },
+        {
+          "es": "Leí la frase que armó el teclado",
+          "en": "I read the sentence the keyboard built"
+        },
+        {
+          "es": "Me fijé si suena a cosas que yo escribo",
+          "en": "I noticed whether it sounds like things I write"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Te salió una frase rara, pero con palabras que tú usas? Ese es el primo pequeño. Mira en qué se parece al grande.",
+          "en": "Did you get an odd sentence, but with words you actually use? That's the little cousin. Here's how it compares to the big one."
+        }
+      },
+      "titulo": {
+        "es": "El primo pequeño",
+        "en": "The little cousin"
+      },
+      "texto": {
+        "es": "Los dos hacen lo mismo: predecir lo que sigue. El modelo grande aprendió de muchísimo más texto y mira mucho más de lo que escribiste. Por eso termina una carta entera y no solo una palabra. Esta es la versión sencilla: a los asistentes de chat además les enseñan a conversar. Eso lo ves en la misión 4.",
+        "en": "Both do the same thing: predict what comes next. The big model learned from far more text and looks at much more of what you wrote. That's why it can finish a whole letter, not just one word. This is the simple version: chat assistants are also taught to hold a conversation. You'll see that in Mission 4."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "El teclado del celular",
+            "en": "Your phone's keyboard"
+          },
+          "b": {
+            "es": "Un modelo de lenguaje",
+            "en": "A language model"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Mira las últimas palabras que escribiste",
+              "en": "Looks at your last few words"
+            },
+            "b": {
+              "es": "Mira todo tu mensaje y la conversación",
+              "en": "Looks at your whole message and the chat"
+            }
+          },
+          {
+            "a": {
+              "es": "Te sugiere una palabra y tú escoges",
+              "en": "Suggests a word and you pick"
+            },
+            "b": {
+              "es": "Escoge ficha tras ficha hasta terminar",
+              "en": "Picks token after token until it's done"
+            }
+          },
+          {
+            "a": {
+              "es": "Pequeño: trabaja dentro de tu celular",
+              "en": "Small: runs inside your phone"
+            },
+            "b": {
+              "es": "Gigante: suele correr en computadores enormes",
+              "en": "Huge: usually runs on giant computers"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Le expliqué esto a Don Octavio y él frunció el ceño. Creo que dos partes de mi explicación están mal. Tócalas.",
+          "en": "I explained this to Don Octavio and he frowned. I think two parts of my explanation are wrong. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "La explicación de Punti",
+        "en": "Punti's explanation"
+      },
+      "trozos": [
+        {
+          "es": "Un modelo de lenguaje leyó muchísimo texto durante su entrenamiento.",
+          "en": "A language model read a huge amount of text during its training."
+        },
+        {
+          "es": "Cuando le pides algo, busca la respuesta en una base de datos gigante",
+          "en": "When you ask for something, it looks up the answer in a giant database"
+        },
+        {
+          "es": "y te copia la carta que encuentra guardada.",
+          "en": "and copies you the letter it finds stored there."
+        },
+        {
+          "es": "Va armando lo que te responde ficha por ficha.",
+          "en": "It builds what it tells you token by token."
+        }
+      ],
+      "malos": [
+        1,
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. El modelo no guarda las cartas que leyó ni las busca: se quedó con los patrones y predice qué sigue. Algunas apps además buscan en internet, pero eso es otra pieza.",
+          "en": "You got me. The model doesn't keep the letters it read or look them up: it kept the patterns and predicts what comes next. Some apps also search the web, but that's a separate piece."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte está bien. Busca las que hablan de guardar y buscar cosas.",
+          "en": "That part is fine. Look for the ones about storing and looking things up."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Dale a la IA el comienzo de la carta de Don Octavio y pídele que te muestre cómo lo seguiría. Así ves la máquina por dentro.",
+          "en": "Your turn. Give the AI the start of Don Octavio's letter and ask it to show how it would continue. That way you see the machine from the inside."
+        }
+      },
+      "titulo": {
+        "es": "La carta a medias",
+        "en": "The half-written letter"
+      },
+      "reto": {
+        "es": "Don Octavio empezó esta carta y se quedó pensando: \"Señora rectora: por medio de la presente me permito solicitarle muy respetuosamente\". Pídele a la IA tres formas probables de seguir, ordenadas de la más a la menos probable.",
+        "en": "Don Octavio started this letter and paused: \"Dear Principal: I am writing to respectfully request\". Ask the AI for three likely ways to continue it, ordered from most to least likely."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "comienzo",
+          "texto": {
+            "es": "Trae el comienzo de la carta",
+            "en": "Includes the start of the letter"
+          },
+          "rubrica": "El prompt incluye un comienzo de texto sin terminar para que la IA lo siga (el de la carta del reto u otro parecido, copiado dentro del prompt). No cuenta pedir 'una carta a la rectora' o 'la carta completa' sin pegar el comienzo, ni nombrar la carta sin copiar sus palabras.",
+          "claves": {
+            "es": [
+              "por medio de la presente",
+              "me permito",
+              "respetuosamente",
+              "senora rectora:"
+            ],
+            "en": [
+              "i am writing to",
+              "writing to respectfully",
+              "respectfully request",
+              "dear principal:"
+            ]
+          }
+        },
+        {
+          "id": "varias",
+          "texto": {
+            "es": "Pide varias formas de seguir",
+            "en": "Asks for several ways to go on"
+          },
+          "rubrica": "El prompt pide varias continuaciones distintas del mismo comienzo (al menos dos; lo ideal, tres). No cuenta pedir una sola continuación, ni pedir la carta en varios párrafos o en varias partes.",
+          "claves": {
+            "es": [
+              "tres formas",
+              "3 formas",
+              "tres maneras",
+              "3 maneras",
+              "tres opciones",
+              "3 opciones",
+              "tres continuaciones",
+              "3 continuaciones",
+              "tres posibles",
+              "3 posibles",
+              "varias formas",
+              "varias maneras",
+              "varias opciones",
+              "varias continuaciones",
+              "tres versiones",
+              "3 versiones"
+            ],
+            "en": [
+              "three ways",
+              "3 ways",
+              "three options",
+              "3 options",
+              "three continuations",
+              "3 continuations",
+              "three possible",
+              "3 possible",
+              "several ways",
+              "several options",
+              "three versions",
+              "3 versions",
+              "three likely",
+              "3 likely"
+            ]
+          }
+        },
+        {
+          "id": "orden",
+          "texto": {
+            "es": "Pide ordenarlas por probabilidad",
+            "en": "Asks to rank them by likelihood"
+          },
+          "rubrica": "El prompt pide ordenar las continuaciones según qué tan probables o esperables son (de la más a la menos probable, o marcar cuál es la más probable). No cuenta pedir 'formas probables' sin pedir un orden, ni ordenarlas por otro criterio (la más bonita, la más corta).",
+          "claves": {
+            "es": [
+              "mas probable",
+              "menos probable",
+              "mas a menos",
+              "probabilidad",
+              "mas esperable",
+              "mas comun",
+              "mas probables primero"
+            ],
+            "en": [
+              "most likely",
+              "least likely",
+              "most to least",
+              "most probable",
+              "least probable",
+              "likelihood",
+              "probability",
+              "likeliest",
+              "most expected"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un modelo de lenguaje que muestra cómo predice un texto. Si el prompt trae un comienzo sin terminar y pide continuaciones, responde solo con continuaciones cortas, una por línea y numeradas, sin repetir el comienzo. Si pide ordenarlas por probabilidad, ordénalas y agrega al final una línea que diga que el orden es ilustrativo: es una estimación, no un porcentaje medido. Si no trae el comienzo, escribe una carta corta y genérica con huecos entre corchetes, como [nombre] o [motivo]. No uses nombres ni datos reales.",
+        "en": "You are a language model showing how it predicts text. If the prompt includes an unfinished opening and asks for continuations, reply only with short continuations, one per line and numbered, without repeating the opening. If it asks you to order them by likelihood, do so and add a final line saying the order is illustrative: an estimate, not a measured percentage. If there is no opening, write a short, generic letter with gaps in square brackets, like [name] or [reason]. Don't use real names or details."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. …la expedición de un certificado de estudios de mi nieto.\n2. …una cita para hablar sobre el rendimiento de mi nieto.\n3. …que se revise la nota final del segundo periodo.\n\nEl orden es ilustrativo: es mi estimación de qué suele seguir en cartas como esta, no un porcentaje medido.",
+            "en": "1. …a copy of my grandson's school records.\n2. …a meeting to discuss my grandson's progress.\n3. …a review of his final grade for the second term.\n\nThe order is illustrative: it's my estimate of what usually follows in letters like this, not a measured percentage."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Ahí está la máquina por dentro. Le diste el comienzo y te mostró lo que suele seguir, de lo más común a lo menos. Eso hace con cada ficha.",
+              "en": "There's the machine from the inside. You gave it the start and it showed you what usually follows, from most common to least. It does that with every token."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Señora rectora:\n\nPor medio de la presente me permito solicitarle [motivo de la solicitud]. Agradezco de antemano su atención.\n\nAtentamente,\n[nombre]",
+            "en": "Dear Principal,\n\nI am writing to request [reason for the request]. Thank you in advance for your attention.\n\nSincerely,\n[name]"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA te escribió una carta, pero no viste la máquina por dentro. Mira la lista: ¿le pegaste el comienzo? ¿Pediste varias formas de seguir y su orden?",
+              "en": "The AI wrote you a letter, but you didn't see the machine from the inside. Check the list: did you paste the opening? Did you ask for several ways to continue, and their order?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Primera nota de Lexia en tu bitácora. Explica con tus palabras qué es un modelo de lenguaje, como se lo dirías a Don Octavio en la plaza.",
+          "en": "Your first Lexia entry in your logbook. Explain what a language model is in your own words, the way you'd tell Don Octavio at the square."
+        }
+      },
+      "concepto": "modelo-de-lenguaje",
+      "definicion": {
+        "es": "Un programa que aprendió de muchísimo texto a predecir qué sigue. Arma sus respuestas ficha por ficha, escogiendo cada vez una que probablemente va después.",
+        "en": "A program that learned from a huge amount of text to predict what comes next. It builds its answers token by token, each time picking one that probably comes next."
+      },
+      "pregunta": {
+        "es": "Un modelo de lenguaje es…",
+        "en": "A language model is…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "ver cómo predice",
+        "en": "see how it predicts"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado, con tu prompt de la carta. Te lo traigo de vuelta en el repaso. Y cada vez que tu teclado te sugiera una palabra, ya sabes quién es el primo.",
+          "en": "Saved, along with your letter prompt. I'll bring it back in your review. And every time your keyboard suggests a word, you'll know who the cousin is."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y le mandamos la respuesta a Don Octavio.",
+          "en": "Two questions and we send Don Octavio his answer."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué aprendió a hacer un modelo de lenguaje?",
+            "en": "What did a language model learn to do?"
+          },
+          "opciones": [
+            {
+              "es": "Buscar respuestas guardadas en una base de datos",
+              "en": "Look up stored answers in a database"
+            },
+            {
+              "es": "Predecir qué sigue en un texto, ficha por ficha",
+              "en": "Predict what comes next in a text, token by token"
+            },
+            {
+              "es": "Copiar textos de internet palabra por palabra",
+              "en": "Copy texts from the internet word for word"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Una sola habilidad, repetida muchísimas veces.",
+              "en": "Right. One single skill, repeated a huge number of times."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Acuérdate de la carta: ¿la buscó o la fue prediciendo?",
+              "en": "Hmm. Think back to the letter: did it look it up, or predict it as it went?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué tienen en común el teclado del celular y un modelo de lenguaje?",
+            "en": "What do your phone's keyboard and a language model have in common?"
+          },
+          "opciones": [
+            {
+              "es": "Los dos buscan en internet antes de sugerir",
+              "en": "Both search the internet before suggesting"
+            },
+            {
+              "es": "Los dos entienden lo que sientes al escribir",
+              "en": "Both understand how you feel as you type"
+            },
+            {
+              "es": "Los dos predicen lo que probablemente sigue",
+              "en": "Both predict what probably comes next"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. El grande leyó mucho más y mira mucho más, pero la idea es la misma.",
+              "en": "Exactly. The big one read far more and looks at far more, but it's the same idea."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Piensa en el juego del teclado: ¿qué hacía cada vez que tocabas?",
+              "en": "Not that. Think about the keyboard game: what did it do each time you tapped?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "El modelo de lenguaje",
+        "en": "The language model"
+      },
+      "resumen": {
+        "es": "Un programa que aprendió a predecir qué sigue en un texto. Arma cada respuesta ficha por ficha.",
+        "en": "A program that learned to predict what comes next in a text. It builds each answer token by token."
+      }
+    },
+    "mejorPrompt": [
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Predijiste como la máquina qué sigue en una carta",
+          "en": "You predicted what comes next in a letter, like the machine"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Jugaste con el primo pequeño: tu teclado",
+          "en": "You played with the little cousin: your keyboard"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste a Punti con la base de datos",
+          "en": "You caught Punti with the database myth"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Viste a la IA predecir la carta de Don Octavio",
+          "en": "You watched the AI predict Don Octavio's letter"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "entender-la-prediccion",
+      "titulo": {
+        "es": "Entender cómo predice",
+        "en": "Understanding prediction"
+      }
+    }
+  }
+}

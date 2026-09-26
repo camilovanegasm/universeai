@@ -1,0 +1,990 @@
+{
+  "formato": "punti-mision@1",
+  "id": "protocolo-antiestafas",
+  "mundo": "etica-y-seguridad",
+  "capitulo": 1,
+  "numero": 6,
+  "receta": "habilidad",
+  "largo": "proyecto",
+  "minutos": 18,
+  "conceptos": [
+    "protocolo-antiestafas"
+  ],
+  "usaConceptos": [
+    "voz-clonada",
+    "deepfake-inversion",
+    "segundo-canal",
+    "phishing-con-ia",
+    "detectar-contenido-ia"
+  ],
+  "titulo": {
+    "es": "Protocolo antiestafas de tu familia",
+    "en": "Your Family's Anti-Scam Plan"
+  },
+  "resumen": {
+    "es": "Tu proyecto del capítulo: una tarjeta con los pasos, lo que nunca se da, tus contactos y a quién reportar.",
+    "en": "Your chapter project: a card with the steps, what never gets shared, your contacts and where to report."
+  },
+  "siguiente": "lo-que-la-app-guarda",
+  "fuentes": [
+    {
+      "titulo": "Policía Nacional: denunciar extorsión, línea 165 del Gaula",
+      "url": "https://www.policia.gov.co/denunciar-extorsion",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Policía Nacional: denunciar delitos informáticos (A Denunciar)",
+      "url": "https://www.policia.gov.co/denunciar-delitos-informaticos",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "CAI Virtual de la Policía Nacional (DIJIN)",
+      "url": "https://caivirtual.policia.gov.co/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Policía Nacional: la línea 123 reúne todos los servicios de emergencia (12 mar. 2023)",
+      "url": "https://www.policia.gov.co/noticia/policia-nacional-sensibiliza-comunidad-sobre-uso-las-lineas-emergencia-123-155",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "FTC: Scammers use AI to enhance their family emergency schemes (20 mar. 2023)",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, ya pasaste por todas las tormentas de El faro. Ahora armas algo para los tuyos: una brújula de bolsillo que cabe en una tarjeta.",
+          "en": "Pilot, you've made it through every storm at the Lighthouse. Now you build something for your people: a pocket compass that fits on a card."
+        }
+      },
+      "titulo": {
+        "es": "Protocolo antiestafas de tu familia",
+        "en": "Your Family's Anti-Scam Plan"
+      },
+      "texto": {
+        "es": "Es el proyecto del capítulo 1. Con la IA como asistente armas una tarjeta para tu familia: qué hacer, qué no se da nunca, a quién llamar y a quién reportar. Unos 18 minutos.",
+        "en": "It's the Chapter 1 project. With the AI as your assistant, you'll build a card for your family: what to do, what never to give out, who to call and where to report. About 18 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué lleva la tarjeta. Son cinco partes, y ya conoces todas.",
+          "en": "First, what goes on the card. Five parts, and you already know all of them."
+        }
+      },
+      "titulo": {
+        "es": "Lo que lleva tu tarjeta",
+        "en": "What goes on your card"
+      },
+      "texto": {
+        "es": "Una estafa gana cuando te agarra sin plan. Con una tarjeta a mano, nadie tiene que pensar bajo presión: la lee y la sigue. La IA te ayuda a redactarla. Los datos de verdad, como los números de tu familia, los escribes tú a mano, nunca en el prompt.",
+        "en": "A scam wins when it catches you without a plan. With a card at hand, nobody has to think under pressure: they read it and follow it. The AI helps you write it. The real details, like your family's phone numbers, you write in by hand, never in the prompt."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "La palabra de seguridad (se acuerda, no se escribe)",
+            "en": "The safe word (agreed on, never written)"
+          },
+          {
+            "es": "Los pasos: cuelga, llama, pregunta",
+            "en": "The steps: hang up, call, ask"
+          },
+          {
+            "es": "Lo que no se comparte nunca",
+            "en": "What you never share"
+          },
+          {
+            "es": "5 contactos de confianza",
+            "en": "5 trusted contacts"
+          },
+          {
+            "es": "A quién reportar",
+            "en": "Where to report"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las piezas de tu tarjeta. Toca cada una: son las mismas que va a revisar cada laboratorio.",
+          "en": "These are the pieces of your card. Tap each one: they're the same ones each lab will check."
+        }
+      },
+      "titulo": {
+        "es": "Las piezas de la tarjeta",
+        "en": "The pieces of the card"
+      },
+      "piezas": [
+        {
+          "id": "pasos",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Cuelga, llama, pregunta",
+            "en": "Hang up, call, ask"
+          },
+          "descripcion": {
+            "es": "Los tres pasos cuando piden plata con prisa.",
+            "en": "The three steps when someone asks for money in a rush."
+          },
+          "ejemplo": {
+            "es": "Lo aprendiste con Doña Hermelinda. Cuelga, llama al número de siempre y pregunta la palabra de seguridad.",
+            "en": "You learned it with Doña Hermelinda. Hang up, call the usual number and ask for the safe word."
+          }
+        },
+        {
+          "id": "nunca",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Lo que nunca se da",
+            "en": "What you never give out"
+          },
+          "descripcion": {
+            "es": "Códigos por SMS, claves, PIN, datos de tarjetas.",
+            "en": "Text codes, passwords, PINs, card details."
+          },
+          "ejemplo": {
+            "es": "Lo viste con Marisela. Ni al banco, ni a una clienta, ni a un familiar: esos datos no se dan por mensaje.",
+            "en": "You saw it with Marisela. Not to the bank, not to a customer, not to family: those details never go out by message."
+          }
+        },
+        {
+          "id": "contactos",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Contactos de confianza",
+            "en": "Trusted contacts"
+          },
+          "descripcion": {
+            "es": "Cinco personas y su número de siempre, escritos a mano.",
+            "en": "Five people and their usual numbers, written by hand."
+          },
+          "ejemplo": {
+            "es": "En el prompt van como [nombre] y [número]. Los de verdad los escribes tú en la tarjeta impresa.",
+            "en": "In the prompt they go in as [name] and [number]. You write the real ones on the printed card."
+          }
+        },
+        {
+          "id": "reportar",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "A quién reportar",
+            "en": "Where to report"
+          },
+          "descripcion": {
+            "es": "Las líneas oficiales y la de tu banco.",
+            "en": "The official lines and your bank's line."
+          },
+          "ejemplo": {
+            "es": "Si pagaste, primero tu banco. Después, la denuncia. En la pantalla viva tienes las rutas de hoy.",
+            "en": "If you paid, call your bank first. Then report it. The live screen has today's options."
+          }
+        },
+        {
+          "id": "tarjeta",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "Formato de tarjeta",
+            "en": "Card format"
+          },
+          "descripcion": {
+            "es": "Corta, con título, fácil de imprimir o compartir.",
+            "en": "Short, with a title, easy to print or share."
+          },
+          "ejemplo": {
+            "es": "Si no cabe en una tarjeta, nadie la va a leer en medio del susto.",
+            "en": "If it doesn't fit on a card, nobody will read it in the middle of a scare."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "caso",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de escribir, una decisión de familia. La palabra de seguridad es la pieza más delicada. ¿Dónde vive?",
+          "en": "Before writing, a family decision. The safe word is the most delicate piece. Where does it live?"
+        }
+      },
+      "titulo": {
+        "es": "¿Dónde vive la palabra?",
+        "en": "Where does the word live?"
+      },
+      "escena": {
+        "es": "Tu familia ya escogió su palabra de seguridad. Tu prima propone: \"Pongámosla en el grupo de WhatsApp para que nadie la olvide\". Tu tío dice: \"Mejor en la tarjeta, junto a los números\". ¿Qué deciden?",
+        "en": "Your family has picked its safe word. Your cousin suggests: \"Let's post it in the family group chat so nobody forgets.\" Your uncle says: \"Better on the card, next to the numbers.\" What do you decide?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "En el grupo de la familia, así está a mano",
+            "en": "In the family group chat, so it's handy"
+          },
+          "consecuencia": {
+            "es": "Cualquiera que entre al grupo, o a un celular robado, la lee. Una palabra escrita en un chat se puede copiar.",
+            "en": "Anyone who gets into the group, or into a stolen phone, can read it. A word written in a chat can be copied."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "En la tarjeta, junto a los números",
+            "en": "On the card, next to the numbers"
+          },
+          "consecuencia": {
+            "es": "La tarjeta se comparte y se imprime. Si la palabra va ahí, viaja con ella.",
+            "en": "The card gets shared and printed. If the word is on it, it travels with it."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Se acuerda en persona y cada uno la guarda en la cabeza",
+            "en": "Agree on it in person, and everyone keeps it in their head"
+          },
+          "consecuencia": {
+            "es": "No queda en ningún celular ni papel. Si alguien la olvida, se la recuerdan en persona.",
+            "en": "It isn't on any phone or paper. If someone forgets it, they get reminded in person."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Norte fijo: la palabra de seguridad no se escribe en la tarjeta, ni en el chat, ni en el prompt. La tarjeta solo dice \"pregunta la palabra\".",
+          "en": "True north: the safe word doesn't go on the card, in the chat or in the prompt. The card only says \"ask for the word.\""
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Estas son las rutas oficiales en Colombia, revisadas hoy. Las direcciones cambian, así que míralas otra vez antes de imprimir tu tarjeta.",
+          "en": "These are the official options in Colombia, checked today. Web addresses change, so look again before you print your card."
+        }
+      },
+      "titulo": {
+        "es": "A quién reportar en Colombia",
+        "en": "Where to report in Colombia"
+      },
+      "texto": {
+        "es": "Si pagaste o diste datos del banco, llama primero a tu banco por su línea oficial: la de la app o la que está detrás de tu tarjeta. Después pon la denuncia. Las demás rutas son de la Policía Nacional. Si vives en otro país, busca las equivalentes y anótalas.",
+        "en": "If you paid or gave out bank details, call your bank first on its official line: the one in the app or on the back of your card. Then file a report. The other options belong to Colombia's National Police. If you live in another country, look up the equivalents and write them down."
+      },
+      "revisado": "2026-09-24",
+      "tabla": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Qué pasó",
+            "en": "What happened"
+          },
+          "b": {
+            "es": "A dónde acudir",
+            "en": "Where to go"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Hay peligro ahora mismo",
+              "en": "Someone is in danger right now"
+            },
+            "b": {
+              "es": "Línea 123",
+              "en": "Line 123"
+            }
+          },
+          {
+            "a": {
+              "es": "Amenaza, extorsión o \"secuestro\" por teléfono",
+              "en": "Threats, extortion or a \"kidnapping\" call"
+            },
+            "b": {
+              "es": "Línea 165 del Gaula, gratuita",
+              "en": "Line 165 (Gaula police unit), free"
+            }
+          },
+          {
+            "a": {
+              "es": "Estafa o delito por internet",
+              "en": "Online scam or cybercrime"
+            },
+            "b": {
+              "es": "CAI Virtual (caivirtual.policia.gov.co) y denuncia en A Denunciar (adenunciar.policia.gov.co)",
+              "en": "CAI Virtual (caivirtual.policia.gov.co) and a report on A Denunciar (adenunciar.policia.gov.co)"
+            }
+          },
+          {
+            "a": {
+              "es": "Pagaste o diste datos del banco",
+              "en": "You paid or gave out bank details"
+            },
+            "b": {
+              "es": "La línea oficial de tu banco",
+              "en": "Your bank's official line"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primer laboratorio del proyecto. Pídele a la IA la primera parte de la tarjeta: qué hacer y qué nunca dar, con palabras de casa.",
+          "en": "First lab of the project. Ask the AI for the first part of the card: what to do and what never to give out, in everyday words."
+        }
+      },
+      "titulo": {
+        "es": "Qué hacer y qué nunca dar",
+        "en": "What to do, what never to give"
+      },
+      "reto": {
+        "es": "Tu familia, real o inventada. Pídele a la IA dos cosas para la tarjeta: los pasos para cuando llegue una llamada, un audio o un mensaje pidiendo plata con prisa, y la lista de lo que no se comparte nunca. Sin nombres ni números reales.",
+        "en": "Your family, real or made up. Ask the AI for two things for the card: the steps for when a call, voice note or message asks for money in a rush, and the list of what you never share. No real names or numbers."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "pasos",
+          "texto": {
+            "es": "Los pasos: cuelga, llama, pregunta",
+            "en": "The steps: hang up, call, ask"
+          },
+          "rubrica": "El prompt pide los pasos de la tarjeta y nombra al menos dos de estos tres: colgar o no responder por ese chat, llamar al número guardado de siempre, preguntar la palabra de seguridad. No cuenta pedir 'qué hacer en caso de estafa' sin nombrar ningún paso.",
+          "claves": {
+            "es": [
+              "cuelg",
+              "colgar",
+              "llama al",
+              "llamar al",
+              "llamarlo",
+              "llamarla",
+              "palabra de seguridad",
+              "numero de siempre",
+              "numero guardado"
+            ],
+            "en": [
+              "hang up",
+              "call the usual",
+              "call their",
+              "call them",
+              "call him",
+              "call her",
+              "safe word",
+              "usual number",
+              "saved number",
+              "call the saved"
+            ]
+          }
+        },
+        {
+          "id": "nunca",
+          "texto": {
+            "es": "Lo que no se comparte nunca",
+            "en": "What you never share"
+          },
+          "rubrica": "El prompt pide la lista de lo que no se comparte nunca y nombra al menos uno: códigos que llegan por SMS, claves, PIN o datos de tarjetas. No cuenta 'cuidar los datos' en general sin nombrar ninguno.",
+          "claves": {
+            "es": [
+              "codigo",
+              "claves",
+              "la clave",
+              "tu clave",
+              "contrasena",
+              "datos de la tarjeta",
+              "numero de la tarjeta",
+              " pin ",
+              " pin,",
+              " pin.",
+              "el pin",
+              "los pin",
+              "pines"
+            ],
+            "en": [
+              "verification code",
+              "codes",
+              "sms code",
+              "text code",
+              "passcode",
+              "password",
+              "card number",
+              "card details",
+              " pin ",
+              " pin,",
+              " pin.",
+              " pins",
+              "pin number",
+              "pin code"
+            ]
+          }
+        },
+        {
+          "id": "claro",
+          "texto": {
+            "es": "Fácil de leer para tu familia",
+            "en": "Easy for your family to read"
+          },
+          "rubrica": "El prompt pide que el texto sea fácil para la familia: frases cortas, palabras sencillas, pensado para personas mayores o para que quepa en una tarjeta. No cuenta solo 'hazlo bonito' o 'profesional'.",
+          "claves": {
+            "es": [
+              "corto",
+              "cortas",
+              "sencill",
+              "simple",
+              "facil",
+              "personas mayores",
+              "abuel",
+              "mis papas",
+              "mi mama",
+              "mi papa",
+              "que quepa"
+            ],
+            "en": [
+              "short",
+              "simple",
+              "easy",
+              "plain",
+              "older",
+              "grandma",
+              "grandpa",
+              "grandparent",
+              "my parents",
+              "my mom",
+              "my dad",
+              "fits on"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una familia a armar una tarjeta contra estafas. Escribe solo lo que pide el prompt, en viñetas cortas. Si el prompt trae nombres, teléfonos o cuentas que parezcan reales, no los copies: pon un marcador como [nombre] o [número] y avisa en una línea que es mejor llenarlos a mano. Nunca escribas una palabra de seguridad: si te la piden, di que se acuerda en persona. No inventes teléfonos, líneas ni entidades.",
+        "en": "You are an AI that helps a family put together an anti-scam card. Write only what the prompt asks for, in short bullet points. If the prompt includes names, phone numbers or accounts that look real, don't copy them: use a placeholder like [name] or [number] and say in one line that it's better to fill them in by hand. Never write a safe word: if asked for one, say it's agreed on in person. Don't make up phone numbers, hotlines or organizations."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Si te llaman o te mandan un audio pidiendo plata con prisa:\n1. Cuelga. No respondas por ese mismo chat.\n2. Llama tú al número de siempre de esa persona.\n3. Pregunta la palabra de seguridad.\nNunca se comparte, con nadie:\n- Códigos que llegan por mensaje\n- Claves y PIN\n- Datos de la tarjeta",
+            "en": "If someone calls or sends a voice note asking for money in a rush:\n1. Hang up. Don't reply in that same chat.\n2. Call that person's usual number yourself.\n3. Ask for the safe word.\nNever share, with anyone:\n- Codes you get by text\n- Passwords and PINs\n- Card details"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Primera parte lista. Pasos que se siguen en medio del susto y una lista que cualquiera entiende.",
+              "en": "Part one done. Steps you can follow in the middle of a scare, and a list anyone can understand."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Consejos de seguridad:\n- Ten cuidado con los mensajes sospechosos.\n- Protege tus datos personales.\n- Si algo parece raro, desconfía.",
+            "en": "Safety tips:\n- Be careful with suspicious messages.\n- Protect your personal information.\n- If something seems off, don't trust it."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Suena sabio, pero nadie sabe qué hacer con \"ten cuidado\". Mira la lista: pasos concretos, qué no se da y palabras de casa.",
+              "en": "Sounds wise, but nobody knows what to do with \"be careful.\" Check the list: specific steps, what not to give out and everyday words."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Mientras escribías, yo hice el borrador de mi propia tarjeta. Dos líneas me quedaron mal, y son de las peligrosas. Tócalas.",
+          "en": "While you were writing, I drafted my own card. Two lines came out wrong, and they're the dangerous kind. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "La tarjeta de Punti",
+        "en": "Punti's card"
+      },
+      "trozos": [
+        {
+          "es": "Si piden plata con prisa: cuelga y llama al número de siempre.",
+          "en": "If someone asks for money in a rush: hang up and call the usual number."
+        },
+        {
+          "es": "Palabra de seguridad: guayaba (no se la digas a nadie).",
+          "en": "Safe word: guava (don't tell anyone)."
+        },
+        {
+          "es": "Nunca compartas códigos que te lleguen por mensaje,",
+          "en": "Never share codes you get by text,"
+        },
+        {
+          "es": "salvo que te los pida alguien del banco.",
+          "en": "unless someone from the bank asks for them."
+        },
+        {
+          "es": "Si pagaste, llama de una a tu banco.",
+          "en": "If you paid, call your bank right away."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste dos veces. Una palabra escrita en la tarjeta ya no es secreta. Y el \"salvo que\" es justo la puerta que usa la estafa: ese código no se le da a nadie, ni a quien diga ser del banco.",
+          "en": "You got me twice. A safe word written on the card isn't secret anymore. And that \"unless\" is exactly the door scammers use: that code goes to no one, not even someone claiming to be the bank."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa línea protege. Busca las que dejan una puerta abierta.",
+          "en": "That line protects. Look for the ones that leave a door open."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora completa la tarjeta. Parte de tu prompt anterior y agrégale los contactos, a quién reportar y el formato. Los números van con marcadores.",
+          "en": "Now finish the card. Start from your last prompt and add the contacts, where to report and the format. Numbers go in as placeholders."
+        }
+      },
+      "titulo": {
+        "es": "La tarjeta completa",
+        "en": "The full card"
+      },
+      "reto": {
+        "es": "Agrega a tu prompt: un espacio para 5 contactos de confianza con marcadores como [nombre] y [número], a quién reportar según la pantalla viva, y un formato de tarjeta corta para imprimir o compartir. La palabra de seguridad no se escribe.",
+        "en": "Add to your prompt: space for 5 trusted contacts with placeholders like [name] and [number], where to report based on the live screen, and a short card format to print or share. The safe word doesn't get written."
+      },
+      "inicial": "anterior",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "contactos",
+          "texto": {
+            "es": "Contactos con marcadores",
+            "en": "Contacts as placeholders"
+          },
+          "rubrica": "El prompt pide un espacio para contactos de confianza usando marcadores ([nombre], [número], XXX) en vez de números o nombres reales. No cuenta si trae números de teléfono, cédulas o nombres completos que parezcan reales, ni pedir contactos sin marcadores.",
+          "claves": {
+            "es": [
+              "[",
+              "{",
+              "xxx",
+              "(numero",
+              "(nombre",
+              "espacio para",
+              "en blanco"
+            ],
+            "en": [
+              "[",
+              "{",
+              "xxx",
+              "(number",
+              "(name",
+              "space for",
+              "blank"
+            ]
+          }
+        },
+        {
+          "id": "reportar",
+          "texto": {
+            "es": "A quién reportar, con nombre",
+            "en": "Where to report, by name"
+          },
+          "rubrica": "El prompt pide incluir a quién reportar y nombra al menos una ruta concreta: la línea 123, la línea 165 del Gaula, el CAI Virtual, A Denunciar, la línea oficial del banco, o en inglés el número de emergencias o la unidad de delitos informáticos de su país. No cuenta 'a las autoridades' sin decir cuáles, ni inventar números.",
+          "claves": {
+            "es": [
+              "123",
+              "165",
+              "cai virtual",
+              "caivirtual",
+              "adenunciar",
+              "a denunciar",
+              "gaula",
+              "linea del banco",
+              "llamar al banco",
+              "llamar a mi banco",
+              "llamar a tu banco",
+              "linea oficial del banco"
+            ],
+            "en": [
+              "123",
+              "165",
+              "cai virtual",
+              "adenunciar",
+              "a denunciar",
+              "gaula",
+              "bank's line",
+              "call the bank",
+              "call your bank",
+              "call my bank",
+              "emergency number",
+              "cybercrime",
+              "police"
+            ]
+          }
+        },
+        {
+          "id": "tarjeta",
+          "texto": {
+            "es": "Formato de tarjeta corta",
+            "en": "Short card format"
+          },
+          "rubrica": "El prompt pide un formato de tarjeta corta para compartir o imprimir: un límite de líneas o de tamaño, un título o secciones. No cuenta 'ordénalo bien' sin límite ni formato.",
+          "claves": {
+            "es": [
+              "formato de tarjeta",
+              "para imprimir",
+              "imprimible",
+              "media pagina",
+              "una pagina",
+              "maximo 1",
+              "maximo 2",
+              "con titulo",
+              "un titulo",
+              "titulo",
+              "renglones"
+            ],
+            "en": [
+              "card format",
+              "to print",
+              "printable",
+              "print it",
+              "half a page",
+              "one page",
+              "with a title",
+              "a title",
+              "heading",
+              "10 lines",
+              "12 lines",
+              "15 lines",
+              "20 lines"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una familia a armar una tarjeta contra estafas. Arma la tarjeta solo con lo que pide el prompt. Si pide contactos, usa marcadores como [nombre] y [número], nunca números inventados. Si pide a quién reportar y nombra líneas o entidades, cópialas tal cual; si no las nombra, escribe 'las autoridades' sin inventar números. Nunca escribas una palabra de seguridad: pon 'pregunta la palabra de seguridad'. Si pide formato de tarjeta, hazla con título y en máximo 15 líneas.",
+        "en": "You are an AI that helps a family put together an anti-scam card. Build the card only from what the prompt asks for. If it asks for contacts, use placeholders like [name] and [number], never made-up numbers. If it asks where to report and names specific lines or organizations, copy them as given; if it doesn't name any, write 'the authorities' without making up numbers. Never write a safe word: write 'ask for the safe word.' If it asks for a card format, give it a title and keep it to 15 lines max."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "cartel",
+          "salida": {
+            "es": "PROTOCOLO ANTIESTAFAS DE LA FAMILIA\nSi piden plata con prisa: cuelga, llama al número de siempre y pregunta la palabra de seguridad.\nNunca se comparte: códigos, claves, PIN, datos de la tarjeta.\nContactos de confianza:\n[nombre] · [número]\n[nombre] · [número]\n[nombre] · [número]\n[nombre] · [número]\n[nombre] · [número]\nPeligro ya: 123 · Extorsión o \"secuestro\": 165\nEstafa por internet: CAI Virtual / A Denunciar\nSi pagaste: primero la línea oficial de tu banco",
+            "en": "FAMILY ANTI-SCAM PLAN\nIf someone asks for money in a rush: hang up, call the usual number and ask for the safe word.\nNever share: codes, passwords, PINs, card details.\nTrusted contacts:\n[name] · [number]\n[name] · [number]\n[name] · [number]\n[name] · [number]\n[name] · [number]\nDanger now: 123 · Extortion or \"kidnapping\" call: 165 (Colombia)\nOnline scam: CAI Virtual / A Denunciar (Colombia)\nIf you paid: your bank's official line first"
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Ahí está tu brújula de bolsillo. Cabe en una tarjeta, no tiene ningún dato real y cualquiera de tu familia la puede seguir con el corazón a mil.",
+              "en": "There's your pocket compass. It fits on a card, has no real data in it, and anyone in your family can follow it with their heart racing."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Tarjeta de seguridad\n1. Cuelga, llama y pregunta.\n2. No compartas códigos ni claves.\nContactos: agrega aquí tus contactos.\nSi pasa algo, avisa a las autoridades.",
+            "en": "Safety card\n1. Hang up, call and ask.\n2. Don't share codes or passwords.\nContacts: add your contacts here.\nIf something happens, tell the authorities."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Le falta lo que hace útil la tarjeta: marcadores para tus contactos y a quién llamar con nombre propio. \"Las autoridades\" no tienen número. Mira la lista.",
+              "en": "It's missing what makes the card useful: placeholders for your contacts and who to call, by name. \"The authorities\" don't have a phone number. Check the list."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "La tarjeta no sirve guardada. Sirve cuando tu familia la conoce. Este reto es afuera de Punti, con gente de verdad.",
+          "en": "The card is useless sitting in a drawer. It works when your family knows it. This challenge happens outside Punti, with real people."
+        }
+      },
+      "titulo": {
+        "es": "Explícasela a alguien mayor",
+        "en": "Explain it to an older relative"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra. Pégale tu tarjeta, sin datos reales, y pídele ayuda para explicarla en un minuto a una persona mayor. Luego siéntate con esa persona, explícasela y acuerden la palabra de seguridad en persona.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another. Paste in your card, with no real data, and ask for help explaining it in one minute to an older person. Then sit down with that person, walk them through it and agree on the safe word in person."
+      },
+      "checks": [
+        {
+          "es": "Le pedí a la IA una explicación corta, sin datos reales",
+          "en": "I asked the AI for a short explanation, with no real data"
+        },
+        {
+          "es": "Se la expliqué a una persona mayor de mi familia",
+          "en": "I explained it to an older person in my family"
+        },
+        {
+          "es": "Acordamos la palabra de seguridad en persona, sin escribirla",
+          "en": "We agreed on the safe word in person, without writing it"
+        },
+        {
+          "es": "Llené a mano los números de verdad en la tarjeta",
+          "en": "I wrote the real numbers on the card by hand"
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Última nota del capítulo. Escribe para qué le sirve a tu familia este protocolo, con tus palabras.",
+          "en": "Last note of the chapter. In your own words, write what this plan does for your family."
+        }
+      },
+      "concepto": "protocolo-antiestafas",
+      "definicion": {
+        "es": "Una tarjeta que tu familia sigue cuando llega una tormenta: cuelga, llama, pregunta; lo que nunca se da; contactos de confianza y a quién reportar. La palabra de seguridad no va escrita.",
+        "en": "A card your family follows when a storm hits: hang up, call, ask; what never gets shared; trusted contacts and where to report. The safe word isn't written on it."
+      },
+      "pregunta": {
+        "es": "Nuestro protocolo antiestafas sirve para…",
+        "en": "Our anti-scam plan helps us…"
+      },
+      "guardaPrompt": "b08",
+      "etiqueta": {
+        "es": "protocolo antiestafas",
+        "en": "anti-scam plan"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta queda en tu bitácora y vuelve en el proyecto final de Brújula, cuando armes tu código de a bordo.",
+          "en": "Saved. Your card is in your logbook, and it comes back in the Compass final project, when you build your onboard code."
+        }
+      }
+    },
+    {
+      "id": "b11",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas para cerrar el capítulo.",
+          "en": "Two questions to close the chapter."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Tu tarjeta antiestafas está lista para imprimir. ¿Qué NO debe llevar escrito?",
+            "en": "Your anti-scam card is ready to print. What should NOT be written on it?"
+          },
+          "opciones": [
+            {
+              "es": "La palabra de seguridad",
+              "en": "The safe word"
+            },
+            {
+              "es": "Los pasos: cuelga, llama, pregunta",
+              "en": "The steps: hang up, call, ask"
+            },
+            {
+              "es": "Lo que no se comparte nunca",
+              "en": "What you never share"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. La tarjeta dice \"pregunta la palabra\". La palabra vive en la cabeza de tu familia.",
+              "en": "Right. The card says \"ask for the word.\" The word lives in your family's heads."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: si alguien encuentra la tarjeta, ¿qué no debería poder leer?",
+              "en": "Hmm. Ask yourself: if someone found the card, what shouldn't they be able to read?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Por qué los números de tu familia se escriben a mano y no en el prompt?",
+            "en": "Why do your family's numbers get written by hand and not in the prompt?"
+          },
+          "opciones": [
+            {
+              "es": "Para no pasarle datos reales de tu familia a una IA",
+              "en": "So you don't hand your family's real data to an AI"
+            },
+            {
+              "es": "Porque la IA no sabe escribir números",
+              "en": "Because the AI can't write numbers"
+            },
+            {
+              "es": "Para que la tarjeta se vea más bonita",
+              "en": "So the card looks nicer"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La IA arma la tarjeta; los datos de verdad solo los tienes tú.",
+              "en": "Exactly. The AI builds the card; only you hold the real details."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en qué viaja cuando mandas un prompt.",
+              "en": "Hmm. Think about what travels when you send a prompt."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Cerraste El faro, piloto.",
+          "en": "You've finished the Lighthouse, pilot."
+        }
+      },
+      "titulo": {
+        "es": "Tu brújula de bolsillo",
+        "en": "Your pocket compass"
+      },
+      "texto": {
+        "es": "Ya reconoces una voz clonada, un famoso falso, una cuenta nueva sospechosa, un mensaje perfecto y un audio sin origen. Y tu familia tiene su tarjeta. En el próximo capítulo bajamos a La bóveda, donde se guarda lo tuyo: qué hace una app con lo que le escribes.",
+        "en": "You can now spot a cloned voice, a fake celebrity, a suspicious new account, a perfect message and a clip with no source. And your family has its card. In the next chapter we go down to the Vault, where your things are kept: what an app does with what you write to it."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Protocolo antiestafas",
+        "en": "Anti-scam plan"
+      },
+      "resumen": {
+        "es": "Una tarjeta que tu familia sigue en medio del susto: cuelga, llama, pregunta; lo que nunca se da; contactos y a quién reportar.",
+        "en": "A card your family follows in the middle of a scare: hang up, call, ask; what never gets shared; contacts and where to report."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b08",
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Decidiste que la palabra de seguridad no se escribe",
+          "en": "You decided the safe word never gets written"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste los pasos y lo que nunca se da",
+          "en": "You wrote the steps and what never gets shared"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste las dos puertas abiertas de Punti",
+          "en": "You caught Punti's two open doors"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Armaste la tarjeta completa sin datos reales",
+          "en": "You built the full card with no real data"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Se la explicaste a alguien de tu familia",
+          "en": "You explained it to someone in your family"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "armar-protocolo-antiestafas",
+      "titulo": {
+        "es": "Armar un protocolo antiestafas",
+        "en": "Building an anti-scam plan"
+      }
+    }
+  }
+}

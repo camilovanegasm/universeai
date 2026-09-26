@@ -1,0 +1,682 @@
+{
+  "formato": "punti-mision@1",
+  "id": "los-cuatro-oficios",
+  "mundo": "que-es-la-ia",
+  "capitulo": 1,
+  "numero": 3,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "oficios-de-la-ia"
+  ],
+  "usaConceptos": [
+    "ia"
+  ],
+  "titulo": {
+    "es": "Los cuatro oficios",
+    "en": "The Four Jobs of AI"
+  },
+  "resumen": {
+    "es": "Por lo que hacen, las IA de hoy reconocen, recomiendan, predicen o generan. Y cada una sirve para una sola cosa.",
+    "en": "By what they do, today's AIs recognize, recommend, predict or generate. And each one is good at just one thing."
+  },
+  "siguiente": "eso-es-ia-o-no",
+  "fuentes": [
+    {
+      "titulo": "Google for Developers, Introduction to Machine Learning: What is ML?",
+      "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Google DeepMind, Traffic prediction with advanced Graph Neural Networks (2020)",
+      "url": "https://deepmind.google/discover/blog/traffic-prediction-with-advanced-graph-neural-networks/",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, en el taller tengo una caja de herramientas con cuatro cajones. Hoy la abrimos con Wilmer, un taxista de Bogotá. Él no lo sabe, pero en un solo turno trabaja con varias IA distintas.",
+          "en": "Pilot, in the workshop I keep a toolbox with four drawers. Today we open it with Wilmer, a taxi driver in Bogotá. He doesn't know it, but in a single shift he works with several different AIs."
+        }
+      },
+      "titulo": {
+        "es": "Los cuatro oficios",
+        "en": "The four jobs"
+      },
+      "texto": {
+        "es": "Wilmer maneja doce horas al día. En su turno, el celular reconoce, recomienda, predice y genera. Hoy aprendes a ver qué oficio hace cada IA. Unos 8 minutos.",
+        "en": "Wilmer drives twelve hours a day. During his shift, his phone recognizes, recommends, predicts and generates. Today you'll learn to tell which job each AI does. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, una forma fácil de ordenar tanta IA.",
+          "en": "First, an easy way to sort out all that AI."
+        }
+      },
+      "titulo": {
+        "es": "Por lo que hacen",
+        "en": "By what they do"
+      },
+      "texto": {
+        "es": "Hay miles de IA distintas, pero casi todas hacen uno de cuatro oficios. Reconocen algo: una cara, una voz. Recomiendan algo: una canción, un video. Predicen algo: a qué hora llegas. O generan algo nuevo: un mensaje, una imagen. Si sabes el oficio, sabes qué esperar.",
+        "en": "There are thousands of different AIs, but almost all of them do one of four jobs. They recognize something: a face, a voice. They recommend something: a song, a video. They predict something: when you'll arrive. Or they generate something new: a message, an image. Know the job, and you know what to expect."
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estos son los cuatro cajones. Cada oficio tiene su color y lo vas a ver en todo Origen. Toca cada uno.",
+          "en": "Here are the four drawers. Each job has its own color, and you'll see it all over Origin. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Los cuatro oficios",
+        "en": "The four jobs"
+      },
+      "piezas": [
+        {
+          "id": "reconocer",
+          "color": "#4fc3ff",
+          "titulo": {
+            "es": "Reconocer",
+            "en": "Recognize"
+          },
+          "descripcion": {
+            "es": "Dice qué es algo que ve u oye.",
+            "en": "Tells what something it sees or hears is."
+          },
+          "ejemplo": {
+            "es": "El celular de Wilmer se desbloquea con su cara. Primero estudió miles de rostros, y después el de Wilmer, cuando él lo configuró.",
+            "en": "Wilmer's phone unlocks with his face. It studied thousands of faces first, then Wilmer's, when he set it up."
+          }
+        },
+        {
+          "id": "recomendar",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Recomendar",
+            "en": "Recommend"
+          },
+          "descripcion": {
+            "es": "Te propone algo que quizás te guste.",
+            "en": "Suggests something you might like."
+          },
+          "ejemplo": {
+            "es": "La app de música le propone una emisora de vallenato. Aprendió de lo que él escucha y de lo que escucha gente con gustos parecidos.",
+            "en": "His music app suggests a vallenato station. It learned from what he listens to and what people with similar taste listen to."
+          }
+        },
+        {
+          "id": "predecir",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Predecir",
+            "en": "Predict"
+          },
+          "descripcion": {
+            "es": "Calcula lo que probablemente va a pasar.",
+            "en": "Works out what will probably happen."
+          },
+          "ejemplo": {
+            "es": "El mapa le dice que llega en 25 minutos. Compara el tráfico de hoy con el de otros martes a esa misma hora.",
+            "en": "The map tells him he'll arrive in 25 minutes. It compares today's traffic with other Tuesdays at the same hour."
+          }
+        },
+        {
+          "id": "generar",
+          "color": "#39ff88",
+          "titulo": {
+            "es": "Generar",
+            "en": "Generate"
+          },
+          "descripcion": {
+            "es": "Crea algo nuevo: un texto, una imagen, una voz.",
+            "en": "Creates something new: text, an image, a voice."
+          },
+          "ejemplo": {
+            "es": "El celular le escribe: \"Voy en camino, llego en 10 minutos\". Armó esa frase nueva con lo que aprendió de muchísimos mensajes.",
+            "en": "His phone writes: \"On my way, there in 10 minutes.\" It put that new sentence together from what it learned from tons of messages."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 10,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Estos son ocho momentos del turno de Wilmer. Pon cada uno en su cajón.",
+          "en": "Your turn. Here are eight moments from Wilmer's shift. Put each one in its drawer."
+        }
+      },
+      "titulo": {
+        "es": "El turno de Wilmer",
+        "en": "Wilmer's shift"
+      },
+      "grupos": [
+        "reconocer",
+        "recomendar",
+        "predecir",
+        "generar"
+      ],
+      "items": [
+        {
+          "grupo": "reconocer",
+          "texto": {
+            "es": "5:00 a. m. El celular se desbloquea al ver la cara de Wilmer",
+            "en": "5:00 a.m. The phone unlocks when it sees Wilmer's face"
+          }
+        },
+        {
+          "grupo": "predecir",
+          "texto": {
+            "es": "6:10 a. m. El mapa calcula que llega al aeropuerto en 40 minutos",
+            "en": "6:10 a.m. The map works out he'll reach the airport in 40 minutes"
+          }
+        },
+        {
+          "grupo": "recomendar",
+          "texto": {
+            "es": "7:30 a. m. La app de música le propone una emisora nueva",
+            "en": "7:30 a.m. The music app suggests a new station"
+          }
+        },
+        {
+          "grupo": "generar",
+          "texto": {
+            "es": "9:00 a. m. El celular le redacta una respuesta corta para su esposa",
+            "en": "9:00 a.m. The phone drafts a short reply to his wife"
+          }
+        },
+        {
+          "grupo": "reconocer",
+          "texto": {
+            "es": "11:00 a. m. Dicta un mensaje y el celular convierte su voz en texto",
+            "en": "11:00 a.m. He dictates a message and the phone turns his voice into text"
+          }
+        },
+        {
+          "grupo": "predecir",
+          "texto": {
+            "es": "1:00 p. m. El mapa avisa que en 20 minutos habrá trancón en su ruta",
+            "en": "1:00 p.m. The map warns there'll be a jam on his route in 20 minutes"
+          }
+        },
+        {
+          "grupo": "recomendar",
+          "texto": {
+            "es": "3:00 p. m. En el almuerzo, la app de videos le sugiere uno de fútbol",
+            "en": "3:00 p.m. At lunch, the video app suggests a soccer clip"
+          }
+        },
+        {
+          "grupo": "generar",
+          "texto": {
+            "es": "5:00 p. m. Un chat de IA le escribe ideas para el cumpleaños de su hija",
+            "en": "5:00 p.m. An AI chat writes him ideas for his daughter's birthday"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso, piloto. Ocho momentos, cuatro oficios. Y Wilmer ni se dio cuenta de que trabajaba con tanta IA.",
+          "en": "That's it, pilot. Eight moments, four jobs. And Wilmer had no idea he was working with so much AI."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿esa IA dice qué es algo, te propone algo, calcula lo que viene o crea algo nuevo?",
+          "en": "Hmm. Ask yourself: does that AI tell what something is, suggest something, work out what's coming or create something new?"
+        }
+      },
+      "malPorGrupo": {
+        "reconocer": {
+          "estado": "error",
+          "texto": {
+            "es": "Reconocer es decir qué es algo que ya está ahí: una cara, una voz. ¿Aquí pasa eso?",
+            "en": "Recognizing means telling what something already there is: a face, a voice. Is that what's happening here?"
+          }
+        },
+        "recomendar": {
+          "estado": "error",
+          "texto": {
+            "es": "Recomendar es proponerte algo para que escojas. ¿Aquí le están proponiendo algo?",
+            "en": "Recommending means offering you something to pick. Is anything being offered here?"
+          }
+        },
+        "predecir": {
+          "estado": "error",
+          "texto": {
+            "es": "Predecir es calcular lo que viene: una hora, un trancón. ¿Esto mira hacia adelante?",
+            "en": "Predicting means working out what's coming: a time, a traffic jam. Does this look ahead?"
+          }
+        },
+        "generar": {
+          "estado": "error",
+          "texto": {
+            "es": "Generar es crear algo que no existía, como un texto nuevo. ¿Aquí se creó algo?",
+            "en": "Generating means creating something that didn't exist, like new text. Was anything created here?"
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Una cosa más: cada IA de Wilmer es muy buena en su oficio y en nada más.",
+          "en": "One more thing: each of Wilmer's AIs is great at its job and nothing else."
+        }
+      },
+      "titulo": {
+        "es": "Buenas en una sola cosa",
+        "en": "Good at one thing"
+      },
+      "texto": {
+        "es": "La IA que reconoce su cara no sabe llegar al aeropuerto. La del mapa no sabe escribir un mensaje. Cada IA de hoy hace bien una tarea y fuera de ella se pierde. A eso le dicen IA estrecha. Una IA general, que aprenda cualquier cosa como una persona, todavía no existe.",
+        "en": "The AI that recognizes his face can't find the airport. The map's AI can't write a message. Each AI today does one task well and is lost outside it. That's called narrow AI. A general AI, one that could learn anything the way a person does, doesn't exist yet."
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Ups. Anoche le mandé un audio a Wilmer y ahora veo que exageré. Toca las dos partes donde me equivoqué.",
+          "en": "Oops. Last night I sent Wilmer a voice note, and now I see I got carried away. Tap the two parts where I got it wrong."
+        }
+      },
+      "titulo": {
+        "es": "El audio exagerado",
+        "en": "The over-the-top voice note"
+      },
+      "trozos": [
+        {
+          "es": "Wilmer, el mapa usa IA para predecir los trancones.",
+          "en": "Wilmer, the map uses AI to predict traffic jams."
+        },
+        {
+          "es": "Como ya sabe tanto de calles, pronto va a manejar el taxi solo, sin aprender nada más.",
+          "en": "Since it knows so much about streets, it'll soon drive the taxi by itself, without learning anything else."
+        },
+        {
+          "es": "El chat que te redacta mensajes genera texto.",
+          "en": "The chat that drafts your messages generates text."
+        },
+        {
+          "es": "Y como escribe de todo, ya es una IA general que piensa como una persona.",
+          "en": "And since it writes about anything, it's already a general AI that thinks like a person."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Predecir trancones no enseña a manejar: eso sería otra IA, con otros ejemplos. Y escribir de todo sigue siendo un solo oficio: generar texto. La IA general todavía no existe.",
+          "en": "You got me. Predicting traffic doesn't teach driving: that would be a different AI, with different examples. And writing about anything is still one job: generating text. General AI doesn't exist yet."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte es cierta. Busca dónde le pido a una IA un oficio que nunca aprendió.",
+          "en": "That part is true. Look for where I expect an AI to do a job it never learned."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Wilmer quiere entender su propio turno. Pídele a la IA que ordene sus momentos en los cuatro oficios. Los momentos están en el reto, listos para copiar.",
+          "en": "Your turn. Wilmer wants to understand his own shift. Ask the AI to sort his moments into the four jobs. The moments are in the challenge, ready to copy."
+        }
+      },
+      "titulo": {
+        "es": "Ordena el turno de Wilmer",
+        "en": "Sort Wilmer's shift"
+      },
+      "reto": {
+        "es": "Momentos del turno de Wilmer: 1) El celular se desbloquea con su cara. 2) El mapa calcula a qué hora llega. 3) La app de música le propone una emisora. 4) El celular le redacta un mensaje. 5) El teclado pasa su voz a texto. 6) La app de videos le sugiere uno de fútbol.",
+        "en": "Moments from Wilmer's shift: 1) His phone unlocks with his face. 2) The map works out what time he'll arrive. 3) The music app suggests a station. 4) His phone drafts a message. 5) The keyboard turns his voice into text. 6) The video app suggests a soccer clip."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "oficios",
+          "texto": {
+            "es": "Nombra los cuatro oficios",
+            "en": "Names the four jobs"
+          },
+          "rubrica": "El prompt pide clasificar los momentos en los cuatro oficios de la IA y los nombra (reconocer, recomendar, predecir y generar), o dice 'los cuatro oficios de la IA'. No cuenta 'clasifícalos' u 'ordénalos' sin decir en qué grupos.",
+          "claves": {
+            "es": [
+              "oficio",
+              "reconocer",
+              "recomendar",
+              "predecir",
+              "que predice",
+              "que recomienda",
+              "que reconoce",
+              "y generar",
+              "o generar",
+              "generar,"
+            ],
+            "en": [
+              "four jobs",
+              "4 jobs",
+              "recognize",
+              "recognise",
+              "recommend",
+              "predict",
+              "and generate",
+              "or generate",
+              "generate,"
+            ]
+          }
+        },
+        {
+          "id": "momentos",
+          "texto": {
+            "es": "Incluye los momentos del turno",
+            "en": "Includes the moments of the shift"
+          },
+          "rubrica": "El prompt trae los momentos del turno de Wilmer (al menos tres), copiados o con sus palabras. No cuenta 'los momentos de Wilmer' o 'su turno' sin escribirlos.",
+          "claves": {
+            "es": [
+              "su cara",
+              "con la cara",
+              "emisora",
+              "redacta",
+              "voz a texto",
+              "futbol",
+              "a que hora llega",
+              "desbloquea"
+            ],
+            "en": [
+              "face",
+              "station",
+              "drafts",
+              "voice into text",
+              "soccer",
+              "what time he",
+              "unlocks"
+            ]
+          }
+        },
+        {
+          "id": "razon",
+          "texto": {
+            "es": "Pide una razón corta por cada uno",
+            "en": "Asks for a short reason for each"
+          },
+          "rubrica": "El prompt pide una razón o explicación corta de por qué cada momento va en ese oficio. No cuenta pedir solo la lista clasificada.",
+          "claves": {
+            "es": [
+              "por que",
+              "razon",
+              "explica por",
+              "explica cada",
+              "explicacion corta",
+              "justifica"
+            ],
+            "en": [
+              "why",
+              "reason",
+              "explain each",
+              "explain how",
+              "explanation",
+              "justify"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a entender la tecnología de todos los días. Responde con una lista corta, sin palabras técnicas. Si el prompt nombra grupos, usa esos grupos; si no, inventa tus propios grupos. Da razones solo si te las piden. No agregues momentos que no estén en el prompt.",
+        "en": "You are an AI that helps people understand everyday technology. Reply with a short list, with no technical words. If the prompt names groups, use those groups; if not, make up your own. Give reasons only if asked. Don't add moments that aren't in the prompt."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Reconocer: 1) el celular reconoce su cara. 5) el teclado reconoce su voz y la pasa a texto.\nRecomendar: 3) la app le propone una emisora según lo que le gusta. 6) la app de videos le sugiere fútbol porque ve mucho fútbol.\nPredecir: 2) el mapa calcula a qué hora llega, según el tráfico.\nGenerar: 4) el celular escribe un mensaje nuevo que no existía.",
+            "en": "Recognize: 1) the phone recognizes his face. 5) the keyboard recognizes his voice and turns it into text.\nRecommend: 3) the app suggests a station based on what he likes. 6) the video app suggests soccer because he watches a lot of it.\nPredict: 2) the map works out his arrival time from the traffic.\nGenerate: 4) the phone writes a new message that didn't exist before."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Cajones llenos. Cada momento en su oficio y con su razón. Ahora Wilmer ve su turno como lo ves tú.",
+              "en": "Drawers full. Every moment in its job, with its reason. Now Wilmer sees his shift the way you do."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Tecnología del celular: 1, 4, 5\nEntretenimiento: 3, 6\nNavegación: 2",
+            "en": "Phone technology: 1, 4, 5\nEntertainment: 3, 6\nNavigation: 2"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA inventó sus propios grupos, y no son los oficios. Dile en qué cuatro cajones ordenar y pide el porqué de cada uno.",
+              "en": "The AI made up its own groups, and they aren't the jobs. Tell it which four drawers to use and ask why for each one."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cuáles son los cuatro oficios de la IA. Si quieres, con un ejemplo de tu día.",
+          "en": "Logbook time. Write the four jobs of AI in your own words. Add an example from your day if you like."
+        }
+      },
+      "concepto": "oficios-de-la-ia",
+      "definicion": {
+        "es": "Por lo que hacen, las IA de hoy reconocen, recomiendan, predicen o generan. Cada una es buena en su oficio y en nada más: son IA estrechas.",
+        "en": "By what they do, today's AIs recognize, recommend, predict or generate. Each one is good at its job and nothing else: they're narrow AIs."
+      },
+      "pregunta": {
+        "es": "Los cuatro oficios de la IA son…",
+        "en": "The four jobs of AI are…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "ordenar en oficios",
+        "en": "sorting into jobs"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Estos cuatro colores vuelven en el proyecto del capítulo, cuando armes tu propio mapa de IA.",
+          "en": "Saved. These four colors come back in the chapter project, when you build your own AI map."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas para cerrar el turno.",
+          "en": "Two questions to wrap up the shift."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Una app te escribe un poema para el Día de la Madre. ¿Qué oficio hace?",
+            "en": "An app writes you a poem for Mother's Day. Which job is that?"
+          },
+          "opciones": [
+            {
+              "es": "Reconocer",
+              "en": "Recognize"
+            },
+            {
+              "es": "Recomendar",
+              "en": "Recommend"
+            },
+            {
+              "es": "Generar",
+              "en": "Generate"
+            },
+            {
+              "es": "Predecir",
+              "en": "Predict"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Ese poema no existía: la IA lo creó.",
+              "en": "Right. That poem didn't exist: the AI created it."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Ese poema ya existía o salió nuevo?",
+              "en": "Hmm. Did that poem exist already, or is it brand new?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué quiere decir que la IA de hoy es \"estrecha\"?",
+            "en": "What does it mean that today's AI is \"narrow\"?"
+          },
+          "opciones": [
+            {
+              "es": "Que cada una hace bien una tarea y fuera de ella se pierde",
+              "en": "Each one does one task well and is lost outside it"
+            },
+            {
+              "es": "Que funciona solo en celulares pequeños",
+              "en": "It only works on small phones"
+            },
+            {
+              "es": "Que ya piensa como una persona",
+              "en": "It already thinks like a person"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La del mapa no escribe mensajes, y la que escribe no maneja.",
+              "en": "Exactly. The map's AI doesn't write messages, and the one that writes doesn't drive."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Recuerda: ¿la IA de la cara de Wilmer sabía llegar al aeropuerto?",
+              "en": "Not that. Remember: could the AI that knows Wilmer's face find the airport?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Los cuatro oficios",
+        "en": "The four jobs"
+      },
+      "resumen": {
+        "es": "Las IA de hoy reconocen, recomiendan, predicen o generan. Cada una es buena en una sola cosa.",
+        "en": "Today's AIs recognize, recommend, predict or generate. Each one is good at just one thing."
+      }
+    },
+    "mejorPrompt": [
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Conociste los cuatro oficios de la IA",
+          "en": "You met the four jobs of AI"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Ordenaste los ocho momentos del turno de Wilmer",
+          "en": "You sorted the eight moments of Wilmer's shift"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste a Punti exagerando lo que sabe una IA",
+          "en": "You caught Punti overselling what an AI can do"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "La IA ordenó el turno con tus cuatro cajones",
+          "en": "The AI sorted the shift using your four drawers"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "reconocer-oficios",
+      "titulo": {
+        "es": "Reconocer los oficios de la IA",
+        "en": "Spotting AI's jobs"
+      }
+    }
+  }
+}

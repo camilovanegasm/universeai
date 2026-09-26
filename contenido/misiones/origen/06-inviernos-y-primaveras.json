@@ -1,0 +1,778 @@
+{
+  "formato": "punti-mision@1",
+  "id": "inviernos-y-primaveras",
+  "mundo": "que-es-la-ia",
+  "capitulo": 2,
+  "numero": 6,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "inviernos-de-la-ia"
+  ],
+  "usaConceptos": [
+    "prueba-de-turing",
+    "reglas-vs-ejemplos"
+  ],
+  "titulo": {
+    "es": "Inviernos y primaveras",
+    "en": "Winters and Springs"
+  },
+  "resumen": {
+    "es": "La IA no llegó en línea recta: hubo promesas, inviernos por falta de datos y de computadores, y victorias como Deep Blue.",
+    "en": "AI didn't arrive in a straight line: there were promises, winters from a lack of data and computers, and wins like Deep Blue."
+  },
+  "siguiente": "los-tres-combustibles",
+  "fuentes": [
+    {
+      "titulo": "AI winter (primer invierno hacia 1974-1980, segundo desde 1987; informe Lighthill de 1973)",
+      "url": "https://en.wikipedia.org/wiki/AI_winter",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "McCarthy, Minsky, Rochester y Shannon, A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence (1955), AI Magazine",
+      "url": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1904",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Quote Investigator, Machines Will Be Capable, Within Twenty Years, of Doing Any Work That a Man Can Do (Herbert Simon, 1960)",
+      "url": "https://quoteinvestigator.com/2020/11/11/ai-can-do/",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "IBM, Deep Blue (historia de IBM)",
+      "url": "https://www.ibm.com/history/deep-blue",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, sigo en el museo. Esta sala es fría: las vitrinas tienen escarcha. Y llegó una señal de Quibdó. Doña Teresa prepara su programa de radio y necesita una respuesta que sus oyentes entiendan.",
+          "en": "Pilot, I'm still in the museum. This room is cold: the display cases are frosted over. And a signal just came in from Quibdó. Doña Teresa is preparing her radio show and needs an answer her listeners will understand."
+        }
+      },
+      "titulo": {
+        "es": "Inviernos y primaveras",
+        "en": "Winters and springs"
+      },
+      "texto": {
+        "es": "Doña Teresa es locutora de una emisora comunitaria. La pregunta de su programa: ¿por qué la IA tardó 70 años en llegar a mi celular? Hoy ves que la historia tuvo subidas y frenazos. Unos 8 minutos.",
+        "en": "Doña Teresa hosts a show on a community radio station. Her question for the show: why did AI take 70 years to reach my phone? Today you'll see that the story had ups and hard stops. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira la pared de esta sala. Es una línea de tiempo, pero no sube derecho.",
+          "en": "Look at the wall in this room. It's a timeline, but it doesn't go straight up."
+        }
+      },
+      "titulo": {
+        "es": "Una historia con frenazos",
+        "en": "A story with hard stops"
+      },
+      "texto": {
+        "es": "La historia de la IA no fue una línea recta. Hubo primaveras: épocas de grandes promesas y mucha plata para investigar. Y hubo inviernos: la IA no cumplía lo prometido y la plata se iba. Pasó en los años 70 y otra vez a finales de los 80.",
+        "en": "AI's history wasn't a straight line. There were springs: times of big promises and plenty of research money. And there were winters: AI didn't deliver what it promised, and the money went away. It happened in the 1970s and again in the late 1980s."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Época",
+            "en": "When"
+          },
+          "b": {
+            "es": "Qué pasó",
+            "en": "What happened"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Años 50 y 60",
+              "en": "1950s and 60s"
+            },
+            "b": {
+              "es": "Primavera: nace la idea y se promete mucho",
+              "en": "Spring: the idea is born and big promises are made"
+            }
+          },
+          {
+            "a": {
+              "es": "Años 70",
+              "en": "1970s"
+            },
+            "b": {
+              "es": "Invierno: la IA no cumple y recortan la plata",
+              "en": "Winter: AI falls short and funding is cut"
+            }
+          },
+          {
+            "a": {
+              "es": "Años 80",
+              "en": "1980s"
+            },
+            "b": {
+              "es": "Primavera: empresas compran programas llenos de reglas",
+              "en": "Spring: companies buy programs packed with rules"
+            }
+          },
+          {
+            "a": {
+              "es": "Finales de los 80",
+              "en": "Late 1980s"
+            },
+            "b": {
+              "es": "Invierno: esos programas salen caros y fallan",
+              "en": "Winter: those programs turn out costly and brittle"
+            }
+          },
+          {
+            "a": {
+              "es": "1997",
+              "en": "1997"
+            },
+            "b": {
+              "es": "Un computador le gana al campeón mundial de ajedrez",
+              "en": "A computer beats the world chess champion"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "¿Y por qué llegaba el invierno? Hay tres vitrinas con escarcha, una por cada razón. Tócalas. Cuando la IA no cumplía, la plata para investigar se iba.",
+          "en": "So why did winter come? There are three frosted display cases, one for each reason. Tap them. When AI didn't deliver, the research money left."
+        }
+      },
+      "titulo": {
+        "es": "Por qué llegaba el invierno",
+        "en": "Why winter came"
+      },
+      "piezas": [
+        {
+          "id": "promesas",
+          "color": "#b388ff",
+          "titulo": {
+            "es": "Promesas enormes",
+            "en": "Huge promises"
+          },
+          "descripcion": {
+            "es": "Se prometía mucho más de lo que se podía hacer.",
+            "en": "People promised far more than could be done."
+          },
+          "ejemplo": {
+            "es": "En 1960, el científico Herbert Simon escribió que en veinte años las máquinas podrían hacer cualquier trabajo de una persona. No pasó.",
+            "en": "In 1960, scientist Herbert Simon wrote that within twenty years machines could do any work a person can do. It didn't happen."
+          }
+        },
+        {
+          "id": "datos",
+          "color": "#ffb300",
+          "titulo": {
+            "es": "Pocos datos",
+            "en": "Too little data"
+          },
+          "descripcion": {
+            "es": "No había internet lleno de fotos y textos para aprender.",
+            "en": "There was no internet full of photos and text to learn from."
+          },
+          "ejemplo": {
+            "es": "Para aprender hacen falta muchísimos ejemplos, y casi no había textos ni fotos en computador. Era como aprender a cocinar con una sola receta.",
+            "en": "Learning takes tons of examples, and hardly any text or photos were on computers. It was like learning to cook from a single recipe."
+          }
+        },
+        {
+          "id": "computo",
+          "color": "#ff5252",
+          "titulo": {
+            "es": "Computadores lentos",
+            "en": "Slow computers"
+          },
+          "descripcion": {
+            "es": "Hacían muchas menos cuentas que un celular de hoy.",
+            "en": "They did far fewer calculations than a phone today."
+          },
+          "ejemplo": {
+            "es": "Muchos ocupaban cuartos enteros y tenían menos fuerza que un celular barato de hoy. Con tan poca fuerza, muchas ideas ni se podían probar.",
+            "en": "Many filled whole rooms and had less power than a cheap phone today. With so little power, many ideas couldn't even be tested."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Doña Teresa encontró estos recortes para su programa. ¿Cada uno es de una primavera o de un invierno?",
+          "en": "Your turn. Doña Teresa found these clippings for her show. Is each one from a spring or a winter?"
+        }
+      },
+      "titulo": {
+        "es": "¿Primavera o invierno?",
+        "en": "Spring or winter?"
+      },
+      "grupos": [
+        {
+          "id": "primavera",
+          "titulo": {
+            "es": "Primavera",
+            "en": "Spring"
+          }
+        },
+        {
+          "id": "invierno",
+          "titulo": {
+            "es": "Invierno",
+            "en": "Winter"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "primavera",
+          "texto": {
+            "es": "1956: en Dartmouth creen que un grupo de científicos puede avanzar mucho en un solo verano",
+            "en": "1956: at Dartmouth, they believe a group of scientists can make big progress in one summer"
+          }
+        },
+        {
+          "grupo": "primavera",
+          "texto": {
+            "es": "1960: un científico escribe que en 20 años las máquinas harán cualquier trabajo humano",
+            "en": "1960: a scientist writes that within 20 years machines will do any human job"
+          }
+        },
+        {
+          "grupo": "invierno",
+          "texto": {
+            "es": "1973: un informe en el Reino Unido concluye que la IA no cumplió sus promesas",
+            "en": "1973: a report in the UK concludes that AI didn't keep its promises"
+          }
+        },
+        {
+          "grupo": "invierno",
+          "texto": {
+            "es": "1974: en Estados Unidos recortan la plata para investigar IA",
+            "en": "1974: in the United States, AI research funding gets cut"
+          }
+        },
+        {
+          "grupo": "primavera",
+          "texto": {
+            "es": "Años 80: muchas empresas compran programas expertos llenos de reglas",
+            "en": "1980s: lots of companies buy expert programs packed with rules"
+          }
+        },
+        {
+          "grupo": "invierno",
+          "texto": {
+            "es": "1987: se cae el negocio de las máquinas hechas solo para IA",
+            "en": "1987: the market for machines built just for AI collapses"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso. Las primaveras traen promesas y plata. Los inviernos llegan cuando las promesas no se cumplen.",
+          "en": "That's it. Springs bring promises and money. Winters come when the promises don't come true."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, lee otra vez. ¿Ese recorte habla de ilusión y plata, o de promesas que no se cumplieron?",
+          "en": "Hmm, read it again. Is that clipping about hope and money, or about promises that fell through?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "¿Te acuerdas del club de ajedrez del Profe Anselmo? Esta vitrina les encantaría. Es de 1997.",
+          "en": "Remember Profe Anselmo's chess club? They'd love this display case. It's from 1997."
+        }
+      },
+      "titulo": {
+        "es": "Deep Blue y la fuerza bruta",
+        "en": "Deep Blue and brute force"
+      },
+      "texto": {
+        "es": "En mayo de 1997, Deep Blue, un computador de IBM, le ganó al campeón mundial de ajedrez Garri Kaspárov. Fue una victoria enorme, pero no aprendió como las IA de hoy. Revisaba unos 200 millones de posiciones por segundo, con reglas que le programaron con ayuda de grandes maestros. Era fuerza bruta.",
+        "en": "In May 1997, Deep Blue, an IBM computer, beat world chess champion Garry Kasparov. It was a huge win, but it didn't learn the way today's AIs do. It checked about 200 million positions per second, using rules programmed with help from grandmasters. It was brute force."
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "fuente",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Si quieres ir más a fondo, aquí está la historia de esa partida contada por la empresa que construyó a Deep Blue.",
+          "en": "If you want to dig deeper, here's the story of that match, told by the company that built Deep Blue."
+        }
+      },
+      "titulo": {
+        "es": "Deep Blue contra Kaspárov",
+        "en": "Deep Blue vs. Kasparov"
+      },
+      "url": "https://www.ibm.com/history/deep-blue",
+      "fecha": "2026-09-26",
+      "porQue": {
+        "es": "Cuenta la revancha de 1997, que Deep Blue ganó 3,5 a 2,5, y explica cómo jugaba: revisando millones de posiciones por segundo, no aprendiendo de ejemplos.",
+        "en": "It tells the story of the 1997 rematch, which Deep Blue won 3.5 to 2.5, and explains how it played: checking millions of positions per second, not learning from examples."
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Le escribí a Doña Teresa el comienzo del guion. Ahora lo leo y hay dos frases que explican mal el porqué de algo. Tócalas.",
+          "en": "I wrote Doña Teresa the start of her script. Now I read it again and two sentences explain the why of something wrong. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "El guion de Punti",
+        "en": "Punti's script"
+      },
+      "trozos": [
+        {
+          "es": "Buenas tardes, Quibdó.",
+          "en": "Good afternoon, Quibdó."
+        },
+        {
+          "es": "La IA nació en los años 50, con muchas promesas.",
+          "en": "AI was born in the 1950s, with lots of promises."
+        },
+        {
+          "es": "Hubo inviernos porque la gente le cogió miedo a las máquinas.",
+          "en": "There were winters because people got scared of machines."
+        },
+        {
+          "es": "En 1997, Deep Blue le ganó a Kaspárov",
+          "en": "In 1997, Deep Blue beat Kasparov"
+        },
+        {
+          "es": "después de aprender solo, jugando millones de partidas.",
+          "en": "after learning on its own by playing millions of games."
+        }
+      ],
+      "malos": [
+        2,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Los inviernos no fueron por miedo: la IA no cumplía, faltaban datos y computadores, y se iba la plata. Y Deep Blue no aprendió jugando: revisaba millones de posiciones con reglas programadas.",
+          "en": "You got me. The winters weren't about fear: AI didn't deliver, data and computers were lacking, and the money left. And Deep Blue didn't learn by playing: it checked millions of positions using programmed rules."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa frase está bien. Busca las dos que dan una razón equivocada.",
+          "en": "That sentence is fine. Look for the two that give the wrong reason."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Pídele a la IA el guion de un minuto para Doña Teresa. Que responda su pregunta con lo que viste hoy: los inviernos y por qué pasaron.",
+          "en": "Your turn. Ask the AI for a one-minute script for Doña Teresa. Have it answer her question with what you saw today: the winters and why they happened."
+        }
+      },
+      "titulo": {
+        "es": "El guion de Doña Teresa",
+        "en": "Doña Teresa's script"
+      },
+      "reto": {
+        "es": "Datos para el guion: Doña Teresa, 71 años, es locutora de una emisora comunitaria en Quibdó. La oyen vecinos de todas las edades, muchos sin estudios de tecnología. Pregunta del programa: ¿por qué la IA tardó 70 años en llegar a mi celular? El segmento dura un minuto.",
+        "en": "Script details: Doña Teresa, 71, hosts a show on a community radio station in Quibdó. Neighbors of all ages listen, many with no tech background. The show's question: why did AI take 70 years to reach my phone? The segment is one minute long."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "invierno",
+          "texto": {
+            "es": "Menciona un invierno y por qué pasó",
+            "en": "Mentions a winter and why it happened"
+          },
+          "rubrica": "El prompt pide que el guion mencione al menos un invierno o frenazo de la IA y su causa (promesas que no se cumplieron, falta de datos, computadores lentos, se acabó la plata). No cuenta pedir 'la historia de la IA' a secas, ni nombrar el invierno sin ninguna causa.",
+          "claves": {
+            "es": [
+              "invierno",
+              "frenazo",
+              "se freno",
+              "se estanco",
+              "estancamiento",
+              "falta de datos",
+              "faltaban datos",
+              "pocos datos",
+              "computadores lentos",
+              "computadoras lentas",
+              "se fue la plata",
+              "se acabo la plata",
+              "recortaron"
+            ],
+            "en": [
+              "winter",
+              "stall",
+              "slowdown",
+              "slowed down",
+              "lack of data",
+              "not enough data",
+              "too little data",
+              "slow computers",
+              "funding cut",
+              "money dried up",
+              "ran out of money"
+            ]
+          }
+        },
+        {
+          "id": "largo",
+          "texto": {
+            "es": "Pide un largo o un tiempo concreto",
+            "en": "Asks for a specific length or time"
+          },
+          "rubrica": "El prompt pide un largo o tiempo concreto: un minuto, 60 segundos, un número de palabras o de párrafos. No cuenta 'corto' o 'breve' sin decir cuánto.",
+          "claves": {
+            "es": [
+              "minuto",
+              "segundos",
+              "palabras como maximo",
+              "maximo de palabras",
+              "parrafo",
+              "renglones"
+            ],
+            "en": [
+              "minute",
+              "seconds",
+              "words max",
+              "word limit",
+              "max words",
+              "paragraph"
+            ]
+          }
+        },
+        {
+          "id": "radio",
+          "texto": {
+            "es": "Pide tono de radio para los oyentes",
+            "en": "Asks for a radio tone for listeners"
+          },
+          "rubrica": "El prompt pide que el texto suene a radio o que sea para oyentes sin estudios técnicos (vecinos, gente de todas las edades, palabras sencillas). No cuenta pedir que sea 'bonito' o 'interesante' sin decir para quién es.",
+          "claves": {
+            "es": [
+              "radio",
+              "emisora",
+              "oyentes",
+              "locutora",
+              "al aire",
+              "sin palabras tecnicas",
+              "palabras sencillas",
+              "palabras simples",
+              "lenguaje sencillo",
+              "sin tecnicismos",
+              "vecinos"
+            ],
+            "en": [
+              "radio",
+              "station",
+              "listeners",
+              "on air",
+              "on-air",
+              "no jargon",
+              "no technical",
+              "simple words",
+              "plain language",
+              "neighbors",
+              "neighbours"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que escribe guiones cortos para una emisora comunitaria. Escribe frases cortas, fáciles de decir en voz alta. Usa solo hechos históricos generales y conocidos, como la prueba de Turing de 1950, los inviernos de la IA en los años 70 y a finales de los 80, y Deep Blue en 1997. No inventes cifras, citas ni nombres. Si el prompt pide un largo, respétalo: un minuto son unas 130 palabras. Si el prompt no menciona los inviernos, no los agregues.",
+        "en": "You are an AI that writes short scripts for a community radio station. Write short sentences that are easy to say out loud. Use only well-known, general historical facts, such as the Turing test in 1950, the AI winters of the 1970s and late 1980s, and Deep Blue in 1997. Don't invent figures, quotes or names. If the prompt asks for a length, stick to it: one minute is about 130 words. If the prompt doesn't mention the winters, don't add them."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Buenas tardes, vecinos. Hoy respondemos una pregunta: ¿por qué la IA tardó 70 años en llegar a nuestro celular?\nLa idea nació en 1950. Pero el camino no fue derecho. Hubo inviernos: en los años 70 y a finales de los 80, se prometió mucho y la IA no cumplió. Faltaban datos para aprender y computadores con fuerza. Entonces se fue la plata para investigar.\nEn 1997, un computador le ganó al campeón mundial de ajedrez, pero a punta de fuerza bruta, no aprendiendo.\nHace pocos años por fin se juntó lo que faltaba. Por eso hoy la llevamos en el bolsillo.\nAsí que ya sabe: la IA es vieja, lo nuevo es que ahora sí arrancó. Hasta la próxima.",
+            "en": "Good afternoon, neighbors. Today we answer a question: why did AI take 70 years to reach our phones?\nThe idea was born in 1950. But the road wasn't straight. There were winters: in the 1970s and the late 1980s, people promised a lot and AI didn't deliver. There wasn't enough data to learn from, or computers with enough power. So the research money went away.\nIn 1997, a computer beat the world chess champion, but through brute force, not learning.\nJust a few years ago, what was missing finally came together. That's why it's in our pockets today.\nSo now you know: AI is old, what's new is that it finally took off. Until next time."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso ya se puede decir al aire. Un minuto, palabras de vecino y la respuesta de verdad: hubo inviernos, y por qué.",
+              "en": "That's ready for the air. One minute, neighborly words and the real answer: there were winters, and here's why."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "La historia de la inteligencia artificial es fascinante. Desde sus inicios, ha evolucionado de manera impresionante hasta convertirse en una herramienta que transforma nuestras vidas y abre un mundo de posibilidades para el futuro.",
+            "en": "The history of artificial intelligence is fascinating. Since its beginnings, it has evolved impressively into a tool that transforms our lives and opens up a world of possibilities for the future."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Suena bonito, pero no responde la pregunta de Doña Teresa. Revisa la lista: la IA no sabía de los inviernos, ni cuánto dura el segmento, ni quién lo oye.",
+              "en": "Sounds nice, but it doesn't answer Doña Teresa's question. Check the list: the AI didn't know about the winters, how long the segment is, or who's listening."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué fue un invierno de la IA, como se lo contarías a los oyentes de Doña Teresa.",
+          "en": "Logbook time. Write in your own words what an AI winter was, the way you'd tell Doña Teresa's listeners."
+        }
+      },
+      "concepto": "inviernos-de-la-ia",
+      "definicion": {
+        "es": "Épocas en que la IA se frenó: se prometió mucho, faltaban datos y computadores potentes, y se fue la plata para investigar. Pasó en los años 70 y a finales de los 80.",
+        "en": "Times when AI stalled: too much was promised, data and powerful computers were lacking, and research money left. It happened in the 1970s and the late 1980s."
+      },
+      "pregunta": {
+        "es": "Un invierno de la IA es…",
+        "en": "An AI winter is…"
+      },
+      "guardaPrompt": "b08",
+      "etiqueta": {
+        "es": "guion de radio",
+        "en": "radio script"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado, con el guion de Doña Teresa adentro. Otra vitrina del museo encendida, y esta ya no tiene escarcha.",
+          "en": "Saved, with Doña Teresa's script inside. Another display case in the museum lit up, and this one isn't frosted anymore."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y salimos de la sala fría.",
+          "en": "Three questions and we're out of the cold room."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál es el orden correcto, del más antiguo al más reciente?",
+            "en": "Which is the right order, from oldest to newest?"
+          },
+          "opciones": [
+            {
+              "es": "Primer invierno, juego de Turing, Deep Blue",
+              "en": "First winter, Turing's game, Deep Blue"
+            },
+            {
+              "es": "Juego de Turing, primer invierno, Deep Blue",
+              "en": "Turing's game, first winter, Deep Blue"
+            },
+            {
+              "es": "Deep Blue, juego de Turing, primer invierno",
+              "en": "Deep Blue, Turing's game, first winter"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso: 1950, los años 70 y 1997. Primero la pregunta, luego el frenazo, luego el ajedrez.",
+              "en": "Right: 1950, the 1970s and 1997. First the question, then the stall, then the chess."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Mira la línea de tiempo de la pared: ¿qué década va con cada cosa?",
+              "en": "Hmm. Look at the timeline on the wall: which decade goes with each thing?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Por qué llegaban los inviernos de la IA?",
+            "en": "Why did the AI winters come?"
+          },
+          "opciones": [
+            {
+              "es": "Se prometió de más, faltaban datos y computadores, y se fue la plata",
+              "en": "Too much was promised, data and computers were lacking, and money left"
+            },
+            {
+              "es": "La gente le cogió miedo y la prohibieron",
+              "en": "People got scared and banned it"
+            },
+            {
+              "es": "Los científicos se aburrieron del tema",
+              "en": "Scientists got bored of the subject"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Mucha promesa y poco combustible. Sin resultados, la plata se iba.",
+              "en": "Exactly. Big promises and not enough fuel. Without results, the money left."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Acuérdate de las tres vitrinas con escarcha.",
+              "en": "Not that. Remember the three frosted display cases."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Cómo le ganó Deep Blue al campeón mundial de ajedrez en 1997?",
+            "en": "How did Deep Blue beat the world chess champion in 1997?"
+          },
+          "opciones": [
+            {
+              "es": "Aprendió solo, jugando millones de partidas",
+              "en": "It learned on its own by playing millions of games"
+            },
+            {
+              "es": "Adivinó las jugadas del campeón por suerte",
+              "en": "It guessed the champion's moves by luck"
+            },
+            {
+              "es": "Revisó millones de posiciones con reglas programadas",
+              "en": "It checked millions of positions using programmed rules"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Fuerza bruta con reglas escritas, como los programas de reglas que viste en el taller.",
+              "en": "Right. Brute force with written rules, like the rule-based programs you saw in the workshop."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Recuerda la vitrina de 1997: ¿cuántas posiciones revisaba por segundo, y quién le escribió las reglas?",
+              "en": "Hmm. Remember the 1997 display case: how many positions did it check per second, and who wrote its rules?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Los inviernos de la IA",
+        "en": "The AI winters"
+      },
+      "resumen": {
+        "es": "La IA se frenó dos veces porque se prometió de más y faltaban datos, computadores y plata. No llegó en línea recta.",
+        "en": "AI stalled twice because too much was promised and data, computers and money were lacking. It didn't arrive in a straight line."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b08"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste las primaveras de los inviernos",
+          "en": "You sorted the springs from the winters"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Corregiste el guion de Punti",
+          "en": "You fixed Punti's script"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Le escribiste a Doña Teresa un guion de un minuto",
+          "en": "You wrote Doña Teresa a one-minute script"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Ordenaste la historia del más antiguo al más reciente",
+          "en": "You put the story in order, oldest to newest"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "contar-la-historia-de-la-ia",
+      "titulo": {
+        "es": "Contar la historia de la IA",
+        "en": "Telling AI's story"
+      }
+    }
+  }
+}

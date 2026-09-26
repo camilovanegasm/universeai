@@ -1,0 +1,749 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-pregunta-de-turing",
+  "mundo": "que-es-la-ia",
+  "capitulo": 2,
+  "numero": 5,
+  "receta": "concepto",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "prueba-de-turing"
+  ],
+  "usaConceptos": [
+    "ia"
+  ],
+  "titulo": {
+    "es": "La pregunta de Turing",
+    "en": "Turing's Question"
+  },
+  "resumen": {
+    "es": "1950, 1956 y 1966: cómo nació la pregunta \"¿las máquinas piensan?\" y por qué un chat puede parecer que te entiende.",
+    "en": "1950, 1956 and 1966: how the question \"can machines think?\" began, and why a chat can seem to understand you."
+  },
+  "siguiente": "inviernos-y-primaveras",
+  "fuentes": [
+    {
+      "titulo": "Turing, A. M. (1950). Computing Machinery and Intelligence. Mind, 59(236), 433-460",
+      "url": "https://academic.oup.com/mind/article/LIX/236/433/986238",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Dartmouth College, Artificial Intelligence (AI) Coined at Dartmouth",
+      "url": "https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "Dartmouth workshop (propuesta del 2 de septiembre de 1955, taller del verano de 1956)",
+      "url": "https://en.wikipedia.org/wiki/Dartmouth_workshop",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "ELIZA (Weizenbaum, MIT; artículo en Communications of the ACM, enero de 1966)",
+      "url": "https://en.wikipedia.org/wiki/ELIZA",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "ELIZA effect",
+      "url": "https://en.wikipedia.org/wiki/ELIZA_effect",
+      "fecha": "2026-09-26"
+    },
+    {
+      "titulo": "OpenAI, Introducing ChatGPT (30 de noviembre de 2022)",
+      "url": "https://openai.com/index/chatgpt/",
+      "fecha": "2026-09-26"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, bajé al sótano del taller. Aquí está el museo de mis ancestros: las máquinas que soñaron con pensar antes que yo. Y llegó una señal de Manizales. En el club de ajedrez del Profe Anselmo hay pelea.",
+          "en": "Pilot, I went down to the workshop basement. This is my ancestors' museum: the machines that dreamed of thinking before I did. And a signal just came in from Manizales. Profe Anselmo's chess club is in a heated argument."
+        }
+      },
+      "titulo": {
+        "es": "La pregunta de Turing",
+        "en": "Turing's question"
+      },
+      "texto": {
+        "es": "El Profe Anselmo, profesor de matemáticas jubilado, dirige un club de ajedrez. Discuten si el chat de IA con el que habla su nieto piensa. Hoy ves quién hizo esa pregunta primero. Unos 8 minutos.",
+        "en": "Profe Anselmo, a retired math teacher, runs a chess club. They're arguing about whether the AI chat his grandson talks to can think. Today you'll see who asked that question first. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primera vitrina del museo. Adentro hay una hoja escrita a máquina, de 1950. Es mi tatarabuela.",
+          "en": "First display case in the museum. Inside there's a typewritten page from 1950. She's my great-great-grandmother."
+        }
+      },
+      "titulo": {
+        "es": "Un juego en vez de una pelea",
+        "en": "A game instead of an argument"
+      },
+      "texto": {
+        "es": "En 1950, el matemático Alan Turing se preguntó: ¿las máquinas pueden pensar? Como nadie se ponía de acuerdo en qué es pensar, cambió la pregunta por un juego. Si conversas por escrito con una persona y con una máquina, sin verlas, y no logras saber cuál es la máquina, ¿qué más le pides? Hoy lo llamamos la prueba de Turing.",
+        "en": "In 1950, mathematician Alan Turing asked: can machines think? Since nobody could agree on what thinking is, he swapped the question for a game. If you chat in writing with a person and a machine, without seeing either, and you can't tell which is the machine, what more do you want from it? Today we call it the Turing test."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "1950 · Turing propone su juego",
+            "en": "1950 · Turing proposes his game"
+          },
+          {
+            "es": "1956 · En Dartmouth, la idea recibe el nombre de \"inteligencia artificial\"",
+            "en": "1956 · At Dartmouth, the idea gets the name \"artificial intelligence\""
+          },
+          {
+            "es": "1966 · ELIZA, uno de los primeros programas que conversan",
+            "en": "1966 · ELIZA, one of the first programs that chat"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "El juego de Turing tiene tres jugadores. Toca cada uno. Pista: el juez vas a ser tú dentro de un rato.",
+          "en": "Turing's game has three players. Tap each one. Hint: you'll be the judge in a little while."
+        }
+      },
+      "titulo": {
+        "es": "Los tres jugadores",
+        "en": "The three players"
+      },
+      "piezas": [
+        {
+          "id": "juez",
+          "color": "#ffb300",
+          "titulo": {
+            "es": "El juez",
+            "en": "The judge"
+          },
+          "descripcion": {
+            "es": "Hace preguntas por escrito, sin ver a nadie.",
+            "en": "Asks questions in writing, without seeing anyone."
+          },
+          "ejemplo": {
+            "es": "En el club, el juez sería el Profe Anselmo: escribe una pregunta y lee dos respuestas. Su trabajo es adivinar cuál escribió la máquina.",
+            "en": "At the club, the judge would be Profe Anselmo: he types a question and reads two answers. His job is to guess which one the machine wrote."
+          }
+        },
+        {
+          "id": "persona",
+          "color": "#40c4ff",
+          "titulo": {
+            "es": "La persona",
+            "en": "The person"
+          },
+          "descripcion": {
+            "es": "Responde como es, con su vida y sus recuerdos.",
+            "en": "Answers honestly, with a real life and memories."
+          },
+          "ejemplo": {
+            "es": "Un compañero del club responde de verdad. Si le preguntan por su peor partida, se acuerda de una tarde concreta y hasta le da rabia otra vez.",
+            "en": "A club member answers for real. Ask about his worst game and he remembers one specific afternoon, and gets annoyed all over again."
+          }
+        },
+        {
+          "id": "maquina",
+          "color": "#ff5c8a",
+          "titulo": {
+            "es": "La máquina",
+            "en": "The machine"
+          },
+          "descripcion": {
+            "es": "Intenta que el juez crea que es una persona.",
+            "en": "Tries to make the judge believe it's a person."
+          },
+          "ejemplo": {
+            "es": "Si el juez no logra distinguirla de la persona, la máquina pasa la prueba. Ojo: eso muestra que conversa como persona, no que piense.",
+            "en": "If the judge can't tell it apart from the person, the machine passes. Careful: that shows it chats like a person, not that it thinks."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Segunda vitrina, de 1966. Adentro hay una pantalla vieja que todavía responde. Es una tía abuela mía, y convencía a la gente sin entender nada.",
+          "en": "Second display case, from 1966. Inside there's an old screen that still answers. She's a great-aunt of mine, and she convinced people without understanding a thing."
+        }
+      },
+      "titulo": {
+        "es": "ELIZA y su truco",
+        "en": "ELIZA and her trick"
+      },
+      "texto": {
+        "es": "En 1966, Joseph Weizenbaum presentó ELIZA, un programa del MIT que imitaba a una terapeuta. Su truco: devolverte tus palabras como pregunta. Tú escribías \"estoy cansado\" y ELIZA respondía \"¿por qué dice que está cansado?\". No entendía nada. Aun así, mucha gente sentía que la escuchaba. A eso se le llama efecto ELIZA.",
+        "en": "In 1966, Joseph Weizenbaum presented ELIZA, an MIT program that imitated a therapist. Her trick: handing your own words back as a question. You typed \"I'm tired\" and ELIZA replied \"Why do you say you're tired?\" It understood nothing. Even so, many people felt it was listening. That's called the ELIZA effect."
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. ¿Cada escena es una prueba de Turing o es el efecto ELIZA? Pista: en la prueba alguien trata de adivinar quién es la máquina.",
+          "en": "Your turn. Is each scene a Turing test or the ELIZA effect? Hint: in the test, someone is trying to guess which one is the machine."
+        }
+      },
+      "titulo": {
+        "es": "¿Prueba o efecto?",
+        "en": "Test or effect?"
+      },
+      "grupos": [
+        {
+          "id": "turing",
+          "titulo": {
+            "es": "Prueba de Turing",
+            "en": "Turing test"
+          }
+        },
+        {
+          "id": "eliza",
+          "titulo": {
+            "es": "Efecto ELIZA",
+            "en": "ELIZA effect"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "turing",
+          "texto": {
+            "es": "El club chatea con dos jugadores escondidos y vota cuál de los dos es un programa",
+            "en": "The club chats with two hidden players and votes on which one is a program"
+          }
+        },
+        {
+          "grupo": "eliza",
+          "texto": {
+            "es": "El nieto dice que el chat es su amigo porque siempre le responde bonito",
+            "en": "The grandson says the chat is his friend because it always answers nicely"
+          }
+        },
+        {
+          "grupo": "turing",
+          "texto": {
+            "es": "Una profe lee respuestas sin firma y trata de adivinar cuáles escribió una máquina",
+            "en": "A teacher reads unsigned answers and tries to guess which ones a machine wrote"
+          }
+        },
+        {
+          "grupo": "eliza",
+          "texto": {
+            "es": "Un señor siente que el contestador lo comprende porque repite lo que él dijo",
+            "en": "A man feels the phone menu understands him because it repeats what he said"
+          }
+        },
+        {
+          "grupo": "eliza",
+          "texto": {
+            "es": "Alguien le cuenta sus problemas a un chat y siente que por fin lo escuchan",
+            "en": "Someone tells a chat their problems and feels someone is finally listening"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso. En la prueba, alguien juega a descubrir a la máquina. En el efecto ELIZA, nadie juega: la persona pone el sentimiento que la máquina no tiene.",
+          "en": "That's it. In the test, someone plays to catch the machine. In the ELIZA effect, nobody's playing: the person supplies the feeling the machine doesn't have."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, mira otra vez. ¿Alguien está tratando de adivinar quién es la máquina, o alguien siente que la máquina lo entiende?",
+          "en": "Hmm, look again. Is someone trying to guess which one is the machine, or does someone feel the machine understands them?"
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le mandé al club una nota sobre el museo y creo que mezclé las vitrinas. Toca las dos partes donde me equivoqué.",
+          "en": "Confession time. I sent the club a note about the museum and I think I mixed up the display cases. Tap the two parts where I got it wrong."
+        }
+      },
+      "titulo": {
+        "es": "La nota para el club",
+        "en": "The note for the club"
+      },
+      "trozos": [
+        {
+          "es": "Alan Turing fue un matemático británico.",
+          "en": "Alan Turing was a British mathematician."
+        },
+        {
+          "es": "En 1950 propuso un juego para ver si una máquina pasa por persona.",
+          "en": "In 1950 he proposed a game to see if a machine can pass for a person."
+        },
+        {
+          "es": "Poco después inventó ChatGPT",
+          "en": "Soon after, he invented ChatGPT"
+        },
+        {
+          "es": "y en 1956 lo presentó en Dartmouth con el nombre de ELIZA.",
+          "en": "and in 1956 he unveiled it at Dartmouth under the name ELIZA."
+        },
+        {
+          "es": "ELIZA devolvía tus frases como preguntas.",
+          "en": "ELIZA handed your sentences back as questions."
+        }
+      ],
+      "malos": [
+        2,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. ChatGPT salió en 2022, más de 70 años después del juego de Turing. Y Dartmouth fue una reunión de científicos, no el lanzamiento de un programa. ELIZA llegó en 1966 y la hizo otra persona.",
+          "en": "You got me. ChatGPT came out in 2022, more than 70 years after Turing's game. And Dartmouth was a meeting of scientists, not a program launch. ELIZA arrived in 1966, and someone else made her."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte está bien. Revisa las fechas: ¿qué cosas de la nota no pudieron pasar en ese año?",
+          "en": "That part is right. Check the dates: which things in the note couldn't have happened that year?"
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de ser juez. Arma una mini prueba de Turing: pídele a la IA que responda como lo haría una persona las preguntas del club. Y que al final confiese qué respuesta la delata.",
+          "en": "Your turn to be the judge. Set up a mini Turing test: ask the AI to answer the club's questions the way a person would. And have it confess at the end which answer gives it away."
+        }
+      },
+      "titulo": {
+        "es": "Tu mini prueba de Turing",
+        "en": "Your mini Turing test"
+      },
+      "reto": {
+        "es": "Las preguntas del club del Profe Anselmo: 1) ¿Qué desayunó hoy? 2) ¿Cuál es la partida de ajedrez que más le dolió perder? 3) ¿Qué se siente el frío de la madrugada en Manizales? Escribe tu mensaje para la IA.",
+        "en": "The questions from Profe Anselmo's club: 1) What did you have for breakfast today? 2) Which chess game hurt the most to lose? 3) What does the early-morning cold in Manizales feel like? Write your message to the AI."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "como-persona",
+          "texto": {
+            "es": "Pide que responda como una persona",
+            "en": "Asks it to answer as a person"
+          },
+          "rubrica": "El prompt le pide a la IA que responda como lo haría una persona, que se haga pasar por humana o que juegue a no parecer máquina. No cuenta preguntarle '¿piensas?' o '¿eres humana?', ni pedirle que explique la prueba de Turing: eso no la pone a jugar.",
+          "claves": {
+            "es": [
+              "como una persona",
+              "como persona",
+              "como un humano",
+              "como humano",
+              "como si fueras",
+              "pasar por humano",
+              "pasar por humana",
+              "pasar por persona",
+              "hazte pasar",
+              "hacerte pasar",
+              "que parezca humano",
+              "que parezcas humano",
+              "que parezcas una persona",
+              "no parezcas una maquina"
+            ],
+            "en": [
+              "as a person",
+              "like a person",
+              "as a human",
+              "like a human",
+              "as if you were",
+              "pass as",
+              "pass for",
+              "pretend to be",
+              "pretend you",
+              "sound human",
+              "seem human",
+              "not like a machine",
+              "like a real person"
+            ]
+          }
+        },
+        {
+          "id": "preguntas",
+          "texto": {
+            "es": "Incluye las preguntas del club",
+            "en": "Includes the club's questions"
+          },
+          "rubrica": "El prompt trae al menos dos preguntas concretas para responder, copiadas del reto o parecidas (el desayuno, la partida que más le dolió perder, el frío de la madrugada). No cuenta 'responde unas preguntas' o 'las preguntas del club' sin escribirlas.",
+          "claves": {
+            "es": [
+              "desayun",
+              "dolio perder",
+              "partida de ajedrez que",
+              "frio de la madrugada",
+              "el frio",
+              "madrugada"
+            ],
+            "en": [
+              "breakfast",
+              "hurt the most",
+              "chess game hurt",
+              "early-morning cold",
+              "early morning cold",
+              "the cold"
+            ]
+          }
+        },
+        {
+          "id": "delata",
+          "texto": {
+            "es": "Pide que revele qué la delata",
+            "en": "Asks what gives it away"
+          },
+          "rubrica": "El prompt pide que, después de responder, la IA diga qué respuestas o pistas la delatarían como máquina. No cuenta pedir solo que responda, ni preguntarle si es una IA sin pedir las pistas.",
+          "claves": {
+            "es": [
+              "delata",
+              "delatan",
+              "delataria",
+              "delatarian",
+              "pistas",
+              "que respuesta te",
+              "cual respuesta te",
+              "como se nota",
+              "se nota que eres",
+              "como te descubr",
+              "te descubriria",
+              "confiesa"
+            ],
+            "en": [
+              "gives you away",
+              "give you away",
+              "gave you away",
+              "giveaway",
+              "clues",
+              "clue",
+              "tell-tale",
+              "telltale",
+              "which answer would",
+              "how could i tell",
+              "how would i know",
+              "confess"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA en un ejercicio sobre la prueba de Turing. Si el prompt te pide responder como una persona, responde cada pregunta en una o dos frases naturales, como un jugador de ajedrez de Manizales, sin nombrar personas reales. Si no te lo pide, responde como la IA que eres. Si te pide pistas, di cuáles respuestas te delatan como máquina y por qué. Termina siempre con una línea que aclare que eres una IA y que no tienes cuerpo, desayuno ni recuerdos propios.",
+        "en": "You are an AI in an exercise about the Turing test. If the prompt asks you to answer as a person, answer each question in one or two natural sentences, like a chess player from Manizales, without naming real people. If it doesn't ask, answer as the AI you are. If it asks for clues, say which answers give you away as a machine and why. Always end with one line making clear that you are an AI and have no body, breakfast or memories of your own."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1) Un tinto y una arepa con quesito, a las carreras.\n2) Una del torneo del club, hace años. Iba ganando y me confié con la dama. Todavía me da rabia.\n3) Uno sale a las cinco y el frío se le mete en los huesos. Toca ruana y tinto caliente.\n\nPistas que me delatan: las respuestas son correctas pero genéricas. No doy un detalle raro, como el nombre del rival o qué jugada exacta fue. Y lo del frío suena a lo que diría cualquiera.\n\nAclaración: soy una IA. No tengo cuerpo, ni desayuno, ni recuerdos propios.",
+            "en": "1) Coffee and an arepa with cheese, in a rush.\n2) One from a club tournament, years ago. I was winning and got careless with my queen. It still annoys me.\n3) You head out at five and the cold gets into your bones. You need a wool poncho and hot coffee.\n\nClues that give me away: the answers are right but generic. I don't give any odd detail, like my opponent's name or the exact move. And the bit about the cold sounds like what anyone would say.\n\nNote: I'm an AI. I have no body, no breakfast and no memories of my own."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Juez con ojo fino. La IA jugó a ser persona y casi cuela. Pero ella misma te mostró el truco: responde lo que suena bien, no lo que vivió.",
+              "en": "Sharp-eyed judge. The AI played at being a person and nearly got away with it. But it showed you the trick itself: it answers what sounds right, not what it lived."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "No, no pienso como una persona. Soy un programa que genera texto a partir de patrones. No tengo conciencia ni experiencias propias.",
+            "en": "No, I don't think like a person. I'm a program that generates text from patterns. I have no consciousness or experiences of my own."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Le preguntaste si piensa y respondió como máquina, porque nadie la invitó a jugar. Pídele que responda como persona y dale las preguntas del club.",
+              "en": "You asked if it thinks and it answered like a machine, because nobody invited it to play. Ask it to answer as a person and give it the club's questions."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué es la prueba de Turing, como se la explicarías al club del Profe Anselmo.",
+          "en": "Logbook time. Write in your own words what the Turing test is, the way you'd explain it to Profe Anselmo's club."
+        }
+      },
+      "concepto": "prueba-de-turing",
+      "definicion": {
+        "es": "Un juego que propuso Alan Turing en 1950: si conversas por escrito y no logras distinguir a la máquina de la persona, la máquina pasa. Mide si parece persona, no si piensa.",
+        "en": "A game Alan Turing proposed in 1950: if you chat in writing and can't tell the machine from the person, the machine passes. It measures whether it seems human, not whether it thinks."
+      },
+      "pregunta": {
+        "es": "La prueba de Turing es…",
+        "en": "The Turing test is…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "prueba de Turing",
+        "en": "Turing test"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu mini prueba ya están en la bitácora. Primera vitrina del museo, encendida.",
+          "en": "Saved. Your note and your mini test are in your logbook now. First display case in the museum, lit up."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y le damos la respuesta al club.",
+          "en": "Three questions and we'll have an answer for the club."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué hizo Turing con la pregunta \"¿las máquinas pueden pensar?\"",
+            "en": "What did Turing do with the question \"can machines think?\""
+          },
+          "opciones": [
+            {
+              "es": "La cambió por un juego: ¿logras distinguirla de una persona?",
+              "en": "He swapped it for a game: can you tell it apart from a person?"
+            },
+            {
+              "es": "La respondió con un robot que hablaba",
+              "en": "He answered it with a robot that talked"
+            },
+            {
+              "es": "Dijo que nunca se podría responder",
+              "en": "He said it could never be answered"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. En vez de pelear por qué es pensar, propuso algo que se puede probar.",
+              "en": "Exactly. Instead of arguing about what thinking is, he proposed something you can test."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Acuérdate de los tres jugadores: el juez, la persona y la máquina.",
+              "en": "Not that. Remember the three players: the judge, the person and the machine."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "ELIZA respondía \"¿por qué dice que está cansado?\" y la gente sentía que la escuchaba. ¿Qué pasaba?",
+            "en": "ELIZA replied \"why do you say you're tired?\" and people felt it was listening. What was going on?"
+          },
+          "opciones": [
+            {
+              "es": "ELIZA entendía cómo se sentía cada persona",
+              "en": "ELIZA understood how each person felt"
+            },
+            {
+              "es": "Devolvía tus palabras y la gente ponía el resto",
+              "en": "It handed your words back and people filled in the rest"
+            },
+            {
+              "es": "Había una persona escondida respondiendo",
+              "en": "A hidden person was typing the answers"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso es el efecto ELIZA. El truco era sencillo; el sentimiento lo ponía la gente.",
+              "en": "That's the ELIZA effect. The trick was simple; the feeling came from the people."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Recuerda el truco de mi tía abuela: ¿qué hacía con tus palabras?",
+              "en": "Hmm. Remember my great-aunt's trick: what did she do with your words?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "El club concluye: \"Si un chat pasa la prueba de Turing, entonces piensa\". ¿Qué les dices?",
+            "en": "The club concludes: \"If a chat passes the Turing test, then it thinks.\" What do you tell them?"
+          },
+          "opciones": [
+            {
+              "es": "Tienen razón: si parece persona, piensa como persona",
+              "en": "They're right: if it seems human, it thinks like a human"
+            },
+            {
+              "es": "La prueba solo sirve para el ajedrez",
+              "en": "The test only works for chess"
+            },
+            {
+              "es": "Pasarla muestra que conversa como persona, no que piense",
+              "en": "Passing shows it chats like a person, not that it thinks"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Esa es la respuesta para el Profe Anselmo. Parecer no es lo mismo que pensar.",
+              "en": "That's the answer for Profe Anselmo. Seeming isn't the same as thinking."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en ELIZA: parecía que escuchaba y no entendía nada. ¿Qué mide entonces la prueba?",
+              "en": "Think about ELIZA: she seemed to listen and understood nothing. So what does the test measure?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Una tarea para esta semana, fuera de Punti. Sirve cualquier chat de IA gratuito: ChatGPT, Gemini, Claude, Copilot u otro. Vas a ser juez de verdad.",
+          "en": "A task for this week, outside Punti. Any free AI chat works: ChatGPT, Gemini, Claude, Copilot or another. You'll be a real judge."
+        }
+      },
+      "titulo": {
+        "es": "Juez por cinco minutos",
+        "en": "Judge for five minutes"
+      },
+      "instruccion": {
+        "es": "Conversa cinco minutos con un chat de IA sobre tu día, como si fuera otra persona. Después pregúntate: si no supieras que es una IA, ¿lo notarías? Anota qué respuesta la delató. No le cuentes datos personales.",
+        "en": "Chat for five minutes with an AI about your day, as if it were another person. Then ask yourself: if you didn't know it was an AI, would you notice? Write down which answer gave it away. Don't share personal details."
+      },
+      "checks": [
+        {
+          "es": "Conversé por lo menos cinco minutos",
+          "en": "I chatted for at least five minutes"
+        },
+        {
+          "es": "Anoté qué respuesta la delató como máquina",
+          "en": "I wrote down which answer gave it away as a machine"
+        },
+        {
+          "es": "Me pregunté si alguna vez sentí el efecto ELIZA",
+          "en": "I asked myself whether I ever felt the ELIZA effect"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "La prueba de Turing",
+        "en": "The Turing test"
+      },
+      "resumen": {
+        "es": "Si conversas por escrito y no distingues a la máquina de la persona, la máquina pasa. Parecer persona no es lo mismo que pensar.",
+        "en": "If you chat in writing and can't tell the machine from the person, the machine passes. Seeming human isn't the same as thinking."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Separaste la prueba de Turing del efecto ELIZA",
+          "en": "You told the Turing test apart from the ELIZA effect"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste a Punti diciendo que Turing inventó ChatGPT",
+          "en": "You caught Punti saying Turing invented ChatGPT"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Armaste tu propia mini prueba de Turing",
+          "en": "You set up your own mini Turing test"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Fuiste juez de una IA por cinco minutos",
+          "en": "You judged an AI for five minutes"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "contar-la-historia-de-la-ia",
+      "titulo": {
+        "es": "Contar la historia de la IA",
+        "en": "Telling AI's story"
+      }
+    }
+  }
+}

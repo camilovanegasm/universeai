@@ -1,0 +1,1875 @@
+{
+  "formato": "punti-mision@1",
+  "id": "tu-copiloto-personal",
+  "mundo": "prompts",
+  "capitulo": 4,
+  "numero": 20,
+  "receta": "construccion",
+  "largo": "proyecto",
+  "minutos": 25,
+  "conceptos": [
+    "copiloto-personal"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "contexto",
+    "forma",
+    "datos-sensibles",
+    "ejemplos",
+    "paso-a-paso",
+    "limites",
+    "rol",
+    "entrevista",
+    "mejorar-prompt",
+    "autorrevision",
+    "instrucciones",
+    "plantillas"
+  ],
+  "titulo": {
+    "es": "Tu copiloto personal",
+    "en": "Your Personal Copilot"
+  },
+  "resumen": {
+    "es": "El proyecto final de Eco: tus instrucciones personalizadas y cinco plantillas para tu trabajo real.",
+    "en": "Eco's final project: your custom instructions and five templates for your real work."
+  },
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, última señal de Eco, y es la tuya. Ya viste a Don Álvaro, Marcela, Tatiana, Esteban y Luz Dary poner a la IA a ayudarles a pedir. Ahora armas tu copiloto personal: una IA que te conoce y trabajos listos para copiar.",
+          "en": "Pilot, this is Eco's last signal, and it's yours. You saw Don Álvaro, Marcela, Tatiana, Esteban and Luz Dary get the AI to help them ask. Now you'll build your personal copilot: an AI that knows you, and jobs ready to copy."
+        }
+      },
+      "titulo": {
+        "es": "Tu copiloto personal",
+        "en": "Your Personal Copilot"
+      },
+      "texto": {
+        "es": "Es el proyecto final de Eco. Escribes tus instrucciones personalizadas y cinco plantillas para tu trabajo. Todo queda en tu bitácora. Unos 25 minutos.",
+        "en": "It's Eco's final project. You'll write your custom instructions and five templates for your work. Everything is saved in your logbook. About 25 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, el mapa de tu copiloto.",
+          "en": "First, a map of your copilot."
+        }
+      },
+      "titulo": {
+        "es": "Lo que vas a armar",
+        "en": "What you'll build"
+      },
+      "texto": {
+        "es": "Tu copiloto tiene dos partes. Primero, tus instrucciones: lo que la IA sabe de ti en todos los chats. Después, cinco plantillas para los trabajos que repites. Dos usan trucos de este capítulo: que la IA te entreviste y que se revise a sí misma.",
+        "en": "Your copilot has two parts. First, your instructions: what the AI knows about you in every chat. Then, five templates for the jobs you repeat. Two of them use tricks from this chapter: letting the AI interview you, and having it check its own work."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Tus instrucciones",
+            "en": "Your instructions"
+          },
+          {
+            "es": "Plantilla 1: el mensaje de siempre",
+            "en": "Template 1: the usual message"
+          },
+          {
+            "es": "Plantilla 2: ordenar un enredo",
+            "en": "Template 2: sort out a mess"
+          },
+          {
+            "es": "Plantilla 3: que te entreviste",
+            "en": "Template 3: let it interview you"
+          },
+          {
+            "es": "Plantilla 4: que se revise",
+            "en": "Template 4: have it check itself"
+          },
+          {
+            "es": "Plantilla 5: la que te falta",
+            "en": "Template 5: the one you're missing"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de despegar, escoge para qué trabajo armas tu copiloto. Puede ser el tuyo o uno inventado. Lo único que no sirve es un trabajo sin cara.",
+          "en": "Before we take off, pick the work you're building your copilot for. It can be yours or one you make up. The only thing that won't work is a job with no face."
+        }
+      },
+      "titulo": {
+        "es": "Escoge tu trabajo",
+        "en": "Pick your work"
+      },
+      "escena": {
+        "es": "Tus instrucciones y tus cinco plantillas van a ser para un solo trabajo. Si tienes uno, úsalo: tu copiloto te sirve desde mañana. Si no, invéntalo con detalles, como si existiera. ¿Con cuál lo armas?",
+        "en": "Your instructions and your five templates will all be for one line of work. If you have one, use it: your copilot works for you starting tomorrow. If not, make one up with details, as if it were real. Which will you build it for?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Con mi trabajo de verdad",
+            "en": "My real work"
+          },
+          "consecuencia": {
+            "es": "Perfecto. Escribe en una línea a qué te dedicas y qué trabajos repites. Por ejemplo: \"Soy asistente administrativa en una empresa pequeña; hago informes y respondo correos.\"",
+            "en": "Perfect. Write one line saying what you do and which jobs you repeat. For example: \"I'm an office assistant at a small company; I write reports and answer emails.\""
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Con \"un trabajo\", sin decir cuál",
+            "en": "Just \"a job,\" no details"
+          },
+          "consecuencia": {
+            "es": "Ahí tu copiloto tiene que adivinar todo: qué haces, para quién y cómo te gusta. Sale un asistente para nadie. Escoge uno real o uno inventado, con detalles.",
+            "en": "Then your copilot has to guess everything: what you do, for whom and how you like it. You get an assistant for nobody. Pick a real one or a made-up one, with details."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Con uno inventado",
+            "en": "One I make up"
+          },
+          "consecuencia": {
+            "es": "Buena idea. Escoge uno: la recepción de un consultorio, una academia de baile o un gimnasio de barrio. Por ejemplo: \"Atiendo la recepción de un consultorio odontológico; confirmo citas, respondo preguntas y hago avisos.\"",
+            "en": "Good call. Pick one: the front desk at a clinic, a dance school or a neighborhood gym. For example: \"I work the front desk at a dental office; I confirm appointments, answer questions and post notices.\""
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Anota tu línea donde la tengas a mano. Va al comienzo de tus instrucciones, y tus cinco plantillas salen de ahí. Sin datos sensibles: ni cédulas, ni claves, ni datos de clientes.",
+          "en": "Jot your line down somewhere handy. It goes at the top of your instructions, and your five templates grow from it. No sensitive data: no ID numbers, passwords or customer details."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu caja de herramientas: las cinco piezas del pedido completo, ahora dentro de una plantilla. Toca cada una. Van a estar en las listas de los laboratorios.",
+          "en": "Your toolbox: the five pieces of a complete request, now inside a template. Tap each one. They'll be on the lab checklists."
+        }
+      },
+      "titulo": {
+        "es": "Tu caja de herramientas",
+        "en": "Your toolbox"
+      },
+      "piezas": [
+        {
+          "id": "tarea",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "La tarea",
+            "en": "The task"
+          },
+          "descripcion": {
+            "es": "Qué quieres que haga, con un verbo claro.",
+            "en": "What you want it to do, with a clear verb."
+          },
+          "ejemplo": {
+            "es": "\"Escribe\", \"ordena\", \"responde\". En una plantilla, la tarea casi nunca cambia: va fija.",
+            "en": "\"Write,\" \"sort,\" \"reply.\" In a template, the task almost never changes: it stays fixed."
+          }
+        },
+        {
+          "id": "contexto",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "El contexto",
+            "en": "The context"
+          },
+          "descripcion": {
+            "es": "Quién eres, para quién es y para qué.",
+            "en": "Who you are, who it's for and why."
+          },
+          "ejemplo": {
+            "es": "Lo tuyo de siempre vive en tus instrucciones. Si vas a usar la plantilla en otra IA, agrégalo arriba.",
+            "en": "Your everyday context lives in your instructions. If you'll use the template in another AI, add it at the top."
+          }
+        },
+        {
+          "id": "datos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Los datos",
+            "en": "The details"
+          },
+          "descripcion": {
+            "es": "Lo que cambia cada vez. En una plantilla, van como [espacios].",
+            "en": "What changes each time. In a template, they're [blanks]."
+          },
+          "ejemplo": {
+            "es": "[cliente], [fecha], [precio]. Tú los llenas al usarla, y la plantilla no guarda datos de nadie.",
+            "en": "[customer], [date], [price]. You fill them in when you use it, and the template keeps nobody's data."
+          }
+        },
+        {
+          "id": "forma",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "La forma",
+            "en": "The format"
+          },
+          "descripcion": {
+            "es": "Dónde va y qué tan largo: WhatsApp, lista, 5 líneas.",
+            "en": "Where it goes and how long: WhatsApp, list, 5 lines."
+          },
+          "ejemplo": {
+            "es": "\"Lista de máximo 8 puntos\". Con un número, lo decides tú y no la IA.",
+            "en": "\"A list, 8 points max.\" With a number, you decide, not the AI."
+          }
+        },
+        {
+          "id": "tono",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "El tono",
+            "en": "The tone"
+          },
+          "descripcion": {
+            "es": "Cómo debe sonar, según quién lo va a leer.",
+            "en": "How it should sound, depending on who will read it."
+          },
+          "ejemplo": {
+            "es": "\"Cercano, como les hablo a mis clientes\". Si un trabajo pide otro tono que el de siempre, dilo en su plantilla.",
+            "en": "\"Friendly, the way I talk to my customers.\" If a job needs a different tone than usual, say so in its template."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primera pieza del copiloto: tus instrucciones. Empieza con tu línea del trabajo. Yo le pido a la IA que se presente con ellas, para ver qué sabe de ti.",
+          "en": "First part of your copilot: your instructions. Start with your work line. I'll ask the AI to introduce itself using them, so we see what it knows about you."
+        }
+      },
+      "titulo": {
+        "es": "Mis instrucciones",
+        "en": "My instructions"
+      },
+      "reto": {
+        "es": "Tu trabajo, real o inventado. Escribe las instrucciones que vas a guardar en tu IA: a qué te dedicas, para qué la usas, cómo te gustan las respuestas y qué debe evitar. Nada de datos sensibles: ni cédulas, ni teléfonos, ni claves, ni datos de clientes.",
+        "en": "Your work, real or made up. Write the instructions you'll save in your AI: what you do, what you use it for, how you like answers and what it should avoid. No sensitive data: no ID numbers, phone numbers, passwords or customer details."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "quien",
+          "texto": {
+            "es": "Quién eres: a qué te dedicas",
+            "en": "Who you are: what you do"
+          },
+          "rubrica": "Las instrucciones dicen a qué se dedica la persona, con su tipo de trabajo u oficio: 'soy contadora en una empresa pequeña', 'tengo una panadería', 'trabajo como recepcionista'. Puede ser real o inventado. No cuenta 'trabajo' o 'tengo un negocio' sin decir de qué, ni solo un nombre propio.",
+          "claves": {
+            "es": [
+              "soy ",
+              "trabajo en",
+              "trabajo como",
+              "trabajo de",
+              "tengo un",
+              "tengo una",
+              "me dedico",
+              "vendo",
+              "atiendo",
+              "manejo un",
+              "manejo una",
+              "administro"
+            ],
+            "en": [
+              "i'm a",
+              "i am a",
+              "i'm an",
+              "i am an",
+              "i work",
+              "i run",
+              "i own",
+              "i sell",
+              "i manage",
+              "for a living",
+              "my job is"
+            ]
+          }
+        },
+        {
+          "id": "uso",
+          "texto": {
+            "es": "Para qué usas la IA",
+            "en": "What you use AI for"
+          },
+          "rubrica": "Dice para qué suele usar la IA en su trabajo: escribir mensajes o correos, responder clientes, organizar notas, preparar informes. No cuenta 'para todo' o 'para ayudarme' sin decir en qué.",
+          "claves": {
+            "es": [
+              "te uso para",
+              "la uso para",
+              "uso la ia para",
+              "te voy a usar para",
+              "me ayudas a",
+              "me ayudes a",
+              "ayudame a",
+              "para escribir",
+              "para responder",
+              "para organizar",
+              "para preparar",
+              "para redactar",
+              "para resumir"
+            ],
+            "en": [
+              "i use you",
+              "i use ai",
+              "i use it",
+              "use you to",
+              "use you for",
+              "help me write",
+              "help me answer",
+              "help me organize",
+              "help me prepare",
+              "to write",
+              "to answer",
+              "to organize",
+              "to prepare",
+              "to summarize",
+              "to draft"
+            ]
+          }
+        },
+        {
+          "id": "como",
+          "texto": {
+            "es": "Cómo te gustan las respuestas",
+            "en": "How you like answers"
+          },
+          "rubrica": "Dice cómo quiere las respuestas: el largo (cortas, breves), la forma (listas, pasos, tablas) o el tono (cercano, formal, en palabras sencillas). No cuenta 'buenas respuestas' o 'respuestas útiles' sin decir cómo son.",
+          "claves": {
+            "es": [
+              "cortas",
+              "corto",
+              "breve",
+              "vinetas",
+              "en lista",
+              "listas",
+              "por pasos",
+              "paso a paso",
+              "tabla",
+              "palabras sencillas",
+              "palabras simples",
+              "cercan",
+              "formal",
+              "tono",
+              "al grano",
+              "directo",
+              "directa"
+            ],
+            "en": [
+              "short",
+              "brief",
+              "bullet",
+              "lists",
+              "in a list",
+              "step by step",
+              "table",
+              "plain words",
+              "simple words",
+              "simple language",
+              "friendly",
+              "formal",
+              "tone",
+              "to the point"
+            ]
+          }
+        },
+        {
+          "id": "evitar",
+          "texto": {
+            "es": "Qué debe evitar",
+            "en": "What to avoid"
+          },
+          "rubrica": "Dice algo que la IA no debe hacer, con una prohibición clara ('no uses', 'evita', 'nunca', 'nada de'). No cuenta pedir solo lo que sí quiere, sin decir qué evitar.",
+          "claves": {
+            "es": [
+              "no uses",
+              "no utilices",
+              "evita",
+              "nunca",
+              "no me des",
+              "no pongas",
+              "no quiero",
+              "no incluyas",
+              "no inventes",
+              "nada de",
+              "sin jerga"
+            ],
+            "en": [
+              "don't",
+              "do not",
+              "avoid",
+              "never",
+              "no jargon"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un asistente de IA. El mensaje del usuario son sus instrucciones personalizadas, como si estuvieran guardadas en la configuración: no las comentes. Con esas instrucciones, responde a este pedido: \"Preséntate en dos o tres líneas: ¿qué sabes de mí y cómo me vas a responder?\" Usa solo lo que dicen las instrucciones, sin inventar nada. Si no dicen a qué se dedica la persona, dilo: \"No sé a qué te dedicas.\" Si no dicen cómo quiere las respuestas, dilo también.",
+        "en": "You are an AI assistant. The user's message is their custom instructions, as if they were saved in the settings: don't comment on them. Using those instructions, answer this request: \"Introduce yourself in two or three lines: what do you know about me, and how will you answer me?\" Use only what the instructions say, without making anything up. If they don't say what the person does, say so: \"I don't know what you do.\" If they don't say how the person wants answers, say that too."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Sé que atiendes la recepción de un consultorio odontológico y que me usas para confirmar citas, responder preguntas y hacer avisos.\nTe voy a responder corto, en listas y sin palabras técnicas.\nY no voy a inventar precios ni horarios: esos me los das tú.",
+            "en": "I know you work the front desk at a dental office and use me to confirm appointments, answer questions and write notices.\nI'll answer you briefly, in lists, with no technical words.\nAnd I won't make up prices or hours: you give me those."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Tu copiloto ya sabe quién eres y cómo te gusta que te hablen. Esto es lo que vas a pegar en la configuración de tu IA.",
+              "en": "Strong signal. Your copilot already knows who you are and how you like to be spoken to. This is what you'll paste into your AI's settings."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "No sé a qué te dedicas ni cómo quieres las respuestas.\nTe voy a responder de forma general, como a cualquier persona.",
+            "en": "I don't know what you do or how you want answers.\nI'll answer you in a general way, like I would anyone."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: tu copiloto no sabe quién eres. Mira la lista: ¿qué les falta a tus instrucciones para que la IA no arranque de cero?",
+              "en": "Weak signal: your copilot doesn't know who you are. Check the list: what are your instructions missing so the AI doesn't start from zero?"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primera plantilla: el mensaje que más repites. Nombre arriba, lo fijo escrito una vez y espacios para lo que cambia. Yo la pruebo con datos inventados.",
+          "en": "First template: the message you repeat most. Name at the top, the fixed part written once, and blanks for what changes. I'll test it with made-up details."
+        }
+      },
+      "titulo": {
+        "es": "Plantilla 1 · El mensaje de siempre",
+        "en": "Template 1 · The usual message"
+      },
+      "reto": {
+        "es": "Piensa en un mensaje o correo que escribes seguido en tu trabajo: un recordatorio, una confirmación, un aviso. Escribe su plantilla con un nombre al comienzo, la tarea, espacios entre corchetes para lo que cambia, y cómo debe verse y sonar.",
+        "en": "Think of a message or email you write often at work: a reminder, a confirmation, a notice. Write its template with a name at the top, the task, blanks in brackets for what changes, and how it should look and sound."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "nombre",
+          "texto": {
+            "es": "Un nombre que dice qué hace",
+            "en": "A name that says what it does"
+          },
+          "rubrica": "La plantilla empieza con un nombre que dice qué trabajo hace ('Plantilla: recordatorio de cita', 'Nombre: resumen de reunión'). No cuenta un nombre que no dice nada ('plantilla 1', 'prompt bueno', 'mi plantilla'), ni que no tenga nombre.",
+          "claves": {
+            "es": [
+              "plantilla:",
+              "plantilla -",
+              "nombre:",
+              "titulo:"
+            ],
+            "en": [
+              "template:",
+              "template -",
+              "name:",
+              "title:"
+            ]
+          }
+        },
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: un verbo claro",
+            "en": "The task: a clear verb"
+          },
+          "rubrica": "La plantilla pide una acción concreta y dice qué producir: escribir, redactar o hacer un mensaje, un correo o un aviso. No cuenta 'ayúdame con...' o 'algo sobre...', ni una plantilla que solo trae datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "escribe un",
+              "escribe una",
+              "escribe el",
+              "escribe la",
+              "escribeme",
+              "escribir un",
+              "redacta",
+              "hazme un",
+              "hazme una",
+              "haz un",
+              "haz una",
+              "crea un",
+              "crea una",
+              "arma un",
+              "arma una",
+              "prepara un",
+              "prepara una",
+              "preparame",
+              "responde",
+              "contesta"
+            ],
+            "en": [
+              "write a",
+              "write an",
+              "write me",
+              "write the",
+              "draft",
+              "compose",
+              "create a",
+              "create an",
+              "make a",
+              "make an",
+              "put together a",
+              "prepare a",
+              "reply to",
+              "answer the",
+              "respond to"
+            ]
+          }
+        },
+        {
+          "id": "huecos",
+          "texto": {
+            "es": "Los datos: espacios entre corchetes",
+            "en": "The details: blanks in brackets"
+          },
+          "rubrica": "La plantilla deja al menos dos huecos entre corchetes o llaves para lo que cambia cada vez ([cliente], [fecha], [hora], [producto]). No cuenta si trae los datos de un solo caso en vez de huecos, ni un solo hueco genérico como [datos] o [cosas].",
+          "claves": {
+            "es": [
+              "[",
+              "{"
+            ],
+            "en": [
+              "[",
+              "{"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: dónde va o qué tan largo",
+            "en": "The format: where it goes or how long"
+          },
+          "rubrica": "Dice dónde va (WhatsApp, correo) o qué tan largo debe ser (número de líneas, corto, un párrafo). No cuenta la palabra 'mensaje' sola.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "correo",
+              "lineas",
+              "renglones",
+              "parrafo",
+              "corto",
+              "corta",
+              "breve",
+              "en lista",
+              "en una lista",
+              "tabla",
+              "vinetas"
+            ],
+            "en": [
+              "whatsapp",
+              "email",
+              "e-mail",
+              "lines",
+              "paragraph",
+              "short",
+              "brief",
+              "as a list",
+              "in a list",
+              "table",
+              "bullet"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "El tono: cómo debe sonar",
+            "en": "The tone: how it should sound"
+          },
+          "rubrica": "Dice cómo debe sonar: cercano, amable, formal, respetuoso, tranquilo. No cuenta 'bonito' o 'bueno' solos, porque no describen un tono, ni hablar del largo: 'corto' es forma, no tono.",
+          "claves": {
+            "es": [
+              "cercan",
+              "amable",
+              "alegre",
+              "calid",
+              "informal",
+              "formal",
+              "relajad",
+              "tono",
+              "que suene",
+              "respetuos",
+              "de confianza",
+              "sin sonar",
+              "tranquil",
+              "tono paciente",
+              "con paciencia"
+            ],
+            "en": [
+              "friendly",
+              "warm",
+              "cheerful",
+              "upbeat",
+              "casual",
+              "formal",
+              "relaxed",
+              "tone",
+              "sound like",
+              "sounds like",
+              "polite",
+              "respectful",
+              "not pushy",
+              "calm",
+              "patient tone",
+              "be patient"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona con su trabajo. El mensaje del usuario es una plantilla. Si trae huecos entre corchetes o llaves, llena cada uno con un dato de ejemplo inventado y sencillo (nombres como Fulana de Tal o Pepito Pérez) y escribe el resultado. Si no trae huecos, usa los datos tal como vienen. Responde solo con el texto final, sin explicaciones. Respeta el largo y el tono que pida; si no pide ninguno, escribe un texto largo y formal, como una circular. Si la plantilla empieza con un nombre, no lo copies.",
+        "en": "You are an AI that helps a person with their work. The user's message is a template. If it has blanks in brackets or braces, fill each one with a simple made-up example detail (names like Jane Doe or John Doe) and write the result. If it has no blanks, use the details as given. Reply with only the final text, no explanations. Follow the length and tone it asks for; if it asks for none, write a long, formal text, like an official notice. If the template starts with a name, don't copy it."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, Fulana. Te recuerdo tu cita del jueves a las 3 p. m.\nSi no puedes venir, avísame con un día de anticipación.\nTe espero.",
+            "en": "Hi, Jane. Just a reminder about your appointment Thursday at 3 p.m.\nIf you can't make it, let me know a day ahead.\nSee you then."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Llené tus espacios con datos de prueba y salió un mensaje listo para mandar. La próxima vez solo cambias lo que va entre corchetes.",
+              "en": "Strong signal. I filled your blanks with test details and got a message ready to send. Next time, you only change what's in brackets."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimado cliente:\nPor medio de la presente le informamos sobre su solicitud. Quedamos atentos a cualquier inquietud que pueda surgir al respecto.\nCordialmente, la Administración",
+            "en": "Dear customer:\nWe are writing to inform you regarding your request. We remain at your disposal for any questions that may arise.\nSincerely, The Management"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: salió una circular para nadie. Mira la lista: tu plantilla necesita su tarea, sus espacios y cómo debe verse y sonar.",
+              "en": "Weak signal: out came a memo for nobody. Check the list: your template needs its task, its blanks, and how it should look and sound."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Mi última confesión en Eco. Le armé el copiloto a Don Aurelio, que es cerrajero. Dos partes no debían quedar así. Tócalas antes de seguir con el tuyo.",
+          "en": "My last confession in Eco. I built a copilot for Don Aurelio, a locksmith. Two parts shouldn't have ended up like that. Tap them before you go on with yours."
+        }
+      },
+      "titulo": {
+        "es": "El copiloto de Don Aurelio",
+        "en": "Don Aurelio's copilot"
+      },
+      "trozos": [
+        {
+          "es": "Instrucciones: soy cerrajero y atiendo urgencias en el barrio.",
+          "en": "Instructions: I'm a locksmith and I handle emergencies in the neighborhood."
+        },
+        {
+          "es": "La clave del correo del negocio es cerrajeria123, por si la necesitas.",
+          "en": "The shop's email password is locksmith123, in case you need it."
+        },
+        {
+          "es": "Respóndeme corto y sin palabras técnicas.",
+          "en": "Keep answers short, with no technical words."
+        },
+        {
+          "es": "Plantilla: presupuesto. Escribe un presupuesto para [cliente] por cambiar [tipo de cerradura].",
+          "en": "Template: quote. Write a quote for [customer] to replace [lock type]."
+        },
+        {
+          "es": "Plantilla: aviso de visita. Escribe un WhatsApp para Pepito Pérez: voy el martes a las 10 a. m.",
+          "en": "Template: visit notice. Write a WhatsApp message to John Doe: I'm coming Tuesday at 10 a.m."
+        }
+      ],
+      "malos": [
+        1,
+        4
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Una clave nunca va en tus instrucciones, ni en ningún chat. Y el aviso de visita trae los datos de un solo cliente: sin espacios, sirve una vez y ya.",
+          "en": "You got me. A password never goes in your instructions, or in any chat. And the visit notice has one customer's details baked in: with no blanks, it works once and that's it."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa parte está bien hecha. Busca lo que nunca debe viajar y lo que sirve para un solo cliente.",
+          "en": "That part is well done. Look for what should never travel, and what only works for one customer."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Segunda plantilla: ordenar un enredo. Notas, pendientes, pedidos: algo que te llega desordenado. Déjale a la IA un espacio para pegarlo y dile cómo lo quieres.",
+          "en": "Second template: sorting out a mess. Notes, to-dos, orders: something that reaches you in a jumble. Leave the AI a blank to paste it into and tell it how you want it."
+        }
+      },
+      "titulo": {
+        "es": "Plantilla 2 · Ordenar un enredo",
+        "en": "Template 2 · Sort out a mess"
+      },
+      "reto": {
+        "es": "Piensa en algo desordenado que te llega seguido: notas de una reunión, una lista de pendientes, los pedidos de la semana. Escribe la plantilla: nombre, qué hacer con el texto, un espacio para pegarlo, la forma del resultado y un límite claro.",
+        "en": "Think of something messy that reaches you often: meeting notes, a to-do list, the week's orders. Write the template: a name, what to do with the text, a blank to paste it into, the shape of the result and a clear limit."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "nombre",
+          "texto": {
+            "es": "Un nombre que dice qué hace",
+            "en": "A name that says what it does"
+          },
+          "rubrica": "La plantilla empieza con un nombre que dice qué trabajo hace ('Plantilla: recordatorio de cita', 'Nombre: resumen de reunión'). No cuenta un nombre que no dice nada ('plantilla 1', 'prompt bueno', 'mi plantilla'), ni que no tenga nombre.",
+          "claves": {
+            "es": [
+              "plantilla:",
+              "plantilla -",
+              "nombre:",
+              "titulo:"
+            ],
+            "en": [
+              "template:",
+              "template -",
+              "name:",
+              "title:"
+            ]
+          }
+        },
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: ordenar o resumir",
+            "en": "The task: sort or summarize"
+          },
+          "rubrica": "Pide ordenar, organizar, resumir, clasificar o agrupar un texto. No cuenta 'mira esto' o 'ayúdame con esto' sin decir qué hacer con el texto.",
+          "claves": {
+            "es": [
+              "ordena",
+              "organiza",
+              "resume",
+              "resumen",
+              "clasifica",
+              "agrupa",
+              "extrae",
+              "saca los",
+              "saca las",
+              "prioriza"
+            ],
+            "en": [
+              "sort",
+              "organize",
+              "organise",
+              "summarize",
+              "summarise",
+              "summary",
+              "group",
+              "extract",
+              "pull out",
+              "prioritize",
+              "classify"
+            ]
+          }
+        },
+        {
+          "id": "pegar",
+          "texto": {
+            "es": "Los datos: un espacio para pegar el texto",
+            "en": "The details: a blank to paste the text"
+          },
+          "rubrica": "Deja un hueco claro para pegar el texto desordenado: [pega aquí las notas], [texto], {lista}. No cuenta pegar el texto de un solo día en vez del hueco, ni pedir que ordene 'esto' sin dejar dónde va.",
+          "claves": {
+            "es": [
+              "[",
+              "{",
+              "pega aqui",
+              "pegar aqui"
+            ],
+            "en": [
+              "[",
+              "{",
+              "paste here",
+              "paste it here"
+            ]
+          }
+        },
+        {
+          "id": "forma",
+          "texto": {
+            "es": "La forma: lista o tabla",
+            "en": "The format: list or table"
+          },
+          "rubrica": "Dice cómo debe verse el resultado: en una lista, una tabla, viñetas, columnas o pasos numerados. No cuenta 'ordenado' o 'bonito' sin decir la forma, ni la palabra 'lista' cuando nombra lo que se va a pegar ('mi lista de pendientes').",
+          "claves": {
+            "es": [
+              "en una lista",
+              "en lista",
+              "como lista",
+              "lista numerada",
+              "una lista con",
+              "en forma de lista",
+              "tabla",
+              "vinetas",
+              "columnas",
+              "numerad"
+            ],
+            "en": [
+              "as a list",
+              "in a list",
+              "into a list",
+              "numbered",
+              "bulleted",
+              "bullet",
+              "table",
+              "columns"
+            ]
+          }
+        },
+        {
+          "id": "limite",
+          "texto": {
+            "es": "Un límite claro",
+            "en": "A clear limit"
+          },
+          "rubrica": "Pone un límite con número o una prohibición: 'máximo 10 puntos', 'no más de media página', 'no inventes nada que no esté en el texto'. No cuenta 'corto' solo, sin número ni prohibición.",
+          "claves": {
+            "es": [
+              "maximo",
+              "no mas de",
+              "como mucho",
+              "menos de",
+              "no inventes",
+              "no agregues",
+              "no incluyas",
+              "no pongas",
+              "sin inventar",
+              "solo lo que"
+            ],
+            "en": [
+              "max",
+              "no more than",
+              "at most",
+              "fewer than",
+              "less than",
+              "don't make up",
+              "do not make up",
+              "don't add",
+              "do not add",
+              "don't include",
+              "only what"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a ordenar información de su trabajo. El mensaje del usuario es una plantilla. Si trae un hueco para pegar un texto, haz de cuenta que pegaron estas notas: \"llamar al proveedor, pagar el arriendo el 5, reunión con el equipo el jueves, pedir cotización de sillas, revisar el inventario\". Responde solo con el resultado, sin explicaciones. Respeta la forma y los límites que pida; si no pide una forma, responde en un párrafo largo. Si no hay hueco, responde algo general sobre organizar el trabajo. No inventes tareas que no estén en las notas.",
+        "en": "You are an AI that helps a person organize information from their work. The user's message is a template. If it has a blank for pasting text, pretend these notes were pasted: \"call the supplier, pay rent on the 5th, team meeting Thursday, get a quote for chairs, check inventory\". Reply with only the result, no explanations. Follow the format and limits it asks for; if it asks for no format, reply in one long paragraph. If there's no blank, reply with something general about organizing work. Don't add tasks that aren't in the notes."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Pendientes de la semana:\n1. Pagar el arriendo (el 5)\n2. Reunión con el equipo (jueves)\n3. Llamar al proveedor\n4. Pedir cotización de sillas\n5. Revisar el inventario",
+            "en": "This week's to-dos:\n1. Pay rent (the 5th)\n2. Team meeting (Thursday)\n3. Call the supplier\n4. Get a quote for chairs\n5. Check inventory"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Pegué unas notas de prueba en tu espacio y salió una lista ordenada, con las fechas primero. Tu enredo de cada semana ya tiene plantilla.",
+              "en": "Strong signal. I pasted some test notes into your blank and got a tidy list, with the dates first. Your weekly mess has a template now."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Organizar el trabajo es muy importante. Se recomienda hacer listas, priorizar las tareas según su urgencia, revisar los pendientes con frecuencia y delegar cuando sea posible, para así mejorar la productividad del equipo en general...",
+            "en": "Organizing your work is very important. It is recommended to make lists, prioritize tasks by urgency, review pending items often and delegate when possible, in order to improve the team's overall productivity..."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA no tenía qué ordenar ni cómo, y soltó un discurso. Mira la lista: dale un espacio para pegar el texto y dile qué forma quieres.",
+              "en": "Weak signal: the AI had nothing to sort and no shape to follow, so it gave a speech. Check the list: give it a blank for the text and tell it what format you want."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "laboratorio",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tercera plantilla, con un truco del capítulo: que la IA te entreviste. Sirve para los trabajos grandes, donde no sabes bien qué datos darle.",
+          "en": "Third template, with a trick from this chapter: letting the AI interview you. It's great for big jobs, when you're not sure what details to give it."
+        }
+      },
+      "titulo": {
+        "es": "Plantilla 3 · Que te entreviste",
+        "en": "Template 3 · Let it interview you"
+      },
+      "reto": {
+        "es": "Escoge un trabajo más grande que haces de vez en cuando: una propuesta, un informe, un anuncio importante. Escribe una plantilla que le pida a la IA hacerte preguntas antes de escribir. Dile cuántas preguntas como máximo y que las haga una por una.",
+        "en": "Pick a bigger job you do now and then: a proposal, a report, an important announcement. Write a template that asks the AI to question you before writing. Tell it the most questions it can ask, and to ask them one at a time."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "nombre",
+          "texto": {
+            "es": "Un nombre que dice qué hace",
+            "en": "A name that says what it does"
+          },
+          "rubrica": "La plantilla empieza con un nombre que dice qué trabajo hace ('Plantilla: recordatorio de cita', 'Nombre: resumen de reunión'). No cuenta un nombre que no dice nada ('plantilla 1', 'prompt bueno', 'mi plantilla'), ni que no tenga nombre.",
+          "claves": {
+            "es": [
+              "plantilla:",
+              "plantilla -",
+              "nombre:",
+              "titulo:"
+            ],
+            "en": [
+              "template:",
+              "template -",
+              "name:",
+              "title:"
+            ]
+          }
+        },
+        {
+          "id": "entrevista",
+          "texto": {
+            "es": "Pide que te pregunte primero",
+            "en": "Asks it to question you first"
+          },
+          "rubrica": "Pide que la IA le haga preguntas antes de escribir, para conseguir los datos que necesita ('antes de escribir, hazme preguntas', 'entrevístame'). No cuenta pedir que escriba de una vez, ni pedirle preguntas para otra persona (una encuesta, un examen).",
+          "claves": {
+            "es": [
+              "hazme preguntas",
+              "hazme las preguntas",
+              "preguntame",
+              "entrevistame",
+              "me preguntes",
+              "me hagas preguntas",
+              "antes de escribir",
+              "antes de empezar",
+              "antes de responder",
+              "antes de redactar"
+            ],
+            "en": [
+              "ask me",
+              "interview me",
+              "question me",
+              "before you write",
+              "before writing",
+              "before you start",
+              "before you answer",
+              "before answering",
+              "before you draft"
+            ]
+          }
+        },
+        {
+          "id": "una",
+          "texto": {
+            "es": "Una pregunta a la vez",
+            "en": "One question at a time"
+          },
+          "rubrica": "Pide que las preguntas vayan una por una o de a una, esperando cada respuesta. No cuenta pedir 'preguntas' sin decir cómo hacerlas.",
+          "claves": {
+            "es": [
+              "una por una",
+              "una a una",
+              "una a la vez",
+              "de una en una",
+              "de a una",
+              "espera mi respuesta",
+              "espera a que",
+              "espera que te"
+            ],
+            "en": [
+              "one at a time",
+              "one by one",
+              "one question at a time",
+              "wait for my answer",
+              "wait for me",
+              "wait until i"
+            ]
+          }
+        },
+        {
+          "id": "cuantas",
+          "texto": {
+            "es": "Un límite de preguntas",
+            "en": "A limit on questions"
+          },
+          "rubrica": "Dice cuántas preguntas como máximo (máximo 5, no más de 4, 3 preguntas). No cuenta 'algunas preguntas' o 'unas preguntas' sin número.",
+          "claves": {
+            "es": [
+              "maximo",
+              "no mas de",
+              "como mucho",
+              "hasta 3",
+              "hasta 4",
+              "hasta 5",
+              "3 preguntas",
+              "4 preguntas",
+              "5 preguntas",
+              "6 preguntas",
+              "tres preguntas",
+              "cuatro preguntas",
+              "cinco preguntas",
+              "seis preguntas"
+            ],
+            "en": [
+              "max",
+              "no more than",
+              "at most",
+              "up to 3",
+              "up to 4",
+              "up to 5",
+              "3 questions",
+              "4 questions",
+              "5 questions",
+              "6 questions",
+              "three questions",
+              "four questions",
+              "five questions",
+              "six questions"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona con un trabajo grande. El mensaje del usuario es una plantilla. Si te pide hacerle preguntas antes de escribir, no escribas el trabajo: responde solo con tus preguntas, cortas y concretas, respetando el número máximo que ponga. Si pide que sean una por una, haz solo la primera y di cuántas vas a hacer. Si no pide preguntas, escribe de una vez un texto largo y genérico, con huecos como [dato] donde falte información. Si la plantilla empieza con un nombre, no lo copies.",
+        "en": "You are an AI that helps a person with a big job. The user's message is a template. If it asks you to question them before writing, don't write the job: reply with only your questions, short and specific, keeping to the maximum number it sets. If it asks for one at a time, ask only the first and say how many you'll ask. If it doesn't ask for questions, write a long, generic text right away, with blanks like [detail] where information is missing. If the template starts with a name, don't copy it."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Listo. Te hago máximo 5 preguntas, una por una.\nPrimera: ¿para quién es la propuesta y qué necesita esa persona?",
+            "en": "Got it. I'll ask you 5 questions max, one at a time.\nFirst: who is the proposal for, and what does that person need?"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. La IA no se lanzó a escribir: primero te pregunta. Así los datos los pones tú y no ella.",
+              "en": "Strong signal. The AI didn't rush into writing: it asks you first. That way you supply the facts, not the AI."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Propuesta de servicios\nEstimado [cliente]: nos permitimos presentar nuestra propuesta para [proyecto], con un valor de [valor] y un tiempo de entrega de [tiempo]. Nuestra empresa cuenta con amplia experiencia en [área]...",
+            "en": "Service proposal\nDear [client]: we are pleased to present our proposal for [project], priced at [amount] with a delivery time of [time]. Our company has extensive experience in [field]..."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA escribió de una vez y dejó todo en huecos. Mira la lista: pídele que te entreviste antes de escribir.",
+              "en": "Weak signal: the AI wrote it all at once and left everything as blanks. Check the list: ask it to interview you before writing."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "laboratorio",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Cuarta plantilla, con otro truco del capítulo: que la IA revise su propia respuesta antes de entregártela. Sirve donde un error cuesta.",
+          "en": "Fourth template, with another trick from this chapter: having the AI check its own answer before handing it over. It's for jobs where a mistake costs you."
+        }
+      },
+      "titulo": {
+        "es": "Plantilla 4 · Que se revise",
+        "en": "Template 4 · Have it check itself"
+      },
+      "reto": {
+        "es": "Escoge un texto de tu trabajo donde un error cuesta: una cotización, un aviso con fechas, la respuesta a un reclamo. Escribe la plantilla con espacios para los datos, y pídele a la IA que, antes de entregar, revise su respuesta con una o dos cosas concretas.",
+        "en": "Pick a text from your work where a mistake costs you: a quote, a notice with dates, a reply to a complaint. Write the template with blanks for the details, and ask the AI to check its answer before handing it over, against one or two specific things."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "nombre",
+          "texto": {
+            "es": "Un nombre que dice qué hace",
+            "en": "A name that says what it does"
+          },
+          "rubrica": "La plantilla empieza con un nombre que dice qué trabajo hace ('Plantilla: recordatorio de cita', 'Nombre: resumen de reunión'). No cuenta un nombre que no dice nada ('plantilla 1', 'prompt bueno', 'mi plantilla'), ni que no tenga nombre.",
+          "claves": {
+            "es": [
+              "plantilla:",
+              "plantilla -",
+              "nombre:",
+              "titulo:"
+            ],
+            "en": [
+              "template:",
+              "template -",
+              "name:",
+              "title:"
+            ]
+          }
+        },
+        {
+          "id": "huecos",
+          "texto": {
+            "es": "Los datos: espacios entre corchetes",
+            "en": "The details: blanks in brackets"
+          },
+          "rubrica": "La plantilla deja al menos dos huecos entre corchetes o llaves para lo que cambia cada vez ([cliente], [fecha], [precio]). No cuenta si trae los datos de un solo caso en vez de huecos, ni un solo hueco genérico como [datos] o [cosas].",
+          "claves": {
+            "es": [
+              "[",
+              "{"
+            ],
+            "en": [
+              "[",
+              "{"
+            ]
+          }
+        },
+        {
+          "id": "revisa",
+          "texto": {
+            "es": "Pide que se revise antes de entregar",
+            "en": "Asks it to check before handing over"
+          },
+          "rubrica": "Pide que la IA revise o verifique su propia respuesta antes de entregarla ('antes de entregarme, revisa...', 'revisa tu respuesta'). No cuenta pedirle que revise un texto que escribió la persona, ni 'hazlo bien' sin pedir la revisión.",
+          "claves": {
+            "es": [
+              "revisa tu",
+              "revisate",
+              "revisala",
+              "revisalo",
+              "revisa la respuesta",
+              "revisa que",
+              "antes de entregar",
+              "antes de darme",
+              "antes de mostrarme",
+              "antes de enviarme",
+              "verifica que",
+              "verifica tu",
+              "comprueba que"
+            ],
+            "en": [
+              "check your",
+              "review your",
+              "double-check",
+              "double check",
+              "before you give",
+              "before giving",
+              "before you hand",
+              "before you show",
+              "before showing",
+              "verify that",
+              "check that"
+            ]
+          }
+        },
+        {
+          "id": "criterios",
+          "texto": {
+            "es": "Dice qué revisar, en concreto",
+            "en": "Says what to check, specifically"
+          },
+          "rubrica": "Da al menos una cosa concreta que la revisión debe mirar: que los precios sumen bien, que estén todas las fechas, que no pase de 5 líneas, que no invente datos. No cuenta 'revisa que esté bien' o 'que no tenga errores' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "que sumen",
+              "la suma",
+              "las sumas",
+              "las cuentas",
+              "que esten todos",
+              "que esten todas",
+              "que no pase",
+              "que no invente",
+              "que no inventes",
+              "que incluya",
+              "los precios",
+              "las fechas",
+              "las horas",
+              "el total"
+            ],
+            "en": [
+              "adds up",
+              "add up",
+              "the math",
+              "the total",
+              "the prices",
+              "the dates",
+              "the times",
+              "isn't over",
+              "is not over",
+              "made up",
+              "includes the",
+              "include the",
+              "every date",
+              "every price"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona con textos de su trabajo. El mensaje del usuario es una plantilla. Llena sus huecos con datos de ejemplo inventados y sencillos. Si la plantilla pide revisar la respuesta antes de entregarla, escribe el texto y al final agrega una línea que empiece por \"Revisé:\" con lo que comprobaste, según lo que pida. Si no pide revisión, escribe el texto de una vez y comete un error creíble en una suma o en una fecha. Responde solo con eso, sin explicaciones. Si la plantilla empieza con un nombre, no lo copies.",
+        "en": "You are an AI that helps a person with texts for their work. The user's message is a template. Fill its blanks with simple made-up example details. If the template asks you to check the answer before handing it over, write the text and add a final line starting with \"Checked:\" saying what you verified, based on what it asks. If it doesn't ask for a check, write the text in one go and make a believable mistake in a sum or a date. Reply with only that, no explanations. If the template starts with a name, don't copy it."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Cotización para Fulana de Tal:\n- 2 cajas de papel: $60.000\n- 1 tóner: $150.000\nTotal: $210.000\nRevisé: la suma da bien y están todos los precios.",
+            "en": "Quote for Jane Doe:\n- 2 boxes of paper: $60\n- 1 toner cartridge: $150\nTotal: $210\nChecked: the sum is right and every price is there."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. La IA hizo el trabajo y después lo revisó con tu lista. La suma da, y lo dice. Igual, un vistazo tuyo nunca sobra.",
+              "en": "Strong signal. The AI did the job and then checked it against your list. The sum adds up, and it says so. A quick look from you still never hurts."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Cotización para Fulana de Tal:\n- 2 cajas de papel: $60.000\n- 1 tóner: $150.000\nTotal: $200.000",
+            "en": "Quote for Jane Doe:\n- 2 boxes of paper: $60\n- 1 toner cartridge: $150\nTotal: $200"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la suma no da, y nadie la revisó. Mira la lista: pídele que se revise, con cosas concretas, antes de entregarte.",
+              "en": "Weak signal: the sum is wrong, and nobody checked it. Check the list: ask it to review its work, against specific things, before handing it over."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b11",
+      "tipo": "laboratorio",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Última plantilla, y esta la escoges tú. Piensa en el trabajo que más tiempo te quita en la semana. Usa lo que te sirva de todo Eco.",
+          "en": "Last template, and you pick this one. Think of the job that eats up the most time in your week. Use whatever helps from all of Eco."
+        }
+      },
+      "titulo": {
+        "es": "Plantilla 5 · La que te falta",
+        "en": "Template 5 · The one you're missing"
+      },
+      "reto": {
+        "es": "Escoge el trabajo que más tiempo te quita y en el que la IA te podría ayudar. Escribe su plantilla con nombre, tarea, espacios y la forma o el tono. Agrega al menos un truco de piloto: un ejemplo, un papel, un límite con número, pasos, que te entreviste o que se revise.",
+        "en": "Pick the job that takes up most of your time and that AI could help with. Write its template with a name, the task, blanks, and the format or tone. Add at least one pilot trick: an example, a role, a limit with a number, steps, an interview or a self-check."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "nombre",
+          "texto": {
+            "es": "Un nombre que dice qué hace",
+            "en": "A name that says what it does"
+          },
+          "rubrica": "La plantilla empieza con un nombre que dice qué trabajo hace ('Plantilla: recordatorio de cita', 'Nombre: resumen de reunión'). No cuenta un nombre que no dice nada ('plantilla 1', 'prompt bueno', 'mi plantilla'), ni que no tenga nombre.",
+          "claves": {
+            "es": [
+              "plantilla:",
+              "plantilla -",
+              "nombre:",
+              "titulo:"
+            ],
+            "en": [
+              "template:",
+              "template -",
+              "name:",
+              "title:"
+            ]
+          }
+        },
+        {
+          "id": "tarea",
+          "texto": {
+            "es": "La tarea: un verbo claro",
+            "en": "The task: a clear verb"
+          },
+          "rubrica": "La plantilla pide una acción concreta y dice qué producir: escribir, redactar, responder, hacer una lista, preparar. No cuenta 'ayúdame con...' o 'algo sobre...', ni una plantilla que solo trae datos sin pedir nada.",
+          "claves": {
+            "es": [
+              "escribe un",
+              "escribe una",
+              "escribe el",
+              "escribe la",
+              "escribeme",
+              "escribir un",
+              "redacta",
+              "hazme un",
+              "hazme una",
+              "haz un",
+              "haz una",
+              "crea un",
+              "crea una",
+              "arma un",
+              "arma una",
+              "prepara un",
+              "prepara una",
+              "preparame",
+              "responde",
+              "contesta",
+              "ordena",
+              "organiza",
+              "resume",
+              "compara"
+            ],
+            "en": [
+              "write a",
+              "write an",
+              "write me",
+              "write the",
+              "draft",
+              "compose",
+              "create a",
+              "create an",
+              "make a",
+              "make an",
+              "put together a",
+              "prepare a",
+              "reply to",
+              "answer the",
+              "respond to",
+              "sort",
+              "organize",
+              "summarize",
+              "compare"
+            ]
+          }
+        },
+        {
+          "id": "huecos",
+          "texto": {
+            "es": "Los datos: espacios entre corchetes",
+            "en": "The details: blanks in brackets"
+          },
+          "rubrica": "La plantilla deja al menos dos huecos entre corchetes o llaves para lo que cambia cada vez ([cliente], [fecha], [tema]). No cuenta si trae los datos de un solo caso en vez de huecos, ni un solo hueco genérico como [datos] o [cosas].",
+          "claves": {
+            "es": [
+              "[",
+              "{"
+            ],
+            "en": [
+              "[",
+              "{"
+            ]
+          }
+        },
+        {
+          "id": "formatono",
+          "texto": {
+            "es": "La forma o el tono",
+            "en": "The format or the tone"
+          },
+          "rubrica": "Dice cómo debe verse (dónde va, qué tan largo, lista o tabla) o cómo debe sonar (cercano, formal, amable). Basta con uno de los dos. No cuenta 'bonito' o 'bueno' solos.",
+          "claves": {
+            "es": [
+              "whatsapp",
+              "wasap",
+              "correo",
+              "lineas",
+              "renglones",
+              "parrafo",
+              "corto",
+              "corta",
+              "breve",
+              "en lista",
+              "en una lista",
+              "tabla",
+              "vinetas",
+              "cercan",
+              "amable",
+              "alegre",
+              "calid",
+              "informal",
+              "formal",
+              "relajad",
+              "tono",
+              "que suene",
+              "respetuos",
+              "de confianza",
+              "sin sonar",
+              "tranquil",
+              "tono paciente",
+              "con paciencia"
+            ],
+            "en": [
+              "whatsapp",
+              "email",
+              "e-mail",
+              "lines",
+              "paragraph",
+              "short",
+              "brief",
+              "as a list",
+              "in a list",
+              "table",
+              "bullet",
+              "friendly",
+              "warm",
+              "cheerful",
+              "upbeat",
+              "casual",
+              "formal",
+              "relaxed",
+              "tone",
+              "sound like",
+              "sounds like",
+              "polite",
+              "respectful",
+              "not pushy",
+              "calm",
+              "patient tone",
+              "be patient"
+            ]
+          }
+        },
+        {
+          "id": "truco",
+          "texto": {
+            "es": "Un truco de piloto",
+            "en": "A pilot trick"
+          },
+          "rubrica": "Usa al menos un truco del mundo: un ejemplo escrito ('por ejemplo: ...'), un papel ('actúa como...'), un límite con número o una prohibición ('máximo 5', 'no inventes'), ir paso a paso, pedir que la entreviste o que se revise antes de entregar. No cuenta 'hazlo bien' o 'que quede perfecto'.",
+          "claves": {
+            "es": [
+              "por ejemplo",
+              "como este:",
+              "actua como",
+              "eres un ",
+              "eres una ",
+              "haz de cuenta",
+              "maximo",
+              "no mas de",
+              "no inventes",
+              "no incluyas",
+              "paso a paso",
+              "hazme preguntas",
+              "preguntame",
+              "entrevistame",
+              "revisa tu",
+              "revisate",
+              "antes de entregar",
+              "antes de darme"
+            ],
+            "en": [
+              "for example",
+              "like this one",
+              "act as",
+              "you are a",
+              "you're a",
+              "pretend you",
+              "max",
+              "no more than",
+              "don't make up",
+              "don't include",
+              "step by step",
+              "ask me",
+              "interview me",
+              "check your",
+              "review your",
+              "before you give",
+              "before giving"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona con su trabajo. El mensaje del usuario es una plantilla. Si trae huecos entre corchetes o llaves, llena cada uno con un dato de ejemplo inventado y sencillo (nombres como Fulana de Tal o Pepito Pérez) y escribe el resultado. Si no trae huecos, usa los datos tal como vienen. Responde solo con el texto final, sin explicaciones. Respeta el largo y el tono que pida; si no pide ninguno, escribe un texto largo y formal, como una circular. Si la plantilla empieza con un nombre, no lo copies.",
+        "en": "You are an AI that helps a person with their work. The user's message is a template. If it has blanks in brackets or braces, fill each one with a simple made-up example detail (names like Jane Doe or John Doe) and write the result. If it has no blanks, use the details as given. Reply with only the final text, no explanations. Follow the length and tone it asks for; if it asks for none, write a long, formal text, like an official notice. If the template starts with a name, don't copy it."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Hola, Pepito. Sí atendemos los sábados, de 8 a. m. a 12 m.\nLa limpieza dental cuesta $80.000.\n¿Te separo una cita?",
+            "en": "Hi, John. Yes, we're open Saturdays, 8 a.m. to noon.\nA dental cleaning is $80.\nWant me to book you in?"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal fuerte. Quinta plantilla lista. Tu copiloto ya tiene instrucciones y cinco trabajos guardados, cada uno con su nombre.",
+              "en": "Strong signal. Fifth template done. Your copilot now has instructions and five saved jobs, each with its name."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimado cliente:\nPor medio de la presente le informamos sobre su solicitud. Quedamos atentos a cualquier inquietud que pueda surgir al respecto.\nCordialmente, la Administración",
+            "en": "Dear customer:\nWe are writing to inform you regarding your request. We remain at your disposal for any questions that may arise.\nSincerely, The Management"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: otra circular para nadie. Mira la lista: nombre, tarea, espacios, cómo se ve o suena, y un truco de piloto.",
+              "en": "Weak signal: another memo for nobody. Check the list: name, task, blanks, how it looks or sounds, and a pilot trick."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b12",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora instala tu copiloto en una IA de verdad. Pega tus instrucciones donde vayan en tu herramienta y prueba una de tus plantillas.",
+          "en": "Now install your copilot in a real AI. Paste your instructions wherever they go in your tool and try out one of your templates."
+        }
+      },
+      "titulo": {
+        "es": "Instala tu copiloto",
+        "en": "Install your copilot"
+      },
+      "instruccion": {
+        "es": "Abre la IA que usas. Busca en su configuración algo como instrucciones personalizadas o personalización, y pega ahí tus instrucciones. Si no existe, pégalas al empezar el chat. Luego usa una plantilla: llena los espacios y mándala. Al final, pídele que mejore una de tus plantillas.",
+        "en": "Open the AI you use. Look in its settings for something like custom instructions or personalization, and paste your instructions there. If there's nothing like that, paste them at the start of the chat. Then use a template: fill in the blanks and send it. Finally, ask it to improve one of your templates."
+      },
+      "checks": [
+        {
+          "es": "Pegué mis instrucciones en la configuración o al empezar el chat",
+          "en": "I pasted my instructions in the settings or at the start of the chat"
+        },
+        {
+          "es": "Revisé que no llevaran datos sensibles",
+          "en": "I checked they had no sensitive data"
+        },
+        {
+          "es": "Usé una plantilla con los espacios llenos",
+          "en": "I used a template with the blanks filled in"
+        },
+        {
+          "es": "Le pedí a la IA que mejorara una de mis plantillas",
+          "en": "I asked the AI to improve one of my templates"
+        },
+        {
+          "es": "Guardé lo que sirvió como versión nueva",
+          "en": "I saved what worked as a new version"
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "La nota final de Eco. Escribe con tus palabras qué es tu copiloto personal, como se lo explicarías a alguien de tu trabajo.",
+          "en": "Eco's final note. Write in your own words what your personal copilot is, the way you'd explain it to someone you work with."
+        }
+      },
+      "concepto": "copiloto-personal",
+      "definicion": {
+        "es": "Tu IA preparada para tu trabajo: instrucciones guardadas con quién eres y cómo te gustan las respuestas, más plantillas con nombre y espacios para lo que repites. Lo mejoras con el uso.",
+        "en": "Your AI, set up for your work: saved instructions with who you are and how you like answers, plus named templates with blanks for what you repeat. It gets better as you use it."
+      },
+      "pregunta": {
+        "es": "Mi copiloto personal es…",
+        "en": "My personal copilot is…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "mis instrucciones",
+        "en": "my instructions"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta del copiloto y tus instrucciones ya están en tu bitácora. Tus cinco plantillas también quedan ahí, cada una con su nombre.",
+          "en": "Saved. Your copilot card and your instructions are in your logbook. Your five templates are there too, each with its name."
+        }
+      }
+    },
+    {
+      "id": "b14",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas más y Eco queda completo.",
+          "en": "Two more questions and Eco is complete."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué va en tus instrucciones y qué va en una plantilla?",
+            "en": "What goes in your instructions, and what goes in a template?"
+          },
+          "opciones": [
+            {
+              "es": "Instrucciones: quién eres y cómo te gusta. Plantilla: un trabajo que repites",
+              "en": "Instructions: who you are and what you like. Template: a job you repeat"
+            },
+            {
+              "es": "Instrucciones: el trabajo de hoy. Plantilla: tus claves",
+              "en": "Instructions: today's job. Template: your passwords"
+            },
+            {
+              "es": "Todo va junto, en un solo chat largo",
+              "en": "Everything goes together, in one long chat"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Las instrucciones valen siempre. Cada plantilla vale para un trabajo.",
+              "en": "Right. Instructions are always true. Each template is for one job."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Qué lee la IA en todos tus chats, y qué copias solo cuando toca ese trabajo?",
+              "en": "Hmm. What does the AI read in every chat, and what do you copy only when that job comes up?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Tu plantilla de cotización salió con una suma mal. ¿Qué haces?",
+            "en": "Your quote template came out with a wrong sum. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "La borro: las plantillas no sirven",
+              "en": "Delete it: templates don't work"
+            },
+            {
+              "es": "Le agrego que revise las sumas y la guardo como versión nueva",
+              "en": "Add a line to check the sums and save it as a new version"
+            },
+            {
+              "es": "Corrijo ese chat y dejo la plantilla igual",
+              "en": "Fix that chat and leave the template as is"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Así la mejora queda para siempre, no solo en ese chat.",
+              "en": "Exactly. That way the fix sticks for good, not just in that chat."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en la próxima cotización. ¿Qué la haría salir bien sin que tengas que acordarte?",
+              "en": "Think about the next quote. What would make it come out right without you having to remember?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Copiloto listo, piloto. ¡Terminaste Eco!",
+          "en": "Copilot ready, pilot. You have finished Eco!"
+        }
+      },
+      "titulo": {
+        "es": "Eco completo",
+        "en": "Eco complete"
+      },
+      "texto": {
+        "es": "Llegaste a Eco mandando frases sueltas. Te vas con un copiloto: instrucciones que te conocen y cinco plantillas para tu trabajo. Pides completo, revisas lo que sale, cuidas tus datos y usas trucos de piloto. Y este proyecto te lleva a tu certificado de Eco. La antena queda en tus manos.",
+        "en": "You showed up at Eco sending half-finished requests. You leave with a copilot: instructions that know you and five templates for your work. You ask for things completely, check what comes back, protect your data and use pilot tricks. And this project takes you to your Eco certificate. The antenna is in your hands now."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Tu copiloto personal",
+        "en": "Your personal copilot"
+      },
+      "resumen": {
+        "es": "Instrucciones guardadas con quién eres y cómo te gustan las respuestas, más cinco plantillas con espacios para los trabajos que repites.",
+        "en": "Saved instructions with who you are and how you like answers, plus five templates with blanks for the jobs you repeat."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b05",
+      "b06",
+      "b08",
+      "b09",
+      "b10",
+      "b11"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Escogiste el trabajo de tu copiloto",
+          "en": "You picked the work for your copilot"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Escribiste tus instrucciones personalizadas",
+          "en": "You wrote your custom instructions"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Plantilla 1: el mensaje de siempre",
+          "en": "Template 1: the usual message"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Plantilla 2: ordenar un enredo",
+          "en": "Template 2: sort out a mess"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Plantilla 3: que te entreviste",
+          "en": "Template 3: let it interview you"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Plantilla 4: que se revise",
+          "en": "Template 4: have it check itself"
+        }
+      },
+      {
+        "bloque": "b11",
+        "texto": {
+          "es": "Plantilla 5: la que te faltaba",
+          "en": "Template 5: the one you were missing"
+        }
+      },
+      {
+        "bloque": "b12",
+        "texto": {
+          "es": "Instalaste tu copiloto en una IA de verdad",
+          "en": "You installed your copilot in a real AI"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "armar-tu-copiloto",
+      "titulo": {
+        "es": "Armar tu copiloto personal",
+        "en": "Building your personal copilot"
+      }
+    }
+  }
+}

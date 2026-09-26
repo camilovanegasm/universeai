@@ -1,0 +1,707 @@
+{
+  "formato": "punti-mision@1",
+  "id": "eso-es-ia-o-no",
+  "mundo": "que-es-la-ia",
+  "capitulo": 1,
+  "numero": 4,
+  "receta": "criterio",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "ia-o-no"
+  ],
+  "usaConceptos": [
+    "ia",
+    "reglas-vs-ejemplos"
+  ],
+  "titulo": {
+    "es": "¿Eso es IA o no?",
+    "en": "Is That AI or Not?"
+  },
+  "resumen": {
+    "es": "Leer la etiqueta \"con IA\" con una pregunta: ¿aprende de datos o solo sigue una regla fija?",
+    "en": "Reading the \"with AI\" label with one question: does it learn from data, or just follow a fixed rule?"
+  },
+  "siguiente": "mi-mapa-de-ia-de-un-dia",
+  "fuentes": [
+    {
+      "titulo": "Google for Developers, Introduction to Machine Learning: What is ML?",
+      "url": "https://developers.google.com/machine-learning/intro-to-ml/what-is-ml",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Señal desde Cúcuta, piloto. Marisol vende electrodomésticos y está confundida: en su almacén todo dice \"con IA\". En mi taller guardo etiquetas así, y no todas dicen la verdad. Vamos a revisarlas.",
+          "en": "Signal from Cúcuta, pilot. Marisol sells home appliances, and she's confused: everything in her store says \"with AI\". I keep labels like that in my workshop, and not all of them tell the truth. Let's check them."
+        }
+      },
+      "titulo": {
+        "es": "¿Eso es IA o no?",
+        "en": "Is that AI or not?"
+      },
+      "texto": {
+        "es": "Marisol vende electrodomésticos en un almacén. Todo le llega con la etiqueta \"con IA\": la nevera, la lavadora y hasta un ventilador. Hoy aprendes a leer esa etiqueta con una sola pregunta. Unos 8 minutos.",
+        "en": "Marisol sells home appliances in a store. Everything arrives with a \"with AI\" label: the fridge, the washing machine, even a fan. Today you'll learn to read that label with one question. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "La etiqueta no basta. Lo que importa es qué hace el aparato por dentro.",
+          "en": "The label isn't enough. What matters is what the device does inside."
+        }
+      },
+      "titulo": {
+        "es": "La pregunta clave",
+        "en": "The key question"
+      },
+      "texto": {
+        "es": "Muchas marcas ponen \"con IA\" porque vende. Tú ya sabes qué es la IA: un programa que aprende de ejemplos. Entonces pregúntate: ¿este aparato aprendió de datos, o solo sigue un temporizador o una regla fija? Si solo sigue una regla, puede ser útil, pero no es IA.",
+        "en": "Lots of brands add \"with AI\" because it sells. You already know what AI is: a program that learns from examples. So ask yourself: did this device learn from data, or does it just follow a timer or a fixed rule? If it only follows a rule, it may be useful, but it isn't AI."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "La caja dice \"con IA\"",
+            "en": "The box says \"with AI\""
+          },
+          {
+            "es": "¿Aprendió de datos?",
+            "en": "Did it learn from data?"
+          },
+          {
+            "es": "Sí: puede ser IA. No: es una regla con buen nombre",
+            "en": "Yes: it may be AI. No: it's a rule with a fancy name"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Llega un cliente al almacén de Marisol. Mira la escena y ayúdala a responder.",
+          "en": "A customer walks into Marisol's store. Read the scene and help her answer."
+        }
+      },
+      "titulo": {
+        "es": "El ventilador \"con IA\"",
+        "en": "The \"with AI\" fan"
+      },
+      "escena": {
+        "es": "Un cliente mira dos ventiladores. El normal cuesta 190.000 pesos. El \"con IA\" cuesta 280.000. Marisol lee la caja: tiene temporizador y sube la velocidad cuando el cuarto pasa de 28 grados. El cliente pregunta: \"¿Vale la pena pagar más por la IA?\" ¿Qué le responde Marisol?",
+        "en": "A customer is looking at two fans. The regular one costs $50. The \"with AI\" one costs $75. Marisol reads the box: it has a timer and speeds up when the room goes above 82°F. The customer asks: \"Is the AI worth paying more for?\" What does Marisol say?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "\"Sí, la IA es lo último. Llévelo sin pensarlo.\"",
+            "en": "\"Yes, AI is the latest thing. Don't think twice.\""
+          },
+          "consecuencia": {
+            "es": "El cliente paga 90.000 pesos más por una etiqueta. Si después descubre que era un sensor y un temporizador, no vuelve al almacén.",
+            "en": "The customer pays $25 more for a label. If he later finds out it was just a sensor and a timer, he won't come back to the store."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "\"Revisemos qué hace de verdad: parece una regla fija, no algo que aprende.\"",
+            "en": "\"Let's check what it really does: it looks like a fixed rule, not something that learns.\""
+          },
+          "consecuencia": {
+            "es": "El cliente ve que Marisol no le vende humo. Decide según lo que el aparato hace, no según la etiqueta. Y vuelve a comprarle.",
+            "en": "The customer sees Marisol isn't selling him hot air. He decides based on what the device does, not the label. And he comes back to buy from her."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "\"No, la IA es peligrosa. Mejor ni se acerque.\"",
+            "en": "\"No, AI is dangerous. Better stay away.\""
+          },
+          "consecuencia": {
+            "es": "Tampoco es verdad. Marisol asusta al cliente sin revisar nada. El miedo sin datos es tan mal consejo como el entusiasmo sin datos.",
+            "en": "That's not true either. Marisol scares the customer without checking anything. Fear without facts is as bad a guide as hype without facts."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Subir la velocidad cuando hace calor es una regla: si pasa de 28 grados, más viento. Un termómetro y un temporizador no aprenden nada. Puede ser buen ventilador, pero la etiqueta exagera.",
+          "en": "Speeding up when it's hot is a rule: above 82°F, more air. A thermometer and a timer don't learn anything. It may be a good fan, but the label is overselling it."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Para no depender de la caja, Marisol necesita preguntas. Te dejo tres. Toca cada una.",
+          "en": "So she doesn't have to trust the box, Marisol needs questions. Here are three. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Tres preguntas para la etiqueta",
+        "en": "Three questions for the label"
+      },
+      "piezas": [
+        {
+          "id": "datos",
+          "color": "#ff9f1c",
+          "titulo": {
+            "es": "¿De qué datos aprende?",
+            "en": "What did it learn from?"
+          },
+          "descripcion": {
+            "es": "Si nadie sabe decirlo, sospecha.",
+            "en": "If nobody can say, be suspicious."
+          },
+          "ejemplo": {
+            "es": "Una lavadora que aprendió de miles de cargas de ropa a reconocer la tela sí aprendió de datos. \"Tiene IA\" a secas no dice nada.",
+            "en": "A washer that learned from thousands of laundry loads to recognize fabric did learn from data. Just \"has AI\" tells you nothing."
+          }
+        },
+        {
+          "id": "regla",
+          "color": "#b388ff",
+          "titulo": {
+            "es": "¿Regla fija o se adapta?",
+            "en": "Rule or does it adapt?"
+          },
+          "descripcion": {
+            "es": "Una regla hace siempre lo mismo. Lo que aprende se ajusta.",
+            "en": "A rule always does the same. What learns adjusts."
+          },
+          "ejemplo": {
+            "es": "\"Si pasa de 28 grados, sube la velocidad\" es una regla fija. Hace lo mismo hoy y dentro de un año.",
+            "en": "\"Above 82°F, speed up\" is a fixed rule. It does the same thing today and a year from now."
+          }
+        },
+        {
+          "id": "sirve",
+          "color": "#00e5d0",
+          "titulo": {
+            "es": "¿Me sirve eso a mí?",
+            "en": "Do I actually need it?"
+          },
+          "descripcion": {
+            "es": "Aunque sea IA de verdad, ¿vale lo que cuesta?",
+            "en": "Even if it's real AI, is it worth the price?"
+          },
+          "ejemplo": {
+            "es": "Una cámara que distingue personas de gatos sirve si te preocupa tu casa. Si solo quieres ver al gato, quizás no pagas más.",
+            "en": "A camera that tells people from cats helps if you worry about your home. If you just want to watch your cat, maybe skip the extra cost."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú revisas la vitrina de Marisol. ¿Qué aparatos aprendieron de datos y cuáles solo siguen una regla fija?",
+          "en": "Now you check Marisol's display. Which devices learned from data, and which just follow a fixed rule?"
+        }
+      },
+      "titulo": {
+        "es": "La vitrina de Marisol",
+        "en": "Marisol's display"
+      },
+      "grupos": [
+        {
+          "id": "aprende",
+          "titulo": {
+            "es": "Aprendió de datos",
+            "en": "Learned from data"
+          }
+        },
+        {
+          "id": "fija",
+          "titulo": {
+            "es": "Sigue una regla fija",
+            "en": "Follows a fixed rule"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "fija",
+          "texto": {
+            "es": "Ventilador que se apaga solo a las 2 horas",
+            "en": "Fan that shuts itself off after 2 hours"
+          }
+        },
+        {
+          "grupo": "aprende",
+          "texto": {
+            "es": "Cámara de seguridad que aprendió a distinguir personas de gatos",
+            "en": "Security camera that learned to tell people from cats"
+          }
+        },
+        {
+          "grupo": "fija",
+          "texto": {
+            "es": "Nevera que pita si la puerta queda abierta un minuto",
+            "en": "Fridge that beeps if the door stays open for a minute"
+          }
+        },
+        {
+          "grupo": "aprende",
+          "texto": {
+            "es": "Televisor que te recomienda películas según lo que ves",
+            "en": "TV that recommends movies based on what you watch"
+          }
+        },
+        {
+          "grupo": "fija",
+          "texto": {
+            "es": "Aire acondicionado que se prende todos los días a las 6 p. m.",
+            "en": "Air conditioner that turns on every day at 6 p.m."
+          }
+        },
+        {
+          "grupo": "aprende",
+          "texto": {
+            "es": "Lavadora que reconoce la tela porque aprendió de miles de cargas",
+            "en": "Washer that recognizes fabric because it learned from thousands of loads"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Así se lee una vitrina. Los temporizadores y los pitos siguen reglas. Los que reconocen o recomiendan tuvieron que aprender de datos.",
+          "en": "That's how you read a display. Timers and beepers follow rules. The ones that recognize or recommend had to learn from data."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Hazle la pregunta clave: ¿tuvo que ver muchos ejemplos, o alguien le puso una hora o un límite?",
+          "en": "Hmm. Ask it the key question: did it need to see lots of examples, or did someone just set a time or a limit?"
+        }
+      },
+      "malPorGrupo": {
+        "aprende": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: que haga algo solo no quiere decir que aprendió. ¿Hay una hora o un límite fijo ahí?",
+            "en": "Careful: doing something on its own doesn't mean it learned. Is there a fixed time or limit in there?"
+          }
+        },
+        "fija": {
+          "estado": "error",
+          "texto": {
+            "es": "Mira bien: para distinguir o recomendar hay que haber visto muchos ejemplos. Ninguna regla fija alcanza.",
+            "en": "Look closely: telling things apart or recommending takes seeing lots of examples. No fixed rule is enough."
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso que ayer le ayudé a Marisol con el anuncio de la vitrina. Ahora lo leo y hay dos frases que exageran. Tócalas.",
+          "en": "I'll admit it: yesterday I helped Marisol with the sign for her display. Reading it now, two lines are overselling. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mi anuncio para la vitrina",
+        "en": "My sign for the display"
+      },
+      "trozos": [
+        {
+          "es": "Lavadora que reconoce el tipo de tela,",
+          "en": "Washer that recognizes the type of fabric,"
+        },
+        {
+          "es": "porque aprendió de miles de cargas de ropa.",
+          "en": "because it learned from thousands of laundry loads."
+        },
+        {
+          "es": "Ventilador con IA que se apaga solo a las 2 horas.",
+          "en": "AI fan that shuts itself off after 2 hours."
+        },
+        {
+          "es": "Y una nevera tan inteligente que sabe lo que quieres comer.",
+          "en": "And a fridge so smart it knows what you want to eat."
+        }
+      ],
+      "malos": [
+        2,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Apagarse a las 2 horas es un temporizador, no IA. Y ninguna nevera sabe lo que quieres comer. La lavadora sí estaba bien: dice de qué datos aprendió.",
+          "en": "You got me. Shutting off after 2 hours is a timer, not AI. And no fridge knows what you want to eat. The washer was fine: it says what data it learned from."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa frase se puede defender: dice de qué datos aprendió. Busca las que prometen sin decir qué aprenden.",
+          "en": "That line holds up: it says what data it learned from. Look for the ones that promise without saying what they learn."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Marisol quiere revisar la ficha del ventilador antes de responderle al cliente. Escribe las preguntas que ella le haría a la IA. La ficha está en el reto.",
+          "en": "Your turn. Marisol wants to check the fan's spec sheet before answering the customer. Write the questions she'd ask the AI. The spec sheet is in the challenge."
+        }
+      },
+      "titulo": {
+        "es": "La ficha del ventilador",
+        "en": "The fan's spec sheet"
+      },
+      "reto": {
+        "es": "Ficha inventada: Ventilador de torre \"con IA\". Precio: 280.000 pesos. Temporizador de 1 a 8 horas. Modo inteligente: si el cuarto pasa de 28 grados, sube a velocidad alta. Se controla desde el celular. Pídele a la IA que te ayude a revisarla.",
+        "en": "Made-up spec sheet: Tower fan \"with AI\". Price: $75. Timer from 1 to 8 hours. Smart mode: if the room goes above 82°F, it switches to high speed. Controlled from your phone. Ask the AI to help you check it."
+      },
+      "inicial": "vacio",
+      "aprobar": 2,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "aprende",
+          "texto": {
+            "es": "Pregunta qué aprende o de qué datos",
+            "en": "Asks what it learns or from what data"
+          },
+          "rubrica": "El prompt pide identificar qué aprende el aparato o de qué datos aprendió. No cuenta preguntar solo '¿tiene IA?' o '¿es inteligente?', porque eso repite la etiqueta.",
+          "claves": {
+            "es": [
+              "aprende",
+              "aprendio",
+              "aprender",
+              "que datos",
+              "cuales datos",
+              "de que datos",
+              "datos usa"
+            ],
+            "en": [
+              "does it learn",
+              "it learns",
+              "learns from",
+              "learned from",
+              "learn from",
+              "learn anything",
+              "what data",
+              "which data",
+              "data does it",
+              "data it uses"
+            ]
+          }
+        },
+        {
+          "id": "regla",
+          "texto": {
+            "es": "Separa la regla fija de lo que se adapta",
+            "en": "Separates fixed rules from what adapts"
+          },
+          "rubrica": "El prompt pide separar lo que es una regla fija (un temporizador, un límite de temperatura) de lo que de verdad se adapta o aprende. No cuenta pedir un resumen de la ficha ni preguntar solo si el ventilador es bueno.",
+          "claves": {
+            "es": [
+              " regla",
+              "reglas",
+              "se adapta",
+              "adapta",
+              "se ajusta",
+              "fijo",
+              "programad",
+              "siempre lo mismo",
+              "siempre igual"
+            ],
+            "en": [
+              " rule",
+              "rules",
+              "adapt",
+              "adjust",
+              "fixed",
+              "preset",
+              "pre-set",
+              "programmed",
+              "always the same"
+            ]
+          }
+        },
+        {
+          "id": "frase",
+          "texto": {
+            "es": "Pide una frase honesta para el cliente",
+            "en": "Asks for an honest line for the customer"
+          },
+          "rubrica": "El prompt pide una frase o respuesta corta y honesta para explicarle al cliente si vale la pena. No cuenta preguntar solo si el ventilador es bueno o si conviene comprarlo, sin pedir qué decirle al cliente.",
+          "claves": {
+            "es": [
+              "frase",
+              "decirle",
+              "explicarle",
+              "responderle",
+              "le digo",
+              "le respondo",
+              "honest",
+              "sincer"
+            ],
+            "en": [
+              "sentence",
+              "tell the customer",
+              "tell him",
+              "tell her",
+              "tell them",
+              "what to say",
+              "what do i say",
+              "explain to the customer",
+              "reply to the customer",
+              "answer the customer",
+              "honest"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a revisar fichas de productos. Responde corto, sin palabras técnicas. Usa solo los datos de la ficha que trae el prompt; si no la trae, dilo y pide los datos. Responde solo lo que te preguntan, sin repetir la publicidad.",
+        "en": "You are an AI that helps check product spec sheets. Keep it short, with no technical words. Use only the spec sheet in the prompt; if it's missing, say so and ask for it. Answer only what you're asked, without repeating the advertising."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. ¿Qué aprende? Según la ficha, nada. No dice de qué datos aprendió ni que cambie con el uso.\n2. Reglas fijas: el temporizador y el \"modo inteligente\" (si pasa de 28 grados, sube la velocidad). Hacen siempre lo mismo.\n3. Lo que sí tiene: control desde el celular. Es cómodo, pero no es IA.\nFrase para el cliente: \"Es un buen ventilador, con temporizador y sensor de calor. Lo de IA es más nombre que otra cosa. Si le sirve manejarlo desde el celular, puede valer la pena; si no, el normal le hace casi lo mismo.\"",
+            "en": "1. What does it learn? According to the sheet, nothing. It doesn't say what data it learned from or that it changes with use.\n2. Fixed rules: the timer and the \"smart mode\" (above 82°F, speed up). They always do the same thing.\n3. What it does have: phone control. Handy, but not AI.\nLine for the customer: \"It's a good fan, with a timer and a heat sensor. The AI part is more name than anything. If controlling it from your phone matters to you, it may be worth it; if not, the regular one does almost the same.\""
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Etiqueta leída. La IA separó la regla del aprendizaje y le dio a Marisol una frase honesta. Así no vende humo.",
+              "en": "Label decoded. The AI separated the rule from real learning and gave Marisol an honest line. No hot air sold today."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Sí! Este ventilador cuenta con inteligencia artificial que optimiza tu comodidad. Su modo inteligente se ajusta a la temperatura para darte la mejor experiencia. ¡Una excelente compra!",
+            "en": "Yes! This fan features artificial intelligence that optimizes your comfort. Its smart mode responds to the temperature to give you the best experience. A great buy!"
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA repitió la etiqueta, como un vendedor. Pregúntale qué aprende, qué es regla fija y qué decirle al cliente.",
+              "en": "The AI just repeated the label, like a salesperson. Ask it what the fan learns, what's a fixed rule and what to tell the customer."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras cómo saber si algo \"con IA\" de verdad usa IA.",
+          "en": "Logbook time. Write in your own words how to tell whether something \"with AI\" really uses AI."
+        }
+      },
+      "concepto": "ia-o-no",
+      "definicion": {
+        "es": "\"Con IA\" a veces es solo publicidad. La pregunta clave: ¿aprende de datos, o solo sigue un temporizador o una regla fija? Si no aprende, no es IA, aunque sea útil.",
+        "en": "\"With AI\" is sometimes just advertising. The key question: does it learn from data, or just follow a timer or a fixed rule? If it doesn't learn, it isn't AI, even if it's useful."
+      },
+      "pregunta": {
+        "es": "Para saber si algo de verdad es IA…",
+        "en": "To tell whether something is really AI…"
+      },
+      "guardaPrompt": "b07",
+      "etiqueta": {
+        "es": "revisar una etiqueta",
+        "en": "checking a label"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Con esta pregunta ya no te venden humo, ni en el almacén ni en internet.",
+          "en": "Saved. With this question, nobody sells you hot air, in a store or online."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos la vitrina.",
+          "en": "Two questions and we close up the display."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Una olla arrocera dice \"con IA\" y se apaga cuando llega a cierta temperatura. ¿Qué es eso?",
+            "en": "A rice cooker says \"with AI\" and turns off when it reaches a set temperature. What is that?"
+          },
+          "opciones": [
+            {
+              "es": "IA: decide sola cuándo apagarse",
+              "en": "AI: it decides on its own when to turn off"
+            },
+            {
+              "es": "Una regla fija: a tal temperatura, se apaga",
+              "en": "A fixed rule: at that temperature, it turns off"
+            },
+            {
+              "es": "Imposible saberlo sin abrirla",
+              "en": "No way to know without opening it"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Un límite de temperatura es una regla, por más bonita que sea la caja.",
+              "en": "Right. A temperature limit is a rule, however pretty the box."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. ¿Tuvo que aprender de ejemplos, o alguien le puso un límite?",
+              "en": "Hmm. Did it have to learn from examples, or did someone just set a limit?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué pregunta te ayuda más a revisar una etiqueta \"con IA\"?",
+            "en": "Which question helps you most when checking a \"with AI\" label?"
+          },
+          "opciones": [
+            {
+              "es": "¿Es de una marca famosa?",
+              "en": "Is it from a famous brand?"
+            },
+            {
+              "es": "¿Es más caro que el normal?",
+              "en": "Is it pricier than the regular one?"
+            },
+            {
+              "es": "¿Aprende de datos o sigue una regla fija?",
+              "en": "Does it learn from data or follow a fixed rule?"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La marca y el precio no dicen si aprende.",
+              "en": "Exactly. Brand and price don't tell you whether it learns."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "No es eso. Piensa en la pregunta que usaste con el ventilador.",
+              "en": "Not that. Think of the question you used with the fan."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "¿IA o no?",
+        "en": "AI or not?"
+      },
+      "resumen": {
+        "es": "\"Con IA\" a veces es publicidad. Si no aprende de datos y solo sigue una regla fija, no es IA.",
+        "en": "\"With AI\" is sometimes just advertising. If it doesn't learn from data and only follows a fixed rule, it isn't AI."
+      }
+    },
+    "mejorPrompt": [
+      "b07"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Le respondiste al cliente sin vender humo",
+          "en": "You answered the customer without selling hot air"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Separaste lo que aprende de lo que sigue reglas",
+          "en": "You sorted what learns from what follows rules"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste a Punti exagerando en un anuncio",
+          "en": "You caught Punti overselling on a sign"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Revisaste la ficha del ventilador con la IA",
+          "en": "You checked the fan's spec sheet with the AI"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "leer-etiquetas-con-ia",
+      "titulo": {
+        "es": "Leer la etiqueta \"con IA\"",
+        "en": "Reading the \"with AI\" label"
+      }
+    }
+  }
+}

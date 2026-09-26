@@ -9,6 +9,10 @@
 // Qué misiones tiene cada mundo sale de `contenido/misiones` (el índice que
 // escribe Publicar). Si todavía no hay índice, de la semilla.
 //
+// La semilla NO viaja dentro de la app: son archivos fijos que se generan al
+// publicar el sitio (/semilla con el índice y /semilla/<id> con cada misión).
+// Así el celular baja solo lo que va a usar, no las 240 misiones de una vez.
+//
 // Eficiencia: cada misión y el índice se piden una sola vez por visita y se
 // guardan en memoria; volver a abrirlos no gasta otra lectura.
 import { doc, getDoc } from "firebase/firestore";
@@ -16,32 +20,56 @@ import { db } from "@/lib/firebase";
 import type { Idioma } from "@/lib/i18n";
 import type { PaqueteMision, Texto } from "./tipos";
 import { revisarPaquete } from "./revisar.mjs";
-import { SEMILLA } from "./semilla";
+import type { ResumenMision } from "./resumen";
 
-
-/** Lo que se muestra de una misión en la ruta de su mundo. */
-export type ResumenMision = {
-  id: string;
-  mundo: string;
-  capitulo: number;
-  numero: number;
-  titulo: Texto;
-  resumen: Texto;
-  minutos: number;
-};
+export type { ResumenMision };
 
 const porId = new Map<string, Promise<PaqueteMision | null>>();
 let indice: Promise<ResumenMision[]> | null = null;
 
-const resumirSemilla = (p: PaqueteMision): ResumenMision => ({
-  id: p.id,
-  mundo: p.mundo,
-  capitulo: p.capitulo,
-  numero: p.numero,
-  titulo: p.titulo,
-  resumen: p.resumen,
-  minutos: p.minutos,
-});
+// ---------- La semilla, pedida a los archivos fijos /semilla
+
+const ID_VALIDO = /^[a-z0-9-]{1,80}$/;
+const semillaPorId = new Map<string, Promise<unknown | null>>();
+let indiceSemillaPedido: Promise<ResumenMision[]> | null = null;
+
+/** Baja un JSON del mismo sitio; si falla (sin internet, 404), da null. */
+const bajarJson = (ruta: string): Promise<unknown | null> =>
+  fetch(ruta, { headers: { Accept: "application/json" } })
+    .then((r) => (r.ok ? r.json() : null))
+    .catch(() => null);
+
+/**
+ * La lista corta de las misiones de la semilla. Si no se pudo bajar, da una
+ * lista vacía y la olvida, para volver a intentarlo la próxima vez.
+ */
+export function indiceSemilla(): Promise<ResumenMision[]> {
+  if (!indiceSemillaPedido) {
+    const pedido = bajarJson("/semilla").then((datos) => {
+      if (Array.isArray(datos)) return datos as ResumenMision[];
+      if (indiceSemillaPedido === pedido) indiceSemillaPedido = null;
+      return [];
+    });
+    indiceSemillaPedido = pedido;
+  }
+  return indiceSemillaPedido;
+}
+
+/**
+ * El paquete de una misión de la semilla tal como está en el archivo (sin
+ * revisar), o null si no existe. Si falló la conexión se olvida el intento.
+ */
+export function paqueteSemilla(id: string): Promise<unknown | null> {
+  if (!ID_VALIDO.test(id)) return Promise.resolve(null);
+  const guardado = semillaPorId.get(id);
+  if (guardado) return guardado;
+  const pedido = bajarJson(`/semilla/${id}`).then((datos) => {
+    if (datos === null) semillaPorId.delete(id);
+    return datos;
+  });
+  semillaPorId.set(id, pedido);
+  return pedido;
+}
 
 /** Después de publicar u ocultar: la próxima lectura va a Firebase otra vez. */
 export function olvidarCache(id?: string) {
@@ -55,15 +83,13 @@ export async function misionesDelMundo(mundo: string): Promise<ResumenMision[]> 
     indice = getDoc(doc(db, "contenido", "misiones"))
       .then((snap) => (snap.exists() ? ((snap.data().lista as ResumenMision[] | undefined) ?? null) : null))
       .catch(() => null)
-      .then((lista) => lista ?? SEMILLA.map(resumirSemilla));
+      .then((lista) => lista ?? indiceSemilla());
   }
-  const lista = await indice;
+  const pedido = indice;
+  const lista = await pedido;
+  // Lista vacía = no hubo ni Firebase ni semilla (sin conexión): se reintenta después.
+  if (!lista.length && indice === pedido) indice = null;
   return lista.filter((m) => m.mundo === mundo).sort((a, b) => a.capitulo - b.capitulo || a.numero - b.numero);
-}
-
-/** Los paquetes de la semilla (para importarlos desde el admin). */
-export function paquetesSemilla(): PaqueteMision[] {
-  return SEMILLA;
 }
 
 /**
@@ -76,9 +102,13 @@ export function cargarMision(id: string): Promise<PaqueteMision | null> {
   const pedido = getDoc(doc(db, "misiones", id))
     .then((snap) => (snap.exists() ? (snap.data().paquete as unknown) : null))
     .catch(() => null)
-    .then((deFirebase) => {
-      const paquete = deFirebase ?? SEMILLA.find((m) => m.id === id) ?? null;
-      if (!paquete) return null;
+    .then((deFirebase) => deFirebase ?? paqueteSemilla(id))
+    .then((paquete) => {
+      if (!paquete) {
+        // No encontrada (o sin conexión): se olvida para reintentar al volver.
+        if (porId.get(id) === pedido) porId.delete(id);
+        return null;
+      }
       const { errores } = revisarPaquete(paquete);
       if (errores.length) {
         console.error(`La misión ${id} tiene errores y no se puede jugar:`, errores);

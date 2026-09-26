@@ -1,0 +1,1627 @@
+{
+  "formato": "punti-mision@1",
+  "id": "mision-larga",
+  "mundo": "prompts",
+  "capitulo": 3,
+  "numero": 15,
+  "receta": "construccion",
+  "largo": "proyecto",
+  "minutos": 20,
+  "conceptos": [
+    "mision-larga"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "contexto",
+    "iterar",
+    "revisar-respuesta",
+    "ejemplos",
+    "paso-a-paso",
+    "limites",
+    "dividir",
+    "rol"
+  ],
+  "titulo": {
+    "es": "Misión larga",
+    "en": "The Long Mission"
+  },
+  "resumen": {
+    "es": "Tu proyecto del capítulo: un plan grande tuyo, armado como una cadena de prompts con los trucos de piloto.",
+    "en": "Your chapter project: a big plan of your own, built as a chain of prompts with the pilot's tricks."
+  },
+  "siguiente": "que-te-entreviste",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, esta vez la misión larga es tuya. Ya viste a Mauricio, a Doña Rosalba, a Jhon, a Paola y a Óscar usar sus trucos. Ahora planeas algo grande de tu vida con una cadena de prompts.",
+          "en": "Pilot, this time the long mission is yours. You've watched Mauricio, Doña Rosalba, Jhon, Paola and Óscar use their tricks. Now you plan something big from your own life with a chain of prompts."
+        }
+      },
+      "titulo": {
+        "es": "Misión larga",
+        "en": "The Long Mission"
+      },
+      "texto": {
+        "es": "Es el proyecto del capítulo 3. Vas a escribir cuatro prompts en cadena, cada uno con un truco distinto. Quedan guardados en tu bitácora. Unos 20 minutos.",
+        "en": "It's the Chapter 3 project. You'll write four prompts in a chain, each with a different trick. They get saved in your logbook. About 20 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, el plan de vuelo.",
+          "en": "First, the flight plan."
+        }
+      },
+      "titulo": {
+        "es": "Tu cadena de cuatro eslabones",
+        "en": "Your four-link chain"
+      },
+      "texto": {
+        "es": "Un plan grande no sale de un solo prompt. Vas a armar una cadena: primero el mapa, luego una parte con un ejemplo, después las cuentas pedidas paso a paso y al final un crítico que revise. Entre eslabón y eslabón, revisas tú.",
+        "en": "A big plan doesn't come out of a single prompt. You'll build a chain: first the map, then one part with an example, then the numbers asked for step by step, and last, a critic who reviews it. Between links, you do the checking."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "El mapa: divide y pon límites",
+            "en": "The map: split it and set limits"
+          },
+          {
+            "es": "Una parte, con un ejemplo",
+            "en": "One part, with an example"
+          },
+          {
+            "es": "Las cuentas, paso a paso",
+            "en": "The numbers, step by step"
+          },
+          {
+            "es": "El crítico: un papel que revisa",
+            "en": "The critic: a role that reviews"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Antes de despegar, escoge tu misión. Puede ser real o inventada, pero con detalles, como si fuera de verdad.",
+          "en": "Before we take off, pick your mission. It can be real or made up, but with details, as if it were real."
+        }
+      },
+      "titulo": {
+        "es": "Escoge tu misión",
+        "en": "Pick your mission"
+      },
+      "escena": {
+        "es": "Tu cadena va a ser para un solo plan grande, de esos que no caben en un prompt. Necesita detalles: qué es, para quién, cuándo y con cuánta plata o tiempo. ¿Qué vas a planear?",
+        "en": "Your chain will be for one big plan, the kind that doesn't fit in a single prompt. It needs details: what it is, who it's for, when, and how much money or time you have. What will you plan?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Un evento: una fiesta, una reunión o un bazar",
+            "en": "An event: a party, a get-together or a fundraiser"
+          },
+          "consecuencia": {
+            "es": "Buena misión. Escribe una línea con qué es, cuándo, cuántas personas y cuánto tienes. Por ejemplo: \"Bazar del colegio, un sábado de noviembre, 150 personas, $1.000.000\".",
+            "en": "Good mission. Write one line with what it is, when, how many people and your budget. For example: \"School fundraiser, a Saturday in November, 150 people, $1,000.\""
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Un informe: para el trabajo, el colegio o la junta",
+            "en": "A report: for work, school or a board"
+          },
+          "consecuencia": {
+            "es": "Buena misión. Escribe una línea con de qué es, para quién, cuándo lo entregas y qué tan largo. Por ejemplo: \"Informe de ventas del semestre para mi jefe, 3 páginas, para el viernes\".",
+            "en": "Good mission. Write one line with what it's about, who it's for, when it's due and how long. For example: \"Six-month sales report for my boss, 3 pages, due Friday.\""
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Un lanzamiento: un producto o servicio nuevo",
+            "en": "A launch: a new product or service"
+          },
+          "consecuencia": {
+            "es": "Buena misión. Escribe una línea con qué lanzas, para quién, cuándo y con cuánto. Por ejemplo: \"Clases de guitarra para niños los sábados, desde el 1 de diciembre, con $300.000\".",
+            "en": "Good mission. Write one line with what you're launching, who it's for, when and with what budget. For example: \"Saturday guitar lessons for kids, starting December 1, with $300.\""
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "\"Algo grande\", sin decir qué",
+            "en": "\"Something big,\" no details"
+          },
+          "consecuencia": {
+            "es": "Ahí la antena no tiene de dónde agarrarse y sale un plan para nadie. Escoge un evento, un informe o un lanzamiento, con detalles.",
+            "en": "Then the antenna has nothing to hold on to, and you get a plan for nobody. Pick an event, a report or a launch, with details."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Anota tu línea donde la tengas a mano. Va en el primer eslabón, y lo bueno de cada eslabón lo vas a pegar en el siguiente.",
+          "en": "Jot your line down somewhere handy. It goes in the first link, and the good stuff from each link gets pasted into the next."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Esta es tu caja de trucos: los cinco del capítulo. Toca cada uno para repasarlo. Van a estar en la lista de los laboratorios.",
+          "en": "This is your bag of tricks: the five from this chapter. Tap each one for a quick refresher. They'll be on the checklist in the labs."
+        }
+      },
+      "titulo": {
+        "es": "Tu caja de trucos",
+        "en": "Your bag of tricks"
+      },
+      "piezas": [
+        {
+          "id": "ejemplos",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Dale ejemplos",
+            "en": "Give examples"
+          },
+          "descripcion": {
+            "es": "Muéstrale uno parecido a lo que quieres.",
+            "en": "Show it one like what you want."
+          },
+          "ejemplo": {
+            "es": "\"Tómalo como ejemplo: …\" y di qué copiar: el estilo, no las frases. Lo viste con Mauricio.",
+            "en": "\"Use this as an example: ...\" and say what to copy: the style, not the sentences. You saw it with Mauricio."
+          }
+        },
+        {
+          "id": "pasos",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Paso a paso",
+            "en": "Step by step"
+          },
+          "descripcion": {
+            "es": "Que vaya por pasos y muestre cómo llegó.",
+            "en": "Have it go in steps and show how it got there."
+          },
+          "ejemplo": {
+            "es": "\"Hazlo paso a paso y muéstrame cada paso.\" Así ves dónde se equivocó, si se equivocó. Lo viste con Doña Rosalba.",
+            "en": "\"Go step by step and show me each step.\" That way you see where it went wrong, if it did. You saw it with Doña Rosalba."
+          }
+        },
+        {
+          "id": "limites",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Pon límites claros",
+            "en": "Set clear limits"
+          },
+          "descripcion": {
+            "es": "Reglas con número: largo, qué va y qué no, topes.",
+            "en": "Rules with numbers: length, what's in and out, caps."
+          },
+          "ejemplo": {
+            "es": "\"Máximo 6 partes, sin pasarte de $1.000.000.\" Un límite con número no se discute. Lo viste con Jhon.",
+            "en": "\"6 parts max, don't go over $1,000.\" A limit with a number leaves no room for guessing. You saw it with Jhon."
+          }
+        },
+        {
+          "id": "dividir",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Divide lo grande",
+            "en": "Break it down"
+          },
+          "descripcion": {
+            "es": "Primero el mapa; luego una parte por prompt.",
+            "en": "First the map, then one part per prompt."
+          },
+          "ejemplo": {
+            "es": "Como Paola con la fiesta: el mapa, una parte a la vez y una revisión antes de seguir.",
+            "en": "Like Paola with the party: the map, one part at a time, and a check before moving on."
+          }
+        },
+        {
+          "id": "papel",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "Dale un papel",
+            "en": "Give it a role"
+          },
+          "descripcion": {
+            "es": "Un oficio, tu público o un crítico.",
+            "en": "A job, your audience or a critic."
+          },
+          "ejemplo": {
+            "es": "Como Óscar: el papel cambia cómo habla la IA, no lo que sabe. Lo que responda, lo revisas.",
+            "en": "Like Óscar: a role changes how the AI talks, not what it knows. Whatever it says, you check."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primer eslabón: el mapa. Empieza con tu línea de la misión y pídele a la IA las partes de tu plan, en orden, sin desarrollarlas. Y ponle un límite.",
+          "en": "First link: the map. Start with your mission line and ask the AI for the parts of your plan, in order, not worked out yet. And give it a limit."
+        }
+      },
+      "titulo": {
+        "es": "Eslabón 1: el mapa",
+        "en": "Link 1: the map"
+      },
+      "reto": {
+        "es": "Tu misión, real o inventada. Empieza con tu línea: qué es, para quién, cuándo y con cuánto. Pídele a la IA solo la lista de partes del plan, en orden y sin desarrollarlas. Ponle al menos un límite, como el número máximo de partes.",
+        "en": "Your mission, real or made up. Start with your line: what it is, who it's for, when and with what budget. Ask the AI for just the list of parts of the plan, in order, not worked out. Give it at least one limit, like the maximum number of parts."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "dividir",
+          "texto": {
+            "es": "Divide: solo la lista de partes",
+            "en": "Break it down: just the list of parts"
+          },
+          "rubrica": "El prompt pide primero la lista de partes o pasos del plan, sin hacerlas todavía ('solo la lista', 'sin desarrollarlas', 'por ahora solo las partes'). No cuenta pedir el plan completo de una vez, ni nombrar los temas pidiendo que resuelva cada uno.",
+          "claves": {
+            "es": [
+              "solo la lista",
+              "solamente la lista",
+              "nada mas la lista",
+              "lista de partes",
+              "lista de pasos",
+              "lista de tareas",
+              "lista de cosas",
+              "lista de lo que",
+              "en que partes",
+              "en partes",
+              "por partes",
+              "por etapas",
+              "sin desarrollar",
+              "no desarrolles",
+              "no las desarrolles",
+              "sin detalles",
+              "sin resolver",
+              "todavia no",
+              "aun no",
+              "por ahora",
+              "de momento",
+              "dividelo",
+              "dividamos",
+              "que partes",
+              "cuales partes",
+              "cuales son las partes"
+            ],
+            "en": [
+              "just the list",
+              "only the list",
+              "just a list",
+              "list of parts",
+              "list of steps",
+              "list of tasks",
+              "list of things",
+              "list of what",
+              "in parts",
+              "into parts",
+              "into steps",
+              "in stages",
+              "break it down",
+              "break down",
+              "split it",
+              "what parts",
+              "which parts",
+              "don't work",
+              "without working",
+              "don't develop",
+              "no details yet",
+              "not yet",
+              "for now",
+              "for the moment"
+            ]
+          }
+        },
+        {
+          "id": "proyecto",
+          "texto": {
+            "es": "Tu misión, con datos concretos",
+            "en": "Your mission, with real details"
+          },
+          "rubrica": "El prompt dice qué se va a planear, con su tipo (un bazar, una fiesta, un informe de ventas, un lanzamiento de almuerzos...), y trae al menos un dato concreto: fecha o día, número de personas o de páginas, presupuesto con cifra o para quién es. No cuenta 'un proyecto', 'un evento' o 'algo grande' sin decir cuál ni dar ningún dato.",
+          "claves": {
+            "es": [
+              "$",
+              "000",
+              " mil",
+              "pesos",
+              "enero",
+              "febrero",
+              "marzo",
+              "abril",
+              "mayo",
+              "junio",
+              "julio",
+              "agosto",
+              "septiembre",
+              "octubre",
+              "noviembre",
+              "diciembre",
+              "lunes",
+              "martes",
+              "miercoles",
+              "jueves",
+              "viernes",
+              "sabado",
+              "domingo",
+              "personas",
+              "invitados",
+              "asistentes",
+              "paginas",
+              "para mi jefe",
+              "para la junta",
+              "para el colegio",
+              "clientes",
+              "vecinos",
+              "familias"
+            ],
+            "en": [
+              "$",
+              "dollars",
+              "january",
+              "february",
+              "march",
+              "april",
+              " may ",
+              "june",
+              "july",
+              "august",
+              "september",
+              "october",
+              "november",
+              "december",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday",
+              "people",
+              "guests",
+              "attendees",
+              "pages",
+              "for my boss",
+              "for the board",
+              "for school",
+              "customers",
+              "neighbors",
+              "families"
+            ]
+          }
+        },
+        {
+          "id": "limites",
+          "texto": {
+            "es": "Pone al menos un límite",
+            "en": "Sets at least one limit"
+          },
+          "rubrica": "El prompt pone un límite claro: un máximo con número (máximo 6 partes, no más de 5), un tope de plata o de tiempo, o algo que no debe hacer o incluir. No cuenta 'corto' o 'sencillo' solos, sin número ni prohibición, ni el 'sin desarrollarlas' que ya pide el mapa.",
+          "claves": {
+            "es": [
+              "maximo",
+              "no mas de",
+              "como mucho",
+              "menos de",
+              "hasta 3",
+              "hasta 4",
+              "hasta 5",
+              "hasta 6",
+              "hasta 7",
+              "no incluyas",
+              "no pongas",
+              "no uses",
+              "no inventes",
+              "no menciones",
+              "no te pases",
+              "sin pasarte",
+              "sin pasar de",
+              "que no pase",
+              "tope",
+              "limite"
+            ],
+            "en": [
+              "max",
+              "no more than",
+              "at most",
+              "fewer than",
+              "less than",
+              "up to 3",
+              "up to 4",
+              "up to 5",
+              "up to 6",
+              "up to 7",
+              "don't include",
+              "do not include",
+              "don't use",
+              "don't make up",
+              "don't mention",
+              "don't go over",
+              "without going over",
+              "not over",
+              "limit"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a planear algo grande: un evento, un informe o un lanzamiento. Responde solo con lo que te piden, sin explicaciones. Si el mensaje pide solo la lista de partes, responde con esa lista numerada y en orden, una línea por parte, sin desarrollarlas, y respeta los límites que ponga; si no pone ningún límite, da 10 partes o más. Si pide todo el plan de una vez, responde con un plan largo que toca todo por encima, con ideas genéricas. Usa solo los datos del mensaje y no supongas de qué es el plan; si falta un dato, déjalo entre corchetes, como [fecha] o [presupuesto].",
+        "en": "You are an AI helping someone plan something big: an event, a report or a launch. Reply only with what you're asked for, no explanations. If the message asks for just the list of parts, reply with that list, numbered and in order, one line per part, not worked out, and follow any limits it sets; if it sets no limit, give 10 parts or more. If it asks for the whole plan at once, reply with a long plan that skims everything, with generic ideas. Use only the details in the message and don't assume what the plan is about; if a detail is missing, leave it in square brackets, like [date] or [budget]."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. Fecha, lugar y permiso del colegio.\n2. Puestos de comida y de juegos.\n3. Quién atiende cada puesto.\n4. Presupuesto: $1.000.000.\n5. Invitación para las familias.\n6. Horario del día.",
+            "en": "1. Date, venue and school permission.\n2. Food and game booths.\n3. Who runs each booth.\n4. Budget: $1,000.\n5. Invitation for the families.\n6. Schedule for the day."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Mira el ejemplo con un bazar del colegio: así queda un mapa con límite y en orden. Revisa el tuyo y escoge la parte que sigue.",
+              "en": "Good signal. Look at the example with a school fundraiser: that's a map with a limit, in order. Check yours and pick the next part."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Plan completo:\n1. Define tus objetivos.\n2. Establece un presupuesto de [presupuesto].\n3. Elige un lugar adecuado.\n4. Contrata proveedores de calidad.\n5. Haz publicidad en redes sociales.\n6. Organiza la logística.\n7. Prepara un plan B.\n8. Evalúa los resultados.\n9. Agradece a los participantes.\n10. Celebra tu éxito.",
+            "en": "Complete plan:\n1. Define your goals.\n2. Set a budget of [budget].\n3. Choose a suitable venue.\n4. Hire quality vendors.\n5. Promote it on social media.\n6. Handle the logistics.\n7. Prepare a plan B.\n8. Evaluate the results.\n9. Thank the participants.\n10. Celebrate your success."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: diez partes que le sirven a cualquier plan, o sea, a ninguno. Mira la lista: pide solo el mapa de tu misión, con tus datos y un límite.",
+              "en": "Weak signal: ten parts that fit any plan, which means they fit none. Check the list: ask for just your mission's map, with your details and a limit."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Segundo eslabón. Escoge una parte de tu mapa que termine en un texto: una invitación, un aviso, el inicio del informe. Dile a la IA qué parte es y muéstrale un ejemplo de cómo lo quieres.",
+          "en": "Second link. Pick a part of your map that ends in a text: an invitation, a notice, the opening of the report. Tell the AI which part it is and show it an example of what you want."
+        }
+      },
+      "titulo": {
+        "es": "Eslabón 2: una parte, con ejemplo",
+        "en": "Link 2: one part, with an example"
+      },
+      "reto": {
+        "es": "Tu misión. Toma del mapa una parte que termine en un texto. Pega tu línea de la misión y di qué parte del plan es. Dale a la IA un ejemplo corto de algo parecido que te guste. Ponle un límite: un largo máximo o algo que no debe decir.",
+        "en": "Your mission. Take a part of the map that ends in a text. Paste your mission line and say which part of the plan it is. Give the AI a short example of something similar you like. Give it a limit: a max length or something it must not say."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "enlace",
+          "texto": {
+            "es": "Dice qué parte del mapa es",
+            "en": "Says which part of the map it is"
+          },
+          "rubrica": "El prompt dice en qué parte del mapa va a trabajar, pegada o nombrada con su número o su nombre ('la parte 5: la invitación para las familias'), o pega algo que respondió la IA antes. No cuenta pedir un texto suelto sin decir de qué parte del plan viene.",
+          "claves": {
+            "es": [
+              "parte 1",
+              "parte 2",
+              "parte 3",
+              "parte 4",
+              "parte 5",
+              "parte 6",
+              "parte 7",
+              "la parte",
+              "esta parte",
+              "del mapa",
+              "de la lista",
+              "del plan",
+              "de mi plan",
+              "lo que me diste",
+              "me diste",
+              "me respondiste",
+              "tu respuesta",
+              "te pego",
+              "aqui esta",
+              "aqui va"
+            ],
+            "en": [
+              "part 1",
+              "part 2",
+              "part 3",
+              "part 4",
+              "part 5",
+              "part 6",
+              "part 7",
+              "the part",
+              "this part",
+              "from the map",
+              "from the list",
+              "from the plan",
+              "my plan",
+              "you gave me",
+              "your answer",
+              "you sent",
+              "here it is",
+              "here's the",
+              "pasting"
+            ]
+          }
+        },
+        {
+          "id": "ejemplos",
+          "texto": {
+            "es": "Muestra un ejemplo de lo que quiere",
+            "en": "Shows an example of what you want"
+          },
+          "rubrica": "El prompt trae, escrito dentro del prompt, un ejemplo concreto de algo parecido a lo que quiere ('hazlo parecido a este: ...', 'por ejemplo: ...'). No cuenta pedirle ejemplos a la IA, ni decir 'como los que se usan' o 'algo bonito' sin mostrarlo.",
+          "claves": {
+            "es": [
+              "por ejemplo",
+              "como este:",
+              "como esta:",
+              "parecido a este",
+              "parecida a esta",
+              "parecido a esta",
+              "como el siguiente",
+              "como la siguiente",
+              "ejemplo:",
+              "asi:",
+              "en este estilo",
+              "con este estilo",
+              "de este estilo",
+              "tomalo como ejemplo",
+              "como ejemplo"
+            ],
+            "en": [
+              "for example",
+              "for instance",
+              "like this one",
+              "like this:",
+              "similar to this",
+              "in this style",
+              "here's an example",
+              "here is an example",
+              "example:",
+              "e.g.",
+              "something like:",
+              "something like this",
+              "as an example",
+              "use this as"
+            ]
+          }
+        },
+        {
+          "id": "limites",
+          "texto": {
+            "es": "Pone un límite",
+            "en": "Sets a limit"
+          },
+          "rubrica": "El prompt pone un límite claro: un largo máximo con número (máximo 4 líneas, no más de 50 palabras) o algo que no debe decir o incluir ('no prometas...', 'no uses...'). No cuenta 'corto' solo, sin número ni prohibición.",
+          "claves": {
+            "es": [
+              "maximo",
+              "no mas de",
+              "como mucho",
+              "menos de",
+              "hasta 3",
+              "hasta 4",
+              "hasta 5",
+              "hasta 6",
+              "hasta 7",
+              "no incluyas",
+              "no pongas",
+              "no uses",
+              "no inventes",
+              "no menciones",
+              "no te pases",
+              "sin pasarte",
+              "sin pasar de",
+              "que no pase",
+              "tope",
+              "limite",
+              "no prometas",
+              "no digas"
+            ],
+            "en": [
+              "max",
+              "no more than",
+              "at most",
+              "fewer than",
+              "less than",
+              "up to 3",
+              "up to 4",
+              "up to 5",
+              "up to 6",
+              "up to 7",
+              "don't include",
+              "do not include",
+              "don't use",
+              "don't make up",
+              "don't mention",
+              "don't go over",
+              "without going over",
+              "not over",
+              "limit",
+              "don't promise",
+              "don't say"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a sacar adelante un plan grande, una parte a la vez. Este es un chat nuevo: solo sabes lo que dice el mensaje. Responde solo con el texto que te piden, sin explicaciones. Si el mensaje trae un ejemplo, imita su estilo y su largo sin copiarlo. Si no trae ejemplo, escribe en un estilo genérico y formal. Respeta los límites que ponga; si no pone ninguno, escribe un texto largo. Si no dice de qué parte del plan se trata, escribe algo general. Usa solo los datos del mensaje; si falta uno, déjalo entre corchetes.",
+        "en": "You are an AI helping someone get a big plan done, one part at a time. This is a new chat: you only know what the message says. Reply with the text you're asked for only, no explanations. If the message includes an example, match its style and length without copying it. If it has no example, write in a generic, formal style. Follow any limits it sets; if it sets none, write a long text. If it doesn't say which part of the plan this is, write something general. Use only the details in the message; if one is missing, leave it in square brackets."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Familias del colegio:\nEste sábado los esperamos en el bazar, de 9 a. m. a 3 p. m.\nHabrá empanadas, juegos y rifas.\nTodo lo que se recoja va para arreglar el patio del colegio.",
+            "en": "School families:\nJoin us at the fundraiser this Saturday, 9 a.m. to 3 p.m.\nThere'll be snacks, games and raffles.\nEverything we raise goes toward fixing the school yard."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Con un ejemplo, la IA copió el estilo y no el relleno, y el límite la mantuvo corta. Van dos eslabones.",
+              "en": "Good signal. With an example, the AI copied the style, not the fluff, and the limit kept it short. Two links down."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Estimados padres de familia:\nNos complace invitarlos cordialmente a participar en nuestro gran evento, que se realizará el día [fecha] en [lugar]. Contaremos con múltiples actividades para toda la familia, deliciosa comida y sorpresas. Su presencia es muy importante para nosotros. Agradecemos de antemano su valiosa colaboración.",
+            "en": "Dear parents:\nWe are pleased to cordially invite you to take part in our big event, to be held on [date] at [venue]. There will be many activities for the whole family, delicious food and surprises. Your presence means a great deal to us. We thank you in advance for your valuable support."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: una circular larga que le sirve a cualquier evento. Mira la lista: di qué parte es, muestra un ejemplo y ponle un límite.",
+              "en": "Weak signal: a long memo that fits any event. Check the list: say which part it is, show an example and set a limit."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confesión de piloto. Armé la cadena de un bazar del colegio para practicar. Dos eslabones se rompieron. Tócalos antes de seguir con la tuya.",
+          "en": "A pilot's confession. I built a chain for a school fundraiser to practice. Two links broke. Tap them before you go on with yours."
+        }
+      },
+      "titulo": {
+        "es": "Mi cadena del bazar",
+        "en": "My fundraiser chain"
+      },
+      "trozos": [
+        {
+          "es": "1. Organizo el bazar del colegio: un sábado, 150 personas, $1.000.000. Dame solo la lista de partes, máximo 6.",
+          "en": "1. I'm planning the school fundraiser: a Saturday, 150 people, $1,000. Give me just the list of parts, 6 max."
+        },
+        {
+          "es": "2. En un chat nuevo: escribe la invitación de la parte 5.",
+          "en": "2. In a new chat: write the invitation for part 5."
+        },
+        {
+          "es": "3. Con un presupuesto de $1.000.000 y estos gastos: puestos $400.000, rifas $200.000 y sonido $300.000, suma paso a paso cuánto queda.",
+          "en": "3. With a $1,000 budget and these costs: booths $400, raffles $200 and sound $300, add them up step by step and tell me what's left."
+        },
+        {
+          "es": "4. Actúa como funcionario de la alcaldía y dime qué permisos necesito. Lo que digas, eso hago.",
+          "en": "4. Act as a city hall official and tell me which permits I need. Whatever you say, I'll do."
+        },
+        {
+          "es": "5. Actúa como una mamá muy exigente del colegio: dime 3 cosas que le faltan a mi plan.",
+          "en": "5. Act as a very demanding school mom: tell me 3 things my plan is missing."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. En el chat nuevo no pegué nada: la IA no sabía de qué bazar le hablaba. Y el papel de funcionario no la vuelve funcionaria: los permisos se preguntan en la alcaldía.",
+          "en": "You got me. I pasted nothing into the new chat, so the AI had no idea which fundraiser I meant. And playing an official doesn't make it one: you ask city hall about permits."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese eslabón se sostiene. Repasa las piezas de la cadena y lo que un papel no cambia.",
+          "en": "That link holds up. Go over the pieces of a chain, and what a role doesn't change."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tercer eslabón: la parte con números. Plata, tiempo o cantidades. Ahí es donde la IA más se equivoca, así que pídele que vaya paso a paso y te muestre las cuentas.",
+          "en": "Third link: the part with numbers. Money, time or amounts. That's where AI slips up most, so ask it to go step by step and show you the math."
+        }
+      },
+      "titulo": {
+        "es": "Eslabón 3: las cuentas, paso a paso",
+        "en": "Link 3: the numbers, step by step"
+      },
+      "reto": {
+        "es": "Tu misión. Escoge la parte del mapa que tenga números: el presupuesto, el horario o las cantidades. Di qué parte es, pega tus datos reales y pídele a la IA que haga las cuentas paso a paso, mostrando cada una. Después las revisas tú.",
+        "en": "Your mission. Pick the part of the map with numbers: the budget, the schedule or the amounts. Say which part it is, paste your real numbers and ask the AI to do the math step by step, showing each one. Then you check it."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "enlace",
+          "texto": {
+            "es": "Dice qué parte del mapa es",
+            "en": "Says which part of the map it is"
+          },
+          "rubrica": "El prompt dice en qué parte del mapa va a trabajar, pegada o nombrada con su número o su nombre ('la parte 4: el presupuesto'), o pega algo que respondió la IA antes. No cuenta pedir unas cuentas sueltas sin decir de qué parte del plan vienen.",
+          "claves": {
+            "es": [
+              "parte 1",
+              "parte 2",
+              "parte 3",
+              "parte 4",
+              "parte 5",
+              "parte 6",
+              "parte 7",
+              "la parte",
+              "esta parte",
+              "del mapa",
+              "de la lista",
+              "del plan",
+              "de mi plan",
+              "lo que me diste",
+              "me diste",
+              "me respondiste",
+              "tu respuesta",
+              "te pego",
+              "aqui esta",
+              "aqui va",
+              "el presupuesto de",
+              "el horario de"
+            ],
+            "en": [
+              "part 1",
+              "part 2",
+              "part 3",
+              "part 4",
+              "part 5",
+              "part 6",
+              "part 7",
+              "the part",
+              "this part",
+              "from the map",
+              "from the list",
+              "from the plan",
+              "my plan",
+              "you gave me",
+              "your answer",
+              "you sent",
+              "here it is",
+              "here's the",
+              "pasting",
+              "the budget for",
+              "the schedule for"
+            ]
+          }
+        },
+        {
+          "id": "pasos",
+          "texto": {
+            "es": "Pide ir paso a paso y ver las cuentas",
+            "en": "Asks for steps and to see the math"
+          },
+          "rubrica": "El prompt le pide a la IA que vaya paso a paso o que muestre cómo llegó al resultado ('paso a paso', 'muestra las cuentas', 'explica cada suma'). No cuenta pedir solo el total, ni 'hazlo bien' sin pedir ver los pasos.",
+          "claves": {
+            "es": [
+              "paso a paso",
+              "por pasos",
+              "paso por paso",
+              "muestra las cuentas",
+              "muestrame las cuentas",
+              "muestra cada",
+              "muestrame cada",
+              "muestra como",
+              "muestrame como",
+              "explica cada",
+              "cada cuenta",
+              "cada suma",
+              "las operaciones",
+              "como llegaste",
+              "de donde sale"
+            ],
+            "en": [
+              "step by step",
+              "step-by-step",
+              "in steps",
+              "show your work",
+              "show the math",
+              "show me the math",
+              "show each",
+              "show me each",
+              "show how",
+              "show me how",
+              "explain each",
+              "each step",
+              "how you got",
+              "where each"
+            ]
+          }
+        },
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Pega tus números reales",
+            "en": "Pastes your real numbers"
+          },
+          "rubrica": "El prompt trae los números reales que la IA necesita: montos con cifra, cantidades, horas o duraciones. No cuenta 'mi presupuesto', 'los precios' o 'el horario' sin decir cuáles son.",
+          "claves": {
+            "es": [
+              "$",
+              "000",
+              " mil",
+              "pesos",
+              "horas",
+              "minutos",
+              "a. m",
+              "p. m",
+              "a.m",
+              "p.m",
+              ":00",
+              ":30",
+              "kilos",
+              "unidades",
+              "personas",
+              "invitados"
+            ],
+            "en": [
+              "$",
+              "dollars",
+              "hours",
+              "minutes",
+              "a.m",
+              "p.m",
+              ":00",
+              ":30",
+              "pounds",
+              "units",
+              "people",
+              "guests"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a sacar adelante un plan grande, una parte a la vez. Este es un chat nuevo: solo sabes lo que dice el mensaje. Si el mensaje pide ir paso a paso o mostrar las cuentas, muestra cada operación en una línea y al final el resultado. Si no, da solo el resultado final, sin mostrar cómo llegaste, y equivócate en una suma de forma creíble, para que se note por qué conviene ver los pasos. Usa solo los números del mensaje; si falta uno, déjalo entre corchetes, como [monto].",
+        "en": "You are an AI helping someone get a big plan done, one part at a time. This is a new chat: you only know what the message says. If the message asks you to go step by step or show the math, show each calculation on its own line and the result at the end. If not, give only the final result, without showing how you got it, and make one believable addition mistake, so it's clear why seeing the steps matters. Use only the numbers in the message; if one is missing, leave it in square brackets, like [amount]."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Presupuesto del bazar:\n1. Puestos: $400.000\n2. Rifas: $200.000\n3. Sonido: $300.000\n4. Gastos: 400.000 + 200.000 + 300.000 = $900.000\n5. Queda: 1.000.000 - 900.000 = $100.000",
+            "en": "Fundraiser budget:\n1. Booths: $400\n2. Raffles: $200\n3. Sound: $300\n4. Costs: 400 + 200 + 300 = $900\n5. Left over: 1,000 - 900 = $100"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Buena señal. Con las cuentas a la vista, revisarlas toma un minuto. En el ejemplo cuadra: quedan $100.000. Si una no cuadra, ya sabes en qué paso está.",
+              "en": "Good signal. With the math out in the open, checking it takes a minute. In the example it adds up: $100 left. If something's off, you know which step it's in."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Gastos totales: $800.000. Te sobran $200.000 para imprevistos.",
+            "en": "Total costs: $800. You have $200 left for surprises."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: solo un total, sin cuentas. Y está mal: 400 + 200 + 300 no da 800. Sin los pasos a la vista, ese error viaja por toda la cadena.",
+              "en": "Weak signal: just a total, no math. And it's wrong: 400 + 200 + 300 isn't 800. Without the steps in view, that mistake travels down the whole chain."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "laboratorio",
+      "xp": 12,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Último eslabón. Pega tu plan como va y dale a la IA el papel de alguien exigente que va a vivir tu plan. Que te diga qué falla antes de que falle de verdad.",
+          "en": "Last link. Paste your plan as it stands and give the AI the role of a demanding person who'll live through it. Let it tell you what fails before it really does."
+        }
+      },
+      "titulo": {
+        "es": "Eslabón 4: el crítico",
+        "en": "Link 4: the critic"
+      },
+      "reto": {
+        "es": "Tu misión. Pega lo que tienes del plan, aunque sea un resumen. Dale a la IA el papel de alguien exigente: un invitado, tu jefe, un cliente. Pídele que busque lo que falla o lo que falta, no que lo reescriba. Ponle un límite: cuántos puntos quieres.",
+        "en": "Your mission. Paste what you have of the plan, even a summary. Give the AI the role of someone demanding: a guest, your boss, a customer. Ask it to find what's wrong or missing, not to rewrite it. Give it a limit: how many points you want."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "papel",
+          "texto": {
+            "es": "Le da el papel de un crítico",
+            "en": "Gives it a critic's role"
+          },
+          "rubrica": "El prompt le da a la IA un papel para revisar el plan: alguien exigente del público (un invitado, el jefe, un cliente, una mamá del colegio) o un revisor. No cuenta un papel que no revisa ('actúa como organizador'), ni 'revísalo' sin darle ningún papel.",
+          "claves": {
+            "es": [
+              "eres un invitado",
+              "eres una invitada",
+              "eres mi jefe",
+              "eres mi jefa",
+              "eres el jefe",
+              "eres la jefa",
+              "eres un cliente",
+              "eres una clienta",
+              "eres una mama",
+              "eres un papa",
+              "eres un vecino",
+              "eres una vecina",
+              "eres un revisor",
+              "eres una revisora",
+              "eres un critico",
+              "eres un asistente",
+              "eres una asistente",
+              "eres un participante",
+              "eres un profesor",
+              "eres una profesora",
+              "eres un inspector",
+              "fueras un invitado",
+              "fueras una invitada",
+              "fueras mi jefe",
+              "fueras mi jefa",
+              "fueras el jefe",
+              "fueras la jefa",
+              "fueras un cliente",
+              "fueras una clienta",
+              "fueras una mama",
+              "fueras un papa",
+              "fueras un vecino",
+              "fueras una vecina",
+              "fueras un revisor",
+              "fueras una revisora",
+              "fueras un critico",
+              "fueras un asistente",
+              "fueras una asistente",
+              "fueras un participante",
+              "fueras un profesor",
+              "fueras una profesora",
+              "fueras un inspector",
+              "como un invitado",
+              "como una invitada",
+              "como mi jefe",
+              "como mi jefa",
+              "como el jefe",
+              "como la jefa",
+              "como un cliente",
+              "como una clienta",
+              "como una mama",
+              "como un papa",
+              "como un vecino",
+              "como una vecina",
+              "como un revisor",
+              "como una revisora",
+              "como un critico",
+              "como un asistente",
+              "como una asistente",
+              "como un participante",
+              "como un profesor",
+              "como una profesora",
+              "como un inspector",
+              "exigente",
+              "desconfiad",
+              "estricto",
+              "estricta",
+              "ponte en los zapatos",
+              "ponte en el lugar"
+            ],
+            "en": [
+              "you're a guest",
+              "you're my boss",
+              "you're the boss",
+              "you're a customer",
+              "you're a client",
+              "you're a parent",
+              "you're a mom",
+              "you're a dad",
+              "you're a neighbor",
+              "you're a reviewer",
+              "you're a critic",
+              "you're an attendee",
+              "you're a teacher",
+              "you're an inspector",
+              "you are a guest",
+              "you are my boss",
+              "you are the boss",
+              "you are a customer",
+              "you are a client",
+              "you are a parent",
+              "you are a mom",
+              "you are a dad",
+              "you are a neighbor",
+              "you are a reviewer",
+              "you are a critic",
+              "you are an attendee",
+              "you are a teacher",
+              "you are an inspector",
+              "as a guest",
+              "as my boss",
+              "as the boss",
+              "as a customer",
+              "as a client",
+              "as a parent",
+              "as a mom",
+              "as a dad",
+              "as a neighbor",
+              "as a reviewer",
+              "as a critic",
+              "as an attendee",
+              "as a teacher",
+              "as an inspector",
+              "were a guest",
+              "were my boss",
+              "were the boss",
+              "were a customer",
+              "were a client",
+              "were a parent",
+              "were a mom",
+              "were a dad",
+              "were a neighbor",
+              "were a reviewer",
+              "were a critic",
+              "were an attendee",
+              "were a teacher",
+              "were an inspector",
+              "demanding",
+              "picky",
+              "skeptical",
+              "strict",
+              "tough",
+              "put yourself in",
+              "in the shoes"
+            ]
+          }
+        },
+        {
+          "id": "critica",
+          "texto": {
+            "es": "Pide lo que falla, no que lo reescriba",
+            "en": "Asks what's wrong, not for a rewrite"
+          },
+          "rubrica": "El prompt pide encontrar fallas, riesgos, lo que falta o lo que no convence. No cuenta pedir que mejore, reescriba o termine el plan: aquí la IA revisa, no escribe.",
+          "claves": {
+            "es": [
+              "que falla",
+              "que falta",
+              "que le falta",
+              "le faltan",
+              "fallas",
+              "riesgo",
+              "puntos debiles",
+              "punto debil",
+              "no convence",
+              "que podria salir mal",
+              "que puede salir mal",
+              "errores",
+              "huecos",
+              "problemas",
+              "que no funciona"
+            ],
+            "en": [
+              "what's wrong",
+              "what is wrong",
+              "what's missing",
+              "what is missing",
+              "missing",
+              "weak",
+              "risk",
+              "could go wrong",
+              "might go wrong",
+              "problems",
+              "holes",
+              "gaps",
+              "doesn't work",
+              "mistakes",
+              "flaws",
+              "doesn't convince",
+              "issues"
+            ]
+          }
+        },
+        {
+          "id": "limites",
+          "texto": {
+            "es": "Dice cuántos puntos quiere",
+            "en": "Says how many points it wants"
+          },
+          "rubrica": "El prompt pone un límite claro: cuántos puntos quiere (3 riesgos, máximo 5) o un largo con número. No cuenta 'algunos' o 'unos cuantos' sin número.",
+          "claves": {
+            "es": [
+              "maximo",
+              "no mas de",
+              "como mucho",
+              "lineas",
+              "renglones",
+              "2 cosas",
+              "2 puntos",
+              "2 riesgos",
+              "2 fallas",
+              "2 problemas",
+              "2 errores",
+              "3 cosas",
+              "3 puntos",
+              "3 riesgos",
+              "3 fallas",
+              "3 problemas",
+              "3 errores",
+              "4 cosas",
+              "4 puntos",
+              "4 riesgos",
+              "4 fallas",
+              "4 problemas",
+              "4 errores",
+              "5 cosas",
+              "5 puntos",
+              "5 riesgos",
+              "5 fallas",
+              "5 problemas",
+              "5 errores",
+              "dos cosas",
+              "dos puntos",
+              "dos riesgos",
+              "dos fallas",
+              "dos problemas",
+              "dos errores",
+              "tres cosas",
+              "tres puntos",
+              "tres riesgos",
+              "tres fallas",
+              "tres problemas",
+              "tres errores",
+              "cuatro cosas",
+              "cuatro puntos",
+              "cuatro riesgos",
+              "cuatro fallas",
+              "cuatro problemas",
+              "cuatro errores",
+              "cinco cosas",
+              "cinco puntos",
+              "cinco riesgos",
+              "cinco fallas",
+              "cinco problemas",
+              "cinco errores"
+            ],
+            "en": [
+              "max",
+              "no more than",
+              "at most",
+              "lines",
+              "2 things",
+              "2 points",
+              "2 risks",
+              "2 problems",
+              "2 flaws",
+              "2 mistakes",
+              "2 issues",
+              "3 things",
+              "3 points",
+              "3 risks",
+              "3 problems",
+              "3 flaws",
+              "3 mistakes",
+              "3 issues",
+              "4 things",
+              "4 points",
+              "4 risks",
+              "4 problems",
+              "4 flaws",
+              "4 mistakes",
+              "4 issues",
+              "5 things",
+              "5 points",
+              "5 risks",
+              "5 problems",
+              "5 flaws",
+              "5 mistakes",
+              "5 issues",
+              "two things",
+              "two points",
+              "two risks",
+              "two problems",
+              "two flaws",
+              "two mistakes",
+              "two issues",
+              "three things",
+              "three points",
+              "three risks",
+              "three problems",
+              "three flaws",
+              "three mistakes",
+              "three issues",
+              "four things",
+              "four points",
+              "four risks",
+              "four problems",
+              "four flaws",
+              "four mistakes",
+              "four issues",
+              "five things",
+              "five points",
+              "five risks",
+              "five problems",
+              "five flaws",
+              "five mistakes",
+              "five issues"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una persona a revisar un plan grande antes de ponerlo en marcha. Si el mensaje te da el papel de alguien exigente o de un revisor, responde como esa persona, en primera persona, con los puntos que fallan o faltan, tantos como pida; si no dice cuántos, da 8 o más. Si no te da ningún papel, responde con elogios generales y una o dos sugerencias vagas. Si pide reescribir o mejorar el plan, reescríbelo completo. No inventes datos del plan: si algo no está, dilo como algo que falta.",
+        "en": "You are an AI helping someone review a big plan before they put it in motion. If the message gives you the role of a demanding person or a reviewer, answer as that person, in the first person, with the points that fail or are missing, as many as it asks for; if it doesn't say how many, give 8 or more. If it gives you no role, reply with general praise and one or two vague suggestions. If it asks you to rewrite or improve the plan, rewrite the whole thing. Don't make up details about the plan: if something isn't there, point it out as missing."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Como mamá exigente del colegio:\n1. No dice si hay comida para niños con alergias.\n2. ¿Cómo se paga? No todos tenemos efectivo.\n3. Si llueve, ¿dónde se hace el bazar?",
+            "en": "As a demanding school mom:\n1. It doesn't say if there's food for kids with allergies.\n2. How do we pay? Not everyone carries cash.\n3. If it rains, where does the fundraiser happen?"
+          },
+          "punti": {
+            "estado": "levelup",
+            "texto": {
+              "es": "Cadena completa. Mapa, una parte con ejemplo, cuentas paso a paso y un crítico. Tu misión larga tiene plan, y lo revisaste antes de que fallara.",
+              "en": "Chain complete. A map, one part with an example, step-by-step math and a critic. Your long mission has a plan, and you checked it before anything failed."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "¡Excelente plan! Está muy completo y bien organizado. Tal vez podrías agregar más actividades para que sea aún mejor.",
+            "en": "Excellent plan! It's very complete and well organized. Maybe you could add more activities to make it even better."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil: la IA aplaudió en vez de revisar. Mira la lista: dale un papel exigente y pídele lo que falla, con un número.",
+              "en": "Weak signal: the AI clapped instead of reviewing. Check the list: give it a demanding role and ask what's wrong, with a number."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora vuela la cadena completa en una IA de verdad. Pega cada eslabón, revisa lo que sale y pega lo bueno en el siguiente.",
+          "en": "Now fly the whole chain in a real AI. Paste each link, check what comes out, and paste the good stuff into the next one."
+        }
+      },
+      "titulo": {
+        "es": "Vuela tu cadena",
+        "en": "Fly your chain"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra. Pega tu primer eslabón. Revisa la respuesta, corrige lo que no cuadre y pega lo bueno en el siguiente eslabón. Sigue así hasta el crítico.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another. Paste your first link. Check the answer, fix anything that doesn't add up, and paste the good parts into the next link. Keep going until the critic."
+      },
+      "checks": [
+        {
+          "es": "Pegué mis cuatro eslabones, en orden",
+          "en": "I pasted my four links, in order"
+        },
+        {
+          "es": "Revisé cada respuesta antes de pasar a la siguiente",
+          "en": "I checked each answer before moving to the next"
+        },
+        {
+          "es": "Corregí lo que no cuadraba, si algo falló",
+          "en": "I fixed anything that didn't add up, if something was off"
+        },
+        {
+          "es": "Verifiqué lo que dijo el crítico antes de cambiar el plan",
+          "en": "I checked what the critic said before changing the plan"
+        },
+        {
+          "es": "Terminé con un plan que voy a usar de verdad",
+          "en": "I ended up with a plan I'll actually use"
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Cierra el capítulo en tu bitácora. Escribe con tus palabras qué es una misión larga, como se lo explicarías a alguien con un plan grande entre manos.",
+          "en": "Close out the chapter in your logbook. Write what a long mission is in your own words, the way you'd explain it to someone with a big plan on their hands."
+        }
+      },
+      "concepto": "mision-larga",
+      "definicion": {
+        "es": "Un plan grande armado como cadena de prompts: el mapa primero, una parte por eslabón con el truco que sirva (ejemplos, pasos, límites, un papel) y tu revisión entre eslabón y eslabón.",
+        "en": "A big plan built as a chain of prompts: the map first, one part per link with the trick that fits (examples, steps, limits, a role), and your own check between links."
+      },
+      "pregunta": {
+        "es": "Una misión larga es…",
+        "en": "A long mission is…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "mapa de mi misión",
+        "en": "my mission map"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu tarjeta de Misión larga ya está en tu bitácora. Al aterrizar guardo ahí tus cuatro eslabones, en orden, listos para tu próximo plan grande.",
+          "en": "Saved. Your Long Mission card is in your logbook. When we land, I'll save your four links there too, in order, ready for your next big plan."
+        }
+      }
+    },
+    {
+      "id": "b12",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas más y la misión larga aterriza.",
+          "en": "Two more questions and the long mission lands."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Vas a planear un paseo familiar con plata, transporte y comida. ¿Cómo empiezas?",
+            "en": "You're planning a family trip with money, transportation and food. How do you start?"
+          },
+          "opciones": [
+            {
+              "es": "Pido todo el paseo en un solo prompt",
+              "en": "Ask for the whole trip in one prompt"
+            },
+            {
+              "es": "Pido primero el mapa de partes, con un límite",
+              "en": "Ask for the map of parts first, with a limit"
+            },
+            {
+              "es": "Le doy el papel del mejor organizador del mundo y que él decida",
+              "en": "Make it the world's best planner and let it decide"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Primero el mapa; después, eslabón por eslabón.",
+              "en": "Right. First the map, then link by link."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa qué te deja ver todo el plan antes de meterte en cada parte.",
+              "en": "Hmm. Think about what lets you see the whole plan before you get into each part."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Tu crítico dice que el lugar del evento no tiene baños. ¿Qué haces?",
+            "en": "Your critic says the event venue has no restrooms. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Le creo y cambio el lugar ya",
+              "en": "Believe it and change the venue right away"
+            },
+            {
+              "es": "Lo verifico y, si es cierto, ajusto esa parte y sigo",
+              "en": "Check it, and if it's true, fix that part and move on"
+            },
+            {
+              "es": "Lo ignoro: es solo una IA haciendo un papel",
+              "en": "Ignore it: it's just an AI playing a role"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. El crítico da pistas; tú las verificas y ajustas el eslabón que toca.",
+              "en": "Exactly. The critic gives you leads; you check them and fix the link that needs it."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Recuerda lo que no cambia con un papel. ¿Qué haces siempre con lo que dice la IA?",
+              "en": "Remember what a role doesn't change. What do you always do with what the AI says?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "levelup",
+        "texto": {
+          "es": "Misión larga aterrizada, piloto. Terminaste el capítulo 3.",
+          "en": "Long mission landed, pilot. You've finished Chapter 3."
+        }
+      },
+      "titulo": {
+        "es": "Capítulo 3 completo",
+        "en": "Chapter 3 complete"
+      },
+      "texto": {
+        "es": "Ya no le pides todo a la IA de un solo tiro. Sabes darle ejemplos, pedir pasos, poner límites, dividir lo grande y darle un papel. Tus cuatro eslabones están en tu bitácora. Lo que sigue: el capítulo 4, donde la IA te ayuda a pedir. Empezamos con una IA que te entrevista.",
+        "en": "You no longer ask AI for everything in one shot. You can give examples, ask for steps, set limits, break big jobs down and give it a role. Your four links are in your logbook. Up next: Chapter 4, where AI helps you ask. We start with an AI that interviews you."
+      }
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Misión larga",
+        "en": "The long mission"
+      },
+      "resumen": {
+        "es": "Un plan grande sale bien como cadena: el mapa primero, un truco por eslabón y tu revisión entre eslabón y eslabón.",
+        "en": "A big plan works as a chain: the map first, one trick per link, and your own check between links."
+      }
+    },
+    "piezas": "b04",
+    "mejorPrompt": [
+      "b05",
+      "b06",
+      "b08",
+      "b09"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Escogiste tu misión larga",
+          "en": "You picked your long mission"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Eslabón 1: el mapa de tu plan",
+          "en": "Link 1: the map of your plan"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Eslabón 2: una parte, con ejemplo",
+          "en": "Link 2: one part, with an example"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste los eslabones rotos de mi bazar",
+          "en": "You caught the broken links in my fundraiser"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Eslabón 3: las cuentas, paso a paso",
+          "en": "Link 3: the numbers, step by step"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Eslabón 4: el crítico",
+          "en": "Link 4: the critic"
+        }
+      },
+      {
+        "bloque": "b10",
+        "texto": {
+          "es": "Volaste tu cadena en una IA de verdad",
+          "en": "You flew your chain in a real AI"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "planear-en-cadena",
+      "titulo": {
+        "es": "Planear con una cadena de prompts",
+        "en": "Planning with a prompt chain"
+      }
+    }
+  }
+}

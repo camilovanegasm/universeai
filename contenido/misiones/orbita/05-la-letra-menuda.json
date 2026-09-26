@@ -1,0 +1,877 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-letra-menuda",
+  "mundo": "ia-en-tu-dia",
+  "capitulo": 2,
+  "numero": 5,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "entender-documentos"
+  ],
+  "usaConceptos": [
+    "pedido-completo",
+    "datos-sensibles"
+  ],
+  "titulo": {
+    "es": "La letra menuda",
+    "en": "The fine print"
+  },
+  "resumen": {
+    "es": "Copia solo la cláusula, sin tus datos. Pide explicación simple, qué preguntar y qué debe ver un abogado.",
+    "en": "Copy only the clause, without your details. Ask for a simple explanation, what to ask and what a lawyer should see."
+  },
+  "siguiente": "el-reclamo-bien-hecho",
+  "fuentes": [
+    {
+      "titulo": "Ley 2113 de 2021: consultorios jurídicos gratuitos para personas sin medios económicos (arts. 3 y 8)",
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=168026",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Ley 2113 de 2021, texto compilado (normograma)",
+      "url": "https://normograma.com/documentospdf/icfes2024/compilacion/docs/ley_2113_2021.htm",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llamada desde el barrio Restrepo, en Bogotá. Es Don Rubén, zapatero de toda la vida. Le mandaron el contrato de arriendo de su local: ocho páginas de letra menuda. Tiene que firmar el lunes y no entiende la mitad.",
+          "en": "Pilot, a call from the Restrepo neighborhood in Bogotá, Colombia. It's Don Rubén, a lifelong shoemaker. He just got the lease for his shop: eight pages of fine print. He has to sign on Monday and doesn't understand half of it."
+        }
+      },
+      "titulo": {
+        "es": "La letra menuda",
+        "en": "The fine print"
+      },
+      "texto": {
+        "es": "Punti no es asesor financiero ni abogado: la IA te ayuda a entender y a redactar, y la decisión es tuya. Hoy aprendes a entender un papel sin entregar tus datos. Unos 9 minutos.",
+        "en": "Punti isn't a financial advisor or a lawyer: AI helps you understand and write, and the decision is yours. Today you learn to understand a document without handing over your details. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto hizo Don Rubén con la primera página, y esto le contestó la IA. Abajo está otra forma de pedir, con una sola cláusula.",
+          "en": "Here's what Don Rubén did with the first page, and what the AI said back. Below is another way to ask, with just one clause."
+        }
+      },
+      "titulo": {
+        "es": "Una cláusula, sin tus datos",
+        "en": "One clause, without your details"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Te pego el contrato: ARRENDATARIO: Rubén Pérez, C.C. 12.345.678, local en la calle 12 # 34-56. \"El arrendatario asumirá todas las reparaciones del inmueble\". ¿Firmo o no?",
+          "en": "Here's the lease: TENANT: Rubén Pérez, ID 12-345-678, shop at 100 Example Street. \"The tenant shall bear all repairs to the property.\" Should I sign or not?"
+        },
+        "salida": {
+          "es": "Señor Rubén Pérez: el contrato parece estándar. Puede firmarlo tranquilo.",
+          "en": "Mr. Rubén Pérez: the lease looks standard. You can sign it with peace of mind."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "tapa",
+            "texto": {
+              "es": "Te copio una cláusula del contrato de arriendo de un local, sin mis datos: \"El arrendatario asumirá todas las reparaciones del inmueble\". ",
+              "en": "Here's one clause from a shop lease, without my details: \"The tenant shall bear all repairs to the property.\" "
+            }
+          },
+          {
+            "pieza": "simple",
+            "texto": {
+              "es": "Explícamela en palabras simples, con un ejemplo. ",
+              "en": "Explain it in simple words, with an example. "
+            }
+          },
+          {
+            "pieza": "preguntas",
+            "texto": {
+              "es": "Dime qué le conviene preguntar al dueño ",
+              "en": "Tell me what I should ask the landlord "
+            }
+          },
+          {
+            "pieza": "abogado",
+            "texto": {
+              "es": "y qué debería revisar un abogado.",
+              "en": "and what a lawyer should review."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "En simple: tú pagas cualquier arreglo del local, pequeño o grande. Ejemplo: si se daña el techo, lo pagas tú.\nPregúntale al dueño: ¿también los daños grandes, como el techo o los tubos de la pared? ¿Y los daños que ya estaban antes de entrar?\nPara un abogado: hasta dónde llega \"todas las reparaciones\", antes de firmar.",
+          "en": "In simple words: you pay for any repair to the shop, small or big. Example: if the roof breaks, you pay for it.\nAsk the landlord: does that include big damage, like the roof or the pipes in the walls? What about damage that was already there before you moved in?\nFor a lawyer: how far \"all repairs\" goes, before you sign."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. Don Rubén tapó sus datos y copió solo la cláusula. Pidió explicación simple, preguntas y lo que debe ver un abogado. Y la IA ya no le dijo \"firme tranquilo\": la decisión volvió a él.",
+          "en": "Look at the colors. Don Rubén covered his details and copied only the clause. He asked for a simple explanation, questions and what a lawyer should see. And the AI no longer said \"sign it\": the decision went back to him."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Para entender un papel con la IA hay cuatro piezas. Toca cada una.",
+          "en": "There are four pieces to understanding a document with AI. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las 4 piezas de la letra menuda",
+        "en": "The 4 pieces of the fine print"
+      },
+      "piezas": [
+        {
+          "id": "tapa",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Solo la cláusula",
+            "en": "Just the clause"
+          },
+          "descripcion": {
+            "es": "Copias lo que no entiendes, sin nombres ni números tuyos.",
+            "en": "Copy what you don't understand, without your names or numbers."
+          },
+          "ejemplo": {
+            "es": "Ocho páginas no. Nombre, cédula y dirección tampoco. Una cláusula a la vez, y la IA te ayuda igual.",
+            "en": "Not eight pages. Not your name, ID or address either. One clause at a time, and the AI helps just the same."
+          }
+        },
+        {
+          "id": "simple",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "En palabras simples",
+            "en": "In simple words"
+          },
+          "descripcion": {
+            "es": "Qué dice, en palabras de todos los días y con un ejemplo.",
+            "en": "What it says, in everyday words and with an example."
+          },
+          "ejemplo": {
+            "es": "\"Explícamela con un ejemplo\". Un ejemplo con números te dice más que una definición.",
+            "en": "\"Explain it with an example.\" An example with numbers tells you more than a definition."
+          }
+        },
+        {
+          "id": "preguntas",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Qué preguntar",
+            "en": "What to ask"
+          },
+          "descripcion": {
+            "es": "Las preguntas para la otra parte, antes de firmar.",
+            "en": "The questions for the other side, before you sign."
+          },
+          "ejemplo": {
+            "es": "\"¿Qué le pregunto al dueño?\". Muchas cláusulas se aclaran o se negocian antes de firmar.",
+            "en": "\"What should I ask the landlord?\" Many clauses can be cleared up or negotiated before signing."
+          }
+        },
+        {
+          "id": "abogado",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Lo que ve un abogado",
+            "en": "What a lawyer should see"
+          },
+          "descripcion": {
+            "es": "Lo que pide ojos de un profesional.",
+            "en": "What needs a professional's eyes."
+          },
+          "ejemplo": {
+            "es": "\"Márcame lo que debería ver un abogado\". La IA no dice si algo es legal: te dice a quién preguntarle.",
+            "en": "\"Flag what a lawyer should see.\" AI doesn't say if something is legal: it tells you who to ask."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Don Rubén tiene el contrato abierto. ¿Qué puede copiar en el chat y qué tapa?",
+          "en": "Your turn. Don Rubén has the lease open. What can he copy into the chat, and what does he cover up?"
+        }
+      },
+      "titulo": {
+        "es": "¿Se copia o se tapa?",
+        "en": "Copy it or cover it?"
+      },
+      "grupos": [
+        {
+          "id": "copia",
+          "titulo": {
+            "es": "Se copia",
+            "en": "Copy it"
+          }
+        },
+        {
+          "id": "tapa",
+          "titulo": {
+            "es": "Se tapa",
+            "en": "Cover it"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "copia",
+          "texto": {
+            "es": "La cláusula que dice cuánto sube el arriendo cada año",
+            "en": "The clause about how much the rent goes up each year"
+          }
+        },
+        {
+          "grupo": "tapa",
+          "texto": {
+            "es": "Su nombre completo y su cédula",
+            "en": "His full name and ID number"
+          }
+        },
+        {
+          "grupo": "copia",
+          "texto": {
+            "es": "La cláusula de qué pasa si entrega el local antes",
+            "en": "The clause about what happens if he leaves early"
+          }
+        },
+        {
+          "grupo": "tapa",
+          "texto": {
+            "es": "La dirección exacta del local",
+            "en": "The shop's exact address"
+          }
+        },
+        {
+          "grupo": "copia",
+          "texto": {
+            "es": "La cláusula de quién paga los arreglos",
+            "en": "The clause about who pays for repairs"
+          }
+        },
+        {
+          "grupo": "tapa",
+          "texto": {
+            "es": "La página de las firmas, con su huella",
+            "en": "The signature page, with his fingerprint"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Las cláusulas viajan; lo que dice quién eres se queda en tierra.",
+          "en": "Six for six. Clauses can travel; what says who you are stays on the ground."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿eso explica qué dice el contrato, o dice quién es Don Rubén?",
+          "en": "Hmm. Ask yourself: does that explain what the lease says, or who Don Rubén is?"
+        }
+      },
+      "malPorGrupo": {
+        "copia": {
+          "estado": "error",
+          "texto": {
+            "es": "Ojo: con ese dato alguien sabe quién es Don Rubén o dónde está. Para entender la cláusula no hace falta.",
+            "en": "Careful: with that, someone knows who Don Rubén is or where he works. You don't need it to understand the clause."
+          }
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 15,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno. Estas son tres cláusulas del contrato de Don Rubén. Ya vienen sin datos. Pide ayuda para entenderlas antes del lunes.",
+          "en": "Your turn. Here are three clauses from Don Rubén's lease. They already have no personal details. Ask for help understanding them before Monday."
+        }
+      },
+      "titulo": {
+        "es": "Tres cláusulas antes del lunes",
+        "en": "Three clauses before Monday"
+      },
+      "reto": {
+        "es": "Tres cláusulas inventadas. Cláusula 4: \"El canon se incrementará cada año en el IPC más cinco puntos\". Cláusula 7: \"Las mejoras quedarán a favor del arrendador, sin reconocimiento alguno\". Cláusula 9: \"Si el arrendatario entrega antes de tiempo, pagará tres cánones de multa\".",
+        "en": "Three made-up clauses. Clause 4: \"Rent shall increase each year by inflation (CPI) plus five points.\" Clause 7: \"Improvements shall remain with the landlord, with no compensation.\" Clause 9: \"If the tenant leaves early, the tenant shall pay three months' rent as a penalty.\""
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "simple",
+          "texto": {
+            "es": "Pide explicación simple",
+            "en": "Asks for a simple explanation"
+          },
+          "rubrica": "El prompt pide que la IA explique las cláusulas en palabras simples o de todos los días, o con un ejemplo. No cuenta '¿firmo o no?', '¿esto es legal?' o 'resúmeme el contrato' sin pedir que le explique qué dicen.",
+          "claves": {
+            "es": [
+              "palabras simples",
+              "palabras sencillas",
+              "en simple",
+              "sencill",
+              "facil de entender",
+              "explica",
+              "que significa",
+              "que quiere decir",
+              "como si",
+              "ejemplo"
+            ],
+            "en": [
+              "simple words",
+              "plain words",
+              "plain language",
+              "plain english",
+              "simple terms",
+              "explain",
+              "what does",
+              "what it means",
+              "means",
+              "example"
+            ]
+          }
+        },
+        {
+          "id": "preguntas",
+          "texto": {
+            "es": "Pide qué preguntarle al dueño",
+            "en": "Asks what to ask the landlord"
+          },
+          "rubrica": "El prompt pide qué preguntas le conviene hacerle al dueño o arrendador antes de firmar (para aclarar o negociar). No cuenta hacerle preguntas a la IA ('¿es normal?', '¿firmo?') sin pedir qué preguntarle al dueño.",
+          "claves": {
+            "es": [
+              "que preguntar",
+              "conviene preguntar",
+              "debo preguntar",
+              "deberia preguntar",
+              "preguntar al dueno",
+              "preguntar al arrendador",
+              "que le pregunto",
+              "que preguntas",
+              "preguntas para",
+              "preguntarle",
+              "negociar",
+              "que le digo al"
+            ],
+            "en": [
+              "what to ask",
+              "what should i ask",
+              "what i should ask",
+              "questions to ask",
+              "questions for",
+              "ask the landlord",
+              "ask my landlord",
+              "ask the owner",
+              "negotiate"
+            ]
+          }
+        },
+        {
+          "id": "abogado",
+          "texto": {
+            "es": "Pide qué debe ver un abogado",
+            "en": "Asks what a lawyer should see"
+          },
+          "rubrica": "El prompt pide que la IA marque qué partes debería revisar un abogado, un consultorio jurídico u otro profesional antes de firmar. No cuenta pedirle a la IA que diga si firma, si una cláusula es legal o 'si lo demandan', sin pedir qué llevarle a un profesional.",
+          "claves": {
+            "es": [
+              "abogad",
+              "consultorio juridico",
+              "un experto",
+              "profesional",
+              "revisar con"
+            ],
+            "en": [
+              "lawyer",
+              "attorney",
+              "legal aid",
+              "legal clinic",
+              "professional",
+              "an expert"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a entender cláusulas de contratos. Responde en texto plano, en máximo 150 palabras. Si el mensaje pide explicarlas, explica cada cláusula en palabras simples, con un ejemplo de números inventados si ayuda. No digas si la persona debe firmar o no, ni si una cláusula es legal o ilegal: eso lo dice un abogado. Si pide preguntas para el dueño, da dos o tres. Si pide qué debería ver un abogado, márcalo al final. Si el mensaje no pide nada de eso y solo pregunta si firmar o si es legal, responde en dos frases que no puedes decidir por la persona ni dar consejo legal, sin explicar las cláusulas. Si el mensaje trae nombres, cédulas o direcciones, no los repitas y recuerda que no hacen falta.",
+        "en": "You are an AI that helps people understand contract clauses. Reply in plain text, in 150 words at most. If the message asks you to explain them, explain each clause in simple words, with an example using made-up numbers if it helps. Don't say whether the person should sign, or whether a clause is legal or illegal: that's for a lawyer. If it asks for questions for the landlord, give two or three. If it asks what a lawyer should see, flag it at the end. If the message asks for none of that and only asks whether to sign or whether it's legal, reply in two sentences that you can't decide for the person or give legal advice, without explaining the clauses. If the message includes names, ID numbers or addresses, don't repeat them and remind them they aren't needed."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Cláusula 4: cada año el arriendo sube lo que subió el costo de vida (IPC) y cinco puntos más. Ejemplo: si el IPC fue 5%, sube 10%.\nCláusula 7: lo que mejores en el local (piso, estantes fijos) se queda para el dueño, y no te lo pagan.\nCláusula 9: si te vas antes de que termine el contrato, pagas tres meses de arriendo de multa.\nPreguntas para el dueño: ¿el aumento puede ser solo el IPC? ¿Qué cuenta como mejora? ¿La multa baja si aviso con tiempo?\nPara un abogado: las cláusulas 7 y 9, antes de firmar.",
+            "en": "Clause 4: each year the rent goes up by inflation (CPI) plus five more points. Example: if inflation was 5%, rent goes up 10%.\nClause 7: anything you improve in the shop (floors, built-in shelves) stays with the landlord, and you don't get paid for it.\nClause 9: if you leave before the lease ends, you pay three months' rent as a penalty.\nQuestions for the landlord: can the increase be just inflation? What counts as an improvement? Is the penalty lower if I give notice?\nFor a lawyer: clauses 7 and 9, before signing."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. Cada cláusula en palabras de todos los días, preguntas para el dueño y lo que va para un abogado. Don Rubén ya puede ir el lunes con su lista.",
+              "en": "Clean signal. Each clause in everyday words, questions for the landlord and what goes to a lawyer. Don Rubén can walk in on Monday with his list."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "No puedo decirte si firmar o no, ni darte consejo legal. Es una decisión tuya.",
+            "en": "I can't tell you whether to sign, and I can't give legal advice. It's your decision."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA no decide por ti, bien. Pero tampoco te explicó nada. Mira la lista: pide explicación simple, preguntas para el dueño y lo que va a un abogado.",
+              "en": "The AI won't decide for you, good. But it didn't explain anything either. Check the list: ask for a simple explanation, questions for the landlord and what goes to a lawyer."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "punti-se-equivoco",
+      "xp": 8,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le expliqué la cláusula 9 a Don Rubén y me emocioné. Dos frases no me tocaban. Tócalas.",
+          "en": "Confession time. I explained clause 9 to Don Rubén and got carried away. Two sentences weren't mine to say. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Punti se las da de abogado",
+        "en": "Punti plays lawyer"
+      },
+      "trozos": [
+        {
+          "es": "La cláusula 9 dice que si te vas antes de tiempo, pagas tres meses de arriendo de multa.",
+          "en": "Clause 9 says that if you leave early, you pay three months' rent as a penalty."
+        },
+        {
+          "es": "Tranquilo, esa cláusula es ilegal y no te la pueden cobrar.",
+          "en": "Relax, that clause is illegal and they can't make you pay it."
+        },
+        {
+          "es": "Antes de firmar, pregúntale al dueño si esa multa se puede negociar.",
+          "en": "Before signing, ask the landlord if that penalty can be negotiated."
+        },
+        {
+          "es": "Yo que tú firmo hoy mismo, que el local está muy bien ubicado.",
+          "en": "If I were you, I'd sign today, the shop is in a great spot."
+        },
+        {
+          "es": "Si te quedan dudas, lleva el contrato a un abogado o a un consultorio jurídico.",
+          "en": "If you still have doubts, take the lease to a lawyer or a legal aid clinic."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Yo no sé si esa cláusula es legal: eso lo dice un abogado. Y firmar o no es decisión de Don Rubén. La IA puede sonar muy segura y equivocarse. Explicar, sí; decidir, no.",
+          "en": "You caught me. I don't know if that clause is legal: a lawyer does. And signing or not is Don Rubén's call. AI can sound very sure and still be wrong. Explaining, yes; deciding, no."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa frase sí ayuda: explica o manda a quien sabe. Busca una que decida por él y una que se las da de abogado.",
+          "en": "That sentence helps: it explains or points to someone who knows. Look for one that decides for him and one that plays lawyer."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ahora, la luz roja de los papeles.",
+          "en": "Now, the red light for paperwork."
+        }
+      },
+      "titulo": {
+        "es": "Cuándo el papel va a una persona",
+        "en": "When a document goes to a person"
+      },
+      "texto": {
+        "es": "La IA te ayuda a entender, no a decidir. Hay papeles que son luz roja: los que te comprometen por años o por mucha plata, los que te hacen fiador y los que traen amenazas. Ahí va una persona. Los consultorios jurídicos de las universidades asesoran gratis a quien no puede pagar un abogado.",
+        "en": "AI helps you understand, not decide. Some documents are red light: the ones that tie you down for years or for a lot of money, the ones that make you a guarantor, and the ones with threats. Those go to a person. In Colombia, university legal aid clinics advise people who can't pay a lawyer, for free."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Si el papel…",
+            "en": "If the document…"
+          },
+          "b": {
+            "es": "Llévalo a…",
+            "en": "Take it to…"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Te pide firmar un pagaré o ser fiador",
+              "en": "Asks you to sign a promissory note or be a guarantor"
+            },
+            "b": {
+              "es": "Un abogado o un consultorio jurídico, antes de firmar",
+              "en": "A lawyer or legal aid clinic, before signing"
+            }
+          },
+          {
+            "a": {
+              "es": "Te compromete por años o por mucha plata",
+              "en": "Ties you down for years or a lot of money"
+            },
+            "b": {
+              "es": "Un abogado, antes de firmar",
+              "en": "A lawyer, before signing"
+            }
+          },
+          {
+            "a": {
+              "es": "Trae una demanda o una orden de desalojo",
+              "en": "Comes with a lawsuit or an eviction notice"
+            },
+            "b": {
+              "es": "Un abogado o un consultorio jurídico, ya",
+              "en": "A lawyer or legal aid clinic, right away"
+            }
+          },
+          {
+            "a": {
+              "es": "Es un cobro de un servicio que no te cuadra",
+              "en": "Is a service bill that doesn't add up"
+            },
+            "b": {
+              "es": "La empresa, con un reclamo (la próxima misión)",
+              "en": "The company, with a complaint (next mission)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "El lunes, en el local. Lee con calma y decide.",
+          "en": "Monday, at the shop. Read it calmly and decide."
+        }
+      },
+      "titulo": {
+        "es": "Firme hoy o se lo doy a otro",
+        "en": "Sign today or I'll rent it to someone else"
+      },
+      "escena": {
+        "es": "El dueño llega con el contrato y un esfero. Dice: \"Don Rubén, firme hoy, que tengo otro interesado\". Don Rubén todavía tiene dudas con la cláusula 9. ¿Qué hace?",
+        "en": "The landlord arrives with the lease and a pen. He says: \"Don Rubén, sign today, I have someone else interested.\" Don Rubén still has doubts about clause 9. What does he do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Firma ya, para no perder el local",
+            "en": "Signs right away, so he doesn't lose the shop"
+          },
+          "consecuencia": {
+            "es": "La prisa es del otro, no de él. Si firma con dudas, la multa de la cláusula 9 queda firmada también.",
+            "en": "The rush is the other person's, not his. If he signs with doubts, the clause 9 penalty is signed too."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Pide dos días para leerlo con calma y preguntar",
+            "en": "Asks for two days to read it calmly and ask questions"
+          },
+          "consecuencia": {
+            "es": "Eso. Lleva sus preguntas al dueño y la cláusula 9 a un consultorio jurídico. Si el local sigue ahí en dos días, firma con los ojos abiertos.",
+            "en": "That's it. He takes his questions to the landlord and clause 9 to a legal aid clinic. If the shop is still there in two days, he signs with his eyes open."
+          },
+          "buena": true
+        },
+        {
+          "texto": {
+            "es": "Le toma foto a todo el contrato y le pregunta a la IA si firma",
+            "en": "Photographs the whole lease and asks the AI whether to sign"
+          },
+          "consecuencia": {
+            "es": "Ojo: la foto lleva su nombre, su cédula y su firma. Y la IA no decide por él ni sabe si algo es legal.",
+            "en": "Careful: the photo shows his name, his ID and his signature. And the AI doesn't decide for him or know if something is legal."
+          },
+          "buena": false
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Luz roja: cuando te apuran para firmar, pide tiempo. Un papel que se firma con prisa se paga con calma. La IA te ayuda a preparar las preguntas; la firma es tuya.",
+          "en": "Red light: when someone rushes you to sign, ask for time. Sign in haste, pay at leisure. AI helps you prepare the questions; the signature is yours."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A tu bitácora. Escribe con tus palabras cómo se entiende un papel con la IA, como se lo explicarías a Don Rubén.",
+          "en": "To your logbook. Write in your own words how you understand a document with AI, the way you'd explain it to Don Rubén."
+        }
+      },
+      "concepto": "entender-documentos",
+      "definicion": {
+        "es": "Entender un papel con la IA: copias solo la cláusula o el cobro, sin tus datos, y pides explicación simple, qué preguntar y qué debe ver un abogado. La IA explica; firmar es tu decisión.",
+        "en": "Understanding a document with AI: copy only the clause or the charge, without your details, and ask for a simple explanation, what to ask and what a lawyer should see. AI explains; signing is your decision."
+      },
+      "pregunta": {
+        "es": "Para entender un papel con la IA…",
+        "en": "To understand a document with AI…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "letra menuda",
+        "en": "fine print"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu pedido de las tres cláusulas ya viven en tu bitácora. El próximo contrato ya tiene prompt.",
+          "en": "Saved. Your note and your request for the three clauses now live in your logbook. Your next contract already has a prompt."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas cortas y cerramos la llamada de Don Rubén.",
+          "en": "Two quick questions and we wrap up Don Rubén's call."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Qué le pegas a la IA para entender un contrato?",
+            "en": "What do you paste into the AI to understand a contract?"
+          },
+          "opciones": [
+            {
+              "es": "El contrato completo, con nombres y cédulas",
+              "en": "The whole contract, with names and ID numbers"
+            },
+            {
+              "es": "Una foto de la página de las firmas",
+              "en": "A photo of the signature page"
+            },
+            {
+              "es": "Solo la cláusula que no entiendes, sin tus datos",
+              "en": "Only the clause you don't understand, without your details"
+            }
+          ],
+          "correcta": 2,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Una cláusula a la vez, y lo que dice quién eres se queda en tierra.",
+              "en": "Right. One clause at a time, and whatever says who you are stays on the ground."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿la IA necesita saber quién eres para explicarte una cláusula?",
+              "en": "Hmm. Ask yourself: does the AI need to know who you are to explain a clause?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Cuál pedido deja la decisión en tus manos?",
+            "en": "Which request keeps the decision in your hands?"
+          },
+          "opciones": [
+            {
+              "es": "Explícame esta cláusula y dime qué debería ver un abogado",
+              "en": "Explain this clause and tell me what a lawyer should see"
+            },
+            {
+              "es": "¿Firmo o no firmo este contrato?",
+              "en": "Should I sign this contract or not?"
+            },
+            {
+              "es": "Dime si esta cláusula es legal",
+              "en": "Tell me if this clause is legal"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La IA explica y te dice a quién preguntar. Tú decides.",
+              "en": "Exactly. The AI explains and tells you who to ask. You decide."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Pregúntate: ¿ese pedido le pide a la IA que decida o que se las dé de abogado?",
+              "en": "Ask yourself: does that request ask the AI to decide, or to play lawyer?"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora, un papel tuyo. Busca uno que nunca entendiste del todo.",
+          "en": "Now, a document of your own. Find one you never fully understood."
+        }
+      },
+      "titulo": {
+        "es": "Tu letra menuda",
+        "en": "Your fine print"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Copilot, Claude u otra. Escoge un papel: el contrato del celular, una factura, un reglamento. Copia solo una cláusula o un cobro, sin tu nombre, cédula, dirección ni número de cliente. Pide explicación simple, qué preguntar y qué debe ver un abogado.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Copilot, Claude or another. Pick a document: your phone contract, a bill, a set of rules. Copy only one clause or one charge, without your name, ID, address or customer number. Ask for a simple explanation, what to ask and what a lawyer should see."
+      },
+      "checks": [
+        {
+          "es": "Copié solo una cláusula o un cobro",
+          "en": "I copied only one clause or one charge"
+        },
+        {
+          "es": "No pegué nombre, cédula, dirección ni número de cliente",
+          "en": "I didn't paste my name, ID, address or customer number"
+        },
+        {
+          "es": "Pedí explicación simple y qué preguntar",
+          "en": "I asked for a simple explanation and what to ask"
+        },
+        {
+          "es": "No le pedí a la IA que decidiera si firmo",
+          "en": "I didn't ask the AI to decide whether I sign"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Entender documentos",
+        "en": "Understanding documents"
+      },
+      "resumen": {
+        "es": "Copias solo la cláusula, sin tus datos, y pides explicación simple, qué preguntar y qué debe ver un abogado. Firmar es tu decisión.",
+        "en": "Copy only the clause, without your details, and ask for a simple explanation, what to ask and what a lawyer should see. Signing is your decision."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste lo que se copia de lo que se tapa",
+          "en": "You sorted what to copy from what to cover"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pediste ayuda con las tres cláusulas de Don Rubén",
+          "en": "You asked for help with Don Rubén's three clauses"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Atrapaste a Punti haciéndose el abogado",
+          "en": "You caught Punti playing lawyer"
+        }
+      },
+      {
+        "bloque": "b08",
+        "texto": {
+          "es": "Pediste tiempo antes de firmar con prisa",
+          "en": "You asked for time instead of signing in a rush"
+        }
+      },
+      {
+        "bloque": "b11",
+        "texto": {
+          "es": "Entendiste un papel tuyo sin dar tus datos",
+          "en": "You understood one of your own documents without giving your details"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "leer-la-letra-menuda",
+      "titulo": {
+        "es": "Entender papeles con IA",
+        "en": "Understanding documents with AI"
+      }
+    }
+  }
+}

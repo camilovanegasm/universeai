@@ -1,0 +1,782 @@
+{
+  "formato": "punti-mision@1",
+  "id": "el-famoso-que-no-invirtio",
+  "mundo": "etica-y-seguridad",
+  "capitulo": 1,
+  "numero": 2,
+  "receta": "criterio",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "deepfake-inversion"
+  ],
+  "usaConceptos": [
+    "voz-clonada"
+  ],
+  "titulo": {
+    "es": "El famoso que no invirtió",
+    "en": "The Celebrity Who Never Invested"
+  },
+  "resumen": {
+    "es": "Videos falsos de famosos que recomiendan invertir: las señales y cómo verificar por fuera del video.",
+    "en": "Fake celebrity videos pushing investments: the warning signs and how to check outside the video."
+  },
+  "siguiente": "la-cuenta-nueva-del-proveedor",
+  "fuentes": [
+    {
+      "titulo": "Infobae: perdió sus ahorros por un falso video de una cantante hecho con IA (15 mar. 2026)",
+      "url": "https://www.infobae.com/colombia/2026/03/15/mujer-perdio-todos-sus-ahorros-por-creer-en-falso-video-de-shakira-hecho-con-inteligencia-artificial/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Noticias Caracol: estafadores usan IA para falsear la imagen del presidente y de presentadores (20 feb. 2025)",
+      "url": "https://www.noticiascaracol.com/colombia/ojo-estafadores-usan-ia-para-falsear-imagen-del-presidente-petro-y-de-noticias-caracol-no-caiga-rg10",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Superintendencia Financiera: herramienta ¡Alerta! Ofertas fraudulentas (12 ago. 2025)",
+      "url": "https://www.superfinanciera.gov.co/publicaciones/10115714/superfinanciera-lanza-nueva-herramienta-que-ayuda-a-la-ciudadania-a-no-caer-en-ofertas-fraudulentas/",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Superintendencia Financiera: entidades vigiladas",
+      "url": "https://www.superfinanciera.gov.co/publicaciones/13067/industrias-supervisadasentidades-vigiladas-por-la-superintendencia-financiera-de-colombia-13067/",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, otra alerta en El faro. Esta vez la tormenta trae la cara de alguien famoso, y lo que promete suena demasiado bueno.",
+          "en": "Pilot, another alert at the Lighthouse. This time the storm wears a famous face, and what it promises sounds too good to be true."
+        }
+      },
+      "titulo": {
+        "es": "El famoso que no invirtió",
+        "en": "The Celebrity Who Never Invested"
+      },
+      "texto": {
+        "es": "Libardo, que tiene un lavadero de carros en Barranquilla, recibió en un grupo un video de noticiero: una cantante famosa promete duplicar los ahorros en 30 días. Hoy aprendes a frenar esa trampa sin pelear. Unos 8 minutos.",
+        "en": "Libardo, who runs a car wash in Barranquilla, got a news clip in a group chat: a famous singer promises to double your savings in 30 days. Today you'll learn to stop that trap without a fight. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, qué es lo que Libardo está viendo.",
+          "en": "First, what Libardo is actually looking at."
+        }
+      },
+      "titulo": {
+        "es": "Un famoso que nunca lo dijo",
+        "en": "A celebrity who never said it"
+      },
+      "texto": {
+        "es": "La misma IA que copia voces también arma videos. Ponen a una cantante, a un presentador o a un político a decir que una plataforma duplica tu plata. El video se ve real, pero esa persona nunca lo dijo. Nadie serio te garantiza ganancias: si alguien lo hace, la aguja ya se movió.",
+        "en": "The same AI that copies voices can also make videos. They get a singer, a news anchor or a politician to say some platform doubles your money. The video looks real, but that person never said it. No one serious guarantees you profits: if someone does, the needle has already moved."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Un video falso con una cara famosa",
+            "en": "A fake video with a famous face"
+          },
+          {
+            "es": "Una promesa de ganancia segura",
+            "en": "A promise of sure profits"
+          },
+          {
+            "es": "Te piden consignar rápido",
+            "en": "They ask you to pay in fast"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las señales que traen casi todos estos anuncios, y la única defensa que funciona. Toca cada una.",
+          "en": "These are the signs almost every one of these ads has, plus the one defense that works. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Señales del anuncio falso",
+        "en": "Signs of a fake ad"
+      },
+      "piezas": [
+        {
+          "id": "ganancia",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Ganancia garantizada",
+            "en": "Guaranteed profit"
+          },
+          "descripcion": {
+            "es": "Promete doblar tu plata, seguro y rápido.",
+            "en": "It promises to double your money, safe and fast."
+          },
+          "ejemplo": {
+            "es": "\"Duplica tus ahorros en 30 días\". Toda inversión real tiene riesgo. Quien te jura que no, te está vendiendo algo.",
+            "en": "\"Double your savings in 30 days.\" Every real investment has risk. Whoever swears it doesn't is selling you something."
+          }
+        },
+        {
+          "id": "prisa",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Prisa",
+            "en": "Rush"
+          },
+          "descripcion": {
+            "es": "Cupos que se acaban, ofertas solo por hoy.",
+            "en": "Spots running out, offers for today only."
+          },
+          "ejemplo": {
+            "es": "\"Quedan 20 cupos\". La prisa es para que no lo consultes con nadie.",
+            "en": "\"Only 20 spots left.\" The rush is there so you don't talk it over with anyone."
+          }
+        },
+        {
+          "id": "pago-fuera",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Pago por fuera",
+            "en": "Paying off the books"
+          },
+          "descripcion": {
+            "es": "Consignar a una persona, por WhatsApp o en cripto.",
+            "en": "Paying a person, over WhatsApp or in crypto."
+          },
+          "ejemplo": {
+            "es": "\"Consigna al asesor por WhatsApp\". Una entidad seria no te pide plata a la cuenta de una persona.",
+            "en": "\"Pay the adviser over WhatsApp.\" A real financial company doesn't ask you to send money to a person's account."
+          }
+        },
+        {
+          "id": "no-retiro",
+          "color": "#b18cff",
+          "titulo": {
+            "es": "No deja retirar",
+            "en": "Won't let you withdraw"
+          },
+          "descripcion": {
+            "es": "Para sacar tu plata, te cobran más.",
+            "en": "To take your money out, they charge you more."
+          },
+          "ejemplo": {
+            "es": "\"Paga el impuesto para retirar\". Si te cobran por sacar lo tuyo, esa ganancia en pantalla no existe.",
+            "en": "\"Pay the tax to withdraw.\" If they charge you to take out what's yours, that profit on the screen isn't real."
+          }
+        },
+        {
+          "id": "verifica",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "Verifica por fuera",
+            "en": "Check outside the video"
+          },
+          "descripcion": {
+            "es": "Busca la empresa y al famoso en sitios oficiales.",
+            "en": "Look up the company and the celebrity on official sites."
+          },
+          "ejemplo": {
+            "es": "La respuesta no está en el video: está en las redes oficiales del famoso y en la lista de entidades vigiladas.",
+            "en": "The answer isn't in the video: it's on the celebrity's official accounts and in the list of supervised companies."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Libardo le pegó el anuncio a una IA. Mira lo que pidió y lo que recibió. Abajo, el mismo anuncio con otro pedido.",
+          "en": "Libardo pasted the ad into an AI. Look at what he asked for and what he got. Below, the same ad with a different request."
+        }
+      },
+      "titulo": {
+        "es": "El mismo anuncio, dos pedidos",
+        "en": "Same ad, two requests"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Resume este anuncio para mandarlo al grupo: \"Una cantante famosa lo confirma: Dupli-Ya duplica tus ahorros en 30 días, garantizado. Quedan 20 cupos. Consigna al WhatsApp del asesor.\"",
+          "en": "Summarize this ad so I can send it to the group: \"A famous singer confirms it: DoubleNow doubles your savings in 30 days, guaranteed. Only 20 spots left. Pay through the adviser's WhatsApp.\""
+        },
+        "salida": {
+          "es": "Dupli-Ya es una plataforma que, según una cantante famosa, duplica tus ahorros en 30 días de forma garantizada. Quedan pocos cupos y el pago se hace con un asesor por WhatsApp.",
+          "en": "DoubleNow is a platform that, according to a famous singer, doubles your savings in 30 days, guaranteed. Spots are limited and you pay through an adviser on WhatsApp."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "verifica",
+            "texto": {
+              "es": "Dime qué señales de alerta tiene este anuncio y qué debería verificar por fuera: ",
+              "en": "Tell me what warning signs this ad has and what I should check outside of it: "
+            }
+          },
+          {
+            "pieza": "ganancia",
+            "texto": {
+              "es": "\"Una cantante famosa lo confirma: Dupli-Ya duplica tus ahorros en 30 días, garantizado. ",
+              "en": "\"A famous singer confirms it: DoubleNow doubles your savings in 30 days, guaranteed. "
+            }
+          },
+          {
+            "pieza": "prisa",
+            "texto": {
+              "es": "Quedan 20 cupos. ",
+              "en": "Only 20 spots left. "
+            }
+          },
+          {
+            "pieza": "pago-fuera",
+            "texto": {
+              "es": "Consigna al WhatsApp del asesor.\"",
+              "en": "Pay through the adviser's WhatsApp.\""
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "Señales de alerta:\n1. Promete ganancia garantizada: ninguna inversión real la tiene.\n2. Prisa: \"quedan 20 cupos\".\n3. El pago va a una persona por WhatsApp, no a una entidad.\nQué verificar por fuera:\n1. Si la empresa aparece como vigilada por la autoridad financiera.\n2. Si la cantante lo dijo en sus redes oficiales.",
+          "en": "Warning signs:\n1. It promises guaranteed profit: no real investment has that.\n2. Rush: \"only 20 spots left.\"\n3. Payment goes to a person over WhatsApp, not to a company.\nWhat to check outside the ad:\n1. Whether the company is supervised by the financial regulator.\n2. Whether the singer said it on her official accounts."
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Mira los colores. El mismo anuncio, dos pedidos. Cuando pides un resumen, la IA repite la promesa. Cuando pides señales y qué verificar, te las muestra. La IA hace lo que le pides.",
+          "en": "Look at the colors. Same ad, two requests. Ask for a summary and the AI repeats the promise. Ask for signs and what to check, and it shows you. The AI does what you ask."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "pantalla-viva",
+      "xp": 5,
+      "vivo": true,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Esto no es teoría. Pasa en Colombia, y aquí te dejo dónde verificar. Lo reviso seguido porque cambia.",
+          "en": "This isn't theory. It's happening in Colombia, and here's where to check. I review this often because it changes."
+        }
+      },
+      "titulo": {
+        "es": "Casos recientes y dónde verificar",
+        "en": "Recent cases and where to check"
+      },
+      "texto": {
+        "es": "En 2025 y 2026 circularon en Colombia videos hechos con IA de presentadores de noticieros, políticos y cantantes famosas recomendando plataformas de inversión. Hubo personas que perdieron sus ahorros. Antes de invertir, busca la empresa en la página de la Superintendencia Financiera: ahí se consulta si está vigilada y hay alertas sobre ofertas fraudulentas.",
+        "en": "In 2025 and 2026, AI-made videos of news anchors, politicians and famous singers promoting investment platforms spread in Colombia. Some people lost their savings. Before investing, look the company up with your country's financial regulator. In Colombia that's the Superintendencia Financiera: its site shows whether a company is supervised and warns about fraudulent offers."
+      },
+      "revisado": "2026-09-24",
+      "tabla": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Lo que viste",
+            "en": "What you saw"
+          },
+          "b": {
+            "es": "Dónde verificar",
+            "en": "Where to check"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Un famoso que recomienda invertir",
+              "en": "A celebrity recommending an investment"
+            },
+            "b": {
+              "es": "Sus redes o su página oficial",
+              "en": "Their official accounts or website"
+            }
+          },
+          {
+            "a": {
+              "es": "Un noticiero que \"lo anuncia\"",
+              "en": "A news show that \"reports it\""
+            },
+            "b": {
+              "es": "La página oficial de ese noticiero",
+              "en": "That news outlet's official website"
+            }
+          },
+          {
+            "a": {
+              "es": "La plataforma de inversión",
+              "en": "The investment platform"
+            },
+            "b": {
+              "es": "superfinanciera.gov.co: entidades vigiladas y alertas",
+              "en": "Your financial regulator (in Colombia, superfinanciera.gov.co)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. Libardo es buen compañero y no le gusta que lo regañen. Pídele a la IA un mensaje que lo frene con datos, no con burla.",
+          "en": "Your turn to transmit. Libardo is a good guy and hates being lectured. Ask the AI for a message that stops him with facts, not mockery."
+        }
+      },
+      "titulo": {
+        "es": "El mensaje para Libardo",
+        "en": "The message to Libardo"
+      },
+      "reto": {
+        "es": "Libardo reenvió al grupo de comerciantes de su cuadra este anuncio inventado: \"una cantante famosa\" dice en un noticiero que Dupli-Ya (ejemplo-falso.co) duplica tus ahorros en 30 días, garantizado. Cupos solo hoy. Se consigna al WhatsApp del asesor. Pídele a la IA un mensaje corto para Libardo.",
+        "en": "Libardo forwarded this made-up ad to the group chat of shop owners on his block: on a news show, \"a famous singer\" says DoubleNow (fake-example.com) doubles your savings in 30 days, guaranteed. Spots only today. You pay through the adviser's WhatsApp. Ask the AI for a short message to Libardo."
+      },
+      "inicial": "vacio",
+      "aprobar": 4,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "promesa",
+          "texto": {
+            "es": "Nombra la promesa imposible",
+            "en": "Names the impossible promise"
+          },
+          "rubrica": "El prompt pide que el mensaje nombre la promesa del anuncio como señal: ganancia garantizada, duplicar la plata o hacerlo en 30 días. No cuenta 'parece raro', 'es sospechoso' o 'es estafa' sin decir qué promete.",
+          "claves": {
+            "es": [
+              "garantiz",
+              "duplic",
+              "el doble",
+              "30 dias",
+              "treinta dias",
+              "ganancia",
+              "rentabilidad",
+              "sin riesgo"
+            ],
+            "en": [
+              "guarantee",
+              "double",
+              "30 days",
+              "thirty days",
+              "profit",
+              "returns",
+              "risk-free",
+              "no risk"
+            ]
+          }
+        },
+        {
+          "id": "otra-senal",
+          "texto": {
+            "es": "Nombra otra señal: prisa o pago raro",
+            "en": "Names another sign: rush or odd payment"
+          },
+          "rubrica": "El prompt nombra una segunda señal concreta del anuncio, distinta de la promesa: la prisa (cupos solo hoy) o el pago por fuera (consignar al WhatsApp de un asesor o a una persona). No cuenta repetir la promesa con otras palabras ni 'tiene cosas raras' sin decir cuáles.",
+          "claves": {
+            "es": [
+              "prisa",
+              "solo hoy",
+              "cupos",
+              "urgen",
+              "afan",
+              "asesor",
+              "cuenta personal",
+              "a una persona",
+              "por fuera"
+            ],
+            "en": [
+              "rush",
+              "only today",
+              "today only",
+              "spots",
+              "urgen",
+              "pressure",
+              "adviser",
+              "advisor",
+              "personal account",
+              "to a person",
+              "paying a person",
+              "pay a person",
+              "person's account"
+            ]
+          }
+        },
+        {
+          "id": "verifica",
+          "texto": {
+            "es": "Dice cómo verificarlo por fuera",
+            "en": "Says how to check it outside the video"
+          },
+          "rubrica": "El prompt pide que el mensaje proponga una verificación fuera del video: buscar si la empresa está vigilada por la Superintendencia Financiera (o el regulador financiero), o revisar las redes o la página oficial de la cantante o del noticiero. No cuenta 'investígalo' sin decir dónde, ni pedirle a la IA que diga si la plataforma es real o legal.",
+          "claves": {
+            "es": [
+              "superfinanciera",
+              "superintendencia",
+              "vigilad",
+              "oficial",
+              "que verifique",
+              "verificar en",
+              "que revise si la empresa",
+              "que consulte"
+            ],
+            "en": [
+              "financial regulator",
+              "regulator",
+              "superfinanciera",
+              "superintendencia",
+              "supervised",
+              "licensed",
+              "official",
+              "look the company up",
+              "look up the company",
+              "check whether the company",
+              "check if the company"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "Tono de compañero, sin burla",
+            "en": "Friendly tone, no mocking"
+          },
+          "rubrica": "El prompt pide un tono respetuoso o amable, sin regaño ni burla, como de compañero. No cuenta pedir que 'lo haga entrar en razón' o que 'le diga que no sea bobo', ni no decir nada del tono.",
+          "claves": {
+            "es": [
+              "sin regan",
+              "sin juzgar",
+              "sin burla",
+              "sin burlarse",
+              "respetuos",
+              "amable",
+              "carinos",
+              "con respeto",
+              "como amigo",
+              "como companero",
+              "de companero",
+              "sin hacerlo sentir",
+              "tranquilo"
+            ],
+            "en": [
+              "without lecturing",
+              "no lecturing",
+              "not preachy",
+              "without judging",
+              "no judgment",
+              "not judgmental",
+              "respectful",
+              "friendly",
+              "gentle",
+              "like a friend",
+              "as a friend",
+              "without making him feel",
+              "no mocking",
+              "don't mock",
+              "without mocking",
+              "be kind",
+              "kind tone",
+              "kindly",
+              "kind message",
+              "in a kind"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a escribir mensajes cortos de WhatsApp entre compañeros de trabajo. Responde solo con el mensaje, en máximo 6 líneas. Usa solo lo que dice el prompt: si nombra señales de alerta o formas de verificar, inclúyelas; si no, no las agregues por tu cuenta ni inventes entidades o enlaces. No afirmes que la plataforma es legal o ilegal: sugiere que la persona lo compruebe por fuera. Usa el tono que pida el prompt; si no pide ninguno, escribe en tono seco y directo.",
+        "en": "You are an AI that helps write short WhatsApp messages between coworkers. Reply with the message only, 6 lines max. Use only what the prompt says: if it names warning signs or ways to check, include them; if not, don't add them on your own or make up organizations or links. Don't claim the platform is legal or illegal: suggest the person check it outside the ad. Use the tone the prompt asks for; if it doesn't ask for one, write in a blunt, dry tone."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Libardo, hermano, vi el video que mandaste al grupo. Ojo con esa plataforma: promete duplicar la plata en 30 días \"garantizado\" y apura con cupos solo por hoy. Así funcionan las estafas. Antes de meter un peso, busca la empresa en la Superintendencia Financiera y mira si la cantante lo dijo en sus redes oficiales. Si quieres, lo miramos juntos.",
+            "en": "Libardo, buddy, I saw the video you shared. Careful with that platform: it promises to double your money in 30 days, \"guaranteed,\" and rushes you with spots for today only. That's how scams work. Before you put in a cent, look the company up with the financial regulator and check whether the singer said it on her official accounts. Happy to look at it with you."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Mensaje que frena sin empujar. Nombra las señales, dice dónde verificar y trata a Libardo como compañero.",
+              "en": "A message that stops him without pushing. It names the signs, says where to check and treats Libardo like a friend."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Libardo, eso es una estafa. No sea ingenuo. No mande plata.",
+            "en": "Libardo, that's a scam. Don't be naive. Don't send money."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Uy, eso suena a regaño y no le da a Libardo cómo comprobarlo. Mira la lista: la promesa, otra señal, dónde verificar y un tono de compañero.",
+              "en": "Oof, that sounds like a lecture, and it doesn't give Libardo a way to check. Look at the list: the promise, another sign, where to check and a friendly tone."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora un vecino de Libardo que ya cayó. Lo que haga ahora también importa. Mira qué pasa con cada opción.",
+          "en": "Now one of Libardo's neighbors who already fell for it. What he does next matters too. See what happens with each option."
+        }
+      },
+      "titulo": {
+        "es": "Cuando ya pagaste",
+        "en": "When you've already paid"
+      },
+      "escena": {
+        "es": "Don Eusebio metió 500.000 pesos en una plataforma parecida. En la pantalla ya tiene 1.000.000. Pero cuando quiere retirar, el asesor le dice: \"Primero pague 300.000 de impuesto de retiro. Tiene 24 horas\". ¿Qué hace?",
+        "en": "Don Eusebio put $125 into a similar platform. The screen now shows $250. But when he tries to withdraw, the adviser says: \"First pay a $75 withdrawal tax. You have 24 hours.\" What does he do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Pagar los 300.000 para poder sacar el millón",
+            "en": "Pay the $75 so he can take out the $250"
+          },
+          "consecuencia": {
+            "es": "Paga, y ahora le piden una \"comisión de retiro\". Cada pago trae otro cobro. La plata de la pantalla nunca existió.",
+            "en": "He pays, and now they ask for a \"withdrawal fee.\" Every payment brings another charge. The money on the screen never existed."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Escribirle al asesor para que le explique mejor",
+            "en": "Message the adviser to ask for a better explanation"
+          },
+          "consecuencia": {
+            "es": "El asesor le habla bonito y le repite el plazo. Es la misma persona que lo engaña: no le va a decir la verdad.",
+            "en": "The adviser sweet-talks him and repeats the deadline. It's the same person who's fooling him: he won't tell the truth."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "No pagar más, guardar pruebas, llamar al banco y denunciar",
+            "en": "Pay nothing more, save evidence, call his bank and report it"
+          },
+          "consecuencia": {
+            "es": "Deja de perder plata ahí mismo. Guarda capturas, chats y comprobantes, llama a su banco por la línea oficial y pone la denuncia con esas pruebas.",
+            "en": "He stops losing money right there. He saves screenshots, chats and receipts, calls his bank on its official line and files a report with that evidence."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "Si te cobran para dejarte sacar tu propia plata, la aguja ya giró del todo. No se paga más: se guardan pruebas, se avisa al banco y se denuncia.",
+          "en": "If they charge you to take out your own money, the needle has spun all the way. Don't pay more: save evidence, call your bank and report it."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Nota para tu bitácora. Escribe con tus palabras qué harías si un famoso te recomienda invertir en un video.",
+          "en": "Note for your logbook. In your own words, write what you'd do if a celebrity in a video told you to invest."
+        }
+      },
+      "concepto": "deepfake-inversion",
+      "definicion": {
+        "es": "Un video falso, hecho con IA, donde un famoso o un noticiero recomienda una inversión que nunca recomendó. Ningún famoso te regala rentabilidad: se verifica por fuera del video.",
+        "en": "A fake AI-made video where a celebrity or a news show recommends an investment they never recommended. No celebrity hands out easy profits: you check outside the video."
+      },
+      "pregunta": {
+        "es": "Si un famoso me recomienda invertir en un video, yo…",
+        "en": "If a celebrity in a video tells me to invest, I…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "frenar una inversión",
+        "en": "stopping bad investments"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu mensaje para Libardo quedan en tu bitácora. Te sirven para el próximo compañero que reenvíe un video así.",
+          "en": "Saved. Your note and your message to Libardo are in your logbook. They'll come in handy the next time someone forwards a video like that."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas cortas y cerramos esta alerta.",
+          "en": "Two quick questions and we close this alert."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuál de estas es una señal de engaño en un anuncio de inversión?",
+            "en": "Which of these is a warning sign in an investment ad?"
+          },
+          "opciones": [
+            {
+              "es": "Promete ganancia garantizada en pocos días",
+              "en": "It promises guaranteed profit in a few days"
+            },
+            {
+              "es": "Explica que puedes perder la plata",
+              "en": "It explains that you could lose money"
+            },
+            {
+              "es": "Te da tiempo para pensarlo y consultarlo",
+              "en": "It gives you time to think and ask around"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Nadie serio te garantiza ganancias.",
+              "en": "Right. No one serious guarantees you profits."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Esa opción es de alguien honesto: no te apura ni te esconde el riesgo. Busca la que promete demasiado.",
+              "en": "Hmm. That one sounds honest: no rush, no hidden risk. Look for the one that promises too much."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Ves a un presentador conocido recomendando una plataforma. ¿Qué haces antes de creerle?",
+            "en": "You see a well-known news anchor recommending a platform. What do you do before believing it?"
+          },
+          "opciones": [
+            {
+              "es": "Lo busco por fuera del video: su medio oficial y la empresa",
+              "en": "Check outside the video: his official outlet and the company"
+            },
+            {
+              "es": "Miro si el video tiene muchos likes",
+              "en": "See whether the video has lots of likes"
+            },
+            {
+              "es": "Le pregunto al asesor de la plataforma",
+              "en": "Ask the platform's adviser"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. La respuesta nunca está dentro del video.",
+              "en": "Exactly. The answer is never inside the video."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Esa pista viene del mismo lugar del engaño. Busca una que venga de afuera.",
+              "en": "Hmm. That clue comes from the same place as the scam. Look for one from outside."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Deepfake de inversión",
+        "en": "Investment deepfake"
+      },
+      "resumen": {
+        "es": "Un video falso de un famoso que recomienda invertir. Ganancia garantizada, prisa y pago por fuera son señales. Se verifica por fuera del video.",
+        "en": "A fake video of a celebrity pushing an investment. Guaranteed profit, rush and off-the-books payment are signs. You check outside the video."
+      }
+    },
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Viste cómo cambia la respuesta según lo que pides",
+          "en": "You saw how the answer changes with what you ask"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Escribiste un mensaje que frena sin regañar",
+          "en": "You wrote a message that stops him without a lecture"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Elegiste no pagar más y denunciar",
+          "en": "You chose to stop paying and report it"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Pasaste el punto de control",
+          "en": "You passed the checkpoint"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "frenar-una-inversion-falsa",
+      "titulo": {
+        "es": "Frenar una inversión falsa",
+        "en": "Stopping a fake investment"
+      }
+    }
+  }
+}

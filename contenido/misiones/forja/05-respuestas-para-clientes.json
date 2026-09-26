@@ -1,0 +1,718 @@
+{
+  "formato": "punti-mision@1",
+  "id": "respuestas-para-clientes",
+  "mundo": "herramientas-de-ia",
+  "capitulo": 1,
+  "numero": 5,
+  "receta": "criterio",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "respuesta-plantilla"
+  ],
+  "usaConceptos": [
+    "contexto",
+    "limites",
+    "plantillas",
+    "herramienta-por-tarea"
+  ],
+  "titulo": {
+    "es": "Respuestas para clientes",
+    "en": "Replies for Customers"
+  },
+  "resumen": {
+    "es": "Respuestas base para las preguntas de siempre, con datos reales y espacios para cada cliente, sin inventar ni prometer de más.",
+    "en": "Base replies for the usual questions, with real details and room for each customer, without inventing or overpromising."
+  },
+  "siguiente": "kit-de-escritorio",
+  "fuentes": [
+    {
+      "titulo": "FTC: regla final que prohíbe reseñas y testimonios falsos, incluidos los hechos con IA, y los incentivos a cambio de reseñas con una opinión determinada (14 ago. 2024)",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "Google Maps: política sobre reseñas incentivadas o sesgadas (pago, descuento u otro beneficio a cambio de una reseña)",
+      "url": "https://support.google.com/contributionpolicy/answer/16597558?hl=en-GB",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-26",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, llegó un encargo a la fragua a las 11 de la noche. Es Don Evelio, dueño de una finca turística en Jardín, Antioquia. Contesta las reservas por WhatsApp cuando todos duermen, y hoy le llegó un mensaje raro.",
+          "en": "Pilot, a job came into the forge at 11 p.m. It's Don Evelio, who owns a guest farm in Jardín, Antioquia. He answers bookings on WhatsApp after everyone's asleep, and tonight he got a strange message."
+        }
+      },
+      "titulo": {
+        "es": "Respuestas para clientes",
+        "en": "Replies for Customers"
+      },
+      "texto": {
+        "es": "Hoy decides qué respuesta sale de la fragua y cuál no. Después forjas tres respuestas base con los datos reales de la finca. Con esta misión cierras el capítulo. Unos 9 minutos.",
+        "en": "Today you decide which reply leaves the forge and which doesn't. Then you forge three base replies with the farm's real details. This mission closes the chapter. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Primero, el mensaje raro. Don Evelio le pidió a la IA una respuesta y le salieron tres opciones. Mira qué pasa con cada una.",
+          "en": "First, the strange message. Don Evelio asked the AI for a reply and got three options. See what happens with each one."
+        }
+      },
+      "titulo": {
+        "es": "Un descuento a cambio de estrellas",
+        "en": "A discount for stars"
+      },
+      "escena": {
+        "es": "Una clienta escribe: \"Si me hacen el 20 % de descuento, les dejo una reseña de 5 estrellas en internet\". Don Evelio le pidió a la IA ayuda para responder y le salieron tres opciones. ¿Cuál manda?",
+        "en": "A guest writes: \"If you give me 20% off, I'll leave you a 5-star review online.\" Don Evelio asked the AI for help replying and got three options. Which one does he send?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "\"¡Hecho! 20 % de descuento y usted nos deja las 5 estrellas.\"",
+            "en": "\"Deal! 20% off, and you leave us the 5 stars.\""
+          },
+          "consecuencia": {
+            "es": "Esa reseña ya no es una opinión: es un pago. Engaña a los próximos viajeros, y las plataformas de reseñas prohíben las opiniones a cambio de descuentos.",
+            "en": "That review isn't an opinion anymore: it's a payment. It misleads future travelers, and review platforms ban reviews in exchange for discounts."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "\"Claro. Y le cuento: todos nuestros huéspedes nos dan 5 estrellas.\"",
+            "en": "\"Sure. And by the way: every one of our guests gives us 5 stars.\""
+          },
+          "consecuencia": {
+            "es": "Suena bonito, pero la IA se inventó un dato que Don Evelio no puede probar. Y sigue aceptando el trato.",
+            "en": "Sounds nice, but the AI made up a claim Don Evelio can't back up. And it still accepts the deal."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "\"No damos descuentos por reseñas. Si le gusta su estadía, una opinión sincera nos ayuda.\"",
+            "en": "\"We don't give discounts for reviews. If you enjoy your stay, an honest review helps us.\""
+          },
+          "consecuencia": {
+            "es": "Esa es la honesta. La clienta sabe a qué atenerse, la finca no promete nada falso y la reseña, si llega, vale.",
+            "en": "That's the honest one. The guest knows where she stands, the farm promises nothing false and the review, if it comes, means something."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "La IA escribe lo que le pides, rápido y amable. Por eso te puede ayudar a hacer trampa, o a prometer lo que no tienes, sin que se note. El filtro eres tú.",
+          "en": "AI writes whatever you ask, fast and friendly. That's why it can help you cheat, or promise what you don't have, without it showing. You're the filter."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Te cuento por qué pasa esto y cómo se evita.",
+          "en": "Here's why this happens, and how to avoid it."
+        }
+      },
+      "titulo": {
+        "es": "La plantilla honesta",
+        "en": "The honest template"
+      },
+      "texto": {
+        "es": "Una respuesta base es una plantilla: la escribes una vez y la ajustas para cada cliente. La IA la escribe en segundos, pero rellena los huecos con lo que suena bien: piscina, desayuno, devolución total. Por eso se forja con tus datos reales, con espacios para el nombre y la fecha, y sin prometer nada que el negocio no haga.",
+        "en": "A base reply is a template: you write it once and adjust it for each customer. AI writes it in seconds, but it fills the gaps with whatever sounds good: a pool, breakfast, a full refund. So you forge it with your real details, with room for the name and date, and without promising anything the business doesn't do."
+      },
+      "grafico": {
+        "tipo": "tabla",
+        "encabezados": {
+          "a": {
+            "es": "Sale de la fragua",
+            "en": "Leaves the forge"
+          },
+          "b": {
+            "es": "Se queda en la fragua",
+            "en": "Stays in the forge"
+          }
+        },
+        "filas": [
+          {
+            "a": {
+              "es": "Datos reales del negocio",
+              "en": "The business's real details"
+            },
+            "b": {
+              "es": "Servicios que no existen",
+              "en": "Services that don't exist"
+            }
+          },
+          {
+            "a": {
+              "es": "Espacios como [nombre] y [fecha]",
+              "en": "Blanks like [name] and [date]"
+            },
+            "b": {
+              "es": "Reseñas o testimonios inventados",
+              "en": "Made-up reviews or testimonials"
+            }
+          },
+          {
+            "a": {
+              "es": "El tono de la casa",
+              "en": "The house's tone"
+            },
+            "b": {
+              "es": "Promesas que nadie firmó",
+              "en": "Promises nobody signed off on"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Datos reales de la finca: entrada desde las 3 p. m., cancelación sin costo hasta 72 horas antes, no tiene piscina. Estas frases salieron de borradores de la IA. ¿Cuáles salen y cuáles no?",
+          "en": "Your turn. The farm's real details: check-in from 3 p.m., free cancellation up to 72 hours before, no pool. These lines came from AI drafts. Which ones go out and which don't?"
+        }
+      },
+      "titulo": {
+        "es": "¿Sale o se queda?",
+        "en": "Out or in?"
+      },
+      "grupos": [
+        {
+          "id": "sale",
+          "titulo": {
+            "es": "Sale, después de templarla",
+            "en": "Goes out, once tempered"
+          }
+        },
+        {
+          "id": "queda",
+          "titulo": {
+            "es": "Se queda en la fragua",
+            "en": "Stays in the forge"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "sale",
+          "texto": {
+            "es": "Hola, [nombre]. Lo esperamos el [fecha] desde las 3 p. m.",
+            "en": "Hi, [name]. We look forward to seeing you on [date] from 3 p.m."
+          }
+        },
+        {
+          "grupo": "queda",
+          "texto": {
+            "es": "Relájese en nuestra piscina con vista a las montañas.",
+            "en": "Relax in our pool with mountain views."
+          }
+        },
+        {
+          "grupo": "sale",
+          "texto": {
+            "es": "Puede cancelar sin costo hasta 72 horas antes de llegar.",
+            "en": "You can cancel free of charge up to 72 hours before arrival."
+          }
+        },
+        {
+          "grupo": "queda",
+          "texto": {
+            "es": "Nuestros huéspedes siempre nos dan 5 estrellas.",
+            "en": "Our guests always give us 5 stars."
+          }
+        },
+        {
+          "grupo": "queda",
+          "texto": {
+            "es": "Si cancela, le devolvemos el 100 % en cualquier momento.",
+            "en": "If you cancel, we'll refund 100% at any time."
+          }
+        },
+        {
+          "grupo": "sale",
+          "texto": {
+            "es": "Si tiene dudas sobre cómo llegar, me escribe por aquí.",
+            "en": "If you have questions about getting here, just message me."
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Seis de seis. Ojo de herrero: lo que no está en los datos no sale.",
+          "en": "Six for six. A blacksmith's eye: if it's not in the details, it doesn't go out."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Compara con los datos de la finca: ¿eso existe, se puede probar o es un espacio para el cliente?",
+          "en": "Hmm. Compare it with the farm's details: does it exist, can it be backed up, or is it a blank for the customer?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno en el yunque. Don Evelio quiere tres respuestas base para las preguntas de siempre. Pídeselas a la IA con los datos reales, para no volver a escribirlas a medianoche.",
+          "en": "Your turn at the anvil. Don Evelio wants three base replies for the usual questions. Ask the AI for them with the real details, so he never writes them at midnight again."
+        }
+      },
+      "titulo": {
+        "es": "Las tres respuestas base",
+        "en": "The three base replies"
+      },
+      "reto": {
+        "es": "Datos de la finca (inventados): Finca El Guamo, en Jardín. Entrada desde las 3 p. m.; salida hasta las 12 m. Desde el parque son 15 minutos en carro por vía destapada; hay jeep por $25.000. Cancelación sin costo hasta 72 horas antes; después se cobra una noche. Pide respuestas sobre horarios, cómo llegar y cancelación.",
+        "en": "Farm details (made up): El Guamo Farm, in Jardín. Check-in from 3 p.m.; check-out by noon. From the town square it's 15 minutes by car on a dirt road; a jeep costs $8. Free cancellation up to 72 hours before; after that, one night is charged. Ask for replies about hours, getting there and cancellation."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Usa los datos reales de la finca",
+            "en": "Uses the farm's real details"
+          },
+          "rubrica": "El prompt trae al menos dos datos reales del reto: la hora de entrada o de salida (3 p. m., 12 m.), los 15 minutos, la vía destapada, el jeep y su precio ($25.000 en español, $8 en inglés) o las 72 horas. No cuenta 'nuestros horarios' o 'la política de cancelación' sin decir cuáles son.",
+          "claves": {
+            "es": [
+              "3 p",
+              "3:00",
+              "15 minutos",
+              "destapad",
+              "jeep",
+              "25.000",
+              "25000",
+              "72 horas",
+              "12 m",
+              "mediodia",
+              "una noche"
+            ],
+            "en": [
+              "3 p",
+              "3:00",
+              "15 minutes",
+              "dirt road",
+              "jeep",
+              "$8",
+              "72 hours",
+              "noon",
+              "one night"
+            ]
+          }
+        },
+        {
+          "id": "noinventa",
+          "texto": {
+            "es": "Pide no inventar ni prometer",
+            "en": "Asks it not to invent or promise"
+          },
+          "rubrica": "El prompt pide usar solo esos datos, no inventar servicios ni prometer lo que la finca no ofrece. No cuenta 'respuestas amables', 'que queden bonitas' o 'que sean claras'.",
+          "claves": {
+            "es": [
+              "no invent",
+              "sin invent",
+              "solo estos datos",
+              "solo con estos datos",
+              "solo los datos",
+              "solo con los datos",
+              "unicamente",
+              "no prometas",
+              "no prometer",
+              "no agregues",
+              "nada que no",
+              "no pongas nada"
+            ],
+            "en": [
+              "don't invent",
+              "do not invent",
+              "don't make up",
+              "do not make up",
+              "only these",
+              "only use",
+              "only the details",
+              "don't promise",
+              "do not promise",
+              "don't add",
+              "do not add",
+              "nothing that isn't",
+              "nothing not"
+            ]
+          }
+        },
+        {
+          "id": "tono",
+          "texto": {
+            "es": "Dice el tono de la casa",
+            "en": "Says the house tone"
+          },
+          "rubrica": "El prompt dice cómo habla la finca: cercano, cálido, de usted, sencillo, familiar, como habla Don Evelio. No cuenta 'amable', 'amables' o 'profesional' solos: así suena cualquier hotel.",
+          "claves": {
+            "es": [
+              "cercan",
+              "calid",
+              "de usted",
+              "sencill",
+              "como hablo",
+              "como habla",
+              "familiar",
+              "tono de",
+              "campesin",
+              "acogedor",
+              "paisa"
+            ],
+            "en": [
+              "warm",
+              "casual",
+              "relaxed",
+              "down-to-earth",
+              "down to earth",
+              "homey",
+              "the way i talk",
+              "how i talk",
+              "welcoming",
+              "like family",
+              "like a neighbor",
+              "countryside",
+              "country-style"
+            ]
+          }
+        },
+        {
+          "id": "personaliza",
+          "texto": {
+            "es": "Deja espacios para cada cliente",
+            "en": "Leaves room for each customer"
+          },
+          "rubrica": "El prompt pide dejar espacios para ajustar a cada cliente, como [nombre] o [fecha], o dice que las respuestas se van a personalizar. No cuenta si no menciona nada que se cambie para cada cliente.",
+          "claves": {
+            "es": [
+              "[",
+              "{",
+              "espacio para",
+              "espacios para",
+              "personaliz",
+              "nombre del cliente",
+              "nombre del huesped",
+              "cada cliente",
+              "cada huesped"
+            ],
+            "en": [
+              "[",
+              "{",
+              "space for",
+              "spaces for",
+              "blank for",
+              "blanks for",
+              "personaliz",
+              "personalis",
+              "guest's name",
+              "customer's name",
+              "each guest",
+              "each customer"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres un asistente que escribe respuestas base para el WhatsApp de una finca turística. Responde solo con tres respuestas numeradas y cortas, en texto plano. Usa los datos que trae el prompt. Si el prompt no pide explícitamente no inventar, agrega en alguna respuesta un servicio atractivo que no está en los datos, como piscina o desayuno incluido, sin avisar. Si pide espacios para personalizar, usa [nombre] y [fecha]. Si no dice el tono, escribe como un hotel de cadena, formal y frío. Nunca escribas reseñas, calificaciones ni opiniones de huéspedes. Trata al cliente de usted y nunca uses vos.",
+        "en": "You are an assistant who writes base replies for a guest farm's WhatsApp. Reply with three short numbered replies only, in plain text. Use the details in the prompt. If the prompt doesn't explicitly ask you not to invent anything, add an attractive service that isn't in the details to one of the replies, like a pool or free breakfast, without saying so. If it asks for blanks to personalize, use [name] and [date]. If it doesn't give a tone, write like a hotel chain, formal and cold. Never write reviews, ratings or guest opinions."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. Horarios: Hola, [nombre]. En Finca El Guamo la entrada es desde las 3 p. m. y la salida hasta las 12 m. Lo esperamos el [fecha].\n2. Cómo llegar: Desde el parque de Jardín son 15 minutos en carro, por vía destapada. Si prefiere, hay jeep por $25.000.\n3. Cancelación: Puede cancelar sin costo hasta 72 horas antes. Después se cobra una noche. Cualquier duda, me escribe por aquí.",
+            "en": "1. Hours: Hi, [name]. At El Guamo Farm, check-in is from 3 p.m. and check-out is by noon. We look forward to seeing you on [date].\n2. Getting here: From the town square in Jardín it's 15 minutes by car, on a dirt road. If you prefer, there's a jeep for $8.\n3. Cancellation: You can cancel free of charge up to 72 hours before. After that, one night is charged. Any questions, just message me here."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Tres respuestas con datos reales y nada inventado. Don Evelio solo cambia el nombre y la fecha, las templa y las manda.",
+              "en": "Three replies with real details and nothing made up. Don Evelio just changes the name and date, tempers them and sends them."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "1. ¡Bienvenido! Nuestros horarios son flexibles para su comodidad.\n2. Llegar es muy fácil, y lo esperamos con desayuno incluido.\n3. Si cancela, con gusto le devolvemos su dinero.",
+            "en": "1. Welcome! Our hours are flexible for your convenience.\n2. Getting here is easy, and breakfast is included.\n3. If you cancel, we'll gladly refund your money."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Suena amable, pero prometió desayuno y devoluciones que la finca no ofrece. Mira la lista: datos reales y la orden de no inventar.",
+              "en": "It sounds friendly, but it promised breakfast and refunds the farm doesn't offer. Check the list: real details and an instruction not to invent."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "fuente",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Si quieres ir más a fondo: en Estados Unidos ya hay una regla escrita sobre este trato.",
+          "en": "If you want to dig deeper: in the United States, there's already a written rule about this kind of deal."
+        }
+      },
+      "titulo": {
+        "es": "La regla contra reseñas falsas",
+        "en": "The rule against fake reviews"
+      },
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials",
+      "fecha": "2026-09-24",
+      "porQue": {
+        "es": "En agosto de 2024, la Comisión Federal de Comercio de EE. UU. prohibió las reseñas falsas, también las hechas con IA, y dar premios a cambio de reseñas positivas.",
+        "en": "In August 2024, the U.S. Federal Trade Commission banned fake reviews, including AI-made ones, and rewarding people in exchange for positive reviews."
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "A la bitácora. Escribe con tus palabras qué lleva una buena respuesta base, como se lo explicarías a Don Evelio.",
+          "en": "Logbook time. Write in your own words what a good base reply needs, the way you'd explain it to Don Evelio."
+        }
+      },
+      "concepto": "respuesta-plantilla",
+      "definicion": {
+        "es": "Una respuesta base es una plantilla para las preguntas de siempre: lleva los datos reales del negocio, el tono de la casa y espacios para cada cliente. No inventa ni promete nada.",
+        "en": "A base reply is a template for the usual questions: it has the business's real details, the house's tone and blanks for each customer. It doesn't invent or promise anything."
+      },
+      "pregunta": {
+        "es": "Una buena respuesta base…",
+        "en": "A good base reply…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "respuestas base",
+        "en": "base replies"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tus respuestas base ya viven en tu bitácora. Don Evelio ya puede dormir a una hora decente.",
+          "en": "Saved. Your base replies now live in your logbook. Don Evelio can finally get to bed at a decent hour."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos la fragua de las letras.",
+          "en": "Two questions and we close up the writing forge."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "La IA escribió: \"Lo esperamos con desayuno incluido\". La finca no da desayuno. ¿Qué haces?",
+            "en": "The AI wrote: \"Breakfast is included.\" The farm doesn't serve breakfast. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "La mando así: suena bien",
+              "en": "Send it anyway: it sounds good"
+            },
+            {
+              "es": "Quito lo que no es cierto antes de mandarla",
+              "en": "Remove what isn't true before sending it"
+            },
+            {
+              "es": "Le pido a la IA que la haga más corta",
+              "en": "Ask the AI to make it shorter"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Lo que el negocio no hace, no sale de la fragua.",
+              "en": "Right. If the business doesn't do it, it doesn't leave the forge."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Si el cliente llega esperando desayuno, ¿quién responde?",
+              "en": "Hmm. If the guest shows up expecting breakfast, who answers for it?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "Un cliente ofrece 5 estrellas a cambio de un descuento. ¿Cuál es la respuesta honesta?",
+            "en": "A customer offers 5 stars in exchange for a discount. What's the honest reply?"
+          },
+          "opciones": [
+            {
+              "es": "Aceptar: es publicidad gratis",
+              "en": "Accept: it's free advertising"
+            },
+            {
+              "es": "Decir que no hay descuentos por reseñas e invitar a una opinión sincera",
+              "en": "Say there are no discounts for reviews and invite an honest one"
+            },
+            {
+              "es": "No responderle",
+              "en": "Don't reply"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Una reseña comprada engaña al que viene después.",
+              "en": "Exactly. A bought review misleads whoever comes next."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Piensa en el próximo viajero que lea esa reseña.",
+              "en": "Think about the next traveler who reads that review."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "reto-ia",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Cierras el capítulo con tus propias respuestas. Lo que sigue es tu proyecto, el Kit de escritorio, y esto ya es parte de él.",
+          "en": "You close the chapter with your own replies. Next comes your project, the Desk Kit, and this is already part of it."
+        }
+      },
+      "titulo": {
+        "es": "Tus respuestas base",
+        "en": "Your base replies"
+      },
+      "instruccion": {
+        "es": "Abre la IA que prefieras: ChatGPT, Gemini, Claude, Copilot u otra. Escoge las tres preguntas que más te hacen en tu trabajo, o inventa un negocio. Pide las respuestas base con tus datos reales, sin inventar y con espacios para cada cliente. Después témplalas.",
+        "en": "Open whichever AI you like: ChatGPT, Gemini, Claude, Copilot or another. Pick the three questions you get most at work, or make up a business. Ask for base replies with your real details, nothing invented, with blanks for each customer. Then temper them."
+      },
+      "checks": [
+        {
+          "es": "Usé datos del negocio, sin datos privados de clientes",
+          "en": "I used business details, no private customer data"
+        },
+        {
+          "es": "Pedí que no inventara ni prometiera",
+          "en": "I asked it not to invent or promise anything"
+        },
+        {
+          "es": "Dejé espacios como [nombre] y [fecha]",
+          "en": "I left blanks like [name] and [date]"
+        },
+        {
+          "es": "Templé: quité todo lo que no es cierto",
+          "en": "I tempered them: I removed anything untrue"
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Respuestas base honestas",
+        "en": "Honest base replies"
+      },
+      "resumen": {
+        "es": "Plantillas para las preguntas de siempre, con datos reales, el tono de la casa y espacios para cada cliente. Sin promesas ni reseñas inventadas.",
+        "en": "Templates for the usual questions, with real details, the house's tone and blanks for each customer. No promises or made-up reviews."
+      }
+    },
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Escogiste la respuesta honesta ante el trato de las estrellas",
+          "en": "You chose the honest reply to the stars-for-discount deal"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste lo que sale y lo que se queda en la fragua",
+          "en": "You sorted what leaves the forge from what stays"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Forjaste tres respuestas base con datos reales",
+          "en": "You forged three base replies with real details"
+        }
+      },
+      {
+        "bloque": "b09",
+        "texto": {
+          "es": "Probaste tus respuestas en una IA real",
+          "en": "You tried your replies in a real AI"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "responder-clientes",
+      "titulo": {
+        "es": "Responder clientes con honestidad",
+        "en": "Answering customers honestly"
+      }
+    }
+  }
+}

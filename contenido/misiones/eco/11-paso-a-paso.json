@@ -1,0 +1,782 @@
+{
+  "formato": "punti-mision@1",
+  "id": "paso-a-paso",
+  "mundo": "prompts",
+  "capitulo": 3,
+  "numero": 11,
+  "receta": "habilidad",
+  "largo": "normal",
+  "minutos": 9,
+  "conceptos": [
+    "paso-a-paso"
+  ],
+  "usaConceptos": [
+    "prompt",
+    "pedido-completo",
+    "verificar",
+    "ejemplos"
+  ],
+  "titulo": {
+    "es": "Paso a paso",
+    "en": "Step by Step"
+  },
+  "resumen": {
+    "es": "Pedir que la IA vaya por pasos en cuentas, planes y explicaciones, y revisar cada paso antes de confiar.",
+    "en": "Ask the AI to go step by step on math, plans and explanations, and check each step before you trust it."
+  },
+  "siguiente": "pon-limites-claros",
+  "fuentes": [],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, entra una señal a la zona de trucos. Es Doña Rosalba, la modista del barrio. Un colegio le pidió arreglar uniformes y ella le preguntó a una IA cuánto cobrar. Le dio un número y ya. A Rosalba no le cuadra.",
+          "en": "Pilot, a signal is coming into the tricks zone. It's Doña Rosalba, the neighborhood seamstress. A school asked her to fix uniforms, and she asked an AI how much to charge. It gave her a number and nothing else. It doesn't add up for her."
+        }
+      },
+      "titulo": {
+        "es": "Paso a paso",
+        "en": "Step by Step"
+      },
+      "texto": {
+        "es": "Hoy aprendes el segundo truco: pedirle a la IA que vaya paso a paso. La respuesta muchas veces mejora y, sobre todo, puedes revisar cada paso. Unos 9 minutos.",
+        "en": "Today you learn the second trick: asking the AI to go step by step. The answer often gets better and, most of all, you can check each step. About 9 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "antes-despues",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Esto preguntó Doña Rosalba y esto le respondió la IA. Un número suelto. ¿Está bien? No hay cómo saberlo. Abajo está la misma pregunta, pidiendo pasos.",
+          "en": "Here's what Doña Rosalba asked and what the AI said. One lonely number. Is it right? No way to tell. Below is the same question, asking for steps."
+        }
+      },
+      "titulo": {
+        "es": "De número suelto a cuentas claras",
+        "en": "From a lonely number to clear math"
+      },
+      "antes": {
+        "prompt": {
+          "es": "Un colegio me pide subir el ruedo a 24 pantalones a $8.000 cada uno y cambiar la cremallera a 10 a $12.000. Les doy 10 % de descuento. ¿Cuánto cobro?",
+          "en": "A school wants me to hem 24 pairs of pants at $8 each and replace the zipper on 10 at $12 each. I'm giving them 10% off. How much do I charge?"
+        },
+        "salida": {
+          "es": "Debes cobrar $288.000.",
+          "en": "You should charge $288."
+        }
+      },
+      "despues": {
+        "partes": [
+          {
+            "pieza": "datos",
+            "texto": {
+              "es": "Un colegio me pide subir el ruedo a 24 pantalones a $8.000 cada uno y cambiar la cremallera a 10 a $12.000. Les doy 10 % de descuento. ",
+              "en": "A school wants me to hem 24 pairs of pants at $8 each and replace the zipper on 10 at $12 each. I'm giving them 10% off. "
+            }
+          },
+          {
+            "pieza": "por-pasos",
+            "texto": {
+              "es": "Calcula el total paso a paso: primero cada arreglo, luego la suma, luego el descuento. ",
+              "en": "Work out the total step by step: first each job, then the sum, then the discount. "
+            }
+          },
+          {
+            "pieza": "a-la-vista",
+            "texto": {
+              "es": "Muéstrame cada cuenta en una línea. ",
+              "en": "Show me each calculation on its own line. "
+            }
+          },
+          {
+            "pieza": "final",
+            "texto": {
+              "es": "Al final, dime el total a cobrar.",
+              "en": "At the end, tell me the total to charge."
+            }
+          }
+        ],
+        "salidaTipo": "texto",
+        "salida": {
+          "es": "1. Ruedos: 24 × $8.000 = $192.000\n2. Cremalleras: 10 × $12.000 = $120.000\n3. Suma: $192.000 + $120.000 = $312.000\n4. Descuento: 10 % de $312.000 = $31.200\n5. $312.000 − $31.200 = $280.800\nTotal a cobrar: $280.800",
+          "en": "1. Hems: 24 × $8 = $192\n2. Zippers: 10 × $12 = $120\n3. Sum: $192 + $120 = $312\n4. Discount: 10% of $312 = $31.20\n5. $312 − $31.20 = $280.80\nTotal to charge: $280.80"
+        }
+      },
+      "revelar": {
+        "estado": "info",
+        "texto": {
+          "es": "Cuatro colores: los datos, ir por pasos, cada cuenta a la vista y el total al final. Ahora se ve el error: eran $280.800, no $288.000. Con pasos, Rosalba puede revisar cada cuenta.",
+          "en": "Four colors: the details, going step by step, every calculation in view and the total at the end. Now the mistake shows: it was $280.80, not $288. With steps, Rosalba can check each calculation."
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "piezas",
+      "xp": 5,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Estas son las cuatro piezas de un pedido paso a paso. Sirven para cuentas, pero también para planes y explicaciones. Toca cada una.",
+          "en": "These are the four pieces of a step-by-step request. They work for math, and also for plans and explanations. Tap each one."
+        }
+      },
+      "titulo": {
+        "es": "Las piezas del paso a paso",
+        "en": "The step-by-step pieces"
+      },
+      "piezas": [
+        {
+          "id": "datos",
+          "color": "#ff4fa0",
+          "titulo": {
+            "es": "Los datos",
+            "en": "The details"
+          },
+          "descripcion": {
+            "es": "Cantidades, precios y medidas, para que no adivine.",
+            "en": "Quantities, prices and sizes, so it doesn't guess."
+          },
+          "ejemplo": {
+            "es": "\"24 pantalones a $8.000, 10 cremalleras a $12.000.\" Si falta un número, la IA se lo inventa y todos los pasos quedan mal.",
+            "en": "\"24 pants at $8, 10 zippers at $12.\" If a number is missing, the AI makes one up and every step goes wrong."
+          }
+        },
+        {
+          "id": "por-pasos",
+          "color": "#ffe600",
+          "titulo": {
+            "es": "Pide pasos",
+            "en": "Ask for steps"
+          },
+          "descripcion": {
+            "es": "\"Paso a paso\" o \"en orden\", y qué va primero.",
+            "en": "\"Step by step\" or \"in order,\" and what comes first."
+          },
+          "ejemplo": {
+            "es": "\"Calcula paso a paso: primero cada arreglo, luego la suma.\" Para un plan: \"dame los pasos en orden, del primero al último\".",
+            "en": "\"Work it out step by step: first each job, then the sum.\" For a plan: \"give me the steps in order, first to last.\""
+          }
+        },
+        {
+          "id": "a-la-vista",
+          "color": "#00f5ff",
+          "titulo": {
+            "es": "Cada paso a la vista",
+            "en": "Every step in view"
+          },
+          "descripcion": {
+            "es": "Que muestre cada cuenta, para que la puedas revisar.",
+            "en": "Have it show each calculation so you can check it."
+          },
+          "ejemplo": {
+            "es": "\"Muéstrame cada cuenta en una línea.\" Un número suelto no se puede revisar. Una cuenta a la vista, sí.",
+            "en": "\"Show me each calculation on its own line.\" You can't check a lonely number. You can check math you can see."
+          }
+        },
+        {
+          "id": "final",
+          "color": "#7cff9a",
+          "titulo": {
+            "es": "El resultado al final",
+            "en": "The result at the end"
+          },
+          "descripcion": {
+            "es": "Una línea clara con lo que necesitas saber.",
+            "en": "One clear line with what you need to know."
+          },
+          "ejemplo": {
+            "es": "\"Al final, dime el total a cobrar.\" Así no tienes que buscarlo entre los pasos.",
+            "en": "\"At the end, tell me the total to charge.\" That way you don't have to dig for it among the steps."
+          }
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ahora tú. Paso a paso no hace falta para todo. Estos son encargos de la semana de Doña Rosalba. ¿Cuáles ganan con pasos y cuáles no?",
+          "en": "Your turn. Not everything needs step by step. These are Doña Rosalba's jobs for the week. Which ones gain from steps and which don't?"
+        }
+      },
+      "titulo": {
+        "es": "¿Pido pasos o no?",
+        "en": "Steps or no steps?"
+      },
+      "grupos": [
+        {
+          "id": "con-pasos",
+          "titulo": {
+            "es": "Mejor con pasos",
+            "en": "Better with steps"
+          }
+        },
+        {
+          "id": "sin-pasos",
+          "titulo": {
+            "es": "No hace falta",
+            "en": "Not needed"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "con-pasos",
+          "texto": {
+            "es": "Calcular cuánta tela comprar para 6 cortinas",
+            "en": "Work out how much fabric to buy for 6 curtains"
+          }
+        },
+        {
+          "grupo": "sin-pasos",
+          "texto": {
+            "es": "Escribir \"gracias por su compra\" para una clienta",
+            "en": "Write \"thanks for your order\" to a customer"
+          }
+        },
+        {
+          "grupo": "con-pasos",
+          "texto": {
+            "es": "Organizar las 9 entregas de la semana antes del viernes",
+            "en": "Plan the week's 9 deliveries before Friday"
+          }
+        },
+        {
+          "grupo": "sin-pasos",
+          "texto": {
+            "es": "Pedir ideas de nombre para su taller",
+            "en": "Get name ideas for her shop"
+          }
+        },
+        {
+          "grupo": "con-pasos",
+          "texto": {
+            "es": "Explicarle a su aprendiz cómo tomar las medidas de un pantalón",
+            "en": "Explain to her apprentice how to measure for pants"
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso es. Cuentas, planes y explicaciones ganan con pasos. Un mensaje corto o una lista de ideas, no.",
+          "en": "That's it. Math, plans and explanations gain from steps. A short message or a list of ideas doesn't."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm. Pregúntate: ¿hay cuentas, un orden o algo que se aprende por partes? Ahí sirven los pasos.",
+          "en": "Hmm. Ask yourself: is there math, an order, or something you learn in parts? That's where steps help."
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Ahora transmites tú. Un grupo de danza le trajo un pedido a Doña Rosalba y ella quiere cobrar la mitad por adelantado. Pídele a la IA las cuentas de forma que ella las pueda revisar.",
+          "en": "Now you're transmitting. A dance group brought Doña Rosalba an order, and she wants half up front. Ask the AI for the math in a way she can check."
+        }
+      },
+      "titulo": {
+        "es": "El pedido del grupo de danza",
+        "en": "The dance group's order"
+      },
+      "reto": {
+        "es": "Datos de Doña Rosalba: cambiar el elástico a 12 faldas a $6.000 cada una, hacerles el ruedo a esas mismas 12 faldas a $7.000 cada una y ajustar 5 blusas a $9.000 cada una. Quiere saber el total y cuánto pedir de adelanto: la mitad.",
+        "en": "Doña Rosalba's details: replace the elastic on 12 skirts at $6 each, hem those same 12 skirts at $7 each, and take in 5 blouses at $9 each. She wants to know the total and how much to ask up front: half."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "datos",
+          "texto": {
+            "es": "Trae los precios de cada arreglo",
+            "en": "Includes each job's price"
+          },
+          "rubrica": "El prompt trae las cantidades y los precios de los tres arreglos: 12 elásticos a $6.000, 12 ruedos a $7.000 y 5 blusas a $9.000. No cuenta si falta alguno de los tres, ni 'unos arreglos' o 'unas faldas' sin cantidades ni precios.",
+          "claves": {
+            "es": [
+              "6.000",
+              "7.000",
+              "9.000",
+              "6000",
+              "7000",
+              "9000",
+              "6 mil",
+              "7 mil",
+              "9 mil",
+              "seis mil",
+              "siete mil",
+              "nueve mil"
+            ],
+            "en": [
+              "$6",
+              "$7",
+              "$9",
+              "6 dollars",
+              "7 dollars",
+              "9 dollars"
+            ]
+          }
+        },
+        {
+          "id": "por-pasos",
+          "texto": {
+            "es": "Pide ir paso a paso",
+            "en": "Asks to go step by step"
+          },
+          "rubrica": "El prompt pide resolverlo por pasos o en orden (paso a paso, por partes, primero cada arreglo y luego la suma). No cuenta 'hazlo rápido', 'calcula bien' o 'dime cuánto es' sin pedir pasos.",
+          "claves": {
+            "es": [
+              "paso a paso",
+              "paso por paso",
+              "por pasos",
+              "en pasos",
+              "por partes",
+              "en orden",
+              "primero cada",
+              "primero calcula",
+              "primero saca"
+            ],
+            "en": [
+              "step by step",
+              "step-by-step",
+              "in steps",
+              "each step",
+              "one step at a time",
+              "in order",
+              "first calculate",
+              "first work out",
+              "break it down"
+            ]
+          }
+        },
+        {
+          "id": "a-la-vista",
+          "texto": {
+            "es": "Pide ver cada cuenta",
+            "en": "Asks to see each calculation"
+          },
+          "rubrica": "El prompt pide que muestre las cuentas o cada operación para poder revisarlas ('muéstrame cada cuenta', 'las operaciones', 'cómo llegaste al total'). No cuenta pedir solo el resultado, ni 'muéstrame el total', ni 'explícame' sin decir que muestre las cuentas.",
+          "claves": {
+            "es": [
+              "cada cuenta",
+              "cada operacion",
+              "las operaciones",
+              "como llegaste",
+              "de donde sale",
+              "para revisar",
+              "poder revisar",
+              "revisarlas",
+              "cada multiplicacion",
+              "muestrame las cuentas",
+              "muestra las cuentas",
+              "ver las cuentas",
+              "escribe las cuentas"
+            ],
+            "en": [
+              "each calculation",
+              "every calculation",
+              "your work",
+              "show the math",
+              "show me the math",
+              "show your math",
+              "how you got",
+              "so i can check",
+              "to check it",
+              "each multiplication",
+              "show me the calculations",
+              "show the calculations"
+            ]
+          }
+        },
+        {
+          "id": "final",
+          "texto": {
+            "es": "Pide el total y el adelanto",
+            "en": "Asks for the total and deposit"
+          },
+          "rubrica": "El prompt pide al final el total a cobrar y cuánto es el adelanto (la mitad o el 50 %). No cuenta pedir solo el total sin el adelanto.",
+          "claves": {
+            "es": [
+              "adelanto",
+              "anticipo",
+              "mitad",
+              "50 %",
+              "50%",
+              "cincuenta por ciento"
+            ],
+            "en": [
+              "deposit",
+              "up front",
+              "upfront",
+              "half",
+              "50%",
+              "50 %",
+              "fifty percent",
+              "advance"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a una modista con las cuentas de su negocio. Usa solo los datos del prompt y no inventes precios. Si el prompt pide ir paso a paso o mostrar las cuentas, responde con pasos numerados, una operación por línea, y el resultado al final. Si no lo pide, responde con una sola frase corta con un resultado redondeado, sin mostrar ninguna cuenta.",
+        "en": "You are an AI that helps a seamstress with her business math. Use only the details in the prompt and don't make up prices. If the prompt asks you to go step by step or to show the math, reply with numbered steps, one calculation per line, and the result at the end. If it doesn't, reply with one short sentence with a rounded result, showing no math at all."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "1. Elásticos: 12 × $6.000 = $72.000\n2. Ruedos: 12 × $7.000 = $84.000\n3. Blusas: 5 × $9.000 = $45.000\n4. Total: $72.000 + $84.000 + $45.000 = $201.000\n5. Adelanto: la mitad de $201.000 = $100.500\nTotal: $201.000 · Adelanto: $100.500",
+            "en": "1. Elastic: 12 × $6 = $72\n2. Hems: 12 × $7 = $84\n3. Blouses: 5 × $9 = $45\n4. Total: $72 + $84 + $45 = $201\n5. Deposit: half of $201 = $100.50\nTotal: $201 · Deposit: $100.50"
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal clara. Cinco pasos y cada cuenta a la vista. Doña Rosalba las revisa con la calculadora del celular en un minuto.",
+              "en": "Clear signal. Five steps, every calculation in view. Doña Rosalba can check them on her phone calculator in a minute."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "Cobra unos $200.000 y pide la mitad.",
+            "en": "Charge about $200 and ask for half."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "Señal débil. Un número redondo y sin cuentas. Puede estar cerca o lejos, y no hay cómo revisarlo. Mira la lista: pide los pasos y cada cuenta a la vista.",
+              "en": "Weak signal. A round number with no math. It could be close or way off, and there's no way to check. Look at the list: ask for the steps and every calculation in view."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Pedir pasos es la mitad del truco. La otra mitad la haces tú.",
+          "en": "Asking for steps is half the trick. You do the other half."
+        }
+      },
+      "titulo": {
+        "es": "Revisa paso a paso",
+        "en": "Check step by step"
+      },
+      "texto": {
+        "es": "Los pasos no vuelven perfecta a la IA. Lo que hacen es mostrarte dónde revisar. Empieza por el primer paso y sigue en orden. Si uno falla, lo que viene después también sale mal, por arrastre. Arregla ese paso y pide que siga desde ahí.",
+        "en": "Steps don't make the AI perfect. What they do is show you where to look. Start with the first step and go in order. If one fails, everything after it comes out wrong too. Fix that step and ask it to carry on from there."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Pide los pasos",
+            "en": "Ask for the steps"
+          },
+          {
+            "es": "Revisa el primero",
+            "en": "Check the first one"
+          },
+          {
+            "es": "Sigue en orden",
+            "en": "Go in order"
+          },
+          {
+            "es": "Arregla el que falle",
+            "en": "Fix the one that fails"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Te cuento un error mío. Le hice a Doña Rosalba las cuentas de tela para unas cortinas. Todo en pasos, muy ordenado, y aun así me equivoqué. Toca el paso donde empezó el error.",
+          "en": "I have to own up to something. I worked out the fabric for some curtains for Doña Rosalba. All in steps, very neat, and I still got it wrong. Tap the step where the mistake started."
+        }
+      },
+      "titulo": {
+        "es": "¿Dónde empezó el error?",
+        "en": "Where did it go wrong?"
+      },
+      "trozos": [
+        {
+          "es": "Datos: 3 cortinas de 2,5 m de largo, más 20 cm de dobladillo cada una. El metro de tela vale $14.000.",
+          "en": "Details: 3 curtains, 2.5 m long, plus 20 cm for the hem on each. Fabric costs $14 a meter."
+        },
+        {
+          "es": "Paso 1. Tela por cortina: 2,5 m + 0,2 m = 2,7 m",
+          "en": "Step 1. Fabric per curtain: 2.5 m + 0.2 m = 2.7 m"
+        },
+        {
+          "es": "Paso 2. Tres cortinas: 3 × 2,7 m = 7,1 m",
+          "en": "Step 2. Three curtains: 3 × 2.7 m = 7.1 m"
+        },
+        {
+          "es": "Paso 3. Costo: 7,1 m × $14.000 = $99.400",
+          "en": "Step 3. Cost: 7.1 m × $14 = $99.40"
+        },
+        {
+          "es": "Total de tela: $99.400",
+          "en": "Fabric total: $99.40"
+        }
+      ],
+      "malos": [
+        2
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. 3 × 2,7 da 8,1 m, no 7,1. El paso 3 hizo bien su cuenta, pero con mi número malo, y el total salió $14.000 corto. Un error arriba se arrastra hasta abajo.",
+          "en": "You got me. 3 × 2.7 is 8.1 m, not 7.1. Step 3 did its math right, but with my bad number, so the total came out $14 short. A mistake up top drags all the way down."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Esa cuenta está bien con lo que recibió. Sube y revisa desde el primer paso.",
+          "en": "That math is right for what it got. Go back up and check from the first step."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Abre tu bitácora. Escribe con tus palabras qué es pedir paso a paso, como se lo explicarías a Doña Rosalba.",
+          "en": "Open your logbook. Write in your own words what asking for step by step means, the way you'd explain it to Doña Rosalba."
+        }
+      },
+      "concepto": "paso-a-paso",
+      "definicion": {
+        "es": "Pedirle a la IA que resuelva por pasos y muestre cada uno. Sirve en cuentas, planes y explicaciones. Revisas desde el primer paso: si uno falla, arrastra a los demás.",
+        "en": "Asking the AI to work in steps and show each one. It helps with math, plans and explanations. You check from the first step: if one fails, it drags the rest down."
+      },
+      "pregunta": {
+        "es": "Pedir paso a paso sirve para…",
+        "en": "Asking for steps is useful for…"
+      },
+      "guardaPrompt": "b05",
+      "etiqueta": {
+        "es": "cuentas del negocio",
+        "en": "business math"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Listo. Tu tarjeta del paso a paso y el prompt del grupo de danza quedaron en tu bitácora. Vuelven en el repaso.",
+          "en": "Done. Your Step by Step card and the dance group prompt are in your logbook. They'll come back in your review."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tres preguntas y guardamos el segundo truco.",
+          "en": "Three questions and the second trick is yours."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "¿Cuándo vale la pena pedirle pasos a la IA?",
+            "en": "When is it worth asking the AI for steps?"
+          },
+          "opciones": [
+            {
+              "es": "Para un mensaje de \"feliz cumpleaños\"",
+              "en": "For a \"happy birthday\" message"
+            },
+            {
+              "es": "Para calcular un presupuesto o armar un plan",
+              "en": "To work out a budget or build a plan"
+            },
+            {
+              "es": "Siempre, en cualquier pedido",
+              "en": "Always, in every request"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Cuentas, planes y explicaciones ganan con pasos.",
+              "en": "Right. Math, plans and explanations gain from steps."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa en el grupo de danza: ¿qué tenía ese pedido que un saludo no tiene?",
+              "en": "Hmm. Think of the dance group: what did that request have that a greeting doesn't?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Para qué pedirle que muestre cada cuenta?",
+            "en": "Why ask it to show each calculation?"
+          },
+          "opciones": [
+            {
+              "es": "Para que la respuesta se vea más larga",
+              "en": "So the answer looks longer"
+            },
+            {
+              "es": "Para poder revisarla y ver dónde falla",
+              "en": "So you can check it and see where it fails"
+            },
+            {
+              "es": "Porque así la IA nunca se equivoca",
+              "en": "Because then the AI never makes mistakes"
+            }
+          ],
+          "correcta": 1,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Un número suelto no se puede revisar; una cuenta a la vista, sí.",
+              "en": "Exactly. You can't check a lonely number; you can check math you can see."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Acuérdate de las cortinas: yo fui en pasos y aun así me equivoqué. ¿Para qué sirvieron los pasos?",
+              "en": "Remember the curtains: I went step by step and still got it wrong. So what were the steps for?"
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "El paso 2 de una respuesta de cinco pasos tiene un error. ¿Qué haces?",
+            "en": "Step 2 of a five-step answer has a mistake. What do you do?"
+          },
+          "opciones": [
+            {
+              "es": "Arreglas el paso 2 y pides que siga desde ahí",
+              "en": "Fix step 2 and ask it to carry on from there"
+            },
+            {
+              "es": "Confías en el total, porque es un solo error",
+              "en": "Trust the total, since it's only one mistake"
+            },
+            {
+              "es": "Borras todo y empiezas una conversación nueva",
+              "en": "Delete everything and start a new chat"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. Lo de antes del error sirve; lo de después hay que rehacerlo.",
+              "en": "Right. What came before the mistake is fine; what came after needs redoing."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Si el paso 2 falla, ¿qué pasa con los pasos que usan su resultado?",
+              "en": "Hmm. If step 2 fails, what happens to the steps that use its result?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Paso a paso",
+        "en": "Step by step"
+      },
+      "resumen": {
+        "es": "Pide que la IA vaya por pasos y muestre cada cuenta. Revisa desde el primero: un error arriba se arrastra hasta abajo.",
+        "en": "Ask the AI to go step by step and show each calculation. Check from the first one: a mistake up top drags all the way down."
+      }
+    },
+    "piezas": "b03",
+    "mejorPrompt": [
+      "b05"
+    ],
+    "logros": [
+      {
+        "bloque": "b02",
+        "texto": {
+          "es": "Viste el error que escondía un número suelto",
+          "en": "You saw the mistake hiding behind a lonely number"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Separaste lo que gana con pasos de lo que no",
+          "en": "You sorted what gains from steps from what doesn't"
+        }
+      },
+      {
+        "bloque": "b05",
+        "texto": {
+          "es": "Pediste las cuentas del grupo de danza paso a paso",
+          "en": "You asked for the dance group's math step by step"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Encontraste el paso donde empezó mi error",
+          "en": "You found the step where my mistake began"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "pedir-paso-a-paso",
+      "titulo": {
+        "es": "Pedir paso a paso",
+        "en": "Asking for step by step"
+      }
+    }
+  }
+}

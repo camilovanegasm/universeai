@@ -9,7 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import MarcoAdmin from "@/components/admin/MarcoAdmin";
 import { ListaProblemas } from "@/components/admin/Campos";
-import { paquetesSemilla } from "@/lib/misiones/cargar";
+import { indiceSemilla, paqueteSemilla, type ResumenMision } from "@/lib/misiones/cargar";
 import {
   firmaPaquete,
   guardarBorrador,
@@ -32,6 +32,10 @@ export default function AdminMisionesPage() {
   const [existe, setExiste] = useState(false);
   const [guardando, setGuardando] = useState(false);
   const [aviso, setAviso] = useState<string | null>(null);
+  // La semilla se baja de los archivos fijos /semilla (no viene dentro de la app).
+  const [semilla, setSemilla] = useState<ResumenMision[] | null>(null);
+  const [elegida, setElegida] = useState("");
+  const [bajando, setBajando] = useState(false);
 
   const cargar = useCallback(async () => {
     try {
@@ -53,6 +57,29 @@ export default function AdminMisionesPage() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     void cargar();
   }, [cargar]);
+
+  useEffect(() => {
+    let vigente = true;
+    void indiceSemilla().then((lista) => {
+      if (vigente) setSemilla(lista);
+    });
+    return () => {
+      vigente = false;
+    };
+  }, []);
+
+  async function usarSemilla(id: string) {
+    setBajando(true);
+    const paquete = await paqueteSemilla(id);
+    setBajando(false);
+    if (!paquete) {
+      setAviso("No se pudo bajar esa misión de la semilla. Revisa la conexión.");
+      return;
+    }
+    const c = JSON.stringify(paquete, null, 2);
+    setTexto(c);
+    revisar(c);
+  }
 
   function revisar(contenido: string) {
     setAviso(null);
@@ -138,11 +165,21 @@ export default function AdminMisionesPage() {
             <button type="button" className="btn-admin" disabled={!texto.trim()} onClick={() => revisar(texto)}>
               REVISAR
             </button>
-            {paquetesSemilla().map((p) => (
-              <button key={p.id} type="button" className="btn-admin" onClick={() => { const c = JSON.stringify(p, null, 2); setTexto(c); revisar(c); }}>
-                USAR SEMILLA: {p.titulo.es}
-              </button>
-            ))}
+            {semilla && semilla.length > 0 && (
+              <>
+                <select value={elegida} onChange={(e) => setElegida(e.target.value)} aria-label="Misión de la semilla" className="campo-admin max-w-full text-[14px]">
+                  <option value="">Elegir una misión de la semilla…</option>
+                  {semilla.map((m) => (
+                    <option key={m.id} value={m.id}>
+                      {m.mundo.toUpperCase()} {m.capitulo}.{String(m.numero).padStart(2, "0")} · {m.titulo.es}
+                    </option>
+                  ))}
+                </select>
+                <button type="button" className="btn-admin" disabled={!elegida || bajando} onClick={() => usarSemilla(elegida)}>
+                  {bajando ? "BAJANDO…" : "USAR SEMILLA"}
+                </button>
+              </>
+            )}
           </div>
 
           {revision && (

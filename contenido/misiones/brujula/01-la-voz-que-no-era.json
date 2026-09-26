@@ -1,0 +1,712 @@
+{
+  "formato": "punti-mision@1",
+  "id": "la-voz-que-no-era",
+  "mundo": "etica-y-seguridad",
+  "capitulo": 1,
+  "numero": 1,
+  "receta": "criterio",
+  "largo": "normal",
+  "minutos": 8,
+  "conceptos": [
+    "voz-clonada"
+  ],
+  "usaConceptos": [],
+  "titulo": {
+    "es": "La voz que no era",
+    "en": "The Voice That Wasn't"
+  },
+  "resumen": {
+    "es": "Una IA puede copiar la voz de alguien que quieres. La defensa: colgar, llamar al número de siempre y la palabra de seguridad.",
+    "en": "AI can copy the voice of someone you love. Your defense: hang up, call the usual number and use a family safe word."
+  },
+  "siguiente": "el-famoso-que-no-invirtio",
+  "fuentes": [
+    {
+      "titulo": "FTC: Scammers use AI to enhance their family emergency schemes (20 mar. 2023)",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes",
+      "fecha": "2026-09-24"
+    },
+    {
+      "titulo": "El Colombiano: estafas con voz clonada y palabra de seguridad familiar (16 sep. 2026)",
+      "url": "https://www.elcolombiano.com/tecnologia/estafas-voz-clonada-ia-deepfake-secuestro-virtual-palabra-seguridad-familiar-como-evitar-JH41134728",
+      "fecha": "2026-09-24"
+    }
+  ],
+  "actualizado": "2026-09-24",
+  "estado": "revision",
+  "bloques": [
+    {
+      "id": "b01",
+      "tipo": "inicio",
+      "xp": 0,
+      "punti": {
+        "estado": "boot",
+        "texto": {
+          "es": "Piloto, aterrizaste en Brújula. En el centro de este planeta enterré una brújula gigante que señala por dónde sí y por dónde no. Pero aquí hay tormentas que hacen girar la aguja, y acaba de sonar una alerta en El faro.",
+          "en": "Pilot, you've landed on Compass. At the center of this planet I buried a giant compass that points to where it's safe to go and where it isn't. But storms here make the needle spin, and an alert just went off at the Lighthouse."
+        }
+      },
+      "titulo": {
+        "es": "La voz que no era",
+        "en": "The Voice That Wasn't"
+      },
+      "texto": {
+        "es": "Alerta de tormenta en El faro. Doña Hermelinda vende flores en la plaza de mercado de Tunja y le llegó una nota de voz de su nieto, llorando. Hoy aprendes a frenar una voz clonada. Unos 8 minutos.",
+        "en": "Storm alert at the Lighthouse. Doña Hermelinda sells flowers at the market square in Tunja, and she just got a voice note from her grandson, crying. Today you'll learn to stop a cloned voice. About 8 minutes."
+      }
+    },
+    {
+      "id": "b02",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Primero, cómo funciona esta tormenta. Es más fácil de lo que parece, y por eso es tan común.",
+          "en": "First, how this storm works. It's easier than it sounds, and that's why it's so common."
+        }
+      },
+      "titulo": {
+        "es": "Una voz se puede copiar",
+        "en": "A voice can be copied"
+      },
+      "texto": {
+        "es": "Hoy una IA puede imitar la voz de una persona con un audio corto: un video en redes, una nota de voz, un saludo. Con esa voz copiada, alguien arma una emergencia falsa. Suena igual. Por eso la voz sola ya no prueba quién te habla.",
+        "en": "Today an AI can copy someone's voice from a short clip: a video on social media, a voice note, a greeting. With that copied voice, someone fakes an emergency. It sounds just like them. So a voice alone no longer proves who's talking."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Consiguen un audio corto de tu familiar",
+            "en": "They get a short clip of your relative"
+          },
+          {
+            "es": "Una IA copia la voz",
+            "en": "An AI copies the voice"
+          },
+          {
+            "es": "Te llega una emergencia con esa voz y mucha prisa",
+            "en": "An emergency reaches you in that voice, in a big rush"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "tipo": "caso",
+      "xp": 8,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Esta es la nota de voz que le llegó a Doña Hermelinda. Ella piensa en tres cosas que puede hacer. Pruébalas y mira qué pasa con cada una.",
+          "en": "Here's the voice note Doña Hermelinda got. She's thinking of three things she could do. Try them and see what happens with each one."
+        }
+      },
+      "titulo": {
+        "es": "La nota de voz",
+        "en": "The voice note"
+      },
+      "escena": {
+        "es": "Un número desconocido le manda un audio a Doña Hermelinda. Es la voz de su nieto, llorando: \"Abuela, choqué la moto. Necesito 900.000 pesos ya para arreglar con el señor. No le digas a mi mamá. Te mando la cuenta por aquí.\" Ella tiene el puesto lleno de clientes. ¿Qué hace?",
+        "en": "An unknown number sends Doña Hermelinda a voice note. It's her grandson's voice, crying: \"Grandma, I crashed the motorbike. I need $250 right now to settle with the man. Don't tell Mom. I'll send you the account here.\" Her stand is full of customers. What does she do?"
+      },
+      "opciones": [
+        {
+          "texto": {
+            "es": "Transferir ya, antes de que le pase algo al nieto",
+            "en": "Send the money now, before something happens to him"
+          },
+          "consecuencia": {
+            "es": "La plata sale en un minuto y no vuelve. Más tarde el nieto contesta su celular de siempre: estaba en clase y nunca chocó. La prisa era la trampa.",
+            "en": "The money is gone in a minute and doesn't come back. Later her grandson answers his usual phone: he was in class and never crashed. The rush was the trap."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "Responder el audio: \"¿De verdad eres tú?\"",
+            "en": "Reply to the voice note: \"Is it really you?\""
+          },
+          "consecuencia": {
+            "es": "Del otro lado responden: \"Sí, abuela, soy yo, apúrate\". Preguntar por el mismo chat no sirve: contesta el mismo que la quiere engañar.",
+            "en": "The answer comes right back: \"Yes, Grandma, it's me, hurry.\" Asking in the same chat doesn't help: the person answering is the one trying to fool her."
+          },
+          "buena": false
+        },
+        {
+          "texto": {
+            "es": "No responder y llamar al nieto al número guardado",
+            "en": "Don't reply, and call her grandson on his saved number"
+          },
+          "consecuencia": {
+            "es": "El nieto contesta tranquilo desde su casa. Nunca chocó. Doña Hermelinda borra el audio y avisa a la familia. Un minuto de pausa le ahorró 900.000 pesos.",
+            "en": "Her grandson picks up, calm, at home. He never crashed. Doña Hermelinda deletes the voice note and warns the family. One minute of pause saved her $250."
+          },
+          "buena": true
+        }
+      ],
+      "leccion": {
+        "estado": "info",
+        "texto": {
+          "es": "La regla del faro: si te piden plata con prisa, cuelga y llama tú al número de siempre. Si es verdad, la emergencia sigue ahí en un minuto. Si es mentira, se cae sola.",
+          "en": "The lighthouse rule: if someone asks for money in a rush, hang up and call the usual number yourself. If it's true, the emergency will still be there in a minute. If it's a lie, it falls apart on its own."
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "tipo": "clasificar",
+      "xp": 8,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Ese audio traía cuatro señales de tormenta. Te traigo frases de audios parecidos. Pon cada una en su señal.",
+          "en": "That voice note carried four storm signs. Here are lines from similar messages. Put each one under its sign."
+        }
+      },
+      "titulo": {
+        "es": "Las señales del audio",
+        "en": "The signs in the message"
+      },
+      "grupos": [
+        {
+          "id": "prisa",
+          "titulo": {
+            "es": "Prisa",
+            "en": "Rush"
+          }
+        },
+        {
+          "id": "secreto",
+          "titulo": {
+            "es": "Secreto",
+            "en": "Secrecy"
+          }
+        },
+        {
+          "id": "numero-nuevo",
+          "titulo": {
+            "es": "Número nuevo",
+            "en": "New number"
+          }
+        },
+        {
+          "id": "pago-raro",
+          "titulo": {
+            "es": "Pago raro",
+            "en": "Odd payment"
+          }
+        }
+      ],
+      "items": [
+        {
+          "grupo": "prisa",
+          "texto": {
+            "es": "\"Tienes 10 minutos o me llevan detenido\"",
+            "en": "\"You have 10 minutes or they'll arrest me\""
+          }
+        },
+        {
+          "grupo": "secreto",
+          "texto": {
+            "es": "\"No le cuentes a nadie, me da mucha pena\"",
+            "en": "\"Don't tell anyone, I'm so embarrassed\""
+          }
+        },
+        {
+          "grupo": "numero-nuevo",
+          "texto": {
+            "es": "\"Te escribo de este número porque el mío se dañó\"",
+            "en": "\"I'm texting from this number because mine broke\""
+          }
+        },
+        {
+          "grupo": "pago-raro",
+          "texto": {
+            "es": "\"Consígnalo a la cuenta de un amigo, la mía está bloqueada\"",
+            "en": "\"Send it to my friend's account, mine is blocked\""
+          }
+        },
+        {
+          "grupo": "numero-nuevo",
+          "texto": {
+            "es": "\"Es un celular prestado, no me llames, solo escríbeme\"",
+            "en": "\"It's a borrowed phone, don't call, just text me\""
+          }
+        },
+        {
+          "grupo": "prisa",
+          "texto": {
+            "es": "\"Ya mismo, abuela, apúrate\"",
+            "en": "\"Right now, Grandma, hurry\""
+          }
+        }
+      ],
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Eso es. Prisa, secreto, número nuevo y pago raro. Cuando se juntan, la aguja se mueve: para y comprueba.",
+          "en": "That's it. Rush, secrecy, a new number and an odd payment. When they show up together, the needle moves: stop and check."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Mmm, lee otra vez. Pregúntate qué busca esa frase: ¿que corras, que calles, que no llames o que pagues distinto?",
+          "en": "Hmm, read it again. Ask yourself what that line wants: for you to rush, keep quiet, not call, or pay in an odd way?"
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "tipo": "transmision",
+      "xp": 5,
+      "punti": {
+        "estado": "info",
+        "texto": {
+          "es": "Ahora, la defensa. Son tres pasos y caben en una servilleta.",
+          "en": "Now, the defense. Three steps, small enough to fit on a napkin."
+        }
+      },
+      "titulo": {
+        "es": "Cuelga, llama, pregunta",
+        "en": "Hang up, call, ask"
+      },
+      "texto": {
+        "es": "Cuelga, o deja el audio quieto. Llama tú al número que ya tienes guardado, no al que te escribió. Y si alguien dice ser de tu familia, pregúntale la palabra de seguridad: una palabra rara que acordaron en persona y que nunca se escribe en redes ni en el chat.",
+        "en": "Hang up, or leave the voice note alone. Call the number you already have saved, not the one that reached you. And if someone says they're family, ask for the safe word: an unusual word you agreed on in person and never write on social media or in a chat."
+      },
+      "grafico": {
+        "tipo": "flujo",
+        "pasos": [
+          {
+            "es": "Cuelga",
+            "en": "Hang up"
+          },
+          {
+            "es": "Llama al número de siempre",
+            "en": "Call the usual number"
+          },
+          {
+            "es": "Pregunta la palabra de seguridad",
+            "en": "Ask for the safe word"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "tipo": "laboratorio",
+      "xp": 20,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Tu turno de transmitir. El sobrino de Doña Hermelinda quiere revisar el audio con una IA antes de hacer nada. Escribe el prompt. Ojo: la IA no decide si es real. Te ayuda a ver señales y a ordenar qué comprobar.",
+          "en": "Your turn to transmit. Doña Hermelinda's nephew wants to go over the voice note with an AI before doing anything. Write the prompt. Heads up: the AI doesn't decide whether it's real. It helps you spot the signs and plan what to check."
+        }
+      },
+      "titulo": {
+        "es": "Revisar el audio con la IA",
+        "en": "Going over the voice note"
+      },
+      "reto": {
+        "es": "Mensaje inventado que llegó del 300 000 0000: \"Abuela, choqué la moto, necesito 900.000 pesos ya. No le digas a mi mamá. Consígnalo a la cuenta de un amigo.\" Pídele a la IA ayuda para revisarlo antes de actuar. Sin nombres reales de la familia.",
+        "en": "Made-up message from 555-0100: \"Grandma, I crashed the motorbike, I need $250 right now. Don't tell Mom. Send it to my friend's account.\" Ask the AI to help you go over it before doing anything. No real family names."
+      },
+      "inicial": "vacio",
+      "aprobar": 3,
+      "maxIntentos": 3,
+      "checks": [
+        {
+          "id": "senales",
+          "texto": {
+            "es": "Pide las señales de alerta",
+            "en": "Asks for the warning signs"
+          },
+          "rubrica": "El prompt le pide a la IA que señale las señales de alerta o lo sospechoso del mensaje (prisa, secreto, número nuevo, cuenta de otra persona), o que explique qué partes son típicas de un engaño. No cuenta preguntar solo '¿es real?', '¿es mi nieto?' o '¿es estafa?' pidiendo un sí o un no, sin pedir las señales.",
+          "claves": {
+            "es": [
+              "senales",
+              "senal de",
+              "alerta",
+              "sospechos",
+              "que tiene de raro",
+              "que tiene de extrano",
+              "que partes",
+              "que no cuadra",
+              "que cosas raras"
+            ],
+            "en": [
+              "warning sign",
+              "red flag",
+              "signs",
+              "suspicious",
+              "what's off",
+              "what is off",
+              "what seems off",
+              "doesn't add up",
+              "what parts",
+              "which parts"
+            ]
+          }
+        },
+        {
+          "id": "otro-canal",
+          "texto": {
+            "es": "Pide cómo comprobarlo por otro canal",
+            "en": "Asks how to check it another way"
+          },
+          "rubrica": "El prompt pide qué hacer para comprobar la historia por fuera de ese mensaje: llamar al nieto o a otro familiar al número guardado de siempre, preguntar la palabra de seguridad o algo que solo la familia sabe. No cuenta responderle al mismo número, preguntarle al que escribió si es él, ni pedirle a la IA que ella confirme o verifique si es real.",
+          "claves": {
+            "es": [
+              "como comprobar",
+              "como lo compruebo",
+              "como puedo comprobar",
+              "comprobarlo",
+              "para comprobar",
+              "otro canal",
+              "otra via",
+              "otro medio",
+              "numero guardado",
+              "numero de siempre",
+              "numero que tengo",
+              "palabra de seguridad",
+              "palabra clave",
+              "algo que solo",
+              "llamar al nieto",
+              "llamar a mi nieto",
+              "llamar a su nieto",
+              "llamarlo al",
+              "llamar a otro familiar",
+              "llamar a la familia",
+              "llamo a mi",
+              "llamo al nieto"
+            ],
+            "en": [
+              "how to check",
+              "how can i check",
+              "how do i check",
+              "how to confirm it",
+              "another channel",
+              "other channel",
+              "another way",
+              "saved number",
+              "usual number",
+              "number i have",
+              "call my",
+              "safe word",
+              "code word",
+              "something only",
+              "call him on",
+              "call her grandson",
+              "call another relative",
+              "call the family"
+            ]
+          }
+        },
+        {
+          "id": "sin-datos",
+          "texto": {
+            "es": "Sin datos reales de la familia",
+            "en": "No real family details"
+          },
+          "rubrica": "El prompt habla del familiar de forma general ('mi nieto', 'un familiar', 'mi abuela') o con marcadores como [nombre], y no trae datos reales: nombres completos, cédulas, números de cuenta ni direcciones. El número inventado del reto no cuenta como dato real. No cuenta si aparece un nombre completo, una cédula, un número de cuenta o una dirección, aunque sean parte de la historia.",
+          "claves": {
+            "es": [
+              "mi nieto",
+              "su nieto",
+              "un nieto",
+              "el nieto",
+              "un familiar",
+              "mi familiar",
+              "mi abuela",
+              "su abuela",
+              "[nombre",
+              "alguien que dice",
+              "dice ser"
+            ],
+            "en": [
+              "my grandson",
+              "her grandson",
+              "a grandson",
+              "the grandson",
+              "a relative",
+              "my relative",
+              "my grandma",
+              "my grandmother",
+              "her grandma",
+              "[name",
+              "someone claiming",
+              "claims to be",
+              "says he is",
+              "says he's"
+            ]
+          }
+        }
+      ],
+      "sistema": {
+        "es": "Eres una IA que ayuda a revisar mensajes sospechosos. Responde en español sencillo, en máximo 10 líneas. Responde solo lo que pide el prompt. Si te piden señales, enumera las señales de alerta que ves en el mensaje. Si te piden cómo comprobarlo, da pasos que la persona hace por otro canal: no pagar todavía, colgar, llamar al número guardado, preguntar la palabra de seguridad. Nunca afirmes que el mensaje es seguro, real o falso con certeza: di que eso solo se sabe comprobando por fuera. Si el prompt trae nombres completos, cédulas o cuentas, recomienda en una línea no pegarlos.",
+        "en": "You are an AI that helps people go over suspicious messages. Reply in plain English, in 10 lines or fewer. Answer only what the prompt asks. If asked for signs, list the warning signs you see in the message. If asked how to check, give steps the person takes through another channel: don't pay yet, hang up, call the saved number, ask for the safe word. Never state that the message is safe, real or fake with certainty: say that can only be known by checking outside the message. If the prompt includes full names, ID numbers or account numbers, advise in one line not to paste them."
+      },
+      "simulado": {
+        "bueno": {
+          "salidaTipo": "texto",
+          "salida": {
+            "es": "Señales de alerta:\n1. Prisa: \"necesito la plata ya\".\n2. Secreto: \"no le digas a mi mamá\".\n3. Llega de un número desconocido.\n4. Pide consignar a la cuenta de otra persona.\nCómo comprobarlo:\n1. No pagues todavía.\n2. Llama a tu nieto al número que ya tienes guardado.\n3. Si no contesta, llama a otro familiar.\n4. Pregunta la palabra de seguridad de la familia.\nSolo así sabes si la historia es cierta.",
+            "en": "Warning signs:\n1. Rush: \"I need $250 right now.\"\n2. Secrecy: \"Don't tell Mom.\"\n3. It comes from an unknown number.\n4. It asks you to pay into someone else's account.\nHow to check:\n1. Don't pay yet.\n2. Call your grandson on the number you already have saved.\n3. If he doesn't answer, call another relative.\n4. Ask for the family safe word.\nThat's the only way to know if the story is true."
+          },
+          "punti": {
+            "estado": "hype",
+            "texto": {
+              "es": "Señal limpia. La IA te dio las señales y los pasos, y la decisión quedó donde debe: en la llamada al número de siempre.",
+              "en": "Clean signal. The AI gave you the signs and the steps, and the decision stayed where it belongs: in a call to the usual number."
+            }
+          }
+        },
+        "debil": {
+          "salida": {
+            "es": "No puedo saber si este mensaje es real. Podría ser tu nieto o podría ser otra persona. Si tienes dudas, ten cuidado.",
+            "en": "I can't tell whether this message is real. It could be your grandson or it could be someone else. If you're unsure, be careful."
+          },
+          "punti": {
+            "estado": "battery",
+            "texto": {
+              "es": "La IA no puede saber si es real, y tu prompt le pidió justo eso. Mira la lista: pide las señales y cómo comprobarlo por otro canal.",
+              "en": "The AI can't know whether it's real, and that's exactly what your prompt asked. Check the list: ask for the signs and how to check another way."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "tipo": "punti-se-equivoco",
+      "xp": 10,
+      "punti": {
+        "estado": "error",
+        "texto": {
+          "es": "Confieso algo. Le dejé a Doña Hermelinda una nota con consejos, y dos de ellos le abren la puerta a la tormenta. Tócalos.",
+          "en": "Confession time. I left Doña Hermelinda a note with some advice, and two of the tips open the door to the storm. Tap them."
+        }
+      },
+      "titulo": {
+        "es": "Mis consejos con hueco",
+        "en": "My leaky advice"
+      },
+      "trozos": [
+        {
+          "es": "Si te llega un audio pidiendo plata, no pagues de una.",
+          "en": "If a voice note asks for money, don't pay right away."
+        },
+        {
+          "es": "Para salir de dudas, respóndele al mismo número y pregúntale si es él.",
+          "en": "To be sure, reply to the same number and ask if it's really him."
+        },
+        {
+          "es": "Llama tú al número que ya tienes guardado.",
+          "en": "Call the number you already have saved."
+        },
+        {
+          "es": "Escribe la palabra de seguridad en el grupo de la familia para que nadie la olvide.",
+          "en": "Post the safe word in the family group chat so nobody forgets it."
+        },
+        {
+          "es": "Cuéntales a tus hijos y a tus nietos lo que pasó.",
+          "en": "Tell your kids and grandkids what happened."
+        }
+      ],
+      "malos": [
+        1,
+        3
+      ],
+      "explicacion": {
+        "estado": "hype",
+        "texto": {
+          "es": "Me atrapaste. Por el mismo número contesta el mismo que engaña. Y una palabra de seguridad escrita en un chat deja de ser secreta: se acuerda en persona y se guarda en la cabeza.",
+          "en": "You got me. The same number gets you the same scammer. And a safe word written in a chat isn't secret anymore: you agree on it in person and keep it in your head."
+        }
+      },
+      "mal": {
+        "estado": "error",
+        "texto": {
+          "es": "Ese consejo sí protege. Busca los que le dan ventaja al que engaña.",
+          "en": "That tip actually protects her. Look for the ones that help the scammer."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "tipo": "nota-bitacora",
+      "xp": 5,
+      "punti": {
+        "estado": "leyendo",
+        "texto": {
+          "es": "Tu primera nota en la bitácora de Brújula. Escribe con tus palabras qué harías si te llega una voz conocida pidiendo plata.",
+          "en": "Your first Compass logbook entry. In your own words, write what you'd do if a familiar voice asked you for money."
+        }
+      },
+      "concepto": "voz-clonada",
+      "definicion": {
+        "es": "Una voz copiada por una IA a partir de un audio corto. Suena igual a la persona, así que la voz sola no prueba nada: se cuelga y se llama al número de siempre.",
+        "en": "A voice copied by an AI from a short clip. It sounds just like the person, so the voice alone proves nothing: hang up and call the usual number."
+      },
+      "pregunta": {
+        "es": "Si una voz conocida me pide plata con prisa, yo…",
+        "en": "If a familiar voice asks me for money in a rush, I…"
+      },
+      "guardaPrompt": "b06",
+      "etiqueta": {
+        "es": "revisar mensajes",
+        "en": "checking messages"
+      },
+      "bien": {
+        "estado": "hype",
+        "texto": {
+          "es": "Guardado. Tu nota y tu prompt ya viven en tu bitácora. Te los traigo en el repaso, y los vas a usar en el proyecto del capítulo.",
+          "en": "Saved. Your note and your prompt now live in your logbook. I'll bring them back in your review, and you'll use them in the chapter project."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "tipo": "punto-control",
+      "xp": 10,
+      "punti": {
+        "estado": "online",
+        "texto": {
+          "es": "Dos preguntas y cerramos. Si te quedas con ganas, en el juego Caza la estafa te espera un audio parecido.",
+          "en": "Two questions and we're done. If you want more, a similar voice note is waiting for you in the Scam Hunter game."
+        }
+      },
+      "titulo": {
+        "es": "Punto de control",
+        "en": "Checkpoint"
+      },
+      "preguntas": [
+        {
+          "pregunta": {
+            "es": "Te llega una nota de voz de tu hermana, desde un número nuevo, pidiendo plata urgente. ¿Qué haces primero?",
+            "en": "A voice note from your sister arrives from a new number, asking for money urgently. What do you do first?"
+          },
+          "opciones": [
+            {
+              "es": "Cuelgo y la llamo al número que tengo guardado",
+              "en": "Hang up and call her on the number I have saved"
+            },
+            {
+              "es": "Le respondo por ahí para que me confirme",
+              "en": "Reply in that chat so she can confirm"
+            },
+            {
+              "es": "Pago rápido y después pregunto",
+              "en": "Pay quickly and ask questions later"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Eso. El número de siempre es tu norte fijo.",
+              "en": "Right. The usual number is your true north."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Piensa quién te contesta si respondes por el mismo chat.",
+              "en": "Hmm. Think about who answers if you reply in the same chat."
+            }
+          }
+        },
+        {
+          "pregunta": {
+            "es": "¿Qué hace buena a una palabra de seguridad familiar?",
+            "en": "What makes a good family safe word?"
+          },
+          "opciones": [
+            {
+              "es": "Se acuerda en persona y no se escribe en redes ni en chats",
+              "en": "It's agreed on in person and never written in chats or online"
+            },
+            {
+              "es": "Es la fecha de cumpleaños de la abuela",
+              "en": "It's Grandma's birthday"
+            },
+            {
+              "es": "Se manda al grupo de la familia para que todos la tengan",
+              "en": "It's sent to the family group so everyone has it"
+            }
+          ],
+          "correcta": 0,
+          "bien": {
+            "estado": "hype",
+            "texto": {
+              "es": "Exacto. Si no está escrita en ningún lado, nadie la puede copiar.",
+              "en": "Exactly. If it isn't written anywhere, nobody can copy it."
+            }
+          },
+          "mal": {
+            "estado": "error",
+            "texto": {
+              "es": "Mmm. Pregúntate: ¿alguien de afuera podría encontrarla o adivinarla?",
+              "en": "Hmm. Ask yourself: could an outsider find it or guess it?"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "ficha": {
+    "concepto": {
+      "titulo": {
+        "es": "Voz clonada",
+        "en": "Cloned voice"
+      },
+      "resumen": {
+        "es": "Una IA puede copiar una voz con un audio corto. La voz sola no prueba nada: cuelga, llama al número de siempre y pregunta la palabra de seguridad.",
+        "en": "AI can copy a voice from a short clip. A voice alone proves nothing: hang up, call the usual number and ask for the safe word."
+      }
+    },
+    "mejorPrompt": [
+      "b06"
+    ],
+    "logros": [
+      {
+        "bloque": "b03",
+        "texto": {
+          "es": "Elegiste colgar y llamar al número de siempre",
+          "en": "You chose to hang up and call the usual number"
+        }
+      },
+      {
+        "bloque": "b04",
+        "texto": {
+          "es": "Reconociste prisa, secreto, número nuevo y pago raro",
+          "en": "You spotted rush, secrecy, a new number and an odd payment"
+        }
+      },
+      {
+        "bloque": "b06",
+        "texto": {
+          "es": "Pediste señales y cómo comprobar, no un veredicto",
+          "en": "You asked for signs and how to check, not a verdict"
+        }
+      },
+      {
+        "bloque": "b07",
+        "texto": {
+          "es": "Atrapaste a Punti con dos consejos peligrosos",
+          "en": "You caught Punti giving two risky tips"
+        }
+      }
+    ],
+    "habilidad": {
+      "id": "frenar-una-voz-clonada",
+      "titulo": {
+        "es": "Frenar una voz clonada",
+        "en": "Stopping a cloned voice"
+      }
+    }
+  }
+}
